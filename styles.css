@@ -220,6 +220,32 @@ h1 {
   font-size: 0.88rem;
 }
 
+.hero-metrics {
+  margin-top: 1.4rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.hero-metrics article {
+  background: #f7efe3;
+  border: 1px solid rgba(30, 45, 59, 0.16);
+  border-radius: 12px;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-metrics strong {
+  color: var(--terracotta);
+  font-size: 1.05rem;
+}
+
+.hero-metrics span {
+  color: #435261;
+  font-size: 0.88rem;
+}
+
 .hero-visual {
   display: grid;
   gap: 0.8rem;
@@ -415,6 +441,13 @@ footer {
 
   .hero-metrics {
     grid-template-columns: 1fr;
+<<<<<<< codex/improve-homepage-with-new-logo-xs77ts
+=======
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+>>>>>>> MESCLARI-Paguina-web
   }
 
   .grid.two,
@@ -452,8 +485,11 @@ footer {
   .hero-logo {
     max-height: 320px;
   }
+<<<<<<< codex/improve-homepage-with-new-logo-xs77ts
 
   .hero-copy {
     padding: 1.4rem;
   }
+=======
+>>>>>>> MESCLARI-Paguina-web
 }
