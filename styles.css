@@ -122,6 +122,36 @@ h3 {
   padding: 0.35rem 0.6rem;
 }
 
+
+.split-header {
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: stretch;
+}
+
+.headline-only {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.headline-only h1 {
+  margin-bottom: 0;
+}
+
+.intro-stack {
+  margin-top: 2rem;
+}
+
+.intro-stack > p {
+  font-size: 1.12rem;
+  margin-top: 0;
+}
+
+.page-main {
+  padding-top: 1rem;
+}
+
 .hero-content {
   width: min(1200px, 92vw);
   margin: 1.75rem auto 0;
@@ -243,22 +273,6 @@ h1 {
   display: block;
   border-radius: 18px;
   object-fit: contain;
-}
-
-.hero-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.hero-chips span {
-  background: #f0dfcc;
-  border: 1px solid rgba(30, 45, 59, 0.15);
-  color: var(--navy);
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
 }
 
 .section {
@@ -402,7 +416,8 @@ footer {
 }
 
 @media (max-width: 980px) {
-  .hero-content {
+  .hero-content,
+  .split-header {
     grid-template-columns: 1fr;
     gap: 1rem;
     margin-top: 0.7rem;
