@@ -90,12 +90,17 @@ h3 {
 }
 
 .hero-logo {
-  width: min(520px, 82vw);
+  width: min(700px, 85vw);
   max-width: 100%;
-  border-radius: 18px;
-  border: 1px solid rgba(30, 45, 59, 0.15);
-  background: #f8f0e4;
-  padding: 0.6rem;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  object-fit: contain;
 }
 
 .tag {
