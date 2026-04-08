@@ -53,8 +53,8 @@ h3 {
 }
 
 .nav-logo {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   border-radius: 10px;
   border: 1px solid var(--line);
@@ -90,11 +90,19 @@ h3 {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -0.25rem;
+  bottom: -0.24rem;
   width: 0;
   height: 2px;
   background: var(--terracotta);
-  transition: width 0.2s ease;
+  transition: width 0.24s ease;
+}
+
+.menu a:hover {
+  color: var(--terracotta);
+}
+
+.menu a:hover {
+  color: var(--terracotta);
 }
 
 .menu a:hover {
@@ -271,7 +279,7 @@ main,
 
 .grid {
   display: grid;
-  gap: 1.1rem;
+  gap: 1.15rem;
 }
 
 .grid.two {
@@ -373,6 +381,12 @@ main,
   color: #f6fbf7;
 }
 
+.page-main {
+  width: min(1240px, 92vw);
+  margin: 0 auto;
+  padding-top: 1.2rem;
+}
+
 footer {
   width: min(1240px, 92vw);
   margin: 0 auto 1.7rem;
@@ -412,8 +426,9 @@ footer {
     border-radius: 12px;
     padding: 0.8rem;
     flex-direction: column;
-    min-width: 180px;
+    min-width: 185px;
     display: none;
+    box-shadow: 0 12px 28px rgba(24, 39, 57, 0.14);
   }
 
   .menu.open {
