@@ -28,13 +28,14 @@ h3 {
 }
 
 .hero {
-  min-height: 95vh;
+  min-height: auto;
   background:
     radial-gradient(circle at 12% 8%, #f8efe4 0%, transparent 42%),
     radial-gradient(circle at 90% 18%, #ead7bf 0%, transparent 45%),
     linear-gradient(145deg, #f4e9dc 0%, #f1e4d5 60%, #eddfce 100%);
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
 }
 
 .nav {
@@ -104,12 +105,12 @@ h3 {
 
 .hero-content {
   width: min(1200px, 92vw);
-  margin: auto;
+  margin: 1.75rem auto 0;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 1.4rem;
   align-items: center;
-  padding: 2rem 0 3rem;
+  padding: 1.2rem 0 0;
 }
 
 .hero-copy {
@@ -194,6 +195,7 @@ h1 {
 .hero-visual {
   display: grid;
   gap: 0.8rem;
+  align-self: start;
 }
 
 .logo-frame {
@@ -208,9 +210,11 @@ h1 {
 
 .hero-logo {
   width: 100%;
+  max-height: 460px;
   height: auto;
   display: block;
   border-radius: 18px;
+  object-fit: contain;
 }
 
 .hero-chips {
@@ -364,15 +368,16 @@ footer {
   .hero-content {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.7rem;
+    padding-top: 0.3rem;
   }
 
   .hero-copy {
-    order: 2;
+    order: 1;
   }
 
-  .hero-visual {
-    order: 1;
+  .hero-metrics {
+    grid-template-columns: 1fr;
   }
 
   .hero-metrics {
@@ -405,5 +410,9 @@ footer {
 
   .menu.open {
     display: flex;
+  }
+
+  .hero-logo {
+    max-height: 320px;
   }
 }
