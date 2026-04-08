@@ -27,7 +27,6 @@ h2,
 h3 {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.02em;
-  margin: 0;
 }
 
 .nav {
@@ -42,8 +41,7 @@ h3 {
   background: rgba(252, 249, 244, 0.94);
   backdrop-filter: blur(8px);
   box-shadow: 0 14px 30px rgba(26, 38, 56, 0.08);
-  position: sticky;
-  top: 0.6rem;
+  position: relative;
   z-index: 20;
 }
 
@@ -97,6 +95,10 @@ h3 {
   height: 2px;
   background: var(--terracotta);
   transition: width 0.24s ease;
+}
+
+.menu a:hover {
+  color: var(--terracotta);
 }
 
 .menu a:hover {
@@ -175,22 +177,31 @@ h3 {
 .m-imgBox {
   position: relative;
   min-height: 560px;
-  background: linear-gradient(160deg, #f0e3cf 0%, #ead6bd 100%);
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 68% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 38%),
+    linear-gradient(160deg, #f0e3cf 0%, #ead6bd 100%);
 }
 
 .m-img,
 .m-img.old {
   position: absolute;
   inset: 0;
-  background-image: url('imaguenes i videos/logo.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 76%;
+  display: grid;
+  place-items: center;
+}
+
+.m-img img,
+.m-img.old img {
+  width: min(82%, 680px);
+  height: auto;
+  object-fit: contain;
 }
 
 .m-img.old {
-  transform: scale(1.13);
-  opacity: 0.14;
+  transform: scale(1.12);
+  opacity: 0.15;
   filter: grayscale(1) contrast(1.1);
 }
 
@@ -208,7 +219,8 @@ main,
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 1.35rem;
-  background: rgba(255, 252, 247, 0.86);
+  background: rgba(255, 252, 247, 0.9);
+  box-shadow: 0 12px 26px rgba(26, 38, 56, 0.05);
 }
 
 .hero-actions {
@@ -390,7 +402,6 @@ footer {
   }
 
   .m-imgBox {
-    order: -1;
     min-height: 340px;
   }
 
