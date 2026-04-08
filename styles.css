@@ -194,7 +194,8 @@ h3 {
 
 .m-img img,
 .m-img.old img {
-  width: min(82%, 680px);
+  width: min(62%, 460px);
+  max-height: 78%;
   height: auto;
   object-fit: contain;
 }
