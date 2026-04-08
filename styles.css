@@ -149,7 +149,7 @@ h3 {
 .m-pretitle {
   font-family: 'Cormorant Garamond', serif;
   color: var(--gold);
-  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-size: clamp(1rem, 1.45vw, 1.45rem);
   margin-bottom: 0.7rem;
 }
 
@@ -158,8 +158,8 @@ h3 {
   font-family: 'Cormorant Garamond', serif;
   color: var(--navy);
   font-weight: 700;
-  font-size: clamp(2.6rem, 5vw, 5.2rem);
-  line-height: 0.95;
+  font-size: clamp(2.05rem, 3.9vw, 3.9rem);
+  line-height: 1.02;
 }
 
 .m-text {
@@ -169,7 +169,7 @@ h3 {
 
 .m-text p {
   margin: 0;
-  font-size: clamp(1.05rem, 1.45vw, 1.45rem);
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
   line-height: 1.55;
   color: #2b3a49;
 }
@@ -194,7 +194,8 @@ h3 {
 
 .m-img img,
 .m-img.old img {
-  width: min(82%, 680px);
+  width: min(82.5%, 610px);
+  max-height: 78%;
   height: auto;
   object-fit: contain;
 }
@@ -440,6 +441,6 @@ footer {
   }
 
   .m-title p {
-    font-size: clamp(2.2rem, 12vw, 3.8rem);
+    font-size: clamp(1.9rem, 9vw, 3rem);
   }
 }
