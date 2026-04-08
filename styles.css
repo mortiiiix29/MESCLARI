@@ -441,13 +441,6 @@ footer {
 
   .hero-metrics {
     grid-template-columns: 1fr;
-<<<<<<< codex/improve-homepage-with-new-logo-xs77ts
-=======
-  }
-
-  .hero-metrics {
-    grid-template-columns: 1fr;
->>>>>>> MESCLARI-Paguina-web
   }
 
   .grid.two,
@@ -485,11 +478,8 @@ footer {
   .hero-logo {
     max-height: 320px;
   }
-<<<<<<< codex/improve-homepage-with-new-logo-xs77ts
 
   .hero-copy {
     padding: 1.4rem;
   }
-=======
->>>>>>> MESCLARI-Paguina-web
 }
