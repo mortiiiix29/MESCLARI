@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESCLARI · Projecte de Síntesi</title>
+    <meta
+      name="description"
+      content="MESCLARI: web de suport per a la presentació del projecte de síntesi d'un restaurant de gamma alta a Platja d'Aro."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <a href="#" class="brand-mini" aria-label="MESCLARI inici">
+          <span class="brand-dot"></span>
+          <span class="brand-name">MESCLARI</span>
+        </a>
+        <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+        <ul id="menu" class="menu">
+          <li><a href="#concepte">Concepte</a></li>
+          <li><a href="#experiencia">Experiència</a></li>
+          <li><a href="#menu-degustacio">Menú</a></li>
+          <li><a href="#paleta">Paleta</a></li>
+          <li><a href="#viabilitat">Viabilitat</a></li>
+          <li><a href="#contacte">Contacte</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="tag">PROJECTE DE SÍNTESI · HOSTALERIA I TURISME</p>
+          <h1>MESCLARI · Restaurant de gamma alta a Platja d'Aro</h1>
+          <p>
+            Presentem <strong>MESCLARI</strong>, una proposta gastronòmica que combina cuina d'autor, producte de
+            proximitat i una experiència immersiva inspirada en la Costa Brava.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="#concepte">Veure la proposta</a>
+            <span class="subnote">Cuina d'autor · Producte local · Experiència premium</span>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Identitat visual MESCLARI">
+          <div class="logo-frame">
+            <img class="hero-logo" src="imaguenes i videos/mesclari-logo-placeholder.svg" alt="MESCLARI Cocina y Cultura" />
+          </div>
+          <div class="hero-chips">
+            <span>Fine Dining</span>
+            <span>Costa Brava</span>
+            <span>Identitat mediterrània</span>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="concepte" class="section">
+        <h2>Concepte del projecte</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Identitat</h3>
+            <p>
+              MESCLARI neix com un espai exclusiu orientat al segment premium. L'interiorisme, la il·luminació i la
+              música creen una atmosfera elegant i contemporània.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Proposta gastronòmica</h3>
+            <p>
+              Cuina mediterrània d'avantguarda amb tècniques modernes, maridatges personalitzats i una narrativa
+              culinària centrada en el mar i la temporada.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="experiencia" class="section alt">
+        <h2>Experiència del client</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>01</span>
+            <p>Recepció i benvinguda amb còctel de cortesia i presentació del xef.</p>
+          </div>
+          <div class="timeline-item">
+            <span>02</span>
+            <p>Menú degustació en 8 passos amb storytelling de cada plat.</p>
+          </div>
+          <div class="timeline-item">
+            <span>03</span>
+            <p>Servei de sala d'alt nivell, atenció personalitzada i ritme pausat.</p>
+          </div>
+          <div class="timeline-item">
+            <span>04</span>
+            <p>Tancament amb petit fours i record experiencial de la marca.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu-degustacio" class="section">
+        <h2>Exemple de menú degustació</h2>
+        <div class="grid two">
+          <article class="card">
+            <h3>Mar i Territori</h3>
+            <ul>
+              <li>Ostra temperada amb granissat cítric</li>
+              <li>Gamba vermella amb vel d'algues</li>
+              <li>Arròs melós de llagosta i safrà</li>
+              <li>Llobarro a baixa temperatura</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Final dolç</h3>
+            <ul>
+              <li>Prepostres de iogurt i menta fresca</li>
+              <li>Cacau, avellana i oli d'oliva verge</li>
+              <li>Selecció de petit fours artesans</li>
+              <li>Maridatge opcional amb vins de la DO Empordà</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="paleta" class="section alt">
+        <h2>Paleta corporativa</h2>
+        <div class="palette-grid">
+          <div class="swatch terracotta"><strong>#C25E3C</strong><span>Sabor Mediterráneo</span></div>
+          <div class="swatch navy"><strong>#1E2D3B</strong><span>Raíz Europea</span></div>
+          <div class="swatch beige"><strong>#F4E9DC</strong><span>Luz de Costa</span></div>
+          <div class="swatch sand"><strong>#D8CBB2</strong><span>Brisa de Mar</span></div>
+          <div class="swatch olive"><strong>#6E8B74</strong><span>Origen Natural</span></div>
+        </div>
+      </section>
+
+      <section id="viabilitat" class="section alt">
+        <h2>Viabilitat i diferenciació</h2>
+        <div class="grid three">
+          <article class="card">
+            <h3>Públic objectiu</h3>
+            <p>Turista internacional premium, client local de poder adquisitiu alt i públic gastronòmic.</p>
+          </article>
+          <article class="card">
+            <h3>Avantatge competitiu</h3>
+            <p>Ubicació estratègica a Platja d'Aro + proposta experiencial única + marca cuidada.</p>
+          </article>
+          <article class="card">
+            <h3>Sostenibilitat</h3>
+            <p>Producte de temporada, proveïdors de proximitat i gestió eficient del malbaratament alimentari.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contacte">
+      <p><strong>MESCLARI</strong> · Web de suport per a la Presentació del Projecte de Síntesi</p>
+      <p>Platja d'Aro · Costa Brava · Catalunya</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
