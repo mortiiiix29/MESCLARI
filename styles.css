@@ -396,18 +396,22 @@ footer {
 }
 
 .hero-kicker {
+  width: 100%;
+  margin: 1.1rem auto 0.4rem;
+  padding: 0 1rem;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   color: #5a6f80;
-  font-size: clamp(0.72rem, 0.85vw, 0.84rem);
+  font-size: clamp(0.82rem, 1.05vw, 1rem);
   font-weight: 600;
-  max-width: 56ch;
-  line-height: 1.5;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 .hero-copy h1 {
   font-size: clamp(3.5rem, 7.2vw, 6.1rem);
-  color: var(--blue);
+  color: #ae4925;
   letter-spacing: 0.08em;
   line-height: 0.9;
   font-weight: 700;
