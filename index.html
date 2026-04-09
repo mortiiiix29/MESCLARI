@@ -3,110 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · Projecte de Síntesi</title>
-    <meta
-      name="description"
-      content="MESCLARI: web de suport per a la presentació del projecte de síntesi d'un restaurant de gamma alta a Platja d'Aro."
-    />
+    <title>MESCLARI · Inici</title>
+    <meta name="description" content="Presentació premium de MESCLARI per a jurat acadèmic i professional." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="hero">
-      <nav class="nav">
-        <a href="index.html" class="brand-mini" aria-label="MESCLARI inici">
-          <img src="imaguenes i videos/logo.png" alt="Logotip MESCLARI" class="nav-logo" />
-          <span class="brand-name">MESCLARI</span>
-        </a>
-        <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
-        <ul id="menu" class="menu">
-          <li><a href="index.html#concepte">Concepte</a></li>
-          <li><a href="experiencia.html">Experiència</a></li>
-          <li><a href="menu-degustacio.html">Menú</a></li>
-          <li><a href="paleta.html">Paleta</a></li>
-          <li><a href="viabilitat.html">Viabilitat</a></li>
-          <li><a href="contacte.html">Contacte</a></li>
-        </ul>
-      </nav>
+  <body class="home">
+    <nav class="nav">
+      <a href="index.html" class="brand-mini" aria-label="MESCLARI inici">
+        <img src="imaguenes i videos/logo.png" alt="Logotip MESCLARI" class="nav-logo" />
+        <span class="brand-name">MESCLARI</span>
+      </a>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html" aria-current="page">Inici</a></li>
+        <li><a href="paleta.html">Concepte i identitat</a></li>
+        <li><a href="menu-degustacio.html">Oferta gastronòmica</a></li>
+        <li><a href="experiencia.html">Espais i operativa</a></li>
+        <li><a href="gestio-organitzacio.html">Gestió</a></li>
+        <li><a href="seguretat-sostenibilitat.html">Seguretat i sostenibilitat</a></li>
+        <li><a href="viabilitat.html">Viabilitat econòmica</a></li>
+        <li><a href="contacte.html">Annexos</a></li>
+      </ul>
+    </nav>
 
-      <section class="mdl-textoImg">
-        <div class="mdl-container">
-          <div class="m-content">
-            <div class="m-pretitle">PROJECTE DE SÍNTESI · HOSTALERIA I TURISME</div>
-            <div class="m-title"><p>MESCLARI<br />Alta cuina mediterrània<br />amb essència Costa Brava</p></div>
-            <div class="m-text">
-              <p>
-                <strong>MESCLARI</strong> és una proposta de restauració premium a Platja d'Aro que uneix producte
-                local, tècnica contemporània i una experiència sensorial cuidada de principi a fi.
-              </p>
-            </div>
-          </div>
+    <main class="home-main">
+      <header class="home-hero">
+        <div class="hero-overlay">
+          <p class="hero-kicker">Projecte final de grau · Restauració i direcció d'operacions</p>
+          <img src="imaguenes i videos/logo.png" alt="Logotip MESCLARI" class="hero-logo" />
+          <h1>MESCLARI</h1>
+          <p>Una proposta gastronòmica premium dissenyada per ser defensable, coherent i viable.</p>
+        </div>
+        <div class="home-highlights">
+          <article class="highlight-card">
+            <h3>Nova experiència</h3>
+            <p>a Platja d'Aro</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Productes de la terra</h3>
+            <p>i denominació d'origen</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Servei excel·lent</h3>
+            <p>i hospitalitat cuidada</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Identitat premium</h3>
+            <p>amb ànima mediterrània</p>
+          </article>
+        </div>
+      </header>
 
-          <div class="m-imgBox" aria-label="Identitat visual de MESCLARI">
-            <div class="m-img" role="img" aria-label="Logotip principal de MESCLARI">
-              <img src="imaguenes i videos/logo.png" alt="Logotip principal de MESCLARI" />
-            </div>
-            <div class="m-img old" aria-hidden="true">
-              <img src="imaguenes i videos/logo.png" alt="" />
-            </div>
-          </div>
+      <section class="home-block">
+        <h2>Resum Executiu</h2>
+        <div class="home-grid three">
+          <article class="home-card">
+            <h4>Què és MESCLARI</h4>
+            <p>Un projecte integral de restauració premium que uneix identitat pròpia, proposta gastronòmica, experiència de sala i viabilitat real.</p>
+          </article>
+          <article class="home-card">
+            <h4>Què busca</h4>
+            <p>Construir una experiència coherent, elegant i memorable, on espai, producte, servei i relat treballen en la mateixa direcció.</p>
+          </article>
+          <article class="home-card">
+            <h4>Valor diferencial</h4>
+            <p>MESCLARI destaca per la unió entre territori, cuina contemporània, servei cuidat i una visió empresarial defensable.</p>
+          </article>
         </div>
       </section>
 
-    </header>
-
-    <main>
-      <section class="section intro-stack">
-
-        <div class="hero-actions">
-          <a class="cta" href="index.html#concepte">Descobrir la proposta</a>
-          <span class="subnote">Fine dining · Identitat pròpia · Excel·lència de servei</span>
+      <section class="home-block">
+        <h2>Pilars del Projecte</h2>
+        <div class="home-grid four">
+          <article class="home-card pillar"><h4>Identitat</h4><p>Marca amb personalitat pròpia i posicionament clar.</p></article>
+          <article class="home-card pillar"><h4>Proposta gastronòmica</h4><p>Cuina mediterrània contemporània amb criteri i relat.</p></article>
+          <article class="home-card pillar"><h4>Servei excepcional</h4><p>La sala forma part activa de l'experiència.</p></article>
+          <article class="home-card pillar"><h4>Territori · Km 0</h4><p>Producte local, temporada i autenticitat.</p></article>
         </div>
-        <div class="hero-metrics" aria-label="Dades clau del concepte MESCLARI">
-          <article>
-            <strong>8 passos</strong>
-            <span>menú degustació</span>
+      </section>
+
+      <section class="home-block">
+        <h2>Experiència MESCLARI</h2>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <h4>Atmosfera i recorregut</h4>
+            <p>Interiorisme, il·luminació i ritme de servei per construir una experiència immersiva i coherent.</p>
           </article>
-          <article>
-            <strong>Km 0</strong>
-            <span>proveïdors locals</span>
-          </article>
-          <article>
-            <strong>Premium</strong>
-            <span>segment objectiu</span>
+          <article class="experience-card">
+            <h4>Connexió cuina i sala</h4>
+            <p>La proposta uneix tècnica, relat i hospitalitat perquè cada pas del servei reforci el valor del projecte.</p>
           </article>
         </div>
       </section>
 
-      <section id="concepte" class="section">
-        <h2>Concepte del projecte</h2>
-        <div class="grid two">
-          <article class="card">
-            <h3>Identitat</h3>
-            <p>
-              MESCLARI neix com un espai exclusiu orientat al segment premium. L'interiorisme, la il·luminació i la
-              música creen una atmosfera elegant i contemporània.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Proposta gastronòmica</h3>
-            <p>
-              Cuina mediterrània d'avantguarda amb tècniques modernes, maridatges personalitzats i una narrativa
-              culinària centrada en el mar i la temporada.
-            </p>
-          </article>
+      <section class="home-block">
+        <div class="home-grid four nav-home-grid">
+          <a class="nav-home-card" href="paleta.html">
+            <h4>Concepte i Identitat</h4>
+            <p>Essència, valors i posicionament de MESCLARI.</p>
+          </a>
+          <a class="nav-home-card" href="menu-degustacio.html">
+            <h4>Oferta Gastronòmica</h4>
+            <p>Cuina, relat, territori i estructura de l'oferta.</p>
+          </a>
+          <a class="nav-home-card" href="gestio-organitzacio.html">
+            <h4>Gestió & Operativa</h4>
+            <p>Organització, funcionament i criteri professional.</p>
+          </a>
+          <a class="nav-home-card" href="viabilitat.html">
+            <h4>Sostenibilitat & Viabilitat</h4>
+            <p>Coherència ambiental, econòmica i empresarial.</p>
+          </a>
+        </div>
+        <div class="annex-button-wrap">
+          <a class="annex-button" href="contacte.html">Consulta Annexos</a>
         </div>
       </section>
     </main>
 
-    <footer id="contacte">
-      <p><strong>MESCLARI</strong> · Web de suport per a la Presentació del Projecte de Síntesi</p>
-      <p>Platja d'Aro · Costa Brava · Catalunya</p>
+    <footer class="home-footer">
+      <p>Projecte final de grau · Restauració i direcció d'operacions</p>
     </footer>
 
     <script src="script.js"></script>
