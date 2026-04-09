@@ -53,18 +53,18 @@ a:visited { color: inherit; text-decoration: none; }
 
 .nav {
   width: min(1240px, 92vw);
-  margin: 0.72rem auto 0;
+  margin: 0.56rem auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 0.72rem 1rem;
-  border-radius: 14px;
+  padding: 0.56rem 0.9rem;
+  border-radius: 12px;
   border: 1px solid var(--line);
   background: rgba(244, 233, 220, 0.94);
   box-shadow: 0 9px 20px rgba(30, 45, 59, 0.1);
   position: sticky;
-  top: 0.65rem;
+  top: 0.52rem;
   z-index: 30;
   backdrop-filter: blur(8px);
 }
@@ -76,8 +76,8 @@ a:visited { color: inherit; text-decoration: none; }
 }
 
 .nav-logo {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   border-radius: 10px;
   border: 1px solid var(--line);
@@ -87,7 +87,7 @@ a:visited { color: inherit; text-decoration: none; }
 
 .brand-name {
   color: var(--blue);
-  font-size: 1.8rem;
+  font-size: 1.62rem;
   font-weight: 700;
 }
 
@@ -101,7 +101,7 @@ a:visited { color: inherit; text-decoration: none; }
 
 .menu a {
   color: var(--ink-soft);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   border-bottom: 1px solid transparent;
   padding-bottom: 0.16rem;
@@ -332,86 +332,138 @@ footer {
 
 .hero-top {
   display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  min-height: 280px;
-  padding: 0.9rem;
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  min-height: 370px;
+  padding: 1rem;
+  gap: 0.95rem;
+  align-items: stretch;
 }
 
 .hero-media {
-  border-radius: 16px;
+  border-radius: 18px;
   background:
-    linear-gradient(165deg, rgba(30, 45, 59, 0.86), rgba(58, 83, 104, 0.72)),
-    radial-gradient(circle at 24% 28%, rgba(194, 94, 60, 0.44), transparent 45%),
-    radial-gradient(circle at 76% 72%, rgba(110, 139, 116, 0.34), transparent 44%);
+    linear-gradient(165deg, rgba(30, 45, 59, 0.84), rgba(58, 83, 104, 0.7)),
+    radial-gradient(circle at 21% 24%, rgba(194, 94, 60, 0.5), transparent 40%),
+    radial-gradient(circle at 78% 74%, rgba(110, 139, 116, 0.38), transparent 44%),
+    linear-gradient(145deg, rgba(244, 233, 220, 0.06), rgba(244, 233, 220, 0));
   position: relative;
-  box-shadow: inset 0 0 0 1px rgba(216, 203, 178, 0.28), 0 14px 24px rgba(30, 45, 59, 0.18);
-}
-
-.hero-media::before,
-.hero-media::after {
-  content: '';
-  position: absolute;
-  border: 1px solid rgba(216, 203, 178, 0.37);
-  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  box-shadow: inset 0 0 0 1px rgba(216, 203, 178, 0.32), 0 16px 28px rgba(30, 45, 59, 0.22);
 }
 
 .hero-media::before {
-  inset: 14px 16px auto 16px;
-  height: 95px;
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(216, 203, 178, 0.35);
+  pointer-events: none;
 }
 
 .hero-media::after {
-  inset: auto 16px 14px 16px;
-  height: 76px;
+  content: '';
+  position: absolute;
+  inset: auto -10% -32% 24%;
+  height: 58%;
+  background: radial-gradient(ellipse at center, rgba(194, 94, 60, 0.38), transparent 68%);
+  pointer-events: none;
+}
+
+.hero-media-overlay {
+  position: relative;
+  z-index: 2;
+  margin: 0.95rem;
+  padding: 1rem 1rem 0.85rem;
+  border-radius: 14px;
+  border: 1px solid rgba(216, 203, 178, 0.42);
+  background: linear-gradient(140deg, rgba(244, 233, 220, 0.2), rgba(244, 233, 220, 0.08));
+  backdrop-filter: blur(2px);
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.hero-media-logo {
+  width: clamp(94px, 18vw, 136px);
+  aspect-ratio: 1;
+  border-radius: 20px;
+  object-fit: contain;
+  padding: 0.5rem;
+  background: rgba(244, 233, 220, 0.94);
+  border: 1px solid rgba(216, 203, 178, 0.68);
+  box-shadow: 0 12px 22px rgba(30, 45, 59, 0.28);
+}
+
+.hero-media-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.02rem, 1.4vw, 1.28rem);
+  letter-spacing: 0.03em;
+  color: #f8efe2;
 }
 
 .hero-copy {
-  padding: clamp(1.2rem, 3vw, 2.4rem) clamp(1rem, 2.8vw, 2.2rem);
+  padding: clamp(1.6rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2.8rem);
   display: grid;
   align-content: center;
-  gap: 0.4rem;
-  background: linear-gradient(140deg, rgba(244, 233, 220, 0.92), rgba(216, 203, 178, 0.52));
-  border-radius: 16px;
+  justify-items: center;
+  text-align: center;
+  gap: 0.68rem;
+  width: 100%;
+  background: linear-gradient(138deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.58));
+  border-radius: 18px;
+  border: 1px solid rgba(194, 94, 60, 0.19);
+  box-shadow: inset 0 0 0 1px rgba(216, 203, 178, 0.4);
 }
 
 .hero-kicker {
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #6e7f8f;
-  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  color: #5a6f80;
+  font-size: clamp(0.72rem, 0.85vw, 0.84rem);
   font-weight: 600;
+  max-width: 56ch;
+  line-height: 1.5;
 }
 
 .hero-copy h1 {
-  font-size: clamp(3.1rem, 6.5vw, 5.5rem);
+  font-size: clamp(3.5rem, 7.2vw, 6.1rem);
   color: var(--blue);
-  letter-spacing: 0.055em;
+  letter-spacing: 0.08em;
   line-height: 0.9;
-  margin: 0.1rem 0 0.18rem;
+  font-weight: 700;
+  margin: 0.12rem 0 0.24rem;
+  text-wrap: balance;
 }
 
 .hero-copy p {
-  max-width: 33ch;
-  font-size: clamp(1rem, 1.6vw, 1.3rem);
-  line-height: 1.42;
-  color: #2f4659;
+  max-width: 44ch;
+  font-size: clamp(1.05rem, 1.5vw, 1.32rem);
+  line-height: 1.5;
+  color: #2c4458;
 }
 
 .home-highlights {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.8rem;
-  padding: 0 1rem 1rem;
-  margin-top: -0.42rem;
+  gap: 0.78rem;
+  padding: 0.72rem 1rem 1rem;
+  margin-top: 0;
+  border-top: 1px solid rgba(194, 94, 60, 0.18);
+  background: linear-gradient(180deg, rgba(244, 233, 220, 0.44), rgba(244, 233, 220, 0.08));
 }
 
 .highlight-card {
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 0.9rem 0.75rem;
+  padding: 0.95rem 0.78rem;
   text-align: center;
-  background: rgba(244, 233, 220, 0.9);
+  min-height: 122px;
+  display: grid;
+  align-content: center;
+  background: rgba(244, 233, 220, 0.92);
   box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.12), 0 8px 18px rgba(30, 45, 59, 0.08);
 }
 
@@ -554,6 +606,22 @@ footer {
   }
 
   .page-hero::before { min-height: 180px; }
+
+  .hero-copy {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .hero-kicker,
+  .hero-copy p {
+    max-width: 100%;
+  }
+
+  .hero-media-overlay {
+    justify-items: start;
+    text-align: left;
+  }
+
   .page-hero h1,
   .page-hero p { grid-column: 1; padding: 0 1rem 1rem; }
 }
