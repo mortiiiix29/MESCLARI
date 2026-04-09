@@ -378,6 +378,7 @@ footer {
   font-size: clamp(1.02rem, 1.3vw, 1.24rem);
   letter-spacing: 0.03em;
   color: #364f63;
+
 }
 
 .hero-copy {
@@ -596,6 +597,7 @@ footer {
   .hero-media-caption {
     text-align: left;
   }
+
 
   .page-hero h1,
   .page-hero p { grid-column: 1; padding: 0 1rem 1rem; }
