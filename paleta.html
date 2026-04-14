@@ -11,10 +11,14 @@
   </head>
   <body>
     <nav class="nav">
-      <a href="index.html" class="brand-mini" aria-label="MESCLARI inici">
-        <img src="imaguenes i videos/logo.png" alt="Logotip MESCLARI" class="nav-logo" />
-        <span class="brand-name">MESCLARI</span>
-      </a>
+      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
+        <span class="brand-switch-track">
+          <span class="brand-mini" aria-hidden="true">
+            <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
+            <span class="brand-name">MESCLARI</span>
+          </span>
+        </span>
+      </button>
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
       <ul id="menu" class="menu">
         <li><a href="index.html">Inici</a></li>
@@ -24,7 +28,7 @@
         <li><a href="gestio-organitzacio.html">Gestió</a></li>
         <li><a href="seguretat-sostenibilitat.html">Seguretat i sostenibilitat</a></li>
         <li><a href="viabilitat.html">Viabilitat econòmica</a></li>
-        <li><a href="contacte.html">Annexos</a></li>
+        <li class="menu-reforma"><a href="reforma.html">Reforma i números</a></li><li><a href="contacte.html">Annexos</a></li>
       </ul>
     </nav>
     <header class="page-hero">
