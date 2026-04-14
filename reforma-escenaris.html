@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESCLARI · Escenaris i ratios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="reforma-page">
+    <nav class="nav">
+      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="true" aria-label="Desactivar mode reforma i números">
+        <span class="brand-switch-track">
+          <span class="brand-mini" aria-hidden="true">
+            <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
+            <span class="brand-name">MESCLARI</span>
+          </span>
+        </span>
+      </button>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="reforma.html">Inici reforma</a></li>
+        <li><a href="reforma-pressupost.html">Pressupost detallat</a></li>
+        <li><a href="reforma-escenaris.html" aria-current="page">Escenaris i ratios</a></li>
+        <li><a href="contacte.html">Annexos tècnics</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <h1>Escenaris i ratios</h1>
+      <p>Aquesta pantalla funciona com subpàgina de defensa: sensibilitat de vendes, punt d'equilibri i marge operatiu.</p>
+    </header>
+
+    <section class="section">
+      <div class="section-shell">
+        <header class="section-header"><h2>Escenaris anuals</h2></header>
+        <div class="grid three">
+          <article class="card"><h3>Conservador</h3><p>Facturació: 398.000 € · EBITDA: 9,8% · punt mort al mes 15.</p></article>
+          <article class="card"><h3>Base</h3><p>Facturació: 462.000 € · EBITDA: 14,6% · punt mort al mes 11.</p></article>
+          <article class="card"><h3>Òptim</h3><p>Facturació: 528.000 € · EBITDA: 18,2% · punt mort al mes 9.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-shell">
+        <header class="section-header"><h2>Ratios clau de defensa</h2></header>
+        <div class="grid two">
+          <article class="card"><h4>Food cost objectiu</h4><p>31% en escenari base, amb tolerància +/- 2 punts segons temporada.</p></article>
+          <article class="card"><h4>Cost de personal</h4><p>34% en fase inicial i estabilització al 31% a partir del segon any.</p></article>
+          <article class="card"><h4>Ticket mig</h4><p>56 € menú degustació migdia i 82 € servei nit amb maridatge parcial.</p></article>
+          <article class="card"><h4>Fons de maniobra</h4><p>Cobertura prevista per 5,2 mesos d'operació en escenari conservador.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <footer><p><strong>MESCLARI</strong> · Escenaris i viabilitat per defensa.</p></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -4,14 +4,17 @@ const brandSwitch = document.getElementById('brandSwitch');
 
 const REF_MODE_KEY = 'mesclari-reforma-mode';
 const REF_MODE_ON = 'on';
-const reformaPage = 'reforma.html';
 const defaultPage = 'index.html';
+const reformaPages = new Set(['reforma.html', 'reforma-pressupost.html', 'reforma-escenaris.html']);
+const reformaHomePage = 'reforma.html';
 
 const getCurrentPageName = () => {
   const path = window.location.pathname;
   const lastSegment = path.split('/').pop();
   return lastSegment || defaultPage;
 };
+
+const isReformaPage = () => reformaPages.has(getCurrentPageName());
 
 const readModeFromStorage = () => {
   try {
@@ -34,10 +37,7 @@ const setReformaMode = (enabled) => {
 
   if (brandSwitch) {
     brandSwitch.setAttribute('aria-checked', String(enabled));
-    brandSwitch.setAttribute(
-      'aria-label',
-      enabled ? 'Desactivar mode reforma i números' : 'Activar mode reforma i números',
-    );
+    brandSwitch.setAttribute('aria-label', enabled ? 'Desactivar mode reforma i números' : 'Activar mode reforma i números');
   }
 };
 
@@ -48,9 +48,14 @@ const goToPage = (targetPage) => {
 };
 
 if (brandSwitch) {
-  const isStoredOn = readModeFromStorage();
-  const isReformaPage = getCurrentPageName() === reformaPage;
-  setReformaMode(isStoredOn || isReformaPage);
+  const storedModeOn = readModeFromStorage();
+  const onReformaPage = isReformaPage();
+
+  setReformaMode(storedModeOn || onReformaPage);
+
+  if (storedModeOn && !onReformaPage) {
+    goToPage(reformaHomePage);
+  }
 
   brandSwitch.addEventListener('click', () => {
     const willEnable = !document.body.classList.contains('reforma-mode');
@@ -58,11 +63,11 @@ if (brandSwitch) {
     writeModeToStorage(willEnable);
 
     if (willEnable) {
-      goToPage(reformaPage);
+      goToPage(reformaHomePage);
       return;
     }
 
-    if (getCurrentPageName() === reformaPage) {
+    if (isReformaPage()) {
       goToPage(defaultPage);
     }
   });
