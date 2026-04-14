@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESCLARI · Reforma i números</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="reforma-page">
+    <nav class="nav">
+      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="true" aria-label="Desactivar mode reforma i números">
+        <span class="brand-switch-track">
+          <span class="brand-mini" aria-hidden="true">
+            <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
+            <span class="brand-name">MESCLARI</span>
+          </span>
+        </span>
+      </button>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="reforma.html" aria-current="page">Inici reforma</a></li>
+        <li><a href="reforma-pressupost.html">Pressupost detallat</a></li>
+        <li><a href="reforma-escenaris.html">Escenaris i ratios</a></li>
+        <li><a href="contacte.html">Annexos tècnics</a></li>
+      </ul>
+    </nav>
+
+    <header class="page-hero">
+      <h1>Mode Reforma · Inici</h1>
+      <p>Aquest és l'index de la web de defensa numèrica: pressupost, escenaris, riscos i viabilitat operativa.</p>
+    </header>
+
+    <main class="section">
+      <div class="section-shell">
+        <header class="section-header">
+          <h2>Quadre ràpid de reforma</h2>
+          <p>Aquesta vista separa la part narrativa general i concentra les decisions econòmiques clau del projecte.</p>
+        </header>
+        <div class="kpi-band">
+          <article class="kpi"><strong>78.000 €</strong><span>adequació inicial de local i interiorisme.</span></article>
+          <article class="kpi"><strong>24.000 €</strong><span>equipament de cuina i fred.</span></article>
+          <article class="kpi"><strong>12.500 €</strong><span>menatge, servei i posada a punt de sala.</span></article>
+          <article class="kpi"><strong>8.400 €</strong><span>llicències, legalització i certificacions.</span></article>
+          <article class="kpi"><strong>122.900 €</strong><span>inversió global estimada de reforma.</span></article>
+        </div>
+      </div>
+    </main>
+
+    <section class="section">
+      <div class="section-shell">
+        <header class="section-header"><h2>Navegació de defensa (web reforma)</h2></header>
+        <div class="nav-grid">
+          <a class="nav-card" href="reforma-pressupost.html"><strong>Pressupost</strong><span>CAPEX, OPEX i desglossament per partides.</span></a>
+          <a class="nav-card" href="reforma-escenaris.html"><strong>Escenaris</strong><span>Punt mort, sensibilitat i escenaris de venda.</span></a>
+          <a class="nav-card" href="contacte.html"><strong>Annexos</strong><span>Documentació i suport per preguntes del tribunal.</span></a>
+          <a class="nav-card" href="index.html"><strong>Web general</strong><span>Només si desactives el switch del logo superior.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer><p><strong>MESCLARI</strong> · Mòdul numèric separat per a defensa de reforma.</p></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
