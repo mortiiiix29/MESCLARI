@@ -617,6 +617,33 @@ footer {
   text-align: center;
 }
 
+
+
+#inici,
+#que-es,
+#per-que-te-sentit,
+#espai-atmosfera,
+#oferta-gastronomica,
+#sala-maridatge,
+#funciona-de-veritat,
+#defensable,
+#lectura-general,
+#pressupost-inicial,
+#costos-mensuals,
+#ingressos-estacionalitat,
+#punt-mort,
+#rendibilitat-oferta,
+#tresoreria,
+#veredicte {
+  scroll-margin-top: 7rem;
+}
+
+.home-intro {
+  text-align: center;
+  color: #3c5568;
+  margin: -0.35rem auto 1rem;
+  max-width: 78ch;
+}
 @media (max-width: 1080px) {
   .grid.four,
   .grid.three,
