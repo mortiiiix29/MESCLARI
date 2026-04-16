@@ -640,8 +640,29 @@ footer {
   font-size: 1.02rem;
 }
 
+.home-media-figure {
+  margin: 1rem 0 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.home-media-image {
+  width: 100%;
+  min-height: 164px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-media-figure figcaption {
+  padding: 0.55rem 0.8rem 0.62rem;
+  text-align: center;
+  color: #4f6476;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+}
+
 .home-media-slot-wide {
-  margin-top: 1rem;
   min-height: 164px;
 }
 
