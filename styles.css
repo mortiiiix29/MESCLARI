@@ -492,6 +492,25 @@ footer {
   text-wrap: balance;
 }
 
+.hero-tag {
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #5f7282;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.45rem, 2.35vw, 2.2rem);
+  color: #1e2d3b;
+  line-height: 1.12;
+  max-width: 20ch;
+}
+
+.hero-positioning {
+  font-weight: 600;
+}
+
 .hero-copy p {
   max-width: 44ch;
   font-size: clamp(1.05rem, 1.5vw, 1.32rem);
@@ -549,6 +568,7 @@ footer {
 }
 
 .home-grid { display: grid; gap: 1rem; }
+.home-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .home-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .home-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
@@ -570,6 +590,81 @@ footer {
 
 .home-card p,
 .nav-home-card p { color: #2d4458; }
+
+.home-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.34rem;
+  color: #2d4458;
+}
+
+.home-section-head {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.home-section-kicker {
+  color: #5f7282;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.home-editorial {
+  align-items: stretch;
+}
+
+.home-media-slot {
+  border: 1px dashed rgba(30, 45, 59, 0.34);
+  border-radius: 14px;
+  min-height: 230px;
+  background: linear-gradient(160deg, rgba(244, 233, 220, 0.76), rgba(216, 203, 178, 0.46));
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 0.22rem;
+  padding: 1rem;
+}
+
+.home-media-slot span {
+  color: #2f4658;
+  font-weight: 600;
+}
+
+.home-media-slot small {
+  font-family: 'Cormorant Garamond', serif;
+  color: #4f6476;
+  font-size: 1.02rem;
+}
+
+.home-media-figure {
+  margin: 1rem 0 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.home-media-image {
+  width: 100%;
+  min-height: 164px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-media-figure figcaption {
+  padding: 0.55rem 0.8rem 0.62rem;
+  text-align: center;
+  color: #4f6476;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+}
+
+.home-media-slot-wide {
+  min-height: 164px;
+}
 
 .pillar {
   border-color: rgba(194, 94, 60, 0.28);
@@ -642,6 +737,13 @@ footer {
   padding-top: 0.88rem;
   color: #3f576b;
   text-align: center;
+}
+
+.home-closure {
+  text-align: center;
+  display: grid;
+  gap: 0.75rem;
+  place-items: center;
 }
 
 
