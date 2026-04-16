@@ -74,6 +74,11 @@ if (brandSwitch) {
 }
 
 if (menuBtn && menu) {
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  };
+
   menuBtn.addEventListener('click', () => {
     const isOpen = menu.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', String(isOpen));
@@ -81,8 +86,22 @@ if (menuBtn && menu) {
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
+      closeMenu();
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    const clickedInsideMenu = menu.contains(event.target);
+    const clickedMenuButton = menuBtn.contains(event.target);
+
+    if (!clickedInsideMenu && !clickedMenuButton) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
   });
 }
