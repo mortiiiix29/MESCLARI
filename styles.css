@@ -1497,7 +1497,7 @@ footer {
 
 .vg-pillars-layout {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.9rem;
 }
 
@@ -1509,7 +1509,7 @@ footer {
 }
 
 .vg-pillar {
-  grid-column: span 2;
+  grid-column: span 1;
   border: 1px solid var(--line);
   border-radius: 15px;
   padding: 0.95rem;
@@ -1520,7 +1520,7 @@ footer {
 }
 
 .vg-pillar.main {
-  grid-column: span 3;
+  grid-column: span 1;
   background:
     radial-gradient(circle at 84% 16%, rgba(194, 94, 60, 0.21), transparent 42%),
     linear-gradient(160deg, rgba(30, 45, 59, 0.93), rgba(56, 78, 98, 0.82));
