@@ -133,6 +133,24 @@
         color: #2f4658;
       }
 
+      .key-lines {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.75rem;
+      }
+
+      .key-lines span {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.28);
+        background: rgba(194, 94, 60, 0.1);
+        color: #734633;
+        padding: 0.24rem 0.7rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
       .pillars-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -230,12 +248,6 @@
         font-size: 1.08rem;
       }
 
-      .pair-card p {
-        margin-top: 0.2rem;
-        color: #324a5e;
-        font-size: 0.92rem;
-      }
-
       .translation-grid {
         display: grid;
         gap: 0.8rem;
@@ -293,12 +305,19 @@
       }
 
       .identitat-closure p {
-        font-family: 'Cormorant Garamond', serif;
         color: var(--blue);
-        font-size: clamp(1.55rem, 3.1vw, 2.4rem);
-        line-height: 1.15;
-        max-width: 28ch;
+        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        line-height: 1.45;
+        max-width: 70ch;
         margin: 0 auto;
+      }
+
+      .identitat-closure strong {
+        display: block;
+        margin-top: 0.75rem;
+        font-family: 'Cormorant Garamond', serif;
+        color: var(--terracotta);
+        font-size: clamp(1.35rem, 2.7vw, 2rem);
       }
 
       @media (max-width: 1060px) {
@@ -365,16 +384,16 @@
       <section class="identitat-section" id="hero-identitat">
         <div class="identitat-hero">
           <div class="identitat-hero-copy">
-            <span class="identitat-kicker">01 · Hero / Obertura</span>
-            <h1>Identitat del projecte</h1>
-            <p><strong>L’univers MESCLARI</strong> neix de la cuina mediterrània contemporània amb una mirada sensible: producte, calma i criteri en cada decisió.</p>
-            <p>Una marca gastronòmica que connecta precisió i proximitat per construir una experiència elegant, creïble i viva.</p>
+            <span class="identitat-kicker">Identitat del projecte</span>
+            <h1>L’univers MESCLARI</h1>
+            <p>MESCLARI es defineix per una manera concreta d’entendre la restauració gastronòmica contemporània: una proposta on producte, sala, atmosfera i relat de marca comparteixen una mateixa direcció.</p>
+            <p>Més que una identitat visual, MESCLARI construeix una experiència amb caràcter propi. La seva força neix de la coherència entre el que vol transmetre i la manera com aquesta idea es converteix en espai, servei i proposta gastronòmica.</p>
           </div>
-          <!-- HERO MEDIA PLACEHOLDER: substituir aquest contenidor per una imatge 16:10 o vídeo curt quan hi hagi material final -->
+          <!-- VISUAL PRINCIPAL: substituir aquest contenidor per imatge 16:10 / 4:3 o vídeo curt quan hi hagi material final -->
           <figure class="identitat-media" aria-label="Espai reservat per imatge o vídeo principal del projecte">
             <figcaption class="media-placeholder">
-              <strong>Hero media · 16:10 / 4:3</strong>
-              <span>Composició visual principal de marca (taula, llum, gest de cuina o recorregut d’espai).</span>
+              <strong>Visual principal · 16:10 / 4:3</strong>
+              <span>Una identitat que es llegeix en l’espai, en el ritme i en la manera d’acollir.</span>
             </figcaption>
           </figure>
         </div>
@@ -382,80 +401,85 @@
 
       <section class="identitat-section" id="que-es-mesclari">
         <header class="identitat-head">
-          <span class="identitat-kicker">02 · Què és MESCLARI</span>
-          <h2>Definició i intenció</h2>
+          <span class="identitat-kicker">Què és MESCLARI</span>
+          <h2>Definició i posicionament</h2>
         </header>
         <div class="editorial-two">
           <article class="editorial-piece">
-            <h3>Proposta</h3>
-            <p>MESCLARI és un projecte de restauració que interpreta el territori amb llenguatge actual: cuina essencial, tècnica mesurada i relat clar. No busca l’efecte puntual, sinó una proposta sòlida, recognoscible i coherent en el temps.</p>
+            <h3>Una proposta integral</h3>
+            <p>MESCLARI és una proposta gastronòmica contemporània de gamma alta que entén la restauració com una experiència completa i cohesionada. El projecte no es limita a una oferta culinària concreta, sinó que desenvolupa una manera pròpia d’acollir, servir i construir valor percebut a través del conjunt.</p>
           </article>
           <article class="editorial-piece">
-            <h3>Personalitat</h3>
-            <p>Vol fer sentir benestar, confiança i curiositat serena. Aspira a ocupar l’espai de les marques que combinen cultura gastronòmica i calidesa humana, amb un caràcter diferencial: refinat sense distància.</p>
+            <h3>Una marca amb intenció</h3>
+            <p>La seva identitat combina exigència gastronòmica, sensibilitat de sala i una atmosfera acurada, amb la voluntat de generar una experiència elegant, propera i amb personalitat. MESCLARI no busca impactar des de l’excés, sinó des de l’equilibri entre qualitat, caràcter i coherència.</p>
+            <div class="key-lines" aria-label="Claus de posicionament">
+              <span>Hospitalitat amb intenció</span>
+              <span>Caràcter sense artifici</span>
+              <span>Gamma alta amb criteri</span>
+            </div>
           </article>
         </div>
       </section>
 
       <section class="identitat-section" id="pilars-identitat">
         <header class="identitat-head">
-          <span class="identitat-kicker">03 · Pilars</span>
-          <h2>Pilars de la identitat</h2>
+          <span class="identitat-kicker">Pilars de la identitat</span>
+          <h2>Quatre eixos que sostenen el projecte</h2>
         </header>
         <div class="pillars-grid">
           <article class="pillar-card">
             <span class="num">01</span>
             <h3>Producte i territori</h3>
-            <p>Selecció de temporada, lectura local i respecte pel ritme natural del producte com a base de credibilitat culinària.</p>
+            <p>La identitat de MESCLARI parteix d’un respecte clar pel producte i pel context on s’insereix. La selecció, el tractament i la lectura gastronòmica de la matèria primera busquen qualitat, temporalitat i coherència amb la proposta.</p>
           </article>
           <article class="pillar-card">
             <span class="num">02</span>
             <h3>Sala i experiència</h3>
-            <p>Servei atent, timing net i narrativa compartida perquè cada taula se senti acompanyada, no dirigida.</p>
+            <p>La sala no actua com un simple suport del menjar, sinó com una part activa de l’experiència. El ritme, l’atenció i la manera de relacionar-se amb el client reforcen la percepció global del projecte.</p>
           </article>
           <article class="pillar-card">
             <span class="num">03</span>
             <h3>Espai i atmosfera</h3>
-            <p>Llum càlida, materials honestos i composició mediterrània contemporània per generar confort i identitat visual.</p>
+            <p>L’espai de MESCLARI expressa la mateixa coherència que la proposta gastronòmica. Materials, llum, distribució i ambient contribueixen a construir una experiència refinada, agradable i recognoscible.</p>
           </article>
           <article class="pillar-card">
             <span class="num">04</span>
             <h3>Caràcter de marca</h3>
-            <p>Una veu pròpia: precisa però propera, amb criteri estètic i discurs consistent en tots els punts de contacte.</p>
+            <p>MESCLARI es construeix com una marca amb caràcter, capaç de projectar una identitat sòlida sense recórrer a excessos formals. La seva diferència neix de la coherència entre allò que promet i allò que realment ofereix.</p>
           </article>
         </div>
       </section>
 
       <section class="identitat-section" id="univers-sensorial">
         <header class="identitat-head">
-          <span class="identitat-kicker">04 · Univers sensorial</span>
-          <h2>Com se sent MESCLARI</h2>
-          <p class="identitat-intro">La identitat es percep en allò tangible: la llum, la textura, el ritme i la manera de ser atesos.</p>
+          <span class="identitat-kicker">Univers sensorial</span>
+          <h2>La forma perceptible de la identitat</h2>
+          <p class="identitat-intro">La identitat de MESCLARI no es defineix només pel que s’explica, sinó també pel que es percep. L’atmosfera, els materials i la manera com es viu l’espai formen part essencial del projecte.</p>
         </header>
         <div class="sensorial-layout">
           <div class="sensorial-grid">
             <article class="sensorial-item">
               <h3>Llum</h3>
-              <p>Llum natural i càlida que afavoreix lectura de plats, conversa i profunditat visual sense estridències.</p>
+              <p>Una llum càlida, controlada i equilibrada, pensada per reforçar la calma, la lectura del plat i la qualitat percebuda de l’espai.</p>
             </article>
             <article class="sensorial-item">
               <h3>Materials</h3>
-              <p>Fusta, ceràmica, tèxtils i superfícies minerals en equilibri: tacte mediterrani amb acabat contemporani.</p>
+              <p>Fustes, teixits, textures i superfícies que transmeten elegància sense fredor, amb una lectura contemporània i acollidora.</p>
             </article>
             <article class="sensorial-item">
-              <h3>Música / ritme</h3>
-              <p>Paisatge sonor discret que acompanya el servei i respecta el tempo de cada moment de la sala.</p>
+              <h3>Ritme</h3>
+              <p>Un ambient que evita la pressa i afavoreix una experiència ordenada, fluida i agradable de principi a fi.</p>
             </article>
             <article class="sensorial-item">
-              <h3>Tracte humà</h3>
-              <p>To professional i pròxim: llenguatge clar, escolta activa i hospitalitat que transmet seguretat.</p>
+              <h3>Tracte</h3>
+              <p>Una manera d’atendre propera i professional, on el servei acompanya sense envair i dona sentit a l’experiència global.</p>
             </article>
           </div>
-          <!-- SUPPORT MEDIA PLACEHOLDER: espai per imatge secundària 4:5 o 16:9 del llenguatge sensorial -->
+          <!-- VISUAL SECUNDARI: espai per imatge 4:5 o 16:9 de llenguatge sensorial -->
           <figure class="support-media" aria-label="Espai reservat per imatge secundària de suport">
             <figcaption class="media-placeholder">
-              <strong>Imatge de suport · 4:5 / 16:9</strong>
-              <span>Detall de materials, llum de sala o gest de servei coherent amb l’univers sensorial.</span>
+              <strong>Visual de suport · 4:5 / 16:9</strong>
+              <span>Una atmosfera pensada per sostenir l’experiència.</span>
             </figcaption>
           </figure>
         </div>
@@ -463,47 +487,40 @@
 
       <section class="identitat-section" id="personalitat-marca">
         <header class="identitat-head">
-          <span class="identitat-kicker">05 · Personalitat de marca</span>
-          <h2>Tensions que defineixen el caràcter</h2>
+          <span class="identitat-kicker">Personalitat de marca</span>
+          <h2>MESCLARI en vuit tensions complementàries</h2>
+          <p class="identitat-intro">MESCLARI projecta una personalitat definida per l’equilibri entre refinament, calidesa i credibilitat.</p>
         </header>
         <div class="personality-matrix">
-          <article class="pair-card">
-            <strong>Elegant però propera</strong>
-            <p>Refinament formal sense fredor; hospitalitat que acull des del primer contacte.</p>
-          </article>
-          <article class="pair-card">
-            <strong>Contemporània però càlida</strong>
-            <p>Línia actual i neta amb una atmosfera humana, amable i mediterrània.</p>
-          </article>
-          <article class="pair-card">
-            <strong>Tècnica però natural</strong>
-            <p>Precisió culinària al servei del sabor, evitant artificis i lectures excessivament complexes.</p>
-          </article>
-          <article class="pair-card">
-            <strong>Diferencial però creïble</strong>
-            <p>Una proposta singular que es defensa per coherència real, no per discurs decoratiu.</p>
-          </article>
+          <article class="pair-card"><strong>Elegant però propera</strong></article>
+          <article class="pair-card"><strong>Contemporània però càlida</strong></article>
+          <article class="pair-card"><strong>Tècnica però natural</strong></article>
+          <article class="pair-card"><strong>Cuidada però fluida</strong></article>
+          <article class="pair-card"><strong>Diferencial però creïble</strong></article>
+          <article class="pair-card"><strong>Ambiciosa però mesurada</strong></article>
+          <article class="pair-card"><strong>Gastronòmica però hospitalària</strong></article>
+          <article class="pair-card"><strong>Sofisticada però habitable</strong></article>
         </div>
       </section>
 
       <section class="identitat-section" id="traduccio-identitat">
         <header class="identitat-head">
-          <span class="identitat-kicker">06 · Traducció al projecte</span>
-          <h2>De la idea a la decisió concreta</h2>
-          <p class="identitat-intro">La identitat de MESCLARI no és un relat paral·lel: és el criteri que ordena cuina, sala i espai perquè tot parli el mateix llenguatge.</p>
+          <span class="identitat-kicker">Traducció de la identitat al projecte</span>
+          <h2>Quan el discurs es converteix en operativa real</h2>
+          <p class="identitat-intro">La identitat de MESCLARI no es queda en el discurs. Es concreta en decisions reals que afecten la manera de cuinar, de servir i de construir l’espai.</p>
         </header>
 
         <div class="translation-grid">
           <article class="translation-card">
             <div class="translation-copy">
               <h3>A la cuina</h3>
-              <p>El discurs de territori es converteix en carta flexible, temporalitat real i tècniques de cocció que potencien producte i netedat de sabor. Coherència entre promesa i plat servit.</p>
+              <p>La identitat de MESCLARI es tradueix en una proposta culinària pensada amb criteri, sensibilitat estètica i respecte pel producte. La cuina no es planteja com un exercici d’exhibició, sinó com una expressió coherent del nivell, el ritme i la personalitat del restaurant.</p>
             </div>
-            <!-- SECONDARY MEDIA PLACEHOLDER #1: substituir per imatge de cuina o emplatat 16:9 -->
+            <!-- VISUAL SECUNDARI #1: substituir per imatge de cuina o emplatat 16:9 -->
             <figure class="media-mini" aria-label="Espai reservat per imatge de cuina">
               <figcaption class="media-placeholder">
                 <strong>Suport visual · Cuina</strong>
-                <span>Procés, emplatat o detall de producte.</span>
+                <span>El detall com a llenguatge del projecte.</span>
               </figcaption>
             </figure>
           </article>
@@ -511,13 +528,13 @@
           <article class="translation-card">
             <div class="translation-copy">
               <h3>A la sala</h3>
-              <p>La personalitat propera es tradueix en un servei amb criteri: recomanació precisa, explicació breu i atenció contínua sense interrupció. Experiència cuidada i fluida.</p>
+              <p>En sala, la identitat es converteix en hospitalitat, ritme i lectura del detall. El servei acompanya l’experiència amb seguretat i naturalitat, reforçant la percepció de qualitat sense caure en rigidesa ni artifici.</p>
             </div>
-            <!-- SECONDARY MEDIA PLACEHOLDER #2: substituir per imatge de sala 4:5 o 16:9 -->
+            <!-- VISUAL SECUNDARI #2: substituir per imatge de sala 4:5 o 16:9 -->
             <figure class="media-mini" aria-label="Espai reservat per imatge de sala">
               <figcaption class="media-placeholder">
                 <strong>Suport visual · Sala</strong>
-                <span>Interacció de servei, ritme i atmosfera.</span>
+                <span>Identitat, llum i ritme en una mateixa lectura.</span>
               </figcaption>
             </figure>
           </article>
@@ -525,24 +542,25 @@
           <article class="translation-card">
             <div class="translation-copy">
               <h3>A l’espai</h3>
-              <p>El llenguatge de marca es concreta en la materialitat, la il·luminació i la distribució del recorregut. L’espai acompanya el relat gastronòmic i reforça la memòria de marca.</p>
+              <p>L’espai actua com una extensió directa del projecte. La distribució, l’ambientació i els elements materials s’alineen amb la mateixa idea de marca: elegància, confort, coherència i capacitat real de generar una experiència memorable.</p>
             </div>
             <div class="media-mini" aria-hidden="true"></div>
           </article>
         </div>
 
-        <!-- OPTIONAL VIDEO BLOCK: convertir en vídeo curt amb poster si hi ha material; si no, mantenir com a imatge panoràmica/collage -->
+        <!-- BLOC OPCIONAL DE VÍDEO: convertir en vídeo curt amb pòster; si no hi ha material, mantenir com a imatge panoràmica -->
         <figure class="optional-video" aria-label="Bloc opcional per vídeo curt o imatge panoràmica">
           <figcaption class="media-placeholder">
-            <strong>Bloc opcional vídeo / reel</strong>
-            <span>Recorregut visual de 20–40s amb poster frame o, en absència de vídeo, panoràmica editorial.</span>
+            <strong>Vídeo curt / recorregut visual</strong>
+            <span>La forma visible d’una idea coherent.</span>
           </figcaption>
         </figure>
       </section>
 
       <section class="identitat-section identitat-closure" id="tancament-manifest">
-        <span class="identitat-kicker">07 · Tancament</span>
-        <p>MESCLARI no posa una identitat sobre el projecte: construeix el projecte des de la identitat.</p>
+        <span class="identitat-kicker">Tancament / manifest final</span>
+        <p>MESCLARI no es defineix només pel que mostra, sinó per la manera com totes les seves parts avancen en una mateixa direcció. La seva identitat neix d’aquesta coherència: una proposta pensada per ser recordada, però també per ser viscuda amb naturalitat i sentit.</p>
+        <strong>Una identitat construïda des del detall, el criteri i la consistència.</strong>
       </section>
     </main>
 
