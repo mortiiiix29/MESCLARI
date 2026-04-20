@@ -4,11 +4,324 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MESCLARI · EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS</title>
-    <meta name="description" content="EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS · arquitectura multipàgina de MESCLARI." />
+    <meta name="description" content="Estructura institucional de l'equip impulsor de MESCLARI amb jerarquia clara, perfils i encaix funcional." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .equip-page {
+        width: min(1240px, 92vw);
+        margin: 1rem auto 0;
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .equip-section {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(244, 233, 220, 0.86));
+        padding: clamp(1rem, 2.2vw, 1.6rem);
+        box-shadow: 0 12px 22px rgba(30, 45, 59, 0.08);
+      }
+
+      .equip-section h2 {
+        color: #1e2d3b;
+        font-size: clamp(2rem, 3.8vw, 2.8rem);
+      }
+
+      .equip-eyebrow {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #5f7282;
+        margin-bottom: 0.35rem;
+      }
+
+      .equip-lead {
+        color: #2d4558;
+        max-width: 64ch;
+      }
+
+      .equip-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .hero-copy {
+        display: grid;
+        gap: 0.8rem;
+        align-content: center;
+        padding: clamp(0.9rem, 2vw, 1.2rem);
+        border-radius: 14px;
+        background: rgba(244, 233, 220, 0.78);
+        border: 1px solid rgba(194, 94, 60, 0.18);
+      }
+
+      .hero-copy h1 {
+        color: #c25e3c;
+        font-size: clamp(2.2rem, 4.7vw, 3.5rem);
+        line-height: 0.95;
+      }
+
+      .hero-copy p {
+        color: #233849;
+        max-width: 40ch;
+      }
+
+      .media-frame {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(30, 45, 59, 0.22);
+        background:
+          radial-gradient(circle at 20% 20%, rgba(194, 94, 60, 0.16), transparent 45%),
+          radial-gradient(circle at 80% 78%, rgba(110, 139, 116, 0.2), transparent 42%),
+          linear-gradient(165deg, rgba(216, 203, 178, 0.86), rgba(244, 233, 220, 0.7));
+      }
+
+      .media-frame figcaption {
+        padding: 0.55rem 0.8rem 0.7rem;
+        border-top: 1px solid rgba(30, 45, 59, 0.12);
+        color: #3f576c;
+        font-size: 0.82rem;
+      }
+
+      .media-slot {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: #31495d;
+        padding: 0.8rem;
+      }
+
+      .media-slot strong {
+        display: block;
+        color: #1e2d3b;
+      }
+
+      .media-slot span {
+        font-size: 0.82rem;
+        color: #466077;
+      }
+
+      .ratio-16x9 {
+        aspect-ratio: 16 / 9;
+      }
+
+      .ratio-4x5 {
+        aspect-ratio: 4 / 5;
+      }
+
+      .intro-bridge {
+        width: min(820px, 94%);
+        margin: 0 auto;
+        padding: 0.4rem 0;
+      }
+
+      .intro-bridge p {
+        color: #233849;
+        font-size: clamp(1rem, 1.8vw, 1.12rem);
+      }
+
+      .profiles-head {
+        margin-bottom: 0.9rem;
+      }
+
+      .profiles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .profile-card {
+        border: 1px solid rgba(30, 45, 59, 0.16);
+        border-radius: 14px;
+        overflow: hidden;
+        background: rgba(244, 233, 220, 0.93);
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      .profile-content {
+        padding: 0.95rem;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .profile-name {
+        color: #1e2d3b;
+        font-size: 1.45rem;
+      }
+
+      .profile-role {
+        color: #c25e3c;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .profile-sub {
+        color: #233849;
+        font-size: 0.93rem;
+      }
+
+      .profile-mini {
+        color: #516678;
+        font-size: 0.9rem;
+      }
+
+      .profile-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-top: 0.25rem;
+      }
+
+      .profile-tags span {
+        border: 1px solid rgba(194, 94, 60, 0.26);
+        border-radius: 999px;
+        padding: 0.2rem 0.62rem;
+        font-size: 0.76rem;
+        color: #734633;
+        background: rgba(194, 94, 60, 0.08);
+      }
+
+      .profile-link {
+        justify-self: start;
+        margin-top: 0.35rem;
+        color: #1e2d3b;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(30, 45, 59, 0.36);
+        font-size: 0.85rem;
+      }
+
+      .fit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+        position: relative;
+      }
+
+      .fit-grid::after {
+        content: '';
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        top: 50%;
+        border-top: 1px dashed rgba(30, 45, 59, 0.25);
+        z-index: 0;
+      }
+
+      .fit-card {
+        position: relative;
+        z-index: 1;
+        border: 1px solid rgba(30, 45, 59, 0.18);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(244, 233, 220, 0.95);
+      }
+
+      .fit-card h3 {
+        color: #1e2d3b;
+        font-size: 1.26rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .fit-card p {
+        color: #31495d;
+        font-size: 0.92rem;
+      }
+
+      .cred-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 0.9rem;
+      }
+
+      .cred-points {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+      }
+
+      .cred-point {
+        border: 1px solid rgba(110, 139, 116, 0.32);
+        border-radius: 12px;
+        padding: 0.8rem;
+        background: linear-gradient(155deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.52));
+      }
+
+      .cred-point h3 {
+        color: #1e2d3b;
+        font-size: 1.08rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .cred-point p {
+        color: #31495d;
+        font-size: 0.88rem;
+      }
+
+      .closing {
+        text-align: center;
+        padding: clamp(1rem, 2.6vw, 1.4rem);
+      }
+
+      .closing p {
+        color: #233849;
+        max-width: 58ch;
+        margin: 0.3rem auto;
+      }
+
+      .closing a {
+        color: #1e2d3b;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(30, 45, 59, 0.4);
+      }
+
+      @media (max-width: 1080px) {
+        .equip-hero,
+        .cred-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .profiles-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profile-card:nth-child(3) {
+          grid-column: 1 / -1;
+          max-width: 460px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 820px) {
+        .fit-grid::after {
+          display: none;
+        }
+
+        .fit-grid,
+        .cred-points {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .profiles-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-card:nth-child(3) {
+          max-width: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -36,33 +349,169 @@
       </ul>
     </nav>
 
-    <header class="page-hero">
-      <h1>EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS</h1>
-      <p>Presentació professional de l'equip fundador i repartiment real de responsabilitats per àrees clau.</p>
-    </header>
+    <main class="equip-page">
+      <section class="equip-section equip-hero" aria-labelledby="equip-hero-title">
+        <div class="hero-copy">
+          <p class="equip-eyebrow">Equip impulsor</p>
+          <h1 id="equip-hero-title">Les persones que donen forma a MESCLARI</h1>
+          <p>MESCLARI neix d’un impuls compartit: la voluntat de construir una proposta gastronòmica sòlida, amb identitat pròpia i amb capacitat real de convertir-se en un projecte coherent, viable i defensable.</p>
+          <p>L’equip impulsor combina sensibilitats complementàries en cuina, sala i estructura operativa, fent possible una lectura global del projecte i una direcció compartida amb criteri.</p>
+        </div>
+        <figure class="media-frame">
+          <div class="media-slot ratio-16x9" role="img" aria-label="Placeholder de la fotografia principal de l'equip impulsor de MESCLARI.">
+            <div>
+              <strong>FOTO HERO D'EQUIP · 16:9</strong>
+              <span>Fitxer previst: imagenes-y-videos/equip-impulsor-hero.jpg</span>
+            </div>
+          </div>
+          <figcaption>Direcció compartida, projecte comú.</figcaption>
+        </figure>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Qui som</h4>
-            <p>Placeholder per fitxa breu dels integrants i la seva trajectòria rellevant.</p>
+      <section class="intro-bridge" aria-labelledby="equip-intro-title">
+        <p id="equip-intro-title">MESCLARI pren forma des d’un treball compartit, amb perfils complementaris que reforcen la coherència i l’aplicació real del projecte.</p>
+      </section>
+
+      <section class="equip-section" aria-labelledby="perfils-title">
+        <header class="profiles-head">
+          <h2 id="perfils-title">Perfils principals</h2>
+          <p class="equip-lead">Estructura de tres perfils centrals amb retrat, rol i mini-pilars funcionals.</p>
+        </header>
+
+        <div class="profiles-grid">
+          <article class="profile-card">
+            <figure class="media-frame">
+              <div class="media-slot ratio-4x5" role="img" aria-label="Placeholder del retrat individual d'Alex.">
+                <div>
+                  <strong>RETRAT 4:5</strong>
+                  <span>Fitxer previst: imagenes-y-videos/equip-alex.jpg</span>
+                </div>
+              </div>
+            </figure>
+            <div class="profile-content">
+              <h3 class="profile-name">Alex</h3>
+              <p class="profile-role">Direcció de cuina</p>
+              <p class="profile-sub">Visió gastronòmica i criteri de proposta</p>
+              <p class="profile-mini">Alex assumeix la direcció de cuina dins de MESCLARI i dona forma a la base gastronòmica del projecte. La seva aportació se centra en la definició de la proposta culinària, la lògica del producte i la coherència entre identitat, nivell tècnic i experiència final.</p>
+              <div class="profile-tags">
+                <span>Proposta gastronòmica</span>
+                <span>Criteri de producte</span>
+                <span>Direcció culinària</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil d'Alex">Fitxa ampliada (opcional)</span>
+            </div>
           </article>
-          <article class="home-card">
-            <h4>Equip impulsor</h4>
-            <p>Bloc per descriure la complementarietat entre perfils i la visió compartida.</p>
+
+          <article class="profile-card">
+            <figure class="media-frame">
+              <div class="media-slot ratio-4x5" role="img" aria-label="Placeholder del retrat individual de Raül.">
+                <div>
+                  <strong>RETRAT 4:5</strong>
+                  <span>Fitxer previst: imagenes-y-videos/equip-raul.jpg</span>
+                </div>
+              </div>
+            </figure>
+            <div class="profile-content">
+              <h3 class="profile-name">Raúl</h3>
+              <p class="profile-role">Direcció de sala</p>
+              <p class="profile-sub">Experiència de client i lectura del servei</p>
+              <p class="profile-mini">Raúl aporta la mirada de sala i la construcció de l’experiència des del servei. El seu paper és clau en la manera com MESCLARI s’acull, s’explica i es viu, reforçant la importància del ritme, l’atenció al detall i el valor percebut pel client.</p>
+              <div class="profile-tags">
+                <span>Experiència de sala</span>
+                <span>Ritme de servei</span>
+                <span>Valor percebut</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil de Raúl">Fitxa ampliada (opcional)</span>
+            </div>
           </article>
-          <article class="home-card">
-            <h4>Distribució de rols</h4>
-            <p>Estructura de responsabilitats en cuina, sala, direcció i gestió.</p>
-          </article>
-          <article class="home-card">
-            <h4>Lògica de coordinació</h4>
-            <p>Espai per explicar flux de decisions, comunicació interna i lideratge operatiu.</p>
+
+          <article class="profile-card">
+            <figure class="media-frame">
+              <div class="media-slot ratio-4x5" role="img" aria-label="Placeholder del retrat individual de Jaren.">
+                <div>
+                  <strong>RETRAT 4:5</strong>
+                  <span>Fitxer previst: imagenes-y-videos/equip-jaren.jpg</span>
+                </div>
+              </div>
+            </figure>
+            <div class="profile-content">
+              <h3 class="profile-name">Jaren</h3>
+              <p class="profile-role">Coordinació operativa i coherència de conjunt</p>
+              <p class="profile-sub">Estructura, suport i lectura global del projecte</p>
+              <p class="profile-mini">Jaren contribueix a l’articulació general del projecte, connectant les diferents capes de MESCLARI perquè funcionin com un conjunt coherent. La seva aportació ajuda a ordenar processos, reforçar la lògica operativa i donar estabilitat a la proposta des d’una mirada transversal.</p>
+              <div class="profile-tags">
+                <span>Coherència global</span>
+                <span>Estructura operativa</span>
+                <span>Coordinació del projecte</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil de Jaren">Fitxa ampliada (opcional)</span>
+            </div>
           </article>
         </div>
+      </section>
+
+      <section class="equip-section" aria-labelledby="encaix-title">
+        <header class="profiles-head">
+          <h2 id="encaix-title">Complementarietat i repartiment de funcions</h2>
+          <p class="equip-lead">La solidesa de MESCLARI no depèn només de la qualitat individual de cada perfil, sinó de la manera com aquestes aportacions s’ordenen i es reforcen mútuament dins del projecte.</p>
+        </header>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <h3>Concepte gastronòmic</h3>
+            <p>La direcció de cuina defineix la base culinària de la proposta i assegura que l’oferta respongui a la identitat i al nivell del restaurant.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Experiència de sala</h3>
+            <p>La direcció de sala converteix la proposta en una experiència viscuda, ordenant el servei, l’atenció i la relació amb el client.</p>
+          </article>
+          <article class="fit-card">
+            <h3>Coherència operativa</h3>
+            <p>La coordinació global permet connectar idea, execució i estructura, evitant lectures fragmentades i reforçant la credibilitat del conjunt.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="equip-section" aria-labelledby="cred-title">
+        <header class="profiles-head">
+          <h2 id="cred-title">Credibilitat operativa</h2>
+          <p class="equip-lead">MESCLARI es planteja des d’una lògica de treball compartit, amb responsabilitats diferenciades i una lectura realista de com s’ha de sostenir el projecte en la pràctica.</p>
+        </header>
+        <div class="cred-layout">
+          <div class="cred-points">
+            <article class="cred-point">
+              <h3>Responsabilitats definides</h3>
+              <p>Cada membre assumeix una àrea clau del projecte i reforça una lectura clara del seu paper dins del conjunt.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Visió compartida</h3>
+              <p>Les decisions principals responen a una mateixa direcció, evitant contradiccions entre identitat, proposta i funcionament.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Treball coordinat</h3>
+              <p>La complementarietat entre cuina, sala i estructura permet desenvolupar MESCLARI amb més solidesa i més capacitat d’execució.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Projecte defensable</h3>
+              <p>L’equip impulsa una proposta que no es queda en la idea, sinó que es presenta amb criteri, coherència i aplicació real.</p>
+            </article>
+          </div>
+          <figure class="media-frame">
+            <div class="media-slot ratio-16x9" role="img" aria-label="Placeholder d'una imatge de l'equip en procés de treball.">
+              <div>
+                <strong>FOTO DE PROCÉS · OPCIONAL</strong>
+                <span>Fitxer previst: imagenes-y-videos/equip-proces-treball.jpg</span>
+              </div>
+            </div>
+            <figcaption>Coordinació, criteri i desenvolupament real.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="equip-section closing" aria-labelledby="tancament-title">
+        <h2 id="tancament-title">Una base humana coherent amb el projecte</h2>
+        <p>MESCLARI pren forma a partir d’un equip que comparteix una mateixa direcció, però que aporta mirades complementàries per construir una proposta més completa, més sòlida i més creïble.</p>
+        <p>Un projecte amb identitat pròpia, sostingut per una estructura humana coherent.</p>
+        <p><a href="encaix-mercat.html">Continuar amb l'encaix de mercat</a></p>
       </section>
     </main>
 
