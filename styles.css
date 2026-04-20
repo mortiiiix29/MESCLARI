@@ -1373,13 +1373,19 @@ footer {
 }
 
 .vg-executive-note {
+  grid-column: 1 / -1;
   border: 1px solid rgba(194, 94, 60, 0.28);
   border-radius: 14px;
   padding: 0.88rem 0.92rem;
   background: linear-gradient(155deg, rgba(244, 233, 220, 0.93), rgba(216, 203, 178, 0.68));
   box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.1);
   justify-self: center;
+<<<<<<< codex/fix-image-display-on-general-presentation-fb5vj7
+  margin-top: 0.2rem;
+  width: min(100%, 980px);
+=======
   width: min(100%, 760px);
+>>>>>>> MESCLARI-Paguina-web
   text-align: center;
 }
 
