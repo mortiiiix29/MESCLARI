@@ -195,6 +195,14 @@ body.reforma-page .menu-reforma { display: list-item; }
   pointer-events: auto;
 }
 
+/* Fallback de navegació per a la pàgina de visió general (si falla el JS) */
+.visio-page .nav:hover .menu,
+.visio-page .nav:focus-within .menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .section {
   width: min(1240px, 92vw);
   margin: 2rem auto;
