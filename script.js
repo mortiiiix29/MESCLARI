@@ -31,7 +31,7 @@ const isReformaPage = () => reformaPages.has(getCurrentPageName());
 const readModeFromStorage = () => {
   try {
     return window.localStorage.getItem(REF_MODE_KEY) === REF_MODE_ON;
-  } catch {
+  } catch (error) {
     return false;
   }
 };
@@ -39,7 +39,7 @@ const readModeFromStorage = () => {
 const writeModeToStorage = (enabled) => {
   try {
     window.localStorage.setItem(REF_MODE_KEY, enabled ? REF_MODE_ON : 'off');
-  } catch {
+  } catch (error) {
     // Ignore storage failures (private mode / blocked storage)
   }
 };
