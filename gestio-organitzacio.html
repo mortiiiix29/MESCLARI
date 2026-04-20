@@ -6,13 +6,22 @@
     <title>MESCLARI · GESTIÓ I ORGANITZACIÓ</title>
     <meta
       name="description"
-      content="Estructura humana i organització operativa de MESCLARI: organigrama funcional, plantilla base, reforç estacional i responsabilitats clau de cuina, sala i coordinació."
+      content="Estructura humana i organització operativa de MESCLARI: organigrama funcional, plantilla base, reforç estacional, funcions i credibilitat operativa."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
+      .gestio-hero {
+        text-align: center;
+      }
+
+      .gestio-hero .home-intro {
+        width: min(86ch, 100%);
+        margin-inline: auto;
+      }
+
       .organigrama-wrap {
         border: 1px solid var(--line);
         border-radius: 18px;
@@ -21,31 +30,43 @@
       }
 
       .organigrama-top {
-        max-width: 420px;
-        margin: 0 auto 0.9rem;
+        max-width: 460px;
+        margin: 0 auto 1rem;
       }
 
       .organigrama-top .home-card {
         text-align: center;
       }
 
-      .organigrama-grid {
+      .organigrama-grid,
+      .cred-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.85rem;
+        gap: 0.9rem;
       }
 
-      .organigrama-grid .home-card {
+      .organigrama-grid .home-card,
+      .cred-grid .home-card {
         height: 100%;
       }
 
-      @media (max-width: 980px) {
-        .organigrama-grid {
-          grid-template-columns: 1fr;
-        }
+      .subgrid-two {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 0.9rem;
+      }
 
-        .organigrama-top {
-          margin-bottom: 0.6rem;
+      .block-closure {
+        margin-top: 0.85rem;
+        color: #2d4558;
+      }
+
+      @media (max-width: 980px) {
+        .organigrama-grid,
+        .cred-grid,
+        .subgrid-two {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -78,13 +99,14 @@
     </nav>
 
     <main class="home-main vg-main">
-      <header class="home-block vg-opening" id="obertura-gestio">
+      <header class="home-block vg-opening gestio-hero" id="hero-gestio">
         <div class="home-section-head">
-          <p class="home-section-kicker">Estructura humana i operativa</p>
-          <h1>Gestió i organització</h1>
+          <p class="home-section-kicker">Gestió i organització</p>
+          <h1>L’estructura humana que fa possible MESCLARI</h1>
           <p class="home-intro">
-            Aquesta pàgina recull l'organització funcional de MESCLARI a nivell de personal, coordinació i funcionament
-            real del restaurant, diferenciant clarament el nucli impulsor de la plantilla operativa de servei.
+            MESCLARI es construeix des d’una idea gastronòmica i experiencial clara, però també des d’una organització pensada per funcionar amb coherència,
+            ordre i capacitat real d’execució. Aquesta pàgina recull la base humana del projecte, la seva lògica operativa i la manera com s’articula el
+            treball entre direcció, cuina i sala.
           </p>
         </div>
       </header>
@@ -95,17 +117,17 @@
         </div>
         <div class="home-grid two">
           <article class="home-card">
-            <h4>Equip impulsor (direcció del projecte)</h4>
             <p>
-              L'equip impulsor concentra la direcció estratègica, la visió institucional i el lideratge fundacional de
-              MESCLARI. Aquesta capa es desenvolupa específicament a la pàgina d'Equip impulsor.
+              La solidesa de MESCLARI no depèn únicament del seu concepte, sinó també de la manera com s’organitza l’equip que l’ha de fer possible. Per això,
+              el projecte diferencia entre dues capes complementàries: d’una banda, l’equip impulsor, que defineix la direcció general i pren les decisions
+              estratègiques; de l’altra, la plantilla operativa, que garanteix el funcionament diari del restaurant i la correcta execució del servei.
             </p>
           </article>
           <article class="home-card">
-            <h4>Plantilla operativa (execució diària)</h4>
             <p>
-              La plantilla operativa transforma aquesta direcció en servei real: cuina, sala, suport i coordinació del
-              dia a dia per garantir consistència, ritme i qualitat percebuda.
+              Aquesta distinció permet entendre MESCLARI com una proposta ben estructurada, on lideratge i operativa no es confonen, sinó que es reforcen
+              mútuament. La direcció del projecte marca el criteri, i l’organització del personal transforma aquest criteri en una experiència real, coherent i
+              sostenible.
             </p>
           </article>
         </div>
@@ -114,27 +136,43 @@
       <section class="home-block" id="organigrama-funcional">
         <div class="home-section-head">
           <h2>Organigrama funcional</h2>
-          <p class="home-intro">Esquema funcional de referència per ordenar responsabilitats i flux operatiu intern.</p>
+          <p class="home-intro">
+            MESCLARI es planteja des d’una estructura funcional clara, amb responsabilitats definides i una relació directa entre direcció, cuina, sala i suport
+            operatiu. L’objectiu no és generar una plantilla sobredimensionada, sinó construir un model eficient, coherent amb la gamma del restaurant i capaç
+            d’adaptar-se al ritme real de l’activitat.
+          </p>
         </div>
         <div class="organigrama-wrap">
           <div class="organigrama-top">
             <article class="home-card">
-              <h4>Direcció general de servei</h4>
-              <p>Supervisió global, criteri d'estàndard, priorització operativa i control transversal de l'experiència.</p>
+              <h4>Direcció del projecte</h4>
+              <p>
+                L’equip impulsor assumeix la definició estratègica de MESCLARI i la coordinació general del model. Des d’aquesta base es prenen les decisions
+                relatives a concepte, proposta gastronòmica, experiència de sala, estructura del servei i coherència global del restaurant.
+              </p>
             </article>
           </div>
           <div class="organigrama-grid">
             <article class="home-card">
               <h4>Àrea de cuina</h4>
-              <p>Producció, mise en place, pass i control de qualitat culinària en coordinació amb el ritme de sala.</p>
+              <p>
+                La cuina concentra la producció gastronòmica, la mise en place, el control del producte, l’execució del servei i la coordinació tècnica de les
+                elaboracions. Aquesta àrea ha de garantir qualitat, regularitat, ordre intern i capacitat de resposta durant el passe.
+              </p>
             </article>
             <article class="home-card">
               <h4>Àrea de sala</h4>
-              <p>Acollida, seqüència de servei, narrativa de proposta i atenció personalitzada al client.</p>
+              <p>
+                La sala assumeix l’acollida del client, el ritme del servei, la comunicació de la proposta i la construcció del valor percebut. A MESCLARI, la
+                sala no actua com un complement, sinó com una part essencial de l’experiència final.
+              </p>
             </article>
             <article class="home-card">
               <h4>Suport operatiu</h4>
-              <p>Backoffice funcional, reposició, logística de torn i cobertura de processos de suport al servei.</p>
+              <p>
+                Les tasques de suport inclouen reforç de producció, assistència de sala, ordre del servei, preparació de material, suport a l’office i adaptació
+                de la plantilla en moments d’intensificació de l’activitat. Aquesta capa és especialment important en períodes de major demanda.
+              </p>
             </article>
           </div>
         </div>
@@ -143,20 +181,44 @@
       <section class="home-block" id="plantilla-base">
         <div class="home-section-head">
           <h2>Plantilla base</h2>
-          <p class="home-intro">Configuració ordinària per a funcionament estable en períodes de demanda regular.</p>
+        </div>
+        <div class="home-grid two">
+          <article class="home-card">
+            <p>
+              La plantilla base de MESCLARI respon a una lectura realista de l’activitat ordinària del restaurant. En la seva versió més estable, el projecte es
+              sosté a partir del nucli impulsor, que assumeix les funcions principals de direcció, cuina i sala, permetent mantenir el control del servei,
+              reduir estructura fixa en períodes de menor intensitat i reforçar la coherència del model.
+            </p>
+          </article>
+          <article class="home-card">
+            <p>
+              Aquesta base no es planteja com una solució provisional, sinó com una manera intencionada d’organitzar el restaurant durant la fase de
+              funcionament més continguda. D’aquesta manera, MESCLARI manté una estructura àgil, més controlada i coherent amb una lectura prudent dels costos
+              fixos i de la càrrega operativa.
+            </p>
+          </article>
         </div>
         <div class="home-grid three">
           <article class="home-card">
-            <h4>Estructura reduïda i eficient</h4>
-            <p>Dotació ajustada per garantir qualitat de servei sense sobredimensionar la càrrega estructural.</p>
+            <h4>Direcció de cuina</h4>
+            <p>
+              Responsable de l’oferta gastronòmica, la planificació productiva, el control de matèria primera, l’organització interna de cuina i la supervisió
+              tècnica del servei.
+            </p>
           </article>
           <article class="home-card">
-            <h4>Polivalència controlada</h4>
-            <p>Rols compatibles en moments concrets, mantenint criteri de responsabilitat per àrea funcional.</p>
+            <h4>Direcció de sala</h4>
+            <p>
+              Responsable de l’experiència de client, del ritme del servei, de la coordinació de sala i de la transmissió del relat del restaurant durant el
+              recorregut del comensal.
+            </p>
           </article>
           <article class="home-card">
-            <h4>Continuïtat operativa</h4>
-            <p>Planificació de torns orientada a estabilitat de procés, lectura de reserves i regularitat de servei.</p>
+            <h4>Coordinació global</h4>
+            <p>
+              Responsable d’articular les diferents àrees del projecte, reforçar la coherència operativa del conjunt i donar suport transversal a la implantació
+              del model.
+            </p>
           </article>
         </div>
       </section>
@@ -167,20 +229,36 @@
         </div>
         <div class="home-grid two">
           <article class="home-card">
-            <h4>Ampliació temporal de plantilla</h4>
             <p>
-              En pics de demanda, MESCLARI amplia l'estructura operativa amb personal de reforç per protegir el nivell
-              de servei i la capacitat de resposta del restaurant.
+              MESCLARI incorpora una lectura estacional clara en la seva organització. El restaurant no necessita exactament la mateixa estructura humana durant
+              tot l’any, i per això el projecte diferencia entre una base operativa més continguda i una ampliació puntual de plantilla en moments de major
+              demanda.
             </p>
           </article>
           <article class="home-card">
-            <h4>Integració i comandament</h4>
             <p>
-              El reforç s'integra sota protocols de coordinació preestablerts, mantenint jerarquia funcional i qualitat
-              d'execució sense trencar el model habitual.
+              Durant els períodes de més intensitat, especialment en temporada alta, caps de setmana forts o serveis amb major volum, la plantilla pot
+              ampliar-se amb perfils de suport tant a cuina com a sala. Aquesta decisió permet absorbir millor el ritme del servei, mantenir la qualitat
+              d’execució i protegir l’experiència del client sense desordenar el funcionament general del restaurant.
             </p>
           </article>
         </div>
+        <div class="subgrid-two">
+          <article class="home-card">
+            <h4>Suport de cuina</h4>
+            <p>
+              Perfils orientats a reforçar preparacions, producció prèvia, suport de passe, manteniment de ritmes i ajuda en moments de major pressió operativa.
+            </p>
+          </article>
+          <article class="home-card">
+            <h4>Suport de sala</h4>
+            <p>
+              Perfils orientats a reforçar el servei, l’atenció en taula, el suport logístic de sala i l’agilitat del recorregut del client durant els serveis
+              amb més intensitat.
+            </p>
+          </article>
+        </div>
+        <p class="block-closure">Aquesta ampliació no es planteja com una estructura permanent, sinó com una resposta lògica i controlada a les necessitats reals del negoci.</p>
       </section>
 
       <section class="home-block" id="funcions-responsabilitats">
@@ -189,27 +267,85 @@
         </div>
         <div class="home-grid three">
           <article class="home-card">
-            <h4>Cuina</h4>
-            <p>Planificació de producció, execució de carta, control de partida i criteri tècnic de qualitat de producte.</p>
+            <h4>A la cuina</h4>
+            <p>
+              La cuina de MESCLARI ha de funcionar amb criteri, ordre i previsió. Les seves responsabilitats principals inclouen la planificació de producció,
+              la preparació prèvia del servei, el control de qualitat, la correcta execució de plats, la gestió del producte i la coordinació tècnica durant el
+              passe. També incorpora una lectura rigorosa de neteja, seguretat alimentària i ús eficient dels recursos.
+            </p>
           </article>
           <article class="home-card">
-            <h4>Sala</h4>
-            <p>Conducció del servei, ritme d'experiència, gestió de taules i transmissió del relat gastronòmic.</p>
+            <h4>A la sala</h4>
+            <p>
+              La sala és responsable de convertir la proposta gastronòmica en una experiència completa. Això implica acollir, explicar, servir, marcar ritmes i
+              construir una relació coherent amb el client. La seva funció no és només operativa, sinó també interpretativa: la sala tradueix el nivell del
+              restaurant en tracte, recorregut i valor percebut.
+            </p>
           </article>
           <article class="home-card">
-            <h4>Coordinació general</h4>
-            <p>Enllaç cuina-sala, control de torn, resolució d'incidències i alineació de l'operativa amb els estàndards MESCLARI.</p>
+            <h4>En la coordinació general</h4>
+            <p>
+              La coordinació general és la capa que connecta les dues àrees i evita que MESCLARI funcioni com un conjunt fragmentat. La seva responsabilitat és
+              assegurar que la direcció gastronòmica, la lògica de sala, el funcionament operatiu i la lectura del model avancin dins d’una mateixa línia.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block" id="logica-organitzativa-model">
+        <div class="home-section-head">
+          <h2>Lògica organitzativa del model</h2>
+        </div>
+        <div class="home-grid two">
+          <article class="home-card">
+            <p>
+              MESCLARI s’organitza sota una idea central: cada persona ha d’ocupar un lloc clar dins del conjunt i cada funció ha de respondre a una necessitat
+              real del projecte. Aquesta lògica evita duplicitats, reforça la llegibilitat interna del model i permet defensar el restaurant com una proposta ben
+              pensada, no només des del concepte, sinó també des de l’execució.
+            </p>
+          </article>
+          <article class="home-card">
+            <p>
+              La gestió i organització del restaurant no es plantegen des d’una estructura teòrica o inflada, sinó des d’una distribució funcional coherent amb
+              la gamma del negoci, amb el seu format de servei i amb una lectura realista del volum de treball.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block" id="credibilitat-operativa">
+        <div class="home-section-head">
+          <h2>Credibilitat operativa</h2>
+          <p class="home-intro">L’estructura humana del projecte està pensada per reforçar la seva aplicació real i la seva coherència global.</p>
+        </div>
+        <div class="cred-grid">
+          <article class="home-card">
+            <h4>Responsabilitats definides</h4>
+            <p>Cada àrea del projecte assumeix una funció concreta i necessària dins del funcionament general del restaurant.</p>
+          </article>
+          <article class="home-card">
+            <h4>Visió compartida</h4>
+            <p>Les decisions operatives no es prenen de forma aïllada, sinó connectades amb la identitat, el nivell i l’experiència que MESCLARI vol oferir.</p>
+          </article>
+          <article class="home-card">
+            <h4>Treball coordinat</h4>
+            <p>La relació entre cuina, sala i coordinació general reforça la solidesa del model i la seva capacitat de funcionar amb ordre.</p>
+          </article>
+          <article class="home-card">
+            <h4>Aplicació real</h4>
+            <p>L’estructura humana del projecte està pensada perquè MESCLARI pugui defensar-se com una proposta executable, viable i coherent.</p>
           </article>
         </div>
       </section>
 
       <section class="home-block home-closure" id="tancament-gestio">
         <p class="home-section-kicker">Tancament</p>
-        <h2>Una estructura humana orientada a consistència, qualitat i execució real</h2>
+        <h2>Tancament</h2>
         <p class="home-intro">
-          L'organització operativa de MESCLARI està pensada per convertir una proposta premium en un funcionament quotidià
-          sòlid, coordinat i escalable segons la demanda.
+          MESCLARI pren forma a través d’una organització humana clara, funcional i coherent amb la seva proposta. L’equip impulsor defineix la direcció del
+          projecte, mentre que la plantilla operativa i la seva estructura funcional permeten convertir aquesta direcció en una experiència real de restaurant.
         </p>
+        <p class="home-intro"><strong>Una proposta sòlida necessita una estructura humana igualment sòlida.</strong></p>
       </section>
     </main>
 
