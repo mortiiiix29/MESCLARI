@@ -1350,6 +1350,8 @@ footer {
   font-size: clamp(2.1rem, 3.8vw, 3.35rem);
   line-height: 1.02;
   max-width: 20ch;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .vg-opening-copy > p {
