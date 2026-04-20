@@ -1501,6 +1501,13 @@ footer {
   gap: 0.9rem;
 }
 
+.vg-pillars-intro {
+  margin: -0.1rem auto 0.9rem;
+  max-width: 74ch;
+  text-align: center;
+  color: #3a5266;
+}
+
 .vg-pillar {
   grid-column: span 2;
   border: 1px solid var(--line);
