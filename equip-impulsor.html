@@ -9,6 +9,199 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .equip-main {
+        width: min(1240px, 92vw);
+        margin: 1rem auto 0;
+        display: grid;
+        gap: 1.1rem;
+      }
+
+      .equip-panel {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(1rem, 2.1vw, 1.65rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.66));
+        box-shadow: 0 12px 24px rgba(30, 45, 59, 0.1);
+      }
+
+      .equip-head {
+        display: grid;
+        gap: 0.35rem;
+        margin-bottom: 0.95rem;
+      }
+
+      .equip-kicker {
+        color: #5f7282;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .equip-head h2 {
+        color: var(--blue);
+        font-size: clamp(2rem, 3.6vw, 3rem);
+      }
+
+      .equip-intro {
+        color: #31495d;
+        max-width: 74ch;
+      }
+
+      .leader-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .leader-card {
+        border: 1px solid rgba(194, 94, 60, 0.24);
+        border-radius: 14px;
+        padding: 1rem;
+        background: rgba(244, 233, 220, 0.9);
+      }
+
+      .leader-card h3 {
+        color: var(--terracotta);
+        margin-bottom: 0.2rem;
+      }
+
+      .leader-role {
+        color: #415b71;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 0.76rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .leader-card p {
+        color: #2f4658;
+        font-size: 0.93rem;
+      }
+
+      .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .area-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(244, 233, 220, 0.9);
+      }
+
+      .area-card h3 {
+        color: var(--blue);
+        font-size: 1.25rem;
+      }
+
+      .area-card ul {
+        margin: 0.45rem 0 0;
+        padding-left: 1.05rem;
+        color: #31495d;
+        display: grid;
+        gap: 0.2rem;
+        font-size: 0.9rem;
+      }
+
+      .flow-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 0.8rem;
+      }
+
+      .flow-card {
+        border: 1px solid rgba(194, 94, 60, 0.24);
+        border-radius: 14px;
+        padding: 1rem;
+        background: rgba(244, 233, 220, 0.9);
+      }
+
+      .flow-card h3 {
+        color: var(--terracotta);
+        margin-bottom: 0.35rem;
+      }
+
+      .flow-list {
+        margin: 0;
+        padding-left: 1.1rem;
+        display: grid;
+        gap: 0.3rem;
+        color: #2f4658;
+      }
+
+      .coord-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.8rem;
+      }
+
+      .coord-tags span {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.28);
+        background: rgba(194, 94, 60, 0.12);
+        color: #734633;
+        padding: 0.24rem 0.7rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .roadmap-step {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(244, 233, 220, 0.9);
+      }
+
+      .roadmap-step strong {
+        color: var(--blue);
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+      }
+
+      .roadmap-step h3 {
+        color: var(--terracotta);
+        margin-top: 0.3rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .roadmap-step p {
+        color: #31495d;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 1080px) {
+        .leader-grid,
+        .areas-grid,
+        .roadmap-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .flow-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .leader-grid,
+        .areas-grid,
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -38,29 +231,124 @@
 
     <header class="page-hero">
       <h1>EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS</h1>
-      <p>Presentació professional de l'equip fundador i repartiment real de responsabilitats per àrees clau.</p>
+      <p>L'equip combina mirada gastronòmica, disciplina operativa i criteri de negoci per executar MESCLARI amb coherència.</p>
     </header>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>EQUIP IMPULSOR I DISTRIBUCIÓ DE ROLS</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Qui som</h4>
-            <p>Placeholder per fitxa breu dels integrants i la seva trajectòria rellevant.</p>
+    <main class="equip-main">
+      <section class="equip-panel">
+        <div class="equip-head">
+          <span class="equip-kicker">nucli fundador</span>
+          <h2>Qui som i què aporta cada perfil</h2>
+          <p class="equip-intro">L'equip impulsor parteix d'una visió compartida: una proposta de cuina mediterrània actual amb experiència de sala cuidada i gestió rigorosa.</p>
+        </div>
+        <div class="leader-grid">
+          <article class="leader-card">
+            <h3>Direcció culinària</h3>
+            <p class="leader-role">xef executiu / producte</p>
+            <p>Defineix identitat gastronòmica, estandarditza receptes, lidera escandalls i vetlla per la qualitat tècnica en servei i preproducció.</p>
           </article>
-          <article class="home-card">
-            <h4>Equip impulsor</h4>
-            <p>Bloc per descriure la complementarietat entre perfils i la visió compartida.</p>
+          <article class="leader-card">
+            <h3>Direcció de sala</h3>
+            <p class="leader-role">hospitalitat / experiència client</p>
+            <p>Dissenya rituals de servei, formació d'equip, protocols d'acollida i seguiment de satisfacció per mantenir una experiència consistent.</p>
           </article>
-          <article class="home-card">
-            <h4>Distribució de rols</h4>
-            <p>Estructura de responsabilitats en cuina, sala, direcció i gestió.</p>
+          <article class="leader-card">
+            <h3>Direcció de negoci</h3>
+            <p class="leader-role">finances / planificació</p>
+            <p>Coordina pressupost, control de tresoreria, compres estratègiques i planificació de creixement amb focus en rendibilitat sostenible.</p>
           </article>
-          <article class="home-card">
-            <h4>Lògica de coordinació</h4>
-            <p>Espai per explicar flux de decisions, comunicació interna i lideratge operatiu.</p>
+        </div>
+      </section>
+
+      <section class="equip-panel">
+        <div class="equip-head">
+          <span class="equip-kicker">govern operatiu</span>
+          <h2>Distribució funcional de responsabilitats</h2>
+          <p class="equip-intro">Cada àrea té objectius, indicadors i responsables clars. Això evita duplicitats i facilita una presa de decisions àgil.</p>
+        </div>
+        <div class="areas-grid">
+          <article class="area-card">
+            <h3>Cuina</h3>
+            <ul>
+              <li>Planificació de mise en place i torns.</li>
+              <li>Control de costos i minves.</li>
+              <li>Auditories de qualitat i higiene.</li>
+            </ul>
+          </article>
+          <article class="area-card">
+            <h3>Sala</h3>
+            <ul>
+              <li>Assignació de rangs i briefing diari.</li>
+              <li>Protocol de servei i venda suggerida.</li>
+              <li>Gestió de reserves i incidències.</li>
+            </ul>
+          </article>
+          <article class="area-card">
+            <h3>Gestió</h3>
+            <ul>
+              <li>Seguiment setmanal de KPIs clau.</li>
+              <li>Control documental i legal.</li>
+              <li>Coordinació amb assessories externes.</li>
+            </ul>
+          </article>
+          <article class="area-card">
+            <h3>Marca</h3>
+            <ul>
+              <li>Calendari de comunicació digital.</li>
+              <li>Coherència visual i to editorial.</li>
+              <li>Activacions locals i col·laboracions.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="equip-panel">
+        <div class="equip-head">
+          <span class="equip-kicker">coordinació interna</span>
+          <h2>Lògica de decisió i ritme de seguiment</h2>
+        </div>
+        <div class="flow-layout">
+          <article class="flow-card">
+            <h3>Cadència de reunions</h3>
+            <ol class="flow-list">
+              <li><strong>Diari:</strong> briefing operatiu de 10 minuts abans del servei.</li>
+              <li><strong>Setmanal:</strong> revisió de vendes, costos i feedback de clients.</li>
+              <li><strong>Mensual:</strong> anàlisi estratègica, carta i objectius de marge.</li>
+            </ol>
+          </article>
+          <article class="flow-card">
+            <h3>Principis de governança</h3>
+            <p>Cada decisió rellevant es contrasta amb tres criteris: impacte en experiència, viabilitat operativa i sostenibilitat econòmica. La responsabilitat final sempre queda assignada a una persona titular.</p>
+            <div class="coord-tags">
+              <span>Transparència</span>
+              <span>Responsabilitat</span>
+              <span>Aprenentatge continu</span>
+              <span>Execució ràpida</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="equip-panel">
+        <div class="equip-head">
+          <span class="equip-kicker">desplegament</span>
+          <h2>Roadmap d'incorporació i escalat d'equip</h2>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-step">
+            <strong>FASE 01</strong>
+            <h3>Preobertura</h3>
+            <p>Selecció de perfils clau, manuals bàsics de servei, formació inicial i simulacions completes de ritme de sala i cuina.</p>
+          </article>
+          <article class="roadmap-step">
+            <strong>FASE 02</strong>
+            <h3>Consolidació</h3>
+            <p>Primer cicle de millora de processos, ajust d'hores per franges i refinament d'estàndards segons dades reals del local.</p>
+          </article>
+          <article class="roadmap-step">
+            <strong>FASE 03</strong>
+            <h3>Escalat ordenat</h3>
+            <p>Delegació progressiva en caps d'àrea, consolidació de cultura interna i preparació per augment de volum sense perdre qualitat.</p>
           </article>
         </div>
       </section>
