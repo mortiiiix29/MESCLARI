@@ -1,15 +1,222 @@
 <!doctype html>
 <html lang="ca">
-  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>MESCLARI · Gestió i organització</title><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /><link rel="stylesheet" href="styles.css" /></head>
-  <body>
-    <nav class="nav"><button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números"><span class="brand-switch-track"><span class="brand-mini" aria-hidden="true"><img src="imaguenes i videos/logo.png" alt="" class="nav-logo" /><span class="brand-name">MESCLARI</span></span></span></button><button id="menuBtn" class="menu-btn" aria-expanded="false">☰</button><ul id="menu" class="menu"><li><a href="index.html">Inici</a></li><li><a href="paleta.html">Concepte i identitat</a></li><li><a href="menu-degustacio.html">Oferta gastronòmica</a></li><li><a href="experiencia.html">Espais i operativa</a></li><li><a href="gestio-organitzacio.html" aria-current="page">Gestió</a></li><li><a href="seguretat-sostenibilitat.html">Seguretat i sostenibilitat</a></li><li><a href="viabilitat.html">Viabilitat econòmica</a></li><li class="menu-reforma"><a href="reforma.html">Reforma i números</a></li><li><a href="contacte.html">Annexos</a></li></ul></nav>
-    <header class="page-hero">
-      <h1>Gestió i organització</h1>
-      <p>Bloc estructural del projecte MESCLARI presentat amb criteri acadèmic-professional i lectura premium.</p>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESCLARI · GESTIÓ I ORGANITZACIÓ</title>
+    <meta
+      name="description"
+      content="Estructura humana i organització operativa de MESCLARI: organigrama funcional, plantilla base, reforç estacional i responsabilitats clau de cuina, sala i coordinació."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .organigrama-wrap {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(244, 233, 220, 0.86));
+        padding: clamp(1rem, 2.2vw, 1.6rem);
+      }
 
-    <main class="section"><div class="section-shell"><header class="section-header"><h2>Gestió i organització</h2><p>MESCLARI defineix una estructura operativa orientada a qualitat de servei, control de processos i coordinació transversal.</p></header><div class="grid two"><article class="card"><h3>Estructura del negoci</h3><p>Model de direcció central amb responsabilitats distribuïdes per àrees: cuina, sala i coordinació general.</p></article><article class="card"><h3>Equip humà i rols</h3><p>Assignació de funcions per garantir traçabilitat operativa, continuïtat de criteri i capacitat d'execució.</p></article><article class="card"><h3>Coordinació sala-cuina-direcció</h3><p>Briefings previs, alineació de narrativa de servei i seguiment de qualitat durant cada torn.</p></article><article class="card"><h3>Planificació operativa</h3><p>Planificació setmanal de compres, preelaboracions, reserves i càrrega de sala per reduir desviacions.</p></article></div></div></main>
-    <section class="section"><div class="section-shell"><header class="section-header"><h2>Visió empresarial</h2></header><p>La gestió s'entén com una palanca de consistència: ordena recursos, protegeix l'experiència premium i sosté la viabilitat econòmica del projecte.</p></div></section>
-    <footer><p><strong>MESCLARI</strong> · Gestió professional i estructura funcional.</p></footer><script src="script.js"></script>
+      .organigrama-top {
+        max-width: 420px;
+        margin: 0 auto 0.9rem;
+      }
+
+      .organigrama-top .home-card {
+        text-align: center;
+      }
+
+      .organigrama-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .organigrama-grid .home-card {
+        height: 100%;
+      }
+
+      @media (max-width: 980px) {
+        .organigrama-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .organigrama-top {
+          margin-bottom: 0.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
+        <span class="brand-switch-track">
+          <span class="brand-mini" aria-hidden="true">
+            <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
+            <span class="brand-name">MESCLARI</span>
+          </span>
+        </span>
+      </button>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="presentacio-general.html">Visió general</a></li>
+        <li><a href="identitat-projecte.html">Identitat</a></li>
+        <li><a href="equip-impulsor.html">Equip</a></li>
+        <li><a href="gestio-organitzacio.html" aria-current="page">Gestió i organització</a></li>
+        <li><a href="encaix-mercat.html">Encaix de mercat</a></li>
+        <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
+        <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
+        <li><a href="experiencia-sala.html">Experiència de sala</a></li>
+        <li><a href="model-operatiu.html">Model operatiu</a></li>
+        <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
+        <li><a href="evidencies-projecte.html">Evidències</a></li>
+      </ul>
+    </nav>
+
+    <main class="home-main vg-main">
+      <header class="home-block vg-opening" id="obertura-gestio">
+        <div class="home-section-head">
+          <p class="home-section-kicker">Estructura humana i operativa</p>
+          <h1>Gestió i organització</h1>
+          <p class="home-intro">
+            Aquesta pàgina recull l'organització funcional de MESCLARI a nivell de personal, coordinació i funcionament
+            real del restaurant, diferenciant clarament el nucli impulsor de la plantilla operativa de servei.
+          </p>
+        </div>
+      </header>
+
+      <section class="home-block" id="estructura-humana-projecte">
+        <div class="home-section-head">
+          <h2>Estructura humana del projecte</h2>
+        </div>
+        <div class="home-grid two">
+          <article class="home-card">
+            <h4>Equip impulsor (direcció del projecte)</h4>
+            <p>
+              L'equip impulsor concentra la direcció estratègica, la visió institucional i el lideratge fundacional de
+              MESCLARI. Aquesta capa es desenvolupa específicament a la pàgina d'Equip impulsor.
+            </p>
+          </article>
+          <article class="home-card">
+            <h4>Plantilla operativa (execució diària)</h4>
+            <p>
+              La plantilla operativa transforma aquesta direcció en servei real: cuina, sala, suport i coordinació del
+              dia a dia per garantir consistència, ritme i qualitat percebuda.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block" id="organigrama-funcional">
+        <div class="home-section-head">
+          <h2>Organigrama funcional</h2>
+          <p class="home-intro">Esquema funcional de referència per ordenar responsabilitats i flux operatiu intern.</p>
+        </div>
+        <div class="organigrama-wrap">
+          <div class="organigrama-top">
+            <article class="home-card">
+              <h4>Direcció general de servei</h4>
+              <p>Supervisió global, criteri d'estàndard, priorització operativa i control transversal de l'experiència.</p>
+            </article>
+          </div>
+          <div class="organigrama-grid">
+            <article class="home-card">
+              <h4>Àrea de cuina</h4>
+              <p>Producció, mise en place, pass i control de qualitat culinària en coordinació amb el ritme de sala.</p>
+            </article>
+            <article class="home-card">
+              <h4>Àrea de sala</h4>
+              <p>Acollida, seqüència de servei, narrativa de proposta i atenció personalitzada al client.</p>
+            </article>
+            <article class="home-card">
+              <h4>Suport operatiu</h4>
+              <p>Backoffice funcional, reposició, logística de torn i cobertura de processos de suport al servei.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-block" id="plantilla-base">
+        <div class="home-section-head">
+          <h2>Plantilla base</h2>
+          <p class="home-intro">Configuració ordinària per a funcionament estable en períodes de demanda regular.</p>
+        </div>
+        <div class="home-grid three">
+          <article class="home-card">
+            <h4>Estructura reduïda i eficient</h4>
+            <p>Dotació ajustada per garantir qualitat de servei sense sobredimensionar la càrrega estructural.</p>
+          </article>
+          <article class="home-card">
+            <h4>Polivalència controlada</h4>
+            <p>Rols compatibles en moments concrets, mantenint criteri de responsabilitat per àrea funcional.</p>
+          </article>
+          <article class="home-card">
+            <h4>Continuïtat operativa</h4>
+            <p>Planificació de torns orientada a estabilitat de procés, lectura de reserves i regularitat de servei.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block" id="reforc-estacional">
+        <div class="home-section-head">
+          <h2>Reforç estacional</h2>
+        </div>
+        <div class="home-grid two">
+          <article class="home-card">
+            <h4>Ampliació temporal de plantilla</h4>
+            <p>
+              En pics de demanda, MESCLARI amplia l'estructura operativa amb personal de reforç per protegir el nivell
+              de servei i la capacitat de resposta del restaurant.
+            </p>
+          </article>
+          <article class="home-card">
+            <h4>Integració i comandament</h4>
+            <p>
+              El reforç s'integra sota protocols de coordinació preestablerts, mantenint jerarquia funcional i qualitat
+              d'execució sense trencar el model habitual.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block" id="funcions-responsabilitats">
+        <div class="home-section-head">
+          <h2>Funcions i responsabilitats</h2>
+        </div>
+        <div class="home-grid three">
+          <article class="home-card">
+            <h4>Cuina</h4>
+            <p>Planificació de producció, execució de carta, control de partida i criteri tècnic de qualitat de producte.</p>
+          </article>
+          <article class="home-card">
+            <h4>Sala</h4>
+            <p>Conducció del servei, ritme d'experiència, gestió de taules i transmissió del relat gastronòmic.</p>
+          </article>
+          <article class="home-card">
+            <h4>Coordinació general</h4>
+            <p>Enllaç cuina-sala, control de torn, resolució d'incidències i alineació de l'operativa amb els estàndards MESCLARI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block home-closure" id="tancament-gestio">
+        <p class="home-section-kicker">Tancament</p>
+        <h2>Una estructura humana orientada a consistència, qualitat i execució real</h2>
+        <p class="home-intro">
+          L'organització operativa de MESCLARI està pensada per convertir una proposta premium en un funcionament quotidià
+          sòlid, coordinat i escalable segons la demanda.
+        </p>
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <p>MESCLARI · Gestió i organització de la plantilla operativa i funcional.</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
