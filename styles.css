@@ -1384,6 +1384,9 @@ footer {
   justify-self: center;
   margin-top: 0.2rem;
   width: min(100%, 980px);
+  margin-top: 0.2rem;
+  width: min(100%, 980px);
+
   text-align: center;
 }
 
