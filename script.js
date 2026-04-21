@@ -115,3 +115,54 @@ if (menuBtn && menu) {
     }
   });
 }
+
+
+const mediaPathRewrites = [
+  ['imaguenes i videos/', 'imagenes-y-videos/'],
+  ['imagenes-y-videos/', 'imaguenes i videos/'],
+];
+
+const buildMediaFallbacks = (src) => {
+  if (!src || /^https?:|^data:|^blob:/i.test(src)) {
+    return [];
+  }
+
+  const candidates = new Set();
+
+  for (const [from, to] of mediaPathRewrites) {
+    if (src.includes(from)) {
+      candidates.add(src.replace(from, to));
+    }
+  }
+
+  return [...candidates].filter((candidate) => candidate !== src);
+};
+
+const installImageFallbacks = () => {
+  document.addEventListener(
+    'error',
+    (event) => {
+      const target = event.target;
+
+      if (!(target instanceof HTMLImageElement)) {
+        return;
+      }
+
+      const originalSrc = target.getAttribute('src') || '';
+      const attempted = target.dataset.fallbackAttempts ? target.dataset.fallbackAttempts.split('||') : [];
+      const pending = buildMediaFallbacks(originalSrc).filter((candidate) => !attempted.includes(candidate));
+      const nextSrc = pending.shift();
+
+      if (!nextSrc) {
+        return;
+      }
+
+      attempted.push(nextSrc);
+      target.dataset.fallbackAttempts = attempted.join('||');
+      target.setAttribute('src', nextSrc);
+    },
+    true,
+  );
+};
+
+installImageFallbacks();
