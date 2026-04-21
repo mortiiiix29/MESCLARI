@@ -256,6 +256,23 @@
         gap: 0.2rem;
       }
 
+      .oferta-category-row {
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr 170px;
+        gap: 0.75rem;
+        align-items: stretch;
+      }
+
+      .oferta-category-row ul {
+        margin-top: 0;
+      }
+
+      .oferta-dish-media {
+        margin: 0;
+        min-height: 122px;
+      }
+
       .oferta-note {
         border-radius: 14px;
         border: 1px solid rgba(194, 94, 60, 0.26);
@@ -422,6 +439,10 @@
         .oferta-strip,
         .oferta-technical { grid-template-columns: 1fr; }
 
+        .oferta-category-row {
+          grid-template-columns: 1fr;
+        }
+
         .oferta-pass {
           grid-template-columns: 1fr;
         }
@@ -498,30 +519,48 @@
           <div class="oferta-menu-layout">
             <article class="oferta-item oferta-category">
               <h4>Primers</h4>
-              <ul>
-                <li>Opció real 01 del projecte</li>
-                <li>Opció real 02 del projecte</li>
-                <li>Opció real 03 del projecte</li>
-                <li>Opció real 04 del projecte</li>
-              </ul>
+              <div class="oferta-category-row">
+                <ul>
+                  <li>Opció real 01 del projecte</li>
+                  <li>Opció real 02 del projecte</li>
+                  <li>Opció real 03 del projecte</li>
+                  <li>Opció real 04 del projecte</li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" data-modal-caption="Primers · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" alt="Primers del menú 4/4/4" />
+                  <figcaption>Primers</figcaption>
+                </figure>
+              </div>
             </article>
             <article class="oferta-item oferta-category">
               <h4>Principals</h4>
-              <ul>
-                <li>Opció real 01 del projecte</li>
-                <li>Opció real 02 del projecte</li>
-                <li>Opció real 03 del projecte</li>
-                <li>Opció real 04 del projecte</li>
-              </ul>
+              <div class="oferta-category-row">
+                <ul>
+                  <li>Opció real 01 del projecte</li>
+                  <li>Opció real 02 del projecte</li>
+                  <li>Opció real 03 del projecte</li>
+                  <li>Opció real 04 del projecte</li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" data-modal-caption="Principals · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" alt="Principals del menú 4/4/4" />
+                  <figcaption>Principals</figcaption>
+                </figure>
+              </div>
             </article>
             <article class="oferta-item oferta-category">
               <h4>Postres</h4>
-              <ul>
-                <li>Opció real 01 del projecte</li>
-                <li>Opció real 02 del projecte</li>
-                <li>Opció real 03 del projecte</li>
-                <li>Opció real 04 del projecte</li>
-              </ul>
+              <div class="oferta-category-row">
+                <ul>
+                  <li>Opció real 01 del projecte</li>
+                  <li>Opció real 02 del projecte</li>
+                  <li>Opció real 03 del projecte</li>
+                  <li>Opció real 04 del projecte</li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" data-modal-caption="Postres · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" alt="Postres del menú 4/4/4" />
+                  <figcaption>Postres</figcaption>
+                </figure>
+              </div>
             </article>
             <article class="oferta-note">
               <strong>Preu públic: 34,90 €</strong>
@@ -529,10 +568,6 @@
             </article>
           </div>
           <div class="oferta-menu-layout">
-            <figure class="oferta-media-small zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4.jpg" data-modal-caption="Presentació visual del format 4/4/4">
-              <img src="imaguenes i videos/oferta-gastronomica-4-4-4.jpg" alt="Composició visual del menú 4/4/4" />
-              <figcaption>Presentació visual del format 4/4/4</figcaption>
-            </figure>
             <article class="oferta-callout">
               <h3>Sentit del format</h3>
               <p>Format de base comercial sòlida, pensat per captar, fidelitzar i mantenir una proposta recognoscible de qualitat.</p>
