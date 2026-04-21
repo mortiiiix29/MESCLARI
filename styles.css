@@ -1752,8 +1752,8 @@ footer {
 }
 
 .em-opening-grid .em-image-slot {
-  width: min(100%, 470px);
-  max-height: 560px;
+  width: min(100%, 282px);
+  max-height: 336px;
   justify-self: end;
   align-self: start;
 }
