@@ -7,14 +7,12 @@ const REF_MODE_ON = 'on';
 const defaultPage = 'index.html';
 const reformaPages = new Set([
   'reforma.html',
-  'marc-economic.html',
-  'pressupost-obertura.html',
-  'costos-operatius.html',
-  'ingressos-temporalitat.html',
-  'punt-mort.html',
-  'rendibilitat-oferta.html',
-  'tresoreria-seguretat.html',
-  'conclusio-economica.html',
+  'estat-inicial-local.html',
+  'proposta-reforma-adequacio.html',
+  'lectura-tecnica-economica.html',
+  'estructura-economica.html',
+  'viabilitat-economica.html',
+  'rendibilitat-dels-menus.html',
   'reforma-pressupost.html',
   'reforma-escenaris.html',
 ]);
