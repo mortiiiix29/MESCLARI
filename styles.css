@@ -1766,12 +1766,45 @@ footer {
   place-items: center;
   text-align: center;
   padding: 1.1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .em-placeholder span {
   color: #3a5366;
   font-size: 0.9rem;
   max-width: 24ch;
+}
+
+.em-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  opacity: 0.16;
+}
+
+.em-placeholder figcaption {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: 0.24rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.em-placeholder small {
+  color: #445c6f;
+  font-size: 0.8rem;
+}
+
+.em-route {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.01em;
+  color: #5f7384;
+  font-size: 0.74rem;
 }
 
 .em-placeholder-hero {
@@ -1857,6 +1890,11 @@ footer {
 .em-section-head-wide p {
   color: #31495d;
   max-width: 72ch;
+}
+
+.em-territorial-note {
+  color: #415b6e;
+  font-weight: 500;
 }
 
 .em-territorial-layout {
@@ -1982,6 +2020,11 @@ footer {
   max-width: 70ch;
 }
 
+.em-competitive-sub {
+  color: #8f3f23 !important;
+  font-weight: 600;
+}
+
 .em-competitive-flow {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
@@ -2027,6 +2070,12 @@ footer {
 .em-placeholder-support {
   margin-top: 0.8rem;
   min-height: 120px;
+}
+
+.em-competitive-closing {
+  margin-top: 0.72rem;
+  color: #2f475b;
+  font-weight: 600;
 }
 
 .em-axis-list {
@@ -2091,6 +2140,20 @@ footer {
 
 .em-dafo-grid p {
   color: #32495d;
+}
+
+.em-dafo-grid ul {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.32rem;
+  color: #32495d;
+}
+
+.em-dafo-closing {
+  margin-top: 0.72rem;
+  color: #2e475a;
+  font-weight: 600;
 }
 
 .em-close {
