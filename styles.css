@@ -1850,6 +1850,32 @@ footer {
   min-height: 360px;
 }
 
+.em-image-route {
+  border: 1px dashed rgba(30, 45, 59, 0.36);
+  border-radius: 14px;
+  padding: 0.8rem;
+  background: rgba(244, 233, 220, 0.72);
+  display: grid;
+  gap: 0.26rem;
+  align-content: center;
+}
+
+.em-image-route strong {
+  color: #7d3a1f;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.em-image-route code {
+  color: #2b455a;
+  font-size: 0.9rem;
+  background: rgba(216, 203, 178, 0.42);
+  border-radius: 8px;
+  padding: 0.34rem 0.42rem;
+  overflow-wrap: anywhere;
+}
+
 .em-opening-keys {
   margin-top: 0.95rem;
   display: grid;
@@ -2222,4 +2248,5 @@ footer {
   .em-placeholder-territorial {
     min-height: 230px;
   }
+
 }
