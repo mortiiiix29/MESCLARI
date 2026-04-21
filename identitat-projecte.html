@@ -4,11 +4,377 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MESCLARI · IDENTITAT DEL PROJECTE I CONCEPTE DE MARCA</title>
-    <meta name="description" content="IDENTITAT DEL PROJECTE I CONCEPTE DE MARCA · arquitectura multipàgina de MESCLARI." />
+    <meta name="description" content="L’univers MESCLARI: identitat, pilars i traducció del relat de marca en decisions reals de cuina, sala i espai." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .identitat-main {
+        width: min(1240px, 92vw);
+        margin: 1rem auto 0;
+        display: grid;
+        gap: 1.2rem;
+      }
+
+      .identitat-section {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(1rem, 2.2vw, 1.7rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.6));
+        box-shadow: 0 12px 24px rgba(30, 45, 59, 0.1);
+      }
+
+      .identitat-head {
+        display: grid;
+        gap: 0.35rem;
+        margin-bottom: 0.9rem;
+      }
+
+      .identitat-kicker {
+        color: #5f7282;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .identitat-head h2 {
+        color: var(--blue);
+        font-size: clamp(2rem, 3.6vw, 3rem);
+      }
+
+      .identitat-intro {
+        color: #31495d;
+        max-width: 74ch;
+      }
+
+      .identitat-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .identitat-hero-copy {
+        display: grid;
+        align-content: center;
+        gap: 0.75rem;
+        padding: clamp(1rem, 2.2vw, 1.4rem);
+        border-radius: 16px;
+        border: 1px solid rgba(194, 94, 60, 0.24);
+        background: rgba(244, 233, 220, 0.72);
+        box-shadow: inset 0 0 0 1px rgba(216, 203, 178, 0.45);
+      }
+
+      .identitat-hero-copy h1 {
+        color: var(--terracotta);
+        font-size: clamp(2.6rem, 5.6vw, 4.3rem);
+        line-height: 0.94;
+      }
+
+      .identitat-hero-copy p {
+        color: #2f4658;
+        max-width: 44ch;
+      }
+
+      .identitat-media {
+        border: 1px solid rgba(30, 45, 59, 0.24);
+        border-radius: 16px;
+        background:
+          radial-gradient(circle at 22% 20%, rgba(194, 94, 60, 0.24), transparent 38%),
+          radial-gradient(circle at 78% 78%, rgba(110, 139, 116, 0.18), transparent 40%),
+          linear-gradient(160deg, rgba(30, 45, 59, 0.94), rgba(56, 78, 98, 0.84));
+        min-height: 340px;
+        display: grid;
+        align-content: end;
+        overflow: hidden;
+        box-shadow: 0 16px 28px rgba(30, 45, 59, 0.2);
+      }
+
+      .media-placeholder {
+        padding: 1rem;
+        border-top: 1px solid rgba(216, 203, 178, 0.25);
+        background: rgba(30, 45, 59, 0.25);
+      }
+
+      .media-placeholder strong {
+        display: block;
+        font-size: 1.05rem;
+        color: #efe3d1;
+      }
+
+      .media-placeholder span {
+        color: #dccdb8;
+        font-size: 0.88rem;
+      }
+
+      .editorial-two {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .editorial-piece {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem;
+        background: rgba(244, 233, 220, 0.86);
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.09);
+      }
+
+      .editorial-piece h3 {
+        color: var(--terracotta);
+        font-size: 1.6rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .editorial-piece p {
+        color: #2f4658;
+      }
+
+      .key-lines {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.75rem;
+      }
+
+      .key-lines span {
+        display: inline-flex;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.28);
+        background: rgba(194, 94, 60, 0.1);
+        color: #734633;
+        padding: 0.24rem 0.7rem;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .pillar-card {
+        border: 1px solid rgba(194, 94, 60, 0.24);
+        border-radius: 14px;
+        padding: 1rem;
+        background: linear-gradient(165deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.75));
+        box-shadow: 0 10px 18px rgba(30, 45, 59, 0.08);
+      }
+
+      .pillar-card .num {
+        display: inline-flex;
+        width: 2rem;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(194, 94, 60, 0.38);
+        color: #8d3c21;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .pillar-card h3 {
+        font-size: 1.45rem;
+        color: var(--blue);
+        margin-bottom: 0.3rem;
+      }
+
+      .pillar-card p {
+        color: #2f4658;
+        font-size: 0.95rem;
+      }
+
+      .sensorial-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+        gap: 1rem;
+      }
+
+      .sensorial-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .sensorial-item {
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 0.9rem;
+        background: rgba(244, 233, 220, 0.88);
+      }
+
+      .sensorial-item h3 {
+        color: var(--terracotta);
+        font-size: 1.35rem;
+      }
+
+      .sensorial-item p {
+        color: #31495d;
+        font-size: 0.93rem;
+      }
+
+      .support-media {
+        border-radius: 14px;
+        border: 1px solid rgba(30, 45, 59, 0.24);
+        min-height: 290px;
+        display: grid;
+        align-content: end;
+        background:
+          linear-gradient(145deg, rgba(244, 233, 220, 0.28), rgba(30, 45, 59, 0.36)),
+          linear-gradient(160deg, rgba(56, 78, 98, 0.95), rgba(30, 45, 59, 0.9));
+        overflow: hidden;
+      }
+
+      .support-media.has-image,
+      .media-mini.has-image {
+        position: relative;
+        align-content: end;
+      }
+
+      .support-media.has-image img,
+      .media-mini.has-image img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .support-media.has-image .media-placeholder,
+      .media-mini.has-image .media-placeholder {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(30, 45, 59, 0.06), rgba(30, 45, 59, 0.62));
+      }
+
+      .personality-matrix {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .pair-card {
+        border: 1px solid rgba(194, 94, 60, 0.26);
+        border-radius: 14px;
+        padding: 0.95rem 1rem;
+        background: rgba(244, 233, 220, 0.9);
+      }
+
+      .pair-card strong {
+        color: var(--blue);
+        font-size: 1.08rem;
+      }
+
+      .translation-grid {
+        display: grid;
+        gap: 0.8rem;
+      }
+
+      .translation-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1rem;
+        background: rgba(244, 233, 220, 0.88);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr);
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .translation-copy h3 {
+        color: var(--terracotta);
+        font-size: 1.55rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .translation-copy p {
+        color: #2f4658;
+      }
+
+      .media-mini {
+        border: 1px solid rgba(30, 45, 59, 0.2);
+        border-radius: 12px;
+        min-height: 180px;
+        display: grid;
+        align-content: end;
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.4)),
+          linear-gradient(160deg, rgba(56, 78, 98, 0.9), rgba(30, 45, 59, 0.86));
+        overflow: hidden;
+      }
+
+      .optional-video {
+        border: 1px solid rgba(194, 94, 60, 0.24);
+        border-radius: 14px;
+        min-height: 220px;
+        margin-top: 0.85rem;
+        display: grid;
+        align-content: end;
+        background:
+          radial-gradient(circle at 80% 20%, rgba(194, 94, 60, 0.22), transparent 42%),
+          linear-gradient(160deg, rgba(30, 45, 59, 0.92), rgba(56, 78, 98, 0.82));
+        overflow: hidden;
+      }
+
+      .identitat-closure {
+        text-align: center;
+        padding-block: clamp(1.4rem, 3vw, 2.4rem);
+      }
+
+      .identitat-closure p {
+        color: var(--blue);
+        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+        line-height: 1.45;
+        max-width: 70ch;
+        margin: 0 auto;
+      }
+
+      .identitat-closure strong {
+        display: block;
+        margin-top: 0.75rem;
+        font-family: 'Cormorant Garamond', serif;
+        color: var(--terracotta);
+        font-size: clamp(1.35rem, 2.7vw, 2rem);
+      }
+
+      @media (max-width: 1060px) {
+        .pillars-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 920px) {
+        .identitat-hero,
+        .sensorial-layout,
+        .translation-card {
+          grid-template-columns: 1fr;
+        }
+
+        .identitat-media,
+        .support-media,
+        .optional-video {
+          min-height: 250px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .editorial-two,
+        .sensorial-grid,
+        .personality-matrix,
+        .pillars-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .identitat-hero-copy h1 {
+          font-size: clamp(2.2rem, 11vw, 3.2rem);
+        }
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -36,38 +402,194 @@
       </ul>
     </nav>
 
-    <header class="page-hero">
-      <h1>IDENTITAT DEL PROJECTE I CONCEPTE DE MARCA</h1>
-      <p>Base conceptual per explicar MESCLARI com a marca gastronòmica amb proposta de valor pròpia i coherent.</p>
-    </header>
+    <main class="identitat-main">
+      <section class="identitat-section" id="hero-identitat">
+        <div class="identitat-hero">
+          <div class="identitat-hero-copy">
+            <span class="identitat-kicker">Identitat del projecte</span>
+            <h1>L’univers MESCLARI</h1>
+            <p>MESCLARI es defineix per una manera concreta d’entendre la restauració gastronòmica contemporània: una proposta on producte, sala, atmosfera i relat de marca comparteixen una mateixa direcció.</p>
+            <p>Més que una identitat visual, MESCLARI construeix una experiència amb caràcter propi. La seva força neix de la coherència entre el que vol transmetre i la manera com aquesta idea es converteix en espai, servei i proposta gastronòmica.</p>
+          </div>
+          <!-- VISUAL PRINCIPAL: substituir aquest contenidor per imatge 16:10 / 4:3 o vídeo curt quan hi hagi material final -->
+          <figure class="identitat-media" aria-label="Espai reservat per imatge o vídeo principal del projecte">
+            <figcaption class="media-placeholder">
+              <strong>Visual principal · 16:10 / 4:3</strong>
+              <span>Una identitat que es llegeix en l’espai, en el ritme i en la manera d’acollir.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>IDENTITAT DEL PROJECTE I CONCEPTE DE MARCA</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Essència del projecte</h4>
-            <p>Placeholder estratègic per definir la idea central que articula el restaurant i la seva promesa.</p>
+      <section class="identitat-section" id="que-es-mesclari">
+        <header class="identitat-head">
+          <span class="identitat-kicker">Què és MESCLARI</span>
+          <h2>Definició i posicionament</h2>
+        </header>
+        <div class="editorial-two">
+          <article class="editorial-piece">
+            <h3>Una proposta integral</h3>
+            <p>MESCLARI és una proposta gastronòmica contemporània de gamma alta que entén la restauració com una experiència completa i cohesionada. El projecte no es limita a una oferta culinària concreta, sinó que desenvolupa una manera pròpia d’acollir, servir i construir valor percebut a través del conjunt.</p>
           </article>
-          <article class="home-card">
-            <h4>Concepte de marca</h4>
-            <p>Bloc per desplegar univers de marca, to narratiu i coherència visual-comercial.</p>
-          </article>
-          <article class="home-card">
-            <h4>Identitat gastronòmica</h4>
-            <p>Estructura per explicar producte, territori, tècnica i lectura culinària de MESCLARI.</p>
-          </article>
-          <article class="home-card">
-            <h4>Valor diferencial i experiència</h4>
-            <p>Espai per concretar què rep el client i per què aquesta proposta és singular.</p>
+          <article class="editorial-piece">
+            <h3>Una marca amb intenció</h3>
+            <p>La seva identitat combina exigència gastronòmica, sensibilitat de sala i una atmosfera acurada, amb la voluntat de generar una experiència elegant, propera i amb personalitat. MESCLARI no busca impactar des de l’excés, sinó des de l’equilibri entre qualitat, caràcter i coherència.</p>
+            <div class="key-lines" aria-label="Claus de posicionament">
+              <span>Hospitalitat amb intenció</span>
+              <span>Caràcter sense artifici</span>
+              <span>Gamma alta amb criteri</span>
+            </div>
           </article>
         </div>
+      </section>
+
+      <section class="identitat-section" id="pilars-identitat">
+        <header class="identitat-head">
+          <span class="identitat-kicker">Pilars de la identitat</span>
+          <h2>Quatre eixos que sostenen el projecte</h2>
+        </header>
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <span class="num">01</span>
+            <h3>Producte i territori</h3>
+            <p>La identitat de MESCLARI parteix d’un respecte clar pel producte i pel context on s’insereix. La selecció, el tractament i la lectura gastronòmica de la matèria primera busquen qualitat, temporalitat i coherència amb la proposta.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="num">02</span>
+            <h3>Sala i experiència</h3>
+            <p>La sala no actua com un simple suport del menjar, sinó com una part activa de l’experiència. El ritme, l’atenció i la manera de relacionar-se amb el client reforcen la percepció global del projecte.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="num">03</span>
+            <h3>Espai i atmosfera</h3>
+            <p>L’espai de MESCLARI expressa la mateixa coherència que la proposta gastronòmica. Materials, llum, distribució i ambient contribueixen a construir una experiència refinada, agradable i recognoscible.</p>
+          </article>
+          <article class="pillar-card">
+            <span class="num">04</span>
+            <h3>Caràcter de marca</h3>
+            <p>MESCLARI es construeix com una marca amb caràcter, capaç de projectar una identitat sòlida sense recórrer a excessos formals. La seva diferència neix de la coherència entre allò que promet i allò que realment ofereix.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="identitat-section" id="univers-sensorial">
+        <header class="identitat-head">
+          <span class="identitat-kicker">Univers sensorial</span>
+          <h2>La forma perceptible de la identitat</h2>
+          <p class="identitat-intro">La identitat de MESCLARI no es defineix només pel que s’explica, sinó també pel que es percep. L’atmosfera, els materials i la manera com es viu l’espai formen part essencial del projecte.</p>
+        </header>
+        <div class="sensorial-layout">
+          <div class="sensorial-grid">
+            <article class="sensorial-item">
+              <h3>Llum</h3>
+              <p>Una llum càlida, controlada i equilibrada, pensada per reforçar la calma, la lectura del plat i la qualitat percebuda de l’espai.</p>
+            </article>
+            <article class="sensorial-item">
+              <h3>Materials</h3>
+              <p>Fustes, teixits, textures i superfícies que transmeten elegància sense fredor, amb una lectura contemporània i acollidora.</p>
+            </article>
+            <article class="sensorial-item">
+              <h3>Ritme</h3>
+              <p>Un ambient que evita la pressa i afavoreix una experiència ordenada, fluida i agradable de principi a fi.</p>
+            </article>
+            <article class="sensorial-item">
+              <h3>Tracte</h3>
+              <p>Una manera d’atendre propera i professional, on el servei acompanya sense envair i dona sentit a l’experiència global.</p>
+            </article>
+          </div>
+          <!-- VISUAL SECUNDARI: espai per imatge 4:5 o 16:9 de llenguatge sensorial -->
+          <figure class="support-media has-image" aria-label="Vista de la sala de MESCLARI">
+            <img src="imaguenes i videos/WhatsApp Image 2026-04-16 at 20.39.07 (2).jpeg" alt="Vista de la sala de MESCLARI" loading="lazy" />
+            <figcaption class="media-placeholder">
+              <strong>Visual de suport · 4:5 / 16:9</strong>
+              <span>Una atmosfera pensada per sostenir l’experiència.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="identitat-section" id="personalitat-marca">
+        <header class="identitat-head">
+          <span class="identitat-kicker">Personalitat de marca</span>
+          <h2>MESCLARI en vuit tensions complementàries</h2>
+          <p class="identitat-intro">MESCLARI projecta una personalitat definida per l’equilibri entre refinament, calidesa i credibilitat.</p>
+        </header>
+        <div class="personality-matrix">
+          <article class="pair-card"><strong>Elegant però propera</strong></article>
+          <article class="pair-card"><strong>Contemporània però càlida</strong></article>
+          <article class="pair-card"><strong>Tècnica però natural</strong></article>
+          <article class="pair-card"><strong>Cuidada però fluida</strong></article>
+          <article class="pair-card"><strong>Diferencial però creïble</strong></article>
+          <article class="pair-card"><strong>Ambiciosa però mesurada</strong></article>
+          <article class="pair-card"><strong>Gastronòmica però hospitalària</strong></article>
+          <article class="pair-card"><strong>Sofisticada però habitable</strong></article>
+        </div>
+      </section>
+
+      <section class="identitat-section" id="traduccio-identitat">
+        <header class="identitat-head">
+          <span class="identitat-kicker">Traducció de la identitat al projecte</span>
+          <h2>Quan el discurs es converteix en operativa real</h2>
+          <p class="identitat-intro">La identitat de MESCLARI no es queda en el discurs. Es concreta en decisions reals que afecten la manera de cuinar, de servir i de construir l’espai.</p>
+        </header>
+
+        <div class="translation-grid">
+          <article class="translation-card">
+            <div class="translation-copy">
+              <h3>A la cuina</h3>
+              <p>La identitat de MESCLARI es tradueix en una proposta culinària pensada amb criteri, sensibilitat estètica i respecte pel producte. La cuina no es planteja com un exercici d’exhibició, sinó com una expressió coherent del nivell, el ritme i la personalitat del restaurant.</p>
+            </div>
+            <!-- VISUAL SECUNDARI #1: substituir per imatge de cuina o emplatat 16:9 -->
+            <figure class="media-mini" aria-label="Espai reservat per imatge de cuina">
+              <figcaption class="media-placeholder">
+                <strong>Suport visual · Cuina</strong>
+                <span>El detall com a llenguatge del projecte.</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="translation-card">
+            <div class="translation-copy">
+              <h3>A la sala</h3>
+              <p>En sala, la identitat es converteix en hospitalitat, ritme i lectura del detall. El servei acompanya l’experiència amb seguretat i naturalitat, reforçant la percepció de qualitat sense caure en rigidesa ni artifici.</p>
+            </div>
+            <!-- VISUAL SECUNDARI #2: substituir per imatge de sala 4:5 o 16:9 -->
+            <figure class="media-mini has-image" aria-label="Vista de la sala de MESCLARI">
+              <img src="imaguenes i videos/WhatsApp Image 2026-04-16 at 20.39.07 (2).jpeg" alt="Vista de la sala de MESCLARI" loading="lazy" />
+              <figcaption class="media-placeholder">
+                <strong>Suport visual · Sala</strong>
+                <span>Identitat, llum i ritme en una mateixa lectura.</span>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="translation-card">
+            <div class="translation-copy">
+              <h3>A l’espai</h3>
+              <p>L’espai actua com una extensió directa del projecte. La distribució, l’ambientació i els elements materials s’alineen amb la mateixa idea de marca: elegància, confort, coherència i capacitat real de generar una experiència memorable.</p>
+            </div>
+            <div class="media-mini" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <!-- BLOC OPCIONAL DE VÍDEO: convertir en vídeo curt amb pòster; si no hi ha material, mantenir com a imatge panoràmica -->
+        <figure class="optional-video" aria-label="Bloc opcional per vídeo curt o imatge panoràmica">
+          <figcaption class="media-placeholder">
+            <strong>Vídeo curt / recorregut visual</strong>
+            <span>La forma visible d’una idea coherent.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="identitat-section identitat-closure" id="tancament-manifest">
+        <span class="identitat-kicker">Tancament / manifest final</span>
+        <p>MESCLARI no es defineix només pel que mostra, sinó per la manera com totes les seves parts avancen en una mateixa direcció. La seva identitat neix d’aquesta coherència: una proposta pensada per ser recordada, però també per ser viscuda amb naturalitat i sentit.</p>
+        <strong>Una identitat construïda des del detall, el criteri i la consistència.</strong>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Estructura multipàgina amb continuïtat visual premium.</p>
+      <p>MESCLARI · Identitat de marca amb continuïtat visual premium.</p>
     </footer>
 
     <script src="script.js"></script>
