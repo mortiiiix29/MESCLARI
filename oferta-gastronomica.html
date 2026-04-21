@@ -3,14 +3,321 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</title>
-    <meta name="description" content="ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT · arquitectura multipàgina de MESCLARI." />
+    <title>MESCLARI · Oferta gastronòmica</title>
+    <meta
+      name="description"
+      content="Oferta gastronòmica de MESCLARI: estructura premium de la proposta culinària, formats comercials, maridatge i base tècnica."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .oferta-page {
+        --of-line: rgba(30, 45, 59, 0.16);
+        --of-soft: rgba(30, 45, 59, 0.08);
+      }
+
+      .oferta-main {
+        width: min(1240px, 92vw);
+        margin: clamp(1.8rem, 3vw, 3rem) auto 4.5rem;
+        display: grid;
+        gap: clamp(2.1rem, 3.8vw, 4rem);
+      }
+
+      .oferta-section {
+        border: 1px solid var(--of-line);
+        border-radius: 22px;
+        padding: clamp(1.25rem, 2.5vw, 2.3rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.94), rgba(236, 221, 203, 0.9));
+        box-shadow: 0 12px 30px rgba(30, 45, 59, 0.09);
+      }
+
+      .oferta-kicker {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        font-weight: 600;
+        color: #ae4925;
+        margin-bottom: 0.7rem;
+      }
+
+      .oferta-title {
+        font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+        color: var(--blue);
+        line-height: 1.05;
+        margin-bottom: 0.65rem;
+      }
+
+      .oferta-subtitle {
+        font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+        color: var(--ink-soft);
+        max-width: 64ch;
+      }
+
+      .oferta-hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(1.1rem, 2vw, 2rem);
+        align-items: stretch;
+      }
+
+      .oferta-hero-copy p {
+        margin-top: 1rem;
+        color: var(--ink-soft);
+        max-width: 58ch;
+      }
+
+      .oferta-media,
+      .oferta-media-small,
+      .oferta-video,
+      .oferta-pass-media {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--of-line);
+        background: linear-gradient(155deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.18));
+        position: relative;
+      }
+
+      .oferta-media img,
+      .oferta-media-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0.8;
+      }
+
+      .oferta-media figcaption,
+      .oferta-media-small figcaption,
+      .oferta-video figcaption,
+      .oferta-pass-media span {
+        position: absolute;
+        left: 0.7rem;
+        right: 0.7rem;
+        bottom: 0.7rem;
+        border-radius: 10px;
+        padding: 0.44rem 0.62rem;
+        font-size: 0.74rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #f6eee4;
+        background: rgba(30, 45, 59, 0.58);
+      }
+
+      .oferta-media {
+        min-height: 340px;
+      }
+
+      .oferta-grid-3,
+      .oferta-grid-4,
+      .oferta-grid-2 {
+        display: grid;
+        gap: 0.9rem;
+        margin-top: 1.15rem;
+      }
+
+      .oferta-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .oferta-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .oferta-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .oferta-mini,
+      .oferta-callout,
+      .oferta-pass,
+      .oferta-item {
+        border: 1px solid var(--of-line);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(244, 233, 220, 0.7);
+      }
+
+      .oferta-mini h3,
+      .oferta-callout h3,
+      .oferta-item h4,
+      .oferta-pass h4 {
+        color: var(--terracotta);
+        margin-bottom: 0.25rem;
+      }
+
+      .oferta-mini p,
+      .oferta-callout p,
+      .oferta-item p,
+      .oferta-pass p,
+      .oferta-list li {
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .oferta-commercial {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 1.15rem;
+      }
+
+      .oferta-commercial article {
+        border: 1px solid var(--of-line);
+        border-radius: 18px;
+        padding: 1.2rem;
+        background: linear-gradient(155deg, rgba(244, 233, 220, 0.88), rgba(236, 221, 203, 0.92));
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.11);
+      }
+
+      .oferta-commercial h3 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        color: var(--blue);
+      }
+
+      .oferta-commercial h4 {
+        font-size: 0.98rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--terracotta);
+        margin: 0.3rem 0 0.45rem;
+      }
+
+      .oferta-list {
+        margin: 0.7rem 0 0;
+        padding-left: 1.05rem;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .oferta-four-four-four {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1.2rem;
+      }
+
+      .oferta-menu-layout {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .oferta-category h4 {
+        font-size: 1.4rem;
+      }
+
+      .oferta-category ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1rem;
+        display: grid;
+        gap: 0.2rem;
+      }
+
+      .oferta-note {
+        border-radius: 14px;
+        border: 1px solid rgba(194, 94, 60, 0.26);
+        background: rgba(194, 94, 60, 0.08);
+        padding: 0.85rem 1rem;
+      }
+
+      .oferta-degustacio {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1rem;
+        margin-top: 1.1rem;
+      }
+
+      .oferta-passes {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .oferta-pass {
+        display: grid;
+        grid-template-columns: 1fr 0.35fr;
+        align-items: stretch;
+        gap: 0.7rem;
+      }
+
+      .oferta-pass-media {
+        min-height: 90px;
+        background: linear-gradient(145deg, rgba(110, 139, 116, 0.18), rgba(30, 45, 59, 0.2));
+      }
+
+      .oferta-side-panel {
+        display: grid;
+        gap: 0.7rem;
+        align-content: start;
+      }
+
+      .oferta-technical {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .oferta-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .oferta-media-small {
+        min-height: 210px;
+      }
+
+      .oferta-video {
+        min-height: 210px;
+        display: grid;
+        place-items: center;
+        color: #f6eee4;
+      }
+
+      .oferta-video .oferta-video-tag {
+        border: 1px solid rgba(246, 238, 228, 0.5);
+        border-radius: 999px;
+        padding: 0.32rem 0.72rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .oferta-closing {
+        text-align: center;
+        padding: 1.25rem;
+      }
+
+      .oferta-closing p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+        color: var(--blue);
+      }
+
+      @media (max-width: 1024px) {
+        .oferta-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .oferta-degustacio,
+        .oferta-four-four-four,
+        .oferta-hero,
+        .oferta-commercial { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 800px) {
+        .oferta-grid-3,
+        .oferta-grid-2,
+        .oferta-strip,
+        .oferta-technical { grid-template-columns: 1fr; }
+
+        .oferta-pass {
+          grid-template-columns: 1fr;
+        }
+
+        .oferta-media,
+        .oferta-media-small,
+        .oferta-video {
+          min-height: 190px;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="oferta-page">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -37,38 +344,240 @@
       </ul>
     </nav>
 
-    <header class="page-hero">
-      <h1>ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</h1>
-      <p>Arquitectura culinària de MESCLARI orientada a temporada, proximitat i rendiment comercial equilibrat.</p>
-    </header>
+    <main class="oferta-main">
+      <section class="oferta-section oferta-hero" id="oferta-hero">
+        <div class="oferta-hero-copy">
+          <p class="oferta-kicker">Arquitectura culinària</p>
+          <h1 class="oferta-title">Oferta gastronòmica</h1>
+          <p class="oferta-subtitle">Estructura de proposta pensada per explicar amb claredat el valor culinari, la lectura comercial i la coherència global de MESCLARI.</p>
+          <p>Base de treball preparada per incorporar contingut final extens, fitxes completes i relat executiu sense perdre ordre editorial ni llegibilitat.</p>
+        </div>
+        <figure class="oferta-media">
+          <img src="imaguenes i videos/oferta-gastronomica-hero.jpg" alt="Imatge principal de proposta gastronòmica" />
+          <figcaption>Imatge principal de proposta gastronòmica</figcaption>
+        </figure>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Filosofia gastronòmica</h4>
-            <p>Placeholder per marc de producte, proximitat, llotja i criteri de qualitat.</p>
+      <section class="oferta-section" id="visio-general-oferta">
+        <p class="oferta-kicker">Marc general</p>
+        <h2 class="oferta-title">Visió general de l’oferta</h2>
+        <p class="oferta-subtitle">Lectura sintètica de la lògica culinària i del paper de l’oferta dins del model de restaurant.</p>
+        <div class="oferta-grid-3">
+          <article class="oferta-mini">
+            <h3>Identitat culinària</h3>
+            <p>Definició breu del llenguatge gastronòmic i del posicionament de cuina.</p>
           </article>
-          <article class="home-card">
-            <h4>Estructura 4/4/4</h4>
-            <p>Bloc per definir funció comercial, accessibilitat i ritme de renovació.</p>
+          <article class="oferta-mini">
+            <h3>Coherència de proposta</h3>
+            <p>Punt de connexió entre concepte, preu percebut, ritme de carta i estructura operativa.</p>
           </article>
-          <article class="home-card">
-            <h4>Menú degustació</h4>
-            <p>Estructura per explicar relat culinari, posicionament i valor percebut.</p>
-          </article>
-          <article class="home-card">
-            <h4>Estacionalitat i formats</h4>
-            <p>Espai per adaptar oferta segons temporada i objectius operatius.</p>
+          <article class="oferta-mini">
+            <h3>Experiència completa</h3>
+            <p>Integració de cuina, sala, maridatge i recorregut de client en una única narrativa.</p>
           </article>
         </div>
+      </section>
+
+      <section class="oferta-section" id="estructura-comercial">
+        <p class="oferta-kicker">Formats clau</p>
+        <h2 class="oferta-title">Estructura comercial de l’oferta</h2>
+        <p class="oferta-subtitle">MESCLARI s’articula a partir de dos formats complementaris, amb funcions comercials i experiencials diferenciades.</p>
+        <div class="oferta-commercial">
+          <article>
+            <h3>Menú 4/4/4</h3>
+            <h4>Format accessible i recurrent</h4>
+            <p>Proposta funcional dissenyada per aportar continuïtat comercial i facilitar repetició de visita.</p>
+            <ul class="oferta-list">
+              <li>Estructura clara per decisió ràpida.</li>
+              <li>Adaptació àgil a temporada.</li>
+              <li>Base de volum amb qualitat sostinguda.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Menú degustació</h3>
+            <h4>Format experiencial i emblemàtic</h4>
+            <p>Recorregut culinari amb major intensitat narrativa, orientat a valor percebut alt i memorabilitat.</p>
+            <ul class="oferta-list">
+              <li>Relat gastronòmic seqüenciat per passes.</li>
+              <li>Major protagonisme de sala i maridatge.</li>
+              <li>Expressió més icònica de la identitat MESCLARI.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="menu-444">
+        <p class="oferta-kicker">Format funcional</p>
+        <h2 class="oferta-title">Menú 4/4/4</h2>
+        <p class="oferta-subtitle">Plantilla operativa preparada per incorporar selecció final de plats per categoria.</p>
+        <div class="oferta-four-four-four">
+          <div class="oferta-menu-layout">
+            <article class="oferta-item oferta-category">
+              <h4>Primers</h4>
+              <ul>
+                <li>Opció 01 · Placeholder curt</li>
+                <li>Opció 02 · Placeholder curt</li>
+                <li>Opció 03 · Placeholder curt</li>
+                <li>Opció 04 · Placeholder curt</li>
+              </ul>
+            </article>
+            <article class="oferta-item oferta-category">
+              <h4>Principals</h4>
+              <ul>
+                <li>Opció 01 · Placeholder curt</li>
+                <li>Opció 02 · Placeholder curt</li>
+                <li>Opció 03 · Placeholder curt</li>
+                <li>Opció 04 · Placeholder curt</li>
+              </ul>
+            </article>
+            <article class="oferta-item oferta-category">
+              <h4>Postres</h4>
+              <ul>
+                <li>Opció 01 · Placeholder curt</li>
+                <li>Opció 02 · Placeholder curt</li>
+                <li>Opció 03 · Placeholder curt</li>
+                <li>Opció 04 · Placeholder curt</li>
+              </ul>
+            </article>
+            <article class="oferta-note">
+              <strong>Espai per suplement destacat</strong>
+              <p>Bloc reservat per activar complements, productes especials o extres de temporada.</p>
+            </article>
+          </div>
+          <div class="oferta-menu-layout">
+            <figure class="oferta-media-small">
+              <img src="imaguenes i videos/oferta-gastronomica-4-4-4.jpg" alt="Composició visual del menú 4/4/4" />
+              <figcaption>Presentació visual del format 4/4/4</figcaption>
+            </figure>
+            <article class="oferta-callout">
+              <h3>Sentit del format</h3>
+              <p>Eina de proposta regular per equilibrar atractiu gastronòmic, control de producció i consistència comercial.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="menu-degustacio">
+        <p class="oferta-kicker">Format experiencial</p>
+        <h2 class="oferta-title">Menú degustació</h2>
+        <p class="oferta-subtitle">Estructura de recorregut per passes amb jerarquia visual reforçada per reflectir el caràcter emblemàtic del format.</p>
+        <div class="oferta-degustacio">
+          <div class="oferta-passes">
+            <article class="oferta-pass"><div><h4>Passe 01 · Obertura</h4><p>Microdescripció de benvinguda gastronòmica.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 02 · Mar</h4><p>Microdescripció curta amb focus de producte.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 03 · Horta</h4><p>Microdescripció de transició i textura.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 04 · Nucli</h4><p>Microdescripció del punt central del menú.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 05 · Intensitat</h4><p>Microdescripció de profunditat de sabor.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 06 · Prepostra</h4><p>Microdescripció de canvi de registre.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+            <article class="oferta-pass"><div><h4>Passe 07 · Tancament dolç</h4><p>Microdescripció final de recorregut.</p></div><div class="oferta-pass-media"><span>Suport visual opcional</span></div></article>
+          </div>
+          <aside class="oferta-side-panel">
+            <figure class="oferta-media-small">
+              <img src="imaguenes i videos/oferta-gastronomica-degustacio.jpg" alt="Composició visual del menú degustació" />
+              <figcaption>Presentació visual del menú degustació</figcaption>
+            </figure>
+            <article class="oferta-callout">
+              <h3>Versió vegetal / alternativa</h3>
+              <p>Espai reservat per descriure equivalències i coherència del recorregut adaptat.</p>
+            </article>
+            <article class="oferta-callout">
+              <h3>Maridatge associat</h3>
+              <p>Base per vincular cada fase del menú amb proposta líquida específica.</p>
+            </article>
+            <article class="oferta-callout">
+              <h3>Ritme de l’experiència</h3>
+              <p>Pauta temporal per equilibrar intensitat culinària i percepció global de sala.</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="begudes-maridatge">
+        <p class="oferta-kicker">Univers líquid</p>
+        <h2 class="oferta-title">Begudes i maridatge</h2>
+        <p class="oferta-subtitle">Estructura per mostrar com la proposta líquida reforça narrativa, servei i valor percebut.</p>
+        <div class="oferta-grid-4">
+          <article class="oferta-mini"><h3>Carta de vins</h3><p>Espai per criteri de selecció, territori i amplitud de gamma.</p></article>
+          <article class="oferta-mini"><h3>Maridatge</h3><p>Bloc per seqüència harmonitzada i lògica de combinacions.</p></article>
+          <article class="oferta-mini"><h3>Begudes d’autor o selecció</h3><p>Placeholder per propostes singulars no estrictament vinícoles.</p></article>
+          <article class="oferta-mini"><h3>Valor de sala</h3><p>Punt de suport per protocol de servei, explicació i ritme d’acompanyament.</p></article>
+        </div>
+        <figure class="oferta-media-small" style="margin-top: 1rem;">
+          <img src="imaguenes i videos/oferta-gastronomica-maridatge.jpg" alt="Presentació de maridatge i begudes" />
+          <figcaption>Presentació visual de maridatge</figcaption>
+        </figure>
+      </section>
+
+      <section class="oferta-section" id="criteris-estacionalitat">
+        <p class="oferta-kicker">Fonament culinari</p>
+        <h2 class="oferta-title">Criteris de producte i estacionalitat</h2>
+        <p class="oferta-subtitle">Esquelet argumental per justificar la proposta des de producte, tècnica i coherència temporal.</p>
+        <div class="oferta-grid-4">
+          <article class="oferta-mini"><h3>Producte</h3><p>Bloc per prioritat de qualitat, origen i lectura de proveïdor.</p></article>
+          <article class="oferta-mini"><h3>Temporalitat</h3><p>Espai per política de rotació i estacionalitat gastronòmica.</p></article>
+          <article class="oferta-mini"><h3>Tècnica</h3><p>Placeholder per criteris d’execució i nivell d’acabat.</p></article>
+          <article class="oferta-mini"><h3>Coherència amb la proposta</h3><p>Punt de connexió entre intenció culinària i identitat de MESCLARI.</p></article>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="fitxes-escandalls">
+        <p class="oferta-kicker">Base operativa</p>
+        <h2 class="oferta-title">Fitxes, escandalls i base tècnica</h2>
+        <p class="oferta-subtitle">Zona preparada per incorporar documentació tècnica i recursos de control econòmic de l’oferta.</p>
+        <div class="oferta-technical">
+          <article class="oferta-callout">
+            <h3>Fitxes tècniques</h3>
+            <p>Espai per enllaços, estructures de receptari i protocols d’execució.</p>
+          </article>
+          <article class="oferta-callout">
+            <h3>Escandalls i cost</h3>
+            <p>Panell reservat per lectura de costos, marges i coherència de PVP.</p>
+          </article>
+          <article class="oferta-callout">
+            <h3>Recursos de suport</h3>
+            <p>Base per annexos, fitxers complementaris o eines d’actualització interna.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="experiencia-global">
+        <p class="oferta-kicker">Integració de capes</p>
+        <h2 class="oferta-title">Experiència global de la proposta</h2>
+        <p class="oferta-subtitle">Síntesi de com l’oferta gastronòmica s’entén en relació directa amb sala i percepció final.</p>
+        <div class="oferta-grid-3">
+          <article class="oferta-mini"><h3>Cuina</h3><p>Eix de proposta culinària i identitat de plat.</p></article>
+          <article class="oferta-mini"><h3>Sala</h3><p>Traducció de la proposta en ritme, atenció i relat de servei.</p></article>
+          <article class="oferta-mini"><h3>Percepció final</h3><p>Resultat global que consolida valor, record i posicionament.</p></article>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="franja-visual-final">
+        <p class="oferta-kicker">Suport audiovisual</p>
+        <h2 class="oferta-title">Franja visual final</h2>
+        <p class="oferta-subtitle">Espai editorial per reforçar el dossier amb materials visuals clau de proposta i servei.</p>
+        <div class="oferta-strip">
+          <figure class="oferta-media-small">
+            <img src="imaguenes i videos/oferta-gastronomica-plat-signatura.jpg" alt="Plat representatiu" />
+            <figcaption>Plat representatiu</figcaption>
+          </figure>
+          <figure class="oferta-media-small">
+            <img src="imaguenes i videos/oferta-gastronomica-maridatge.jpg" alt="Servei i presentació" />
+            <figcaption>Servei i presentació</figcaption>
+          </figure>
+          <figure class="oferta-video">
+            <span class="oferta-video-tag">oferta-gastronomica-video.mp4</span>
+            <figcaption>Suport visual de l’experiència</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="oferta-section oferta-closing" id="tancament-oferta">
+        <p>Una oferta gastronòmica sòlida és aquella que connecta intenció culinària, estructura comercial i experiència completa.</p>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Estructura multipàgina amb continuïtat visual premium.</p>
+      <p>MESCLARI · Dossier digital de defensa professional amb coherència gastronòmica i operativa.</p>
     </footer>
 
     <script src="script.js"></script>
