@@ -7,6 +7,9 @@ const REF_MODE_ON = 'on';
 const defaultPage = 'index.html';
 const reformaPages = new Set([
   'reforma.html',
+  'estat-inicial-local.html',
+  'proposta-reforma-adequacio.html',
+  'lectura-tecnica-economica.html',
   'estructura-economica.html',
   'viabilitat-economica.html',
   'rendibilitat-dels-menus.html',
