@@ -91,6 +91,28 @@
         opacity: 0.8;
       }
 
+      .zoomable-media,
+      .oferta-pass-media.zoomable-pass {
+        cursor: zoom-in;
+      }
+
+      .zoomable-media::before,
+      .oferta-pass-media.zoomable-pass::before {
+        content: 'Ampliar';
+        position: absolute;
+        top: 0.65rem;
+        right: 0.65rem;
+        z-index: 4;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.22rem 0.46rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 238, 228, 0.45);
+        color: #f6eee4;
+        background: rgba(30, 45, 59, 0.56);
+      }
+
       .oferta-media figcaption,
       .oferta-media-small figcaption,
       .oferta-video figcaption,
@@ -265,6 +287,19 @@
         background: linear-gradient(145deg, rgba(110, 139, 116, 0.18), rgba(30, 45, 59, 0.2));
       }
 
+      .oferta-pass-media {
+        appearance: none;
+        border-radius: 14px;
+        width: 100%;
+        padding: 0;
+      }
+
+      .oferta-pass-media:focus-visible,
+      .zoomable-media:focus-visible {
+        outline: 2px solid rgba(194, 94, 60, 0.75);
+        outline-offset: 3px;
+      }
+
       .oferta-side-panel {
         display: grid;
         gap: 0.7rem;
@@ -314,6 +349,63 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: clamp(1.5rem, 2.8vw, 2rem);
         color: var(--blue);
+      }
+
+      .image-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1rem, 3vw, 2rem);
+        background: rgba(12, 19, 26, 0.82);
+        backdrop-filter: blur(3px);
+      }
+
+      .image-lightbox.open {
+        display: flex;
+      }
+
+      .image-lightbox-dialog {
+        position: relative;
+        width: min(1080px, 92vw);
+        max-height: 90vh;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(246, 238, 228, 0.3);
+        background: rgba(18, 30, 40, 0.94);
+      }
+
+      .image-lightbox img {
+        width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        display: block;
+        background: rgba(18, 30, 40, 0.9);
+      }
+
+      .image-lightbox-close {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.6rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 238, 228, 0.45);
+        background: rgba(12, 19, 26, 0.74);
+        color: #f6eee4;
+        font-size: 1.2rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .image-lightbox-caption {
+        padding: 0.7rem 0.95rem 0.9rem;
+        color: #f6eee4;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
       @media (max-width: 1024px) {
@@ -437,7 +529,7 @@
             </article>
           </div>
           <div class="oferta-menu-layout">
-            <figure class="oferta-media-small">
+            <figure class="oferta-media-small zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4.jpg" data-modal-caption="Presentació visual del format 4/4/4">
               <img src="imaguenes i videos/oferta-gastronomica-4-4-4.jpg" alt="Composició visual del menú 4/4/4" />
               <figcaption>Presentació visual del format 4/4/4</figcaption>
             </figure>
@@ -458,16 +550,16 @@
         <p class="oferta-subtitle" style="margin-top: 0.55rem;">Més que una successió de plats, es planteja com un recorregut amb sentit propi, on producte, tècnica, servei i atmosfera treballen en una mateixa direcció.</p>
         <div class="oferta-degustacio">
           <div class="oferta-passes">
-            <article class="oferta-pass"><div><h4>Passa 1 · Coca d’oli, tomàquet de penjar i anxova</h4><p>Mos cruixent i directe que obre el recorregut amb un perfil mediterrani net, salí i molt reconeixible.</p><p class="oferta-compose">Coca fina d’oli cruixent, tomàquet de penjar ratllat, anxova de l’Escala, OOVE arbequina i orenga.</p><p class="oferta-note-inline">Base compartida amb la versió vegetariana.</p><p class="oferta-wine">Vi recomanat · Ancestral de Xarel·lo / Escumós Brut Nature</p></div><div class="oferta-pass-media"><span>Passa 1</span></div></article>
-            <article class="oferta-pass"><div><h4>Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc</h4><p>Plat fred, suau i aromàtic que refresca el ritme del menú i introdueix una lectura més delicada.</p><p class="oferta-compose">Porro i all tendre confitats, patata, fons vegetal, ametlla mòlta, toc de nata, grans de raïm pelats i oli d’herbes.</p><p class="oferta-note-inline">Base compartida.</p></div><div class="oferta-pass-media"><span>Passa 2</span></div></article>
-            <article class="oferta-pass featured"><div><h4>Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu</h4><p>Passa càlid i cremós que aporta profunditat i reforça la dimensió experiencial del recorregut.</p><p class="oferta-compose">Ou poché cremós, parmentier suau amb herbes fines, mantega noisette i tòfona d’estiu ratllada.</p><p class="oferta-note-inline">Elaboració en sala.</p><p class="oferta-compose">L’ou arriba sobre la parmentier i es completa al moment amb mantega noisette calenta i tòfona ratllada, reforçant aroma, ritual i valor percebut.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Raimat Turons de la Pleta</p></div><div class="oferta-pass-media"><span>Passa 3</span></div></article>
-            <article class="oferta-pass"><div><h4>Passa 4 · Llobarro a la brasa, salsa verda d’herbes i llimona</h4><p>Passa de perfil net i mediterrani que manté el recorregut lleuger, elegant i molt llegible.</p><p class="oferta-compose">Llobarro de llotja marcat a la brasa, salsa verda de julivert, cibulet, OOVE i llimona, amb pell de llimona i sal marina.</p><p class="oferta-note-inline">Base compartida de salsa.</p><p class="oferta-wine">Vi recomanat · Garnatxa Blanca DO Terra Alta</p></div><div class="oferta-pass-media"><span>Passa 4</span></div></article>
-            <article class="oferta-pass"><div><h4>Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà</h4><p>Moment de més profunditat del menú, amb una lectura més intensa, càlida i gastronòmica.</p><p class="oferta-compose">Espatlla de xai lletó cuinada 12 hores a baixa temperatura i acabada a la brasa, samfaina fina d’estiu i reducció de vi negre DO Empordà.</p><p class="oferta-wine">Vi recomanat · Carles Andreu Trepat 2024</p></div><div class="oferta-pass-media"><span>Passa 5</span></div></article>
-            <article class="oferta-pass"><div><h4>Passa 6 · Prepostre · Granissat de llimona i farigola</h4><p>Punt de transició que refresca, neteja el paladar i prepara el tancament dolç del recorregut.</p><p class="oferta-compose">Granissat natural de llimona, sucre lleu i farigola.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Kombutxa Cítrics ONFLOW</p></div><div class="oferta-pass-media"><span>Passa 6</span></div></article>
-            <article class="oferta-pass"><div><h4>Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel</h4><p>Tancament lleuger, aromàtic i estacional, coherent amb l’estiu i amb el to general del menú.</p><p class="oferta-compose">Préssec d’estiu rostit al forn, iogur cremós fred amb mel, farigola i pell de taronja ratllada.</p><p class="oferta-wine">Vi recomanat · Bochorris Brut Nature</p></div><div class="oferta-pass-media"><span>Passa 7</span></div></article>
+            <article class="oferta-pass"><div><h4>Passa 1 · Coca d’oli, tomàquet de penjar i anxova</h4><p>Mos cruixent i directe que obre el recorregut amb un perfil mediterrani net, salí i molt reconeixible.</p><p class="oferta-compose">Coca fina d’oli cruixent, tomàquet de penjar ratllat, anxova de l’Escala, OOVE arbequina i orenga.</p><p class="oferta-note-inline">Base compartida amb la versió vegetariana.</p><p class="oferta-wine">Vi recomanat · Ancestral de Xarel·lo / Escumós Brut Nature</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-1.jpg" data-modal-caption="Passa 1 · Coca d’oli, tomàquet de penjar i anxova"><span>Passa 1</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc</h4><p>Plat fred, suau i aromàtic que refresca el ritme del menú i introdueix una lectura més delicada.</p><p class="oferta-compose">Porro i all tendre confitats, patata, fons vegetal, ametlla mòlta, toc de nata, grans de raïm pelats i oli d’herbes.</p><p class="oferta-note-inline">Base compartida.</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-2.jpg" data-modal-caption="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc"><span>Passa 2</span></button></article>
+            <article class="oferta-pass featured"><div><h4>Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu</h4><p>Passa càlid i cremós que aporta profunditat i reforça la dimensió experiencial del recorregut.</p><p class="oferta-compose">Ou poché cremós, parmentier suau amb herbes fines, mantega noisette i tòfona d’estiu ratllada.</p><p class="oferta-note-inline">Elaboració en sala.</p><p class="oferta-compose">L’ou arriba sobre la parmentier i es completa al moment amb mantega noisette calenta i tòfona ratllada, reforçant aroma, ritual i valor percebut.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Raimat Turons de la Pleta</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-3.jpg" data-modal-caption="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu"><span>Passa 3</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 4 · Llobarro a la brasa, salsa verda d’herbes i llimona</h4><p>Passa de perfil net i mediterrani que manté el recorregut lleuger, elegant i molt llegible.</p><p class="oferta-compose">Llobarro de llotja marcat a la brasa, salsa verda de julivert, cibulet, OOVE i llimona, amb pell de llimona i sal marina.</p><p class="oferta-note-inline">Base compartida de salsa.</p><p class="oferta-wine">Vi recomanat · Garnatxa Blanca DO Terra Alta</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-4.jpg" data-modal-caption="Passa 4 · Llobarro a la brasa, salsa verda d’herbes i llimona"><span>Passa 4</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà</h4><p>Moment de més profunditat del menú, amb una lectura més intensa, càlida i gastronòmica.</p><p class="oferta-compose">Espatlla de xai lletó cuinada 12 hores a baixa temperatura i acabada a la brasa, samfaina fina d’estiu i reducció de vi negre DO Empordà.</p><p class="oferta-wine">Vi recomanat · Carles Andreu Trepat 2024</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-5.jpg" data-modal-caption="Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà"><span>Passa 5</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 6 · Prepostre · Granissat de llimona i farigola</h4><p>Punt de transició que refresca, neteja el paladar i prepara el tancament dolç del recorregut.</p><p class="oferta-compose">Granissat natural de llimona, sucre lleu i farigola.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Kombutxa Cítrics ONFLOW</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-6.jpg" data-modal-caption="Passa 6 · Prepostre · Granissat de llimona i farigola"><span>Passa 6</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel</h4><p>Tancament lleuger, aromàtic i estacional, coherent amb l’estiu i amb el to general del menú.</p><p class="oferta-compose">Préssec d’estiu rostit al forn, iogur cremós fred amb mel, farigola i pell de taronja ratllada.</p><p class="oferta-wine">Vi recomanat · Bochorris Brut Nature</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-7.jpg" data-modal-caption="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel"><span>Passa 7</span></button></article>
           </div>
           <aside class="oferta-side-panel">
-            <figure class="oferta-media-small">
+            <figure class="oferta-media-small zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio.jpg" data-modal-caption="Presentació visual del menú degustació">
               <img src="imaguenes i videos/oferta-gastronomica-degustacio.jpg" alt="Composició visual del menú degustació" />
               <figcaption>Presentació visual del menú degustació</figcaption>
             </figure>
@@ -519,6 +611,62 @@
       <p>MESCLARI · Dossier digital de defensa professional amb coherència gastronòmica i operativa.</p>
     </footer>
 
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+      <div class="image-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Imatge ampliada">
+        <button type="button" class="image-lightbox-close" id="lightboxClose" aria-label="Tancar imatge ampliada">×</button>
+        <img id="lightboxImage" src="" alt="" />
+        <p class="image-lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+      (() => {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('lightboxClose');
+        const zoomables = document.querySelectorAll('.zoomable-media, .zoomable-pass');
+        if (!lightbox || !lightboxImg || !lightboxCaption || !closeBtn || !zoomables.length) return;
+
+        const closeLightbox = () => {
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.removeAttribute('src');
+        };
+
+        const openLightbox = (src, caption) => {
+          lightboxImg.src = src;
+          lightboxImg.alt = caption || 'Imatge ampliada';
+          lightboxCaption.textContent = caption || '';
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        };
+
+        zoomables.forEach((item) => {
+          const handler = () => openLightbox(item.dataset.modalSrc || '', item.dataset.modalCaption || '');
+          item.addEventListener('click', handler);
+          item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              handler();
+            }
+          });
+        });
+
+        lightboxImg.addEventListener('error', () => {
+          lightboxCaption.textContent = 'Suport visual pendent de carregar';
+          lightboxImg.removeAttribute('src');
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+        });
+      })();
+    </script>
   </body>
 </html>
