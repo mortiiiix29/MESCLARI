@@ -3,14 +3,483 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</title>
-    <meta name="description" content="ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT · arquitectura multipàgina de MESCLARI." />
+    <title>MESCLARI · Oferta gastronòmica</title>
+    <meta
+      name="description"
+      content="Oferta gastronòmica de MESCLARI: estructura premium de la proposta culinària, formats comercials, maridatge i base tècnica."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .oferta-page {
+        --of-line: rgba(30, 45, 59, 0.16);
+        --of-soft: rgba(30, 45, 59, 0.08);
+      }
+
+      .oferta-main {
+        width: min(1240px, 92vw);
+        margin: clamp(1.8rem, 3vw, 3rem) auto 4.5rem;
+        display: grid;
+        gap: clamp(2.1rem, 3.8vw, 4rem);
+      }
+
+      .oferta-section {
+        border: 1px solid var(--of-line);
+        border-radius: 22px;
+        padding: clamp(1.25rem, 2.5vw, 2.3rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.94), rgba(236, 221, 203, 0.9));
+        box-shadow: 0 12px 30px rgba(30, 45, 59, 0.09);
+      }
+
+      .oferta-kicker {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+        font-weight: 600;
+        color: #ae4925;
+        margin-bottom: 0.7rem;
+      }
+
+      .oferta-title {
+        font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+        color: var(--blue);
+        line-height: 1.05;
+        margin-bottom: 0.65rem;
+      }
+
+      .oferta-subtitle {
+        font-size: clamp(1.02rem, 1.7vw, 1.22rem);
+        color: var(--ink-soft);
+        max-width: 64ch;
+      }
+
+      .oferta-hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(1.1rem, 2vw, 2rem);
+        align-items: stretch;
+      }
+
+      .oferta-hero-copy p {
+        margin-top: 1rem;
+        color: var(--ink-soft);
+        max-width: 58ch;
+      }
+
+      .oferta-media,
+      .oferta-media-small,
+      .oferta-video,
+      .oferta-pass-media {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--of-line);
+        background: linear-gradient(155deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.18));
+        position: relative;
+      }
+
+      .oferta-media img,
+      .oferta-media-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0.8;
+      }
+
+      .zoomable-media,
+      .oferta-pass-media.zoomable-pass {
+        cursor: zoom-in;
+      }
+
+      .zoomable-media::before,
+      .oferta-pass-media.zoomable-pass::before {
+        content: 'Ampliar';
+        position: absolute;
+        top: 0.65rem;
+        right: 0.65rem;
+        z-index: 4;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.22rem 0.46rem;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 238, 228, 0.45);
+        color: #f6eee4;
+        background: rgba(30, 45, 59, 0.56);
+      }
+
+      .oferta-media figcaption,
+      .oferta-media-small figcaption,
+      .oferta-video figcaption,
+      .oferta-pass-media span {
+        position: absolute;
+        left: 0.7rem;
+        right: 0.7rem;
+        bottom: 0.7rem;
+        border-radius: 10px;
+        padding: 0.44rem 0.62rem;
+        font-size: 0.74rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #f6eee4;
+        background: rgba(30, 45, 59, 0.58);
+      }
+
+      .oferta-media {
+        min-height: 340px;
+      }
+
+      .oferta-grid-3,
+      .oferta-grid-4,
+      .oferta-grid-2 {
+        display: grid;
+        gap: 0.9rem;
+        margin-top: 1.15rem;
+      }
+
+      .oferta-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .oferta-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .oferta-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .oferta-mini,
+      .oferta-callout,
+      .oferta-pass,
+      .oferta-item {
+        border: 1px solid var(--of-line);
+        border-radius: 14px;
+        padding: 0.95rem;
+        background: rgba(244, 233, 220, 0.7);
+      }
+
+      .oferta-mini h3,
+      .oferta-callout h3,
+      .oferta-item h4,
+      .oferta-pass h4 {
+        color: var(--terracotta);
+        margin-bottom: 0.25rem;
+      }
+
+      .oferta-mini p,
+      .oferta-callout p,
+      .oferta-item p,
+      .oferta-pass p,
+      .oferta-list li {
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .oferta-pass .oferta-compose {
+        margin-top: 0.32rem;
+        font-size: 0.88rem;
+      }
+
+      .oferta-pass .oferta-note-inline {
+        margin-top: 0.32rem;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--terracotta);
+      }
+
+      .oferta-pass .oferta-wine {
+        margin-top: 0.4rem;
+        font-size: 0.84rem;
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      .oferta-pass.featured {
+        border-color: rgba(194, 94, 60, 0.45);
+        background: linear-gradient(145deg, rgba(244, 233, 220, 0.82), rgba(194, 94, 60, 0.12));
+      }
+
+      .oferta-commercial {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 1.15rem;
+      }
+
+      .oferta-commercial article {
+        border: 1px solid var(--of-line);
+        border-radius: 18px;
+        padding: 1.2rem;
+        background: linear-gradient(155deg, rgba(244, 233, 220, 0.88), rgba(236, 221, 203, 0.92));
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.11);
+      }
+
+      .oferta-commercial h3 {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+        color: var(--blue);
+      }
+
+      .oferta-commercial h4 {
+        font-size: 0.98rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--terracotta);
+        margin: 0.3rem 0 0.45rem;
+      }
+
+      .oferta-list {
+        margin: 0.7rem 0 0;
+        padding-left: 1.05rem;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .oferta-four-four-four {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        margin-top: 1.2rem;
+      }
+
+      .oferta-menu-layout {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .oferta-category h4 {
+        font-size: 1.4rem;
+      }
+
+      .oferta-category ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1rem;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .oferta-category li p {
+        margin: 0;
+        display: grid;
+        gap: 0.14rem;
+      }
+
+      .oferta-category li strong {
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      .oferta-category li span {
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+      }
+
+      .oferta-category-row {
+        margin-top: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr minmax(220px, 320px);
+        gap: 0.75rem;
+        align-items: start;
+      }
+
+      .oferta-category-row ul {
+        margin-top: 0;
+      }
+
+      .oferta-dish-media {
+        margin: 0;
+        min-height: 122px;
+        max-height: 224px;
+        width: min(100%, 224px);
+        justify-self: center;
+        align-self: start;
+      }
+
+      .oferta-dish-media img {
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .oferta-note {
+        border-radius: 14px;
+        border: 1px solid rgba(194, 94, 60, 0.26);
+        background: rgba(194, 94, 60, 0.08);
+        padding: 0.85rem 1rem;
+      }
+
+      .oferta-degustacio {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.1rem;
+      }
+
+      .oferta-passes {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .oferta-pass {
+        display: grid;
+        grid-template-columns: 1fr 0.35fr;
+        align-items: stretch;
+        gap: 0.7rem;
+      }
+
+      .oferta-pass-media {
+        min-height: 90px;
+        background: linear-gradient(145deg, rgba(110, 139, 116, 0.18), rgba(30, 45, 59, 0.2));
+      }
+
+      .oferta-pass-media {
+        appearance: none;
+        border-radius: 14px;
+        width: 100%;
+        padding: 0;
+      }
+
+      .oferta-pass-media:focus-visible,
+      .zoomable-media:focus-visible {
+        outline: 2px solid rgba(194, 94, 60, 0.75);
+        outline-offset: 3px;
+      }
+
+      .oferta-side-panel {
+        display: grid;
+        gap: 0.7rem;
+        align-content: start;
+      }
+
+      .oferta-technical {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .oferta-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .oferta-media-small {
+        min-height: 210px;
+      }
+
+      .oferta-video {
+        min-height: 210px;
+        display: grid;
+        place-items: center;
+        color: #f6eee4;
+      }
+
+      .oferta-video .oferta-video-tag {
+        border: 1px solid rgba(246, 238, 228, 0.5);
+        border-radius: 999px;
+        padding: 0.32rem 0.72rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .oferta-closing {
+        text-align: center;
+        padding: 1.25rem;
+      }
+
+      .oferta-closing p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+        color: var(--blue);
+      }
+
+      .image-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1rem, 3vw, 2rem);
+        background: rgba(12, 19, 26, 0.82);
+        backdrop-filter: blur(3px);
+      }
+
+      .image-lightbox.open {
+        display: flex;
+      }
+
+      .image-lightbox-dialog {
+        position: relative;
+        width: min(1080px, 92vw);
+        max-height: 90vh;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(246, 238, 228, 0.3);
+        background: rgba(18, 30, 40, 0.94);
+      }
+
+      .image-lightbox img {
+        width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        display: block;
+        background: rgba(18, 30, 40, 0.9);
+      }
+
+      .image-lightbox-close {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.6rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        border: 1px solid rgba(246, 238, 228, 0.45);
+        background: rgba(12, 19, 26, 0.74);
+        color: #f6eee4;
+        font-size: 1.2rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .image-lightbox-caption {
+        padding: 0.7rem 0.95rem 0.9rem;
+        color: #f6eee4;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1024px) {
+        .oferta-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .oferta-degustacio,
+        .oferta-hero,
+        .oferta-commercial { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 800px) {
+        .oferta-grid-3,
+        .oferta-grid-2,
+        .oferta-strip,
+        .oferta-technical { grid-template-columns: 1fr; }
+
+        .oferta-category-row {
+          grid-template-columns: 1fr;
+        }
+
+        .oferta-pass {
+          grid-template-columns: 1fr;
+        }
+
+        .oferta-media,
+        .oferta-media-small,
+        .oferta-video {
+          min-height: 190px;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="oferta-page">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -31,46 +500,219 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html" aria-current="page">Oferta gastronòmica</a></li>
         <li><a href="experiencia-sala.html">Experiència de sala</a></li>
-        <li><a href="model-operatiu.html">Model operatiu</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-        <li><a href="evidencies-projecte.html">Evidències</a></li>
-      </ul>
+              </ul>
     </nav>
 
-    <header class="page-hero">
-      <h1>ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</h1>
-      <p>Arquitectura culinària de MESCLARI orientada a temporada, proximitat i rendiment comercial equilibrat.</p>
-    </header>
+    <main class="oferta-main">
+      <section class="oferta-section oferta-hero" id="oferta-hero">
+        <div class="oferta-hero-copy">
+          <p class="oferta-kicker">Oferta gastronòmica</p>
+          <h1 class="oferta-title">Una proposta real, estructurada i coherent amb MESCLARI</h1>
+          <p class="oferta-subtitle">L’oferta gastronòmica de MESCLARI s’articula a través de formats diferenciats que responen a funcions concretes dins del model del restaurant. La proposta combina identitat culinària, lògica comercial i experiència de client sense perdre coherència global.</p>
+        </div>
+        <figure class="oferta-media">
+          <img src="imaguenes i videos/oferta-gastronomica-hero.jpg" alt="Imatge principal de proposta gastronòmica" />
+          <figcaption>Presentació visual de l’oferta</figcaption>
+        </figure>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>ESTRUCTURA DE L’OFERTA GASTRONÒMICA I ESTACIONALITAT</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Filosofia gastronòmica</h4>
-            <p>Placeholder per marc de producte, proximitat, llotja i criteri de qualitat.</p>
+      <section class="oferta-section" id="estructura-comercial">
+        <p class="oferta-kicker">Doble lògica de la proposta</p>
+        <h2 class="oferta-title">Dos formats, dues funcions clares</h2>
+        <div class="oferta-commercial">
+          <article>
+            <h3>Menú 4/4/4</h3>
+            <p>Format de captació, recurrència i volum, pensat per oferir una proposta clara, atractiva i repetible sense renunciar a la identitat del restaurant.</p>
           </article>
-          <article class="home-card">
-            <h4>Estructura 4/4/4</h4>
-            <p>Bloc per definir funció comercial, accessibilitat i ritme de renovació.</p>
-          </article>
-          <article class="home-card">
-            <h4>Menú degustació</h4>
-            <p>Estructura per explicar relat culinari, posicionament i valor percebut.</p>
-          </article>
-          <article class="home-card">
-            <h4>Estacionalitat i formats</h4>
-            <p>Espai per adaptar oferta segons temporada i objectius operatius.</p>
+          <article>
+            <h3>Menú degustació</h3>
+            <p>Format més experiencial i representatiu de MESCLARI, orientat a desplegar millor el relat gastronòmic, el ritme de servei i el valor percebut de la proposta.</p>
           </article>
         </div>
+      </section>
+
+      <section class="oferta-section" id="menu-444">
+        <p class="oferta-kicker">Oferta real de temporada</p>
+        <h2 class="oferta-title">Menú 4/4/4 · Estiu</h2>
+        <p class="oferta-subtitle">Claredat d’elecció, coherència gastronòmica i capacitat de recurrència.</p>
+        <p class="oferta-subtitle" style="margin-top: 0.5rem;">El menú 4/4/4 d’estiu funciona com a porta d’entrada a la proposta de MESCLARI. Està pensat per captar client, afavorir la repetició de visita i sostenir volum amb una oferta clara, cuidada i fàcil de llegir.</p>
+        <div class="oferta-four-four-four">
+          <div class="oferta-menu-layout">
+            <article class="oferta-item oferta-category">
+              <h4>Primers</h4>
+              <div class="oferta-category-row">
+                <ul>
+                  <li><p><strong>Cabdells a la brasa, hummus de mongeta i carxofa</strong><span>Verd a la brasa, punt fresc i perfil vegetal mediterrani.</span></p></li>
+                  <li><p><strong>Tàrtar de gamba de Palamós, aigua de tomàquet i vinagreta mediterrània</strong><span>Lectura marina nítida amb textura lleugera i fresca.</span></p></li>
+                  <li><p><strong>Tomàquet cor de bou en òsmosi, gel d’alfàbrega i formatge fresc de cabra</strong><span>Plat estival net amb contrast làctic i aromàtic.</span></p></li>
+                  <li><p><strong>(Veg/V) Albergínia fumada, “tahini” d’ametlla, romesco aeri i herbes</strong><span>Opció vegetal amb profunditat i final herbaci.</span></p></li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" data-modal-caption="Primers · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" alt="Primers del menú 4/4/4" />
+                  <figcaption>Primers</figcaption>
+                </figure>
+              </div>
+            </article>
+            <article class="oferta-item oferta-category">
+              <h4>Principals</h4>
+              <div class="oferta-category-row">
+                <ul>
+                  <li><p><strong>Llobarro a la brasa, salsa verda d’herbes i llimona</strong><span>Peix de llotja amb lectura neta i elegant.</span></p></li>
+                  <li><p><strong>Arròs sec de gamba de la costa</strong><span>Fons marí intens i socarrat fi de temporada.</span></p></li>
+                  <li><p><strong>Pollastre camper a la brasa, samfaina suau i oli de farigola</strong><span>Principal saborós, clar i molt reconeixible.</span></p></li>
+                  <li><p><strong>(Veg) Caneló fred de verdures i formatge fresc</strong><span>Perfil fresc i complet per mantenir equilibri de carta.</span></p></li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" data-modal-caption="Principals · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" alt="Principals del menú 4/4/4" />
+                  <figcaption>Principals</figcaption>
+                </figure>
+              </div>
+            </article>
+            <article class="oferta-item oferta-category">
+              <h4>Postres</h4>
+              <div class="oferta-category-row">
+                <ul>
+                  <li><p><strong>Pressé de fruita d’estiu i gelat de iogur</strong><span>Tancament fresc de fruita madura i punt cremós.</span></p></li>
+                  <li><p><strong>(Veg/V) Cítrics en textures</strong><span>Opció lleugera, neta i molt refrescant.</span></p></li>
+                  <li><p><strong>Coca fina de pinyons i crema</strong><span>Lectura clàssica amb acabat cruixent i suau.</span></p></li>
+                  <li><p><strong>Gelat d’oli d’oliva, sal i xocolata</strong><span>Perfil mediterrani amb contrast dolç-salat final.</span></p></li>
+                </ul>
+                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" data-modal-caption="Postres · Menú 4/4/4">
+                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" alt="Postres del menú 4/4/4" />
+                  <figcaption>Postres</figcaption>
+                </figure>
+              </div>
+            </article>
+            <article class="oferta-note">
+              <strong>Preu públic: 34,90 €</strong>
+              <p>Una única opció premium incorpora un suplement de +4,50 €, aplicat només a la referència amb marge més feble.</p>
+            </article>
+          </div>
+        </div>
+        <article class="oferta-callout" style="margin-top: 0.9rem;">
+          <h3>Sentit del format</h3>
+          <p>Format de base comercial sòlida, pensat per captar, fidelitzar i mantenir una proposta recognoscible de qualitat.</p>
+        </article>
+      </section>
+
+      <section class="oferta-section" id="menu-degustacio">
+        <p class="oferta-kicker">Format experiencial</p>
+        <h2 class="oferta-title">Menú degustació · Nit (estiu)</h2>
+        <p class="oferta-subtitle">La versió més experiencial i representativa de la proposta.</p>
+        <p class="oferta-subtitle" style="margin-top: 0.55rem;">El menú degustació d’estiu concentra la lectura més completa de MESCLARI. És el format que permet desplegar millor la sensibilitat culinària del projecte, el seu ritme de servei i la seva capacitat de construir una experiència més memorable.</p>
+        <p class="oferta-subtitle" style="margin-top: 0.55rem;"><strong>Preu públic: 72,00 €</strong></p>
+        <p class="oferta-subtitle" style="margin-top: 0.55rem;">Més que una successió de plats, es planteja com un recorregut amb sentit propi, on producte, tècnica, servei i atmosfera treballen en una mateixa direcció.</p>
+        <div class="oferta-degustacio">
+          <div class="oferta-passes">
+            <article class="oferta-pass"><div><h4>Passa 1 · Coca d’oli, tomàquet de penjar i anxova</h4><p>Mos cruixent i directe que obre el recorregut amb un perfil mediterrani net, salí i molt reconeixible.</p><p class="oferta-compose">Coca fina d’oli cruixent, tomàquet de penjar ratllat, anxova de l’Escala, OOVE arbequina i orenga.</p><p class="oferta-note-inline">Base compartida amb la versió vegetariana.</p><p class="oferta-wine">Vi recomanat · Ancestral de Xarel·lo / Escumós Brut Nature</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-1.jpg" data-modal-caption="Passa 1 · Coca d’oli, tomàquet de penjar i anxova"><span>Passa 1</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc</h4><p>Plat fred, suau i aromàtic que refresca el ritme del menú i introdueix una lectura més delicada.</p><p class="oferta-compose">Porro i all tendre confitats, patata, fons vegetal, ametlla mòlta, toc de nata, grans de raïm pelats i oli d’herbes.</p><p class="oferta-note-inline">Base compartida.</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-2.jpg" data-modal-caption="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc"><span>Passa 2</span></button></article>
+            <article class="oferta-pass featured"><div><h4>Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu</h4><p>Passa càlid i cremós que aporta profunditat i reforça la dimensió experiencial del recorregut.</p><p class="oferta-compose">Ou poché cremós, parmentier suau amb herbes fines, mantega noisette i tòfona d’estiu ratllada.</p><p class="oferta-note-inline">Elaboració en sala.</p><p class="oferta-compose">L’ou arriba sobre la parmentier i es completa al moment amb mantega noisette calenta i tòfona ratllada, reforçant aroma, ritual i valor percebut.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Raimat Turons de la Pleta</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-3.jpg" data-modal-caption="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu"><span>Passa 3</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 4 · Llobarro a la brasa, salsa verda d’herbes i llimona</h4><p>Passa de perfil net i mediterrani que manté el recorregut lleuger, elegant i molt llegible.</p><p class="oferta-compose">Llobarro de llotja marcat a la brasa, salsa verda de julivert, cibulet, OOVE i llimona, amb pell de llimona i sal marina.</p><p class="oferta-note-inline">Base compartida de salsa.</p><p class="oferta-wine">Vi recomanat · Garnatxa Blanca DO Terra Alta</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-4.jpg" data-modal-caption="Passa 4 · Llobarro a la brasa, salsa verda d’herbes i llimona"><span>Passa 4</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà</h4><p>Moment de més profunditat del menú, amb una lectura més intensa, càlida i gastronòmica.</p><p class="oferta-compose">Espatlla de xai lletó cuinada 12 hores a baixa temperatura i acabada a la brasa, samfaina fina d’estiu i reducció de vi negre DO Empordà.</p><p class="oferta-wine">Vi recomanat · Carles Andreu Trepat 2024</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-5.jpg" data-modal-caption="Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà"><span>Passa 5</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 6 · Prepostre · Granissat de llimona i farigola</h4><p>Punt de transició que refresca, neteja el paladar i prepara el tancament dolç del recorregut.</p><p class="oferta-compose">Granissat natural de llimona, sucre lleu i farigola.</p><p class="oferta-note-inline">Base compartida.</p><p class="oferta-wine">Vi recomanat · Kombutxa Cítrics ONFLOW</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-6.jpg" data-modal-caption="Passa 6 · Prepostre · Granissat de llimona i farigola"><span>Passa 6</span></button></article>
+            <article class="oferta-pass"><div><h4>Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel</h4><p>Tancament lleuger, aromàtic i estacional, coherent amb l’estiu i amb el to general del menú.</p><p class="oferta-compose">Préssec d’estiu rostit al forn, iogur cremós fred amb mel, farigola i pell de taronja ratllada.</p><p class="oferta-wine">Vi recomanat · Bochorris Brut Nature</p></div><button type="button" class="oferta-pass-media zoomable-pass" data-modal-src="imaguenes i videos/oferta-gastronomica-degustacio-passa-7.jpg" data-modal-caption="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel"><span>Passa 7</span></button></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="versio-vegetariana">
+        <p class="oferta-kicker">Adaptació real</p>
+        <h2 class="oferta-title">Versió vegetariana</h2>
+        <p class="oferta-subtitle">MESCLARI contempla també una versió vegetariana del menú degustació, plantejada no com una alternativa secundària, sinó com una adaptació coherent del recorregut principal.</p>
+        <div class="oferta-grid-2">
+          <article class="oferta-callout">
+            <h3>Preu públic: 58,00 €</h3>
+            <p>La seva viabilitat operativa és sòlida perquè una part important del menú comparteix bases, elaboracions i lògiques de producció amb la versió clàssica. Això passa especialment en l’obertura del recorregut, en la vichyssoise, en la construcció del passa de parmentier i ou, en elements de salsa i en el prepostre, fet que permet mantenir coherència gastronòmica, ordre intern i eficiència de mise en place.</p>
+          </article>
+          <article class="oferta-callout">
+            <h3>Lectura estratègica</h3>
+            <p>D’aquesta manera, la versió vegetariana amplia la proposta sense debilitar la identitat del menú ni desordenar la producció.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="oferta-section" id="begudes-maridatge">
+        <p class="oferta-kicker">Univers líquid</p>
+        <h2 class="oferta-title">Begudes i maridatge</h2>
+        <p class="oferta-subtitle">La part líquida de la proposta reforça el valor global de l’experiència. El vi, el maridatge i la intervenció de sala amplien la lectura gastronòmica del restaurant i contribueixen a la seva diferenciació.</p>
+        <div class="oferta-grid-3">
+          <article class="oferta-mini"><h3>Carta de vins</h3><p>Selecció alineada amb l’oferta real i els ritmes del servei.</p></article>
+          <article class="oferta-mini"><h3>Maridatge</h3><p>Complement narratiu que acompanya i ordena el recorregut gastronòmic.</p></article>
+          <article class="oferta-mini"><h3>Valor de sala</h3><p>La sala converteix la proposta líquida en una part activa de l’experiència.</p></article>
+        </div>
+        <figure class="oferta-media-small" style="margin-top: 1rem;">
+          <img src="imaguenes i videos/oferta-gastronomica-maridatge.jpg" alt="Presentació de maridatge i begudes" />
+          <figcaption>Presentació visual de maridatge</figcaption>
+        </figure>
+      </section>
+
+      <section class="oferta-section oferta-closing" id="tancament-oferta">
+        <p>L’oferta gastronòmica de MESCLARI es construeix des de la coherència entre format, producte, servei i experiència. La seva força no depèn de l’excés, sinó de la claredat amb què cada proposta respon a una funció real dins del restaurant.</p>
+        <p style="margin-top: 0.75rem; font-size: 1.25rem; color: var(--terracotta); font-family: 'Inter', sans-serif; font-weight: 500;">Una proposta ben definida es llegeix millor, es defensa millor i es recorda més.</p>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Estructura multipàgina amb continuïtat visual premium.</p>
+      <p>MESCLARI · Dossier digital de defensa professional amb coherència gastronòmica i operativa.</p>
     </footer>
 
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+      <div class="image-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Imatge ampliada">
+        <button type="button" class="image-lightbox-close" id="lightboxClose" aria-label="Tancar imatge ampliada">×</button>
+        <img id="lightboxImage" src="" alt="" />
+        <p class="image-lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+      (() => {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('lightboxClose');
+        const zoomables = document.querySelectorAll('.zoomable-media, .zoomable-pass');
+        if (!lightbox || !lightboxImg || !lightboxCaption || !closeBtn || !zoomables.length) return;
+
+        const closeLightbox = () => {
+          lightbox.classList.remove('open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.removeAttribute('src');
+        };
+
+        const openLightbox = (src, caption) => {
+          lightboxImg.src = src;
+          lightboxImg.alt = caption || 'Imatge ampliada';
+          lightboxCaption.textContent = caption || '';
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+        };
+
+        zoomables.forEach((item) => {
+          const handler = () => openLightbox(item.dataset.modalSrc || '', item.dataset.modalCaption || '');
+          item.addEventListener('click', handler);
+          item.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              handler();
+            }
+          });
+        });
+
+        lightboxImg.addEventListener('error', () => {
+          lightboxCaption.textContent = 'Suport visual pendent de carregar';
+          lightboxImg.removeAttribute('src');
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+        });
+      })();
+    </script>
   </body>
 </html>

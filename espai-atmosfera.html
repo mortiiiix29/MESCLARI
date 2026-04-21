@@ -3,12 +3,319 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · ESPAI, IMPLANTACIÓ I CONSTRUCCIÓ DE L’ATMOSFERA</title>
-    <meta name="description" content="ESPAI, IMPLANTACIÓ I CONSTRUCCIÓ DE L’ATMOSFERA · arquitectura multipàgina de MESCLARI." />
+    <title>MESCLARI · Espai i atmosfera</title>
+    <meta name="description" content="Base visual i estructural de l'espai i l'atmosfera de MESCLARI." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .atmosfera-main {
+        width: min(1240px, 92vw);
+        margin: 1rem auto 0;
+        display: grid;
+        gap: clamp(1.1rem, 2.6vw, 1.8rem);
+      }
+
+      .atmosfera-section {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.55));
+        box-shadow: 0 14px 28px rgba(30, 45, 59, 0.1);
+        padding: clamp(1rem, 2.2vw, 1.6rem);
+        display: grid;
+        gap: 1rem;
+      }
+
+      .atmosfera-kicker {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: #5d7284;
+      }
+
+      .atmosfera-title {
+        font-size: clamp(2rem, 3.6vw, 3rem);
+        color: var(--blue);
+        line-height: 1;
+      }
+
+      .atmosfera-intro {
+        color: #3b5569;
+        max-width: 66ch;
+      }
+
+      .hero-atmosfera {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        background: linear-gradient(146deg, rgba(244, 233, 220, 0.98), rgba(216, 203, 178, 0.74));
+        padding: clamp(1rem, 2.2vw, 1.45rem);
+      }
+
+      .hero-atmosfera-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
+        gap: clamp(0.9rem, 2.4vw, 1.35rem);
+        align-items: stretch;
+      }
+
+      .hero-atmosfera-copy {
+        display: grid;
+        gap: 0.72rem;
+        align-content: center;
+      }
+
+      .hero-atmosfera-copy h1 {
+        font-size: clamp(2.35rem, 4.5vw, 3.55rem);
+        color: var(--blue);
+        line-height: 0.95;
+      }
+
+      .hero-atmosfera-copy h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(1.02rem, 1.45vw, 1.2rem);
+        color: #2f485d;
+        font-weight: 600;
+      }
+
+      .hero-atmosfera-copy p {
+        color: #3f5a6d;
+        max-width: 45ch;
+      }
+
+      .placeholder-premium {
+        border-radius: 18px;
+        border: 1px dashed rgba(194, 94, 60, 0.4);
+        background:
+          linear-gradient(160deg, rgba(244, 233, 220, 0.8), rgba(216, 203, 178, 0.52)),
+          radial-gradient(circle at 18% 24%, rgba(194, 94, 60, 0.2), transparent 38%),
+          radial-gradient(circle at 78% 72%, rgba(110, 139, 116, 0.2), transparent 40%);
+        min-height: 340px;
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1.1rem;
+        position: relative;
+      }
+
+      .placeholder-premium::after {
+        content: '';
+        position: absolute;
+        inset: 10px;
+        border: 1px solid rgba(194, 94, 60, 0.2);
+        border-radius: 12px;
+        pointer-events: none;
+      }
+
+      .placeholder-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.25rem 0.62rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #783a24;
+        border: 1px solid rgba(194, 94, 60, 0.42);
+        background: rgba(244, 233, 220, 0.85);
+      }
+
+      .placeholder-premium small {
+        color: #3f566a;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.1rem;
+      }
+
+      .cards-3,
+      .cards-4,
+      .cards-2 {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .cards-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .atmosfera-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(244, 233, 220, 0.88);
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.11), 0 8px 18px rgba(30, 45, 59, 0.08);
+        padding: 1rem;
+        display: grid;
+        gap: 0.45rem;
+      }
+
+      .atmosfera-card h3,
+      .atmosfera-card h4 {
+        color: var(--terracotta);
+        font-size: clamp(1.34rem, 2vw, 1.74rem);
+      }
+
+      .atmosfera-card p {
+        color: #2f485d;
+        font-size: 0.95rem;
+      }
+
+      .mini-visual {
+        min-height: 84px;
+        border: 1px dashed rgba(194, 94, 60, 0.32);
+        border-radius: 10px;
+        background: linear-gradient(145deg, rgba(244, 233, 220, 0.82), rgba(216, 203, 178, 0.46));
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-size: 0.83rem;
+        color: #4b6376;
+        padding: 0.6rem;
+      }
+
+      .atmosfera-feature {
+        border: 1px solid rgba(30, 45, 59, 0.24);
+        border-radius: 16px;
+        padding: 1rem;
+        min-height: 190px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(110px, 0.34fr);
+        gap: 0.8rem;
+        background: linear-gradient(155deg, rgba(244, 233, 220, 0.93), rgba(216, 203, 178, 0.62));
+      }
+
+      .atmosfera-feature h3 {
+        font-size: clamp(1.58rem, 2.5vw, 2rem);
+        color: var(--blue);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .timeline-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.9rem;
+        background: rgba(244, 233, 220, 0.9);
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.1);
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .timeline-step {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(194, 94, 60, 0.42);
+        color: #7a3f28;
+        font-size: 0.83rem;
+        font-weight: 700;
+        background: rgba(244, 233, 220, 0.84);
+      }
+
+      .timeline-item h4 {
+        color: var(--terracotta);
+        font-size: 1.35rem;
+        margin-bottom: 0.12rem;
+      }
+
+      .timeline-item p {
+        color: #355064;
+        font-size: 0.94rem;
+      }
+
+      .media-strip {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 0.85rem;
+      }
+
+      .media-stack {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .media-box {
+        border: 1px dashed rgba(194, 94, 60, 0.36);
+        border-radius: 14px;
+        background: linear-gradient(155deg, rgba(244, 233, 220, 0.84), rgba(216, 203, 178, 0.48));
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.08);
+        min-height: 170px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 0.9rem;
+      }
+
+      .media-box.video {
+        min-height: 355px;
+      }
+
+      .media-box small {
+        color: #4d6376;
+        font-size: 0.82rem;
+        letter-spacing: 0.01em;
+      }
+
+      .tancament {
+        text-align: center;
+        padding: 1rem;
+        border-radius: 16px;
+        border: 1px solid rgba(30, 45, 59, 0.2);
+        background: linear-gradient(140deg, rgba(244, 233, 220, 0.84), rgba(216, 203, 178, 0.58));
+      }
+
+      .tancament p {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.2rem, 2vw, 1.72rem);
+        color: #2e495d;
+      }
+
+      .tancament p + p {
+        margin-top: 0.35rem;
+        font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+        color: #3d5568;
+      }
+
+      @media (max-width: 1060px) {
+        .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .atmosfera-feature {
+          grid-template-columns: minmax(0, 1fr);
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero-atmosfera-grid,
+        .cards-3,
+        .cards-2,
+        .media-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .placeholder-premium {
+          min-height: 260px;
+        }
+
+        .media-box.video {
+          min-height: 220px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .cards-4 { grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -31,44 +338,201 @@
         <li><a href="espai-atmosfera.html" aria-current="page">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="experiencia-sala.html">Experiència de sala</a></li>
-        <li><a href="model-operatiu.html">Model operatiu</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-        <li><a href="evidencies-projecte.html">Evidències</a></li>
-      </ul>
+              </ul>
     </nav>
 
-    <header class="page-hero">
-      <h1>ESPAI, IMPLANTACIÓ I CONSTRUCCIÓ DE L’ATMOSFERA</h1>
-      <p>Desplegament de l'espai com a palanca de valor: implantació funcional i atmosfera coherent amb el posicionament.</p>
-    </header>
+    <main class="atmosfera-main">
+      <section class="hero-atmosfera">
+        <div class="hero-atmosfera-grid">
+          <div class="hero-atmosfera-copy">
+            <span class="atmosfera-kicker">Espai i atmosfera</span>
+            <h1>Una experiència construïda des de l’ambient, el ritme i la coherència visual</h1>
+            <h2>El disseny espacial com a part activa del valor global de MESCLARI.</h2>
+            <p>
+              MESCLARI entén l’espai com una part activa de l’experiència gastronòmica. La sala, la llum, els materials i l’atmosfera no
+              s’incorporen com a decoració accessòria, sinó com a elements que reforcen el posicionament del restaurant i la manera com el client viu el servei.
+            </p>
+          </div>
+          <div class="placeholder-premium">
+            <span class="placeholder-label">Vista general de l’espai</span>
+            <small>espai-atmosfera-hero.jpg · Render principal de sala</small>
+          </div>
+        </div>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <h2>ESPAI, IMPLANTACIÓ I CONSTRUCCIÓ DE L’ATMOSFERA</h2>
-        <p class="home-intro">Base narrativa preparada per ampliar contingut final més endavant mantenint coherència, jerarquia i to professional.</p>
-        <div class="home-grid four">
-          <article class="home-card">
-            <h4>Local real de referència</h4>
-            <p>Placeholder per dades bàsiques del local i adequació al model de negoci.</p>
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Idea espacial</span>
+        <h2 class="atmosfera-title">Idea espacial</h2>
+        <p class="atmosfera-intro">L’espai de MESCLARI es planteja com una extensió directa del seu concepte. No es busca només una sala atractiva, sinó un entorn capaç de transmetre identitat, ordre i qualitat percebuda des del primer moment.</p>
+        <div class="cards-3">
+          <article class="atmosfera-card">
+            <h3>Identitat espacial</h3>
+            <p>MESCLARI es construeix des d’una lectura espacial elegant, contemporània i recognoscible, capaç de transmetre caràcter sense recórrer a l’excés.</p>
           </article>
-          <article class="home-card">
-            <h4>Implantació i recorregut</h4>
-            <p>Bloc per explicar flux client, circulacions i punts clau de servei.</p>
+          <article class="atmosfera-card">
+            <h3>Caràcter visual</h3>
+            <p>La proposta combina calidesa, refinament i equilibri per projectar un espai amb personalitat pròpia, però també còmode, habitable i creïble.</p>
           </article>
-          <article class="home-card">
-            <h4>Interior i terrassa</h4>
-            <p>Estructura per jerarquitzar usos, sensacions i control de capacitat.</p>
-          </article>
-          <article class="home-card">
-            <h4>Construcció d'atmosfera</h4>
-            <p>Espai per il·luminació, ritme, materials i coherència d'experiència.</p>
+          <article class="atmosfera-card">
+            <h3>Experiència percebuda</h3>
+            <p>L’objectiu no és només que el local sigui visualment atractiu, sinó que sostingui una sensació de qualitat durant tot el recorregut del client.</p>
           </article>
         </div>
+      </section>
+
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Materials i llenguatge visual</span>
+        <h2 class="atmosfera-title">Materials i llenguatge visual</h2>
+        <p class="atmosfera-intro">L’atmosfera de MESCLARI es construeix a partir d’un llenguatge material coherent amb el seu posicionament. Els acabats, les textures i la llum contribueixen a generar una lectura d’elegància serena, sense rigidesa ni artifici.</p>
+        <div class="cards-4">
+          <article class="atmosfera-card">
+            <h4>Fusta i calidesa</h4>
+            <p>La fusta reforça la proximitat, l’equilibri i la sensació d’acollida, aportant temperatura visual al conjunt.</p>
+            <div class="mini-visual">espai-atmosfera-materials.jpg</div>
+          </article>
+          <article class="atmosfera-card">
+            <h4>Textures i contrast</h4>
+            <p>La combinació de superfícies i acabats dona profunditat a l’espai i evita una lectura plana o excessivament neutra.</p>
+            <div class="mini-visual">Textures, acabats i contrast</div>
+          </article>
+          <article class="atmosfera-card">
+            <h4>Llum ambiental</h4>
+            <p>La il·luminació es planteja per generar confort, qualitat percebuda i una bona lectura del plat dins d’una atmosfera controlada.</p>
+            <div class="mini-visual">espai-atmosfera-llum.jpg</div>
+          </article>
+          <article class="atmosfera-card">
+            <h4>Detall decoratiu</h4>
+            <p>Els elements decoratius no busquen saturar el local, sinó completar la identitat visual del restaurant amb criteri i coherència.</p>
+            <div class="mini-visual">Detall decoratiu integrat</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Atmosfera</span>
+        <h2 class="atmosfera-title">Atmosfera</h2>
+        <p class="atmosfera-intro">L’ambient de MESCLARI es defineix per l’equilibri entre percepció visual, ritme i confort. L’experiència no es construeix només amb el que es veu, sinó també amb la manera com el client habita l’espai.</p>
+        <div class="cards-3">
+          <article class="atmosfera-feature">
+            <div>
+              <h3>Llum</h3>
+              <p>La llum actua com una eina d’ambientació i de percepció. Ha d’afavorir el confort, la qualitat visual i la sensació de cura en el conjunt del servei.</p>
+            </div>
+            <div class="mini-visual">espai-atmosfera-llum.jpg</div>
+          </article>
+          <article class="atmosfera-feature">
+            <div>
+              <h3>So i ritme</h3>
+              <p>L’atmosfera sonora acompanya el servei sense envair-lo. El local ha de transmetre un ritme fluid, ordenat i coherent amb una proposta pensada per ser viscuda sense pressa.</p>
+            </div>
+            <div class="mini-visual">Ritme ambiental de sala</div>
+          </article>
+          <article class="atmosfera-feature">
+            <div>
+              <h3>Confort i permanència</h3>
+              <p>MESCLARI ha de convidar a quedar-se, a gaudir del temps de taula i a percebre l’experiència com una suma equilibrada d’espai, tracte i proposta gastronòmica.</p>
+            </div>
+            <div class="mini-visual">Punts de confort</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Recorregut del client</span>
+        <h2 class="atmosfera-title">Recorregut del client</h2>
+        <p class="atmosfera-intro">L’espai s’ha de llegir també des del moviment i des de la vivència del client dins del restaurant. Cada fase del recorregut contribueix a construir una impressió coherent del projecte.</p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-step">01</span>
+            <div>
+              <h4>Arribada</h4>
+              <p>La primera lectura del local ha de transmetre ordre, identitat i nivell des del primer contacte.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">02</span>
+            <div>
+              <h4>Primera impressió</h4>
+              <p>L’espai ha d’expressar de seguida el caràcter del restaurant: una proposta cuidada, contemporània i sensible al detall.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">03</span>
+            <div>
+              <h4>Temps de taula</h4>
+              <p>La distribució, la llum i la comoditat han d’afavorir una experiència fluida, agradable i sense tensions visuals.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-step">04</span>
+            <div>
+              <h4>Record final</h4>
+              <p>L’última impressió no depèn només del menjar, sinó també de l’atmosfera global. MESCLARI vol deixar una sensació de coherència, qualitat i memòria positiva.</p>
+            </div>
+          </article>
+        </div>
+        <div class="mini-visual">espai-atmosfera-recorregut.jpg</div>
+      </section>
+
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Espai i servei</span>
+        <h2 class="atmosfera-title">Relació entre espai i servei</h2>
+        <p class="atmosfera-intro">L’espai de MESCLARI no es planteja com un marc decoratiu independent del funcionament del restaurant. Al contrari: es dissenya per reforçar la lògica del servei, ordenar el ritme de la sala i fer més sòlida l’experiència global del client.</p>
+        <div class="cards-3">
+          <article class="atmosfera-card">
+            <h3>Sala</h3>
+            <p>La disposició de la sala ha d’afavorir la comoditat del client i facilitar un servei fluid, elegant i ben coordinat.</p>
+          </article>
+          <article class="atmosfera-card">
+            <h3>Ritme</h3>
+            <p>L’espai ha d’acompanyar la temporalitat del servei, evitant sensacions de pressa, saturació o desordre.</p>
+          </article>
+          <article class="atmosfera-card">
+            <h3>Coherència global</h3>
+            <p>Quan espai, servei i proposta gastronòmica treballen en la mateixa direcció, el restaurant guanya força, credibilitat i valor percebut.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="atmosfera-section">
+        <span class="atmosfera-kicker">Franja visual final</span>
+        <h2 class="atmosfera-title">Suport multimèdia preparat</h2>
+        <div class="media-strip">
+          <div class="media-box video">
+            <div>
+              <span class="placeholder-label">Vídeo ambient</span>
+              <p>Una lectura en moviment de l’espai i la seva atmosfera.</p>
+              <small>espai-atmosfera-video.mp4</small>
+            </div>
+          </div>
+          <div class="media-stack">
+            <div class="media-box">
+              <div>
+                <span class="placeholder-label">Detall de materials</span>
+                <p>Textures, acabats i llum com a part del llenguatge del projecte.</p>
+                <small>espai-atmosfera-materials.jpg</small>
+              </div>
+            </div>
+            <div class="media-box">
+              <div>
+                <span class="placeholder-label">Vista complementària</span>
+                <p>Una segona lectura de la sala i del seu caràcter visual.</p>
+                <small>espai-atmosfera-sala.jpg</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tancament">
+        <p>MESCLARI construeix la seva atmosfera des de la coherència entre espai, servei i experiència. El local no només acull la proposta: la reforça, la fa visible i l’ajuda a ser recordada.</p>
+        <p>Un espai ben resolt no només es veu: es viu.</p>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Estructura multipàgina amb continuïtat visual premium.</p>
+      <p>MESCLARI · Espai i atmosfera amb base editorial professional i preparada per desplegament final.</p>
     </footer>
 
     <script src="script.js"></script>
