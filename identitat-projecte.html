@@ -230,6 +230,28 @@
         overflow: hidden;
       }
 
+      .support-media.has-image,
+      .media-mini.has-image {
+        position: relative;
+        align-content: end;
+      }
+
+      .support-media.has-image img,
+      .media-mini.has-image img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .support-media.has-image .media-placeholder,
+      .media-mini.has-image .media-placeholder {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(30, 45, 59, 0.06), rgba(30, 45, 59, 0.62));
+      }
+
       .personality-matrix {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -476,16 +498,9 @@
               <p>Una manera d’atendre propera i professional, on el servei acompanya sense envair i dona sentit a l’experiència global.</p>
             </article>
           </div>
-          <section class="bloc-imatge-sala">
-  <div class="bloc-imatge-sala__media">
-    <img
-      src="Imágenes y vídeos/sala_.png"
-      alt="Vista de la sala de MESCLARI"
-      class="bloc-imatge-sala__img"
-    />
-  </div>
-</section>
-          <figure class="support-media" aria-label="Espai reservat per imatge secundària de suport">
+          <!-- VISUAL SECUNDARI: espai per imatge 4:5 o 16:9 de llenguatge sensorial -->
+          <figure class="support-media has-image" aria-label="Vista de la sala de MESCLARI">
+            <img src="imaguenes i videos/WhatsApp Image 2026-04-16 at 20.39.07 (2).jpeg" alt="Vista de la sala de MESCLARI" loading="lazy" />
             <figcaption class="media-placeholder">
               <strong>Visual de suport · 4:5 / 16:9</strong>
               <span>Una atmosfera pensada per sostenir l’experiència.</span>
@@ -540,7 +555,8 @@
               <p>En sala, la identitat es converteix en hospitalitat, ritme i lectura del detall. El servei acompanya l’experiència amb seguretat i naturalitat, reforçant la percepció de qualitat sense caure en rigidesa ni artifici.</p>
             </div>
             <!-- VISUAL SECUNDARI #2: substituir per imatge de sala 4:5 o 16:9 -->
-            <figure class="media-mini" aria-label="Espai reservat per imatge de sala">
+            <figure class="media-mini has-image" aria-label="Vista de la sala de MESCLARI">
+              <img src="imaguenes i videos/WhatsApp Image 2026-04-16 at 20.39.07 (2).jpeg" alt="Vista de la sala de MESCLARI" loading="lazy" />
               <figcaption class="media-placeholder">
                 <strong>Suport visual · Sala</strong>
                 <span>Identitat, llum i ritme en una mateixa lectura.</span>
