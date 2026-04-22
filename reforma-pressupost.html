@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · Pressupost detallat</title>
+    <title>MESCLARI · Resum final detallat del pressupost</title>
+    <meta name="description" content="Resum final obligatori de tot el pressupost de MESCLARI: blocs, imports totals i lectura final de l'esforç econòmic." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -21,38 +22,92 @@
       </button>
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
       <ul id="menu" class="menu">
-        <li><a href="reforma.html">Inici reforma</a></li>
-        <li><a href="reforma-pressupost.html" aria-current="page">Pressupost detallat</a></li>
-        <li><a href="reforma-escenaris.html">Escenaris i ratios</a></li>
-        <li><a href="contacte.html">Annexos tècnics</a></li>
+        <li><a href="estructura-economica.html">1 · Local actual, reforma i compra tècnica</a></li>
+        <li><a href="viabilitat-economica.html">2 · Pressupostos restants i gestió administrativa</a></li>
+        <li><a href="rendibilitat-dels-menus.html">3 · Viabilitat, guanys i rendibilitat</a></li>
+        <li><a href="reforma-pressupost.html" aria-current="page">4 · Resum detallat de tot el pressupost</a></li>
       </ul>
     </nav>
 
     <header class="page-hero">
-      <h1>Pressupost detallat</h1>
-      <p>Pantalla centrada en xifres de reforma i desplegament inicial perquè la barra tingui sentit de defensa econòmica.</p>
+      <h1>RESUM FINAL DETALLAT DE TOT EL PRESSUPOST</h1>
+      <p>Últim bloc del menú econòmic: tot classificat, ordenat i llegible per explicar l’esforç real d’inversió del projecte MESCLARI.</p>
     </header>
 
-    <section class="section">
-      <div class="section-shell">
-        <header class="section-header"><h2>Desglossament econòmic</h2></header>
+    <main class="home-main">
+      <section class="home-block">
+        <h2>Resum classificat per grans blocs</h2>
         <div class="table-wrap">
           <table>
             <thead>
-              <tr><th>Partida</th><th>Import estimat</th><th>Objectiu operatiu</th></tr>
+              <tr>
+                <th>Gran bloc</th>
+                <th>Partides incloses</th>
+                <th>Import</th>
+                <th>% del total</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td>Obra civil i instal·lacions</td><td>52.000 €</td><td>Adaptar el local a flux real de cuina i sala.</td></tr>
-              <tr><td>Interiorisme i mobiliari</td><td>26.000 €</td><td>Mantenir el posicionament premium sense perdre funcionalitat.</td></tr>
-              <tr><td>Maquinària i equipament</td><td>24.000 €</td><td>Assegurar consistència tècnica i capacitat de servei.</td></tr>
-              <tr><td>Despeses de llançament</td><td>12.900 €</td><td>Obrir amb cobertura legal, comunicació i marge inicial.</td></tr>
+              <tr>
+                <td>Reforma i adequació del local</td>
+                <td>Obra civil i instal·lacions + interiorisme i mobiliari</td>
+                <td>78.000 €</td>
+                <td>67,9%</td>
+              </tr>
+              <tr>
+                <td>Compra tècnica de posada en marxa</td>
+                <td>Maquinària i equipament de cuina/sala</td>
+                <td>24.000 €</td>
+                <td>20,9%</td>
+              </tr>
+              <tr>
+                <td>Llançament i activació inicial</td>
+                <td>Despeses operatives d’obertura i cobertura inicial</td>
+                <td>12.900 €</td>
+                <td>11,2%</td>
+              </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <th>Total pressupost d’arrencada</th>
+                <th>Reforma + compra tècnica + llançament</th>
+                <th>114.900 €</th>
+                <th>100%</th>
+              </tr>
+            </tfoot>
           </table>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer><p><strong>MESCLARI</strong> · Pressupost de reforma per defensa.</p></footer>
+      <section class="home-block">
+        <h2>Lectura final de l’esforç econòmic real</h2>
+        <div class="home-grid three">
+          <article class="home-card">
+            <h4>Bloc dominant de despesa</h4>
+            <p>La reforma concentra gairebé 7 de cada 10 euros, perquè la transformació física és condició prèvia per operar amb estàndards premium.</p>
+          </article>
+          <article class="home-card">
+            <h4>Bloc crític de rendiment</h4>
+            <p>La compra tècnica assegura producció, servei i consistència. Sense aquesta inversió, la proposta no podria executar-se al nivell definit.</p>
+          </article>
+          <article class="home-card">
+            <h4>Bloc de seguretat d’obertura</h4>
+            <p>Les despeses de llançament tanquen el cicle: permeten obrir amb cobertura mínima, criteri operatiu i risc controlat.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-block home-closure">
+        <p class="home-section-kicker">Tancament</p>
+        <h2>Pressupost complet ordenat i defensable</h2>
+        <p class="home-intro">Aquest és el tancament oficial del menú econòmic: mostra quant cal invertir, on es distribueix la despesa i per què el projecte és executable amb una lectura professional.</p>
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <p>MESCLARI · Bloc econòmic 4/4 (resum final).</p>
+    </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

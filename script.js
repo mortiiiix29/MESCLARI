@@ -16,7 +16,7 @@ const reformaPages = new Set([
   'reforma-pressupost.html',
   'reforma-escenaris.html',
 ]);
-const reformaHomePage = 'reforma.html';
+const reformaHomePage = 'estructura-economica.html';
 
 const getCurrentPageName = () => {
   const path = window.location.pathname;
