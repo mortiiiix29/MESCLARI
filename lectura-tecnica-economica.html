@@ -133,9 +133,17 @@
         gap: 0.78rem;
       }
 
-      .lte-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .lte-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .lte-grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+      .lte-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .lte-grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .lte-grid-6 {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
 
       .lte-card {
         border: 1px solid var(--line);
@@ -164,8 +172,13 @@
           linear-gradient(160deg, rgba(30, 45, 59, 0.93), rgba(56, 78, 98, 0.83));
       }
 
-      .lte-card-strong h3 { color: var(--beige); }
-      .lte-card-strong p { color: #decfb9; }
+      .lte-card-strong h3 {
+        color: var(--beige);
+      }
+
+      .lte-card-strong p {
+        color: #decfb9;
+      }
 
       .lte-card-label {
         font-size: 0.74rem;
@@ -179,7 +192,9 @@
         color: #c9b7a0;
       }
 
-      .lte-partida { grid-column: span 2; }
+      .lte-partida {
+        grid-column: span 2;
+      }
 
       .lte-visual-grid {
         display: grid;
@@ -196,6 +211,10 @@
       .lte-closure p {
         color: #30495d;
         font-weight: 600;
+      }
+
+      .lte-closure p + p {
+        margin-top: 0.45rem;
       }
 
       @media (max-width: 1080px) {
@@ -249,18 +268,18 @@
       <header class="lte-hero">
         <div class="lte-hero-grid">
           <div class="lte-hero-copy">
-            <p class="lte-eyebrow">Bloc tècnic · reforma del local</p>
-            <h1>Lectura tècnica i econòmica</h1>
-            <p class="lte-subtitle">Marc inicial per entendre requisits, adequacions i coherència econòmica de la intervenció.</p>
+            <p class="lte-eyebrow">Lectura tècnica i econòmica</p>
+            <h1>La reforma també s’ha de poder llegir des de la tècnica i des de la viabilitat</h1>
             <p class="lte-intro">
-              Aquesta pàgina recull la lectura tècnica i econòmica de la intervenció prevista sobre el local, amb l’objectiu d’entendre quins
-              requisits, adequacions i partides fan possible la reforma plantejada per MESCLARI.
+              La proposta de reforma de MESCLARI no es pot entendre només des de la distribució o des de la imatge final del local. També cal
+              llegir-la des dels requeriments tècnics que la fan possible i des de la seva dimensió econòmica, és a dir, des de les necessitats reals
+              d’intervenció i del cost que comporta adaptar l’espai al projecte.
             </p>
           </div>
           <figure class="lte-placeholder" aria-label="Espai reservat per al visual principal de la lectura tècnica i econòmica">
             <span>Visual principal</span>
-            <strong>Esquema tècnic i econòmic</strong>
-            <small>lectura-tecnica-economica-hero.jpg</small>
+            <strong>Lectura general de la intervenció</strong>
+            <small>lectura-tecnica-economica-hero.jpg · Esquema tècnic i econòmic</small>
           </figure>
         </div>
       </header>
@@ -268,23 +287,26 @@
       <section class="lte-section" id="lectura-general">
         <div class="lte-head">
           <h2>Lectura general</h2>
-          <p>Visió breu del marc de treball tècnic i econòmic que ordena la intervenció abans del desenvolupament complet de continguts.</p>
+          <p>
+            La reforma del local necessita una lectura tècnica i econòmica coherent amb la proposta global de MESCLARI. No es tracta només de
+            transformar l’espai, sinó de fer-ho amb criteri funcional, amb suport tècnic i amb una base econòmica defensable.
+          </p>
         </div>
         <div class="lte-grid-3">
           <article class="lte-card">
-            <p class="lte-card-label">Eix 01</p>
+            <p class="lte-card-label">Bloc 01</p>
             <h3>Base tècnica</h3>
-            <p>Condicions inicials, requeriments bàsics i criteris de partida per a una reforma operativa.</p>
+            <p>La intervenció ha de donar resposta a les necessitats pròpies d’un restaurant que vol funcionar amb solvència, ordre i coherència operativa.</p>
           </article>
           <article class="lte-card">
-            <p class="lte-card-label">Eix 02</p>
+            <p class="lte-card-label">Bloc 02</p>
             <h3>Intervenció necessària</h3>
-            <p>Accions estructurals i instal·lacions mínimes per adequar l’espai al model de restaurant.</p>
+            <p>Les actuacions plantejades no responen a una reforma decorativa, sinó a una adequació real de l’espai al model de restaurant definit.</p>
           </article>
           <article class="lte-card lte-card-strong">
-            <p class="lte-card-label">Eix 03</p>
+            <p class="lte-card-label">Bloc 03</p>
             <h3>Lectura econòmica</h3>
-            <p>Ordre de partides i pes relatiu de la reforma amb enfocament executiu i de viabilitat.</p>
+            <p>La reforma s’ha de poder entendre també des del seu cost, de les seves grans partides i de la seva coherència amb el conjunt del projecte.</p>
           </article>
         </div>
       </section>
@@ -292,28 +314,46 @@
       <section class="lte-section" id="requeriments-tecnics">
         <div class="lte-head">
           <h2>Requeriments tècnics</h2>
-          <p>Estructura base per explicar quins aspectes tècnics condicionen la reforma i com donen suport al funcionament real del restaurant.</p>
+          <p>
+            La intervenció sobre el local queda condicionada per una sèrie de requeriments tècnics que afecten tant el funcionament del restaurant com
+            la viabilitat de la reforma prevista.
+          </p>
         </div>
         <div class="lte-grid-3">
           <article class="lte-card">
             <h3>Sortida de fums i ventilació</h3>
-            <p>Previsió d’extracció, renovació d’aire i integració amb l’operativa de cuina i sala.</p>
+            <p>
+              La presència i adequació de la sortida de fums, així com la correcta ventilació dels espais, constitueixen un dels punts tècnics clau per
+              garantir la viabilitat de la proposta de cuina.
+            </p>
           </article>
           <article class="lte-card">
             <h3>Subministraments</h3>
-            <p>Base de potència, aigua, sanejament i connexions per garantir estabilitat de servei.</p>
+            <p>
+              L’electricitat, el gas, l’aigua i el sanejament han d’estar dimensionats o adaptats perquè el local pugui sostenir el nivell d’exigència
+              operativa previst.
+            </p>
           </article>
           <article class="lte-card">
             <h3>Instal·lacions</h3>
-            <p>Traçat inicial d’electricitat, climatització i suports tècnics vinculats a l’activitat.</p>
+            <p>
+              La reforma ha de contemplar l’adequació o actualització de les instal·lacions necessàries perquè el restaurant pugui funcionar amb seguretat,
+              confort i coherència tècnica.
+            </p>
           </article>
           <article class="lte-card">
             <h3>Seguretat i normativa</h3>
-            <p>Compliment de criteris normatius, protecció i condicions exigibles per a la implantació.</p>
+            <p>
+              La intervenció també s’ha de llegir en relació amb els requisits bàsics de seguretat, accessibilitat, prevenció i compliment normatiu propis
+              de l’activitat.
+            </p>
           </article>
           <article class="lte-card">
             <h3>Adequació funcional</h3>
-            <p>Relació entre distribució, fluxos de treball i confort d’ús en la proposta MESCLARI.</p>
+            <p>
+              Més enllà dels requisits estrictament tècnics, la reforma ha de garantir que l’espai resulti funcional per a la cuina, la sala, els serveis i
+              les circulacions internes.
+            </p>
           </article>
         </div>
       </section>
@@ -321,32 +361,37 @@
       <section class="lte-section" id="partides-principals-intervencio">
         <div class="lte-head">
           <h2>Partides principals de la intervenció</h2>
-          <p>Mapa de grans línies econòmiques de la reforma, sense format comptable pesat i amb lectura clara de priorització.</p>
+          <p>
+            La lectura econòmica de la reforma s’organitza a partir de grans línies d’intervenció que permeten entendre com es distribueix l’esforç
+            d’adequació del local.
+          </p>
         </div>
         <div class="lte-grid-6">
           <article class="lte-card lte-partida">
             <h3>Obra i adequació</h3>
-            <p>Base d’intervenció física per posar el local en condicions de funcionament.</p>
+            <p>Inclou les actuacions necessàries per adaptar físicament el local a la nova proposta de funcionament i d’ús.</p>
           </article>
           <article class="lte-card lte-partida">
             <h3>Redistribució</h3>
-            <p>Reordenació d’espais per millorar recorreguts, capacitat i coherència operativa.</p>
+            <p>Recull la part de la intervenció vinculada a la nova organització dels espais i a la seva adaptació funcional.</p>
           </article>
           <article class="lte-card lte-partida">
             <h3>Instal·lacions</h3>
-            <p>Partida tècnica per cobrir infraestructures imprescindibles de servei.</p>
+            <p>Fa referència a les adequacions tècniques necessàries perquè el local pugui sostenir l’activitat prevista amb garanties.</p>
           </article>
           <article class="lte-card lte-partida">
             <h3>Acabats</h3>
-            <p>Definició de materials i qualitat espacial alineada amb identitat i durabilitat.</p>
+            <p>Comprèn els elements que permeten elevar el nivell percebut del local i ajustar-lo a la identitat final de MESCLARI.</p>
           </article>
           <article class="lte-card lte-partida">
             <h3>Il·luminació</h3>
-            <p>Criteri lumínic funcional i ambiental per reforçar l’experiència de sala.</p>
+            <p>La intervenció lumínica forma part de la construcció de l’atmosfera, però també del confort i de la funcionalitat de l’espai.</p>
           </article>
           <article class="lte-card lte-partida">
             <h3>Equipament vinculat a la reforma</h3>
-            <p>Elements integrats a l’obra necessaris per activar l’operativa prevista.</p>
+            <p>
+              Alguns elements de suport, integració o posada en marxa queden directament relacionats amb la lectura tècnica i econòmica de la intervenció.
+            </p>
           </article>
         </div>
       </section>
@@ -354,24 +399,33 @@
       <section class="lte-section" id="lectura-economica-reforma">
         <div class="lte-head">
           <h2>Lectura econòmica de la reforma</h2>
-          <p>Bloc executiu per presentar la lògica econòmica general de la intervenció i la seva consistència dins del projecte.</p>
+          <p>
+            La reforma no es pot valorar només pel seu impacte visual o funcional. També cal entendre-la des del pes econòmic que té dins del projecte i
+            de la seva coherència amb la proposta global.
+          </p>
         </div>
         <div class="lte-grid-4">
           <article class="lte-card">
             <h3>Pressupost de reforma</h3>
-            <p>Ordre de magnitud de la inversió amb visió estructurada i comprensible.</p>
+            <p>La intervenció requereix una lectura econòmica ordenada, capaç d’identificar les grans partides que fan possible l’adequació del local.</p>
           </article>
           <article class="lte-card">
             <h3>Pes de la intervenció</h3>
-            <p>Impacte relatiu de la reforma dins del conjunt de decisions del projecte.</p>
+            <p>La reforma representa una part rellevant de la inversió inicial del projecte i condiciona directament la seva posada en marxa.</p>
           </article>
           <article class="lte-card">
             <h3>Coherència amb el projecte</h3>
-            <p>Correspondència entre cost, qualitat d’espai i proposta de valor de MESCLARI.</p>
+            <p>
+              El cost de la intervenció s’ha de llegir en relació amb la gamma del restaurant, amb la qualitat esperada i amb el tipus d’experiència que
+              MESCLARI vol oferir.
+            </p>
           </article>
           <article class="lte-card lte-card-strong">
             <h3>Viabilitat de la inversió</h3>
-            <p>Lectura de sostenibilitat econòmica orientada a estabilitat i recorregut operatiu.</p>
+            <p>
+              La reforma és defensable perquè no respon a una despesa arbitrària, sinó a una necessitat real d’adequació del local al model de negoci
+              plantejat.
+            </p>
           </article>
         </div>
       </section>
@@ -379,20 +433,30 @@
       <section class="lte-section" id="relacio-tecnica-espai-model">
         <div class="lte-head">
           <h2>Relació entre tècnica, espai i model de negoci</h2>
-          <p>Connexió directa entre decisions tècniques, rendiment de l’espai i viabilitat real del restaurant en operació.</p>
+          <p>
+            La lectura tècnica i econòmica de la reforma només té sentit si es connecta amb la manera com MESCLARI vol funcionar i posicionar-se.
+          </p>
         </div>
         <div class="lte-grid-3">
           <article class="lte-card">
             <h3>Espai</h3>
-            <p>L’adequació tècnica ordena l’espai perquè el local respongui a la proposta gastronòmica.</p>
+            <p>
+              L’adequació tècnica dona suport a la transformació física del local i fa possible una nova lectura espacial més coherent amb el projecte.
+            </p>
           </article>
           <article class="lte-card">
             <h3>Operativa</h3>
-            <p>Instal·lacions i distribució es dissenyen per facilitar fluxos, ritme de servei i eficiència.</p>
+            <p>
+              La intervenció tècnica també està al servei del funcionament real del restaurant, millorant recorreguts, suport d’instal·lacions i capacitat
+              d’execució.
+            </p>
           </article>
           <article class="lte-card lte-card-strong">
             <h3>Viabilitat</h3>
-            <p>La lectura econòmica valida que la reforma sosté el model i no queda separada de l’activitat.</p>
+            <p>
+              Quan la reforma es llegeix en relació amb la proposta global, deixa de ser només una obra i passa a formar part de la viabilitat real del
+              model.
+            </p>
           </article>
         </div>
       </section>
@@ -400,34 +464,40 @@
       <section class="lte-section" id="suport-visual-documental">
         <div class="lte-head">
           <h2>Suport visual i documental</h2>
-          <p>Espai reservat per incorporar materials de suport amb una lectura ordenada i editorial.</p>
+          <p>
+            La lectura tècnica i econòmica es reforça amb suport esquemàtic i documental que ajuda a entendre millor el sentit de la intervenció.
+          </p>
         </div>
         <div class="lte-visual-grid">
           <article class="lte-placeholder">
             <span>Esquema tècnic</span>
-            <strong>Lectura tècnica de base</strong>
+            <strong>Lectura bàsica dels requeriments i adequacions principals.</strong>
             <small>lectura-tecnica-economica-esquema.jpg</small>
           </article>
           <article class="lte-placeholder">
             <span>Partides principals</span>
-            <strong>Resum de línies econòmiques</strong>
+            <strong>Grans línies econòmiques de la intervenció prevista.</strong>
             <small>lectura-tecnica-economica-partides.jpg</small>
           </article>
           <article class="lte-placeholder">
             <span>Suport documental</span>
-            <strong>Documentació complementària</strong>
+            <strong>Recursos complementaris per reforçar la base tècnica de la proposta.</strong>
             <small>lectura-tecnica-economica-resum.jpg</small>
           </article>
           <article class="lte-placeholder">
             <span>Lectura econòmica</span>
-            <strong>Síntesi executiva de reforma</strong>
-            <small>Document econòmic / resum</small>
+            <strong>Síntesi clara del pes de la reforma dins del projecte.</strong>
+            <small>visual principal de síntesi econòmica o documental</small>
           </article>
         </div>
       </section>
 
       <section class="lte-section lte-closure" id="tancament">
-        <p>Una base tècnica i econòmica clara per defensar la reforma amb criteri, coherència i viabilitat.</p>
+        <p>
+          La reforma és coherent perquè respon tant a una necessitat tècnica com a una necessitat de projecte. La seva lectura econòmica reforça aquesta
+          mateixa idea: adequar el local no és una despesa accessòria, sinó una condició necessària perquè MESCLARI pugui existir amb sentit real.
+        </p>
+        <p>Una reforma ben plantejada també s’ha de poder justificar.</p>
       </section>
     </main>
 
