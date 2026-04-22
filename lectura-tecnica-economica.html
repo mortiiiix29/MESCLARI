@@ -11,6 +11,220 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .lte-main {
+        width: min(1160px, 92vw);
+        margin: 1.25rem auto 2rem;
+        display: grid;
+        gap: 1.4rem;
+      }
+
+      .lte-hero {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: clamp(1rem, 2vw, 1.45rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.95), rgba(216, 203, 178, 0.72));
+        box-shadow: 0 16px 30px rgba(30, 45, 59, 0.12);
+      }
+
+      .lte-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .lte-eyebrow {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #5d7385;
+        font-weight: 700;
+      }
+
+      .lte-hero-copy {
+        display: grid;
+        gap: 0.72rem;
+        align-content: start;
+      }
+
+      .lte-hero-copy h1 {
+        color: var(--blue);
+        font-size: clamp(2.25rem, 3.9vw, 3.5rem);
+        line-height: 1.02;
+      }
+
+      .lte-subtitle {
+        color: #345064;
+        font-size: 1.06rem;
+        font-weight: 600;
+      }
+
+      .lte-intro {
+        color: #324a5e;
+        max-width: 65ch;
+        line-height: 1.6;
+      }
+
+      .lte-placeholder {
+        min-height: 240px;
+        border-radius: 16px;
+        border: 1px solid rgba(30, 45, 59, 0.25);
+        background:
+          radial-gradient(circle at 85% 14%, rgba(194, 94, 60, 0.2), transparent 42%),
+          linear-gradient(160deg, rgba(30, 45, 59, 0.93), rgba(56, 78, 98, 0.83));
+        box-shadow: 0 14px 24px rgba(30, 45, 59, 0.2);
+        display: grid;
+        align-content: end;
+        gap: 0.24rem;
+        padding: 1rem;
+      }
+
+      .lte-placeholder span {
+        color: #e6d8c3;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+
+      .lte-placeholder strong {
+        color: var(--beige);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.6rem;
+        line-height: 1.1;
+      }
+
+      .lte-placeholder small {
+        color: #d8cbb2;
+        font-size: 0.88rem;
+      }
+
+      .lte-section {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(1rem, 2vw, 1.35rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.58));
+        box-shadow: 0 12px 24px rgba(30, 45, 59, 0.09);
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .lte-head {
+        display: grid;
+        gap: 0.32rem;
+      }
+
+      .lte-head h2 {
+        color: var(--blue);
+        font-size: clamp(2rem, 3.2vw, 2.8rem);
+        line-height: 1.04;
+      }
+
+      .lte-head p {
+        color: #314a5e;
+        max-width: 76ch;
+      }
+
+      .lte-grid-3,
+      .lte-grid-4,
+      .lte-grid-6 {
+        display: grid;
+        gap: 0.78rem;
+      }
+
+      .lte-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .lte-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .lte-grid-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+      .lte-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(244, 233, 220, 0.9);
+        padding: 0.9rem;
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.1), 0 10px 18px rgba(30, 45, 59, 0.08);
+        display: grid;
+        gap: 0.24rem;
+      }
+
+      .lte-card h3 {
+        color: var(--blue);
+        font-size: 1.45rem;
+      }
+
+      .lte-card p {
+        color: #314a5e;
+        font-size: 0.93rem;
+        line-height: 1.5;
+      }
+
+      .lte-card-strong {
+        background:
+          radial-gradient(circle at 82% 18%, rgba(194, 94, 60, 0.22), transparent 42%),
+          linear-gradient(160deg, rgba(30, 45, 59, 0.93), rgba(56, 78, 98, 0.83));
+      }
+
+      .lte-card-strong h3 { color: var(--beige); }
+      .lte-card-strong p { color: #decfb9; }
+
+      .lte-card-label {
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #667b8c;
+        font-weight: 700;
+      }
+
+      .lte-card-strong .lte-card-label {
+        color: #c9b7a0;
+      }
+
+      .lte-partida { grid-column: span 2; }
+
+      .lte-visual-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.78rem;
+      }
+
+      .lte-closure {
+        text-align: center;
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+      }
+
+      .lte-closure p {
+        color: #30495d;
+        font-weight: 600;
+      }
+
+      @media (max-width: 1080px) {
+        .lte-hero-grid,
+        .lte-grid-4,
+        .lte-grid-3,
+        .lte-visual-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .lte-grid-6 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .lte-partida {
+          grid-column: auto;
+        }
+
+        .lte-placeholder {
+          min-height: 200px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .lte-grid-6 {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body class="reforma-page">
     <nav class="nav">
@@ -31,15 +245,189 @@
       </ul>
     </nav>
 
-    <header class="page-hero">
-      <p class="kicker">Part 03</p>
-      <h1>Lectura tècnica i econòmica</h1>
-      <p>Síntesi de requeriments tècnics, intervenció prevista i base econòmica de la reforma.</p>
-    </header>
+    <main class="lte-main">
+      <header class="lte-hero">
+        <div class="lte-hero-grid">
+          <div class="lte-hero-copy">
+            <p class="lte-eyebrow">Bloc tècnic · reforma del local</p>
+            <h1>Lectura tècnica i econòmica</h1>
+            <p class="lte-subtitle">Marc inicial per entendre requisits, adequacions i coherència econòmica de la intervenció.</p>
+            <p class="lte-intro">
+              Aquesta pàgina recull la lectura tècnica i econòmica de la intervenció prevista sobre el local, amb l’objectiu d’entendre quins
+              requisits, adequacions i partides fan possible la reforma plantejada per MESCLARI.
+            </p>
+          </div>
+          <figure class="lte-placeholder" aria-label="Espai reservat per al visual principal de la lectura tècnica i econòmica">
+            <span>Visual principal</span>
+            <strong>Esquema tècnic i econòmic</strong>
+            <small>lectura-tecnica-economica-hero.jpg</small>
+          </figure>
+        </div>
+      </header>
 
-    <main class="home-main">
-      <section class="home-block">
-        <p class="home-intro">Pàgina de síntesi per a la lectura tècnica i econòmica del bloc de reforma.</p>
+      <section class="lte-section" id="lectura-general">
+        <div class="lte-head">
+          <h2>Lectura general</h2>
+          <p>Visió breu del marc de treball tècnic i econòmic que ordena la intervenció abans del desenvolupament complet de continguts.</p>
+        </div>
+        <div class="lte-grid-3">
+          <article class="lte-card">
+            <p class="lte-card-label">Eix 01</p>
+            <h3>Base tècnica</h3>
+            <p>Condicions inicials, requeriments bàsics i criteris de partida per a una reforma operativa.</p>
+          </article>
+          <article class="lte-card">
+            <p class="lte-card-label">Eix 02</p>
+            <h3>Intervenció necessària</h3>
+            <p>Accions estructurals i instal·lacions mínimes per adequar l’espai al model de restaurant.</p>
+          </article>
+          <article class="lte-card lte-card-strong">
+            <p class="lte-card-label">Eix 03</p>
+            <h3>Lectura econòmica</h3>
+            <p>Ordre de partides i pes relatiu de la reforma amb enfocament executiu i de viabilitat.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section" id="requeriments-tecnics">
+        <div class="lte-head">
+          <h2>Requeriments tècnics</h2>
+          <p>Estructura base per explicar quins aspectes tècnics condicionen la reforma i com donen suport al funcionament real del restaurant.</p>
+        </div>
+        <div class="lte-grid-3">
+          <article class="lte-card">
+            <h3>Sortida de fums i ventilació</h3>
+            <p>Previsió d’extracció, renovació d’aire i integració amb l’operativa de cuina i sala.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Subministraments</h3>
+            <p>Base de potència, aigua, sanejament i connexions per garantir estabilitat de servei.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Instal·lacions</h3>
+            <p>Traçat inicial d’electricitat, climatització i suports tècnics vinculats a l’activitat.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Seguretat i normativa</h3>
+            <p>Compliment de criteris normatius, protecció i condicions exigibles per a la implantació.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Adequació funcional</h3>
+            <p>Relació entre distribució, fluxos de treball i confort d’ús en la proposta MESCLARI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section" id="partides-principals-intervencio">
+        <div class="lte-head">
+          <h2>Partides principals de la intervenció</h2>
+          <p>Mapa de grans línies econòmiques de la reforma, sense format comptable pesat i amb lectura clara de priorització.</p>
+        </div>
+        <div class="lte-grid-6">
+          <article class="lte-card lte-partida">
+            <h3>Obra i adequació</h3>
+            <p>Base d’intervenció física per posar el local en condicions de funcionament.</p>
+          </article>
+          <article class="lte-card lte-partida">
+            <h3>Redistribució</h3>
+            <p>Reordenació d’espais per millorar recorreguts, capacitat i coherència operativa.</p>
+          </article>
+          <article class="lte-card lte-partida">
+            <h3>Instal·lacions</h3>
+            <p>Partida tècnica per cobrir infraestructures imprescindibles de servei.</p>
+          </article>
+          <article class="lte-card lte-partida">
+            <h3>Acabats</h3>
+            <p>Definició de materials i qualitat espacial alineada amb identitat i durabilitat.</p>
+          </article>
+          <article class="lte-card lte-partida">
+            <h3>Il·luminació</h3>
+            <p>Criteri lumínic funcional i ambiental per reforçar l’experiència de sala.</p>
+          </article>
+          <article class="lte-card lte-partida">
+            <h3>Equipament vinculat a la reforma</h3>
+            <p>Elements integrats a l’obra necessaris per activar l’operativa prevista.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section" id="lectura-economica-reforma">
+        <div class="lte-head">
+          <h2>Lectura econòmica de la reforma</h2>
+          <p>Bloc executiu per presentar la lògica econòmica general de la intervenció i la seva consistència dins del projecte.</p>
+        </div>
+        <div class="lte-grid-4">
+          <article class="lte-card">
+            <h3>Pressupost de reforma</h3>
+            <p>Ordre de magnitud de la inversió amb visió estructurada i comprensible.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Pes de la intervenció</h3>
+            <p>Impacte relatiu de la reforma dins del conjunt de decisions del projecte.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Coherència amb el projecte</h3>
+            <p>Correspondència entre cost, qualitat d’espai i proposta de valor de MESCLARI.</p>
+          </article>
+          <article class="lte-card lte-card-strong">
+            <h3>Viabilitat de la inversió</h3>
+            <p>Lectura de sostenibilitat econòmica orientada a estabilitat i recorregut operatiu.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section" id="relacio-tecnica-espai-model">
+        <div class="lte-head">
+          <h2>Relació entre tècnica, espai i model de negoci</h2>
+          <p>Connexió directa entre decisions tècniques, rendiment de l’espai i viabilitat real del restaurant en operació.</p>
+        </div>
+        <div class="lte-grid-3">
+          <article class="lte-card">
+            <h3>Espai</h3>
+            <p>L’adequació tècnica ordena l’espai perquè el local respongui a la proposta gastronòmica.</p>
+          </article>
+          <article class="lte-card">
+            <h3>Operativa</h3>
+            <p>Instal·lacions i distribució es dissenyen per facilitar fluxos, ritme de servei i eficiència.</p>
+          </article>
+          <article class="lte-card lte-card-strong">
+            <h3>Viabilitat</h3>
+            <p>La lectura econòmica valida que la reforma sosté el model i no queda separada de l’activitat.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section" id="suport-visual-documental">
+        <div class="lte-head">
+          <h2>Suport visual i documental</h2>
+          <p>Espai reservat per incorporar materials de suport amb una lectura ordenada i editorial.</p>
+        </div>
+        <div class="lte-visual-grid">
+          <article class="lte-placeholder">
+            <span>Esquema tècnic</span>
+            <strong>Lectura tècnica de base</strong>
+            <small>lectura-tecnica-economica-esquema.jpg</small>
+          </article>
+          <article class="lte-placeholder">
+            <span>Partides principals</span>
+            <strong>Resum de línies econòmiques</strong>
+            <small>lectura-tecnica-economica-partides.jpg</small>
+          </article>
+          <article class="lte-placeholder">
+            <span>Suport documental</span>
+            <strong>Documentació complementària</strong>
+            <small>lectura-tecnica-economica-resum.jpg</small>
+          </article>
+          <article class="lte-placeholder">
+            <span>Lectura econòmica</span>
+            <strong>Síntesi executiva de reforma</strong>
+            <small>Document econòmic / resum</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="lte-section lte-closure" id="tancament">
+        <p>Una base tècnica i econòmica clara per defensar la reforma amb criteri, coherència i viabilitat.</p>
       </section>
     </main>
 
