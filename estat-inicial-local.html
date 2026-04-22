@@ -11,6 +11,292 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .estat-main {
+        width: min(1180px, 92vw);
+        margin: 1.25rem auto 2.4rem;
+        display: grid;
+        gap: clamp(1.4rem, 2.7vw, 2.25rem);
+      }
+
+      .estat-section {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(1.15rem, 2.4vw, 1.8rem);
+        background: linear-gradient(160deg, rgba(244, 233, 220, 0.95), rgba(216, 203, 178, 0.66));
+        box-shadow: 0 12px 24px rgba(30, 45, 59, 0.09);
+      }
+
+      .estat-section-head {
+        max-width: 76ch;
+        display: grid;
+        gap: 0.42rem;
+        margin-bottom: 1rem;
+      }
+
+      .estat-eyebrow {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+        color: #5e7384;
+      }
+
+      .estat-section-head h2 {
+        font-size: clamp(2rem, 3.15vw, 2.8rem);
+        color: var(--blue);
+      }
+
+      .estat-section-head p {
+        color: #344d60;
+      }
+
+      .estat-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .estat-hero-copy {
+        padding: clamp(0.25rem, 1.2vw, 0.75rem);
+        display: grid;
+        gap: 0.72rem;
+        align-content: center;
+      }
+
+      .estat-hero-copy h1 {
+        font-size: clamp(2.5rem, 4.6vw, 3.75rem);
+        line-height: 0.97;
+        color: var(--blue);
+      }
+
+      .estat-subtitle {
+        font-size: 1.04rem;
+        font-weight: 600;
+        color: #2f4558;
+      }
+
+      .estat-intro {
+        color: #3a5266;
+        max-width: 60ch;
+      }
+
+      .estat-media,
+      .estat-gallery-media {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        border: 1px solid rgba(30, 45, 59, 0.24);
+        background: linear-gradient(150deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.7));
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.16), 0 14px 24px rgba(30, 45, 59, 0.12);
+      }
+
+      .estat-media,
+      .estat-gallery-media {
+        background-image: linear-gradient(150deg, rgba(30, 45, 59, 0.48), rgba(30, 45, 59, 0.18)), var(--estat-image);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .estat-media {
+        min-height: 300px;
+      }
+
+      .estat-media::after,
+      .estat-gallery-media::after {
+        content: attr(data-placeholder);
+        position: absolute;
+        left: 0.75rem;
+        bottom: 0.75rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #f9efe3;
+        background: rgba(30, 45, 59, 0.78);
+        border: 1px solid rgba(216, 203, 178, 0.45);
+        border-radius: 999px;
+        padding: 0.3rem 0.62rem;
+      }
+
+      .estat-highlight-grid,
+      .estat-condicions-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.78rem;
+      }
+
+      .estat-condicions-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .estat-mini-card,
+      .estat-technical-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(244, 233, 220, 0.9);
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.11), 0 8px 16px rgba(30, 45, 59, 0.08);
+      }
+
+      .estat-mini-card {
+        padding: 0.95rem 0.85rem;
+        display: grid;
+        gap: 0.25rem;
+      }
+
+      .estat-mini-card h3,
+      .estat-technical-card h3 {
+        font-size: 1.54rem;
+        color: var(--blue);
+      }
+
+      .estat-mini-card p,
+      .estat-technical-card p {
+        font-size: 0.92rem;
+        color: #334c60;
+      }
+
+      .estat-dades-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0.78rem;
+      }
+
+      .estat-dada {
+        grid-column: span 2;
+        padding: 0.86rem;
+      }
+
+      .estat-dada strong {
+        display: block;
+        color: #5d7383;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.73rem;
+        margin-bottom: 0.22rem;
+      }
+
+      .estat-dada span {
+        color: var(--blue);
+        font-weight: 600;
+        line-height: 1.42;
+      }
+
+      .estat-technical-card {
+        padding: 1rem;
+        display: grid;
+        gap: 0.36rem;
+      }
+
+      .estat-split {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.95rem;
+      }
+
+      .estat-list-card {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1rem;
+        background: rgba(244, 233, 220, 0.91);
+        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.12), 0 10px 18px rgba(30, 45, 59, 0.08);
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .estat-list-card h3 {
+        font-size: 1.85rem;
+        color: var(--blue);
+      }
+
+      .estat-list {
+        margin: 0;
+        padding-left: 1.06rem;
+        display: grid;
+        gap: 0.28rem;
+        color: #314a5d;
+      }
+
+      .estat-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.82rem;
+      }
+
+      .estat-gallery-media {
+        min-height: 220px;
+      }
+
+      .estat-gallery-item {
+        display: grid;
+        gap: 0.44rem;
+      }
+
+      .estat-gallery-copy h3 {
+        font-size: 1.15rem;
+        color: var(--blue);
+      }
+
+      .estat-gallery-copy p {
+        font-size: 0.9rem;
+        color: #324b5e;
+      }
+
+      .estat-transition,
+      .estat-closure {
+        text-align: center;
+        display: grid;
+        gap: 0.62rem;
+        place-items: center;
+      }
+
+      .estat-transition p,
+      .estat-closure p {
+        max-width: 68ch;
+        color: #324b5e;
+      }
+
+      .estat-closure p {
+        font-weight: 600;
+      }
+
+      @media (max-width: 1100px) {
+        .estat-condicions-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .estat-gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 880px) {
+        .estat-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .estat-dades-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .estat-dada {
+          grid-column: span 1;
+        }
+
+        .estat-split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .estat-highlight-grid,
+        .estat-condicions-grid,
+        .estat-gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
   <body class="reforma-page">
     <nav class="nav">
@@ -31,15 +317,155 @@
       </ul>
     </nav>
 
-    <header class="page-hero">
-      <p class="kicker">Part 01</p>
-      <h1>Estat inicial del local</h1>
-      <p>Lectura del punt de partida i de les condicions reals de l’espai.</p>
-    </header>
+    <main class="estat-main">
+      <section class="estat-section estat-hero">
+        <div class="estat-hero-copy">
+          <span class="estat-eyebrow">Estat inicial del local</span>
+          <h1>Punt de partida real de l’espai sobre el qual es construeix MESCLARI</h1>
+          <p class="estat-subtitle">Lectura inicial del local existent per fonamentar la intervenció posterior.</p>
+          <p class="estat-intro">
+            Aquesta pàgina recull la lectura inicial del local existent, entès com el punt de partida real de la proposta.
+            L’objectiu no és només descriure l’espai, sinó identificar les seves condicions actuals, els elements
+            aprofitables i els aspectes que justifiquen la reforma posterior.
+          </p>
+        </div>
+        <figure class="estat-media" data-placeholder="Estat inicial de l’espai" style="--estat-image: url('imatges/estat-inicial-local-hero.jpg')"></figure>
+      </section>
 
-    <main class="home-main">
-      <section class="home-block">
-        <p class="home-intro">Pàgina de desenvolupament del diagnòstic inicial dins del bloc de reforma de MESCLARI.</p>
+      <section class="estat-section">
+        <header class="estat-section-head">
+          <span class="estat-eyebrow">Lectura general</span>
+          <h2>Lectura general del punt de partida</h2>
+          <p>El local parteix d’una base existent vinculada a activitat de restauració, fet que aporta un marc inicial útil, però insuficient per respondre al nivell, a la identitat i a la lògica funcional que requereix MESCLARI.</p>
+        </header>
+        <div class="estat-highlight-grid">
+          <article class="estat-mini-card">
+            <h3>Local existent</h3>
+            <p>No es parteix d’un espai buit, sinó d’un local real amb estructura prèvia i amb determinades condicions ja resoltes.</p>
+          </article>
+          <article class="estat-mini-card">
+            <h3>Condicions actuals</h3>
+            <p>L’espai presenta una base aprofitable, però necessita una intervenció clara per adaptar-se a la proposta gastronòmica, estètica i operativa del projecte.</p>
+          </article>
+          <article class="estat-mini-card">
+            <h3>Base de transformació</h3>
+            <p>La reforma es planteja des d’aquesta lectura inicial: conservar el que té sentit, corregir el que limita i elevar el conjunt fins al nivell requerit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="estat-section">
+        <header class="estat-section-head">
+          <span class="estat-eyebrow">Dades base</span>
+          <h2>Dades bàsiques del local</h2>
+          <p>El punt de partida del projecte se sosté sobre un local real, amb unes condicions físiques i comercials que permeten justificar la seva elecció i la viabilitat de la seva transformació.</p>
+        </header>
+        <div class="estat-dades-grid">
+          <article class="estat-technical-card estat-dada"><strong>Ubicació</strong><span>Local situat a Platja d’Aro, en un entorn compatible amb una proposta de restauració de valor i amb capacitat d’atracció tant local com estacional.</span></article>
+          <article class="estat-technical-card estat-dada"><strong>Superfície</strong><span>Espai aproximat de 200 m², amb una lectura suficient per desenvolupar sala, cuina i serveis d’acord amb la proposta del restaurant.</span></article>
+          <article class="estat-technical-card estat-dada"><strong>Terrassa i aforament exterior</strong><span>Terrassa d’uns 50 m², amb capacitat aproximada per a 12 taules i prop de 50 comensals en configuració exterior.</span></article>
+          <article class="estat-technical-card estat-dada"><strong>Capacitat interior</strong><span>La sala interior permet una lectura d’uns 45 comensals, amb marge per treballar comoditat, ritme de servei i valor percebut.</span></article>
+          <article class="estat-technical-card estat-dada"><strong>Condicions existents</strong><span>El local disposa de sortida de fums, subministrament de gas i banys ja presents, fet que reforça la base funcional de partida.</span></article>
+          <article class="estat-technical-card estat-dada"><strong>Lectura general</strong><span>Es tracta d’un espai amb potencial real, però que necessita una adaptació profunda per assolir la coherència final del projecte.</span></article>
+        </div>
+      </section>
+
+      <section class="estat-section">
+        <header class="estat-section-head">
+          <span class="estat-eyebrow">Diagnosi física</span>
+          <h2>Estat físic i condicions actuals</h2>
+          <p>La lectura física del local mostra una base funcional, però encara allunyada de la imatge, del confort i de la distribució que MESCLARI necessita per funcionar amb coherència.</p>
+        </header>
+        <div class="estat-condicions-grid">
+          <article class="estat-technical-card">
+            <h3>Distribució existent</h3>
+            <p>L’organització actual respon a una activitat prèvia de restauració, però no està pensada específicament per a la proposta final del projecte i requereix una redistribució més precisa.</p>
+          </article>
+          <article class="estat-technical-card">
+            <h3>Acabats i imatge actual</h3>
+            <p>L’estat visual de l’espai no reflecteix encara el nivell premium i la identitat de MESCLARI, de manera que la intervenció estètica esdevé necessària.</p>
+          </article>
+          <article class="estat-technical-card">
+            <h3>Condicions funcionals</h3>
+            <p>El local permet identificar una base tècnica útil, però cal revisar i adaptar recorreguts, zones de treball, sala i relació entre espais per millorar-ne la funcionalitat real.</p>
+          </article>
+          <article class="estat-technical-card">
+            <h3>Necessitats de millora</h3>
+            <p>La reforma ha de donar resposta tant a la part visible del projecte com a la seva lògica interna: circulacions, confort, ambient, execució i coherència general.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="estat-section">
+        <header class="estat-section-head">
+          <span class="estat-eyebrow">Criteris d’intervenció</span>
+          <h2>Elements aprofitables i limitacions</h2>
+          <p>La lectura inicial del local no es planteja en termes absoluts, sinó des d’una valoració professional del que pot mantenir-se i del que obliga a intervenir.</p>
+        </header>
+        <div class="estat-split">
+          <article class="estat-list-card">
+            <h3>Punts aprofitables</h3>
+            <p>La base de restauració existent, la presència de sortida de fums, el subministrament de gas, la superfície disponible i la possibilitat de treballar amb espai interior i terrassa constitueixen elements positius de partida.</p>
+          </article>
+          <article class="estat-list-card">
+            <h3>Limitacions detectades</h3>
+            <p>La distribució actual, l’estat visual de l’espai, la necessitat d’elevar el nivell percebut i l’adaptació de l’operativa a la proposta final fan necessària una reforma clara i ben orientada.</p>
+          </article>
+        </div>
+        <p class="estat-intro" style="margin-top: 0.9rem;">L’interès del local no rau en l’estat actual tal com es troba, sinó en la seva capacitat real de transformació.</p>
+      </section>
+
+      <section class="estat-section">
+        <header class="estat-section-head">
+          <span class="estat-eyebrow">Registre de suport</span>
+          <h2>Documentació visual del local</h2>
+          <p>La lectura de l’estat inicial es reforça amb suport visual del local real, per tal d’identificar millor el punt de partida de la intervenció.</p>
+        </header>
+        <div class="estat-gallery-grid">
+          <article class="estat-gallery-item">
+            <figure class="estat-gallery-media" data-placeholder="Façana o accés" style="--estat-image: url('imatges/estat-inicial-local-facana.jpg')"></figure>
+            <div class="estat-gallery-copy">
+              <h3>Façana o accés</h3>
+              <p>Lectura exterior i relació del local amb l’entorn immediat.</p>
+            </div>
+          </article>
+          <article class="estat-gallery-item">
+            <figure class="estat-gallery-media" data-placeholder="Vista interior" style="--estat-image: url('imatges/estat-inicial-local-interior.jpg')"></figure>
+            <div class="estat-gallery-copy">
+              <h3>Vista interior</h3>
+              <p>Percepció general de l’espai abans de la transformació.</p>
+            </div>
+          </article>
+          <article class="estat-gallery-item">
+            <figure class="estat-gallery-media" data-placeholder="Zona a intervenir" style="--estat-image: url('imatges/estat-inicial-local-detall.jpg')"></figure>
+            <div class="estat-gallery-copy">
+              <h3>Zona a intervenir</h3>
+              <p>Punts del local que condicionen la proposta de reforma.</p>
+            </div>
+          </article>
+          <article class="estat-gallery-item">
+            <figure class="estat-gallery-media" data-placeholder="Detall de l’estat actual" style="--estat-image: url('imatges/estat-inicial-local-hero.jpg')"></figure>
+            <div class="estat-gallery-copy">
+              <h3>Detall de l’estat actual</h3>
+              <p>Elements concrets que ajuden a justificar la intervenció posterior.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="estat-section estat-transition">
+        <span class="estat-eyebrow">Continuïtat del projecte</span>
+        <h2>Lectura prèvia a la reforma</h2>
+        <p>
+          La reforma no es planteja des d’una idea abstracta, sinó a partir d’aquest estat inicial concret.
+          La intervenció posterior respon, per tant, a una necessitat real de transformació funcional, estètica
+          i operativa, i no només a una voluntat de canvi superficial.
+        </p>
+      </section>
+
+      <section class="estat-section estat-closure">
+        <p>El valor d’aquest punt de partida no depèn del seu estat actual per si sol, sinó de la capacitat del local per ser transformat amb coherència en l’espai que MESCLARI necessita.</p>
+        <p>Abans de projectar, cal saber llegir bé des d’on es parteix.</p>
       </section>
     </main>
 
