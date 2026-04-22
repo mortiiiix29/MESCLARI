@@ -7,6 +7,10 @@ const REF_MODE_ON = 'on';
 const defaultPage = 'index.html';
 const reformaPages = new Set([
   'reforma.html',
+  'economia-inici.html',
+  'reforma-i-compra-tecnica.html',
+  'pressupostos-i-gestio-administrativa.html',
+  'viabilitat-rendibilitat-i-resum-final.html',
   'estat-inicial-local.html',
   'proposta-reforma-adequacio.html',
   'lectura-tecnica-economica.html',
@@ -16,7 +20,7 @@ const reformaPages = new Set([
   'reforma-pressupost.html',
   'reforma-escenaris.html',
 ]);
-const reformaHomePage = 'estructura-economica.html';
+const reformaHomePage = 'economia-inici.html';
 
 const getCurrentPageName = () => {
   const path = window.location.pathname;
