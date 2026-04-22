@@ -120,6 +120,34 @@
     </article>
   </div>
 
+  <section class="home-block budget-block">
+  <h2>Pressupost tècnic de sala i cuina</h2>
+  <p class="home-intro">
+    Aquesta part complementa la compra tècnica i la posada en marxa de MESCLARI amb una lectura econòmica
+    més clara del material de sala i de l’equipament de cuina. L’objectiu no és només mostrar xifres,
+    sinó explicar on es concentra realment la inversió i per què aquestes partides tenen pes dins del projecte.
+  </p>
+
+  <div class="budget-kpis">
+    <article class="budget-kpi">
+      <span class="budget-kpi-label">Total compra tècnica sala + cuina</span>
+      <strong>95.635,15 €</strong>
+      <small>Material de sala + maquinària i utillatge de cuina</small>
+    </article>
+
+    <article class="budget-kpi">
+      <span class="budget-kpi-label">Total cuina</span>
+      <strong>78.282,28 €</strong>
+      <small>65.033,82 € en maquinària + 13.248,46 € en utillatge</small>
+    </article>
+
+    <article class="budget-kpi">
+      <span class="budget-kpi-label">Total sala</span>
+      <strong>17.352,87 €</strong>
+      <small>Vajilla, cristalleria, coberteria, tèxtil i suport de servei</small>
+    </article>
+  </div>
+
   <div class="budget-grid">
     <article class="budget-card">
       <h3>Sala · Material i servei</h3>
@@ -182,6 +210,182 @@
   </article>
 </section>
 
+<section class="home-block home-closure">
+  <p class="home-intro">
+    La reforma i la compra tècnica tenen sentit perquè converteixen un espai existent en un restaurant preparat per funcionar com a MESCLARI.
+  </p>
+  <a class="annex-button" href="pressupostos-i-gestio-administrativa.html">Continuar al bloc 2</a>
+</section>
+
+<style>
+  .budget-block {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .budget-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .budget-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 26px 28px;
+    border-radius: 28px;
+    background: linear-gradient(180deg, #334456 0%, #223041 100%);
+    border: 1px solid rgba(30, 45, 59, 0.18);
+    box-shadow: 0 14px 34px rgba(24, 39, 58, 0.16);
+  }
+
+  .budget-kpi-label {
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(244, 233, 220, 0.84);
+  }
+
+  .budget-kpi strong {
+    font-size: clamp(2rem, 1.8rem + 0.8vw, 2.7rem);
+    line-height: 1;
+    color: #f7f1e8;
+    font-weight: 800;
+  }
+
+  .budget-kpi small {
+    color: rgba(244, 233, 220, 0.82);
+    line-height: 1.45;
+    font-size: 1rem;
+  }
+
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+  }
+
+  .budget-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px;
+    border-radius: 28px;
+    border: 1px solid rgba(30, 45, 59, 0.10);
+    background: linear-gradient(180deg, rgba(255,255,255,0.86) 0%, rgba(248,242,232,0.96) 100%);
+    box-shadow: 0 16px 34px rgba(24, 39, 58, 0.08);
+    min-height: 100%;
+  }
+
+  .budget-card h3 {
+    margin: 0;
+    color: #1e2d3b;
+    font-size: clamp(1.3rem, 1.12rem + 0.45vw, 1.7rem);
+    line-height: 1.14;
+    font-weight: 800;
+  }
+
+  .budget-card p {
+    margin: 0;
+    color: #32485d;
+    line-height: 1.68;
+    font-size: 1.02rem;
+  }
+
+  .budget-price {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 11px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(194, 94, 60, 0.28);
+    background: rgba(194, 94, 60, 0.10);
+    color: #c25e3c;
+    font-weight: 800;
+    font-size: 1.08rem;
+    line-height: 1;
+  }
+
+  .budget-list {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #32485d;
+    line-height: 1.62;
+    font-size: 1rem;
+  }
+
+  .budget-list li::marker {
+    color: rgba(194, 94, 60, 0.75);
+  }
+
+  .budget-list strong {
+    color: #1e2d3b;
+    font-weight: 800;
+  }
+
+  .budget-reading {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 30px 34px;
+    border-radius: 30px;
+    border: 1px solid rgba(30, 45, 59, 0.08);
+    background: linear-gradient(180deg, rgba(194, 94, 60, 0.06) 0%, rgba(244,233,220,0.92) 100%);
+    box-shadow: 0 16px 34px rgba(24, 39, 58, 0.07);
+  }
+
+  .budget-reading h3 {
+    margin: 0;
+    color: #1e2d3b;
+    font-size: clamp(1.5rem, 1.25rem + 0.55vw, 2rem);
+    line-height: 1.12;
+    font-weight: 800;
+  }
+
+  .budget-reading p {
+    margin: 0;
+    color: #32485d;
+    line-height: 1.75;
+    font-size: 1.08rem;
+    max-width: 1400px;
+  }
+
+  @media (max-width: 1180px) {
+    .budget-kpis {
+      grid-template-columns: 1fr;
+    }
+
+    .budget-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .budget-kpi,
+    .budget-card,
+    .budget-reading {
+      padding: 20px;
+      border-radius: 22px;
+    }
+
+    .budget-kpi strong {
+      font-size: 2.1rem;
+    }
+
+    .budget-card p,
+    .budget-list,
+    .budget-reading p {
+      font-size: 0.98rem;
+      line-height: 1.62;
+    }
+  }
+</style>
 <section class="home-block home-closure">
   <p class="home-intro">
     La reforma i la compra tècnica tenen sentit perquè converteixen un espai existent en un restaurant preparat per funcionar com a MESCLARI.
