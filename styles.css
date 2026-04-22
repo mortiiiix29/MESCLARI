@@ -2260,3 +2260,201 @@ footer {
   }
 
 }
+
+/* PROPOSTA REFORMA I ADEQUACIÓ */
+.proposta-main {
+  gap: 1.35rem;
+  padding-bottom: 0.6rem;
+}
+
+.proposta-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+  padding: clamp(1.2rem, 2.2vw, 1.7rem);
+}
+
+.proposta-hero-copy {
+  display: grid;
+  align-content: center;
+  gap: 0.6rem;
+}
+
+.proposta-hero-copy h1 {
+  font-size: clamp(2.45rem, 4.2vw, 3.7rem);
+  color: var(--blue);
+  line-height: 0.96;
+}
+
+.proposta-subtitle {
+  color: #8a3e22;
+  font-weight: 600;
+  font-size: 1.03rem;
+}
+
+.proposta-intro {
+  color: #31495d;
+  max-width: 58ch;
+}
+
+.proposta-intro-compacta {
+  margin: 0;
+  text-align: left;
+  max-width: 72ch;
+}
+
+.proposta-visual {
+  margin: 0;
+  border: 1px solid rgba(30, 45, 59, 0.24);
+  border-radius: 16px;
+  min-height: 240px;
+  overflow: hidden;
+  display: grid;
+  align-content: end;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(194, 94, 60, 0.22), transparent 42%),
+    radial-gradient(circle at 22% 78%, rgba(110, 139, 116, 0.2), transparent 46%),
+    linear-gradient(155deg, rgba(30, 45, 59, 0.93), rgba(56, 78, 98, 0.82));
+  box-shadow: 0 14px 24px rgba(30, 45, 59, 0.18);
+}
+
+.proposta-visual figcaption {
+  padding: 1rem;
+  display: grid;
+  gap: 0.2rem;
+  border-top: 1px solid rgba(216, 203, 178, 0.26);
+  background: rgba(12, 25, 37, 0.46);
+}
+
+.proposta-visual span {
+  color: #f3eadf;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.36rem;
+}
+
+.proposta-visual small {
+  color: #d8cbb2;
+  letter-spacing: 0.04em;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+}
+
+.proposta-visual-hero {
+  min-height: 340px;
+}
+
+.proposta-mini-grid .home-card {
+  min-height: 165px;
+}
+
+.proposta-objectius-grid .home-card {
+  min-height: 178px;
+}
+
+.proposta-redistribucio-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 0.95rem;
+  align-items: stretch;
+}
+
+.proposta-visual-planol {
+  min-height: 380px;
+}
+
+.proposta-zones-grid {
+  align-content: stretch;
+}
+
+.proposta-zones-grid .home-card {
+  min-height: 175px;
+}
+
+.proposta-intervencions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.proposta-card-strong {
+  min-height: 182px;
+  background: linear-gradient(158deg, rgba(244, 233, 220, 0.95), rgba(216, 203, 178, 0.74));
+}
+
+.proposta-support-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.82rem;
+}
+
+.proposta-support-main {
+  grid-column: span 2;
+  min-height: 260px;
+}
+
+.proposta-support-small {
+  min-height: 220px;
+}
+
+.proposta-transition {
+  text-align: left;
+}
+
+.proposta-transition h2,
+.proposta-transition p,
+.proposta-tancament p {
+  text-align: left;
+}
+
+.proposta-tancament {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.proposta-tancament p {
+  color: #31495d;
+  font-weight: 600;
+}
+
+@media (max-width: 1080px) {
+  .proposta-hero,
+  .proposta-redistribucio-layout,
+  .proposta-intervencions-grid,
+  .proposta-support-grid,
+  .proposta-objectius-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proposta-support-main {
+    grid-column: auto;
+  }
+
+  .proposta-visual-hero,
+  .proposta-visual-planol {
+    min-height: 300px;
+  }
+
+  .proposta-mini-grid,
+  .proposta-zones-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .proposta-hero {
+    padding: 1rem;
+  }
+
+  .proposta-hero-copy h1 {
+    font-size: clamp(2rem, 11vw, 2.7rem);
+  }
+
+  .proposta-visual,
+  .proposta-visual-hero,
+  .proposta-visual-planol,
+  .proposta-support-main,
+  .proposta-support-small {
+    min-height: 220px;
+  }
+}
