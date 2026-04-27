@@ -583,10 +583,11 @@
   <div class="video-frame-shell">
     <div class="video-frame-ratio">
       <iframe
-  src="https://www.youtube.com/embed/ID_DEL_VIDEO?autoplay=1&mute=1&rel=0&playsinline=1"
-  title="Vídeo MESCLARI"
+  id="mesclariDriveVideo"
+  title="Vídeo del projecte MESCLARI"
+  src="https://drive.google.com/file/d/1gH258U8uRq8WyIArdTNFPZcZCOqjXmP4/preview"
   loading="lazy"
-  allow="autoplay; encrypted-media; picture-in-picture"
+  allow="fullscreen; picture-in-picture"
   allowfullscreen
   referrerpolicy="strict-origin-when-cross-origin">
 </iframe>
@@ -767,44 +768,7 @@
   }
 </style>
 
-<script>
-  (function () {
-    const block = document.getElementById("mesclariVideoBlock");
-    const iframe = document.getElementById("mesclariDriveVideo");
-    const loadingLayer = document.getElementById("mesclariVideoLoading");
 
-    if (!block || !iframe) return;
-
-    const baseSrc = iframe.dataset.srcBase;
-    let hasAutoplayStarted = false;
-
-    function loadVideoWithAutoplay() {
-      if (hasAutoplayStarted) return;
-      hasAutoplayStarted = true;
-
-      iframe.src = baseSrc + "?autoplay=1";
-      if (loadingLayer) {
-        loadingLayer.classList.add("is-hidden");
-      }
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-            loadVideoWithAutoplay();
-            observer.disconnect();
-          }
-        });
-      },
-      {
-        threshold: [0.25, 0.55, 0.75]
-      }
-    );
-
-    observer.observe(block);
-  })();
-</script>
       </section>
 
       <section class="identitat-section identitat-closure" id="tancament-manifest">
