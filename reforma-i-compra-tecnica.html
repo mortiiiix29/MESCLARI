@@ -36,12 +36,644 @@
             <h4>Lectura del local actual</h4>
             <p>El local parteix d’una base existent que ofereix potencial real, però que no respon encara al nivell ni a la configuració que MESCLARI necessita. Per això, la reforma s’ha de llegir com una intervenció necessària per ordenar millor l’espai, elevar-ne la qualitat percebuda i adaptar-lo a una lògica de funcionament coherent amb el projecte.</p>
           </article>
-          <aside class="home-media-slot editorial-placeholder" role="img" aria-label="Placeholder hero reforma i local actual">
-            <p class="placeholder-badge">Suport principal</p>
-            <small>reforma-compra-hero.jpg</small>
-            <small>reforma-compra-local.jpg</small>
-            <p class="placeholder-note">Lectura visual del punt de partida del local i de la transformació prevista.</p>
-          </aside>
+          <!-- SUSTITUYE TU <aside> ACTUAL POR TODO ESTE BLOQUE -->
+
+<aside class="local-gallery-card" aria-label="Galeria del local actual i de la transformació prevista">
+  <div class="local-gallery-top">
+    <p class="local-gallery-badge">Suport principal</p>
+    <h3>Local actual · Galeria visual</h3>
+    <p class="local-gallery-intro">
+      Lectura visual del punt de partida del local i de la transformació prevista. El carrusel mostra les imatges disponibles
+      del local actual i permet obrir una vista ampliada per revisar-les amb més detall.
+    </p>
+  </div>
+
+  <div class="local-carousel-shell">
+    <button class="local-carousel-nav prev" type="button" aria-label="Imatge anterior" id="localCarouselPrev">
+      &#10094;
+    </button>
+
+    <button class="local-carousel-stage" type="button" id="openLocalGallery" aria-label="Obrir galeria gran del local">
+      <img id="localCarouselImage" src="" alt="Imatge del local actual de MESCLARI" />
+      <span class="local-carousel-overlay">
+        <strong>Obrir galeria completa</strong>
+        <small>Fes clic per veure totes les imatges en gran</small>
+      </span>
+    </button>
+
+    <button class="local-carousel-nav next" type="button" aria-label="Imatge següent" id="localCarouselNext">
+      &#10095;
+    </button>
+  </div>
+
+  <div class="local-carousel-bottom">
+    <div class="local-carousel-meta">
+      <span class="local-carousel-counter" id="localCarouselCounter">1 / 27</span>
+      <span class="local-carousel-note">Canvi automàtic cada 3 segons</span>
+    </div>
+    <div class="local-carousel-dots" id="localCarouselDots"></div>
+  </div>
+</aside>
+
+<!-- MODAL / LIGHTBOX -->
+<div class="local-lightbox" id="localLightbox" hidden>
+  <div class="local-lightbox-backdrop" id="localLightboxBackdrop"></div>
+
+  <div class="local-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galeria gran del local">
+    <button class="local-lightbox-close" type="button" id="closeLocalLightbox" aria-label="Tancar galeria">
+      &times;
+    </button>
+
+    <div class="local-lightbox-layout">
+      <div class="local-lightbox-thumbs" id="localLightboxThumbs"></div>
+
+      <div class="local-lightbox-main">
+        <button class="local-lightbox-nav prev" type="button" id="localLightboxPrev" aria-label="Imatge anterior">
+          &#10094;
+        </button>
+
+        <div class="local-lightbox-image-wrap">
+          <img id="localLightboxImage" src="" alt="Vista ampliada del local actual de MESCLARI" />
+        </div>
+
+        <button class="local-lightbox-nav next" type="button" id="localLightboxNext" aria-label="Imatge següent">
+          &#10095;
+        </button>
+      </div>
+    </div>
+
+    <div class="local-lightbox-footer">
+      <div>
+        <strong id="localLightboxCounter">1 / 27</strong>
+        <p id="localLightboxCaption">Galeria del local actual seleccionat per al projecte MESCLARI.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .local-gallery-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.6rem;
+    border-radius: 28px;
+    border: 1px solid rgba(30, 45, 59, 0.12);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.90) 0%, rgba(247,241,232,0.96) 100%);
+    box-shadow: 0 18px 40px rgba(24, 39, 58, 0.08);
+  }
+
+  .local-gallery-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .local-gallery-badge {
+    margin: 0;
+    display: inline-flex;
+    width: fit-content;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(194, 94, 60, 0.12);
+    color: #c25e3c;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .local-gallery-top h3 {
+    margin: 0;
+    color: #1e2d3b;
+    font-size: clamp(1.45rem, 1.2rem + 0.6vw, 2rem);
+    line-height: 1.12;
+  }
+
+  .local-gallery-intro {
+    margin: 0;
+    color: #4a5f72;
+    line-height: 1.65;
+    max-width: 940px;
+  }
+
+  .local-carousel-shell {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr 56px;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .local-carousel-stage {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 480px;
+    border: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #e9e1d2;
+    box-shadow: inset 0 0 0 1px rgba(30, 45, 59, 0.08);
+    padding: 0;
+  }
+
+  .local-carousel-stage img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+  }
+
+  .local-carousel-stage:hover img {
+    transform: scale(1.02);
+  }
+
+  .local-carousel-overlay {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(30,45,59,0.12) 0%, rgba(30,45,59,0.74) 100%);
+    color: #f7f1e8;
+    text-align: left;
+  }
+
+  .local-carousel-overlay strong {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .local-carousel-overlay small {
+    opacity: 0.92;
+    font-size: 0.88rem;
+  }
+
+  .local-carousel-nav {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    border: 1px solid rgba(30, 45, 59, 0.14);
+    background: rgba(255,255,255,0.88);
+    color: #1e2d3b;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(24, 39, 58, 0.08);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .local-carousel-nav:hover {
+    transform: translateY(-1px);
+    background: #ffffff;
+  }
+
+  .local-carousel-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .local-carousel-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: #4a5f72;
+    font-size: 0.95rem;
+  }
+
+  .local-carousel-counter {
+    font-weight: 800;
+    color: #1e2d3b;
+  }
+
+  .local-carousel-dots {
+    display: flex;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+
+  .local-carousel-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(30, 45, 59, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .local-carousel-dots button.active {
+    background: #c25e3c;
+    transform: scale(1.2);
+  }
+
+  .local-lightbox[hidden] {
+    display: none;
+  }
+
+  .local-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+  }
+
+  .local-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 21, 29, 0.76);
+    backdrop-filter: blur(4px);
+  }
+
+  .local-lightbox-dialog {
+    position: relative;
+    width: min(1440px, calc(100vw - 40px));
+    height: min(90vh, 900px);
+    margin: 3vh auto;
+    padding: 1.2rem;
+    border-radius: 28px;
+    background: #f7f3eb;
+    box-shadow: 0 22px 60px rgba(0,0,0,0.28);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .local-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.92);
+    color: #1e2d3b;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(24, 39, 58, 0.12);
+  }
+
+  .local-lightbox-layout {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1.2rem;
+    height: 100%;
+    min-height: 0;
+    padding-top: 0.5rem;
+  }
+
+  .local-lightbox-thumbs {
+    overflow-y: auto;
+    padding-right: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .local-lightbox-thumbs button {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #efe7d8;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .local-lightbox-thumbs button.active {
+    border-color: #c25e3c;
+    transform: scale(1.01);
+  }
+
+  .local-lightbox-thumbs img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .local-lightbox-main {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    gap: 1rem;
+    align-items: center;
+    min-height: 0;
+  }
+
+  .local-lightbox-image-wrap {
+    height: 100%;
+    min-height: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #ece4d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .local-lightbox-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: #ece4d5;
+  }
+
+  .local-lightbox-nav {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(30, 45, 59, 0.14);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.94);
+    color: #1e2d3b;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(24, 39, 58, 0.10);
+  }
+
+  .local-lightbox-footer {
+    padding: 0.2rem 0.2rem 0;
+    color: #1e2d3b;
+  }
+
+  .local-lightbox-footer strong {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .local-lightbox-footer p {
+    margin: 0;
+    color: #4a5f72;
+    line-height: 1.55;
+  }
+
+  @media (max-width: 1100px) {
+    .local-lightbox-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .local-lightbox-thumbs {
+      order: 2;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-right: 0;
+      padding-bottom: 0.25rem;
+    }
+
+    .local-lightbox-thumbs button {
+      min-width: 90px;
+      max-width: 90px;
+    }
+
+    .local-lightbox-main {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 820px) {
+    .local-carousel-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .local-carousel-nav {
+      display: none;
+    }
+
+    .local-carousel-stage,
+    .local-carousel-stage img {
+      min-height: 320px;
+    }
+
+    .local-lightbox-dialog {
+      width: calc(100vw - 20px);
+      height: calc(100vh - 20px);
+      margin: 10px auto;
+      padding: 0.9rem;
+      border-radius: 20px;
+    }
+
+    .local-lightbox-main {
+      grid-template-columns: 44px 1fr 44px;
+      gap: 0.5rem;
+    }
+
+    .local-lightbox-nav {
+      width: 44px;
+      height: 44px;
+      font-size: 1.15rem;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    const imageBasePath = "imaguenes i videos/";
+
+    const galleryFiles = [
+      "128640_xl.jpg",
+      "128641_xl.jpg",
+      "128642_xl.jpg",
+      "128643_xl.jpg",
+      "128644_xl.jpg",
+      "128645_xl.jpg",
+      "128646_xl.jpg",
+      "128647_xl.jpg",
+      "128648_xl.jpg",
+      "128649_xl.jpg",
+      "128650_xl.jpg",
+      "128651_xl.jpg",
+      "128652_xl.jpg",
+      "128653_xl.jpg",
+      "128654_xl.jpg",
+      "128655_xl.jpg",
+      "128656_xl.jpg",
+      "128657_xl.jpg",
+      "128658_xl.jpg",
+      "128659_xl.jpg",
+      "128660_xl.jpg",
+      "128661_xl.jpg",
+      "128662_xl.jpg",
+      "128663_xl.jpg",
+      "128664_xl.jpg",
+      "128665_xl.jpg",
+      "128730_xl.jpg"
+    ];
+
+    const images = galleryFiles.map(file => ({
+      src: encodeURI(imageBasePath + file),
+      alt: "Imatge del local actual seleccionat per al projecte MESCLARI",
+      caption: "Galeria visual del local actual, utilitzada per justificar l’estat inicial i la proposta de transformació del projecte."
+    }));
+
+    const carouselImage = document.getElementById("localCarouselImage");
+    const carouselCounter = document.getElementById("localCarouselCounter");
+    const carouselDots = document.getElementById("localCarouselDots");
+    const prevBtn = document.getElementById("localCarouselPrev");
+    const nextBtn = document.getElementById("localCarouselNext");
+    const openBtn = document.getElementById("openLocalGallery");
+
+    const lightbox = document.getElementById("localLightbox");
+    const lightboxBackdrop = document.getElementById("localLightboxBackdrop");
+    const closeLightboxBtn = document.getElementById("closeLocalLightbox");
+    const lightboxImage = document.getElementById("localLightboxImage");
+    const lightboxCounter = document.getElementById("localLightboxCounter");
+    const lightboxCaption = document.getElementById("localLightboxCaption");
+    const lightboxThumbs = document.getElementById("localLightboxThumbs");
+    const lightboxPrev = document.getElementById("localLightboxPrev");
+    const lightboxNext = document.getElementById("localLightboxNext");
+
+    let currentIndex = 0;
+    let autoplay = null;
+
+    function updateCarousel(index) {
+      currentIndex = (index + images.length) % images.length;
+      carouselImage.src = images[currentIndex].src;
+      carouselImage.alt = images[currentIndex].alt;
+      carouselCounter.textContent = (currentIndex + 1) + " / " + images.length;
+
+      const dots = carouselDots.querySelectorAll("button");
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+      });
+    }
+
+    function updateLightbox(index) {
+      currentIndex = (index + images.length) % images.length;
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.alt = images[currentIndex].alt;
+      lightboxCounter.textContent = (currentIndex + 1) + " / " + images.length;
+      lightboxCaption.textContent = images[currentIndex].caption;
+
+      const thumbs = lightboxThumbs.querySelectorAll("button");
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle("active", i === currentIndex);
+      });
+
+      updateCarousel(currentIndex);
+    }
+
+    function buildDots() {
+      carouselDots.innerHTML = "";
+      images.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Anar a la imatge " + (index + 1));
+        dot.addEventListener("click", () => {
+          updateCarousel(index);
+          restartAutoplay();
+        });
+        carouselDots.appendChild(dot);
+      });
+    }
+
+    function buildThumbs() {
+      lightboxThumbs.innerHTML = "";
+      images.forEach((image, index) => {
+        const thumb = document.createElement("button");
+        thumb.type = "button";
+        thumb.setAttribute("aria-label", "Obrir miniatura " + (index + 1));
+
+        const img = document.createElement("img");
+        img.src = image.src;
+        img.alt = image.alt;
+
+        thumb.appendChild(img);
+        thumb.addEventListener("click", () => updateLightbox(index));
+        lightboxThumbs.appendChild(thumb);
+      });
+    }
+
+    function openLightbox(index = currentIndex) {
+      lightbox.hidden = false;
+      document.body.style.overflow = "hidden";
+      updateLightbox(index);
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplay = setInterval(() => {
+        updateCarousel(currentIndex + 1);
+      }, 3000);
+    }
+
+    function stopAutoplay() {
+      if (autoplay) {
+        clearInterval(autoplay);
+        autoplay = null;
+      }
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    buildDots();
+    buildThumbs();
+    updateCarousel(0);
+    startAutoplay();
+
+    prevBtn.addEventListener("click", () => {
+      updateCarousel(currentIndex - 1);
+      restartAutoplay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      updateCarousel(currentIndex + 1);
+      restartAutoplay();
+    });
+
+    openBtn.addEventListener("click", () => openLightbox(currentIndex));
+
+    lightboxPrev.addEventListener("click", () => updateLightbox(currentIndex - 1));
+    lightboxNext.addEventListener("click", () => updateLightbox(currentIndex + 1));
+    closeLightboxBtn.addEventListener("click", closeLightbox);
+    lightboxBackdrop.addEventListener("click", closeLightbox);
+
+    openBtn.addEventListener("mouseenter", stopAutoplay);
+    openBtn.addEventListener("mouseleave", startAutoplay);
+    openBtn.addEventListener("focus", stopAutoplay);
+    openBtn.addEventListener("blur", startAutoplay);
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.hidden) {
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") updateLightbox(currentIndex - 1);
+        if (event.key === "ArrowRight") updateLightbox(currentIndex + 1);
+      } else {
+        if (event.key === "ArrowLeft") {
+          updateCarousel(currentIndex - 1);
+          restartAutoplay();
+        }
+        if (event.key === "ArrowRight") {
+          updateCarousel(currentIndex + 1);
+          restartAutoplay();
+        }
+      }
+    });
+  })();
+</script>
         </div>
       </section>
 
