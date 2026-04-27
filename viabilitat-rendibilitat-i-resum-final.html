@@ -520,10 +520,9 @@
   }
 
   .summary-shell {
-    display: grid;
-    grid-template-columns: 1.05fr 1.35fr;
-    gap: 22px;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .summary-reading,
@@ -631,8 +630,7 @@
   }
 
   @media (max-width: 1180px) {
-    .summary-top,
-    .summary-shell {
+    .summary-top {
       grid-template-columns: 1fr;
     }
   }
