@@ -32,14 +32,14 @@
     <main class="home-main">
       <section class="home-block">
         <div class="home-grid two home-editorial">
-          <article class="home-card">
-            <h4>Lectura del local actual</h4>
-            <p>El local parteix d’una base existent que ofereix potencial real, però que no respon encara al nivell ni a la configuració que MESCLARI necessita. Per això, la reforma s’ha de llegir com una intervenció necessària per ordenar millor l’espai, elevar-ne la qualitat percebuda i adaptar-lo a una lògica de funcionament coherent amb el projecte.</p>
-          </article>
-          <!-- SUSTITUYE TU <aside> ACTUAL POR TODO ESTE BLOQUE -->
-
 <aside class="local-gallery-card" aria-label="Galeria del local actual i de la transformació prevista">
   <div class="local-gallery-top">
+    <h4>Lectura del local actual</h4>
+    <p class="local-gallery-reading">
+      El local parteix d’una base existent que ofereix potencial real, però que no respon encara al nivell ni a la configuració
+      que MESCLARI necessita. Per això, la reforma s’ha de llegir com una intervenció necessària per ordenar millor l’espai,
+      elevar-ne la qualitat percebuda i adaptar-lo a una lògica de funcionament coherent amb el projecte.
+    </p>
     <p class="local-gallery-badge">Suport principal</p>
     <h3>Local actual · Galeria visual</h3>
     <p class="local-gallery-intro">
@@ -112,6 +112,7 @@
 
 <style>
   .local-gallery-card {
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
@@ -148,6 +149,19 @@
     color: #1e2d3b;
     font-size: clamp(1.45rem, 1.2rem + 0.6vw, 2rem);
     line-height: 1.12;
+  }
+
+  .local-gallery-top h4 {
+    margin: 0;
+    color: #1e2d3b;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  .local-gallery-reading {
+    margin: 0;
+    color: #32485d;
+    line-height: 1.68;
   }
 
   .local-gallery-intro {
