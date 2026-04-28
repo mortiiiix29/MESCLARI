@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · Pressupostos i gestió administrativa</title>
-    <meta name="description" content="Altres partides econòmiques i estructura administrativa del projecte MESCLARI." />
+    <title>MESCLARI · Reforma i compra tècnica</title>
+    <meta
+      name="description"
+      content="Del local existent a un espai preparat per funcionar com a MESCLARI: justificació de reforma, cost i compra tècnica."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+
     <style>
 
       :root {
@@ -1209,344 +1216,705 @@
 
 
       /* =========================================================
-         PÀGINA 02 · PRESSUPOSTOS I GESTIÓ ADMINISTRATIVA
-         Mateixa base visual que economia-inici, només adaptació visual.
+         REFORMA I COMPRA TÈCNICA · BASE VISUAL ECONOMIA-INICI
+         Mateix llenguatge de part oculta, aplicat només a aquesta pàgina.
       ========================================================= */
 
-      .admin-pro-main {
-        width: min(1240px, 92vw);
-        margin: clamp(1rem, 2.4vw, 2rem) auto 4.8rem;
-        display: grid;
-        gap: clamp(1.2rem, 2.4vw, 2rem);
+      body.reforma-page::after {
+        content: "INVERSIÓ" !important;
       }
 
-      .admin-hero .eco-hero-copy h1 {
-        max-width: 10.5ch;
+      .eco-hero h1.reforma-title {
+        max-width: 11.4ch;
+        font-size: clamp(3.65rem, 7.2vw, 7.4rem);
       }
 
-      .admin-hero .eco-hero-copy h1 span {
+      .eco-hero h1.reforma-title span {
         color: var(--eco-terracotta);
       }
 
-      .admin-hero .eco-hero-panel {
-        align-content: stretch;
-      }
-
-      .admin-map {
+      .reforma-hero-panel-note {
         display: grid;
         gap: 0.75rem;
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.13);
+        background: rgba(244, 233, 220, 0.055);
+        padding: 1.25rem;
       }
 
-      .admin-map-item {
-        position: relative;
-        display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
-        gap: 0.85rem;
-        align-items: center;
-        min-height: 108px;
-        border-radius: var(--eco-radius-md);
-        border: 1px solid rgba(244, 233, 220, 0.14);
-        background: rgba(244, 233, 220, 0.065);
-        padding: 1rem;
-        overflow: hidden;
-      }
-
-      .admin-map-item::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, rgba(194, 94, 60, 0.09), transparent 60%);
-        opacity: 0;
-        transition: opacity 0.25s ease;
-      }
-
-      .admin-map-item:hover::after {
-        opacity: 1;
-      }
-
-      .admin-map-number {
-        width: 3.2rem;
-        height: 3.2rem;
-        display: grid;
-        place-items: center;
-        border-radius: 999px;
-        color: var(--eco-cream);
-        border: 1px solid rgba(194, 94, 60, 0.38);
-        background: rgba(194, 94, 60, 0.13);
-        font-weight: 900;
-        position: relative;
-        z-index: 1;
-      }
-
-      .admin-map-item h3,
-      .admin-map-item p,
-      .admin-map-item > div {
-        position: relative;
-        z-index: 1;
-      }
-
-      .admin-map-item h3 {
+      .reforma-hero-panel-note h3 {
         margin: 0;
         color: #fffaf3;
-        font-size: 1.06rem;
+        font-size: 1.12rem;
       }
 
-      .admin-map-item p {
-        margin: 0.22rem 0 0;
-        color: rgba(244, 233, 220, 0.64);
-        line-height: 1.45;
-        font-size: 0.92rem;
+      .reforma-hero-panel-note p {
+        margin: 0;
+        color: var(--eco-muted-2);
+        line-height: 1.58;
       }
 
-      .admin-kpi-grid {
+      .reforma-section-grid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: clamp(0.9rem, 1.8vw, 1.2rem);
       }
 
-      .admin-kpi {
-        position: relative;
-        min-height: 210px;
-        border-radius: var(--eco-radius-lg);
-        border: 1px solid rgba(244, 233, 220, 0.16);
-        background:
-          linear-gradient(180deg, rgba(244, 233, 220, 0.115), rgba(244, 233, 220, 0.052)),
-          rgba(18, 32, 45, 0.72);
-        padding: 1.35rem;
-        overflow: hidden;
-        box-shadow: 0 22px 54px rgba(10, 18, 28, 0.18);
+      .reforma-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .admin-kpi::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(circle at 15% 0%, rgba(194, 94, 60, 0.18), transparent 13rem),
-          linear-gradient(120deg, rgba(244, 233, 220, 0.065), transparent 44%);
-        pointer-events: none;
-      }
-
-      .admin-kpi > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      .admin-kpi small {
-        display: inline-flex;
-        margin-bottom: 0.75rem;
-        color: rgba(244, 233, 220, 0.62);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-weight: 900;
-        font-size: 0.72rem;
-      }
-
-      .admin-kpi strong {
-        display: block;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.2rem, 4vw, 4rem);
-        line-height: 0.9;
-        color: #fffaf3;
-      }
-
-      .admin-kpi p {
-        margin: 0.9rem 0 0;
-        color: rgba(244, 233, 220, 0.66);
-        line-height: 1.55;
-      }
-
-      .admin-budget-grid {
-        display: grid;
+      .reforma-grid-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(0.9rem, 1.8vw, 1.2rem);
       }
 
-      .admin-card-pro {
+      .reforma-grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .reforma-card,
+      .reforma-soft-card,
+      .budget-card,
+      .budget-reading {
         position: relative;
-        min-height: 100%;
         border-radius: var(--eco-radius-lg);
-        border: 1px solid rgba(244, 233, 220, 0.16);
+        border: 1px solid rgba(244, 233, 220, 0.13);
         background:
-          linear-gradient(180deg, rgba(244, 233, 220, 0.11), rgba(244, 233, 220, 0.052)),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.105), rgba(244, 233, 220, 0.052)),
           rgba(18, 32, 45, 0.72);
-        padding: clamp(1.25rem, 2.1vw, 1.65rem);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        box-shadow: 0 18px 46px rgba(10, 18, 28, 0.18);
+        padding: clamp(1.15rem, 2.1vw, 1.65rem);
         overflow: hidden;
-        box-shadow: 0 22px 54px rgba(10, 18, 28, 0.18);
-        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
       }
 
-      .admin-card-pro:hover {
-        transform: translateY(-4px);
-        border-color: rgba(194, 94, 60, 0.38);
-        box-shadow: 0 28px 66px rgba(10, 18, 28, 0.26);
-      }
-
-      .admin-card-pro::before {
+      .reforma-card::before,
+      .reforma-soft-card::before,
+      .budget-card::before,
+      .budget-reading::before {
         content: "";
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(circle at 18% 0%, rgba(194, 94, 60, 0.16), transparent 13rem),
-          linear-gradient(120deg, rgba(244, 233, 220, 0.055), transparent 44%);
+          radial-gradient(circle at 20% 0%, rgba(194, 94, 60, 0.13), transparent 14rem),
+          linear-gradient(120deg, rgba(244, 233, 220, 0.045), transparent 48%);
         pointer-events: none;
       }
 
-      .admin-card-pro > * {
+      .reforma-card > *,
+      .reforma-soft-card > *,
+      .budget-card > *,
+      .budget-reading > * {
         position: relative;
         z-index: 1;
       }
 
-      .admin-card-top {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .admin-card-pro h3,
-      .admin-card-pro h4 {
+      .reforma-card h3,
+      .reforma-card h4,
+      .reforma-soft-card h3,
+      .reforma-soft-card h4,
+      .budget-card h3,
+      .budget-reading h3 {
         margin: 0;
         color: #fffaf3;
-        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.7rem);
+        font-size: clamp(1.22rem, 1.1rem + 0.45vw, 1.68rem);
         line-height: 1.08;
-        text-wrap: balance;
+        font-weight: 800;
       }
 
-      .admin-card-pro p {
-        margin: 0;
-        color: rgba(244, 233, 220, 0.70);
-        line-height: 1.68;
+      .reforma-card p,
+      .reforma-soft-card p,
+      .budget-card p,
+      .budget-reading p {
+        margin: 0.85rem 0 0;
+        color: var(--eco-muted);
+        line-height: 1.72;
       }
 
-      .admin-price {
+      .reforma-card strong,
+      .reforma-soft-card strong,
+      .budget-card strong,
+      .budget-reading strong {
+        color: #fffaf3;
+      }
+
+      .reforma-number {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        white-space: nowrap;
-        padding: 0.55rem 0.8rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: 1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.36);
+        background: rgba(194, 94, 60, 0.12);
+        color: var(--eco-cream);
+        font-weight: 900;
+      }
+
+      .reforma-price-pill,
+      .budget-price {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        padding: 0.68rem 1rem;
         border-radius: 999px;
         border: 1px solid rgba(194, 94, 60, 0.42);
         background: rgba(194, 94, 60, 0.14);
         color: var(--eco-cream);
         font-weight: 900;
-        line-height: 1;
+        letter-spacing: 0.01em;
       }
 
-      .admin-note {
-        margin-top: auto !important;
-        padding-top: 0.9rem;
-        border-top: 1px solid rgba(244, 233, 220, 0.10);
-        color: rgba(244, 233, 220, 0.58) !important;
+      .reforma-list,
+      .budget-list {
+        display: grid;
+        gap: 0.58rem;
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .reforma-list li,
+      .budget-list li {
+        position: relative;
+        padding: 0.72rem 0.78rem 0.72rem 2.05rem;
+        border-radius: 15px;
+        border: 1px solid rgba(244, 233, 220, 0.1);
+        background: rgba(244, 233, 220, 0.052);
+        color: rgba(244, 233, 220, 0.72);
+        line-height: 1.42;
+      }
+
+      .reforma-list li::before,
+      .budget-list li::before {
+        content: "";
+        position: absolute;
+        left: 0.82rem;
+        top: 1.18rem;
+        width: 0.46rem;
+        height: 0.46rem;
+        border-radius: 999px;
+        background: var(--eco-terracotta);
+      }
+
+      .reforma-list li strong,
+      .budget-list li strong {
+        color: #fffaf3;
+      }
+
+      .reforma-stat-grid,
+      .budget-kpis {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.85rem, 1.8vw, 1.15rem);
+      }
+
+      .reforma-stat,
+      .budget-kpi {
+        position: relative;
+        min-height: 170px;
+        display: grid;
+        align-content: center;
+        gap: 0.45rem;
+        padding: clamp(1.15rem, 2.1vw, 1.55rem);
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.14);
+        background:
+          radial-gradient(circle at 18% 0%, rgba(194, 94, 60, 0.18), transparent 13rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.11), rgba(244, 233, 220, 0.052)),
+          rgba(18, 32, 45, 0.72);
+        box-shadow: 0 20px 50px rgba(10, 18, 28, 0.2);
+        overflow: hidden;
+      }
+
+      .reforma-stat span,
+      .budget-kpi-label {
+        color: rgba(244, 233, 220, 0.68);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .reforma-stat strong,
+      .budget-kpi strong {
+        color: #fffaf3;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.05rem, 3.6vw, 3.25rem);
+        line-height: 0.92;
+      }
+
+      .reforma-stat small,
+      .budget-kpi small {
+        color: var(--eco-muted-2);
+        line-height: 1.45;
         font-size: 0.95rem;
       }
 
-      .admin-card-pro .eco-list {
-        margin-top: 0;
-      }
-
-      .admin-card-pro .eco-list li {
-        color: rgba(244, 233, 220, 0.72) !important;
-      }
-
-      .admin-card-pro .eco-list strong {
-        color: #fffaf3;
-      }
-
-      .admin-split {
+      .budget-block {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 2vw, 1.4rem);
+      }
+
+      .budget-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: clamp(0.9rem, 1.8vw, 1.2rem);
       }
 
-      .admin-control-card {
-        border-radius: var(--eco-radius-lg);
-        border: 1px solid rgba(244, 233, 220, 0.16);
-        background: rgba(244, 233, 220, 0.07);
-        padding: clamp(1.2rem, 2.2vw, 1.65rem);
+      .budget-card {
+        min-height: 100%;
       }
 
-      .admin-control-card h3,
-      .admin-control-card h4 {
-        margin: 0 0 0.7rem;
-        color: #fffaf3;
-        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.65rem);
+      .budget-card p {
+        font-size: 0.98rem;
       }
 
-      .admin-control-card p {
-        margin: 0;
-        color: rgba(244, 233, 220, 0.70);
-        line-height: 1.7;
-      }
-
-      .admin-flow {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        gap: 1rem;
-        align-items: stretch;
-      }
-
-      .admin-flow-card {
-        border-radius: var(--eco-radius-lg);
-        border: 1px solid rgba(244, 233, 220, 0.15);
+      .budget-reading {
+        padding: clamp(1.35rem, 2.4vw, 2rem);
+        border-color: rgba(194, 94, 60, 0.22);
         background:
-          linear-gradient(180deg, rgba(244, 233, 220, 0.095), rgba(244, 233, 220, 0.048)),
-          rgba(18, 32, 45, 0.70);
-        padding: clamp(1.2rem, 2.2vw, 1.65rem);
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.16), transparent 22rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.12), rgba(244, 233, 220, 0.055)),
+          rgba(18, 32, 45, 0.78);
       }
 
-      .admin-flow-card h3 {
-        margin: 0 0 0.7rem;
-        color: #fffaf3;
-        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.65rem);
-      }
-
-      .admin-flow-card p {
-        margin: 0;
-        color: rgba(244, 233, 220, 0.68);
-        line-height: 1.7;
-      }
-
-      .admin-flow-arrow {
-        width: 3.2rem;
+      .local-gallery-card {
         display: grid;
-        place-items: center;
+        gap: 1.25rem;
+        border-radius: var(--eco-radius-xl);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.105), rgba(244, 233, 220, 0.052)),
+          rgba(18, 32, 45, 0.72);
+        box-shadow: 0 22px 60px rgba(10, 18, 28, 0.22);
+        padding: clamp(1rem, 2.4vw, 1.55rem);
+        overflow: hidden;
+      }
+
+      .local-gallery-top {
+        display: grid;
+        grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: end;
+      }
+
+      .local-gallery-badge {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 0.85rem;
+        padding: 0.42rem 0.78rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.38);
+        background: rgba(194, 94, 60, 0.12);
+        color: var(--eco-cream);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .local-gallery-badge::before {
+        content: "";
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 999px;
+        background: var(--eco-terracotta);
+      }
+
+      .local-gallery-top h3,
+      .local-gallery-top h4 {
+        margin: 0;
+        color: #fffaf3;
+      }
+
+      .local-gallery-top h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4.4vw, 4.2rem);
+        line-height: 0.92;
+        letter-spacing: -0.03em;
+      }
+
+      .local-gallery-top h4 {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
         color: var(--eco-terracotta);
-        font-size: 2.4rem;
+      }
+
+      .local-gallery-reading,
+      .local-gallery-intro {
+        margin: 0;
+        color: var(--eco-muted);
+        line-height: 1.72;
+      }
+
+      .local-carousel-shell {
+        position: relative;
+        display: grid;
+        grid-template-columns: 58px minmax(0, 1fr) 58px;
+        gap: 0.9rem;
+        align-items: center;
+      }
+
+      .local-carousel-stage {
+        position: relative;
+        width: 100%;
+        min-height: 520px;
+        padding: 0;
+        border: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        cursor: pointer;
+        background: rgba(244, 233, 220, 0.08);
+        box-shadow:
+          0 18px 46px rgba(10, 18, 28, 0.22),
+          inset 0 0 0 1px rgba(244, 233, 220, 0.12);
+      }
+
+      .local-carousel-stage img {
+        width: 100%;
+        height: 100%;
+        min-height: 520px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+
+      .local-carousel-stage:hover img {
+        transform: scale(1.02);
+      }
+
+      .local-carousel-overlay {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.92rem 1rem;
+        border-radius: 20px;
+        background:
+          linear-gradient(135deg, rgba(13, 22, 32, 0.82), rgba(18, 31, 43, 0.64)),
+          rgba(244, 233, 220, 0.06);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        color: #fffaf3;
+        backdrop-filter: blur(12px);
+      }
+
+      .local-carousel-overlay strong {
+        display: block;
+        font-size: 0.92rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .local-carousel-overlay small {
+        color: var(--eco-muted-2);
+      }
+
+      .local-carousel-nav,
+      .local-lightbox-nav,
+      .local-lightbox-close {
+        border-radius: 999px;
+        border: 1px solid rgba(244, 233, 220, 0.2);
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.30), rgba(244, 233, 220, 0.08)),
+          rgba(18, 32, 45, 0.72);
+        color: var(--eco-cream);
+        box-shadow: 0 12px 24px rgba(7, 16, 24, 0.22);
+        cursor: pointer;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .local-carousel-nav {
+        width: 58px;
+        height: 58px;
+        font-size: 1.45rem;
+      }
+
+      .local-carousel-nav:hover,
+      .local-lightbox-nav:hover,
+      .local-lightbox-close:hover {
+        transform: translateY(-1px);
+        border-color: rgba(194, 94, 60, 0.56);
+      }
+
+      .local-carousel-bottom {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .local-carousel-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        color: var(--eco-muted-2);
+        font-size: 0.92rem;
+      }
+
+      .local-carousel-counter {
+        color: var(--eco-cream);
         font-weight: 900;
       }
 
-      .admin-close-actions {
+      .local-carousel-dots {
         display: flex;
-        justify-content: center;
-        margin-top: 1.35rem;
+        flex-wrap: wrap;
+        gap: 0.42rem;
       }
 
-      @media (max-width: 1060px) {
-        .admin-budget-grid,
-        .admin-kpi-grid,
-        .admin-split,
-        .admin-flow {
+      .local-carousel-dots button {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.18);
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .local-carousel-dots button.active {
+        background: var(--eco-terracotta);
+        transform: scale(1.28);
+      }
+
+      .local-lightbox[hidden] {
+        display: none;
+      }
+
+      .local-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+      }
+
+      .local-lightbox-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(7, 16, 24, 0.82);
+        backdrop-filter: blur(7px);
+      }
+
+      .local-lightbox-dialog {
+        position: relative;
+        width: min(1440px, calc(100vw - 40px));
+        height: min(90vh, 900px);
+        margin: 3vh auto;
+        padding: 1.1rem;
+        border-radius: 30px;
+        border: 1px solid rgba(244, 233, 220, 0.18);
+        background:
+          linear-gradient(160deg, rgba(244, 233, 220, 0.095), rgba(244, 233, 220, 0.045)),
+          rgba(22, 38, 53, 0.96);
+        box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .local-lightbox-close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 3;
+        width: 48px;
+        height: 48px;
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .local-lightbox-layout {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1.1rem;
+        height: 100%;
+        min-height: 0;
+        padding-top: 0.45rem;
+      }
+
+      .local-lightbox-thumbs {
+        overflow-y: auto;
+        padding-right: 0.35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.68rem;
+      }
+
+      .local-lightbox-thumbs button {
+        padding: 0;
+        border: 2px solid transparent;
+        border-radius: 14px;
+        overflow: hidden;
+        background: rgba(244, 233, 220, 0.08);
+        cursor: pointer;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .local-lightbox-thumbs button.active {
+        border-color: var(--eco-terracotta);
+        transform: scale(1.01);
+      }
+
+      .local-lightbox-thumbs img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+
+      .local-lightbox-main {
+        display: grid;
+        grid-template-columns: 64px 1fr 64px;
+        gap: 1rem;
+        align-items: center;
+        min-height: 0;
+      }
+
+      .local-lightbox-image-wrap {
+        height: 100%;
+        min-height: 0;
+        border-radius: 22px;
+        overflow: hidden;
+        background: rgba(244, 233, 220, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+      }
+
+      .local-lightbox-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .local-lightbox-nav {
+        width: 56px;
+        height: 56px;
+        font-size: 1.45rem;
+      }
+
+      .local-lightbox-footer {
+        color: var(--eco-cream);
+      }
+
+      .local-lightbox-footer strong {
+        display: inline-block;
+        margin-bottom: 0.25rem;
+        font-size: 1rem;
+      }
+
+      .local-lightbox-footer p {
+        margin: 0;
+        color: var(--eco-muted-2);
+        line-height: 1.55;
+      }
+
+      .reforma-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 1.1rem auto 0;
+        padding: 0.86rem 1.25rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.42);
+        background: rgba(194, 94, 60, 0.16);
+        color: var(--eco-cream);
+        text-decoration: none;
+        font-weight: 900;
+      }
+
+      .reforma-cta:hover {
+        background: rgba(194, 94, 60, 0.25);
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 1180px) {
+        .reforma-grid-4,
+        .reforma-grid-3,
+        .reforma-grid-2,
+        .reforma-stat-grid,
+        .budget-kpis,
+        .budget-grid,
+        .local-gallery-top {
           grid-template-columns: 1fr;
         }
 
-        .admin-flow-arrow {
-          width: 100%;
-          transform: rotate(90deg);
+        .local-carousel-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .local-carousel-nav {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .local-lightbox-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .local-lightbox-thumbs {
+          order: 2;
+          flex-direction: row;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-right: 0;
+          padding-bottom: 0.25rem;
+        }
+
+        .local-lightbox-thumbs button {
+          min-width: 90px;
+          max-width: 90px;
+        }
+
+        .local-lightbox-main {
+          order: 1;
         }
       }
 
       @media (max-width: 760px) {
-        .admin-pro-main {
-          width: min(94vw, 1240px);
+        .eco-hero h1.reforma-title {
+          max-width: 100%;
+          font-size: clamp(3rem, 15vw, 5.2rem);
         }
 
-        .admin-card-top {
-          flex-direction: column;
+        .local-carousel-stage,
+        .local-carousel-stage img {
+          min-height: 330px;
+        }
+
+        .local-carousel-overlay {
           align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .local-lightbox-dialog {
+          width: calc(100vw - 20px);
+          height: calc(100vh - 20px);
+          margin: 10px auto;
+          padding: 0.85rem;
+          border-radius: 22px;
+        }
+
+        .local-lightbox-main {
+          grid-template-columns: 44px 1fr 44px;
+          gap: 0.5rem;
+        }
+
+        .local-lightbox-nav {
+          width: 44px;
+          height: 44px;
+          font-size: 1.15rem;
         }
       }
 
@@ -1554,8 +1922,16 @@
   </head>
 
   <body class="reforma-page">
+
     <nav class="nav">
-      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="true" aria-label="Desactivar mode reforma i números">
+      <button
+        type="button"
+        class="brand-switch"
+        id="brandSwitch"
+        role="switch"
+        aria-checked="true"
+        aria-label="Desactivar mode reforma i números"
+      >
         <span class="brand-switch-track">
           <span class="brand-mini" aria-hidden="true">
             <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
@@ -1568,59 +1944,60 @@
 
       <ul id="menu" class="menu">
         <li><a href="economia-inici.html">Economia del projecte</a></li>
-        <li><a href="reforma-i-compra-tecnica.html">Reforma i compra tècnica</a></li>
-        <li><a href="pressupostos-i-gestio-administrativa.html" aria-current="page">Pressupostos i gestió administrativa</a></li>
+        <li><a href="reforma-i-compra-tecnica.html" aria-current="page">Reforma i compra tècnica</a></li>
+        <li><a href="pressupostos-i-gestio-administrativa.html">Pressupostos i gestió administrativa</a></li>
         <li><a href="viabilitat-rendibilitat-i-resum-final.html">Viabilitat, rendibilitat i resum final</a></li>
       </ul>
     </nav>
 
-    <main class="admin-pro-main">
-      <header class="eco-hero admin-hero" id="pressupostos-obertura">
+
+    <main class="eco-main-pro">
+      <header class="eco-hero" id="reforma-obertura">
         <div class="eco-hero-grid">
           <section class="eco-hero-copy">
-            <p class="eco-kicker">Part oculta · Gestió econòmica</p>
-            <h1>Pressupostos i <span>gestió</span></h1>
+            <p class="eco-kicker">Part oculta · Reforma i compra tècnica</p>
+            <h1 class="reforma-title">Del local existent <span>a MESCLARI</span></h1>
             <p>
-              Més enllà de la reforma i de la compra tècnica, MESCLARI requereix una lectura econòmica més àmplia que inclou altres partides del pressupost i la manera com s’ordenarà la gestió administrativa del restaurant.
+              La inversió inicial de MESCLARI s’entén, en primer lloc, a partir del local actual i de la necessitat de transformar-lo. La reforma i la compra tècnica no es plantegen com una despesa accessòria, sinó com la base que permet adaptar l’espai al nivell d’experiència, a la proposta gastronòmica i a l’operativa real del restaurant.
             </p>
-            <div class="eco-hero-actions" aria-label="Claus de lectura administrativa">
-              <span class="eco-pill">Permisos i tràmits</span>
-              <span class="eco-pill">Costos mensuals</span>
-              <span class="eco-pill">Gestoria especialitzada</span>
+            <div class="eco-hero-actions" aria-label="Claus de reforma i inversió tècnica">
+              <span class="eco-pill">Local real</span>
+              <span class="eco-pill">Reforma estructural</span>
+              <span class="eco-pill">Compra tècnica</span>
             </div>
           </section>
 
-          <aside class="eco-hero-panel" aria-label="Lectura executiva de pressupostos i gestió administrativa">
+          <aside class="eco-hero-panel" aria-label="Lectura executiva de la reforma i compra tècnica">
             <article class="eco-verdict">
               <small>Lectura professional</small>
-              <strong>Control administratiu per obrir amb garanties.</strong>
+              <strong>La inversió converteix el local en un restaurant viable.</strong>
               <p>
-                Aquesta pàgina ordena les partides que completen la inversió inicial i defineix com es gestionarà el control intern i el suport extern del restaurant.
+                Aquesta pàgina defensa per què cal reformar, què s’ha de comprar i com aquestes partides sostenen la qualitat percebuda, la funcionalitat i la capacitat real d’execució de MESCLARI.
               </p>
             </article>
 
-            <div class="admin-map">
-              <article class="admin-map-item">
-                <span class="admin-map-number">01</span>
+            <div class="eco-metric-stack">
+              <article class="eco-metric">
+                <span class="eco-metric-number">01</span>
                 <div>
-                  <h3>Partides complementàries</h3>
-                  <p>Permisos, serveis externs i despeses d’arrencada que completen el pressupost real.</p>
+                  <h3>Punt de partida real</h3>
+                  <p>Galeria del local existent per justificar l’estat inicial i la transformació prevista.</p>
                 </div>
               </article>
 
-              <article class="admin-map-item">
-                <span class="admin-map-number">02</span>
+              <article class="eco-metric">
+                <span class="eco-metric-number">02</span>
                 <div>
-                  <h3>Estructura mensual</h3>
-                  <p>Distinció entre costos fixos, costos variables i lectura d’equilibri operatiu.</p>
+                  <h3>Reforma necessària</h3>
+                  <p>Intervenció sobre espai, imatge, instal·lacions i adequació funcional.</p>
                 </div>
               </article>
 
-              <article class="admin-map-item">
-                <span class="admin-map-number">03</span>
+              <article class="eco-metric">
+                <span class="eco-metric-number">03</span>
                 <div>
-                  <h3>Control i gestoria</h3>
-                  <p>Combinació entre gestió directa del restaurant i suport extern especialitzat.</p>
+                  <h3>Compra tècnica</h3>
+                  <p>Material de sala, maquinària i utillatge per posar el restaurant en marxa.</p>
                 </div>
               </article>
             </div>
@@ -1629,240 +2006,401 @@
 
         <div class="eco-band">
           <article>
-            <span>01 · Obertura</span>
-            <h3>Permisos i tràmits</h3>
-            <p>La legalització i la preparació administrativa formen part real del cost d’arrencada.</p>
+            <span>01 · Local</span>
+            <h3>Base existent</h3>
+            <p>El local ofereix potencial, però necessita una adaptació clara per respondre al nivell de MESCLARI.</p>
           </article>
           <article>
-            <span>02 · Control</span>
-            <h3>Costos fixos i variables</h3>
-            <p>La lectura mensual permet entendre millor la sostenibilitat del model.</p>
+            <span>02 · Reforma</span>
+            <h3>78.000 €</h3>
+            <p>Partida estructural vinculada a obra civil, instal·lacions, interiorisme i mobiliari.</p>
           </article>
           <article>
-            <span>03 · Suport</span>
-            <h3>Gestoria i processos</h3>
-            <p>El model combina control intern i especialització externa per treballar amb seguretat.</p>
+            <span>03 · Compra tècnica</span>
+            <h3>95.635,15 €</h3>
+            <p>Inversió de sala i cuina necessària per garantir operativa, servei i continuïtat.</p>
           </article>
         </div>
       </header>
 
-      <section class="eco-section" id="resta-partides">
+      <section class="eco-section" id="galeria-local">
         <header class="eco-section-head">
-          <p class="eco-kicker">Resta de partides econòmiques</p>
-          <h2>El pressupost no acaba amb la reforma</h2>
+          <p class="eco-kicker">Suport visual del punt de partida</p>
+          <h2>Lectura del local actual</h2>
           <p>
-            Aquesta part recull despeses que no formen part directa ni de l’obra ni de la compra tècnica principal, però que continuen sent imprescindibles per obrir MESCLARI amb ordre, cobertura administrativa i capacitat real de funcionament. La lectura correcta del pressupost no pot limitar-se a la reforma: també ha d’incloure permisos, serveis externs i partides d’arrencada.
+            El local parteix d’una base existent que ofereix potencial real, però que no respon encara al nivell ni a la configuració que MESCLARI necessita. Per això, la reforma s’ha de llegir com una intervenció necessària per ordenar millor l’espai, elevar-ne la qualitat percebuda i adaptar-lo a una lògica de funcionament coherent amb el projecte.
           </p>
         </header>
 
-        <div class="admin-kpi-grid" aria-label="Indicadors principals de partides econòmiques">
-          <article class="admin-kpi">
-            <small>Permisos i tràmits</small>
-            <strong>16.800 €</strong>
-            <p>Documentació tècnica, taxes municipals, legalitzacions i butlletins necessaris abans de l’obertura.</p>
-          </article>
-          <article class="admin-kpi">
-            <small>Serveis i suport extern</small>
-            <strong>9.600 €</strong>
-            <p>Gestoria d’obertura, PRL, control especialitzat, revisions, alarmes i manteniment inicial.</p>
-          </article>
-          <article class="admin-kpi">
-            <small>Altres partides</small>
-            <strong>12.400 €</strong>
-            <p>TPV, programari, uniformitat, neteja final, detalls d’arrencada i imprevistos menors.</p>
-          </article>
-        </div>
-
-        <div class="admin-budget-grid" style="margin-top: 1.2rem;">
-          <article class="admin-card-pro">
-            <div class="admin-card-top">
-              <h3>Permisos i tràmits</h3>
-              <span class="admin-price">16.800 €</span>
+        <aside class="local-gallery-card" aria-label="Galeria del local actual i de la transformació prevista">
+          <div class="local-gallery-top">
+            <div>
+              <p class="local-gallery-badge">Suport principal</p>
+              <h3>Local actual · Galeria visual</h3>
             </div>
-            <p>
-              Aquesta partida agrupa els tràmits previs necessaris per posar en marxa el restaurant i legalitzar correctament la seva activitat. No es tracta d’una despesa accessòria, sinó d’una part indispensable del cost d’obertura.
-            </p>
-            <ul class="eco-list">
-              <li><strong>Projecte tècnic i memòria:</strong> documentació necessària per justificar l’adequació del local.</li>
-              <li><strong>Taxes municipals i llicències:</strong> comunicació prèvia, taxes d’activitat i adequació administrativa.</li>
-              <li><strong>Legalitzacions i butlletins:</strong> electricitat, climatització, ventilació o instal·lacions que ho requereixin.</li>
-            </ul>
-            <p class="admin-note">Partida global orientada a recollir el conjunt de permisos, taxes i tràmits necessaris abans de l’obertura.</p>
-          </article>
-
-          <article class="admin-card-pro">
-            <div class="admin-card-top">
-              <h3>Serveis i suport extern</h3>
-              <span class="admin-price">9.600 €</span>
+            <div>
+              <h4>Base real de la transformació</h4>
+              <p class="local-gallery-intro">
+                Lectura visual del punt de partida del local i de la transformació prevista. El carrusel mostra les imatges disponibles del local actual i permet obrir una vista ampliada per revisar-les amb més detall.
+              </p>
             </div>
-            <p>
-              MESCLARI necessita suport extern especialitzat per garantir una arrencada més segura i professionalitzada. Aquesta partida concentra serveis que no depenen directament de l’equip intern, però que resulten necessaris per operar amb regularitat.
-            </p>
-            <ul class="eco-list">
-              <li><strong>Gestoria d’obertura i primer seguiment:</strong> fiscal, laboral i comptable.</li>
-              <li><strong>Prevenció i control especialitzat:</strong> PRL, control de plagues, revisions o suport tècnic extern.</li>
-              <li><strong>Serveis de suport:</strong> alarmes, manteniment inicial o altres cobertures necessàries d’arrencada.</li>
-            </ul>
-            <p class="admin-note">Aquesta partida no només protegeix l’obertura, sinó que ordena millor la base administrativa i operativa del projecte.</p>
-          </article>
+          </div>
 
-          <article class="admin-card-pro">
-            <div class="admin-card-top">
-              <h3>Altres partides d’arrencada</h3>
-              <span class="admin-price">12.400 €</span>
+          <div class="local-carousel-shell">
+            <button class="local-carousel-nav prev" type="button" aria-label="Imatge anterior" id="localCarouselPrev">&#10094;</button>
+
+            <button class="local-carousel-stage" type="button" id="openLocalGallery" aria-label="Obrir galeria gran del local">
+              <img id="localCarouselImage" src="" alt="Imatge del local actual de MESCLARI" />
+              <span class="local-carousel-overlay">
+                <span>
+                  <strong>Obrir galeria completa</strong>
+                  <small>Revisió visual del local actual</small>
+                </span>
+                <small>Click per ampliar</small>
+              </span>
+            </button>
+
+            <button class="local-carousel-nav next" type="button" aria-label="Imatge següent" id="localCarouselNext">&#10095;</button>
+          </div>
+
+          <div class="local-carousel-bottom">
+            <div class="local-carousel-meta">
+              <span class="local-carousel-counter" id="localCarouselCounter">1 / 27</span>
+              <span class="local-carousel-note">Canvi automàtic cada 3 segons</span>
             </div>
-            <p>
-              Aquí s’inclouen despeses complementàries que sovint queden disperses, però que formen part real del cost de posada en marxa del restaurant. La seva funció és completar l’obertura i evitar una lectura incompleta del pressupost inicial.
-            </p>
-            <ul class="eco-list">
-              <li><strong>TPV i programari:</strong> posada en marxa, configuració i primers costos associats.</li>
-              <li><strong>Uniformitat i suport d’equip:</strong> vestuari inicial, reposicions bàsiques i elements auxiliars.</li>
-              <li><strong>Neteja final, detalls i imprevistos menors:</strong> partides petites que, sumades, tenen pes real en l’arrencada.</li>
-            </ul>
-            <p class="admin-note">Aquesta lectura evita invisibilitzar despeses que no són centrals com la reforma, però sí necessàries per obrir bé.</p>
-          </article>
-        </div>
+            <div class="local-carousel-dots" id="localCarouselDots"></div>
+          </div>
+        </aside>
       </section>
 
-      <section class="eco-section" id="costos-fixos-variables">
+      <section class="eco-section" id="justificacio-reforma">
         <header class="eco-section-head">
-          <p class="eco-kicker">Costos fixos i variables estimats</p>
-          <h2>La sostenibilitat també es controla mes a mes</h2>
+          <p class="eco-kicker">Justificació de la reforma</p>
+          <h2>Per què la transformació és necessària</h2>
           <p>
-            La sostenibilitat econòmica de MESCLARI no depèn només de la inversió inicial, sinó també del control de l’estructura mensual. Per això és fonamental distingir entre costos fixos i variables i entendre com afecten el funcionament real del restaurant.
+            La reforma no és una decisió estètica aïllada. És la manera de convertir un espai existent en un restaurant coherent amb la gamma, l’experiència i la funcionalitat que MESCLARI vol defensar.
           </p>
         </header>
 
-        <div class="admin-kpi-grid">
-          <article class="admin-kpi">
-            <small>Costos fixos mensuals</small>
-            <strong>Base estable</strong>
-            <p>Lloguer, personal estructural, subministraments base, assegurances i serveis recurrents.</p>
-          </article>
-          <article class="admin-kpi">
-            <small>Costos variables mensuals</small>
-            <strong>Activitat i producció</strong>
-            <p>Matèria primera, reposicions, consum vinculat al servei i ritme real del restaurant.</p>
-          </article>
-          <article class="admin-kpi">
-            <small>Lectura d’equilibri</small>
-            <strong>Control operatiu</strong>
-            <p>La relació entre tots dos és la que permet llegir la viabilitat del model amb més precisió.</p>
-          </article>
-        </div>
-
-        <div class="admin-split" style="margin-top: 1.2rem;">
-          <article class="admin-control-card">
-            <h3>Costos fixos</h3>
-            <p>
-              Són les partides que sostenen l’estructura del restaurant encara que el volum de servei canviï. Aquí s’inclouen especialment lloguer, part del personal, assegurances, subministraments base i serveis recurrents.
-            </p>
-          </article>
-          <article class="admin-control-card">
-            <h3>Costos variables</h3>
-            <p>
-              Depenen del ritme de l’activitat i creixen o disminueixen segons la producció i el servei. La matèria primera, les reposicions i determinats consums operatius en formen part.
-            </p>
-          </article>
+        <div class="reforma-section-grid reforma-grid-4">
+          <article class="reforma-card"><span class="reforma-number">01</span><h3>Estat actual</h3><p>El punt de partida del local permet identificar una base aprofitable, però també limitacions clares en distribució, imatge i adequació funcional.</p></article>
+          <article class="reforma-card"><span class="reforma-number">02</span><h3>Necessitat de transformació</h3><p>La intervenció es justifica perquè el restaurant no pot construir la seva identitat ni la seva operativa final sobre l’estat existent sense una reforma prèvia.</p></article>
+          <article class="reforma-card"><span class="reforma-number">03</span><h3>Adequació a MESCLARI</h3><p>La reforma no respon a una voluntat decorativa, sinó a la necessitat d’adaptar el local a una proposta gastronòmica premium, a una experiència de sala cuidada i a una estructura de treball funcional.</p></article>
+          <article class="reforma-card"><span class="reforma-number">04</span><h3>Impacte en l’experiència i l’operativa</h3><p>La transformació del local afecta directament la manera com el client percep el restaurant i la manera com l’equip pot treballar-hi amb ordre, claredat i eficiència.</p></article>
         </div>
       </section>
 
-      <section class="eco-section" id="proces-administratiu">
+      <section class="eco-section" id="cost-reforma">
         <header class="eco-section-head">
-          <p class="eco-kicker">Procés administratiu del restaurant</p>
-          <h2>Ordre intern per no perdre control del negoci</h2>
+          <p class="eco-kicker">Cost de la reforma</p>
+          <h2>Una inversió estructural, no accessòria</h2>
           <p>
-            Una part econòmica sòlida també necessita ordre administratiu. MESCLARI no només ha de pressupostar bé, sinó també gestionar correctament documentació, seguiment intern i control bàsic de l’activitat.
+            La reforma concentra una part rellevant de la inversió inicial perquè és la que permet passar d’un local existent a un espai realment coherent amb MESCLARI.
           </p>
         </header>
 
-        <div class="admin-split">
-          <article class="admin-card-pro">
-            <h3>Què portarà directament el restaurant</h3>
-            <ul class="eco-list">
-              <li><strong>Control de caixa i TPV:</strong> seguiment diari de vendes, tancaments i incidències.</li>
-              <li><strong>Comandes i albarans:</strong> revisió bàsica d’entrades, recepcions i control de proveïdors.</li>
-              <li><strong>Ordre documental intern:</strong> factures, registres bàsics i seguiment operatiu de despesa.</li>
-              <li><strong>Coordinació amb gestoria:</strong> preparació i enviament ordenat de documentació perquè el suport extern pugui treballar correctament.</li>
-            </ul>
+        <div class="reforma-stat-grid">
+          <article class="reforma-stat">
+            <span>Xifra principal de reforma</span>
+            <strong>78.000 €</strong>
+            <small>Import base per adequar el local al nivell i a l’operativa del projecte.</small>
           </article>
+          <article class="reforma-stat">
+            <span>Obra civil i instal·lacions</span>
+            <strong>52.000 €</strong>
+            <small>Partida associada a adequació física, distribució, instal·lacions i funcionalitat.</small>
+          </article>
+          <article class="reforma-stat">
+            <span>Interiorisme i mobiliari</span>
+            <strong>26.000 €</strong>
+            <small>Partida vinculada a atmosfera, confort, sala i qualitat percebuda.</small>
+          </article>
+        </div>
 
-          <article class="admin-control-card">
-            <h3>Per què té sentit portar-ho així</h3>
-            <p>
-              El restaurant ha de mantenir criteri propi sobre el seu funcionament i sobre la seva despesa diària. Per això convé conservar control directe sobre els processos interns bàsics, sense carregar l’equip amb obligacions tècniques que es poden delegar.
-            </p>
+        <div class="reforma-section-grid reforma-grid-2" style="margin-top: 1.1rem;">
+          <article class="reforma-soft-card">
+            <h3>Lectura estructural de la inversió</h3>
+            <p>El cost de la reforma s’ha d’entendre com una inversió estructural. Inclou l’adequació física del local, la redistribució necessària, l’actualització d’instal·lacions i la construcció d’una atmosfera final coherent amb la gamma i amb el posicionament del restaurant. Aquesta partida no només transforma l’espai, sinó que fa possible la proposta.</p>
+          </article>
+          <article class="reforma-soft-card">
+            <h3>Xifres clau de reforma</h3>
+            <ul class="reforma-list">
+              <li><strong>Xifra principal de reforma:</strong> 78.000 €</li>
+              <li><strong>Partides principals:</strong> obra civil i instal·lacions (52.000 €) + interiorisme i mobiliari (26.000 €)</li>
+              <li><strong>Pes dins del total inicial:</strong> 67,9% del total d’arrencada (114.900 €)</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section class="eco-section" id="gestoria-especialitzada">
+      <section class="eco-section" id="compra-tecnica">
         <header class="eco-section-head">
-          <p class="eco-kicker">Gestoria especialitzada</p>
-          <h2>Externalitzar el que necessita seguretat tècnica</h2>
+          <p class="eco-kicker">Compra tècnica i posada en marxa</p>
+          <h2>Equipar l’espai per poder funcionar</h2>
           <p>
-            Determinades funcions administratives i econòmiques requereixen suport extern especialitzat per seguretat, control normatiu i eficiència.
+            Juntament amb la reforma, MESCLARI necessita una compra tècnica vinculada a l’arrencada real de l’activitat.
           </p>
         </header>
 
-        <div class="admin-split">
-          <article class="admin-card-pro">
-            <div class="admin-card-top">
-              <h3>Serveis de gestoria</h3>
-              <span class="admin-price">450–650 €/mes</span>
-            </div>
-            <p>
-              La gestoria especialitzada assumeix la part fiscal, comptable i laboral que convé externalitzar per garantir una gestió correcta i actualitzada del negoci. Aquesta despesa no s’ha de llegir com un excés, sinó com una eina de control i professionalització.
-            </p>
-            <ul class="eco-list">
-              <li><strong>Fiscal i comptable:</strong> IVA, comptabilitat bàsica i seguiment formal del negoci.</li>
-              <li><strong>Laboral:</strong> nòmines, contractes, altes, baixes i suport administratiu de personal.</li>
-              <li><strong>Tancaments i obligacions anuals:</strong> gestió documental i fiscal especialitzada.</li>
+        <div class="reforma-section-grid reforma-grid-2">
+          <article class="reforma-soft-card">
+            <h3>Sentit de la compra tècnica</h3>
+            <p>Aquesta part inclou utensilis, mobiliari, maquinària i elements de suport imprescindibles per al funcionament del restaurant. No es tracta només d’equipar l’espai, sinó de garantir que sala i cuina puguin operar amb el nivell de qualitat, de ritme i de coherència que exigeix el projecte.</p>
+          </article>
+          <article class="reforma-soft-card">
+            <h3>Àrees de compra</h3>
+            <ul class="reforma-list">
+              <li><strong>Utensilis i suport de cuina:</strong> elements necessaris per sostenir la producció i el servei amb regularitat i criteri tècnic.</li>
+              <li><strong>Mobiliari de sala:</strong> partida vinculada a la comoditat del client, a la identitat visual del local i a la lectura final de la sala.</li>
+              <li><strong>Maquinària clau:</strong> equipament necessari perquè la proposta pugui executar-se amb funcionalitat i estabilitat operativa.</li>
+              <li><strong>Posada en marxa:</strong> elements de suport que, sense ser els més visibles, resulten imprescindibles per obrir amb garanties.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="eco-section budget-block" id="pressupost-tecnic">
+        <header class="eco-section-head">
+          <p class="eco-kicker">Pressupost tècnic de sala i cuina</p>
+          <h2>On es concentra la inversió operativa</h2>
+          <p>
+            Aquesta part complementa la compra tècnica i la posada en marxa de MESCLARI amb una lectura econòmica més clara del material de sala i de l’equipament de cuina. L’objectiu no és només mostrar xifres, sinó explicar on es concentra realment la inversió i per què aquestes partides tenen pes dins del projecte.
+          </p>
+        </header>
+
+        <div class="budget-kpis">
+          <article class="budget-kpi">
+            <span class="budget-kpi-label">Total compra tècnica sala + cuina</span>
+            <strong>95.635,15 €</strong>
+            <small>Material de sala + maquinària i utillatge de cuina</small>
+          </article>
+          <article class="budget-kpi">
+            <span class="budget-kpi-label">Total cuina</span>
+            <strong>78.282,28 €</strong>
+            <small>65.033,82 € en maquinària + 13.248,46 € en utillatge</small>
+          </article>
+          <article class="budget-kpi">
+            <span class="budget-kpi-label">Total sala</span>
+            <strong>17.352,87 €</strong>
+            <small>Vajilla, cristalleria, coberteria, tèxtil i suport de servei</small>
+          </article>
+        </div>
+
+        <div class="budget-grid">
+          <article class="budget-card">
+            <h3>Sala · Material i servei</h3>
+            <p>La inversió de sala concentra tot el material visible que dona suport al servei i al valor percebut del restaurant. Aquí s’inclouen peces de vajilla, cristalleria, coberteria, tèxtil i elements de suport que ajuden a construir una sala coherent amb el nivell de MESCLARI.</p>
+            <div class="budget-price">17.352,87 €</div>
+            <ul class="budget-list">
+              <li>Copes Borgonya, blanc i xampany: <strong>504,00 €</strong> cadascuna</li>
+              <li>Plat gris fosc de servei: <strong>424,50 €</strong></li>
+              <li>Pack de coberteria: <strong>399,90 €</strong></li>
+              <li>La sala no només es vesteix: es prepara per reforçar el ritme, la presentació i la qualitat percebuda.</li>
             </ul>
           </article>
 
-          <article class="admin-control-card">
-            <h3>Relació restaurant / gestoria</h3>
-            <p>
-              El model administratiu de MESCLARI es basa en una combinació coherent entre control intern i suport especialitzat extern. El restaurant conserva lectura pròpia del negoci, mentre que la gestoria assumeix la part tècnica que demana especialització, actualització normativa i seguretat formal.
-            </p>
+          <article class="budget-card">
+            <h3>Cuina · Maquinària principal</h3>
+            <p>La maquinària de cuina representa la part més forta de la compra tècnica perquè és la que garanteix producció, conservació, passe i capacitat real d’execució. És la base que permet que la proposta gastronòmica funcioni amb continuïtat i criteri professional.</p>
+            <div class="budget-price">65.033,82 €</div>
+            <ul class="budget-list">
+              <li>Horno gastronòmic mixt: <strong>9.075,00 €</strong></li>
+              <li>Armari refrigerat 2 portes (3 unitats): <strong>8.019,93 €</strong></li>
+              <li>Abatidor de temperatura: <strong>6.984,42 €</strong></li>
+              <li>Moble mural amb portes i calaixos: <strong>4.890,32 €</strong></li>
+              <li>És la inversió amb més pes perquè sosté la part tècnica i operativa del restaurant.</li>
+            </ul>
+          </article>
+
+          <article class="budget-card">
+            <h3>Cuina · Utillatge i suport operatiu</h3>
+            <p>L’utillatge completa la funcionalitat de la cuina i permet treballar amb ordre, precisió i regularitat. Tot i tenir un pes econòmic menor que la maquinària, continua sent imprescindible per a la producció diària i per al control del servei.</p>
+            <div class="budget-price">13.248,46 €</div>
+            <ul class="budget-list">
+              <li>Bandeges de forn gastro: <strong>674,08 €</strong></li>
+              <li>Batidores de braç professionals: <strong>600,18 €</strong></li>
+              <li>Dispensadors iSi Gourmet Whip: <strong>395,64 €</strong></li>
+              <li>Olla recta INOX-PRO 24 L: <strong>336,87 €</strong></li>
+              <li>Aquesta partida reforça la capacitat real de treball de la cuina i la seva estabilitat de servei.</li>
+            </ul>
           </article>
         </div>
+
+        <article class="budget-reading">
+          <h3>Lectura del conjunt</h3>
+          <p>
+            La compra tècnica de MESCLARI no es reparteix de manera homogènia. El pes principal es concentra a la cuina, especialment en maquinària de producció, refrigeració i suport operatiu, mentre que la sala concentra una inversió menor però decisiva en termes d’imatge, servei i qualitat percebuda. Aquesta lectura ajuda a entendre que la despesa no es dirigeix només a equipar el local, sinó a fer possible una proposta gastronòmica i de sala coherent amb el projecte.
+          </p>
+        </article>
       </section>
 
-      <section class="eco-section" id="control-intern-suport-extern">
-        <div class="admin-flow">
-          <article class="admin-flow-card">
-            <h3>Control intern</h3>
-            <p>MESCLARI conserva la lectura diària del negoci: caixa, comandes, albarans, factures i seguiment operatiu de la despesa.</p>
-          </article>
-
-          <div class="admin-flow-arrow" aria-hidden="true">→</div>
-
-          <article class="admin-flow-card">
-            <h3>Suport extern</h3>
-            <p>La gestoria assumeix la part fiscal, laboral i comptable que requereix especialització, actualització normativa i seguretat formal.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="eco-close" id="tancament-pressupostos">
+      <section class="eco-close" id="tancament-reforma">
         <p>
-          L’equilibri entre processos interns i suport de gestoria permet que MESCLARI no perdi control sobre el negoci, però tampoc assumeixi en solitari obligacions administratives que convé professionalitzar.
+          La reforma i la compra tècnica tenen sentit perquè converteixen un espai existent en un restaurant <span>preparat per funcionar com a MESCLARI</span>.
         </p>
-        <div class="admin-close-actions">
-          <a class="eco-card-link" style="width: min(360px, 100%);" href="viabilitat-rendibilitat-i-resum-final.html">
-            <span>Continuar al bloc final</span>
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
+        <a class="reforma-cta" href="pressupostos-i-gestio-administrativa.html">Continuar al bloc 2</a>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Pressupostos i gestió administrativa · Part oculta de defensa econòmica.</p>
+      <p>MESCLARI · Reforma i compra tècnica · Part oculta de defensa econòmica.</p>
     </footer>
 
+    <div class="local-lightbox" id="localLightbox" hidden>
+      <div class="local-lightbox-backdrop" id="localLightboxBackdrop"></div>
+      <div class="local-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galeria gran del local">
+        <button class="local-lightbox-close" type="button" id="closeLocalLightbox" aria-label="Tancar galeria">&times;</button>
+        <div class="local-lightbox-layout">
+          <div class="local-lightbox-thumbs" id="localLightboxThumbs"></div>
+          <div class="local-lightbox-main">
+            <button class="local-lightbox-nav prev" type="button" id="localLightboxPrev" aria-label="Imatge anterior">&#10094;</button>
+            <div class="local-lightbox-image-wrap">
+              <img id="localLightboxImage" src="" alt="Vista ampliada del local actual de MESCLARI" />
+            </div>
+            <button class="local-lightbox-nav next" type="button" id="localLightboxNext" aria-label="Imatge següent">&#10095;</button>
+          </div>
+        </div>
+        <div class="local-lightbox-footer">
+          <div>
+            <strong id="localLightboxCounter">1 / 27</strong>
+            <p id="localLightboxCaption">Galeria del local actual seleccionat per al projecte MESCLARI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+      (function () {
+        const imageBasePath = "imaguenes i videos/";
+
+        const galleryFiles = [
+          "128640_xl.jpg", "128641_xl.jpg", "128642_xl.jpg", "128643_xl.jpg", "128644_xl.jpg",
+          "128645_xl.jpg", "128646_xl.jpg", "128647_xl.jpg", "128648_xl.jpg", "128649_xl.jpg",
+          "128650_xl.jpg", "128651_xl.jpg", "128652_xl.jpg", "128653_xl.jpg", "128654_xl.jpg",
+          "128655_xl.jpg", "128656_xl.jpg", "128657_xl.jpg", "128658_xl.jpg", "128659_xl.jpg",
+          "128660_xl.jpg", "128661_xl.jpg", "128662_xl.jpg", "128663_xl.jpg", "128664_xl.jpg",
+          "128665_xl.jpg", "128730_xl.jpg"
+        ];
+
+        const images = galleryFiles.map(file => ({
+          src: encodeURI(imageBasePath + file),
+          alt: "Imatge del local actual seleccionat per al projecte MESCLARI",
+          caption: "Galeria visual del local actual, utilitzada per justificar l’estat inicial i la proposta de transformació del projecte."
+        }));
+
+        const carouselImage = document.getElementById("localCarouselImage");
+        const carouselCounter = document.getElementById("localCarouselCounter");
+        const carouselDots = document.getElementById("localCarouselDots");
+        const prevBtn = document.getElementById("localCarouselPrev");
+        const nextBtn = document.getElementById("localCarouselNext");
+        const openBtn = document.getElementById("openLocalGallery");
+        const lightbox = document.getElementById("localLightbox");
+        const lightboxBackdrop = document.getElementById("localLightboxBackdrop");
+        const closeLightboxBtn = document.getElementById("closeLocalLightbox");
+        const lightboxImage = document.getElementById("localLightboxImage");
+        const lightboxCounter = document.getElementById("localLightboxCounter");
+        const lightboxCaption = document.getElementById("localLightboxCaption");
+        const lightboxThumbs = document.getElementById("localLightboxThumbs");
+        const lightboxPrev = document.getElementById("localLightboxPrev");
+        const lightboxNext = document.getElementById("localLightboxNext");
+
+        if (!carouselImage || !carouselCounter || !carouselDots || !prevBtn || !nextBtn || !openBtn || !lightbox) return;
+
+        let currentIndex = 0;
+        let autoplay = null;
+
+        function updateCarousel(index) {
+          currentIndex = (index + images.length) % images.length;
+          carouselImage.src = images[currentIndex].src;
+          carouselImage.alt = images[currentIndex].alt;
+          carouselCounter.textContent = (currentIndex + 1) + " / " + images.length;
+          carouselDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+        }
+
+        function updateLightbox(index) {
+          currentIndex = (index + images.length) % images.length;
+          lightboxImage.src = images[currentIndex].src;
+          lightboxImage.alt = images[currentIndex].alt;
+          lightboxCounter.textContent = (currentIndex + 1) + " / " + images.length;
+          lightboxCaption.textContent = images[currentIndex].caption;
+          lightboxThumbs.querySelectorAll("button").forEach((thumb, i) => thumb.classList.toggle("active", i === currentIndex));
+          updateCarousel(currentIndex);
+        }
+
+        function buildDots() {
+          carouselDots.innerHTML = "";
+          images.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.type = "button";
+            dot.setAttribute("aria-label", "Anar a la imatge " + (index + 1));
+            dot.addEventListener("click", () => { updateCarousel(index); restartAutoplay(); });
+            carouselDots.appendChild(dot);
+          });
+        }
+
+        function buildThumbs() {
+          lightboxThumbs.innerHTML = "";
+          images.forEach((image, index) => {
+            const thumb = document.createElement("button");
+            thumb.type = "button";
+            thumb.setAttribute("aria-label", "Obrir miniatura " + (index + 1));
+            const img = document.createElement("img");
+            img.src = image.src;
+            img.alt = image.alt;
+            thumb.appendChild(img);
+            thumb.addEventListener("click", () => updateLightbox(index));
+            lightboxThumbs.appendChild(thumb);
+          });
+        }
+
+        function openLightbox(index = currentIndex) {
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+          updateLightbox(index);
+        }
+
+        function closeLightbox() {
+          lightbox.hidden = true;
+          document.body.style.overflow = "";
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          autoplay = setInterval(() => updateCarousel(currentIndex + 1), 3000);
+        }
+
+        function stopAutoplay() {
+          if (autoplay) { clearInterval(autoplay); autoplay = null; }
+        }
+
+        function restartAutoplay() { stopAutoplay(); startAutoplay(); }
+
+        buildDots();
+        buildThumbs();
+        updateCarousel(0);
+        startAutoplay();
+
+        prevBtn.addEventListener("click", () => { updateCarousel(currentIndex - 1); restartAutoplay(); });
+        nextBtn.addEventListener("click", () => { updateCarousel(currentIndex + 1); restartAutoplay(); });
+        openBtn.addEventListener("click", () => openLightbox(currentIndex));
+        lightboxPrev.addEventListener("click", () => updateLightbox(currentIndex - 1));
+        lightboxNext.addEventListener("click", () => updateLightbox(currentIndex + 1));
+        closeLightboxBtn.addEventListener("click", closeLightbox);
+        lightboxBackdrop.addEventListener("click", closeLightbox);
+        openBtn.addEventListener("mouseenter", stopAutoplay);
+        openBtn.addEventListener("mouseleave", startAutoplay);
+        openBtn.addEventListener("focus", stopAutoplay);
+        openBtn.addEventListener("blur", startAutoplay);
+
+        document.addEventListener("keydown", (event) => {
+          if (!lightbox.hidden) {
+            if (event.key === "Escape") closeLightbox();
+            if (event.key === "ArrowLeft") updateLightbox(currentIndex - 1);
+            if (event.key === "ArrowRight") updateLightbox(currentIndex + 1);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
