@@ -3,46 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · Reforma i compra tècnica</title>
-    <meta name="description" content="Del local existent a un espai preparat per funcionar com a MESCLARI: justificació de reforma, cost i compra tècnica." />
+    <title>MESCLARI · Pressupostos i gestió administrativa</title>
+    <meta name="description" content="Altres partides econòmiques i estructura administrativa del projecte MESCLARI." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-
     <style>
+
       :root {
         --eco-night: #0d1620;
         --eco-night-2: #121f2b;
-        --eco-blue: #1e2d3b;
-        --eco-blue-soft: #233849;
+        --eco-panel: rgba(18, 31, 43, 0.86);
+        --eco-panel-soft: rgba(244, 233, 220, 0.07);
         --eco-cream: #f4e9dc;
         --eco-sand: #d8cbb2;
-        --eco-olive: #6e8b74;
         --eco-terracotta: #c25e3c;
-        --eco-text: rgba(244, 233, 220, 0.92);
-        --eco-muted: rgba(244, 233, 220, 0.68);
-        --eco-muted-2: rgba(244, 233, 220, 0.54);
+        --eco-terracotta-soft: rgba(194, 94, 60, 0.18);
         --eco-line: rgba(244, 233, 220, 0.14);
         --eco-line-strong: rgba(244, 233, 220, 0.24);
-        --eco-dark-panel: rgba(13, 22, 32, 0.78);
-        --eco-light-panel: rgba(244, 233, 220, 0.94);
-        --eco-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+        --eco-text: rgba(244, 233, 220, 0.92);
+        --eco-muted: rgba(244, 233, 220, 0.68);
+        --eco-muted-2: rgba(244, 233, 220, 0.52);
+        --eco-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
         --eco-radius-xl: 34px;
         --eco-radius-lg: 26px;
-        --eco-radius-md: 18px;
+        --eco-radius-md: 20px;
       }
 
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
 
       body.reforma-page {
         min-height: 100vh;
         color: var(--eco-text);
         background:
-          radial-gradient(circle at 15% 3%, rgba(194, 94, 60, 0.26), transparent 28rem),
-          radial-gradient(circle at 88% 14%, rgba(110, 139, 116, 0.18), transparent 34rem),
-          radial-gradient(circle at 52% 105%, rgba(216, 203, 178, 0.10), transparent 32rem),
-          linear-gradient(145deg, #08121b 0%, #0d1620 45%, #172636 100%);
+          radial-gradient(circle at 18% 4%, rgba(194, 94, 60, 0.24), transparent 28rem),
+          radial-gradient(circle at 84% 18%, rgba(110, 139, 116, 0.16), transparent 32rem),
+          linear-gradient(145deg, #071018 0%, #0d1620 43%, #162434 100%);
         overflow-x: hidden;
       }
 
@@ -52,23 +51,23 @@
         inset: 0;
         z-index: -2;
         background:
-          linear-gradient(rgba(244, 233, 220, 0.034) 1px, transparent 1px),
+          linear-gradient(rgba(244, 233, 220, 0.035) 1px, transparent 1px),
           linear-gradient(90deg, rgba(244, 233, 220, 0.026) 1px, transparent 1px);
         background-size: 34px 34px;
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.23));
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.24));
         pointer-events: none;
       }
 
       body.reforma-page::after {
-        content: "REFORMA";
+        content: "ECONOMIA";
         position: fixed;
-        right: -0.08em;
-        top: 7.5rem;
+        right: -0.12em;
+        top: 7.6rem;
         z-index: -1;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(5.5rem, 17vw, 19rem);
+        font-size: clamp(5.8rem, 18vw, 20rem);
         line-height: 0.78;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.04em;
         color: rgba(244, 233, 220, 0.035);
         pointer-events: none;
       }
@@ -78,7 +77,7 @@
         margin: 1rem auto 0;
         border: 1px solid rgba(244, 233, 220, 0.16);
         background:
-          linear-gradient(135deg, rgba(13, 22, 32, 0.88), rgba(18, 31, 43, 0.72)),
+          linear-gradient(135deg, rgba(13, 22, 32, 0.86), rgba(18, 31, 43, 0.72)),
           linear-gradient(90deg, rgba(194, 94, 60, 0.16), transparent);
         box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
         backdrop-filter: blur(18px);
@@ -96,13 +95,12 @@
 
       .reforma-page .menu-btn {
         color: var(--eco-cream);
-        border-color: rgba(244, 233, 220, 0.22);
+        border-color: rgba(244, 233, 220, 0.2);
         background: rgba(244, 233, 220, 0.07);
       }
 
       .reforma-page .menu a {
         color: rgba(244, 233, 220, 0.78);
-        border: 1px solid transparent;
       }
 
       .reforma-page .menu a:hover,
@@ -112,11 +110,90 @@
         border-color: rgba(194, 94, 60, 0.32);
       }
 
-      .reforma-main-pro {
+      .eco-main-pro {
         width: min(1240px, 92vw);
         margin: clamp(1rem, 2.4vw, 2rem) auto 4.8rem;
         display: grid;
         gap: clamp(1.2rem, 2.4vw, 2rem);
+      }
+
+      .eco-hero {
+        position: relative;
+        isolation: isolate;
+        border-radius: var(--eco-radius-xl);
+        padding: clamp(1rem, 2.4vw, 1.5rem);
+        border: 1px solid var(--eco-line-strong);
+        background:
+          linear-gradient(145deg, rgba(244, 233, 220, 0.08), rgba(244, 233, 220, 0.03)),
+          linear-gradient(135deg, rgba(13, 22, 32, 0.96), rgba(18, 31, 43, 0.86));
+        box-shadow: var(--eco-shadow);
+        overflow: hidden;
+      }
+
+      .eco-hero::before {
+        content: "";
+        position: absolute;
+        inset: 1rem;
+        border-radius: calc(var(--eco-radius-xl) - 12px);
+        border: 1px solid rgba(244, 233, 220, 0.08);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .eco-hero::after {
+        content: "";
+        position: absolute;
+        width: 26rem;
+        height: 26rem;
+        right: -8rem;
+        bottom: -12rem;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(194, 94, 60, 0.22), transparent 64%);
+        z-index: -2;
+        pointer-events: none;
+      }
+
+      .eco-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.72fr);
+        gap: clamp(1rem, 2.3vw, 1.65rem);
+        align-items: stretch;
+      }
+
+      .eco-hero-copy {
+        min-height: 530px;
+        border-radius: calc(var(--eco-radius-xl) - 10px);
+        padding: clamp(2rem, 4.4vw, 4.7rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        background:
+          linear-gradient(145deg, rgba(7, 16, 24, 0.92), rgba(16, 30, 44, 0.74)),
+          radial-gradient(circle at 4% 0%, rgba(194, 94, 60, 0.17), transparent 20rem);
+        border: 1px solid rgba(244, 233, 220, 0.11);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .eco-hero-copy::before {
+        content: "MESCLARI";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(6rem, 13vw, 12rem);
+        letter-spacing: 0.05em;
+        color: rgba(244, 233, 220, 0.035);
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
+      .eco-hero-copy > * {
+        position: relative;
+        z-index: 1;
       }
 
       .eco-kicker {
@@ -131,7 +208,7 @@
         background: rgba(194, 94, 60, 0.12);
         color: var(--eco-cream);
         font-size: 0.73rem;
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: 0.18em;
         text-transform: uppercase;
       }
@@ -145,107 +222,31 @@
         box-shadow: 0 0 0 6px rgba(194, 94, 60, 0.12);
       }
 
-      .reforma-hero {
-        position: relative;
-        isolation: isolate;
-        border-radius: var(--eco-radius-xl);
-        padding: clamp(1rem, 2.4vw, 1.5rem);
-        border: 1px solid var(--eco-line-strong);
-        background:
-          linear-gradient(145deg, rgba(244, 233, 220, 0.08), rgba(244, 233, 220, 0.03)),
-          linear-gradient(135deg, rgba(13, 22, 32, 0.96), rgba(18, 31, 43, 0.86));
-        box-shadow: var(--eco-shadow);
-        overflow: hidden;
-      }
-
-      .reforma-hero::before {
-        content: "";
-        position: absolute;
-        inset: 1rem;
-        border-radius: calc(var(--eco-radius-xl) - 12px);
-        border: 1px solid rgba(244, 233, 220, 0.08);
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      .reforma-hero::after {
-        content: "";
-        position: absolute;
-        width: 28rem;
-        height: 28rem;
-        right: -9rem;
-        bottom: -14rem;
-        border-radius: 999px;
-        background: radial-gradient(circle, rgba(194, 94, 60, 0.22), transparent 64%);
-        z-index: -2;
-        pointer-events: none;
-      }
-
-      .reforma-hero-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.72fr);
-        gap: clamp(1rem, 2.3vw, 1.65rem);
-        align-items: stretch;
-      }
-
-      .reforma-hero-copy {
-        min-height: 545px;
-        border-radius: calc(var(--eco-radius-xl) - 10px);
-        padding: clamp(2rem, 4.3vw, 4.6rem);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: left;
-        background:
-          linear-gradient(145deg, rgba(7, 16, 24, 0.92), rgba(16, 30, 44, 0.74)),
-          radial-gradient(circle at 4% 0%, rgba(194, 94, 60, 0.17), transparent 20rem);
-        border: 1px solid rgba(244, 233, 220, 0.11);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .reforma-hero-copy::before {
-        content: "MESCLARI";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(6rem, 13vw, 12rem);
-        letter-spacing: 0.05em;
-        color: rgba(244, 233, 220, 0.035);
-        pointer-events: none;
-        white-space: nowrap;
-      }
-
-      .reforma-hero-copy > * { position: relative; z-index: 1; }
-
-      .reforma-hero h1 {
+      .eco-hero h1 {
         max-width: 9.6ch;
         margin: 0;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3.6rem, 7.4vw, 7.6rem);
-        line-height: 0.8;
+        font-size: clamp(4rem, 8.2vw, 8.4rem);
+        line-height: 0.78;
         letter-spacing: -0.045em;
-        color: #fff;
+        color: #ffffff;
         text-wrap: balance;
       }
 
-      .reforma-hero h1 span {
+      .eco-hero h1 span {
         display: block;
         color: var(--eco-terracotta);
       }
 
-      .reforma-hero-copy > p {
-        max-width: 62ch;
+      .eco-hero-copy > p {
+        max-width: 60ch;
         margin: 1.55rem 0 0;
         color: var(--eco-muted);
         font-size: clamp(1rem, 1.25vw, 1.18rem);
         line-height: 1.82;
       }
 
-      .reforma-hero-actions {
+      .eco-hero-actions {
         display: flex;
         flex-wrap: wrap;
         gap: 0.72rem;
@@ -262,10 +263,10 @@
         background: rgba(244, 233, 220, 0.07);
         color: rgba(244, 233, 220, 0.82);
         font-size: 0.86rem;
-        font-weight: 800;
+        font-weight: 700;
       }
 
-      .reforma-hero-panel {
+      .eco-hero-panel {
         border-radius: calc(var(--eco-radius-xl) - 10px);
         border: 1px solid rgba(244, 233, 220, 0.15);
         background:
@@ -276,10 +277,10 @@
         display: grid;
         align-content: stretch;
         gap: 1rem;
-        min-height: 545px;
+        min-height: 530px;
       }
 
-      .reforma-verdict {
+      .eco-verdict {
         border-radius: var(--eco-radius-lg);
         border: 1px solid rgba(194, 94, 60, 0.32);
         background:
@@ -288,32 +289,35 @@
         padding: 1.45rem;
       }
 
-      .reforma-verdict small {
+      .eco-verdict small {
         display: block;
         margin-bottom: 0.55rem;
         color: var(--eco-muted-2);
-        font-weight: 900;
+        font-weight: 800;
         letter-spacing: 0.16em;
         text-transform: uppercase;
       }
 
-      .reforma-verdict strong {
+      .eco-verdict strong {
         display: block;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2rem, 3vw, 3.05rem);
+        font-size: clamp(2rem, 3vw, 3.1rem);
         line-height: 0.95;
         color: var(--eco-cream);
       }
 
-      .reforma-verdict p {
+      .eco-verdict p {
         margin: 0.8rem 0 0;
         color: var(--eco-muted);
         line-height: 1.65;
       }
 
-      .reforma-metric-stack { display: grid; gap: 0.75rem; }
+      .eco-metric-stack {
+        display: grid;
+        gap: 0.75rem;
+      }
 
-      .reforma-metric {
+      .eco-metric {
         position: relative;
         display: grid;
         grid-template-columns: auto minmax(0, 1fr);
@@ -327,7 +331,7 @@
         overflow: hidden;
       }
 
-      .reforma-metric::after {
+      .eco-metric::after {
         content: "";
         position: absolute;
         inset: 0;
@@ -336,9 +340,11 @@
         transition: opacity 0.25s ease;
       }
 
-      .reforma-metric:hover::after { opacity: 1; }
+      .eco-metric:hover::after {
+        opacity: 1;
+      }
 
-      .reforma-metric-number {
+      .eco-metric-number {
         width: 3.2rem;
         height: 3.2rem;
         display: grid;
@@ -352,7 +358,7 @@
         z-index: 1;
       }
 
-      .reforma-metric h3 {
+      .eco-metric h3 {
         position: relative;
         z-index: 1;
         margin: 0;
@@ -360,7 +366,7 @@
         font-size: 1.08rem;
       }
 
-      .reforma-metric p {
+      .eco-metric p {
         position: relative;
         z-index: 1;
         margin: 0.22rem 0 0;
@@ -369,8 +375,44 @@
         font-size: 0.92rem;
       }
 
-      .reforma-section {
-        position: relative;
+      .eco-band {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin-top: 1rem;
+      }
+
+      .eco-band article {
+        border-radius: var(--eco-radius-md);
+        border: 1px solid rgba(244, 233, 220, 0.12);
+        background: rgba(244, 233, 220, 0.055);
+        padding: 1.05rem;
+      }
+
+      .eco-band span {
+        display: block;
+        margin-bottom: 0.42rem;
+        color: var(--eco-terracotta);
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+
+      .eco-band h3 {
+        margin: 0;
+        color: #fff;
+        font-size: 1.12rem;
+      }
+
+      .eco-band p {
+        margin: 0.35rem 0 0;
+        color: var(--eco-muted-2);
+        line-height: 1.48;
+        font-size: 0.92rem;
+      }
+
+      .eco-section {
         border-radius: var(--eco-radius-xl);
         border: 1px solid var(--eco-line);
         background:
@@ -381,123 +423,139 @@
         overflow: hidden;
       }
 
-      .reforma-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 12% 0%, rgba(194, 94, 60, 0.08), transparent 18rem);
-        pointer-events: none;
-      }
-
-      .reforma-section > * { position: relative; z-index: 1; }
-
-      .reforma-section-head {
+      .eco-section-head {
         text-align: center;
-        max-width: 820px;
+        max-width: 780px;
         margin: 0 auto clamp(1.1rem, 2vw, 1.6rem);
       }
 
-      .reforma-section-head .eco-kicker { margin-inline: auto; }
+      .eco-section-head .eco-kicker {
+        margin-inline: auto;
+      }
 
-      .reforma-section-head h2 {
+      .eco-section-head h2 {
         margin: 0;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.35rem, 4.8vw, 4.35rem);
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
         line-height: 0.92;
         letter-spacing: -0.03em;
         color: var(--eco-cream);
         text-wrap: balance;
       }
 
-      .reforma-section-head p,
-      .reforma-intro {
+      .eco-section-head p {
         margin: 0.9rem auto 0;
         color: var(--eco-muted);
-        line-height: 1.75;
+        line-height: 1.7;
         font-size: 1rem;
       }
 
-      .reforma-grid-4,
-      .reforma-grid-3,
-      .reforma-grid-2 {
+      .eco-index-grid {
         display: grid;
-        gap: clamp(0.85rem, 1.7vw, 1.15rem);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.9rem, 1.8vw, 1.2rem);
       }
 
-      .reforma-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .reforma-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .reforma-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .reforma-card,
-      .budget-card,
-      .budget-reading {
+      .eco-index-card {
         position: relative;
-        min-height: 100%;
+        min-height: 470px;
         border-radius: var(--eco-radius-lg);
         border: 1px solid rgba(244, 233, 220, 0.13);
         background:
           linear-gradient(180deg, rgba(244, 233, 220, 0.09), rgba(244, 233, 220, 0.045)),
-          rgba(10, 19, 28, 0.70);
-        padding: clamp(1.1rem, 2vw, 1.5rem);
+          rgba(10, 19, 28, 0.72);
+        padding: 1.45rem;
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
         transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
       }
 
-      .reforma-card:hover,
-      .budget-card:hover {
-        transform: translateY(-4px);
+      .eco-index-card:hover {
+        transform: translateY(-5px);
         border-color: rgba(194, 94, 60, 0.34);
-        box-shadow: 0 22px 52px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 26px 60px rgba(0, 0, 0, 0.28);
       }
 
-      .reforma-card::before,
-      .budget-card::before,
-      .budget-reading::before {
+      .eco-index-card::before {
         content: "";
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(circle at 20% 8%, rgba(194, 94, 60, 0.13), transparent 11rem),
-          linear-gradient(120deg, rgba(244, 233, 220, 0.04), transparent 42%);
+          radial-gradient(circle at 20% 10%, rgba(194, 94, 60, 0.17), transparent 13rem),
+          linear-gradient(120deg, rgba(244, 233, 220, 0.06), transparent 42%);
+        opacity: 0.82;
         pointer-events: none;
       }
 
-      .reforma-card > *,
-      .budget-card > *,
-      .budget-reading > * { position: relative; z-index: 1; }
+      .eco-index-card > * {
+        position: relative;
+        z-index: 1;
+      }
 
-      .reforma-card h3,
-      .reforma-card h4,
-      .budget-card h3,
-      .budget-reading h3 {
-        margin: 0;
-        color: #fff;
+      .eco-index-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.35rem;
+      }
+
+      .eco-index-number {
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(1.55rem, 2.4vw, 2.25rem);
-        line-height: 0.98;
-        letter-spacing: -0.02em;
+        font-size: 4.2rem;
+        line-height: 0.8;
+        color: rgba(244, 233, 220, 0.25);
+      }
+
+      .eco-index-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.36rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.32);
+        background: rgba(194, 94, 60, 0.1);
+        color: var(--eco-cream);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+      }
+
+      .eco-index-card h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.1rem, 3vw, 3rem);
+        line-height: 0.94;
+        color: #fff;
         text-wrap: balance;
       }
 
-      .reforma-card p,
-      .budget-card p,
-      .budget-reading p {
-        margin: 0.8rem 0 0;
-        color: var(--eco-muted);
-        line-height: 1.7;
+      .eco-index-card h3 a {
+        color: inherit;
+        text-decoration: none;
       }
 
-      .reforma-list,
-      .budget-list {
+      .eco-index-card h3 a:hover {
+        color: var(--eco-terracotta);
+      }
+
+      .eco-index-card p {
+        margin: 1rem 0 0;
+        color: var(--eco-muted);
+        line-height: 1.66;
+      }
+
+      .eco-list {
         display: grid;
         gap: 0.55rem;
-        margin: 1rem 0 0;
+        margin: 1.15rem 0 0;
         padding: 0;
         list-style: none;
       }
 
-      .reforma-list li,
-      .budget-list li {
+      .eco-list li {
         position: relative;
         padding: 0.68rem 0.78rem 0.68rem 2.05rem;
         border-radius: 14px;
@@ -505,424 +563,993 @@
         background: rgba(244, 233, 220, 0.045);
         color: rgba(244, 233, 220, 0.74);
         font-size: 0.93rem;
-        line-height: 1.42;
+        line-height: 1.35;
       }
 
-      .reforma-list li::before,
-      .budget-list li::before {
+      .eco-list li::before {
         content: "";
         position: absolute;
         left: 0.82rem;
-        top: 1.02rem;
+        top: 50%;
         width: 0.45rem;
         height: 0.45rem;
+        transform: translateY(-50%);
         border-radius: 999px;
         background: var(--eco-terracotta);
       }
 
-      .reforma-list strong,
-      .budget-list strong { color: #fff; }
-
-      .local-gallery-card {
-        display: grid;
-        gap: 1.35rem;
-        padding: clamp(1.2rem, 2.4vw, 1.8rem);
-        border-radius: var(--eco-radius-xl);
-        border: 1px solid rgba(244, 233, 220, 0.14);
-        background:
-          linear-gradient(180deg, rgba(244, 233, 220, 0.09), rgba(244, 233, 220, 0.04)),
-          rgba(10, 19, 28, 0.66);
-        box-shadow: 0 22px 58px rgba(0,0,0,0.24);
-        overflow: hidden;
-      }
-
-      .local-gallery-top {
-        display: grid;
-        gap: 0.68rem;
-        text-align: center;
-        max-width: 920px;
-        margin: 0 auto;
-      }
-
-      .local-gallery-top h3 {
-        margin: 0;
-        color: #fff;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2.3rem, 4.8vw, 4.2rem);
-        line-height: 0.92;
-        letter-spacing: -0.03em;
-      }
-
-      .local-gallery-reading,
-      .local-gallery-intro {
-        margin: 0;
-        color: var(--eco-muted);
-        line-height: 1.72;
-      }
-
-      .local-gallery-badge {
-        margin: 0 auto;
+      .eco-card-link {
         display: inline-flex;
-        width: fit-content;
-        padding: 0.44rem 0.82rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+        margin-top: auto;
+        padding: 0.85rem 1rem;
         border-radius: 999px;
         border: 1px solid rgba(194, 94, 60, 0.38);
         background: rgba(194, 94, 60, 0.12);
         color: var(--eco-cream);
-        font-size: 0.73rem;
-        font-weight: 900;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        transition: background 0.2s ease, transform 0.2s ease;
       }
 
-      .local-carousel-shell {
-        position: relative;
+      .eco-card-link:hover {
+        background: rgba(194, 94, 60, 0.2);
+        transform: translateX(2px);
+      }
+
+      .eco-card-link span:last-child {
+        font-size: 1.2rem;
+      }
+
+      .eco-route {
         display: grid;
-        grid-template-columns: 58px 1fr 58px;
-        align-items: center;
-        gap: 1rem;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(1rem, 2.4vw, 1.6rem);
+        align-items: stretch;
       }
 
-      .local-carousel-stage {
-        position: relative;
-        display: block;
-        width: 100%;
-        min-height: 500px;
-        border: 1px solid rgba(244, 233, 220, 0.14);
+      .eco-route-panel {
         border-radius: var(--eco-radius-lg);
-        overflow: hidden;
-        cursor: pointer;
-        background: #0f1b28;
-        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.26), inset 0 0 0 1px rgba(255,255,255,0.05);
-        padding: 0;
-      }
-
-      .local-carousel-stage img {
-        width: 100%;
-        height: 100%;
-        min-height: 500px;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.45s ease;
-      }
-
-      .local-carousel-stage:hover img { transform: scale(1.02); }
-
-      .local-carousel-overlay {
-        position: absolute;
-        left: 1rem;
-        right: 1rem;
-        bottom: 1rem;
-        min-height: 0.4rem;
-        border-radius: 18px;
-        background: linear-gradient(180deg, rgba(30,45,59,0.06) 0%, rgba(30,45,59,0.42) 100%);
-        color: #f7f1e8;
-        pointer-events: none;
-      }
-
-      .local-carousel-nav,
-      .local-lightbox-nav {
-        width: 56px;
-        height: 56px;
-        border-radius: 999px;
-        border: 1px solid rgba(244, 233, 220, 0.18);
-        background: rgba(244, 233, 220, 0.08);
-        color: var(--eco-cream);
-        font-size: 1.5rem;
-        line-height: 1;
-        cursor: pointer;
-        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
-        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      }
-
-      .local-carousel-nav:hover,
-      .local-lightbox-nav:hover {
-        transform: translateY(-1px);
-        background: rgba(194, 94, 60, 0.16);
-        border-color: rgba(194, 94, 60, 0.34);
-      }
-
-      .local-carousel-bottom { display: grid; gap: 0.8rem; }
-
-      .local-carousel-meta {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        color: var(--eco-muted-2);
-        font-size: 0.94rem;
-      }
-
-      .local-carousel-counter {
-        color: var(--eco-cream);
-        font-weight: 900;
-      }
-
-      .local-carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 0.45rem;
-        flex-wrap: wrap;
-      }
-
-      .local-carousel-dots button {
-        width: 10px;
-        height: 10px;
-        padding: 0;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(244, 233, 220, 0.18);
-        cursor: pointer;
-        transition: transform 0.2s ease, background 0.2s ease;
-      }
-
-      .local-carousel-dots button.active {
-        background: var(--eco-terracotta);
-        transform: scale(1.22);
-      }
-
-      .local-lightbox[hidden] { display: none; }
-      .local-lightbox { position: fixed; inset: 0; z-index: 9999; }
-      .local-lightbox-backdrop { position: absolute; inset: 0; background: rgba(5, 10, 15, 0.82); backdrop-filter: blur(6px); }
-
-      .local-lightbox-dialog {
-        position: relative;
-        width: min(1440px, calc(100vw - 40px));
-        height: min(90vh, 900px);
-        margin: 3vh auto;
-        padding: 1.2rem;
-        border-radius: 28px;
-        border: 1px solid rgba(244, 233, 220, 0.16);
-        background: linear-gradient(145deg, #101b27, #172636);
-        box-shadow: 0 28px 80px rgba(0,0,0,0.42);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .local-lightbox-close {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        z-index: 3;
-        width: 48px;
-        height: 48px;
-        border: 1px solid rgba(244, 233, 220, 0.18);
-        border-radius: 999px;
-        background: rgba(244, 233, 220, 0.10);
-        color: var(--eco-cream);
-        font-size: 2rem;
-        line-height: 1;
-        cursor: pointer;
-      }
-
-      .local-lightbox-layout {
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 1.2rem;
-        height: 100%;
-        min-height: 0;
-        padding-top: 0.5rem;
-      }
-
-      .local-lightbox-thumbs {
-        overflow-y: auto;
-        padding-right: 0.35rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.7rem;
-      }
-
-      .local-lightbox-thumbs button {
-        padding: 0;
-        border: 2px solid transparent;
-        border-radius: 14px;
-        overflow: hidden;
-        background: #0f1b28;
-        cursor: pointer;
-        transition: border-color 0.2s ease, transform 0.2s ease;
-      }
-
-      .local-lightbox-thumbs button.active { border-color: var(--eco-terracotta); transform: scale(1.01); }
-      .local-lightbox-thumbs img { width: 100%; display: block; aspect-ratio: 1 / 1; object-fit: cover; }
-
-      .local-lightbox-main {
-        display: grid;
-        grid-template-columns: 64px 1fr 64px;
-        gap: 1rem;
-        align-items: center;
-        min-height: 0;
-      }
-
-      .local-lightbox-image-wrap {
-        height: 100%;
-        min-height: 0;
-        border-radius: 22px;
-        overflow: hidden;
-        background: #071018;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .local-lightbox-image-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
-        background: #071018;
-      }
-
-      .local-lightbox-footer { padding: 0.2rem 0.2rem 0; color: var(--eco-cream); }
-      .local-lightbox-footer strong { display: inline-block; margin-bottom: 0.25rem; font-size: 1rem; }
-      .local-lightbox-footer p { margin: 0; color: var(--eco-muted-2); line-height: 1.55; }
-
-      .budget-kpis {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(0.85rem, 1.7vw, 1.15rem);
-        margin: 1.35rem 0;
-      }
-
-      .budget-kpi {
-        display: flex;
-        flex-direction: column;
-        gap: 0.55rem;
-        padding: clamp(1.1rem, 2vw, 1.55rem);
-        border-radius: var(--eco-radius-lg);
-        background:
-          linear-gradient(180deg, rgba(244, 233, 220, 0.11), rgba(244, 233, 220, 0.055)),
-          rgba(10, 19, 28, 0.74);
         border: 1px solid rgba(244, 233, 220, 0.13);
-        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.16), rgba(244, 233, 220, 0.04)),
+          rgba(10, 19, 28, 0.68);
+        padding: clamp(1.35rem, 2.3vw, 2rem);
+        display: grid;
+        align-content: center;
       }
 
-      .budget-kpi-label {
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        color: var(--eco-muted-2);
-      }
-
-      .budget-kpi strong {
-        font-size: clamp(2rem, 3vw, 2.8rem);
-        line-height: 1;
+      .eco-route-panel h2 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        line-height: 0.92;
         color: #fff;
-        font-weight: 900;
       }
 
-      .budget-kpi small {
+      .eco-route-panel p {
+        margin: 1rem 0 0;
         color: var(--eco-muted);
-        line-height: 1.48;
-        font-size: 0.95rem;
+        line-height: 1.72;
       }
 
-      .budget-price {
-        display: inline-flex;
-        align-self: flex-start;
-        margin-top: 1rem;
-        padding: 0.72rem 1rem;
+      .eco-route-steps {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .eco-step {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.8rem;
+        align-items: center;
+        border-radius: var(--eco-radius-md);
+        border: 1px solid rgba(244, 233, 220, 0.12);
+        background: rgba(244, 233, 220, 0.052);
+        padding: 1rem;
+      }
+
+      .eco-step strong {
+        width: 2.7rem;
+        height: 2.7rem;
+        display: grid;
+        place-items: center;
         border-radius: 999px;
-        border: 1px solid rgba(194, 94, 60, 0.34);
+        border: 1px solid rgba(194, 94, 60, 0.32);
         background: rgba(194, 94, 60, 0.12);
         color: var(--eco-cream);
-        font-weight: 900;
+      }
+
+      .eco-step h3 {
+        margin: 0;
+        color: #fff;
         font-size: 1.02rem;
       }
 
-      .budget-reading {
-        margin-top: 1.1rem;
+      .eco-step p {
+        margin: 0.15rem 0 0;
+        color: var(--eco-muted-2);
+        font-size: 0.92rem;
+        line-height: 1.45;
       }
 
-      .reforma-closure {
+      .eco-close {
         text-align: center;
+        border-radius: var(--eco-radius-xl);
+        border: 1px solid rgba(194, 94, 60, 0.24);
         background:
-          linear-gradient(145deg, rgba(194, 94, 60, 0.18), rgba(244, 233, 220, 0.055)),
-          rgba(10, 19, 28, 0.74);
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.24), transparent 26rem),
+          linear-gradient(145deg, rgba(244, 233, 220, 0.09), rgba(244, 233, 220, 0.035)),
+          rgba(13, 22, 32, 0.86);
+        padding: clamp(1.6rem, 3vw, 2.4rem);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
       }
 
-      .reforma-closure p {
+      .eco-close p {
         max-width: 860px;
         margin: 0 auto;
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(1.7rem, 3vw, 2.6rem);
-        line-height: 1.08;
+        font-size: clamp(1.7rem, 3.4vw, 3rem);
+        line-height: 1.05;
         color: #fff;
+        text-wrap: balance;
       }
 
-      .annex-button {
+      .eco-close span {
+        color: var(--eco-terracotta);
+      }
+
+      .reforma-page .home-footer {
+        width: min(1240px, 92vw);
+        margin-inline: auto;
+        color: rgba(244, 233, 220, 0.58);
+        border-top-color: rgba(244, 233, 220, 0.1);
+      }
+
+      @media (max-width: 1060px) {
+        .eco-hero-grid,
+        .eco-route {
+          grid-template-columns: 1fr;
+        }
+
+        .eco-hero-copy,
+        .eco-hero-panel {
+          min-height: auto;
+        }
+
+        .eco-index-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .eco-index-card {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .reforma-page .nav {
+          margin-top: 0.6rem;
+        }
+
+        .eco-main-pro {
+          width: min(94vw, 1240px);
+        }
+
+        .eco-hero,
+        .eco-section,
+        .eco-close {
+          border-radius: 24px;
+        }
+
+        .eco-hero-copy {
+          border-radius: 18px;
+          padding: 2rem 1.25rem;
+          text-align: center;
+          align-items: center;
+        }
+
+        .eco-hero h1 {
+          max-width: 100%;
+          font-size: clamp(3.2rem, 16vw, 5.4rem);
+        }
+
+        .eco-hero-copy > p {
+          font-size: 0.98rem;
+        }
+
+        .eco-hero-actions,
+        .eco-band {
+          grid-template-columns: 1fr;
+        }
+
+        .eco-band {
+          display: grid;
+        }
+
+        .eco-section-head h2 {
+          font-size: clamp(2.2rem, 12vw, 3.4rem);
+        }
+
+        .eco-index-card {
+          padding: 1.1rem;
+          border-radius: 20px;
+        }
+
+        .eco-index-card h3 {
+          font-size: 2.1rem;
+        }
+
+        .eco-index-number {
+          font-size: 3.2rem;
+        }
+      }
+
+      /* =========================================================
+         AJUST FINAL · FORMAT FOSC PREMIUM, PERÒ MENYS PESAT
+         Recupera el llenguatge visual anterior i el fa més formal,
+         amb més blau corporatiu, terracota i llum beix controlada.
+      ========================================================= */
+
+      body.reforma-page {
+        background:
+          radial-gradient(circle at 14% 2%, rgba(194, 94, 60, 0.26), transparent 26rem),
+          radial-gradient(circle at 86% 13%, rgba(244, 233, 220, 0.12), transparent 34rem),
+          radial-gradient(circle at 68% 88%, rgba(110, 139, 116, 0.16), transparent 30rem),
+          linear-gradient(145deg, #142334 0%, #1a2b3b 46%, #22384b 100%) !important;
+      }
+
+      body.reforma-page::before {
+        background:
+          linear-gradient(rgba(244, 233, 220, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(244, 233, 220, 0.032) 1px, transparent 1px) !important;
+        opacity: 0.72;
+      }
+
+      body.reforma-page::after {
+        color: rgba(244, 233, 220, 0.052) !important;
+      }
+
+      .reforma-page .nav {
+        background:
+          linear-gradient(135deg, rgba(25, 42, 57, 0.88), rgba(32, 52, 68, 0.78)),
+          linear-gradient(90deg, rgba(194, 94, 60, 0.2), rgba(244, 233, 220, 0.04), transparent) !important;
+        border-color: rgba(244, 233, 220, 0.22) !important;
+        box-shadow: 0 18px 46px rgba(10, 18, 28, 0.24) !important;
+      }
+
+      .eco-hero {
+        background:
+          linear-gradient(145deg, rgba(244, 233, 220, 0.12), rgba(244, 233, 220, 0.045)),
+          linear-gradient(135deg, rgba(22, 37, 52, 0.94), rgba(31, 52, 70, 0.84)) !important;
+        border-color: rgba(244, 233, 220, 0.26) !important;
+        box-shadow: 0 28px 72px rgba(10, 18, 28, 0.28) !important;
+      }
+
+      .eco-hero-copy {
+        background:
+          linear-gradient(145deg, rgba(18, 32, 46, 0.94), rgba(30, 50, 67, 0.82)),
+          radial-gradient(circle at 5% 0%, rgba(194, 94, 60, 0.22), transparent 22rem),
+          radial-gradient(circle at 86% 92%, rgba(244, 233, 220, 0.08), transparent 22rem) !important;
+        border-color: rgba(244, 233, 220, 0.16) !important;
+      }
+
+      .eco-hero h1 {
+        color: #fffaf3 !important;
+      }
+
+      .eco-hero-copy > p,
+      .eco-section-head p,
+      .eco-index-card p,
+      .eco-route-panel p,
+      .eco-verdict p {
+        color: rgba(244, 233, 220, 0.76) !important;
+      }
+
+      .eco-hero-panel {
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.12), rgba(244, 233, 220, 0.055)),
+          rgba(23, 39, 54, 0.72) !important;
+        border-color: rgba(244, 233, 220, 0.2) !important;
+      }
+
+      .eco-verdict {
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.20), rgba(244, 233, 220, 0.065)),
+          rgba(28, 47, 63, 0.62) !important;
+        border-color: rgba(194, 94, 60, 0.38) !important;
+      }
+
+      .eco-metric,
+      .eco-band article,
+      .eco-step {
+        background: rgba(244, 233, 220, 0.075) !important;
+        border-color: rgba(244, 233, 220, 0.16) !important;
+      }
+
+      .eco-metric p,
+      .eco-band p,
+      .eco-step p,
+      .eco-list li {
+        color: rgba(244, 233, 220, 0.67) !important;
+      }
+
+      .eco-section {
+        background:
+          linear-gradient(160deg, rgba(244, 233, 220, 0.095), rgba(244, 233, 220, 0.045)),
+          rgba(22, 38, 53, 0.68) !important;
+        border-color: rgba(244, 233, 220, 0.18) !important;
+        box-shadow: 0 22px 58px rgba(10, 18, 28, 0.22) !important;
+      }
+
+      .eco-index-card {
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.115), rgba(244, 233, 220, 0.052)),
+          rgba(18, 32, 45, 0.72) !important;
+        border-color: rgba(244, 233, 220, 0.17) !important;
+      }
+
+      .eco-index-card::before {
+        background:
+          radial-gradient(circle at 20% 10%, rgba(194, 94, 60, 0.18), transparent 13rem),
+          radial-gradient(circle at 100% 0%, rgba(244, 233, 220, 0.08), transparent 13rem),
+          linear-gradient(120deg, rgba(244, 233, 220, 0.065), transparent 42%) !important;
+      }
+
+      .eco-list li {
+        background: rgba(244, 233, 220, 0.06) !important;
+        border-color: rgba(244, 233, 220, 0.13) !important;
+      }
+
+      .eco-route-panel {
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.18), rgba(244, 233, 220, 0.055)),
+          rgba(18, 32, 45, 0.70) !important;
+        border-color: rgba(244, 233, 220, 0.18) !important;
+      }
+
+      .eco-close {
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.24), transparent 26rem),
+          linear-gradient(145deg, rgba(244, 233, 220, 0.11), rgba(244, 233, 220, 0.045)),
+          rgba(22, 38, 53, 0.84) !important;
+        border-color: rgba(194, 94, 60, 0.32) !important;
+        box-shadow: 0 24px 66px rgba(10, 18, 28, 0.24) !important;
+      }
+
+      .eco-card-link {
+        background: rgba(194, 94, 60, 0.16) !important;
+      }
+
+      .eco-card-link:hover {
+        background: rgba(194, 94, 60, 0.25) !important;
+      }
+
+      /* =========================================================
+         AJUST FINAL · BARRA I MENÚ DESPLEGABLE ECONÒMIC
+         Manté el format fosc premium, però amb més lectura, contrast
+         i coherència amb la paleta MESCLARI.
+      ========================================================= */
+
+      .reforma-page .nav {
+        position: sticky;
+        top: 0.75rem;
+        z-index: 100;
+        min-height: 72px;
+        padding: 0.62rem 0.72rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-radius: 999px;
+        background:
+          linear-gradient(135deg, rgba(244, 233, 220, 0.20), rgba(244, 233, 220, 0.08)),
+          linear-gradient(120deg, rgba(22, 38, 53, 0.92), rgba(33, 55, 73, 0.82) 58%, rgba(194, 94, 60, 0.22)) !important;
+        border: 1px solid rgba(244, 233, 220, 0.28) !important;
+        box-shadow:
+          0 22px 60px rgba(7, 16, 24, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12),
+          inset 0 -1px 0 rgba(194, 94, 60, 0.10) !important;
+        backdrop-filter: blur(22px) saturate(1.12);
+        -webkit-backdrop-filter: blur(22px) saturate(1.12);
+      }
+
+      .reforma-page .nav::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 233, 220, 0.10);
+        pointer-events: none;
+      }
+
+      .reforma-page .brand-switch {
+        position: relative;
+        min-width: 220px;
+        height: 48px;
+        padding: 0;
+        border-radius: 999px;
+        overflow: hidden;
+        border: 1px solid rgba(194, 94, 60, 0.48) !important;
+        background:
+          linear-gradient(135deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.76)) !important;
+        box-shadow:
+          0 12px 26px rgba(7, 16, 24, 0.20),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+
+      .reforma-page .brand-switch-track {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .reforma-page .brand-mini {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.78rem;
+        padding: 0.3rem 1rem 0.3rem 0.36rem;
+      }
+
+      .reforma-page .nav-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        object-fit: contain;
+        background: rgba(244, 233, 220, 0.92);
+        padding: 0.18rem;
+        box-shadow: 0 6px 14px rgba(30, 45, 59, 0.18);
+      }
+
+      .reforma-page .brand-name {
+        color: #9f472d !important;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.32rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        line-height: 1;
+      }
+
+      .reforma-page .menu-btn {
+        position: relative;
+        z-index: 104;
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        border-radius: 999px;
+        color: var(--eco-cream) !important;
+        border: 1px solid rgba(244, 233, 220, 0.34) !important;
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.34), rgba(194, 94, 60, 0.12)),
+          rgba(244, 233, 220, 0.08) !important;
+        box-shadow:
+          0 12px 24px rgba(7, 16, 24, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.13);
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .reforma-page .menu-btn:hover,
+      .reforma-page .menu-btn[aria-expanded="true"] {
+        transform: translateY(-1px);
+        border-color: rgba(194, 94, 60, 0.62) !important;
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.46), rgba(194, 94, 60, 0.18)),
+          rgba(244, 233, 220, 0.12) !important;
+      }
+
+      .reforma-page .menu {
+        position: absolute;
+        top: calc(100% + 0.8rem);
+        right: 0;
+        z-index: 103;
+        width: min(460px, 92vw);
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+        padding: 0.82rem;
+        margin: 0;
+        list-style: none;
+        border-radius: 28px;
+        border: 1px solid rgba(244, 233, 220, 0.24);
+        background:
+          radial-gradient(circle at 15% 0%, rgba(194, 94, 60, 0.20), transparent 18rem),
+          linear-gradient(155deg, rgba(244, 233, 220, 0.14), rgba(244, 233, 220, 0.065)),
+          rgba(24, 41, 56, 0.96);
+        box-shadow:
+          0 28px 80px rgba(7, 16, 24, 0.48),
+          inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(24px) saturate(1.12);
+        -webkit-backdrop-filter: blur(24px) saturate(1.12);
+      }
+
+      .reforma-page .menu.open,
+      .reforma-page .menu.active,
+      .reforma-page .menu.show,
+      .reforma-page .menu.is-open,
+      .reforma-page #menuBtn[aria-expanded="true"] + .menu {
+        display: grid !important;
+        animation: ecoMenuIn 0.22s ease both;
+      }
+
+      @keyframes ecoMenuIn {
+        from {
+          opacity: 0;
+          transform: translateY(-8px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .reforma-page .menu li {
+        margin: 0;
+      }
+
+      .reforma-page .menu a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 54px;
+        padding: 0.95rem 1rem;
+        border-radius: 18px;
+        color: rgba(244, 233, 220, 0.84) !important;
+        text-decoration: none;
+        font-size: 0.93rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        border: 1px solid rgba(244, 233, 220, 0.09);
+        background: rgba(244, 233, 220, 0.045);
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .reforma-page .menu a::after {
+        content: "→";
+        color: rgba(194, 94, 60, 0.82);
+        font-weight: 900;
+        transform: translateX(-2px);
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .reforma-page .menu a:hover,
+      .reforma-page .menu a[aria-current="page"] {
+        color: #fffaf3 !important;
+        background:
+          linear-gradient(135deg, rgba(194, 94, 60, 0.30), rgba(194, 94, 60, 0.12)),
+          rgba(244, 233, 220, 0.07) !important;
+        border-color: rgba(194, 94, 60, 0.44) !important;
+        transform: translateX(2px);
+      }
+
+      .reforma-page .menu a:hover::after,
+      .reforma-page .menu a[aria-current="page"]::after {
+        transform: translateX(2px);
+        color: #f4e9dc;
+      }
+
+      .reforma-page .menu a[aria-current="page"] {
+        box-shadow:
+          inset 3px 0 0 var(--eco-terracotta),
+          0 10px 24px rgba(7, 16, 24, 0.14);
+      }
+
+      @media (min-width: 1080px) {
+        .reforma-page .nav {
+          min-height: 76px;
+          padding-left: 0.78rem;
+        }
+
+        .reforma-page .menu {
+          right: 0.1rem;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .reforma-page .nav {
+          width: min(94vw, 1240px);
+          top: 0.45rem;
+          min-height: 64px;
+          padding: 0.5rem;
+          border-radius: 26px;
+        }
+
+        .reforma-page .nav::before {
+          border-radius: 20px;
+        }
+
+        .reforma-page .brand-switch {
+          min-width: 0;
+          width: min(210px, calc(100vw - 7.2rem));
+          height: 44px;
+        }
+
+        .reforma-page .brand-name {
+          font-size: 1.08rem;
+          letter-spacing: 0.16em;
+        }
+
+        .reforma-page .nav-logo {
+          width: 32px;
+          height: 32px;
+        }
+
+        .reforma-page .menu-btn {
+          width: 44px;
+          height: 44px;
+        }
+
+        .reforma-page .menu {
+          left: 0;
+          right: 0;
+          width: 100%;
+          top: calc(100% + 0.55rem);
+          border-radius: 22px;
+          padding: 0.65rem;
+        }
+
+        .reforma-page .menu a {
+          min-height: 50px;
+          padding: 0.85rem 0.9rem;
+          font-size: 0.9rem;
+        }
+      }
+
+    
+
+
+      /* =========================================================
+         PÀGINA 02 · PRESSUPOSTOS I GESTIÓ ADMINISTRATIVA
+         Mateixa base visual que economia-inici, només adaptació visual.
+      ========================================================= */
+
+      .admin-pro-main {
+        width: min(1240px, 92vw);
+        margin: clamp(1rem, 2.4vw, 2rem) auto 4.8rem;
+        display: grid;
+        gap: clamp(1.2rem, 2.4vw, 2rem);
+      }
+
+      .admin-hero .eco-hero-copy h1 {
+        max-width: 10.5ch;
+      }
+
+      .admin-hero .eco-hero-copy h1 span {
+        color: var(--eco-terracotta);
+      }
+
+      .admin-hero .eco-hero-panel {
+        align-content: stretch;
+      }
+
+      .admin-map {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .admin-map-item {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.85rem;
+        align-items: center;
+        min-height: 108px;
+        border-radius: var(--eco-radius-md);
+        border: 1px solid rgba(244, 233, 220, 0.14);
+        background: rgba(244, 233, 220, 0.065);
+        padding: 1rem;
+        overflow: hidden;
+      }
+
+      .admin-map-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(194, 94, 60, 0.09), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .admin-map-item:hover::after {
+        opacity: 1;
+      }
+
+      .admin-map-number {
+        width: 3.2rem;
+        height: 3.2rem;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        color: var(--eco-cream);
+        border: 1px solid rgba(194, 94, 60, 0.38);
+        background: rgba(194, 94, 60, 0.13);
+        font-weight: 900;
+        position: relative;
+        z-index: 1;
+      }
+
+      .admin-map-item h3,
+      .admin-map-item p,
+      .admin-map-item > div {
+        position: relative;
+        z-index: 1;
+      }
+
+      .admin-map-item h3 {
+        margin: 0;
+        color: #fffaf3;
+        font-size: 1.06rem;
+      }
+
+      .admin-map-item p {
+        margin: 0.22rem 0 0;
+        color: rgba(244, 233, 220, 0.64);
+        line-height: 1.45;
+        font-size: 0.92rem;
+      }
+
+      .admin-kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.9rem, 1.8vw, 1.2rem);
+      }
+
+      .admin-kpi {
+        position: relative;
+        min-height: 210px;
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.115), rgba(244, 233, 220, 0.052)),
+          rgba(18, 32, 45, 0.72);
+        padding: 1.35rem;
+        overflow: hidden;
+        box-shadow: 0 22px 54px rgba(10, 18, 28, 0.18);
+      }
+
+      .admin-kpi::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 15% 0%, rgba(194, 94, 60, 0.18), transparent 13rem),
+          linear-gradient(120deg, rgba(244, 233, 220, 0.065), transparent 44%);
+        pointer-events: none;
+      }
+
+      .admin-kpi > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .admin-kpi small {
+        display: inline-flex;
+        margin-bottom: 0.75rem;
+        color: rgba(244, 233, 220, 0.62);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 900;
+        font-size: 0.72rem;
+      }
+
+      .admin-kpi strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        line-height: 0.9;
+        color: #fffaf3;
+      }
+
+      .admin-kpi p {
+        margin: 0.9rem 0 0;
+        color: rgba(244, 233, 220, 0.66);
+        line-height: 1.55;
+      }
+
+      .admin-budget-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.9rem, 1.8vw, 1.2rem);
+      }
+
+      .admin-card-pro {
+        position: relative;
+        min-height: 100%;
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.11), rgba(244, 233, 220, 0.052)),
+          rgba(18, 32, 45, 0.72);
+        padding: clamp(1.25rem, 2.1vw, 1.65rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        overflow: hidden;
+        box-shadow: 0 22px 54px rgba(10, 18, 28, 0.18);
+        transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .admin-card-pro:hover {
+        transform: translateY(-4px);
+        border-color: rgba(194, 94, 60, 0.38);
+        box-shadow: 0 28px 66px rgba(10, 18, 28, 0.26);
+      }
+
+      .admin-card-pro::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 18% 0%, rgba(194, 94, 60, 0.16), transparent 13rem),
+          linear-gradient(120deg, rgba(244, 233, 220, 0.055), transparent 44%);
+        pointer-events: none;
+      }
+
+      .admin-card-pro > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .admin-card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .admin-card-pro h3,
+      .admin-card-pro h4 {
+        margin: 0;
+        color: #fffaf3;
+        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.7rem);
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      .admin-card-pro p {
+        margin: 0;
+        color: rgba(244, 233, 220, 0.70);
+        line-height: 1.68;
+      }
+
+      .admin-price {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin-top: 1.25rem;
-        padding: 0.9rem 1.25rem;
+        white-space: nowrap;
+        padding: 0.55rem 0.8rem;
         border-radius: 999px;
         border: 1px solid rgba(194, 94, 60, 0.42);
         background: rgba(194, 94, 60, 0.14);
         color: var(--eco-cream);
-        text-decoration: none;
         font-weight: 900;
-        letter-spacing: 0.02em;
-        transition: transform 0.22s ease, background 0.22s ease;
+        line-height: 1;
       }
 
-      .annex-button:hover {
-        transform: translateY(-2px);
-        background: rgba(194, 94, 60, 0.22);
+      .admin-note {
+        margin-top: auto !important;
+        padding-top: 0.9rem;
+        border-top: 1px solid rgba(244, 233, 220, 0.10);
+        color: rgba(244, 233, 220, 0.58) !important;
+        font-size: 0.95rem;
       }
 
-      .home-footer {
-        color: rgba(244, 233, 220, 0.72);
+      .admin-card-pro .eco-list {
+        margin-top: 0;
       }
 
-      @media (max-width: 1100px) {
-        .reforma-hero-grid,
-        .reforma-grid-4,
-        .reforma-grid-3,
-        .reforma-grid-2,
-        .budget-kpis {
+      .admin-card-pro .eco-list li {
+        color: rgba(244, 233, 220, 0.72) !important;
+      }
+
+      .admin-card-pro .eco-list strong {
+        color: #fffaf3;
+      }
+
+      .admin-split {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(0.9rem, 1.8vw, 1.2rem);
+      }
+
+      .admin-control-card {
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background: rgba(244, 233, 220, 0.07);
+        padding: clamp(1.2rem, 2.2vw, 1.65rem);
+      }
+
+      .admin-control-card h3,
+      .admin-control-card h4 {
+        margin: 0 0 0.7rem;
+        color: #fffaf3;
+        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.65rem);
+      }
+
+      .admin-control-card p {
+        margin: 0;
+        color: rgba(244, 233, 220, 0.70);
+        line-height: 1.7;
+      }
+
+      .admin-flow {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .admin-flow-card {
+        border-radius: var(--eco-radius-lg);
+        border: 1px solid rgba(244, 233, 220, 0.15);
+        background:
+          linear-gradient(180deg, rgba(244, 233, 220, 0.095), rgba(244, 233, 220, 0.048)),
+          rgba(18, 32, 45, 0.70);
+        padding: clamp(1.2rem, 2.2vw, 1.65rem);
+      }
+
+      .admin-flow-card h3 {
+        margin: 0 0 0.7rem;
+        color: #fffaf3;
+        font-size: clamp(1.25rem, 1.1rem + 0.45vw, 1.65rem);
+      }
+
+      .admin-flow-card p {
+        margin: 0;
+        color: rgba(244, 233, 220, 0.68);
+        line-height: 1.7;
+      }
+
+      .admin-flow-arrow {
+        width: 3.2rem;
+        display: grid;
+        place-items: center;
+        color: var(--eco-terracotta);
+        font-size: 2.4rem;
+        font-weight: 900;
+      }
+
+      .admin-close-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.35rem;
+      }
+
+      @media (max-width: 1060px) {
+        .admin-budget-grid,
+        .admin-kpi-grid,
+        .admin-split,
+        .admin-flow {
           grid-template-columns: 1fr;
         }
 
-        .reforma-hero-copy,
-        .reforma-hero-panel { min-height: auto; }
-
-        .local-lightbox-layout { grid-template-columns: 1fr; }
-        .local-lightbox-thumbs {
-          order: 2;
-          flex-direction: row;
-          overflow-x: auto;
-          overflow-y: hidden;
-          padding-right: 0;
-          padding-bottom: 0.25rem;
+        .admin-flow-arrow {
+          width: 100%;
+          transform: rotate(90deg);
         }
-        .local-lightbox-thumbs button { min-width: 90px; max-width: 90px; }
-        .local-lightbox-main { order: 1; }
       }
 
-      @media (max-width: 820px) {
-        body.reforma-page::after { display: none; }
-        .reforma-main-pro { width: min(94vw, 1240px); }
-        .reforma-hero,
-        .reforma-section,
-        .local-gallery-card { border-radius: 24px; }
-        .reforma-hero h1 { font-size: clamp(3.1rem, 15vw, 5.4rem); }
-        .reforma-hero-copy { padding: 2rem 1.35rem; }
-        .local-carousel-shell { grid-template-columns: 1fr; }
-        .local-carousel-nav { display: none; }
-        .local-carousel-stage,
-        .local-carousel-stage img { min-height: 320px; }
-        .local-lightbox-dialog {
-          width: calc(100vw - 20px);
-          height: calc(100vh - 20px);
-          margin: 10px auto;
-          padding: 0.9rem;
-          border-radius: 20px;
+      @media (max-width: 760px) {
+        .admin-pro-main {
+          width: min(94vw, 1240px);
         }
-        .local-lightbox-main { grid-template-columns: 44px 1fr 44px; gap: 0.5rem; }
-        .local-lightbox-nav { width: 44px; height: 44px; font-size: 1.15rem; }
+
+        .admin-card-top {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
+
     </style>
   </head>
 
@@ -936,403 +1563,306 @@
           </span>
         </span>
       </button>
+
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
+
       <ul id="menu" class="menu">
         <li><a href="economia-inici.html">Economia del projecte</a></li>
-        <li><a href="reforma-i-compra-tecnica.html" aria-current="page">Reforma i compra tècnica</a></li>
-        <li><a href="pressupostos-i-gestio-administrativa.html">Pressupostos i gestió administrativa</a></li>
+        <li><a href="reforma-i-compra-tecnica.html">Reforma i compra tècnica</a></li>
+        <li><a href="pressupostos-i-gestio-administrativa.html" aria-current="page">Pressupostos i gestió administrativa</a></li>
         <li><a href="viabilitat-rendibilitat-i-resum-final.html">Viabilitat, rendibilitat i resum final</a></li>
       </ul>
     </nav>
 
-    <main class="reforma-main-pro">
-      <header class="reforma-hero" id="reforma-obertura">
-        <div class="reforma-hero-grid">
-          <div class="reforma-hero-copy">
-            <p class="eco-kicker">Reforma i compra tècnica</p>
-            <h1>Del local existent <span>a MESCLARI</span></h1>
+    <main class="admin-pro-main">
+      <header class="eco-hero admin-hero" id="pressupostos-obertura">
+        <div class="eco-hero-grid">
+          <section class="eco-hero-copy">
+            <p class="eco-kicker">Part oculta · Gestió econòmica</p>
+            <h1>Pressupostos i <span>gestió</span></h1>
             <p>
-              La inversió inicial de MESCLARI s’entén, en primer lloc, a partir del local actual i de la necessitat de transformar-lo. La reforma i la compra tècnica no es plantegen com una despesa accessòria, sinó com la base que permet adaptar l’espai al nivell d’experiència, a la proposta gastronòmica i a l’operativa real del restaurant.
+              Més enllà de la reforma i de la compra tècnica, MESCLARI requereix una lectura econòmica més àmplia que inclou altres partides del pressupost i la manera com s’ordenarà la gestió administrativa del restaurant.
             </p>
-            <div class="reforma-hero-actions" aria-label="Claus de la reforma">
-              <span class="eco-pill">Base real del local</span>
-              <span class="eco-pill">Inversió estructural</span>
-              <span class="eco-pill">Posada en marxa</span>
+            <div class="eco-hero-actions" aria-label="Claus de lectura administrativa">
+              <span class="eco-pill">Permisos i tràmits</span>
+              <span class="eco-pill">Costos mensuals</span>
+              <span class="eco-pill">Gestoria especialitzada</span>
             </div>
-          </div>
+          </section>
 
-          <aside class="reforma-hero-panel" aria-label="Resum executiu de reforma i compra tècnica">
-            <article class="reforma-verdict">
-              <small>Lectura executiva</small>
-              <strong>Transformar abans d’obrir</strong>
-              <p>La reforma ordena el punt de partida i converteix el local en un espai coherent amb la gamma, el servei i el model operatiu de MESCLARI.</p>
+          <aside class="eco-hero-panel" aria-label="Lectura executiva de pressupostos i gestió administrativa">
+            <article class="eco-verdict">
+              <small>Lectura professional</small>
+              <strong>Control administratiu per obrir amb garanties.</strong>
+              <p>
+                Aquesta pàgina ordena les partides que completen la inversió inicial i defineix com es gestionarà el control intern i el suport extern del restaurant.
+              </p>
             </article>
 
-            <div class="reforma-metric-stack">
-              <article class="reforma-metric">
-                <span class="reforma-metric-number">01</span>
+            <div class="admin-map">
+              <article class="admin-map-item">
+                <span class="admin-map-number">01</span>
                 <div>
-                  <h3>Reforma amb sentit</h3>
-                  <p>La intervenció no és decorativa: afecta identitat, sala, cuina i funcionament.</p>
+                  <h3>Partides complementàries</h3>
+                  <p>Permisos, serveis externs i despeses d’arrencada que completen el pressupost real.</p>
                 </div>
               </article>
-              <article class="reforma-metric">
-                <span class="reforma-metric-number">02</span>
+
+              <article class="admin-map-item">
+                <span class="admin-map-number">02</span>
                 <div>
-                  <h3>Compra tècnica controlada</h3>
-                  <p>La inversió es concentra en allò que sosté el servei real i la producció.</p>
+                  <h3>Estructura mensual</h3>
+                  <p>Distinció entre costos fixos, costos variables i lectura d’equilibri operatiu.</p>
                 </div>
               </article>
-              <article class="reforma-metric">
-                <span class="reforma-metric-number">03</span>
+
+              <article class="admin-map-item">
+                <span class="admin-map-number">03</span>
                 <div>
-                  <h3>Obertura amb garanties</h3>
-                  <p>El local passa d’espai disponible a restaurant preparat per operar.</p>
+                  <h3>Control i gestoria</h3>
+                  <p>Combinació entre gestió directa del restaurant i suport extern especialitzat.</p>
                 </div>
               </article>
             </div>
           </aside>
         </div>
+
+        <div class="eco-band">
+          <article>
+            <span>01 · Obertura</span>
+            <h3>Permisos i tràmits</h3>
+            <p>La legalització i la preparació administrativa formen part real del cost d’arrencada.</p>
+          </article>
+          <article>
+            <span>02 · Control</span>
+            <h3>Costos fixos i variables</h3>
+            <p>La lectura mensual permet entendre millor la sostenibilitat del model.</p>
+          </article>
+          <article>
+            <span>03 · Suport</span>
+            <h3>Gestoria i processos</h3>
+            <p>El model combina control intern i especialització externa per treballar amb seguretat.</p>
+          </article>
+        </div>
       </header>
 
-      <section class="reforma-section" id="galeria-local">
-        <aside class="local-gallery-card" aria-label="Galeria del local actual i de la transformació prevista">
-          <div class="local-gallery-top">
-            <p class="local-gallery-badge">Suport principal</p>
-            <h3>Local actual · Galeria visual</h3>
-            <p class="local-gallery-reading">
-              El local parteix d’una base existent que ofereix potencial real, però que no respon encara al nivell ni a la configuració que MESCLARI necessita. Per això, la reforma s’ha de llegir com una intervenció necessària per ordenar millor l’espai, elevar-ne la qualitat percebuda i adaptar-lo a una lògica de funcionament coherent amb el projecte.
-            </p>
-            <p class="local-gallery-intro">
-              El carrusel mostra les imatges disponibles del local actual i permet obrir una vista ampliada per revisar-les amb més detall.
-            </p>
-          </div>
+      <section class="eco-section" id="resta-partides">
+        <header class="eco-section-head">
+          <p class="eco-kicker">Resta de partides econòmiques</p>
+          <h2>El pressupost no acaba amb la reforma</h2>
+          <p>
+            Aquesta part recull despeses que no formen part directa ni de l’obra ni de la compra tècnica principal, però que continuen sent imprescindibles per obrir MESCLARI amb ordre, cobertura administrativa i capacitat real de funcionament. La lectura correcta del pressupost no pot limitar-se a la reforma: també ha d’incloure permisos, serveis externs i partides d’arrencada.
+          </p>
+        </header>
 
-          <div class="local-carousel-shell">
-            <button class="local-carousel-nav prev" type="button" aria-label="Imatge anterior" id="localCarouselPrev">&#10094;</button>
-            <button class="local-carousel-stage" type="button" id="openLocalGallery" aria-label="Obrir galeria gran del local">
-              <img id="localCarouselImage" src="" alt="Imatge del local actual de MESCLARI" />
-              <span class="local-carousel-overlay"></span>
-            </button>
-            <button class="local-carousel-nav next" type="button" aria-label="Imatge següent" id="localCarouselNext">&#10095;</button>
-          </div>
+        <div class="admin-kpi-grid" aria-label="Indicadors principals de partides econòmiques">
+          <article class="admin-kpi">
+            <small>Permisos i tràmits</small>
+            <strong>16.800 €</strong>
+            <p>Documentació tècnica, taxes municipals, legalitzacions i butlletins necessaris abans de l’obertura.</p>
+          </article>
+          <article class="admin-kpi">
+            <small>Serveis i suport extern</small>
+            <strong>9.600 €</strong>
+            <p>Gestoria d’obertura, PRL, control especialitzat, revisions, alarmes i manteniment inicial.</p>
+          </article>
+          <article class="admin-kpi">
+            <small>Altres partides</small>
+            <strong>12.400 €</strong>
+            <p>TPV, programari, uniformitat, neteja final, detalls d’arrencada i imprevistos menors.</p>
+          </article>
+        </div>
 
-          <div class="local-carousel-bottom">
-            <div class="local-carousel-meta">
-              <span class="local-carousel-counter" id="localCarouselCounter">1 / 27</span>
-              <span class="local-carousel-note">Canvi automàtic cada 3 segons · Clica per veure la galeria completa</span>
+        <div class="admin-budget-grid" style="margin-top: 1.2rem;">
+          <article class="admin-card-pro">
+            <div class="admin-card-top">
+              <h3>Permisos i tràmits</h3>
+              <span class="admin-price">16.800 €</span>
             </div>
-            <div class="local-carousel-dots" id="localCarouselDots"></div>
-          </div>
-        </aside>
+            <p>
+              Aquesta partida agrupa els tràmits previs necessaris per posar en marxa el restaurant i legalitzar correctament la seva activitat. No es tracta d’una despesa accessòria, sinó d’una part indispensable del cost d’obertura.
+            </p>
+            <ul class="eco-list">
+              <li><strong>Projecte tècnic i memòria:</strong> documentació necessària per justificar l’adequació del local.</li>
+              <li><strong>Taxes municipals i llicències:</strong> comunicació prèvia, taxes d’activitat i adequació administrativa.</li>
+              <li><strong>Legalitzacions i butlletins:</strong> electricitat, climatització, ventilació o instal·lacions que ho requereixin.</li>
+            </ul>
+            <p class="admin-note">Partida global orientada a recollir el conjunt de permisos, taxes i tràmits necessaris abans de l’obertura.</p>
+          </article>
+
+          <article class="admin-card-pro">
+            <div class="admin-card-top">
+              <h3>Serveis i suport extern</h3>
+              <span class="admin-price">9.600 €</span>
+            </div>
+            <p>
+              MESCLARI necessita suport extern especialitzat per garantir una arrencada més segura i professionalitzada. Aquesta partida concentra serveis que no depenen directament de l’equip intern, però que resulten necessaris per operar amb regularitat.
+            </p>
+            <ul class="eco-list">
+              <li><strong>Gestoria d’obertura i primer seguiment:</strong> fiscal, laboral i comptable.</li>
+              <li><strong>Prevenció i control especialitzat:</strong> PRL, control de plagues, revisions o suport tècnic extern.</li>
+              <li><strong>Serveis de suport:</strong> alarmes, manteniment inicial o altres cobertures necessàries d’arrencada.</li>
+            </ul>
+            <p class="admin-note">Aquesta partida no només protegeix l’obertura, sinó que ordena millor la base administrativa i operativa del projecte.</p>
+          </article>
+
+          <article class="admin-card-pro">
+            <div class="admin-card-top">
+              <h3>Altres partides d’arrencada</h3>
+              <span class="admin-price">12.400 €</span>
+            </div>
+            <p>
+              Aquí s’inclouen despeses complementàries que sovint queden disperses, però que formen part real del cost de posada en marxa del restaurant. La seva funció és completar l’obertura i evitar una lectura incompleta del pressupost inicial.
+            </p>
+            <ul class="eco-list">
+              <li><strong>TPV i programari:</strong> posada en marxa, configuració i primers costos associats.</li>
+              <li><strong>Uniformitat i suport d’equip:</strong> vestuari inicial, reposicions bàsiques i elements auxiliars.</li>
+              <li><strong>Neteja final, detalls i imprevistos menors:</strong> partides petites que, sumades, tenen pes real en l’arrencada.</li>
+            </ul>
+            <p class="admin-note">Aquesta lectura evita invisibilitzar despeses que no són centrals com la reforma, però sí necessàries per obrir bé.</p>
+          </article>
+        </div>
       </section>
 
-      <section class="reforma-section" id="justificacio-reforma">
-        <header class="reforma-section-head">
-          <p class="eco-kicker">Justificació</p>
-          <h2>Per què la reforma és necessària</h2>
-          <p>La reforma no respon a una voluntat estètica aïllada. És la peça que permet convertir el local existent en un espai coherent amb la proposta, la gamma i el funcionament real de MESCLARI.</p>
+      <section class="eco-section" id="costos-fixos-variables">
+        <header class="eco-section-head">
+          <p class="eco-kicker">Costos fixos i variables estimats</p>
+          <h2>La sostenibilitat també es controla mes a mes</h2>
+          <p>
+            La sostenibilitat econòmica de MESCLARI no depèn només de la inversió inicial, sinó també del control de l’estructura mensual. Per això és fonamental distingir entre costos fixos i variables i entendre com afecten el funcionament real del restaurant.
+          </p>
         </header>
 
-        <div class="reforma-grid-4">
-          <article class="reforma-card">
-            <h4>Estat actual</h4>
-            <p>El punt de partida del local permet identificar una base aprofitable, però també limitacions clares en distribució, imatge i adequació funcional.</p>
+        <div class="admin-kpi-grid">
+          <article class="admin-kpi">
+            <small>Costos fixos mensuals</small>
+            <strong>Base estable</strong>
+            <p>Lloguer, personal estructural, subministraments base, assegurances i serveis recurrents.</p>
           </article>
-          <article class="reforma-card">
-            <h4>Necessitat de transformació</h4>
-            <p>El restaurant no pot construir la seva identitat ni la seva operativa final sobre l’estat existent sense una reforma prèvia.</p>
+          <article class="admin-kpi">
+            <small>Costos variables mensuals</small>
+            <strong>Activitat i producció</strong>
+            <p>Matèria primera, reposicions, consum vinculat al servei i ritme real del restaurant.</p>
           </article>
-          <article class="reforma-card">
-            <h4>Adequació a MESCLARI</h4>
-            <p>La intervenció adapta el local a una proposta gastronòmica premium, a una experiència de sala cuidada i a una estructura de treball funcional.</p>
+          <article class="admin-kpi">
+            <small>Lectura d’equilibri</small>
+            <strong>Control operatiu</strong>
+            <p>La relació entre tots dos és la que permet llegir la viabilitat del model amb més precisió.</p>
           </article>
-          <article class="reforma-card">
-            <h4>Impacte operatiu</h4>
-            <p>La transformació afecta directament la percepció del client i la capacitat de l’equip per treballar amb ordre, claredat i eficiència.</p>
+        </div>
+
+        <div class="admin-split" style="margin-top: 1.2rem;">
+          <article class="admin-control-card">
+            <h3>Costos fixos</h3>
+            <p>
+              Són les partides que sostenen l’estructura del restaurant encara que el volum de servei canviï. Aquí s’inclouen especialment lloguer, part del personal, assegurances, subministraments base i serveis recurrents.
+            </p>
+          </article>
+          <article class="admin-control-card">
+            <h3>Costos variables</h3>
+            <p>
+              Depenen del ritme de l’activitat i creixen o disminueixen segons la producció i el servei. La matèria primera, les reposicions i determinats consums operatius en formen part.
+            </p>
           </article>
         </div>
       </section>
 
-      <section class="reforma-section" id="cost-reforma">
-        <header class="reforma-section-head">
-          <p class="eco-kicker">Cost de la reforma</p>
-          <h2>Una inversió estructural, no una despesa decorativa</h2>
-          <p>La reforma concentra una part rellevant de la inversió inicial perquè és la que permet passar d’un local existent a un espai realment coherent amb MESCLARI.</p>
+      <section class="eco-section" id="proces-administratiu">
+        <header class="eco-section-head">
+          <p class="eco-kicker">Procés administratiu del restaurant</p>
+          <h2>Ordre intern per no perdre control del negoci</h2>
+          <p>
+            Una part econòmica sòlida també necessita ordre administratiu. MESCLARI no només ha de pressupostar bé, sinó també gestionar correctament documentació, seguiment intern i control bàsic de l’activitat.
+          </p>
         </header>
 
-        <div class="reforma-grid-2">
-          <article class="reforma-card">
-            <h3>Lectura estructural de la inversió</h3>
-            <p>El cost de la reforma inclou l’adequació física del local, la redistribució necessària, l’actualització d’instal·lacions i la construcció d’una atmosfera final coherent amb la gamma i amb el posicionament del restaurant. Aquesta partida no només transforma l’espai, sinó que fa possible la proposta.</p>
-          </article>
-          <article class="reforma-card">
-            <h3>Xifres clau de reforma</h3>
-            <ul class="reforma-list">
-              <li><strong>Xifra principal de reforma:</strong> 78.000 €</li>
-              <li><strong>Partides principals:</strong> obra civil i instal·lacions (52.000 €) + interiorisme i mobiliari (26.000 €)</li>
-              <li><strong>Pes dins del total inicial:</strong> 67,9% del total d’arrencada (114.900 €)</li>
+        <div class="admin-split">
+          <article class="admin-card-pro">
+            <h3>Què portarà directament el restaurant</h3>
+            <ul class="eco-list">
+              <li><strong>Control de caixa i TPV:</strong> seguiment diari de vendes, tancaments i incidències.</li>
+              <li><strong>Comandes i albarans:</strong> revisió bàsica d’entrades, recepcions i control de proveïdors.</li>
+              <li><strong>Ordre documental intern:</strong> factures, registres bàsics i seguiment operatiu de despesa.</li>
+              <li><strong>Coordinació amb gestoria:</strong> preparació i enviament ordenat de documentació perquè el suport extern pugui treballar correctament.</li>
             </ul>
+          </article>
+
+          <article class="admin-control-card">
+            <h3>Per què té sentit portar-ho així</h3>
+            <p>
+              El restaurant ha de mantenir criteri propi sobre el seu funcionament i sobre la seva despesa diària. Per això convé conservar control directe sobre els processos interns bàsics, sense carregar l’equip amb obligacions tècniques que es poden delegar.
+            </p>
           </article>
         </div>
       </section>
 
-      <section class="reforma-section" id="compra-tecnica">
-        <header class="reforma-section-head">
-          <p class="eco-kicker">Compra tècnica</p>
-          <h2>Equipar el projecte perquè pugui funcionar</h2>
-          <p>Juntament amb la reforma, MESCLARI necessita una compra tècnica vinculada a l’arrencada real de l’activitat.</p>
+      <section class="eco-section" id="gestoria-especialitzada">
+        <header class="eco-section-head">
+          <p class="eco-kicker">Gestoria especialitzada</p>
+          <h2>Externalitzar el que necessita seguretat tècnica</h2>
+          <p>
+            Determinades funcions administratives i econòmiques requereixen suport extern especialitzat per seguretat, control normatiu i eficiència.
+          </p>
         </header>
 
-        <div class="reforma-grid-2">
-          <article class="reforma-card">
-            <h3>Posada en marxa real</h3>
-            <p>Aquesta part inclou utensilis, mobiliari, maquinària i elements de suport imprescindibles per al funcionament del restaurant. No es tracta només d’equipar l’espai, sinó de garantir que sala i cuina puguin operar amb el nivell de qualitat, ritme i coherència que exigeix el projecte.</p>
-          </article>
-          <article class="reforma-card">
-            <h3>Famílies de compra</h3>
-            <ul class="reforma-list">
-              <li><strong>Utensilis i suport de cuina:</strong> elements necessaris per sostenir la producció i el servei amb regularitat i criteri tècnic.</li>
-              <li><strong>Mobiliari de sala:</strong> partida vinculada a la comoditat del client, a la identitat visual del local i a la lectura final de la sala.</li>
-              <li><strong>Maquinària clau:</strong> equipament necessari perquè la proposta pugui executar-se amb funcionalitat i estabilitat operativa.</li>
-              <li><strong>Posada en marxa:</strong> elements de suport imprescindibles per obrir amb garanties.</li>
+        <div class="admin-split">
+          <article class="admin-card-pro">
+            <div class="admin-card-top">
+              <h3>Serveis de gestoria</h3>
+              <span class="admin-price">450–650 €/mes</span>
+            </div>
+            <p>
+              La gestoria especialitzada assumeix la part fiscal, comptable i laboral que convé externalitzar per garantir una gestió correcta i actualitzada del negoci. Aquesta despesa no s’ha de llegir com un excés, sinó com una eina de control i professionalització.
+            </p>
+            <ul class="eco-list">
+              <li><strong>Fiscal i comptable:</strong> IVA, comptabilitat bàsica i seguiment formal del negoci.</li>
+              <li><strong>Laboral:</strong> nòmines, contractes, altes, baixes i suport administratiu de personal.</li>
+              <li><strong>Tancaments i obligacions anuals:</strong> gestió documental i fiscal especialitzada.</li>
             </ul>
+          </article>
+
+          <article class="admin-control-card">
+            <h3>Relació restaurant / gestoria</h3>
+            <p>
+              El model administratiu de MESCLARI es basa en una combinació coherent entre control intern i suport especialitzat extern. El restaurant conserva lectura pròpia del negoci, mentre que la gestoria assumeix la part tècnica que demana especialització, actualització normativa i seguretat formal.
+            </p>
           </article>
         </div>
       </section>
 
-      <section class="reforma-section budget-block" id="pressupost-tecnic">
-        <header class="reforma-section-head">
-          <p class="eco-kicker">Pressupost tècnic</p>
-          <h2>Sala i cuina: on es concentra la inversió</h2>
-          <p>Aquesta part complementa la compra tècnica i la posada en marxa de MESCLARI amb una lectura econòmica més clara del material de sala i de l’equipament de cuina.</p>
-        </header>
+      <section class="eco-section" id="control-intern-suport-extern">
+        <div class="admin-flow">
+          <article class="admin-flow-card">
+            <h3>Control intern</h3>
+            <p>MESCLARI conserva la lectura diària del negoci: caixa, comandes, albarans, factures i seguiment operatiu de la despesa.</p>
+          </article>
 
-        <div class="budget-kpis">
-          <article class="budget-kpi">
-            <span class="budget-kpi-label">Total compra tècnica sala + cuina</span>
-            <strong>95.635,15 €</strong>
-            <small>Material de sala + maquinària i utillatge de cuina</small>
-          </article>
-          <article class="budget-kpi">
-            <span class="budget-kpi-label">Total cuina</span>
-            <strong>78.282,28 €</strong>
-            <small>65.033,82 € en maquinària + 13.248,46 € en utillatge</small>
-          </article>
-          <article class="budget-kpi">
-            <span class="budget-kpi-label">Total sala</span>
-            <strong>17.352,87 €</strong>
-            <small>Vaixella, cristalleria, coberteria, tèxtil i suport de servei</small>
+          <div class="admin-flow-arrow" aria-hidden="true">→</div>
+
+          <article class="admin-flow-card">
+            <h3>Suport extern</h3>
+            <p>La gestoria assumeix la part fiscal, laboral i comptable que requereix especialització, actualització normativa i seguretat formal.</p>
           </article>
         </div>
-
-        <div class="reforma-grid-3">
-          <article class="budget-card">
-            <h3>Sala · Material i servei</h3>
-            <p>La inversió de sala concentra tot el material visible que dona suport al servei i al valor percebut del restaurant.</p>
-            <div class="budget-price">17.352,87 €</div>
-            <ul class="budget-list">
-              <li>Copes Borgonya, blanc i xampany: <strong>504,00 €</strong> cadascuna</li>
-              <li>Plat gris fosc de servei: <strong>424,50 €</strong></li>
-              <li>Pack de coberteria: <strong>399,90 €</strong></li>
-              <li>La sala no només es vesteix: es prepara per reforçar el ritme, la presentació i la qualitat percebuda.</li>
-            </ul>
-          </article>
-
-          <article class="budget-card">
-            <h3>Cuina · Maquinària principal</h3>
-            <p>La maquinària de cuina representa la part més forta de la compra tècnica perquè garanteix producció, conservació, passe i capacitat real d’execució.</p>
-            <div class="budget-price">65.033,82 €</div>
-            <ul class="budget-list">
-              <li>Forn gastronòmic mixt: <strong>9.075,00 €</strong></li>
-              <li>Armari refrigerat 2 portes (3 unitats): <strong>8.019,93 €</strong></li>
-              <li>Abatidor de temperatura: <strong>6.984,42 €</strong></li>
-              <li>Moble mural amb portes i calaixos: <strong>4.890,32 €</strong></li>
-              <li>És la inversió amb més pes perquè sosté la part tècnica i operativa del restaurant.</li>
-            </ul>
-          </article>
-
-          <article class="budget-card">
-            <h3>Cuina · Utillatge i suport operatiu</h3>
-            <p>L’utillatge completa la funcionalitat de la cuina i permet treballar amb ordre, precisió i regularitat.</p>
-            <div class="budget-price">13.248,46 €</div>
-            <ul class="budget-list">
-              <li>Bandeges de forn gastro: <strong>674,08 €</strong></li>
-              <li>Batedores de braç professionals: <strong>600,18 €</strong></li>
-              <li>Dispensadors iSi Gourmet Whip: <strong>395,64 €</strong></li>
-              <li>Olla recta INOX-PRO 24 L: <strong>336,87 €</strong></li>
-              <li>Aquesta partida reforça la capacitat real de treball de la cuina i la seva estabilitat de servei.</li>
-            </ul>
-          </article>
-        </div>
-
-        <article class="budget-reading">
-          <h3>Lectura del conjunt</h3>
-          <p>La compra tècnica de MESCLARI no es reparteix de manera homogènia. El pes principal es concentra a la cuina, especialment en maquinària de producció, refrigeració i suport operatiu, mentre que la sala concentra una inversió menor però decisiva en termes d’imatge, servei i qualitat percebuda. Aquesta lectura ajuda a entendre que la despesa no es dirigeix només a equipar el local, sinó a fer possible una proposta gastronòmica i de sala coherent amb el projecte.</p>
-        </article>
       </section>
 
-      <section class="reforma-section reforma-closure">
-        <p>La reforma i la compra tècnica tenen sentit perquè converteixen un espai existent en un restaurant preparat per funcionar com a MESCLARI.</p>
-        <a class="annex-button" href="pressupostos-i-gestio-administrativa.html">Continuar al bloc 2</a>
+      <section class="eco-close" id="tancament-pressupostos">
+        <p>
+          L’equilibri entre processos interns i suport de gestoria permet que MESCLARI no perdi control sobre el negoci, però tampoc assumeixi en solitari obligacions administratives que convé professionalitzar.
+        </p>
+        <div class="admin-close-actions">
+          <a class="eco-card-link" style="width: min(360px, 100%);" href="viabilitat-rendibilitat-i-resum-final.html">
+            <span>Continuar al bloc final</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </section>
     </main>
 
-    <div class="local-lightbox" id="localLightbox" hidden>
-      <div class="local-lightbox-backdrop" id="localLightboxBackdrop"></div>
-      <div class="local-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Galeria gran del local">
-        <button class="local-lightbox-close" type="button" id="closeLocalLightbox" aria-label="Tancar galeria">&times;</button>
-        <div class="local-lightbox-layout">
-          <div class="local-lightbox-thumbs" id="localLightboxThumbs"></div>
-          <div class="local-lightbox-main">
-            <button class="local-lightbox-nav prev" type="button" id="localLightboxPrev" aria-label="Imatge anterior">&#10094;</button>
-            <div class="local-lightbox-image-wrap">
-              <img id="localLightboxImage" src="" alt="Vista ampliada del local actual de MESCLARI" />
-            </div>
-            <button class="local-lightbox-nav next" type="button" id="localLightboxNext" aria-label="Imatge següent">&#10095;</button>
-          </div>
-        </div>
-        <div class="local-lightbox-footer">
-          <div>
-            <strong id="localLightboxCounter">1 / 27</strong>
-            <p id="localLightboxCaption">Galeria del local actual seleccionat per al projecte MESCLARI.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <footer class="home-footer">
+      <p>MESCLARI · Pressupostos i gestió administrativa · Part oculta de defensa econòmica.</p>
+    </footer>
 
-    <footer class="home-footer"><p>MESCLARI · Reforma i compra tècnica.</p></footer>
     <script src="script.js"></script>
-    <script>
-      (function () {
-        const imageBasePath = "imaguenes i videos/";
-        const galleryFiles = [
-          "128640_xl.jpg", "128641_xl.jpg", "128642_xl.jpg", "128643_xl.jpg", "128644_xl.jpg", "128645_xl.jpg", "128646_xl.jpg", "128647_xl.jpg", "128648_xl.jpg", "128649_xl.jpg", "128650_xl.jpg", "128651_xl.jpg", "128652_xl.jpg", "128653_xl.jpg", "128654_xl.jpg", "128655_xl.jpg", "128656_xl.jpg", "128657_xl.jpg", "128658_xl.jpg", "128659_xl.jpg", "128660_xl.jpg", "128661_xl.jpg", "128662_xl.jpg", "128663_xl.jpg", "128664_xl.jpg", "128665_xl.jpg", "128730_xl.jpg"
-        ];
-        const images = galleryFiles.map(file => ({
-          src: encodeURI(imageBasePath + file),
-          alt: "Imatge del local actual seleccionat per al projecte MESCLARI",
-          caption: "Galeria visual del local actual, utilitzada per justificar l’estat inicial i la proposta de transformació del projecte."
-        }));
-
-        const carouselImage = document.getElementById("localCarouselImage");
-        const carouselCounter = document.getElementById("localCarouselCounter");
-        const carouselDots = document.getElementById("localCarouselDots");
-        const prevBtn = document.getElementById("localCarouselPrev");
-        const nextBtn = document.getElementById("localCarouselNext");
-        const openBtn = document.getElementById("openLocalGallery");
-        const lightbox = document.getElementById("localLightbox");
-        const lightboxBackdrop = document.getElementById("localLightboxBackdrop");
-        const closeLightboxBtn = document.getElementById("closeLocalLightbox");
-        const lightboxImage = document.getElementById("localLightboxImage");
-        const lightboxCounter = document.getElementById("localLightboxCounter");
-        const lightboxCaption = document.getElementById("localLightboxCaption");
-        const lightboxThumbs = document.getElementById("localLightboxThumbs");
-        const lightboxPrev = document.getElementById("localLightboxPrev");
-        const lightboxNext = document.getElementById("localLightboxNext");
-
-        if (!carouselImage || !carouselCounter || !carouselDots || !prevBtn || !nextBtn || !openBtn) return;
-
-        let currentIndex = 0;
-        let autoplay = null;
-
-        function updateCarousel(index) {
-          currentIndex = (index + images.length) % images.length;
-          carouselImage.src = images[currentIndex].src;
-          carouselImage.alt = images[currentIndex].alt;
-          carouselCounter.textContent = (currentIndex + 1) + " / " + images.length;
-          carouselDots.querySelectorAll("button").forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
-        }
-
-        function updateLightbox(index) {
-          currentIndex = (index + images.length) % images.length;
-          lightboxImage.src = images[currentIndex].src;
-          lightboxImage.alt = images[currentIndex].alt;
-          lightboxCounter.textContent = (currentIndex + 1) + " / " + images.length;
-          lightboxCaption.textContent = images[currentIndex].caption;
-          lightboxThumbs.querySelectorAll("button").forEach((thumb, i) => thumb.classList.toggle("active", i === currentIndex));
-          updateCarousel(currentIndex);
-        }
-
-        function buildDots() {
-          carouselDots.innerHTML = "";
-          images.forEach((_, index) => {
-            const dot = document.createElement("button");
-            dot.type = "button";
-            dot.setAttribute("aria-label", "Anar a la imatge " + (index + 1));
-            dot.addEventListener("click", () => { updateCarousel(index); restartAutoplay(); });
-            carouselDots.appendChild(dot);
-          });
-        }
-
-        function buildThumbs() {
-          lightboxThumbs.innerHTML = "";
-          images.forEach((image, index) => {
-            const thumb = document.createElement("button");
-            thumb.type = "button";
-            thumb.setAttribute("aria-label", "Obrir miniatura " + (index + 1));
-            const img = document.createElement("img");
-            img.src = image.src;
-            img.alt = image.alt;
-            thumb.appendChild(img);
-            thumb.addEventListener("click", () => updateLightbox(index));
-            lightboxThumbs.appendChild(thumb);
-          });
-        }
-
-        function openLightbox(index = currentIndex) {
-          lightbox.hidden = false;
-          document.body.style.overflow = "hidden";
-          updateLightbox(index);
-        }
-
-        function closeLightbox() {
-          lightbox.hidden = true;
-          document.body.style.overflow = "";
-        }
-
-        function startAutoplay() {
-          stopAutoplay();
-          autoplay = setInterval(() => updateCarousel(currentIndex + 1), 3000);
-        }
-
-        function stopAutoplay() {
-          if (autoplay) {
-            clearInterval(autoplay);
-            autoplay = null;
-          }
-        }
-
-        function restartAutoplay() { stopAutoplay(); startAutoplay(); }
-
-        buildDots();
-        buildThumbs();
-        updateCarousel(0);
-        startAutoplay();
-
-        prevBtn.addEventListener("click", () => { updateCarousel(currentIndex - 1); restartAutoplay(); });
-        nextBtn.addEventListener("click", () => { updateCarousel(currentIndex + 1); restartAutoplay(); });
-        openBtn.addEventListener("click", () => openLightbox(currentIndex));
-        lightboxPrev.addEventListener("click", () => updateLightbox(currentIndex - 1));
-        lightboxNext.addEventListener("click", () => updateLightbox(currentIndex + 1));
-        closeLightboxBtn.addEventListener("click", closeLightbox);
-        lightboxBackdrop.addEventListener("click", closeLightbox);
-        openBtn.addEventListener("mouseenter", stopAutoplay);
-        openBtn.addEventListener("mouseleave", startAutoplay);
-        openBtn.addEventListener("focus", stopAutoplay);
-        openBtn.addEventListener("blur", startAutoplay);
-
-        document.addEventListener("keydown", (event) => {
-          if (!lightbox.hidden) {
-            if (event.key === "Escape") closeLightbox();
-            if (event.key === "ArrowLeft") updateLightbox(currentIndex - 1);
-            if (event.key === "ArrowRight") updateLightbox(currentIndex + 1);
-          } else {
-            if (event.key === "ArrowLeft") { updateCarousel(currentIndex - 1); restartAutoplay(); }
-            if (event.key === "ArrowRight") { updateCarousel(currentIndex + 1); restartAutoplay(); }
-          }
-        });
-      })();
-    </script>
   </body>
 </html>
