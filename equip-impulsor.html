@@ -719,6 +719,149 @@
           align-items: flex-start;
         }
       }
+
+
+      /* =========================================================
+         AJUST HERO EQUIP · DISTRIBUCIÓ COM PORTADA PRINCIPAL
+         Text a l'esquerra clar i foto sencera a la dreta
+      ========================================================= */
+
+      .equip-page {
+        margin-top: clamp(5.2rem, 6vw, 6.2rem);
+      }
+
+      .equip-hero {
+        grid-template-columns: minmax(360px, 0.98fr) minmax(420px, 1.02fr);
+        gap: clamp(1rem, 1.6vw, 1.25rem);
+        padding: clamp(1.2rem, 2vw, 1.55rem);
+        align-items: stretch;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 233, 220, 0.78));
+        border: 1px solid rgba(30, 45, 59, 0.12);
+        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+      }
+
+      .equip-hero::after {
+        content: "";
+      }
+
+      .hero-copy {
+        min-height: 500px;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: clamp(2rem, 4vw, 3.5rem) clamp(1.6rem, 3vw, 3rem);
+        border-radius: 1.8rem;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.08), transparent 23rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.74));
+        color: var(--equip-blue);
+        border: 1px solid rgba(194, 94, 60, 0.16);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+          0 16px 38px rgba(30, 45, 59, 0.06);
+      }
+
+      .hero-copy .equip-eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--equip-blue);
+      }
+
+      .hero-copy h1 {
+        max-width: 760px;
+        color: var(--equip-terracotta);
+        font-size: clamp(3.2rem, 5.7vw, 5.75rem);
+        line-height: 0.92;
+        letter-spacing: 0.02em;
+      }
+
+      .hero-copy p {
+        max-width: 690px;
+        margin: 1.15rem auto 0;
+        color: var(--equip-blue);
+        font-size: clamp(1rem, 1.25vw, 1.16rem);
+        line-height: 1.62;
+      }
+
+      .hero-chip-row {
+        justify-content: center;
+      }
+
+      .hero-chip-row span {
+        background: rgba(194, 94, 60, 0.1);
+        border-color: rgba(194, 94, 60, 0.24);
+        color: #734633;
+      }
+
+      .hero-photo {
+        min-height: 500px;
+      }
+
+      .hero-photo-complete {
+        padding: clamp(0.7rem, 1.2vw, 1rem);
+        border-radius: 1.8rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(244, 233, 220, 0.82));
+        border: 1px solid rgba(30, 45, 59, 0.15);
+        box-shadow: 0 16px 38px rgba(30, 45, 59, 0.08);
+      }
+
+      .hero-photo-complete .image-button {
+        min-height: 100%;
+        padding: 0;
+        background: rgba(244, 233, 220, 0.52);
+        border-radius: 1.35rem;
+      }
+
+      .hero-photo-complete img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 1.1rem;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .hero-photo-complete .photo-caption {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @media (max-width: 1120px) {
+        .equip-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .hero-photo {
+          min-height: auto;
+        }
+
+        .hero-photo {
+          height: min(68vw, 520px);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .equip-page {
+          margin-top: 5.25rem;
+        }
+
+        .hero-copy {
+          padding: 1.5rem 1.2rem;
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(2.7rem, 13vw, 4.1rem);
+        }
+
+        .hero-photo {
+          height: min(82vw, 420px);
+        }
+      }
+
     </style>
   </head>
 
