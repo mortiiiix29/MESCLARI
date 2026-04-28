@@ -219,6 +219,101 @@
         pointer-events: none;
       }
 
+      .visio-page-premium .vg-image-trigger {
+        appearance: none;
+        -webkit-appearance: none;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        padding: 0;
+        cursor: zoom-in;
+        text-align: left;
+      }
+
+      .visio-page-premium .vg-image-trigger:focus-visible {
+        outline: 3px solid rgba(194, 94, 60, 0.45);
+        outline-offset: 4px;
+      }
+
+      .visio-page-premium .vg-image-hint {
+        position: absolute;
+        left: 1.15rem;
+        bottom: 1.15rem;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.72rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.9);
+        color: var(--mesclari-blue);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        box-shadow: 0 12px 34px rgba(30, 45, 59, 0.16);
+        backdrop-filter: blur(10px);
+      }
+
+      .visio-page-premium .vg-image-hint::before {
+        content: "+";
+        display: inline-grid;
+        place-items: center;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 999px;
+        background: var(--mesclari-terracotta);
+        color: #fff;
+        line-height: 1;
+      }
+
+      .mesclari-lightbox[hidden] {
+        display: none;
+      }
+
+      .mesclari-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        padding: clamp(1rem, 3vw, 2.5rem);
+        background: rgba(30, 45, 59, 0.86);
+        backdrop-filter: blur(12px);
+      }
+
+      .mesclari-lightbox__inner {
+        position: relative;
+        width: min(1180px, 96vw);
+        max-height: 92vh;
+        padding: clamp(0.75rem, 1.5vw, 1.1rem);
+        border-radius: 1.65rem;
+        background: rgba(244, 233, 220, 0.96);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+      }
+
+      .mesclari-lightbox__inner img {
+        display: block;
+        width: 100%;
+        max-height: 82vh;
+        object-fit: contain;
+        border-radius: 1.15rem;
+        background: rgba(30, 45, 59, 0.08);
+      }
+
+      .mesclari-lightbox__close {
+        position: absolute;
+        top: -0.85rem;
+        right: -0.85rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 0;
+        border-radius: 999px;
+        background: var(--mesclari-terracotta);
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+      }
+
       .visio-page-premium .vg-executive-note {
         grid-column: 1 / -1;
         display: grid;
@@ -582,9 +677,10 @@
             <h1><span class="vg-brand-word">MESCLARI</span><span class="vg-title-rest">Una proposta gastronòmica pensada per existir amb sentit, coherència i criteri</span></h1>
             <p>MESCLARI neix com un restaurant gastronòmic contemporani de gamma alta, concebut per unir producte, sala, maridatge i identitat en una mateixa direcció. Es planteja com un model complet, amb encaix real al territori i base operativa sòlida.</p>
           </div>
-          <aside class="vg-opening-media" aria-label="Entorn i marc visual de MESCLARI">
+          <button type="button" class="vg-opening-media vg-image-trigger" data-lightbox-src="imaguenes i videos/home-mercat-entorn.jpg" data-lightbox-alt="Entorn mediterrani associat al model MESCLARI" aria-label="Ampliar imatge de l’entorn de MESCLARI">
             <img src="imaguenes i videos/home-mercat-entorn.jpg" alt="Entorn mediterrani associat al model MESCLARI" />
-          </aside>
+            <span class="vg-image-hint">Veure imatge completa</span>
+          </button>
           <article class="vg-executive-note">
             <h3>Síntesi executiva</h3>
             <p>La força de MESCLARI no depèn d’un únic element, sinó de la coherència entre capes: concepte gastronòmic, mercat, sala, espai i viabilitat.</p>
@@ -715,6 +811,53 @@
     <footer class="home-footer">
       <p>MESCLARI · Dossier digital de defensa professional amb orientació executiva.</p>
     </footer>
+
+    <div class="mesclari-lightbox" id="mesclariImageLightbox" hidden aria-hidden="true" role="dialog" aria-label="Imatge ampliada">
+      <div class="mesclari-lightbox__inner">
+        <button type="button" class="mesclari-lightbox__close" aria-label="Tancar imatge">×</button>
+        <img src="" alt="" id="mesclariLightboxImg" />
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const lightbox = document.getElementById('mesclariImageLightbox');
+        const lightboxImg = document.getElementById('mesclariLightboxImg');
+        const closeBtn = lightbox?.querySelector('.mesclari-lightbox__close');
+        const triggers = document.querySelectorAll('[data-lightbox-src]');
+
+        if (!lightbox || !lightboxImg || !closeBtn || !triggers.length) return;
+
+        const openLightbox = (trigger) => {
+          lightboxImg.src = trigger.dataset.lightboxSrc;
+          lightboxImg.alt = trigger.dataset.lightboxAlt || '';
+          lightbox.hidden = false;
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+          lightbox.hidden = true;
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.src = '';
+          document.body.style.overflow = '';
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener('click', () => openLightbox(trigger));
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+        });
+      })();
+    </script>
 
     <script src="script.js"></script>
   </body>
