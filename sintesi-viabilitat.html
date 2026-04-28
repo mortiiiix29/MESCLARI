@@ -92,7 +92,7 @@
     width: min(1180px, calc(100% - 2rem));
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+    grid-template-columns: 1fr;
     gap: clamp(1.1rem, 2.4vw, 2rem);
     align-items: stretch;
     padding: clamp(1rem, 2vw, 1.4rem);
@@ -613,6 +613,27 @@
       font-size: clamp(2rem, 12vw, 3.5rem);
     }
   }
+
+  /* AJUST FINAL: hero sin imagen inicial y contenido a ancho completo */
+  .sintesi-final-page .sintesi-hero-final {
+    grid-template-columns: 1fr;
+  }
+
+  .sintesi-final-page .sintesi-hero-copy {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .sintesi-final-page .sintesi-hero-copy h1,
+  .sintesi-final-page .sintesi-intro,
+  .sintesi-final-page .sintesi-verdict-panel p {
+    max-width: none;
+  }
+
+  .sintesi-final-page .sintesi-verdict-panel {
+    width: 100%;
+  }
+
 </style>
 
 <main class="sintesi-main sintesi-final-page">
@@ -830,5 +851,4 @@
   </body>
   
 </html>
-
 
