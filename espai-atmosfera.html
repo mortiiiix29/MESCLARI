@@ -864,6 +864,75 @@
         }
       }
 
+
+      /* =========================================================
+         HERO DOBLE IMATGE · MENJADOR + SUPERFÍCIE
+      ========================================================= */
+
+      .espai-hero-media-stack {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(0.8rem, 1.35vw, 1rem);
+        min-height: clamp(430px, 36vw, 480px);
+      }
+
+      .espai-hero-media-stack .espai-hero-media {
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        margin: 0;
+        padding: clamp(0.58rem, 1vw, 0.75rem);
+        appearance: none;
+        -webkit-appearance: none;
+        text-align: left;
+      }
+
+      .espai-hero-media-stack .espai-hero-media img {
+        height: 100%;
+        min-height: 0 !important;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 1.18rem;
+        background: rgba(30, 45, 59, 0.055);
+      }
+
+      .espai-hero-media-stack .espai-hero-media-item--capacity {
+        background:
+          radial-gradient(circle at 95% 5%, rgba(110, 139, 116, 0.12), transparent 16rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 233, 220, 0.64));
+      }
+
+      .espai-hero-media-stack .espai-image-hint {
+        left: 1.05rem;
+        bottom: 1rem;
+        padding: 0.58rem 0.78rem;
+        font-size: 0.74rem;
+        box-shadow: 0 10px 26px rgba(30, 45, 59, 0.14);
+      }
+
+      .espai-hero-media-stack .espai-image-hint::before {
+        width: 1.08rem;
+        height: 1.08rem;
+      }
+
+      @media (max-width: 1120px) {
+        .espai-hero-media-stack {
+          min-height: 600px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .espai-hero-media-stack {
+          min-height: 560px;
+        }
+
+        .espai-hero-media-stack .espai-image-hint {
+          left: 0.85rem;
+          bottom: 0.85rem;
+          font-size: 0.7rem;
+        }
+      }
+
     </style>
   </head>
 
@@ -904,10 +973,17 @@
             </p>
           </div>
 
-          <button class="espai-hero-media" type="button" data-lightbox-src="imaguenes i videos/superficie-capacitat.jpg" data-lightbox-alt="Visual principal del menjador de MESCLARI" aria-label="Ampliar visual principal del menjador de MESCLARI">
-            <img src="imaguenes i videos/comedor.jpeg" alt="Visual principal del menjador de MESCLARI" loading="lazy" />
-            <span class="espai-image-hint">Veure imatge completa</span>
-          </button>
+          <div class="espai-hero-media-stack" aria-label="Visuals principals de l’espai MESCLARI">
+            <button class="espai-hero-media espai-hero-media-item" type="button" data-lightbox-src="imaguenes i videos/comedor.jpeg" data-lightbox-alt="Visual principal del menjador de MESCLARI" aria-label="Ampliar visual principal del menjador de MESCLARI">
+              <img src="imaguenes i videos/comedor.jpeg" alt="Visual principal del menjador de MESCLARI" loading="lazy" />
+              <span class="espai-image-hint">Veure menjador</span>
+            </button>
+
+            <button class="espai-hero-media espai-hero-media-item espai-hero-media-item--capacity" type="button" data-lightbox-src="imaguenes i videos/superficie-capacitat.jpg" data-lightbox-alt="Superfície i capacitat del local MESCLARI després de la reforma" aria-label="Ampliar imatge de superfície i capacitat del local MESCLARI">
+              <img src="imaguenes i videos/superficie-capacitat.jpg" alt="Superfície i capacitat del local MESCLARI després de la reforma" loading="lazy" />
+              <span class="espai-image-hint">Veure superfície</span>
+            </button>
+          </div>
 
           <div class="espai-hero-band" aria-label="Claus de l’espai i l’atmosfera de MESCLARI">
             <article>
