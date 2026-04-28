@@ -3,383 +3,763 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · IDENTITAT DEL PROJECTE I CONCEPTE DE MARCA</title>
+    <title>MESCLARI · Identitat del projecte</title>
     <meta name="description" content="L’univers MESCLARI: identitat, pilars i traducció del relat de marca en decisions reals de cuina, sala i espai." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+
     <style>
+      /* =========================================================
+         MESCLARI · IDENTITAT DEL PROJECTE
+         Adaptació visual premium mantenint el contingut original
+      ========================================================= */
+
+      body.identitat-page {
+        --mesclari-terracotta: #c25e3c;
+        --mesclari-blue: #1e2d3b;
+        --mesclari-ink: #233849;
+        --mesclari-ink-soft: #4a5f72;
+        --mesclari-beige: #f4e9dc;
+        --mesclari-sand: #d8cbb2;
+        --mesclari-olive: #6e8b74;
+        --mesclari-line: rgba(30, 45, 59, 0.12);
+        --mesclari-card: rgba(255, 255, 255, 0.74);
+        background:
+          radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.13), transparent 34rem),
+          radial-gradient(circle at 92% 6%, rgba(110, 139, 116, 0.13), transparent 32rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.78), rgba(255, 255, 255, 0.98));
+      }
+
+      .identitat-main,
+      .identitat-main * {
+        box-sizing: border-box;
+      }
+
       .identitat-main {
-        width: min(1240px, 92vw);
-        margin: 1rem auto 0;
-        display: grid;
-        gap: 1.2rem;
+        width: 100%;
+        padding: clamp(5.9rem, 7vw, 7rem) 0 0;
+        color: var(--mesclari-blue);
+        overflow-x: hidden;
       }
 
-      .identitat-section {
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        padding: clamp(1rem, 2.2vw, 1.7rem);
-        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.6));
-        box-shadow: 0 12px 24px rgba(30, 45, 59, 0.1);
+      .identitat-main p {
+        line-height: 1.72;
       }
 
-      .identitat-head {
-        display: grid;
-        gap: 0.35rem;
-        margin-bottom: 0.9rem;
+      .identitat-main h1,
+      .identitat-main h2,
+      .identitat-main h3,
+      .identitat-main h4 {
+        font-family: "Cormorant Garamond", serif;
       }
 
-      .identitat-kicker {
-        color: #5f7282;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
+      .identitat-shell,
+      .identitat-section,
+      .identitat-hero-premium {
+        width: min(1280px, calc(100% - 2rem));
+        margin-inline: auto;
+      }
+
+      .identitat-kicker,
+      .identitat-section-kicker {
+        display: inline-flex;
+        margin: 0 0 0.8rem;
         font-size: 0.78rem;
-        font-weight: 700;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mesclari-terracotta);
       }
 
-      .identitat-head h2 {
-        color: var(--blue);
-        font-size: clamp(2rem, 3.6vw, 3rem);
-      }
+      /* HERO */
 
-      .identitat-intro {
-        color: #31495d;
-        max-width: 74ch;
-      }
-
-      .identitat-hero {
+      .identitat-hero-premium {
+        position: relative;
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-        gap: 1rem;
-        align-items: stretch;
+        grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+        gap: clamp(1rem, 2vw, 1.4rem);
+        padding: clamp(1rem, 1.6vw, 1.25rem);
+        border-radius: 2.25rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.62));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.1);
+        overflow: hidden;
+      }
+
+      .identitat-hero-premium::before {
+        content: "IDENTITAT";
+        position: absolute;
+        right: -1.5rem;
+        top: -0.2rem;
+        z-index: 0;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4.5rem, 10vw, 10rem);
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(30, 45, 59, 0.045);
+        pointer-events: none;
       }
 
       .identitat-hero-copy {
-        display: grid;
-        align-content: center;
-        gap: 0.75rem;
-        padding: clamp(1rem, 2.2vw, 1.4rem);
-        border-radius: 16px;
-        border: 1px solid rgba(194, 94, 60, 0.24);
-        background: rgba(244, 233, 220, 0.72);
-        box-shadow: inset 0 0 0 1px rgba(216, 203, 178, 0.45);
+        position: relative;
+        z-index: 2;
+        min-height: 570px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(2rem, 4vw, 4.2rem);
+        border-radius: 1.9rem;
+        background:
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
+          var(--mesclari-blue);
+        color: var(--mesclari-beige);
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+        overflow: hidden;
+      }
+
+      .identitat-hero-copy::after {
+        content: "MESCLARI";
+        position: absolute;
+        left: -1rem;
+        bottom: -1.2rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4.5rem, 9vw, 9rem);
+        font-weight: 700;
+        letter-spacing: -0.08em;
+        color: rgba(244, 233, 220, 0.055);
+        line-height: 1;
+        pointer-events: none;
       }
 
       .identitat-hero-copy h1 {
-        color: var(--terracotta);
-        font-size: clamp(2.6rem, 5.6vw, 4.3rem);
-        line-height: 0.94;
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(4rem, 7.8vw, 7.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        color: #fff;
       }
 
       .identitat-hero-copy p {
-        color: #2f4658;
-        max-width: 44ch;
-      }
-
-      .identitat-media {
-        border: 1px solid rgba(30, 45, 59, 0.24);
-        border-radius: 16px;
-        background:
-          radial-gradient(circle at 22% 20%, rgba(194, 94, 60, 0.24), transparent 38%),
-          radial-gradient(circle at 78% 78%, rgba(110, 139, 116, 0.18), transparent 40%),
-          linear-gradient(160deg, rgba(30, 45, 59, 0.94), rgba(56, 78, 98, 0.84));
-        min-height: 340px;
-        display: grid;
-        align-content: end;
-        overflow: hidden;
-        box-shadow: 0 16px 28px rgba(30, 45, 59, 0.2);
-      }
-
-      .media-placeholder {
-        padding: 1rem;
-        border-top: 1px solid rgba(216, 203, 178, 0.25);
-        background: rgba(30, 45, 59, 0.25);
-      }
-
-      .media-placeholder strong {
-        display: block;
-        font-size: 1.05rem;
-        color: #efe3d1;
-      }
-
-      .media-placeholder span {
-        color: #dccdb8;
-        font-size: 0.88rem;
-      }
-
-      .editorial-two {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.9rem;
-      }
-
-      .editorial-piece {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem;
-        background: rgba(244, 233, 220, 0.86);
-        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.09);
-      }
-
-      .editorial-piece h3 {
-        color: var(--terracotta);
-        font-size: 1.6rem;
-        margin-bottom: 0.35rem;
-      }
-
-      .editorial-piece p {
-        color: #2f4658;
-      }
-
-      .key-lines {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.45rem;
-        margin-top: 0.75rem;
-      }
-
-      .key-lines span {
-        display: inline-flex;
-        border-radius: 999px;
-        border: 1px solid rgba(194, 94, 60, 0.28);
-        background: rgba(194, 94, 60, 0.1);
-        color: #734633;
-        padding: 0.24rem 0.7rem;
-        font-size: 0.82rem;
-        font-weight: 600;
-      }
-
-      .pillars-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.8rem;
-      }
-
-      .pillar-card {
-        border: 1px solid rgba(194, 94, 60, 0.24);
-        border-radius: 14px;
-        padding: 1rem;
-        background: linear-gradient(165deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.75));
-        box-shadow: 0 10px 18px rgba(30, 45, 59, 0.08);
-      }
-
-      .pillar-card .num {
-        display: inline-flex;
-        width: 2rem;
-        height: 2rem;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: 1px solid rgba(194, 94, 60, 0.38);
-        color: #8d3c21;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-      }
-
-      .pillar-card h3 {
-        font-size: 1.45rem;
-        color: var(--blue);
-        margin-bottom: 0.3rem;
-      }
-
-      .pillar-card p {
-        color: #2f4658;
-        font-size: 0.95rem;
-      }
-
-      .sensorial-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
-        gap: 1rem;
-      }
-
-      .sensorial-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
-      }
-
-      .sensorial-item {
-        border: 1px solid var(--line);
-        border-radius: 13px;
-        padding: 0.9rem;
-        background: rgba(244, 233, 220, 0.88);
-      }
-
-      .sensorial-item h3 {
-        color: var(--terracotta);
-        font-size: 1.35rem;
-      }
-
-      .sensorial-item p {
-        color: #31495d;
-        font-size: 0.93rem;
-      }
-
-      .support-media {
-        border-radius: 14px;
-        border: 1px solid rgba(30, 45, 59, 0.24);
-        min-height: 290px;
-        display: grid;
-        align-content: end;
-        background:
-          linear-gradient(145deg, rgba(244, 233, 220, 0.28), rgba(30, 45, 59, 0.36)),
-          linear-gradient(160deg, rgba(56, 78, 98, 0.95), rgba(30, 45, 59, 0.9));
-        overflow: hidden;
-      }
-
-      .identitat-media.has-image,
-      .support-media.has-image,
-      .media-mini.has-image {
         position: relative;
-        align-content: end;
+        z-index: 2;
+        max-width: 690px;
+        margin: 1.25rem 0 0;
+        color: rgba(244, 233, 220, 0.86);
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
       }
 
-      .identitat-media.has-image img,
-      .support-media.has-image img,
-      .media-mini.has-image img {
-        position: absolute;
-        inset: 0;
+      .identitat-hero-copy .identitat-kicker {
+        position: relative;
+        z-index: 2;
+        color: var(--mesclari-sand);
+      }
+
+      .identitat-image-card {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        min-height: 570px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 1.9rem;
+        background: rgba(244, 233, 220, 0.5);
+        overflow: hidden;
+        cursor: zoom-in;
+        box-shadow: 0 22px 58px rgba(30, 45, 59, 0.14);
+      }
+
+      .identitat-image-card img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        transition: transform 0.35s ease, filter 0.35s ease;
       }
 
-      .identitat-media.has-image .media-placeholder,
-      .support-media.has-image .media-placeholder,
-      .media-mini.has-image .media-placeholder {
-        position: relative;
-        z-index: 1;
-        background: linear-gradient(180deg, rgba(30, 45, 59, 0.06), rgba(30, 45, 59, 0.62));
+      .identitat-image-card:hover img {
+        transform: scale(1.025);
+        filter: saturate(1.04) contrast(1.02);
       }
 
-      .personality-matrix {
+      .identitat-image-label {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.9rem 1rem;
+        border-radius: 1.1rem;
+        background: rgba(255, 255, 255, 0.74);
+        color: var(--mesclari-blue);
+        font-size: 0.88rem;
+        font-weight: 700;
+        backdrop-filter: blur(12px);
+      }
+
+      .identitat-image-label span:last-child {
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* SECCIONES */
+
+      .identitat-section {
+        margin-top: clamp(1.2rem, 2vw, 1.6rem);
+        padding: clamp(2rem, 4vw, 3.5rem);
+        border-radius: 2.1rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 233, 220, 0.58));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 18px 55px rgba(30, 45, 59, 0.075);
+      }
+
+      .identitat-section-head {
+        max-width: 940px;
+        margin-bottom: clamp(1.6rem, 3vw, 2.25rem);
+      }
+
+      .identitat-section-head h2 {
+        margin: 0;
+        font-size: clamp(2.5rem, 5vw, 4.9rem);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+        color: var(--mesclari-blue);
+      }
+
+      .identitat-section-head p {
+        max-width: 860px;
+        margin: 1rem 0 0;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
+      }
+
+      /* DEFINICIÓN */
+
+      .identitat-editorial-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
+        gap: clamp(1rem, 1.7vw, 1.35rem);
       }
 
-      .pair-card {
-        border: 1px solid rgba(194, 94, 60, 0.26);
-        border-radius: 14px;
-        padding: 0.95rem 1rem;
-        background: rgba(244, 233, 220, 0.9);
+      .identitat-editorial-card {
+        min-height: 290px;
+        padding: clamp(1.45rem, 2.4vw, 2.1rem);
+        border-radius: 1.55rem;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 15px 38px rgba(30, 45, 59, 0.06);
       }
 
-      .pair-card strong {
-        color: var(--blue);
-        font-size: 1.08rem;
+      .identitat-editorial-card h3 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+        line-height: 1;
+        color: var(--mesclari-terracotta);
       }
 
-      .translation-grid {
+      .identitat-editorial-card p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .identitat-key-lines {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: 1.2rem;
+      }
+
+      .identitat-key-lines span {
+        display: inline-flex;
+        padding: 0.65rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.1);
+        border: 1px solid rgba(194, 94, 60, 0.2);
+        color: #8a4630;
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      /* PILARES */
+
+      .identitat-pillars-grid {
         display: grid;
-        gap: 0.8rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(1rem, 1.6vw, 1.25rem);
       }
 
-      .translation-card {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 1rem;
-        background: rgba(244, 233, 220, 0.88);
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr);
-        gap: 0.8rem;
+      .identitat-pillar-card {
+        position: relative;
+        min-height: 310px;
+        padding: clamp(1.25rem, 2vw, 1.65rem);
+        border-radius: 1.55rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.58));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 18px 44px rgba(30, 45, 59, 0.06);
+        overflow: hidden;
+      }
+
+      .identitat-pillar-card::after {
+        content: attr(data-number);
+        position: absolute;
+        right: -0.15rem;
+        bottom: -0.35rem;
+        font-size: 5rem;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(30, 45, 59, 0.05);
+        pointer-events: none;
+      }
+
+      .identitat-pillar-card .num {
+        display: inline-flex;
+        width: 2.35rem;
+        height: 2.35rem;
         align-items: center;
-      }
-
-      .translation-copy h3 {
-        color: var(--terracotta);
-        font-size: 1.55rem;
-        margin-bottom: 0.25rem;
-      }
-
-      .translation-copy p {
-        color: #2f4658;
-      }
-
-      .media-mini {
-        border: 1px solid rgba(30, 45, 59, 0.2);
-        border-radius: 12px;
-        min-height: 180px;
-        display: grid;
-        align-content: end;
-        background:
-          linear-gradient(145deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.4)),
-          linear-gradient(160deg, rgba(56, 78, 98, 0.9), rgba(30, 45, 59, 0.86));
-        overflow: hidden;
-      }
-
-      .optional-video {
+        justify-content: center;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        background: rgba(194, 94, 60, 0.12);
         border: 1px solid rgba(194, 94, 60, 0.24);
-        border-radius: 14px;
-        min-height: 220px;
-        margin-top: 0.85rem;
-        display: grid;
-        align-content: end;
-        background:
-          radial-gradient(circle at 80% 20%, rgba(194, 94, 60, 0.22), transparent 42%),
-          linear-gradient(160deg, rgba(30, 45, 59, 0.92), rgba(56, 78, 98, 0.82));
-        overflow: hidden;
+        color: var(--mesclari-terracotta);
+        font-size: 0.8rem;
+        font-weight: 900;
       }
+
+      .identitat-pillar-card h3 {
+        margin: 0 0 0.8rem;
+        font-size: clamp(1.55rem, 2.2vw, 2.05rem);
+        line-height: 1;
+        color: var(--mesclari-blue);
+      }
+
+      .identitat-pillar-card p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.96rem;
+      }
+
+      /* SENSORIAL */
+
+      .identitat-sensorial-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: stretch;
+      }
+
+      .identitat-sensorial-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 1.5vw, 1.2rem);
+      }
+
+      .identitat-sensorial-item {
+        padding: clamp(1.2rem, 2vw, 1.6rem);
+        border-radius: 1.45rem;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+      }
+
+      .identitat-sensorial-item h3 {
+        margin: 0 0 0.65rem;
+        font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+        color: var(--mesclari-terracotta);
+      }
+
+      .identitat-sensorial-item p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .identitat-support-image {
+        min-height: 100%;
+      }
+
+      /* PERSONALIDAD */
+
+      .identitat-personality-matrix {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(0.8rem, 1.3vw, 1rem);
+      }
+
+      .identitat-pair-card {
+        min-height: 120px;
+        display: flex;
+        align-items: flex-end;
+        padding: 1.1rem;
+        border-radius: 1.25rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(244, 233, 220, 0.58));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+      }
+
+      .identitat-pair-card strong {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.35rem, 2vw, 1.8rem);
+        line-height: 1.05;
+        color: var(--mesclari-blue);
+      }
+
+      /* TRADUCCIÓN */
+
+      .identitat-translation-grid {
+        display: grid;
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+      }
+
+      .identitat-translation-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+        align-items: stretch;
+        padding: clamp(1rem, 1.8vw, 1.25rem);
+        border-radius: 1.75rem;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
+      }
+
+      .identitat-translation-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(1rem, 2vw, 1.65rem);
+      }
+
+      .identitat-translation-copy h3 {
+        margin: 0 0 0.75rem;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        line-height: 1;
+        color: var(--mesclari-terracotta);
+      }
+
+      .identitat-translation-copy p {
+        max-width: 760px;
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .identitat-mini-image {
+        min-height: 260px;
+      }
+
+      /* IMÁGENES CLICABLES */
+
+      .identitat-image-button {
+        position: relative;
+        width: 100%;
+        min-height: 320px;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 1.45rem;
+        background: rgba(244, 233, 220, 0.6);
+        overflow: hidden;
+        cursor: zoom-in;
+        box-shadow: inset 0 0 0 1px rgba(30, 45, 59, 0.08);
+      }
+
+      .identitat-image-button img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.35s ease, filter 0.35s ease;
+      }
+
+      .identitat-image-button:hover img {
+        transform: scale(1.025);
+        filter: saturate(1.04) contrast(1.02);
+      }
+
+      .identitat-image-button .view-full {
+        position: absolute;
+        right: 0.9rem;
+        bottom: 0.9rem;
+        padding: 0.55rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        color: var(--mesclari-terracotta);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        backdrop-filter: blur(10px);
+      }
+
+      /* VIDEO */
+
+      .identitat-video-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        margin-top: clamp(1rem, 2vw, 1.5rem);
+        padding: clamp(1.2rem, 2vw, 1.6rem);
+        border-radius: 1.75rem;
+        border: 1px solid rgba(30, 45, 59, 0.12);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(244, 233, 220, 0.68));
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.07);
+      }
+
+      .identitat-video-head h3 {
+        margin: 0.35rem 0 0;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        line-height: 1;
+        color: var(--mesclari-blue);
+      }
+
+      .identitat-video-head p {
+        max-width: 920px;
+        margin: 0.8rem 0 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .identitat-video-badge {
+        display: inline-flex;
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.1);
+        color: var(--mesclari-terracotta);
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .identitat-video-ratio {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 320px;
+        border-radius: 1.45rem;
+        overflow: hidden;
+        background: #101820;
+        box-shadow: 0 18px 45px rgba(30, 45, 59, 0.13);
+      }
+
+      .identitat-video-ratio iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        background: #000;
+      }
+
+      .identitat-video-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .identitat-video-footer p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.94rem;
+      }
+
+      .identitat-drive-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.85rem 1.15rem;
+        border-radius: 999px;
+        background: var(--mesclari-blue);
+        color: var(--mesclari-beige);
+        text-decoration: none;
+        font-weight: 800;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+      }
+
+      .identitat-drive-link:hover {
+        transform: translateY(-1px);
+        opacity: 0.96;
+      }
+
+      /* CIERRE */
 
       .identitat-closure {
+        margin-bottom: clamp(2rem, 5vw, 4rem);
+        padding: clamp(2.2rem, 4vw, 4rem);
         text-align: center;
-        padding-block: clamp(1.4rem, 3vw, 2.4rem);
+        color: var(--mesclari-beige);
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92)),
+          var(--mesclari-blue);
+        overflow: hidden;
       }
 
       .identitat-closure p {
-        color: var(--blue);
-        font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-        line-height: 1.45;
-        max-width: 70ch;
+        max-width: 920px;
         margin: 0 auto;
+        color: rgba(244, 233, 220, 0.86);
+        font-size: clamp(1.08rem, 1.4vw, 1.25rem);
       }
 
       .identitat-closure strong {
         display: block;
-        margin-top: 0.75rem;
-        font-family: 'Cormorant Garamond', serif;
-        color: var(--terracotta);
-        font-size: clamp(1.35rem, 2.7vw, 2rem);
+        margin-top: 1.2rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 4.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+        color: #fff;
       }
 
-      @media (max-width: 1060px) {
-        .pillars-grid {
+      .identitat-closure .identitat-section-kicker {
+        color: var(--mesclari-sand);
+      }
+
+      /* LIGHTBOX */
+
+      .mesclari-lightbox[hidden] {
+        display: none;
+      }
+
+      .mesclari-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1rem, 3vw, 2rem);
+        background: rgba(12, 18, 24, 0.86);
+        backdrop-filter: blur(12px);
+      }
+
+      .mesclari-lightbox__inner {
+        position: relative;
+        width: min(1180px, 94vw);
+        height: min(82vh, 820px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .mesclari-lightbox__inner img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 1.3rem;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+        background: #111;
+      }
+
+      .mesclari-lightbox__close {
+        position: absolute;
+        top: -0.75rem;
+        right: -0.75rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(244, 233, 220, 0.96);
+        color: var(--mesclari-blue);
+        font-size: 1.7rem;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 1080px) {
+        .identitat-hero-premium,
+        .identitat-sensorial-layout,
+        .identitat-translation-card {
+          grid-template-columns: 1fr;
+        }
+
+        .identitat-hero-copy,
+        .identitat-image-card {
+          min-height: auto;
+        }
+
+        .identitat-image-card {
+          min-height: 410px;
+        }
+
+        .identitat-pillars-grid,
+        .identitat-personality-matrix {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
-      @media (max-width: 920px) {
-        .identitat-hero,
-        .sensorial-layout,
-        .translation-card {
-          grid-template-columns: 1fr;
-        }
-
-        .identitat-media,
-        .support-media,
-        .optional-video {
-          min-height: 250px;
-        }
-      }
-
       @media (max-width: 760px) {
-        .editorial-two,
-        .sensorial-grid,
-        .personality-matrix,
-        .pillars-grid {
-          grid-template-columns: 1fr;
+        .identitat-main {
+          padding-top: 5.6rem;
+        }
+
+        .identitat-shell,
+        .identitat-section,
+        .identitat-hero-premium {
+          width: min(100% - 1rem, 1280px);
+        }
+
+        .identitat-hero-premium,
+        .identitat-section {
+          border-radius: 1.5rem;
+        }
+
+        .identitat-hero-copy {
+          padding: 1.5rem;
+          border-radius: 1.25rem;
         }
 
         .identitat-hero-copy h1 {
-          font-size: clamp(2.2rem, 11vw, 3.2rem);
+          font-size: clamp(3.1rem, 16vw, 4.8rem);
+        }
+
+        .identitat-editorial-grid,
+        .identitat-pillars-grid,
+        .identitat-sensorial-grid,
+        .identitat-personality-matrix,
+        .identitat-translation-card {
+          grid-template-columns: 1fr;
+        }
+
+        .identitat-image-card,
+        .identitat-image-button,
+        .identitat-video-ratio {
+          min-height: 260px;
+        }
+
+        .identitat-video-footer {
+          align-items: stretch;
+        }
+
+        .identitat-drive-link {
+          width: 100%;
+        }
+
+        .mesclari-lightbox__close {
+          top: 0.5rem;
+          right: 0.5rem;
         }
       }
     </style>
   </head>
-  <body>
+
+  <body class="identitat-page">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -400,40 +780,40 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
     <main class="identitat-main">
-      <section class="identitat-section" id="hero-identitat">
-        <div class="identitat-hero">
-          <div class="identitat-hero-copy">
-            <span class="identitat-kicker">Identitat del projecte</span>
-            <h1>L’univers MESCLARI</h1>
-            <p>MESCLARI es defineix per una manera concreta d’entendre la restauració gastronòmica contemporània: una proposta on producte, sala, atmosfera i relat de marca comparteixen una mateixa direcció.</p>
-            <p>Més que una identitat visual, MESCLARI construeix una experiència amb caràcter propi. La seva força neix de la coherència entre el que vol transmetre i la manera com aquesta idea es converteix en espai, servei i proposta gastronòmica.</p>
-          </div>
-          <!-- VISUAL PRINCIPAL: substituir aquest contenidor per imatge 16:10 / 4:3 o vídeo curt quan hi hagi material final -->
-          <figure class="identitat-media has-image" aria-label="Visual principal del projecte MESCLARI">
-            <img src="imaguenes i videos/univers mesclari identitat projecte.png" alt="Visual principal del projecte MESCLARI" loading="lazy" />
-            
-          </figure>
+      <header class="identitat-hero-premium" id="hero-identitat">
+        <div class="identitat-hero-copy">
+          <span class="identitat-kicker">Identitat del projecte</span>
+          <h1>L’univers MESCLARI</h1>
+          <p>MESCLARI es defineix per una manera concreta d’entendre la restauració gastronòmica contemporània: una proposta on producte, sala, atmosfera i relat de marca comparteixen una mateixa direcció.</p>
+          <p>Més que una identitat visual, MESCLARI construeix una experiència amb caràcter propi. La seva força neix de la coherència entre el que vol transmetre i la manera com aquesta idea es converteix en espai, servei i proposta gastronòmica.</p>
         </div>
-      </section>
+
+        <button type="button" class="identitat-image-card" data-lightbox-src="imaguenes i videos/univers mesclari identitat projecte.png" data-lightbox-alt="Visual principal del projecte MESCLARI" aria-label="Ampliar visual principal del projecte MESCLARI">
+          <img src="imaguenes i videos/univers mesclari identitat projecte.png" alt="Visual principal del projecte MESCLARI" loading="lazy" />
+          <span class="identitat-image-label"><span>Visual principal del projecte</span><span>Veure completa</span></span>
+        </button>
+      </header>
 
       <section class="identitat-section" id="que-es-mesclari">
-        <header class="identitat-head">
-          <span class="identitat-kicker">Què és MESCLARI</span>
+        <header class="identitat-section-head">
+          <span class="identitat-section-kicker">Què és MESCLARI</span>
           <h2>Definició i posicionament</h2>
         </header>
-        <div class="editorial-two">
-          <article class="editorial-piece">
+
+        <div class="identitat-editorial-grid">
+          <article class="identitat-editorial-card">
             <h3>Una proposta integral</h3>
             <p>MESCLARI és una proposta gastronòmica contemporània de gamma alta que entén la restauració com una experiència completa i cohesionada. El projecte no es limita a una oferta culinària concreta, sinó que desenvolupa una manera pròpia d’acollir, servir i construir valor percebut a través del conjunt.</p>
           </article>
-          <article class="editorial-piece">
+
+          <article class="identitat-editorial-card">
             <h3>Una marca amb intenció</h3>
             <p>La seva identitat combina exigència gastronòmica, sensibilitat de sala i una atmosfera acurada, amb la voluntat de generar una experiència elegant, propera i amb personalitat. MESCLARI no busca impactar des de l’excés, sinó des de l’equilibri entre qualitat, caràcter i coherència.</p>
-            <div class="key-lines" aria-label="Claus de posicionament">
+            <div class="identitat-key-lines" aria-label="Claus de posicionament">
               <span>Hospitalitat amb intenció</span>
               <span>Caràcter sense artifici</span>
               <span>Gamma alta amb criteri</span>
@@ -443,27 +823,31 @@
       </section>
 
       <section class="identitat-section" id="pilars-identitat">
-        <header class="identitat-head">
-          <span class="identitat-kicker">Pilars de la identitat</span>
+        <header class="identitat-section-head">
+          <span class="identitat-section-kicker">Pilars de la identitat</span>
           <h2>Quatre eixos que sostenen el projecte</h2>
         </header>
-        <div class="pillars-grid">
-          <article class="pillar-card">
+
+        <div class="identitat-pillars-grid">
+          <article class="identitat-pillar-card" data-number="01">
             <span class="num">01</span>
             <h3>Producte i territori</h3>
             <p>La identitat de MESCLARI parteix d’un respecte clar pel producte i pel context on s’insereix. La selecció, el tractament i la lectura gastronòmica de la matèria primera busquen qualitat, temporalitat i coherència amb la proposta.</p>
           </article>
-          <article class="pillar-card">
+
+          <article class="identitat-pillar-card" data-number="02">
             <span class="num">02</span>
             <h3>Sala i experiència</h3>
             <p>La sala no actua com un simple suport del menjar, sinó com una part activa de l’experiència. El ritme, l’atenció i la manera de relacionar-se amb el client reforcen la percepció global del projecte.</p>
           </article>
-          <article class="pillar-card">
+
+          <article class="identitat-pillar-card" data-number="03">
             <span class="num">03</span>
             <h3>Espai i atmosfera</h3>
             <p>L’espai de MESCLARI expressa la mateixa coherència que la proposta gastronòmica. Materials, llum, distribució i ambient contribueixen a construir una experiència refinada, agradable i recognoscible.</p>
           </article>
-          <article class="pillar-card">
+
+          <article class="identitat-pillar-card" data-number="04">
             <span class="num">04</span>
             <h3>Caràcter de marca</h3>
             <p>MESCLARI es construeix com una marca amb caràcter, capaç de projectar una identitat sòlida sense recórrer a excessos formals. La seva diferència neix de la coherència entre allò que promet i allò que realment ofereix.</p>
@@ -472,304 +856,131 @@
       </section>
 
       <section class="identitat-section" id="univers-sensorial">
-        <header class="identitat-head">
-          <span class="identitat-kicker">Univers sensorial</span>
+        <header class="identitat-section-head">
+          <span class="identitat-section-kicker">Univers sensorial</span>
           <h2>La forma perceptible de la identitat</h2>
-          <p class="identitat-intro">La identitat de MESCLARI no es defineix només pel que s’explica, sinó també pel que es percep. L’atmosfera, els materials i la manera com es viu l’espai formen part essencial del projecte.</p>
+          <p>La identitat de MESCLARI no es defineix només pel que s’explica, sinó també pel que es percep. L’atmosfera, els materials i la manera com es viu l’espai formen part essencial del projecte.</p>
         </header>
-        <div class="sensorial-layout">
-          <div class="sensorial-grid">
-            <article class="sensorial-item">
+
+        <div class="identitat-sensorial-layout">
+          <div class="identitat-sensorial-grid">
+            <article class="identitat-sensorial-item">
               <h3>Llum</h3>
               <p>Una llum càlida, controlada i equilibrada, pensada per reforçar la calma, la lectura del plat i la qualitat percebuda de l’espai.</p>
             </article>
-            <article class="sensorial-item">
+
+            <article class="identitat-sensorial-item">
               <h3>Materials</h3>
               <p>Fustes, teixits, textures i superfícies que transmeten elegància sense fredor, amb una lectura contemporània i acollidora.</p>
             </article>
-            <article class="sensorial-item">
+
+            <article class="identitat-sensorial-item">
               <h3>Ritme</h3>
               <p>Un ambient que evita la pressa i afavoreix una experiència ordenada, fluida i agradable de principi a fi.</p>
             </article>
-            <article class="sensorial-item">
+
+            <article class="identitat-sensorial-item">
               <h3>Tracte</h3>
               <p>Una manera d’atendre propera i professional, on el servei acompanya sense envair i dona sentit a l’experiència global.</p>
             </article>
           </div>
-          <!-- VISUAL SECUNDARI: espai per imatge 4:5 o 16:9 de llenguatge sensorial -->
-          <figure class="support-media has-image" aria-label="Vista de la sala de MESCLARI">
+
+          <button type="button" class="identitat-image-button identitat-support-image" data-lightbox-src="imaguenes i videos/home-mercat-entorn.jpg" data-lightbox-alt="Vista de la sala de MESCLARI" aria-label="Ampliar vista de la sala de MESCLARI">
             <img src="imaguenes i videos/home-mercat-entorn.jpg" alt="Vista de la sala de MESCLARI" loading="lazy" />
-            
-          </figure>
+            <span class="view-full">Veure completa</span>
+          </button>
         </div>
       </section>
 
       <section class="identitat-section" id="personalitat-marca">
-        <header class="identitat-head">
-          <span class="identitat-kicker">Personalitat de marca</span>
+        <header class="identitat-section-head">
+          <span class="identitat-section-kicker">Personalitat de marca</span>
           <h2>MESCLARI en vuit tensions complementàries</h2>
-          <p class="identitat-intro">MESCLARI projecta una personalitat definida per l’equilibri entre refinament, calidesa i credibilitat.</p>
+          <p>MESCLARI projecta una personalitat definida per l’equilibri entre refinament, calidesa i credibilitat.</p>
         </header>
-        <div class="personality-matrix">
-          <article class="pair-card"><strong>Elegant però propera</strong></article>
-          <article class="pair-card"><strong>Contemporània però càlida</strong></article>
-          <article class="pair-card"><strong>Tècnica però natural</strong></article>
-          <article class="pair-card"><strong>Cuidada però fluida</strong></article>
-          <article class="pair-card"><strong>Diferencial però creïble</strong></article>
-          <article class="pair-card"><strong>Ambiciosa però mesurada</strong></article>
-          <article class="pair-card"><strong>Gastronòmica però hospitalària</strong></article>
-          <article class="pair-card"><strong>Sofisticada però habitable</strong></article>
+
+        <div class="identitat-personality-matrix">
+          <article class="identitat-pair-card"><strong>Elegant però propera</strong></article>
+          <article class="identitat-pair-card"><strong>Contemporània però càlida</strong></article>
+          <article class="identitat-pair-card"><strong>Tècnica però natural</strong></article>
+          <article class="identitat-pair-card"><strong>Cuidada però fluida</strong></article>
+          <article class="identitat-pair-card"><strong>Diferencial però creïble</strong></article>
+          <article class="identitat-pair-card"><strong>Ambiciosa però mesurada</strong></article>
+          <article class="identitat-pair-card"><strong>Gastronòmica però hospitalària</strong></article>
+          <article class="identitat-pair-card"><strong>Sofisticada però habitable</strong></article>
         </div>
       </section>
 
       <section class="identitat-section" id="traduccio-identitat">
-        <header class="identitat-head">
-          <span class="identitat-kicker">Traducció de la identitat al projecte</span>
+        <header class="identitat-section-head">
+          <span class="identitat-section-kicker">Traducció de la identitat al projecte</span>
           <h2>Quan el discurs es converteix en operativa real</h2>
-          <p class="identitat-intro">La identitat de MESCLARI no es queda en el discurs. Es concreta en decisions reals que afecten la manera de cuinar, de servir i de construir l’espai.</p>
+          <p>La identitat de MESCLARI no es queda en el discurs. Es concreta en decisions reals que afecten la manera de cuinar, de servir i de construir l’espai.</p>
         </header>
 
-        <div class="translation-grid">
-          <article class="translation-card">
-            <div class="translation-copy">
+        <div class="identitat-translation-grid">
+          <article class="identitat-translation-card">
+            <div class="identitat-translation-copy">
               <h3>A la cuina</h3>
               <p>La identitat de MESCLARI es tradueix en una proposta culinària pensada amb criteri, sensibilitat estètica i respecte pel producte. La cuina no es planteja com un exercici d’exhibició, sinó com una expressió coherent del nivell, el ritme i la personalitat del restaurant.</p>
             </div>
-            <!-- VISUAL SECUNDARI #1: substituir per imatge de cuina o emplatat 16:9 -->
-           <figure class="media-mini has-image" aria-label="Vista de la sala de MESCLARI">
-              <img src="imaguenes i videos/cocina.jpeg" alt="Vista de la sala de MESCLARI" loading="lazy" />
-              <figcaption class="media-placeholder">
-              </figcaption>
-            </figure>
-            
+            <button type="button" class="identitat-image-button identitat-mini-image" data-lightbox-src="imaguenes i videos/cocina.jpeg" data-lightbox-alt="Cuina de MESCLARI" aria-label="Ampliar imatge de cuina de MESCLARI">
+              <img src="imaguenes i videos/cocina.jpeg" alt="Cuina de MESCLARI" loading="lazy" />
+              <span class="view-full">Veure completa</span>
+            </button>
           </article>
 
-          <article class="translation-card">
-            <div class="translation-copy">
+          <article class="identitat-translation-card">
+            <div class="identitat-translation-copy">
               <h3>A la sala</h3>
               <p>En sala, la identitat es converteix en hospitalitat, ritme i lectura del detall. El servei acompanya l’experiència amb seguretat i naturalitat, reforçant la percepció de qualitat sense caure en rigidesa ni artifici.</p>
             </div>
-            <!-- VISUAL SECUNDARI #2: substituir per imatge de sala 4:5 o 16:9 -->
-            <figure class="media-mini has-image" aria-label="Vista de la sala de MESCLARI">
-              <img src="imaguenes i videos/sala_.png" alt="Vista de la sala de MESCLARI" loading="lazy" />
-              <figcaption class="media-placeholder">
-              </figcaption>
-            </figure>
+            <button type="button" class="identitat-image-button identitat-mini-image" data-lightbox-src="imaguenes i videos/sala_.png" data-lightbox-alt="Sala de MESCLARI" aria-label="Ampliar imatge de sala de MESCLARI">
+              <img src="imaguenes i videos/sala_.png" alt="Sala de MESCLARI" loading="lazy" />
+              <span class="view-full">Veure completa</span>
+            </button>
           </article>
 
-          <article class="translation-card">
-            <div class="translation-copy">
+          <article class="identitat-translation-card">
+            <div class="identitat-translation-copy">
               <h3>A l’espai</h3>
               <p>L’espai actua com una extensió directa del projecte. La distribució, l’ambientació i els elements materials s’alineen amb la mateixa idea de marca: elegància, confort, coherència i capacitat real de generar una experiència memorable.</p>
             </div>
-            <figure class="media-mini has-image" aria-label="Visual de l'espai del projecte MESCLARI">
+            <button type="button" class="identitat-image-button identitat-mini-image" data-lightbox-src="imaguenes i videos/identitat projecte espai.png" data-lightbox-alt="Visual de l'espai del projecte MESCLARI" aria-label="Ampliar visual de l'espai del projecte MESCLARI">
               <img src="imaguenes i videos/identitat projecte espai.png" alt="Visual de l'espai del projecte MESCLARI" loading="lazy" />
-              <figcaption class="media-placeholder"></figcaption>
-            </figure>
+              <span class="view-full">Veure completa</span>
+            </button>
           </article>
         </div>
 
-        <!-- BLOC OPCIONAL DE VÍDEO: convertir en vídeo curt amb pòster; si no hi ha material, mantenir com a imatge panoràmica -->
-        <figure class="optional-video video-embed-block" aria-label="Bloc opcional per vídeo curt o imatge panoràmica" id="mesclariVideoBlock">
-  <figcaption class="video-block-head">
-    <span class="video-block-badge">Vídeo curt / recorregut visual</span>
-    <h3>Recorregut visual del projecte</h3>
-    <p>
-      Aquest bloc integra un suport audiovisual del projecte per reforçar la lectura espacial,
-      l’atmosfera i la coherència visual de MESCLARI.
-    </p>
-  </figcaption>
+        <figure class="identitat-video-block" aria-label="Bloc opcional per vídeo curt o imatge panoràmica" id="mesclariVideoBlock">
+          <figcaption class="identitat-video-head">
+            <span class="identitat-video-badge">Vídeo curt / recorregut visual</span>
+            <h3>Recorregut visual del projecte</h3>
+            <p>Aquest bloc integra un suport audiovisual del projecte per reforçar la lectura espacial, l’atmosfera i la coherència visual de MESCLARI.</p>
+          </figcaption>
 
-  <div class="video-frame-shell">
-    <div class="video-frame-ratio">
-      <iframe
-  id="mesclariDriveVideo"
-  title="Vídeo del projecte MESCLARI"
-  src="https://drive.google.com/file/d/1gH258U8uRq8WyIArdTNFPZcZCOqjXmP4/preview"
-  loading="lazy"
-  allow="fullscreen; picture-in-picture"
-  allowfullscreen
-  referrerpolicy="strict-origin-when-cross-origin">
-</iframe>
+          <div class="identitat-video-ratio">
+            <iframe
+              id="mesclariDriveVideo"
+              title="Vídeo del projecte MESCLARI"
+              src="https://drive.google.com/file/d/1gH258U8uRq8WyIArdTNFPZcZCOqjXmP4/preview"
+              loading="lazy"
+              allow="fullscreen; picture-in-picture"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
 
-    
-    </div>
-  </div>
-
-  <div class="video-block-footer">
-    <p class="video-footer-note">Reproducció automàtica en entrar a la zona del vídeo.</p>
-    <a
-      class="video-drive-link"
-      href="https://www.youtube.com/watch?v=-18l8JfQeRs"
-      target="_blank"
-      rel="noopener noreferrer">
-      Obrir vídeo a Google Drive
-    </a>
-  </div>
-</figure>
-
-<style>
-  .video-embed-block {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    margin: 0;
-    padding: 1.6rem;
-    border-radius: 28px;
-    border: 1px solid rgba(30, 45, 59, 0.12);
-    background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(247,241,232,0.96) 100%);
-    box-shadow: 0 18px 40px rgba(24, 39, 58, 0.08);
-  }
-
-  .video-block-head {
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-
-  .video-block-head h3 {
-    margin: 0;
-    color: #1e2d3b;
-    font-size: clamp(1.45rem, 1.2rem + 0.55vw, 2rem);
-    line-height: 1.12;
-  }
-
-  .video-block-head p {
-    margin: 0;
-    max-width: 920px;
-    color: #4a5f72;
-    line-height: 1.65;
-  }
-
-  .video-block-badge {
-    display: inline-flex;
-    width: fit-content;
-    padding: 0.45rem 0.9rem;
-    border-radius: 999px;
-    background: rgba(194, 94, 60, 0.12);
-    color: #c25e3c;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .video-frame-shell {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
-  .video-frame-ratio {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 320px;
-    border-radius: 24px;
-    overflow: hidden;
-    background: #dcd3c4;
-    box-shadow: inset 0 0 0 1px rgba(30, 45, 59, 0.08);
-  }
-
-  .video-frame-ratio iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-    background: #000;
-  }
-
-  .video-loading-layer {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1.5rem;
-    background: linear-gradient(180deg, rgba(30,45,59,0.24) 0%, rgba(30,45,59,0.72) 100%);
-    color: #f7f1e8;
-    transition: opacity 0.35s ease, visibility 0.35s ease;
-  }
-
-  .video-loading-layer.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-  .video-loading-layer strong {
-    font-size: 1.05rem;
-    font-weight: 800;
-  }
-
-  .video-loading-layer span {
-    font-size: 0.92rem;
-    opacity: 0.95;
-    max-width: 560px;
-    line-height: 1.5;
-  }
-
-  .video-block-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .video-footer-note {
-    margin: 0;
-    color: #4a5f72;
-    font-size: 0.95rem;
-  }
-
-  .video-drive-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.15rem;
-    border-radius: 999px;
-    background: #1e2d3b;
-    color: #f7f1e8;
-    text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-
-  .video-drive-link:hover {
-    transform: translateY(-1px);
-    opacity: 0.96;
-  }
-
-  @media (max-width: 820px) {
-    .video-embed-block {
-      padding: 1.15rem;
-      border-radius: 22px;
-    }
-
-    .video-frame-ratio {
-      min-height: 220px;
-      border-radius: 18px;
-    }
-
-    .video-block-footer {
-      align-items: stretch;
-    }
-
-    .video-drive-link {
-      width: 100%;
-    }
-  }
-</style>
-
-
+          <div class="identitat-video-footer">
+            <p>Suport audiovisual pensat per reforçar la defensa oral i la lectura espacial del projecte.</p>
+            <a class="identitat-drive-link" href="https://drive.google.com/file/d/1gH258U8uRq8WyIArdTNFPZcZCOqjXmP4/view" target="_blank" rel="noopener noreferrer">Obrir vídeo a Google Drive</a>
+          </div>
+        </figure>
       </section>
 
       <section class="identitat-section identitat-closure" id="tancament-manifest">
-        <span class="identitat-kicker">Tancament / manifest final</span>
+        <span class="identitat-section-kicker">Tancament / manifest final</span>
         <p>MESCLARI no es defineix només pel que mostra, sinó per la manera com totes les seves parts avancen en una mateixa direcció. La seva identitat neix d’aquesta coherència: una proposta pensada per ser recordada, però també per ser viscuda amb naturalitat i sentit.</p>
         <strong>Una identitat construïda des del detall, el criteri i la consistència.</strong>
       </section>
@@ -779,6 +990,52 @@
       <p>MESCLARI · Identitat de marca amb continuïtat visual premium.</p>
     </footer>
 
+    <div class="mesclari-lightbox" id="mesclariImageLightbox" hidden aria-hidden="true" role="dialog" aria-label="Imatge ampliada">
+      <div class="mesclari-lightbox__inner">
+        <button type="button" class="mesclari-lightbox__close" aria-label="Tancar imatge">×</button>
+        <img id="mesclariLightboxImg" src="" alt="" />
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+      (() => {
+        const lightbox = document.getElementById('mesclariImageLightbox');
+        const lightboxImg = document.getElementById('mesclariLightboxImg');
+        const closeBtn = lightbox?.querySelector('.mesclari-lightbox__close');
+        const triggers = document.querySelectorAll('[data-lightbox-src]');
+
+        if (!lightbox || !lightboxImg || !closeBtn || !triggers.length) return;
+
+        const openLightbox = (trigger) => {
+          lightboxImg.src = trigger.dataset.lightboxSrc;
+          lightboxImg.alt = trigger.dataset.lightboxAlt || '';
+          lightbox.hidden = false;
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          closeBtn.focus();
+        };
+
+        const closeLightbox = () => {
+          lightbox.hidden = true;
+          lightbox.setAttribute('aria-hidden', 'true');
+          lightboxImg.src = '';
+          lightboxImg.alt = '';
+          document.body.style.overflow = '';
+        };
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener('click', () => openLightbox(trigger));
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+        });
+      })();
+    </script>
   </body>
 </html>
