@@ -3,74 +3,593 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · GESTIÓ I ORGANITZACIÓ</title>
-    <meta
-      name="description"
-      content="Estructura humana i organització operativa de MESCLARI: organigrama funcional, plantilla base, reforç estacional, funcions i credibilitat operativa."
-    />
+    <title>MESCLARI · Gestió i organització</title>
+    <meta name="description" content="Estructura humana i organització operativa de MESCLARI: organigrama funcional, plantilla base, reforç estacional, funcions i credibilitat operativa." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+
     <style>
-      .gestio-hero {
+      /* =========================================================
+         MESCLARI · GESTIÓ I ORGANITZACIÓ
+         Adaptació visual premium amb contingut propi de la pàgina
+      ========================================================= */
+
+      :root {
+        --gestio-terracotta: #c25e3c;
+        --gestio-blue: #1e2d3b;
+        --gestio-ink: #233849;
+        --gestio-ink-soft: #4a5f72;
+        --gestio-beige: #f4e9dc;
+        --gestio-sand: #d8cbb2;
+        --gestio-olive: #6e8b74;
+        --gestio-line: rgba(30, 45, 59, 0.12);
+        --gestio-line-strong: rgba(30, 45, 59, 0.18);
+        --gestio-panel: rgba(255, 255, 255, 0.78);
+        --gestio-panel-strong: rgba(255, 255, 255, 0.94);
+        --gestio-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--gestio-blue);
+        background:
+          radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.13), transparent 32rem),
+          radial-gradient(circle at 92% 7%, rgba(110, 139, 116, 0.12), transparent 32rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.98));
+      }
+
+      .gestio-page,
+      .gestio-page * {
+        box-sizing: border-box;
+      }
+
+      .nav {
+        top: 0.8rem;
+        z-index: 1000;
+      }
+
+      .nav .brand-mini {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+      }
+
+      .nav .nav-logo {
+        width: 42px !important;
+        height: 42px !important;
+        object-fit: contain;
+        border-radius: 0.55rem;
+        background: rgba(244, 233, 220, 0.92);
+        box-shadow: 0 6px 18px rgba(30, 45, 59, 0.12);
+      }
+
+      .nav .brand-name {
+        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
+        letter-spacing: 0.13em;
+        line-height: 1;
+      }
+
+      .gestio-main {
+        width: min(1280px, calc(100% - 2rem));
+        margin: clamp(5.8rem, 7vw, 7rem) auto clamp(3rem, 6vw, 5rem);
+        display: grid;
+        gap: clamp(1.15rem, 2vw, 1.75rem);
+      }
+
+      .gestio-main h1,
+      .gestio-main h2,
+      .gestio-main h3,
+      .gestio-main h4 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .gestio-main p {
+        line-height: 1.7;
+      }
+
+      .gestio-eyebrow,
+      .home-section-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0 auto 0.8rem;
+        padding: 0.42rem 0.86rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.08);
+        border: 1px solid rgba(194, 94, 60, 0.16);
+        color: var(--gestio-terracotta);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .gestio-lead,
+      .home-intro {
+        max-width: 820px;
+        margin: 0.9rem auto 0;
+        color: var(--gestio-ink-soft);
+        font-size: clamp(1rem, 1.18vw, 1.12rem);
         text-align: center;
       }
 
-      .gestio-hero .home-intro {
-        width: min(86ch, 100%);
-        margin-inline: auto;
+      /* HERO */
+
+      .gestio-hero-pro {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 0.98fr) minmax(360px, 1.02fr);
+        gap: clamp(1rem, 2vw, 1.4rem);
+        align-items: stretch;
+        padding: clamp(1rem, 1.8vw, 1.25rem);
+        border: 1px solid var(--gestio-line);
+        border-radius: 2.4rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 233, 220, 0.72));
+        box-shadow: var(--gestio-shadow);
+        overflow: hidden;
+      }
+
+      .gestio-hero-pro::after {
+        content: "GESTIÓ";
+        position: absolute;
+        right: 1rem;
+        top: -0.45rem;
+        z-index: 0;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(5rem, 12vw, 12rem);
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(30, 45, 59, 0.045);
+        pointer-events: none;
+      }
+
+      .gestio-hero-copy,
+      .gestio-hero-visual {
+        position: relative;
+        z-index: 1;
+        min-height: clamp(520px, 44vw, 610px);
+        border-radius: 2rem;
+      }
+
+      .gestio-hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: clamp(2rem, 4vw, 4rem);
+        background:
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
+          var(--gestio-blue);
+        color: var(--gestio-beige);
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+        overflow: hidden;
+      }
+
+      .gestio-hero-copy::before {
+        content: "";
+        position: absolute;
+        top: 1.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(150px, 32%);
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, rgba(216, 203, 178, 0.82), transparent);
+      }
+
+      .gestio-hero-copy h1 {
+        max-width: 10.5ch;
+        margin: 0;
+        color: #ffffff;
+        font-size: clamp(3.65rem, 7.2vw, 7rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-wrap: balance;
+      }
+
+      .gestio-hero-copy .gestio-eyebrow {
+        margin-bottom: 1.1rem;
+        background: rgba(244, 233, 220, 0.08);
+        border-color: rgba(244, 233, 220, 0.16);
+        color: var(--gestio-sand);
+      }
+
+      .gestio-hero-copy p {
+        max-width: 720px;
+        margin: 1.25rem auto 0;
+        color: rgba(244, 233, 220, 0.84);
+        font-size: clamp(1rem, 1.25vw, 1.14rem);
+        text-align: center;
+      }
+
+      .gestio-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.65rem;
+        margin-top: 1.65rem;
+      }
+
+      .gestio-chip-row span {
+        display: inline-flex;
+        padding: 0.62rem 0.88rem;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background: rgba(244, 233, 220, 0.08);
+        color: #ffffff;
+        font-size: 0.86rem;
+        font-weight: 750;
+      }
+
+      .gestio-hero-visual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(1.3rem, 2.5vw, 2rem);
+        background:
+          radial-gradient(circle at 20% 0%, rgba(194, 94, 60, 0.12), transparent 20rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 233, 220, 0.76));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+      }
+
+      .gestio-visual-title {
+        text-align: center;
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      .gestio-visual-title span {
+        display: inline-flex;
+        margin-bottom: 0.55rem;
+        color: var(--gestio-terracotta);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .gestio-visual-title h2 {
+        margin: 0;
+        color: var(--gestio-blue);
+        font-size: clamp(2.2rem, 4.6vw, 4.2rem);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+      }
+
+      .org-map {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .org-node,
+      .org-row article {
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        border-radius: 1.2rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 14px 34px rgba(30, 45, 59, 0.06);
+        text-align: center;
+      }
+
+      .org-node strong,
+      .org-row strong {
+        display: block;
+        color: var(--gestio-blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+        line-height: 1;
+      }
+
+      .org-node span,
+      .org-row span {
+        display: block;
+        margin-top: 0.35rem;
+        color: var(--gestio-ink-soft);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .org-node.primary {
+        background:
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94));
+      }
+
+      .org-node.primary strong,
+      .org-node.primary span {
+        color: #ffffff;
+      }
+
+      .org-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .org-node.final {
+        background: rgba(194, 94, 60, 0.09);
+        border-color: rgba(194, 94, 60, 0.18);
+      }
+
+      .org-connector {
+        width: 2px;
+        height: 18px;
+        margin: -0.15rem auto;
+        background: linear-gradient(180deg, rgba(194, 94, 60, 0.18), rgba(194, 94, 60, 0.72));
+        border-radius: 999px;
+      }
+
+      /* BLOQUES GENERALES */
+
+      .gestio-section {
+        position: relative;
+        border: 1px solid var(--gestio-line);
+        border-radius: 2rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.62));
+        padding: clamp(1.5rem, 3vw, 2.7rem);
+        box-shadow: 0 22px 65px rgba(30, 45, 59, 0.09);
+        overflow: hidden;
+      }
+
+      .gestio-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.055), transparent 22rem),
+          radial-gradient(circle at 92% 100%, rgba(30, 45, 59, 0.04), transparent 24rem);
+        pointer-events: none;
+      }
+
+      .gestio-section > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .gestio-section-head,
+      .home-section-head {
+        max-width: 920px;
+        margin: 0 auto clamp(1.4rem, 3vw, 2.15rem);
+        text-align: center;
+      }
+
+      .gestio-section-head h2,
+      .home-section-head h2,
+      .home-closure h2 {
+        margin: 0;
+        color: var(--gestio-blue);
+        font-size: clamp(2.45rem, 4.8vw, 4.6rem);
+        line-height: 0.94;
+        letter-spacing: -0.05em;
+        text-align: center;
+      }
+
+      .gestio-section-head p,
+      .home-section-head p {
+        max-width: 820px;
+        margin: 0.9rem auto 0;
+        color: var(--gestio-ink-soft);
+        text-align: center;
+      }
+
+      .gestio-grid {
+        display: grid;
+        gap: clamp(0.9rem, 1.6vw, 1.2rem);
+      }
+
+      .gestio-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gestio-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gestio-grid.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .gestio-card,
+      .home-card {
+        position: relative;
+        height: 100%;
+        padding: clamp(1.25rem, 2.2vw, 1.75rem);
+        border-radius: 1.55rem;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 233, 220, 0.58));
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
+        text-align: center;
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      .gestio-card:hover,
+      .home-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 46px rgba(30, 45, 59, 0.1);
+        border-color: rgba(194, 94, 60, 0.22);
+      }
+
+      .gestio-card h3,
+      .gestio-card h4,
+      .home-card h3,
+      .home-card h4 {
+        margin: 0 0 0.65rem;
+        color: var(--gestio-blue);
+        font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        text-align: center;
+      }
+
+      .gestio-card p,
+      .home-card p,
+      .block-closure {
+        margin: 0;
+        color: var(--gestio-ink-soft);
+        font-size: clamp(0.96rem, 1.05vw, 1.04rem);
+        text-align: center;
+      }
+
+      .gestio-card p + p,
+      .home-card p + p {
+        margin-top: 0.85rem;
+      }
+
+      .gestio-card.important {
+        background:
+          radial-gradient(circle at 18% 0%, rgba(194, 94, 60, 0.18), transparent 20rem),
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94));
+        border-color: rgba(244, 233, 220, 0.1);
+      }
+
+      .gestio-card.important h3,
+      .gestio-card.important h4,
+      .gestio-card.important p {
+        color: #ffffff;
+      }
+
+      .gestio-card.important p {
+        color: rgba(244, 233, 220, 0.84);
       }
 
       .organigrama-wrap {
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: linear-gradient(160deg, rgba(244, 233, 220, 0.96), rgba(244, 233, 220, 0.86));
-        padding: clamp(1rem, 2.2vw, 1.6rem);
+        display: grid;
+        gap: 1rem;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        border-radius: 1.8rem;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.08), transparent 25rem),
+          rgba(255, 255, 255, 0.48);
+        padding: clamp(1rem, 2vw, 1.4rem);
       }
 
       .organigrama-top {
-        max-width: 460px;
-        margin: 0 auto 1rem;
-      }
-
-      .organigrama-top .home-card {
-        text-align: center;
-      }
-
-      .organigrama-grid,
-      .cred-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
-      }
-
-      .organigrama-grid .home-card,
-      .cred-grid .home-card {
-        height: 100%;
+        max-width: 560px;
+        margin: 0 auto;
       }
 
       .subgrid-two {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: 0.9rem;
+        gap: clamp(0.9rem, 1.6vw, 1.2rem);
+        margin-top: clamp(0.9rem, 1.6vw, 1.2rem);
       }
 
       .block-closure {
-        margin-top: 0.85rem;
-        color: #2d4558;
+        max-width: 900px;
+        margin: 1.1rem auto 0;
+        padding: 1rem 1.25rem;
+        border-radius: 1.2rem;
+        background: rgba(194, 94, 60, 0.08);
+        border: 1px solid rgba(194, 94, 60, 0.14);
+        color: var(--gestio-blue);
+        font-weight: 650;
       }
 
-      @media (max-width: 980px) {
-        .organigrama-grid,
-        .cred-grid,
-        .subgrid-two {
+      .gestio-closure {
+        text-align: center;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.12), transparent 26rem),
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94));
+      }
+
+      .gestio-closure .gestio-eyebrow {
+        color: var(--gestio-sand);
+        background: rgba(244, 233, 220, 0.08);
+        border-color: rgba(244, 233, 220, 0.14);
+      }
+
+      .gestio-closure h2 {
+        color: #ffffff;
+      }
+
+      .gestio-closure p {
+        max-width: 860px;
+        margin: 1rem auto 0;
+        color: rgba(244, 233, 220, 0.84);
+        text-align: center;
+      }
+
+      .gestio-closure strong {
+        color: #ffffff;
+      }
+
+      .home-footer {
+        text-align: center;
+      }
+
+      @media (max-width: 1080px) {
+        .gestio-hero-pro {
           grid-template-columns: 1fr;
+        }
+
+        .gestio-hero-copy,
+        .gestio-hero-visual {
+          min-height: auto;
+        }
+
+        .gestio-hero-visual {
+          min-height: 430px;
+        }
+
+        .gestio-grid.three,
+        .gestio-grid.four {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 780px) {
+        .gestio-main {
+          width: min(100% - 1rem, 1280px);
+          margin-top: 5rem;
+        }
+
+        .gestio-hero-pro,
+        .gestio-section {
+          border-radius: 1.55rem;
+          padding: 0.85rem;
+        }
+
+        .gestio-hero-copy,
+        .gestio-hero-visual,
+        .gestio-card,
+        .home-card {
+          border-radius: 1.25rem;
+        }
+
+        .gestio-hero-copy {
+          padding: 1.6rem 1.2rem;
+        }
+
+        .gestio-hero-copy h1 {
+          font-size: clamp(3.1rem, 16vw, 4.6rem);
+        }
+
+        .gestio-grid.two,
+        .gestio-grid.three,
+        .gestio-grid.four,
+        .subgrid-two,
+        .org-row {
+          grid-template-columns: 1fr;
+        }
+
+        .gestio-section-head h2,
+        .home-section-head h2,
+        .home-closure h2 {
+          font-size: clamp(2.35rem, 12vw, 4rem);
         }
       }
     </style>
   </head>
+
   <body>
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
@@ -92,257 +611,269 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
-    <main class="home-main vg-main">
-      <header class="home-block vg-opening gestio-hero" id="hero-gestio">
-        <div class="home-section-head">
-          <p class="home-section-kicker">Gestió i organització</p>
+    <main class="gestio-main gestio-page">
+      <header class="gestio-hero-pro" id="hero-gestio">
+        <div class="gestio-hero-copy">
+          <p class="gestio-eyebrow">Gestió i organització</p>
           <h1>L’estructura humana que fa possible MESCLARI</h1>
-          <p class="home-intro">
-            MESCLARI es construeix des d’una idea gastronòmica i experiencial clara, però també des d’una organització pensada per funcionar amb coherència,
-            ordre i capacitat real d’execució. Aquesta pàgina recull la base humana del projecte, la seva lògica operativa i la manera com s’articula el
-            treball entre direcció, cuina i sala.
+          <p>
+            MESCLARI es construeix des d’una idea gastronòmica i experiencial clara, però també des d’una organització pensada per funcionar amb coherència, ordre i capacitat real d’execució. Aquesta pàgina recull la base humana del projecte, la seva lògica operativa i la manera com s’articula el treball entre direcció, cuina i sala.
           </p>
+          <div class="gestio-chip-row" aria-label="Eixos principals de gestió">
+            <span>Direcció clara</span>
+            <span>Operativa realista</span>
+            <span>Reforç estacional</span>
+          </div>
         </div>
+
+        <aside class="gestio-hero-visual" aria-label="Esquema visual de l'organització de MESCLARI">
+          <div class="gestio-visual-title">
+            <span>Mapa funcional</span>
+            <h2>Com s’ordena el projecte</h2>
+          </div>
+          <div class="org-map">
+            <article class="org-node primary">
+              <strong>Direcció del projecte</strong>
+              <span>Decisió estratègica, criteri global i coherència del model.</span>
+            </article>
+            <div class="org-connector" aria-hidden="true"></div>
+            <div class="org-row">
+              <article>
+                <strong>Cuina</strong>
+                <span>Producció, producte, qualitat i passe.</span>
+              </article>
+              <article>
+                <strong>Sala</strong>
+                <span>Acollida, ritme, relat i valor percebut.</span>
+              </article>
+              <article>
+                <strong>Suport</strong>
+                <span>Reforç, ordre intern i adaptació al volum.</span>
+              </article>
+            </div>
+            <div class="org-connector" aria-hidden="true"></div>
+            <article class="org-node final">
+              <strong>Servei coherent</strong>
+              <span>Una estructura pensada per sostenir qualitat, identitat i viabilitat.</span>
+            </article>
+          </div>
+        </aside>
       </header>
 
-      <section class="home-block" id="estructura-humana-projecte">
-        <div class="home-section-head">
+      <section class="gestio-section" id="estructura-humana-projecte">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">01 · Base humana</p>
           <h2>Estructura humana del projecte</h2>
-        </div>
-        <div class="home-grid two">
-          <article class="home-card">
+        </header>
+        <div class="gestio-grid two">
+          <article class="gestio-card">
             <p>
-              La solidesa de MESCLARI no depèn únicament del seu concepte, sinó també de la manera com s’organitza l’equip que l’ha de fer possible. Per això,
-              el projecte diferencia entre dues capes complementàries: d’una banda, l’equip impulsor, que defineix la direcció general i pren les decisions
-              estratègiques; de l’altra, la plantilla operativa, que garanteix el funcionament diari del restaurant i la correcta execució del servei.
+              La solidesa de MESCLARI no depèn únicament del seu concepte, sinó també de la manera com s’organitza l’equip que l’ha de fer possible. Per això, el projecte diferencia entre dues capes complementàries: d’una banda, l’equip impulsor, que defineix la direcció general i pren les decisions estratègiques; de l’altra, la plantilla operativa, que garanteix el funcionament diari del restaurant i la correcta execució del servei.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <p>
-              Aquesta distinció permet entendre MESCLARI com una proposta ben estructurada, on lideratge i operativa no es confonen, sinó que es reforcen
-              mútuament. La direcció del projecte marca el criteri, i l’organització del personal transforma aquest criteri en una experiència real, coherent i
-              sostenible.
+              Aquesta distinció permet entendre MESCLARI com una proposta ben estructurada, on lideratge i operativa no es confonen, sinó que es reforcen mútuament. La direcció del projecte marca el criteri, i l’organització del personal transforma aquest criteri en una experiència real, coherent i sostenible.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="home-block" id="organigrama-funcional">
-        <div class="home-section-head">
+      <section class="gestio-section" id="organigrama-funcional">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">02 · Organigrama</p>
           <h2>Organigrama funcional</h2>
-          <p class="home-intro">
-            MESCLARI es planteja des d’una estructura funcional clara, amb responsabilitats definides i una relació directa entre direcció, cuina, sala i suport
-            operatiu. L’objectiu no és generar una plantilla sobredimensionada, sinó construir un model eficient, coherent amb la gamma del restaurant i capaç
-            d’adaptar-se al ritme real de l’activitat.
+          <p>
+            MESCLARI es planteja des d’una estructura funcional clara, amb responsabilitats definides i una relació directa entre direcció, cuina, sala i suport operatiu. L’objectiu no és generar una plantilla sobredimensionada, sinó construir un model eficient, coherent amb la gamma del restaurant i capaç d’adaptar-se al ritme real de l’activitat.
           </p>
-        </div>
+        </header>
         <div class="organigrama-wrap">
           <div class="organigrama-top">
-            <article class="home-card">
+            <article class="gestio-card important">
               <h4>Direcció del projecte</h4>
               <p>
-                L’equip impulsor assumeix la definició estratègica de MESCLARI i la coordinació general del model. Des d’aquesta base es prenen les decisions
-                relatives a concepte, proposta gastronòmica, experiència de sala, estructura del servei i coherència global del restaurant.
+                L’equip impulsor assumeix la definició estratègica de MESCLARI i la coordinació general del model. Des d’aquesta base es prenen les decisions relatives a concepte, proposta gastronòmica, experiència de sala, estructura del servei i coherència global del restaurant.
               </p>
             </article>
           </div>
-          <div class="organigrama-grid">
-            <article class="home-card">
+          <div class="gestio-grid three">
+            <article class="gestio-card">
               <h4>Àrea de cuina</h4>
               <p>
-                La cuina concentra la producció gastronòmica, la mise en place, el control del producte, l’execució del servei i la coordinació tècnica de les
-                elaboracions. Aquesta àrea ha de garantir qualitat, regularitat, ordre intern i capacitat de resposta durant el passe.
+                La cuina concentra la producció gastronòmica, la mise en place, el control del producte, l’execució del servei i la coordinació tècnica de les elaboracions. Aquesta àrea ha de garantir qualitat, regularitat, ordre intern i capacitat de resposta durant el passe.
               </p>
             </article>
-            <article class="home-card">
+            <article class="gestio-card">
               <h4>Àrea de sala</h4>
               <p>
-                La sala assumeix l’acollida del client, el ritme del servei, la comunicació de la proposta i la construcció del valor percebut. A MESCLARI, la
-                sala no actua com un complement, sinó com una part essencial de l’experiència final.
+                La sala assumeix l’acollida del client, el ritme del servei, la comunicació de la proposta i la construcció del valor percebut. A MESCLARI, la sala no actua com un complement, sinó com una part essencial de l’experiència final.
               </p>
             </article>
-            <article class="home-card">
+            <article class="gestio-card">
               <h4>Suport operatiu</h4>
               <p>
-                Les tasques de suport inclouen reforç de producció, assistència de sala, ordre del servei, preparació de material, suport a l’office i adaptació
-                de la plantilla en moments d’intensificació de l’activitat. Aquesta capa és especialment important en períodes de major demanda.
+                Les tasques de suport inclouen reforç de producció, assistència de sala, ordre del servei, preparació de material, suport a l’office i adaptació de la plantilla en moments d’intensificació de l’activitat. Aquesta capa és especialment important en períodes de major demanda.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="home-block" id="plantilla-base">
-        <div class="home-section-head">
+      <section class="gestio-section" id="plantilla-base">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">03 · Plantilla</p>
           <h2>Plantilla base</h2>
-        </div>
-        <div class="home-grid two">
-          <article class="home-card">
+        </header>
+        <div class="gestio-grid two">
+          <article class="gestio-card">
             <p>
-              La plantilla base de MESCLARI respon a una lectura realista de l’activitat ordinària del restaurant. En la seva versió més estable, el projecte es
-              sosté a partir del nucli impulsor, que assumeix les funcions principals de direcció, cuina i sala, permetent mantenir el control del servei,
-              reduir estructura fixa en períodes de menor intensitat i reforçar la coherència del model.
+              La plantilla base de MESCLARI respon a una lectura realista de l’activitat ordinària del restaurant. En la seva versió més estable, el projecte es sosté a partir del nucli impulsor, que assumeix les funcions principals de direcció, cuina i sala, permetent mantenir el control del servei, reduir estructura fixa en períodes de menor intensitat i reforçar la coherència del model.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <p>
-              Aquesta base no es planteja com una solució provisional, sinó com una manera intencionada d’organitzar el restaurant durant la fase de
-              funcionament més continguda. D’aquesta manera, MESCLARI manté una estructura àgil, més controlada i coherent amb una lectura prudent dels costos
-              fixos i de la càrrega operativa.
+              Aquesta base no es planteja com una solució provisional, sinó com una manera intencionada d’organitzar el restaurant durant la fase de funcionament més continguda. D’aquesta manera, MESCLARI manté una estructura àgil, més controlada i coherent amb una lectura prudent dels costos fixos i de la càrrega operativa.
             </p>
           </article>
         </div>
-        <div class="home-grid three">
-          <article class="home-card">
+        <div class="gestio-grid three" style="margin-top: clamp(0.9rem, 1.6vw, 1.2rem);">
+          <article class="gestio-card">
             <h4>Direcció de cuina</h4>
             <p>
-              Responsable de l’oferta gastronòmica, la planificació productiva, el control de matèria primera, l’organització interna de cuina i la supervisió
-              tècnica del servei.
+              Responsable de l’oferta gastronòmica, la planificació productiva, el control de matèria primera, l’organització interna de cuina i la supervisió tècnica del servei.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Direcció de sala</h4>
             <p>
-              Responsable de l’experiència de client, del ritme del servei, de la coordinació de sala i de la transmissió del relat del restaurant durant el
-              recorregut del comensal.
+              Responsable de l’experiència de client, del ritme del servei, de la coordinació de sala i de la transmissió del relat del restaurant durant el recorregut del comensal.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Coordinació global</h4>
             <p>
-              Responsable d’articular les diferents àrees del projecte, reforçar la coherència operativa del conjunt i donar suport transversal a la implantació
-              del model.
+              Responsable d’articular les diferents àrees del projecte, reforçar la coherència operativa del conjunt i donar suport transversal a la implantació del model.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="home-block" id="reforc-estacional">
-        <div class="home-section-head">
+      <section class="gestio-section" id="reforc-estacional">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">04 · Temporada</p>
           <h2>Reforç estacional</h2>
-        </div>
-        <div class="home-grid two">
-          <article class="home-card">
+        </header>
+        <div class="gestio-grid two">
+          <article class="gestio-card">
             <p>
-              MESCLARI incorpora una lectura estacional clara en la seva organització. El restaurant no necessita exactament la mateixa estructura humana durant
-              tot l’any, i per això el projecte diferencia entre una base operativa més continguda i una ampliació puntual de plantilla en moments de major
-              demanda.
+              MESCLARI incorpora una lectura estacional clara en la seva organització. El restaurant no necessita exactament la mateixa estructura humana durant tot l’any, i per això el projecte diferencia entre una base operativa més continguda i una ampliació puntual de plantilla en moments de major demanda.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <p>
-              Durant els períodes de més intensitat, especialment en temporada alta, caps de setmana forts o serveis amb major volum, la plantilla pot
-              ampliar-se amb perfils de suport tant a cuina com a sala. Aquesta decisió permet absorbir millor el ritme del servei, mantenir la qualitat
-              d’execució i protegir l’experiència del client sense desordenar el funcionament general del restaurant.
+              Durant els períodes de més intensitat, especialment en temporada alta, caps de setmana forts o serveis amb major volum, la plantilla pot ampliar-se amb perfils de suport tant a cuina com a sala. Aquesta decisió permet absorbir millor el ritme del servei, mantenir la qualitat d’execució i protegir l’experiència del client sense desordenar el funcionament general del restaurant.
             </p>
           </article>
         </div>
         <div class="subgrid-two">
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Suport de cuina</h4>
             <p>
               Perfils orientats a reforçar preparacions, producció prèvia, suport de passe, manteniment de ritmes i ajuda en moments de major pressió operativa.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Suport de sala</h4>
             <p>
-              Perfils orientats a reforçar el servei, l’atenció en taula, el suport logístic de sala i l’agilitat del recorregut del client durant els serveis
-              amb més intensitat.
+              Perfils orientats a reforçar el servei, l’atenció en taula, el suport logístic de sala i l’agilitat del recorregut del client durant els serveis amb més intensitat.
             </p>
           </article>
         </div>
         <p class="block-closure">Aquesta ampliació no es planteja com una estructura permanent, sinó com una resposta lògica i controlada a les necessitats reals del negoci.</p>
       </section>
 
-      <section class="home-block" id="funcions-responsabilitats">
-        <div class="home-section-head">
+      <section class="gestio-section" id="funcions-responsabilitats">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">05 · Funcions</p>
           <h2>Funcions i responsabilitats</h2>
-        </div>
-        <div class="home-grid three">
-          <article class="home-card">
+        </header>
+        <div class="gestio-grid three">
+          <article class="gestio-card">
             <h4>A la cuina</h4>
             <p>
-              La cuina de MESCLARI ha de funcionar amb criteri, ordre i previsió. Les seves responsabilitats principals inclouen la planificació de producció,
-              la preparació prèvia del servei, el control de qualitat, la correcta execució de plats, la gestió del producte i la coordinació tècnica durant el
-              passe. També incorpora una lectura rigorosa de neteja, seguretat alimentària i ús eficient dels recursos.
+              La cuina de MESCLARI ha de funcionar amb criteri, ordre i previsió. Les seves responsabilitats principals inclouen la planificació de producció, la preparació prèvia del servei, el control de qualitat, la correcta execució de plats, la gestió del producte i la coordinació tècnica durant el passe. També incorpora una lectura rigorosa de neteja, seguretat alimentària i ús eficient dels recursos.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>A la sala</h4>
             <p>
-              La sala és responsable de convertir la proposta gastronòmica en una experiència completa. Això implica acollir, explicar, servir, marcar ritmes i
-              construir una relació coherent amb el client. La seva funció no és només operativa, sinó també interpretativa: la sala tradueix el nivell del
-              restaurant en tracte, recorregut i valor percebut.
+              La sala és responsable de convertir la proposta gastronòmica en una experiència completa. Això implica acollir, explicar, servir, marcar ritmes i construir una relació coherent amb el client. La seva funció no és només operativa, sinó també interpretativa: la sala tradueix el nivell del restaurant en tracte, recorregut i valor percebut.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>En la coordinació general</h4>
             <p>
-              La coordinació general és la capa que connecta les dues àrees i evita que MESCLARI funcioni com un conjunt fragmentat. La seva responsabilitat és
-              assegurar que la direcció gastronòmica, la lògica de sala, el funcionament operatiu i la lectura del model avancin dins d’una mateixa línia.
+              La coordinació general és la capa que connecta les dues àrees i evita que MESCLARI funcioni com un conjunt fragmentat. La seva responsabilitat és assegurar que la direcció gastronòmica, la lògica de sala, el funcionament operatiu i la lectura del model avancin dins d’una mateixa línia.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="home-block" id="logica-organitzativa-model">
-        <div class="home-section-head">
+      <section class="gestio-section" id="logica-organitzativa-model">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">06 · Model</p>
           <h2>Lògica organitzativa del model</h2>
-        </div>
-        <div class="home-grid two">
-          <article class="home-card">
+        </header>
+        <div class="gestio-grid two">
+          <article class="gestio-card">
             <p>
-              MESCLARI s’organitza sota una idea central: cada persona ha d’ocupar un lloc clar dins del conjunt i cada funció ha de respondre a una necessitat
-              real del projecte. Aquesta lògica evita duplicitats, reforça la llegibilitat interna del model i permet defensar el restaurant com una proposta ben
-              pensada, no només des del concepte, sinó també des de l’execució.
+              MESCLARI s’organitza sota una idea central: cada persona ha d’ocupar un lloc clar dins del conjunt i cada funció ha de respondre a una necessitat real del projecte. Aquesta lògica evita duplicitats, reforça la llegibilitat interna del model i permet defensar el restaurant com una proposta ben pensada, no només des del concepte, sinó també des de l’execució.
             </p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <p>
-              La gestió i organització del restaurant no es plantegen des d’una estructura teòrica o inflada, sinó des d’una distribució funcional coherent amb
-              la gamma del negoci, amb el seu format de servei i amb una lectura realista del volum de treball.
+              La gestió i organització del restaurant no es plantegen des d’una estructura teòrica o inflada, sinó des d’una distribució funcional coherent amb la gamma del negoci, amb el seu format de servei i amb una lectura realista del volum de treball.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="home-block" id="credibilitat-operativa">
-        <div class="home-section-head">
+      <section class="gestio-section" id="credibilitat-operativa">
+        <header class="gestio-section-head">
+          <p class="gestio-eyebrow">07 · Solidesa</p>
           <h2>Credibilitat operativa</h2>
-          <p class="home-intro">L’estructura humana del projecte està pensada per reforçar la seva aplicació real i la seva coherència global.</p>
-        </div>
-        <div class="cred-grid">
-          <article class="home-card">
+          <p>L’estructura humana del projecte està pensada per reforçar la seva aplicació real i la seva coherència global.</p>
+        </header>
+        <div class="gestio-grid four">
+          <article class="gestio-card">
             <h4>Responsabilitats definides</h4>
             <p>Cada àrea del projecte assumeix una funció concreta i necessària dins del funcionament general del restaurant.</p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Visió compartida</h4>
             <p>Les decisions operatives no es prenen de forma aïllada, sinó connectades amb la identitat, el nivell i l’experiència que MESCLARI vol oferir.</p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card">
             <h4>Treball coordinat</h4>
             <p>La relació entre cuina, sala i coordinació general reforça la solidesa del model i la seva capacitat de funcionar amb ordre.</p>
           </article>
-          <article class="home-card">
+          <article class="gestio-card important">
             <h4>Aplicació real</h4>
             <p>L’estructura humana del projecte està pensada perquè MESCLARI pugui defensar-se com una proposta executable, viable i coherent.</p>
           </article>
         </div>
       </section>
 
-      <section class="home-block home-closure" id="tancament-gestio">
-        <p class="home-section-kicker">Tancament</p>
+      <section class="gestio-section gestio-closure" id="tancament-gestio">
+        <p class="gestio-eyebrow">Tancament</p>
         <h2>Tancament</h2>
-        <p class="home-intro">
-          MESCLARI pren forma a través d’una organització humana clara, funcional i coherent amb la seva proposta. L’equip impulsor defineix la direcció del
-          projecte, mentre que la plantilla operativa i la seva estructura funcional permeten convertir aquesta direcció en una experiència real de restaurant.
+        <p>
+          MESCLARI pren forma a través d’una organització humana clara, funcional i coherent amb la seva proposta. L’equip impulsor defineix la direcció del projecte, mentre que la plantilla operativa i la seva estructura funcional permeten convertir aquesta direcció en una experiència real de restaurant.
         </p>
-        <p class="home-intro"><strong>Una proposta sòlida necessita una estructura humana igualment sòlida.</strong></p>
+        <p><strong>Una proposta sòlida necessita una estructura humana igualment sòlida.</strong></p>
       </section>
     </main>
 
