@@ -898,6 +898,111 @@
           min-height: 230px;
         }
       }
+
+      /* =========================================================
+         POLIT FINAL SOBRE VÍDEO · ETIQUETES D'IMATGE MÉS FINES
+         Evita les bandes fosques grosses que tapaven part del plat.
+      ========================================================= */
+
+      .oferta-dish-media,
+      .oferta-pass-media,
+      .oferta-liquid-media {
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        background: #f1e8da;
+      }
+
+      .oferta-dish-media::after,
+      .oferta-pass-media::after,
+      .oferta-liquid-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: inherit;
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.04)),
+          linear-gradient(to top, rgba(18, 30, 40, 0.18), transparent 42%);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+      }
+
+      .oferta-media-label {
+        left: auto;
+        right: 0.82rem;
+        bottom: 0.82rem;
+        width: auto;
+        max-width: calc(100% - 1.64rem);
+        min-height: 38px;
+        padding: 0.48rem 0.66rem;
+        border-radius: 999px;
+        background: rgba(30, 45, 59, 0.66);
+        color: #fff8ef;
+        box-shadow: 0 10px 24px rgba(12, 19, 26, 0.20);
+        backdrop-filter: blur(8px);
+        font-size: 0;
+        letter-spacing: 0;
+        gap: 0.38rem;
+      }
+
+      .oferta-media-label::before {
+        content: "↗";
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        background: rgba(255, 248, 239, 0.16);
+        color: #fff8ef;
+        font-size: 0.88rem;
+        line-height: 1;
+      }
+
+      .oferta-media-label em {
+        display: inline-flex;
+        font-style: normal;
+        font-size: 0.72rem;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff8ef;
+      }
+
+      .oferta-pass-media img,
+      .oferta-dish-media img,
+      .oferta-liquid-media img {
+        position: relative;
+        z-index: 0;
+      }
+
+      .oferta-pass-media:hover,
+      .oferta-dish-media:hover,
+      .oferta-liquid-media:hover {
+        box-shadow: 0 22px 44px rgba(30, 45, 59, 0.14);
+      }
+
+      .oferta-category-card {
+        gap: clamp(1.05rem, 2.1vw, 1.85rem);
+      }
+
+      .oferta-pass {
+        align-items: stretch;
+      }
+
+      @media (min-width: 1181px) {
+        .oferta-dish-media img {
+          min-height: 280px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .oferta-media-label {
+          right: 0.62rem;
+          bottom: 0.62rem;
+          min-height: 34px;
+          padding: 0.42rem 0.58rem;
+        }
+      }
+
     </style>
   </head>
   <body class="oferta-page-pro">
