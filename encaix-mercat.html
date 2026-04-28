@@ -7,9 +7,820 @@
     <meta name="description" content="Justificació estratègica i encaix de mercat de MESCLARI: context, públic objectiu, oportunitat competitiva i síntesi defensable." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* =========================================================
+         MESCLARI · ENCAIX DE MERCAT
+         Versió visual premium coherent amb la portada i subpàgines
+      ========================================================= */
+
+      .mercat-page,
+      .mercat-page * {
+        box-sizing: border-box;
+      }
+
+      .mercat-page {
+        --terracotta: #c25e3c;
+        --blue: #1e2d3b;
+        --ink: #233849;
+        --ink-soft: #4a5f72;
+        --beige: #f4e9dc;
+        --sand: #d8cbb2;
+        --olive: #6e8b74;
+        --line: rgba(30, 45, 59, 0.12);
+        --line-soft: rgba(30, 45, 59, 0.08);
+        --panel: rgba(255, 255, 255, 0.78);
+        --panel-strong: rgba(255, 255, 255, 0.93);
+        --shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+
+        margin: 0;
+        color: var(--blue);
+        background:
+          radial-gradient(circle at 6% 4%, rgba(194, 94, 60, 0.16), transparent 32rem),
+          radial-gradient(circle at 92% 8%, rgba(110, 139, 116, 0.13), transparent 28rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.98));
+        font-family: "Inter", sans-serif;
+      }
+
+      .mercat-page .nav {
+        z-index: 1000;
+      }
+
+      .mercat-page .nav .brand-mini {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+      }
+
+      .mercat-page .nav .nav-logo {
+        width: 42px !important;
+        height: 42px !important;
+        object-fit: contain;
+        border-radius: 0.55rem;
+        background: rgba(244, 233, 220, 0.92);
+        box-shadow: 0 6px 18px rgba(30, 45, 59, 0.12);
+      }
+
+      .mercat-page .nav .brand-name {
+        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
+        letter-spacing: 0.13em;
+        line-height: 1;
+      }
+
+      .mercat-page .em-main-pro {
+        width: 100%;
+        padding: clamp(4.35rem, 4.8vw, 5.15rem) 0 clamp(3rem, 6vw, 5rem);
+        overflow: hidden;
+      }
+
+      .mercat-page .em-main-pro p,
+      .mercat-page .em-main-pro li {
+        line-height: 1.72;
+      }
+
+      .mercat-page h1,
+      .mercat-page h2,
+      .mercat-page h3,
+      .mercat-page h4 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .mercat-page .em-block {
+        width: min(1220px, calc(100% - 2rem));
+        margin-inline: auto;
+        padding: clamp(3rem, 6vw, 5.6rem) 0;
+      }
+
+      .mercat-page .em-kicker,
+      .mercat-page .home-section-kicker {
+        margin: 0 0 0.85rem;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+      }
+
+      .mercat-page .em-section-head {
+        max-width: 920px;
+        margin: 0 auto clamp(1.7rem, 3vw, 2.5rem);
+        text-align: center;
+      }
+
+      .mercat-page .em-section-head h2 {
+        margin: 0;
+        color: var(--blue);
+        font-size: clamp(2.8rem, 5.8vw, 5.4rem);
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+      }
+
+      .mercat-page .em-section-head p {
+        max-width: 760px;
+        margin: 1rem auto 0;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.15vw, 1.12rem);
+      }
+
+      /* HERO */
+
+      .mercat-page .em-hero {
+        position: relative;
+        width: min(1220px, calc(100% - 2rem));
+        margin: 0 auto clamp(2.2rem, 3.5vw, 3.2rem);
+        padding: clamp(0.85rem, 1.6vw, 1.1rem);
+        border: 1px solid var(--line-soft);
+        border-radius: 2.45rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.72));
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .mercat-page .em-hero::before {
+        content: "MERCAT";
+        position: absolute;
+        right: -1rem;
+        top: -0.25rem;
+        z-index: 0;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4rem, 9vw, 9rem);
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        color: rgba(30, 45, 59, 0.045);
+        pointer-events: none;
+      }
+
+      .mercat-page .em-hero-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 0.96fr) minmax(400px, 1.04fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: stretch;
+      }
+
+      .mercat-page .em-hero-copy {
+        position: relative;
+        display: flex;
+        min-height: clamp(470px, 43vw, 610px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: clamp(2rem, 3.4vw, 3.25rem) clamp(1.5rem, 2.6vw, 2.9rem);
+        border-radius: 2rem;
+        color: var(--beige);
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.17), transparent 19rem),
+          linear-gradient(155deg, rgba(30, 45, 59, 0.99), rgba(35, 56, 73, 0.94));
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+        overflow: hidden;
+      }
+
+      .mercat-page .em-hero-copy::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 1.25rem;
+        transform: translateX(-50%);
+        width: min(150px, 32%);
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(194, 94, 60, 0), rgba(194, 94, 60, 0.95), rgba(194, 94, 60, 0));
+      }
+
+      .mercat-page .em-hero-copy::after {
+        content: "MESCLARI";
+        position: absolute;
+        left: 50%;
+        bottom: -0.4rem;
+        transform: translateX(-50%);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.5rem, 7vw, 6.2rem);
+        line-height: 1;
+        letter-spacing: 0.06em;
+        color: rgba(244, 233, 220, 0.055);
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
+      .mercat-page .em-hero-copy .em-kicker {
+        margin: 0 auto 1rem;
+        padding: 0.42rem 0.86rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194, 94, 60, 0.34);
+        background: rgba(194, 94, 60, 0.12);
+        color: var(--sand);
+      }
+
+      .mercat-page .em-hero-copy h1 {
+        max-width: 11.5ch;
+        margin: 0 auto;
+        color: #fff;
+        font-size: clamp(3rem, 6vw, 5.65rem);
+        line-height: 0.88;
+        letter-spacing: -0.058em;
+        text-wrap: balance;
+      }
+
+      .mercat-page .em-hero-intro {
+        max-width: 39rem;
+        margin: clamp(1.15rem, 1.9vw, 1.55rem) auto 0;
+        color: rgba(244, 233, 220, 0.86);
+        font-size: clamp(0.98rem, 1.08vw, 1.13rem);
+      }
+
+      .mercat-page .em-hero-mini {
+        display: grid;
+        width: 100%;
+        max-width: 42rem;
+        gap: 0.7rem;
+        margin-top: clamp(1.3rem, 2vw, 1.8rem);
+      }
+
+      .mercat-page .em-hero-mini p {
+        margin: 0;
+        padding: 0.85rem 1rem;
+        border: 1px solid rgba(244, 233, 220, 0.13);
+        border-radius: 1rem;
+        background: rgba(244, 233, 220, 0.06);
+        color: rgba(244, 233, 220, 0.82);
+      }
+
+      .mercat-page .em-hero-mini strong {
+        display: block;
+        margin-bottom: 0.12rem;
+        color: #fff;
+        font-family: "Inter", sans-serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+      }
+
+      .mercat-page .em-hero-mini span {
+        display: block;
+        font-size: 0.9rem;
+      }
+
+      .mercat-page .em-hero-media {
+        position: relative;
+        min-height: clamp(470px, 43vw, 610px);
+        margin: 0;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        border-radius: 2rem;
+        background:
+          radial-gradient(circle at top left, rgba(194, 94, 60, 0.13), transparent 20rem),
+          rgba(244, 233, 220, 0.82);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+        overflow: hidden;
+      }
+
+      .mercat-page .em-image-trigger {
+        appearance: none;
+        -webkit-appearance: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: zoom-in;
+      }
+
+      .mercat-page .em-image-trigger:focus-visible {
+        outline: 3px solid rgba(194, 94, 60, 0.45);
+        outline-offset: 4px;
+      }
+
+      /* IMPORTANT: primera foto sencera sí o sí */
+      .mercat-page .em-hero-media img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        object-position: center center;
+        padding: clamp(0.55rem, 1.2vw, 0.95rem);
+        filter: saturate(1.03) contrast(1.01);
+      }
+
+      .mercat-page .em-image-hint {
+        position: absolute;
+        left: 1.15rem;
+        bottom: 1.15rem;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.72rem 0.95rem;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.92);
+        color: var(--blue);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        box-shadow: 0 12px 34px rgba(30, 45, 59, 0.16);
+        backdrop-filter: blur(10px);
+        pointer-events: none;
+      }
+
+      .mercat-page .em-image-hint::before {
+        content: "+";
+        display: inline-grid;
+        place-items: center;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 999px;
+        background: var(--terracotta);
+        color: #fff;
+        line-height: 1;
+      }
+
+      .mercat-page .em-opening-keys {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.85rem, 1.5vw, 1.1rem);
+        margin-top: clamp(1rem, 1.8vw, 1.35rem);
+      }
+
+      .mercat-page .em-opening-keys article,
+      .mercat-page .em-card,
+      .mercat-page .em-public-card,
+      .mercat-page .em-flow-card,
+      .mercat-page .em-axis-item,
+      .mercat-page .em-dafo-card {
+        border: 1px solid var(--line-soft);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.93), rgba(244, 233, 220, 0.54));
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      .mercat-page .em-opening-keys article:hover,
+      .mercat-page .em-card:hover,
+      .mercat-page .em-public-card:hover,
+      .mercat-page .em-flow-card:hover,
+      .mercat-page .em-axis-item:hover,
+      .mercat-page .em-dafo-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(194, 94, 60, 0.22);
+        box-shadow: 0 22px 52px rgba(30, 45, 59, 0.1);
+      }
+
+      .mercat-page .em-opening-keys article {
+        position: relative;
+        padding: 1.35rem;
+        border-radius: 1.45rem;
+        overflow: hidden;
+      }
+
+      .mercat-page .em-opening-keys article::before {
+        content: "";
+        position: absolute;
+        left: 1.2rem;
+        right: 1.2rem;
+        top: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--terracotta), rgba(194, 94, 60, 0.18));
+      }
+
+      .mercat-page .em-opening-keys h3,
+      .mercat-page .em-card h3,
+      .mercat-page .em-public-card h3,
+      .mercat-page .em-flow-card h3,
+      .mercat-page .em-axis-item h3,
+      .mercat-page .em-dafo-card h3 {
+        margin: 0 0 0.6rem;
+        color: var(--blue);
+        font-size: clamp(1.4rem, 2vw, 1.9rem);
+        line-height: 1;
+      }
+
+      .mercat-page .em-opening-keys p,
+      .mercat-page .em-card p,
+      .mercat-page .em-public-card p,
+      .mercat-page .em-flow-card p,
+      .mercat-page .em-axis-item p,
+      .mercat-page .em-dafo-card li {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      /* EXECUTIVE */
+
+      .mercat-page .em-executive-grid,
+      .mercat-page .em-public-grid,
+      .mercat-page .em-dafo-grid {
+        display: grid;
+        gap: clamp(1rem, 2vw, 1.35rem);
+      }
+
+      .mercat-page .em-executive-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .mercat-page .em-card,
+      .mercat-page .em-public-card,
+      .mercat-page .em-dafo-card {
+        position: relative;
+        padding: clamp(1.35rem, 2.1vw, 1.8rem);
+        border-radius: 1.65rem;
+      }
+
+      .mercat-page .em-card::before,
+      .mercat-page .em-public-card::before,
+      .mercat-page .em-dafo-card::before {
+        content: "";
+        position: absolute;
+        left: 1.35rem;
+        top: 1.25rem;
+        width: 2.8rem;
+        height: 0.18rem;
+        border-radius: 999px;
+        background: var(--terracotta);
+      }
+
+      .mercat-page .em-card h3,
+      .mercat-page .em-public-card h3,
+      .mercat-page .em-dafo-card h3 {
+        margin-top: 1.35rem;
+      }
+
+      /* TERRITORIAL */
+
+      .mercat-page .em-territorial-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.94fr) minmax(380px, 1.06fr);
+        gap: clamp(1rem, 2.3vw, 1.65rem);
+        align-items: stretch;
+      }
+
+      .mercat-page .em-territorial-copy {
+        display: flex;
+        min-height: 440px;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(1.5rem, 3vw, 2.4rem);
+        border-radius: 2rem;
+        background: var(--panel);
+        border: 1px solid var(--line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+      }
+
+      .mercat-page .em-territorial-lead {
+        margin: 0;
+        color: var(--blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.65rem, 2.5vw, 2.45rem);
+        line-height: 1.06;
+        letter-spacing: -0.035em;
+        text-align: center;
+      }
+
+      .mercat-page .em-territorial-note {
+        max-width: 46rem;
+        margin: 1rem auto 0;
+        color: var(--ink-soft);
+        text-align: center;
+      }
+
+      .mercat-page .em-territorial-points {
+        display: grid;
+        gap: 0.62rem;
+        margin: 1.35rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mercat-page .em-territorial-points li {
+        position: relative;
+        padding: 0.78rem 0.95rem 0.78rem 2.35rem;
+        border-radius: 0.95rem;
+        background: rgba(194, 94, 60, 0.08);
+        color: var(--blue);
+        font-weight: 700;
+      }
+
+      .mercat-page .em-territorial-points li::before {
+        content: "";
+        position: absolute;
+        left: 0.95rem;
+        top: 50%;
+        width: 0.52rem;
+        height: 0.52rem;
+        border-radius: 999px;
+        background: var(--terracotta);
+        transform: translateY(-50%);
+      }
+
+      .mercat-page .em-image-slot {
+        position: relative;
+        min-height: 440px;
+        margin: 0;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        border-radius: 2rem;
+        overflow: hidden;
+        background: rgba(244, 233, 220, 0.84);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+      }
+
+      .mercat-page .em-image-slot img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .mercat-page .em-image-slot::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 48%, rgba(30, 45, 59, 0.34));
+        pointer-events: none;
+      }
+
+      /* PUBLIC */
+
+      .mercat-page .em-public-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      /* COMPETITIVE */
+
+      .mercat-page .em-competitive-panel {
+        padding: clamp(1.6rem, 3vw, 2.55rem);
+        border-radius: 2rem;
+        background:
+          radial-gradient(circle at top right, rgba(194, 94, 60, 0.16), transparent 22rem),
+          rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+      }
+
+      .mercat-page .em-competitive-panel > p {
+        max-width: 860px;
+        margin: 0 auto 1.45rem;
+        color: var(--ink-soft);
+        text-align: center;
+        font-size: clamp(1rem, 1.15vw, 1.12rem);
+      }
+
+      .mercat-page .em-competitive-flow {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.85rem, 1.6vw, 1.1rem);
+      }
+
+      .mercat-page .em-flow-card {
+        padding: clamp(1.25rem, 2vw, 1.65rem);
+        border-radius: 1.55rem;
+      }
+
+      .mercat-page .em-flow-result {
+        background:
+          radial-gradient(circle at top right, rgba(194, 94, 60, 0.18), transparent 14rem),
+          linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94));
+      }
+
+      .mercat-page .em-flow-result h3,
+      .mercat-page .em-flow-result p {
+        color: #fff;
+      }
+
+      .mercat-page .em-competitive-closing,
+      .mercat-page .em-dafo-closing {
+        max-width: 780px;
+        margin: 1.4rem auto 0;
+        color: var(--blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.65rem, 2.5vw, 2.4rem);
+        line-height: 1.06;
+        text-align: center;
+        letter-spacing: -0.035em;
+      }
+
+      /* POSITIONING */
+
+      .mercat-page .em-axis-list {
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .mercat-page .em-axis-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: clamp(1rem, 2vw, 1.4rem);
+        align-items: center;
+        padding: clamp(1.15rem, 2vw, 1.65rem);
+        border-radius: 1.55rem;
+      }
+
+      .mercat-page .em-axis-item span {
+        display: inline-grid;
+        place-items: center;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 999px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+      }
+
+      .mercat-page .em-axis-item h3 {
+        margin-bottom: 0.25rem;
+      }
+
+      /* DAFO */
+
+      .mercat-page .em-dafo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mercat-page .em-dafo-card ul {
+        margin: 0;
+        padding-left: 1.1rem;
+      }
+
+      .mercat-page .em-dafo-card li + li {
+        margin-top: 0.55rem;
+      }
+
+      /* CLOSE */
+
+      .mercat-page .em-close-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: stretch;
+        padding: clamp(1.4rem, 2.8vw, 2.4rem);
+        border-radius: 2rem;
+        background:
+          radial-gradient(circle at 8% 12%, rgba(194, 94, 60, 0.15), transparent 24rem),
+          linear-gradient(155deg, rgba(30, 45, 59, 0.99), rgba(35, 56, 73, 0.94));
+        box-shadow: 0 26px 70px rgba(30, 45, 59, 0.16);
+      }
+
+      .mercat-page .em-close-copy {
+        padding: clamp(1rem, 2vw, 1.6rem);
+        color: rgba(244, 233, 220, 0.88);
+      }
+
+      .mercat-page .em-close-copy .em-kicker {
+        color: var(--sand);
+      }
+
+      .mercat-page .em-close-copy h2 {
+        margin: 0 0 1rem;
+        color: #fff;
+        font-size: clamp(2.6rem, 5vw, 5.2rem);
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+      }
+
+      .mercat-page .em-close-copy p:last-child {
+        max-width: 820px;
+        margin: 0;
+      }
+
+      .mercat-page .em-close-points {
+        display: grid;
+        gap: 0.8rem;
+        align-content: center;
+      }
+
+      .mercat-page .em-close-points p {
+        margin: 0;
+        padding: 1rem 1.1rem;
+        border-radius: 1.05rem;
+        background: rgba(244, 233, 220, 0.08);
+        border: 1px solid rgba(244, 233, 220, 0.12);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      /* LIGHTBOX */
+
+      .mesclari-lightbox[hidden] {
+        display: none;
+      }
+
+      .mesclari-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        padding: clamp(1rem, 3vw, 2.5rem);
+        background: rgba(30, 45, 59, 0.88);
+        backdrop-filter: blur(12px);
+      }
+
+      .mesclari-lightbox__inner {
+        position: relative;
+        width: min(1180px, 96vw);
+        max-height: 92vh;
+        padding: clamp(0.75rem, 1.5vw, 1.1rem);
+        border-radius: 1.65rem;
+        background: rgba(244, 233, 220, 0.96);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+      }
+
+      .mesclari-lightbox__inner img {
+        display: block;
+        width: 100%;
+        max-height: 82vh;
+        object-fit: contain;
+        border-radius: 1.15rem;
+        background: rgba(30, 45, 59, 0.08);
+      }
+
+      .mesclari-lightbox__close {
+        position: absolute;
+        top: -0.85rem;
+        right: -0.85rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 0;
+        border-radius: 999px;
+        background: var(--terracotta);
+        color: #fff;
+        font-size: 1.4rem;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+      }
+
+      @media (max-width: 1080px) {
+        .mercat-page .em-hero-grid,
+        .mercat-page .em-territorial-layout,
+        .mercat-page .em-close-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .mercat-page .em-hero-copy,
+        .mercat-page .em-hero-media,
+        .mercat-page .em-territorial-copy,
+        .mercat-page .em-image-slot {
+          min-height: auto;
+        }
+
+        .mercat-page .em-hero-media {
+          min-height: 440px;
+        }
+
+        .mercat-page .em-executive-grid,
+        .mercat-page .em-public-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .mercat-page .em-main-pro {
+          padding-top: 4.8rem;
+        }
+
+        .mercat-page .em-hero,
+        .mercat-page .em-block {
+          width: min(100% - 1rem, 1220px);
+        }
+
+        .mercat-page .em-hero-copy,
+        .mercat-page .em-territorial-copy,
+        .mercat-page .em-competitive-panel,
+        .mercat-page .em-close-panel {
+          padding: 1.35rem;
+          border-radius: 1.45rem;
+        }
+
+        .mercat-page .em-hero-copy h1,
+        .mercat-page .em-section-head h2,
+        .mercat-page .em-close-copy h2 {
+          font-size: clamp(2.45rem, 12vw, 4rem);
+        }
+
+        .mercat-page .em-opening-keys,
+        .mercat-page .em-executive-grid,
+        .mercat-page .em-public-grid,
+        .mercat-page .em-competitive-flow,
+        .mercat-page .em-dafo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mercat-page .em-axis-item {
+          grid-template-columns: 1fr;
+        }
+
+        .mercat-page .em-hero-media {
+          min-height: 360px;
+        }
+      }
+    </style>
   </head>
+
   <body class="mercat-page">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
@@ -31,58 +842,31 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
-    <main class="home-main em-main">
-      <header class="home-block em-opening" id="obertura-mercat">
-        <div class="em-opening-grid">
-          <div class="em-opening-copy">
-            <p class="home-section-kicker">Justificació estratègica i encaix de mercat</p>
+    <main class="home-main em-main em-main-pro">
+      <header class="em-hero" id="obertura-mercat">
+        <div class="em-hero-grid">
+          <div class="em-hero-copy">
+            <p class="em-kicker">Justificació estratègica i encaix de mercat</p>
             <h1>Per què MESCLARI té sentit a Platja d’Aro</h1>
-            <p class="em-opening-intro">MESCLARI no es planteja com una proposta aïllada, sinó com un restaurant pensat per encaixar en un context real. La seva implantació, el tipus de client al qual s’adreça i la seva manera d’ocupar un espai dins del mercat responen a una lectura concreta del territori, de la demanda i de l’oportunitat competitiva.</p>
-            <div class="em-opening-mini">
+            <p class="em-hero-intro">MESCLARI no es planteja com una proposta aïllada, sinó com un restaurant pensat per encaixar en un context real. La seva implantació, el tipus de client al qual s’adreça i la seva manera d’ocupar un espai dins del mercat responen a una lectura concreta del territori, de la demanda i de l’oportunitat competitiva.</p>
+            <div class="em-hero-mini">
               <p><strong>Entorn amb capacitat de consum</strong><span>Base territorial i comercial compatible amb una proposta de nivell.</span></p>
               <p><strong>Públic mixt i segmentable</strong><span>Resident, cap de setmana i turisme de qualitat dins una mateixa lectura.</span></p>
               <p><strong>Espai per a una proposta diferencial</strong><span>Posicionament amb identitat pròpia i criteri executiu.</span></p>
             </div>
           </div>
-          <figure
-  class="media-frame"
-  style="
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  "
->
-  <div
-    class="media-slot"
-    role="img"
-    aria-label="Justificació estratègica i encaix de mercat de MESCLARI"
-    style="
-      width: 100%;
-      max-width: 620px;
-      overflow: hidden;
-      border-radius: 24px;
-    "
-  >
-    <img
-      src="imaguenes i videos/encaix-mercat-hero.jpg"
-      alt="Justificació estratègica i encaix de mercat de MESCLARI"
-      loading="lazy"
-      style="
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 24px;
-      "
-    />
-  </div>
-</figure>
+
+          <figure class="em-hero-media" aria-label="Imatge principal d’encaix de mercat de MESCLARI">
+            <button type="button" class="em-image-trigger" data-lightbox-src="imaguenes i videos/encaix-mercat-hero.jpg" data-lightbox-alt="Justificació estratègica i encaix de mercat de MESCLARI" aria-label="Ampliar imatge principal d’encaix de mercat">
+              <img src="imaguenes i videos/encaix-mercat-hero.jpg" alt="Justificació estratègica i encaix de mercat de MESCLARI" loading="lazy" />
+              <span class="em-image-hint">Veure imatge completa</span>
+            </button>
+          </figure>
         </div>
+
         <div class="em-opening-keys" aria-label="Claus de lectura ràpida">
           <article>
             <h3>01 · Context</h3>
@@ -99,32 +883,34 @@
         </div>
       </header>
 
-      <section class="home-block em-executive" id="lectura-executiva-mercat">
-        <div class="em-executive-head">
+      <section class="em-block" id="lectura-executiva-mercat">
+        <div class="em-section-head">
+          <p class="em-kicker">Lectura inicial</p>
           <h2>Lectura executiva del mercat</h2>
         </div>
-        <div class="em-executive-band">
-          <article>
+        <div class="em-executive-grid">
+          <article class="em-card">
             <h3>Entorn favorable</h3>
             <p>Platja d’Aro combina activitat local, afluència turística i una lectura comercial que afavoreix les propostes amb capacitat de diferenciació i valor percebut.</p>
           </article>
-          <article>
+          <article class="em-card">
             <h3>Públic mixt</h3>
             <p>MESCLARI pot adreçar-se tant a client local recurrent com a client de cap de setmana i turisme de qualitat, sense dependre d’un únic perfil de demanda.</p>
           </article>
-          <article>
+          <article class="em-card">
             <h3>Oportunitat diferencial</h3>
             <p>L’espai de mercat més interessant no és competir en volum ni en preu, sinó ocupar una posició més cuidada, més completa i més memorable.</p>
           </article>
-          <article>
+          <article class="em-card">
             <h3>Model defensable</h3>
             <p>La proposta combina identitat, experiència, operativa i lectura comercial en una mateixa direcció, fet que reforça la seva coherència i credibilitat.</p>
           </article>
         </div>
       </section>
 
-      <section class="home-block em-territorial" id="encaix-territorial">
-        <div class="home-section-head em-section-head-wide">
+      <section class="em-block" id="encaix-territorial">
+        <div class="em-section-head">
+          <p class="em-kicker">Territori</p>
           <h2>Encaix territorial</h2>
         </div>
         <div class="em-territorial-layout">
@@ -138,16 +924,19 @@
               <li>Possibilitat de posicionament premium</li>
             </ul>
           </div>
-          <figure class="em-image-slot em-placeholder-territorial"><img src="imaguenes i videos/encaix-mercat-entorn.jpg" alt="Entorn mediterrani de Platja d’Aro" loading="lazy" /></figure>
+          <figure class="em-image-slot">
+            <img src="imaguenes i videos/encaix-mercat-entorn.jpg" alt="Entorn mediterrani de Platja d’Aro" loading="lazy" />
+          </figure>
         </div>
       </section>
 
-      <section class="home-block em-public" id="public-objectiu">
-        <div class="home-section-head em-public-head">
+      <section class="em-block" id="public-objectiu">
+        <div class="em-section-head">
+          <p class="em-kicker">Segmentació</p>
           <h2>Públic objectiu</h2>
           <p>MESCLARI s’adreça a perfils que valoren qualitat, experiència i coherència de proposta.</p>
         </div>
-        <div class="em-public-layout">
+        <div class="em-public-grid">
           <article class="em-public-card">
             <h3>Client local recurrent</h3>
             <p>Perfil de proximitat que busca qualitat, tracte i confiança. És clau perquè aporta estabilitat i possibilitat de fidelització.</p>
@@ -167,56 +956,60 @@
         </div>
       </section>
 
-      <section class="home-block em-competitive" id="oportunitat-competitiva">
-        <div class="em-competitive-head">
+      <section class="em-block" id="oportunitat-competitiva">
+        <div class="em-section-head">
+          <p class="em-kicker">Posicionament</p>
           <h2>Oportunitat competitiva</h2>
-          <p class="em-competitive-sub">MESCLARI no competeix per soroll, sinó per posicionament.</p>
+          <p>MESCLARI no competeix per soroll, sinó per posicionament.</p>
+        </div>
+        <div class="em-competitive-panel">
           <p>La zona presenta activitat i competència, però això no elimina l’oportunitat. Al contrari: obliga a definir millor el lloc que es vol ocupar. L’espai més interessant per a MESCLARI és el d’una proposta premium contemporània, capaç d’unir producte, sala, maridatge i atmosfera dins d’una mateixa experiència.</p>
+          <div class="em-competitive-flow" aria-label="Esquema progressiu d'oportunitat competitiva">
+            <article class="em-flow-card">
+              <h3>El que ja existeix</h3>
+              <p>Hi ha una oferta àmplia i diversa, fet que fa imprescindible evitar una entrada genèrica.</p>
+            </article>
+            <article class="em-flow-card">
+              <h3>El buit detectat</h3>
+              <p>No totes les propostes combinen identitat, coherència de sala, ambient cuidat i lectura gastronòmica en una mateixa direcció.</p>
+            </article>
+            <article class="em-flow-card em-flow-result">
+              <h3>La resposta de MESCLARI</h3>
+              <p>MESCLARI respon amb una proposta construïda des del detall, on producte, servei i atmosfera treballen conjuntament.</p>
+            </article>
+          </div>
+          <p class="em-competitive-closing">La diferència no depèn d’un únic element, sinó de la coherència del conjunt.</p>
         </div>
-        <div class="em-competitive-flow" aria-label="Esquema progressiu d'oportunitat competitiva">
-          <article>
-            <h3>El que ja existeix</h3>
-            <p>Hi ha una oferta àmplia i diversa, fet que fa imprescindible evitar una entrada genèrica.</p>
-          </article>
-          <article>
-            <h3>El buit detectat</h3>
-            <p>No totes les propostes combinen identitat, coherència de sala, ambient cuidat i lectura gastronòmica en una mateixa direcció.</p>
-          </article>
-          <article class="em-flow-result">
-            <h3>La resposta de MESCLARI</h3>
-            <p>MESCLARI respon amb una proposta construïda des del detall, on producte, servei i atmosfera treballen conjuntament.</p>
-          </article>
-        </div>
-        <p class="em-competitive-closing">La diferència no depèn d’un únic element, sinó de la coherència del conjunt.</p>
       </section>
 
-      <section class="home-block em-positioning" id="posicionament-diferencial">
-        <div class="home-section-head">
+      <section class="em-block" id="posicionament-diferencial">
+        <div class="em-section-head">
+          <p class="em-kicker">Diferenciació</p>
           <h2>Posicionament diferencial</h2>
         </div>
         <div class="em-axis-list">
-          <article>
+          <article class="em-axis-item">
             <span>01</span>
             <div>
               <h3>Gamma alta coherent</h3>
               <p>MESCLARI es presenta com una proposta de gamma alta, però ho fa des de la coherència entre producte, servei, atmosfera i percepció global del client.</p>
             </div>
           </article>
-          <article>
+          <article class="em-axis-item">
             <span>02</span>
             <div>
               <h3>Experiència integral</h3>
               <p>La proposta no s’entén només des de la carta, sinó des del conjunt del recorregut: recepció, ritme, maridatge, ambient i valor percebut.</p>
             </div>
           </article>
-          <article>
+          <article class="em-axis-item">
             <span>03</span>
             <div>
               <h3>Sala i maridatge com a valor</h3>
               <p>La sala no actua com un suport passiu, sinó com una part central de l’experiència. Aquesta lectura reforça el posicionament i amplia la percepció de qualitat.</p>
             </div>
           </article>
-          <article>
+          <article class="em-axis-item">
             <span>04</span>
             <div>
               <h3>Model realista i defensable</h3>
@@ -226,12 +1019,13 @@
         </div>
       </section>
 
-      <section class="home-block em-dafo" id="dafo-aplicat">
-        <div class="home-section-head">
+      <section class="em-block" id="dafo-aplicat">
+        <div class="em-section-head">
+          <p class="em-kicker">Anàlisi estratègica</p>
           <h2>DAFO aplicat a MESCLARI</h2>
         </div>
         <div class="em-dafo-grid">
-          <article>
+          <article class="em-dafo-card">
             <h3>Fortaleses</h3>
             <ul>
               <li>Proposta amb identitat clara i posicionament premium.</li>
@@ -240,7 +1034,7 @@
               <li>Lectura realista de l’operativa i del valor percebut.</li>
             </ul>
           </article>
-          <article>
+          <article class="em-dafo-card">
             <h3>Debilitats</h3>
             <ul>
               <li>Major exigència en execució per sostenir el nivell promès.</li>
@@ -249,7 +1043,7 @@
               <li>Sensibilitat als costos propis d’una proposta de gamma alta.</li>
             </ul>
           </article>
-          <article>
+          <article class="em-dafo-card">
             <h3>Oportunitats</h3>
             <ul>
               <li>Entorn amb flux mixt de resident, cap de setmana i turisme.</li>
@@ -258,7 +1052,7 @@
               <li>Possibilitat de consolidar posicionament per qualitat i coherència.</li>
             </ul>
           </article>
-          <article>
+          <article class="em-dafo-card">
             <h3>Amenaces</h3>
             <ul>
               <li>Competència existent dins del municipi i l’entorn proper.</li>
@@ -271,70 +1065,10 @@
         <p class="em-dafo-closing">El valor del DAFO no és descriure riscos de manera teòrica, sinó demostrar que MESCLARI coneix el context on es vol implantar i s’hi posiciona amb criteri.</p>
       </section>
 
-      <section class="home-block em-close" id="sintesi-estrategica-final">
-        <div class="em-close-layout">
+      <section class="em-block" id="sintesi-estrategica-final">
+        <div class="em-close-panel">
           <div class="em-close-copy">
-            <p class="home-section-kicker">Tancament executiu</p>
-            <h2>Síntesi estratègica</h2>
-            <p>MESCLARI té sentit perquè connecta amb un context real, amb un públic identificable i amb una oportunitat competitiva concreta. La seva força no neix d’una idea aïllada, sinó de la coherència entre territori, posicionament, experiència i capacitat d’execució. Aquesta relació entre projecte i mercat és el que converteix la proposta en una opció defensable, creïble i amb recorregut.</p>
-          </div>
-          <div class="em-close-points">
-            <p>Coherència territorial</p>
-            <p>Públic identificat</p>
-            <p>Oportunitat real de posicionament</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-block em-dafo" id="dafo-aplicat">
-        <div class="home-section-head">
-          <h2>DAFO aplicat a MESCLARI</h2>
-        </div>
-        <div class="em-dafo-grid">
-          <article>
-            <h3>Fortaleses</h3>
-            <ul>
-              <li>Proposta amb identitat clara i posicionament premium.</li>
-              <li>Experiència integral basada en producte, sala i atmosfera.</li>
-              <li>Capacitat de diferenciació des de la coherència global.</li>
-              <li>Lectura realista de l’operativa i del valor percebut.</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Debilitats</h3>
-            <ul>
-              <li>Major exigència en execució per sostenir el nivell promès.</li>
-              <li>Dependència d’una bona coordinació entre cuina i sala.</li>
-              <li>Necessitat de construir reconeixement progressiu en el mercat.</li>
-              <li>Sensibilitat als costos propis d’una proposta de gamma alta.</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Oportunitats</h3>
-            <ul>
-              <li>Entorn amb flux mixt de resident, cap de setmana i turisme.</li>
-              <li>Espai per a una proposta més cuidada i menys genèrica.</li>
-              <li>Valoració creixent de les experiències gastronòmiques completes.</li>
-              <li>Possibilitat de consolidar posicionament per qualitat i coherència.</li>
-            </ul>
-          </article>
-          <article>
-            <h3>Amenaces</h3>
-            <ul>
-              <li>Competència existent dins del municipi i l’entorn proper.</li>
-              <li>Estacionalitat pròpia del territori.</li>
-              <li>Major exigència del client en relació qualitat-experiència-preu.</li>
-              <li>Pressió sobre costos i rendibilitat si el model no es controla bé.</li>
-            </ul>
-          </article>
-        </div>
-        <p class="em-dafo-closing">El valor del DAFO no és descriure riscos de manera teòrica, sinó demostrar que MESCLARI coneix el context on es vol implantar i s’hi posiciona amb criteri.</p>
-      </section>
-
-      <section class="home-block em-close" id="sintesi-estrategica-final">
-        <div class="em-close-layout">
-          <div class="em-close-copy">
-            <p class="home-section-kicker">Tancament executiu</p>
+            <p class="em-kicker">Tancament executiu</p>
             <h2>Síntesi estratègica</h2>
             <p>MESCLARI té sentit perquè connecta amb un context real, amb un públic identificable i amb una oportunitat competitiva concreta. La seva força no neix d’una idea aïllada, sinó de la coherència entre territori, posicionament, experiència i capacitat d’execució. Aquesta relació entre projecte i mercat és el que converteix la proposta en una opció defensable, creïble i amb recorregut.</p>
           </div>
@@ -351,6 +1085,51 @@
       <p>MESCLARI · Justificació estratègica i encaix de mercat amb lectura professional.</p>
     </footer>
 
+    <div class="mesclari-lightbox" id="mesclariLightbox" hidden>
+      <div class="mesclari-lightbox__inner" role="dialog" aria-modal="true" aria-label="Imatge ampliada">
+        <button type="button" class="mesclari-lightbox__close" id="lightboxClose" aria-label="Tancar imatge ampliada">×</button>
+        <img id="lightboxImage" src="" alt="" />
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const lightbox = document.getElementById("mesclariLightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const closeButton = document.getElementById("lightboxClose");
+        const triggers = document.querySelectorAll("[data-lightbox-src]");
+
+        if (!lightbox || !lightboxImage || !closeButton || !triggers.length) return;
+
+        function openLightbox(src, alt) {
+          lightboxImage.src = src;
+          lightboxImage.alt = alt || "Imatge ampliada";
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+          closeButton.focus();
+        }
+
+        function closeLightbox() {
+          lightbox.hidden = true;
+          lightboxImage.src = "";
+          document.body.style.overflow = "";
+        }
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            openLightbox(trigger.dataset.lightboxSrc, trigger.dataset.lightboxAlt);
+          });
+        });
+
+        closeButton.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) closeLightbox();
+        });
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+        });
+      })();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
