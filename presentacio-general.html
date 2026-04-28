@@ -44,9 +44,35 @@
           linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.98));
       }
 
+      /* Ajuste específico para que la navegación no quede visualmente separada */
+      .visio-page-premium .nav {
+        z-index: 1000;
+      }
+
+      .visio-page-premium .nav .brand-mini {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.72rem;
+      }
+
+      .visio-page-premium .nav .nav-logo {
+        width: 42px !important;
+        height: 42px !important;
+        object-fit: contain;
+        border-radius: 0.55rem;
+        background: rgba(244, 233, 220, 0.92);
+        box-shadow: 0 6px 18px rgba(30, 45, 59, 0.12);
+      }
+
+      .visio-page-premium .nav .brand-name {
+        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
+        letter-spacing: 0.13em;
+        line-height: 1;
+      }
+
       .visio-page-premium .vg-main-premium {
         width: 100%;
-        padding: clamp(6.7rem, 8vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+        padding: clamp(4.85rem, 5.4vw, 5.8rem) 0 clamp(3rem, 6vw, 5rem);
         overflow: hidden;
       }
 
@@ -81,7 +107,8 @@
       .visio-page-premium .vg-opening-premium {
         position: relative;
         width: min(1220px, calc(100% - 2rem));
-        margin: 0 auto clamp(2.4rem, 4vw, 3.8rem);
+        margin: 0 auto clamp(2.2rem, 3.4vw, 3.2rem);
+        scroll-margin-top: 7rem;
         padding: clamp(0.85rem, 1.6vw, 1.1rem);
         border-radius: 2.4rem;
         background:
@@ -109,17 +136,17 @@
         position: relative;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+        grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         align-items: stretch;
       }
 
       .visio-page-premium .vg-opening-copy {
         display: flex;
-        min-height: 560px;
+        min-height: 470px;
         flex-direction: column;
         justify-content: center;
-        padding: clamp(2rem, 4vw, 4.2rem);
+        padding: clamp(1.8rem, 3.2vw, 3.25rem);
         border-radius: 2rem;
         color: var(--mesclari-beige);
         background:
@@ -130,28 +157,42 @@
       }
 
       .visio-page-premium .vg-opening-copy h1 {
-        max-width: 850px;
+        max-width: 860px;
         margin: 0;
-        font-size: clamp(3.35rem, 6.6vw, 6.7rem);
-        line-height: 0.9;
-        letter-spacing: -0.06em;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.45rem, 1vw, 0.8rem);
         color: #fff;
       }
 
       .visio-page-premium .vg-brand-word {
+        display: block;
+        width: fit-content;
+        font-size: clamp(3.25rem, 6.9vw, 6.1rem);
+        line-height: 0.82;
+        letter-spacing: -0.065em;
         color: #fff;
       }
 
+      .visio-page-premium .vg-title-rest {
+        display: block;
+        max-width: 790px;
+        font-size: clamp(2.15rem, 3.75vw, 3.95rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+        color: rgba(255, 255, 255, 0.94);
+      }
+
       .visio-page-premium .vg-opening-copy > p:not(.home-section-kicker) {
-        max-width: 760px;
-        margin: clamp(1.2rem, 2vw, 1.65rem) 0 0;
-        font-size: clamp(1rem, 1.2vw, 1.16rem);
+        max-width: 780px;
+        margin: clamp(1.15rem, 1.8vw, 1.45rem) 0 0;
+        font-size: clamp(0.98rem, 1.1vw, 1.12rem);
         color: rgba(244, 233, 220, 0.86);
       }
 
       .visio-page-premium .vg-opening-media {
         position: relative;
-        min-height: 560px;
+        min-height: 470px;
         margin: 0;
         border-radius: 2rem;
         overflow: hidden;
@@ -164,6 +205,7 @@
         height: 100%;
         display: block;
         object-fit: cover;
+        object-position: center;
         filter: saturate(1.04) contrast(1.02);
       }
 
@@ -180,7 +222,7 @@
       .visio-page-premium .vg-executive-note {
         grid-column: 1 / -1;
         display: grid;
-        grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+        grid-template-columns: minmax(240px, 0.28fr) minmax(0, 0.72fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         align-items: center;
         padding: clamp(1.3rem, 2vw, 1.8rem);
@@ -468,7 +510,7 @@
 
       @media (max-width: 780px) {
         .visio-page-premium .vg-main-premium {
-          padding-top: 5.8rem;
+          padding-top: 4.8rem;
         }
 
         .visio-page-premium .vg-opening-premium,
@@ -485,8 +527,12 @@
           border-radius: 1.45rem;
         }
 
-        .visio-page-premium .vg-opening-copy h1 {
-          font-size: clamp(2.9rem, 14vw, 4.8rem);
+        .visio-page-premium .vg-brand-word {
+          font-size: clamp(3rem, 16vw, 4.6rem);
+        }
+
+        .visio-page-premium .vg-title-rest {
+          font-size: clamp(2rem, 10vw, 3.2rem);
         }
 
         .visio-page-premium .vg-cards-grid {
@@ -533,7 +579,7 @@
         <div class="vg-opening-grid">
           <div class="vg-opening-copy">
             <p class="home-section-kicker">Concepte i posicionament</p>
-            <h1><span class="vg-brand-word">MESCLARI</span>: una proposta gastronòmica pensada per existir amb sentit, coherència i criteri</h1>
+            <h1><span class="vg-brand-word">MESCLARI</span><span class="vg-title-rest">Una proposta gastronòmica pensada per existir amb sentit, coherència i criteri</span></h1>
             <p>MESCLARI neix com un restaurant gastronòmic contemporani de gamma alta, concebut per unir producte, sala, maridatge i identitat en una mateixa direcció. Es planteja com un model complet, amb encaix real al territori i base operativa sòlida.</p>
           </div>
           <aside class="vg-opening-media" aria-label="Entorn i marc visual de MESCLARI">
