@@ -818,6 +818,178 @@
           min-height: 360px;
         }
       }
+
+      /* =========================================================
+         CORRECCIÓ FINAL · ENCAIX TERRITORIAL
+         La imatge deixa de dominar la secció i es mostra sencera
+      ========================================================= */
+
+      .mercat-page #encaix-territorial {
+        padding-top: clamp(2.4rem, 4.8vw, 4.5rem);
+      }
+
+      .mercat-page #encaix-territorial .em-section-head {
+        margin-bottom: clamp(1.25rem, 2.2vw, 1.9rem);
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-layout {
+        grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+        align-items: center;
+        gap: clamp(1rem, 2vw, 1.45rem);
+        padding: clamp(0.7rem, 1.2vw, 0.95rem);
+        border: 1px solid var(--line-soft);
+        border-radius: 2.25rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(244,233,220,0.62));
+        box-shadow: 0 22px 58px rgba(30, 45, 59, 0.08);
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-copy {
+        min-height: 0;
+        height: 100%;
+        justify-content: center;
+        padding: clamp(1.55rem, 2.6vw, 2.25rem);
+        border-radius: 1.75rem;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.08), transparent 18rem),
+          rgba(255, 255, 255, 0.84);
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-lead {
+        max-width: 18ch;
+        margin-inline: auto;
+        font-size: clamp(1.45rem, 2.25vw, 2.1rem);
+        line-height: 1.14;
+        letter-spacing: -0.03em;
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-note {
+        max-width: 36rem;
+        margin-top: 1rem;
+        font-size: clamp(0.94rem, 1vw, 1.04rem);
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-points {
+        max-width: 34rem;
+        margin: 1.25rem auto 0;
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-points li {
+        padding-block: 0.68rem;
+        font-size: 0.92rem;
+      }
+
+      .mercat-page #encaix-territorial .em-image-slot {
+        min-height: 0;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(0.55rem, 1.1vw, 0.85rem);
+        border-radius: 1.75rem;
+        background:
+          radial-gradient(circle at 50% 12%, rgba(194, 94, 60, 0.12), transparent 17rem),
+          linear-gradient(155deg, rgba(30,45,59,0.98), rgba(35,56,73,0.94));
+        overflow: hidden;
+      }
+
+      .mercat-page #encaix-territorial .em-image-slot::after {
+        display: none;
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-image-trigger {
+        position: relative;
+        display: flex;
+        width: 100%;
+        min-height: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: zoom-in;
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-image-trigger:focus-visible {
+        outline: 3px solid rgba(194, 94, 60, 0.45);
+        outline-offset: 4px;
+      }
+
+      .mercat-page #encaix-territorial .em-image-slot img {
+        width: 100%;
+        height: auto;
+        max-height: 560px;
+        object-fit: contain;
+        object-position: center center;
+        border-radius: 1.35rem;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-image-hint {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.66rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.92);
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.035em;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
+        pointer-events: none;
+      }
+
+      .mercat-page #encaix-territorial .em-territorial-image-hint::before {
+        content: "+";
+        display: inline-grid;
+        place-items: center;
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 999px;
+        background: var(--terracotta);
+        color: #fff;
+        line-height: 1;
+      }
+
+      @media (max-width: 1080px) {
+        .mercat-page #encaix-territorial .em-territorial-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .mercat-page #encaix-territorial .em-territorial-lead {
+          max-width: 22ch;
+        }
+
+        .mercat-page #encaix-territorial .em-image-slot img {
+          max-height: 520px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .mercat-page #encaix-territorial .em-territorial-layout {
+          padding: 0.55rem;
+          border-radius: 1.55rem;
+        }
+
+        .mercat-page #encaix-territorial .em-territorial-copy,
+        .mercat-page #encaix-territorial .em-image-slot {
+          border-radius: 1.25rem;
+        }
+
+        .mercat-page #encaix-territorial .em-territorial-lead {
+          max-width: 100%;
+          font-size: clamp(1.55rem, 8.5vw, 2.35rem);
+        }
+
+        .mercat-page #encaix-territorial .em-image-slot img {
+          max-height: 430px;
+        }
+      }
+
     </style>
   </head>
 
@@ -924,8 +1096,11 @@
               <li>Possibilitat de posicionament premium</li>
             </ul>
           </div>
-          <figure class="em-image-slot">
-            <img src="imaguenes i videos/encaix-mercat-entorn.jpg" alt="Entorn mediterrani de Platja d’Aro" loading="lazy" />
+          <figure class="em-image-slot em-territorial-visual">
+            <button type="button" class="em-territorial-image-trigger" data-lightbox-src="imaguenes i videos/encaix-mercat-entorn.jpg" data-lightbox-alt="Entorn mediterrani de Platja d’Aro" aria-label="Ampliar imatge de l’encaix territorial">
+              <img src="imaguenes i videos/encaix-mercat-entorn.jpg" alt="Entorn mediterrani de Platja d’Aro" loading="lazy" />
+              <span class="em-territorial-image-hint">Veure imatge completa</span>
+            </button>
           </figure>
         </div>
       </section>
