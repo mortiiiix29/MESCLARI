@@ -7,9 +7,552 @@
     <meta name="description" content="Portada principal de MESCLARI amb accés estructurat a totes les àrees del projecte." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* =========================================================
+         MESCLARI · HOME / PORTADA EXECUTIVA
+         CSS scoped per no trencar la resta de pàgines
+      ========================================================= */
+
+      .home-cover,
+      .home-cover * {
+        box-sizing: border-box;
+      }
+
+      .home-cover {
+        --terracotta: #c25e3c;
+        --blue: #1e2d3b;
+        --ink: #233849;
+        --ink-soft: #4a5f72;
+        --beige: #f4e9dc;
+        --sand: #d8cbb2;
+        --olive: #6e8b74;
+        --line: rgba(30, 45, 59, 0.14);
+        --panel: rgba(255, 255, 255, 0.72);
+
+        width: 100%;
+        padding-top: clamp(6rem, 8vw, 8rem);
+        color: var(--blue);
+        background:
+          radial-gradient(circle at 8% 5%, rgba(194, 94, 60, 0.18), transparent 28rem),
+          radial-gradient(circle at 88% 3%, rgba(110, 139, 116, 0.16), transparent 30rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.92), rgba(255, 255, 255, 0.98));
+        overflow: hidden;
+      }
+
+      .home-cover h1,
+      .home-cover h2,
+      .home-cover h3,
+      .home-cover h4 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .home-cover p {
+        line-height: 1.68;
+      }
+
+      .cover-kicker,
+      .cover-section-kicker {
+        margin: 0 0 0.8rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--terracotta);
+      }
+
+      .cover-shell {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      /* HERO */
+
+      .cover-hero {
+        position: relative;
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: clamp(1rem, 2vw, 1.4rem);
+        border-radius: 2.6rem;
+        background: rgba(255, 255, 255, 0.48);
+        border: 1px solid var(--line);
+        box-shadow: 0 28px 80px rgba(30, 45, 59, 0.12);
+        overflow: hidden;
+      }
+
+      .cover-hero::before {
+        content: "MESCLARI";
+        position: absolute;
+        right: -1.4rem;
+        top: 0.4rem;
+        z-index: 0;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4.5rem, 12vw, 12rem);
+        font-weight: 800;
+        letter-spacing: -0.08em;
+        color: rgba(30, 45, 59, 0.045);
+        pointer-events: none;
+      }
+
+      .cover-hero-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+        gap: clamp(1rem, 2vw, 1.4rem);
+        align-items: stretch;
+      }
+
+      .cover-brand-card {
+        min-height: 560px;
+        padding: clamp(1.4rem, 3vw, 2.5rem);
+        border-radius: 2.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background:
+          linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92)),
+          var(--blue);
+        color: var(--beige);
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+      }
+
+      .cover-brand-logo {
+        width: min(190px, 68%);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        margin: 0 auto;
+        background: rgba(244, 233, 220, 0.06);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+      }
+
+      .cover-brand-logo img {
+        width: 78%;
+        height: 78%;
+        object-fit: contain;
+      }
+
+      .cover-brand-meta {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .cover-brand-meta span {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.45rem 0.75rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.22);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .cover-brand-meta p {
+        margin: 0;
+        color: rgba(244, 233, 220, 0.82);
+      }
+
+      .cover-hero-copy {
+        padding: clamp(2rem, 5vw, 4.8rem);
+        border-radius: 2.1rem;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(244, 233, 220, 0.58));
+        border: 1px solid rgba(30, 45, 59, 0.08);
+      }
+
+      .cover-hero-copy h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(5rem, 11vw, 10.6rem);
+        line-height: 0.82;
+        letter-spacing: -0.075em;
+        color: var(--blue);
+      }
+
+      .cover-hero-subtitle {
+        max-width: 760px;
+        margin: clamp(1.2rem, 2vw, 1.7rem) 0 0;
+        font-size: clamp(1.35rem, 2.4vw, 2.2rem);
+        line-height: 1.18;
+        color: var(--ink);
+      }
+
+      .cover-hero-body {
+        max-width: 760px;
+        margin: 1rem 0 0;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.3vw, 1.16rem);
+      }
+
+      .cover-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.8rem;
+      }
+
+      .cover-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0.85rem 1.15rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.92rem;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      }
+
+      .cover-btn.primary {
+        background: var(--terracotta);
+        color: #fff;
+        box-shadow: 0 18px 38px rgba(194, 94, 60, 0.22);
+      }
+
+      .cover-btn.secondary {
+        background: rgba(30, 45, 59, 0.08);
+        color: var(--blue);
+        border: 1px solid rgba(30, 45, 59, 0.12);
+      }
+
+      .cover-btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .cover-proof-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+        margin-top: clamp(1.3rem, 2vw, 1.8rem);
+      }
+
+      .cover-proof-strip article {
+        padding: 1rem;
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(30, 45, 59, 0.09);
+      }
+
+      .cover-proof-strip strong {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: var(--blue);
+        font-size: 0.92rem;
+      }
+
+      .cover-proof-strip span {
+        color: var(--ink-soft);
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      /* SECTION HEAD */
+
+      .cover-section {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: clamp(3.4rem, 6vw, 6rem) 0;
+      }
+
+      .cover-section-head {
+        max-width: 850px;
+        margin-bottom: clamp(1.5rem, 3vw, 2.4rem);
+      }
+
+      .cover-section-head h2 {
+        margin: 0;
+        font-size: clamp(2.5rem, 5.5vw, 5rem);
+        line-height: 0.94;
+        letter-spacing: -0.052em;
+        color: var(--blue);
+      }
+
+      .cover-section-head p:not(.cover-section-kicker) {
+        max-width: 780px;
+        margin: 1rem 0 0;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.25vw, 1.14rem);
+      }
+
+      /* INTRO EDITORIAL */
+
+      .cover-editorial-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(1rem, 2vw, 1.4rem);
+      }
+
+      .cover-statement {
+        padding: clamp(1.6rem, 3vw, 2.7rem);
+        border-radius: 2rem;
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.97), rgba(35, 56, 73, 0.91));
+        color: var(--beige);
+        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.18);
+      }
+
+      .cover-statement h3 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
+        color: #fff;
+      }
+
+      .cover-statement p {
+        margin: 1rem 0 0;
+        max-width: 720px;
+        color: rgba(244, 233, 220, 0.84);
+      }
+
+      .cover-mini-stack {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .cover-mini-card {
+        padding: clamp(1.2rem, 2vw, 1.55rem);
+        border-radius: 1.45rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 16px 38px rgba(30, 45, 59, 0.07);
+      }
+
+      .cover-mini-card h4 {
+        margin: 0 0 0.55rem;
+        font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+        line-height: 1;
+        color: var(--blue);
+      }
+
+      .cover-mini-card p {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      /* NAV CARDS */
+
+      .cover-route-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(1rem, 1.7vw, 1.35rem);
+      }
+
+      .cover-route-card {
+        position: relative;
+        min-height: 245px;
+        padding: clamp(1.2rem, 2vw, 1.6rem);
+        border-radius: 1.65rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-decoration: none;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.5));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
+        overflow: hidden;
+        transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      }
+
+      .cover-route-card::after {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        right: -32px;
+        top: -32px;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.12);
+      }
+
+      .cover-route-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 60px rgba(30, 45, 59, 0.12);
+        border-color: rgba(194, 94, 60, 0.24);
+      }
+
+      .cover-route-number {
+        color: var(--terracotta);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .cover-route-card h3 {
+        margin: 1.2rem 0 0.6rem;
+        font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+        line-height: 1;
+        color: var(--blue);
+      }
+
+      .cover-route-card p {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      .cover-route-link {
+        margin-top: 1.3rem;
+        color: var(--blue);
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      /* THREAD */
+
+      .cover-thread {
+        padding: clamp(2rem, 4vw, 3rem);
+        border-radius: 2.2rem;
+        background:
+          linear-gradient(135deg, rgba(244, 233, 220, 0.9), rgba(255, 255, 255, 0.72));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 20px 60px rgba(30, 45, 59, 0.08);
+      }
+
+      .cover-thread-line {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .cover-thread-step {
+        position: relative;
+        padding: 1.15rem;
+        border-radius: 1.35rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(30, 45, 59, 0.09);
+      }
+
+      .cover-thread-step span {
+        display: inline-flex;
+        margin-bottom: 0.7rem;
+        color: var(--terracotta);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .cover-thread-step strong {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: var(--blue);
+      }
+
+      .cover-thread-step p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+      }
+
+      /* FINAL CTA */
+
+      .cover-final {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto clamp(4rem, 7vw, 6rem);
+        padding: clamp(2rem, 4.2vw, 4rem);
+        border-radius: 2.4rem;
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(30, 45, 59, 0.9));
+        color: var(--beige);
+        box-shadow: 0 30px 90px rgba(30, 45, 59, 0.24);
+        overflow: hidden;
+      }
+
+      .cover-final h2 {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(2.7rem, 6.8vw, 6.2rem);
+        line-height: 0.92;
+        letter-spacing: -0.06em;
+        color: #fff;
+      }
+
+      .cover-final p {
+        max-width: 820px;
+        margin: 1rem 0 0;
+        color: rgba(244, 233, 220, 0.84);
+      }
+
+      .cover-final .cover-actions {
+        margin-top: 1.6rem;
+      }
+
+      .cover-final .cover-btn.secondary {
+        background: rgba(244, 233, 220, 0.1);
+        color: #fff;
+        border-color: rgba(244, 233, 220, 0.18);
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 1050px) {
+        .cover-hero-inner,
+        .cover-editorial-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cover-brand-card {
+          min-height: auto;
+          gap: 2rem;
+        }
+
+        .cover-proof-strip,
+        .cover-route-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .cover-thread-line {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .home-cover {
+          padding-top: 5.8rem;
+        }
+
+        .cover-hero,
+        .cover-section,
+        .cover-final {
+          width: min(100% - 1rem, 1180px);
+        }
+
+        .cover-hero-copy,
+        .cover-brand-card,
+        .cover-final,
+        .cover-thread {
+          border-radius: 1.55rem;
+          padding: 1.45rem;
+        }
+
+        .cover-hero-copy h1 {
+          font-size: clamp(4.2rem, 23vw, 6rem);
+        }
+
+        .cover-proof-strip,
+        .cover-route-grid,
+        .cover-thread-line {
+          grid-template-columns: 1fr;
+        }
+
+        .cover-route-card {
+          min-height: 210px;
+        }
+      }
+    </style>
   </head>
+
   <body class="home">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
@@ -31,192 +574,226 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
-    <main class="home-main">
-      <header class="home-hero" id="inici">
-        <p class="hero-kicker">Projecte Final de Grau en Direcció de Cuina i Direcció de Serveis de Sala</p>
+    <main class="home-main home-cover">
+      <header class="cover-hero" id="inici">
+        <div class="cover-hero-inner">
+          <aside class="cover-brand-card" aria-label="Identitat visual MESCLARI">
+            <div class="cover-brand-logo">
+              <img src="imaguenes i videos/logo.png" alt="Logo MESCLARI" />
+            </div>
+            <div class="cover-brand-meta">
+              <span>Projecte final</span>
+              <p>Portada executiva d’un restaurant gastronòmic premium pensat per ser explicat, defensat i entès des del primer cop d’ull.</p>
+            </div>
+          </aside>
 
-        <div class="hero-top">
-          <div class="hero-media" aria-label="Identitat visual MESCLARI">
-            <img src="imaguenes i videos/logo.png" alt="Icona MESCLARI" class="hero-media-logo" />
-          </div>
-          <div class="hero-copy">
+          <section class="cover-hero-copy">
+            <p class="cover-kicker">Direcció de cuina · Direcció de serveis de sala</p>
             <h1>MESCLARI</h1>
-            <p class="hero-subtitle">Una proposta integral de restauració premium pensada per existir de veritat.</p>
-            <p class="hero-body">Neix a Platja d'Aro amb una mirada clara: unir identitat de marca, criteri operatiu i coherència econòmica en una experiència elegant i defensable.</p>
-            <ul class="hero-values" aria-label="Punts clau del projecte MESCLARI">
-              <li>Identitat pròpia</li>
-              <li>Operativa realista</li>
-              <li>Base econòmica sòlida</li>
-            </ul>
-          </div>
-        </div>
+            <p class="cover-hero-subtitle">Una proposta mediterrània premium amb identitat pròpia, servei cuidat i viabilitat defensable.</p>
+            <p class="cover-hero-body">
+              Aquesta portada obre el recorregut del projecte: presenta el sentit global de MESCLARI i ordena les parts que es desenvoluparan a la web sense repetir el contingut de cada pàgina.
+            </p>
 
-        <div class="home-highlights" aria-label="En què es basa MESCLARI">
-          <article class="highlight-card">
-            <h3>Producte i cuina amb criteri</h3>
-            <p>Cuina contemporània amb base mediterrània, temporada, tècnica i una proposta pensada per tenir identitat pròpia.</p>
-          </article>
-          <article class="highlight-card">
-            <h3>Sala com a part de l’experiència</h3>
-            <p>El servei, el ritme, el maridatge i l’atenció al detall formen part central del valor percebut de MESCLARI.</p>
-          </article>
-          <article class="highlight-card">
-            <h3>Espai amb personalitat</h3>
-            <p>Interior, atmosfera i relació amb l’entorn pensats per construir una experiència elegant, coherent i memorable.</p>
-          </article>
-          <article class="highlight-card">
-            <h3>Arrelament i viabilitat real</h3>
-            <p>Una proposta connectada amb Platja d’Aro, amb encaix de mercat, criteri operatiu i una base econòmica defensable.</p>
-          </article>
+            <div class="cover-actions">
+              <a class="cover-btn primary" href="presentacio-general.html">Començar la defensa</a>
+              <a class="cover-btn secondary" href="sintesi-viabilitat.html">Veure la viabilitat</a>
+            </div>
+
+            <div class="cover-proof-strip" aria-label="Punts clau de la portada">
+              <article>
+                <strong>Identitat</strong>
+                <span>Marca clara i atmosfera coherent.</span>
+              </article>
+              <article>
+                <strong>Mercat</strong>
+                <span>Encaix amb Platja d’Aro i client objectiu.</span>
+              </article>
+              <article>
+                <strong>Oferta</strong>
+                <span>Formats amb funció comercial definida.</span>
+              </article>
+              <article>
+                <strong>Viabilitat</strong>
+                <span>Lectura econòmica i operativa defensable.</span>
+              </article>
+            </div>
+          </section>
         </div>
       </header>
 
-      <section class="home-block" id="que-es">
-        <div class="home-section-head">
-          <p class="home-section-kicker">Identitat estratègica</p>
-          <h2>Què és MESCLARI?</h2>
-          <p class="home-intro">MESCLARI és una proposta de restauració gastronòmica contemporània de gamma alta, pensada per oferir una experiència completa, coherent i cuidada de principi a fi, on producte, sala, maridatge i identitat de marca formen part d’un mateix llenguatge.</p>
+      <section class="cover-section" id="sentit-portada">
+        <div class="cover-section-head">
+          <p class="cover-section-kicker">Portada del projecte</p>
+          <h2>Una entrada clara al relat de MESCLARI</h2>
+          <p>
+            La pantalla principal no substitueix cap apartat del dossier: actua com una introducció visual i estratégica. Situa el projecte, marca el to professional i guía cap a les parts clau de la defensa.
+          </p>
         </div>
-        <div class="home-grid two home-editorial">
-          <article class="home-card">
-            <h4>Proposta i posicionament</h4>
-            <p>MESCLARI es posiciona com una proposta premium amb una doble lectura clara: d’una banda, una experiència gastronòmica singular i amb valor percebut; de l’altra, un model operatiu plantejat amb criteri de rendibilitat i solidesa. La marca combina exigència tècnica, sensibilitat de sala, coherència estètica i una voluntat real d’arrelament a l’entorn.</p>
+
+        <div class="cover-editorial-grid">
+          <article class="cover-statement">
+            <h3>Del concepte a la viabilitat.</h3>
+            <p>
+              MESCLARI es presenta com un restaurant gastronòmic contemporani amb una línia mediterrània premium, construït des de la coherència entre cuina, sala, espai, gestió i sostenibilitat econòmica.
+            </p>
           </article>
-          <aside class="home-media-slot editorial-placeholder" role="img" aria-label="Imatge pendent d'identitat de marca i atmosfera conceptual">
-            <p class="placeholder-badge">Imatge pendent</p>
-            <small>Imatges i vídeos/home-concepte-marca.jpg</small>
-            <p class="placeholder-note">Identitat visual de marca i atmosfera conceptual del restaurant: elegància de sala, llum càlida i caràcter MESCLARI.</p>
-          </aside>
+
+          <div class="cover-mini-stack">
+            <article class="cover-mini-card">
+              <h4>Què es defensa?</h4>
+              <p>Una idea de restaurant amb identitat pròpia, adaptada al seu entorn i pensada per funcionar amb criteri professional.</p>
+            </article>
+            <article class="cover-mini-card">
+              <h4>Com es presenta?</h4>
+              <p>Per capes: concepte, identitat, equip, mercat, espai, oferta, organització i síntesi final de viabilitat.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="home-block" id="per-que-te-sentit">
-        <div class="home-section-head">
-          <p class="home-section-kicker">Validació de context</p>
-          <h2>Per què té sentit?</h2>
+      <section class="cover-section" id="temes-projecte">
+        <div class="cover-section-head">
+          <p class="cover-section-kicker">Temes a tractar</p>
+          <h2>Les peces principals de la defensa</h2>
+          <p>
+            Cada pàgina aprofundeix en una part concreta del projecte. La portada només ordena el recorregut perquè el lector entengui ràpidament què trobarà i per què cada bloc és important.
+          </p>
         </div>
-        <div class="home-grid two">
-          <article class="home-card">
-            <h4>Encaix a Platja d'Aro</h4>
-            <p>MESCLARI s’insereix en un entorn amb flux mixt de client resident, turisme de qualitat i afluència de cap de setmana, configurant un escenari especialment favorable per a una proposta diferencial dins del segment mitjà-alt i alt. Aquesta ubicació permet combinar atractiu de destinació amb capacitat real de fidelització local.</p>
-          </article>
-          <article class="home-card">
-            <h4>Oportunitat i valor diferencial</h4>
-            <p>La proposta es construeix des d’una experiència integral, on cuina, maridatge, ritme de sala i atmosfera comparteixen una mateixa coherència. Al mateix temps, el model es planteja amb criteri operatiu i una lectura realista dels costos clau, reforçant la seva solidesa i el seu sentit dins del mercat.</p>
-          </article>
-        </div>
-        <aside class="home-media-slot home-media-slot-wide editorial-placeholder" role="img" aria-label="Imatge pendent d'entorn real i oportunitat de mercat">
-          <p class="placeholder-badge">Imatge pendent</p>
-          <small>Imatges i vídeos/home-mercat-entorn.jpg</small>
-          <p class="placeholder-note">Entorn real de Platja d'Aro i context d'oportunitat: localització, exterior o lectura territorial del mercat.</p>
-        </aside>
-      </section>
 
-      <section class="home-block" id="projecte-pilars">
-        <div class="home-section-head">
-          <p class="home-section-kicker">CLAUS DEL MODEL</p>
-          <h2>Com està pensat MESCLARI</h2>
-        </div>
-        <div class="home-grid four">
-          <article class="home-card pillar">
-            <h4>Doble lectura comercial</h4>
-            <p>Un format pensat per combinar captació, recurrència i una proposta de major valor percebut.</p>
-          </article>
-          <article class="home-card pillar">
-            <h4>Temporalitat ben resolta</h4>
-            <p>L’oferta i el ritme del negoci s’adapten al moment de l’any sense perdre coherència ni identitat.</p>
-          </article>
-          <article class="home-card pillar">
-            <h4>Experiència amb recorregut</h4>
-            <p>Cada decisió —espai, servei, maridatge i proposta— està plantejada perquè el client percebi una experiència completa.</p>
-          </article>
-          <article class="home-card pillar">
-            <h4>Operativa amb criteri</h4>
-            <p>El projecte no es basa només en la idea, sinó en una estructura funcional capaç de sostenir qualitat, ritme i viabilitat.</p>
-          </article>
-        </div>
-      </section>
+        <div class="cover-route-grid">
+          <a class="cover-route-card" href="presentacio-general.html">
+            <div>
+              <span class="cover-route-number">01 · Visió</span>
+              <h3>Presentació general</h3>
+              <p>Context inicial, idea de negoci i orientació global del projecte.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
 
-      <section class="home-block" id="arquitectura-projecte">
-        <div class="home-section-head">
-          <p class="home-section-kicker">Recorregut de navegació</p>
-          <h2>Arquitectura del projecte</h2>
-          <p class="home-intro">La web està organitzada com una defensa professional per capes: de la idea, a l'execució, fins a la validació final.</p>
-        </div>
-        <div class="home-grid three nav-home-grid">
-          <article class="nav-home-card">
-            <h4>Concepte i posicionament</h4>
-            <p>Visió general del model MESCLARI i direcció estratègica de la proposta.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Identitat del projecte</h4>
-            <p>Fonaments de marca, to institucional i llenguatge de posicionament de MESCLARI.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Equip impulsor</h4>
-            <p>Nucli de direcció del projecte i distribució de rols institucionals.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Gestió i organització</h4>
-            <p>Estructura humana operativa, organigrama funcional i lògica de coordinació de plantilla.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Mercat i encaix</h4>
-            <p>Anàlisi de públic, oportunitat territorial i justificació competitiva.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Espai i atmosfera</h4>
-            <p>Disseny ambiental i coherència de l'espai com a part de l'experiència.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Oferta gastronòmica</h4>
-            <p>Estructura de proposta culinària i narrativa de valor del producte.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Experiència de sala</h4>
-            <p>Ritual de servei, maridatge i seqüència operativa de contacte amb client.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Model operatiu</h4>
-            <p>Organització funcional, recursos clau i criteris de control intern.</p>
-          </article>
-          <article class="nav-home-card">
-            <h4>Síntesi de viabilitat</h4>
-            <p>Lectura econòmica simplificada per validar la robustesa del model.</p>
-          </article>
+          <a class="cover-route-card" href="identitat-projecte.html">
+            <div>
+              <span class="cover-route-number">02 · Marca</span>
+              <h3>Identitat</h3>
+              <p>Personalitat de MESCLARI, llenguatge visual i posicionament.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="equip-impulsor.html">
+            <div>
+              <span class="cover-route-number">03 · Equip</span>
+              <h3>Equip impulsor</h3>
+              <p>Rols principals, responsabilitats i força del nucli promotor.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="encaix-mercat.html">
+            <div>
+              <span class="cover-route-number">04 · Mercat</span>
+              <h3>Encaix territorial</h3>
+              <p>Públic objectiu, entorn, oportunitat i diferenciació competitiva.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="espai-atmosfera.html">
+            <div>
+              <span class="cover-route-number">05 · Espai</span>
+              <h3>Atmosfera</h3>
+              <p>Disseny, ambient i coherència del local amb l’experiència.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="oferta-gastronomica.html">
+            <div>
+              <span class="cover-route-number">06 · Oferta</span>
+              <h3>Gastronomia</h3>
+              <p>Proposta culinària, formats de venda, maridatge i valor percebut.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="gestio-organitzacio.html">
+            <div>
+              <span class="cover-route-number">07 · Gestió</span>
+              <h3>Organització</h3>
+              <p>Funcionament intern, estructura humana i criteri operatiu.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
+
+          <a class="cover-route-card" href="sintesi-viabilitat.html">
+            <div>
+              <span class="cover-route-number">08 · Tancament</span>
+              <h3>Síntesi i viabilitat</h3>
+              <p>Conclusió final del projecte: coherència, riscos i defensa econòmica.</p>
+            </div>
+            <span class="cover-route-link">Entrar →</span>
+          </a>
         </div>
       </section>
 
-      <section class="home-block" id="defensa-final">
-        <div class="home-section-head">
-          <p class="home-section-kicker">Credibilitat</p>
-          <h2>SOLIDESA DEL PROJECTE</h2>
-        </div>
-        <div class="home-grid two">
-          <article class="home-card">
-            <h4>Coherència transversal</h4>
-            <p>MESCLARI es construeix des de la connexió entre concepte, proposta gastronòmica, espai, operativa i viabilitat, evitant lectures aïllades i reforçant la solidesa del conjunt.</p>
-          </article>
-          <article class="home-card">
-            <h4>Model amb base real</h4>
-            <p>Cada capa del projecte respon a criteris concrets de posicionament, funcionament i sostenibilitat, configurant una proposta pensada per existir amb sentit i continuïtat.</p>
-          </article>
+      <section class="cover-section" id="fil-conductor">
+        <div class="cover-thread">
+          <div class="cover-section-head">
+            <p class="cover-section-kicker">Fil conductor</p>
+            <h2>La lògica que uneix tota la web</h2>
+            <p>
+              MESCLARI es defensa com un projecte integral. La portada resumeix aquesta lògica sense entrar en el detall de cada pàgina.
+            </p>
+          </div>
+
+          <div class="cover-thread-line" aria-label="Fil conductor del projecte MESCLARI">
+            <article class="cover-thread-step">
+              <span>Pas 1</span>
+              <strong>Idea clara</strong>
+              <p>Definir quin restaurant és MESCLARI i quin lloc vol ocupar.</p>
+            </article>
+            <article class="cover-thread-step">
+              <span>Pas 2</span>
+              <strong>Mercat real</strong>
+              <p>Justificar l’encaix amb el client, l’entorn i la competència.</p>
+            </article>
+            <article class="cover-thread-step">
+              <span>Pas 3</span>
+              <strong>Experiència</strong>
+              <p>Construir valor a través de cuina, sala, ambient i maridatge.</p>
+            </article>
+            <article class="cover-thread-step">
+              <span>Pas 4</span>
+              <strong>Gestió</strong>
+              <p>Ordenar personal, ritmes, estructura i recursos del restaurant.</p>
+            </article>
+            <article class="cover-thread-step">
+              <span>Pas 5</span>
+              <strong>Viabilitat</strong>
+              <p>Concloure si el projecte pot funcionar i com es defensa.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="home-block home-closure" id="tancament">
-        <p class="home-section-kicker">Tancament de portada</p>
-        <h2>MESCLARI: una proposta completa, coherent i executable</h2>
-        <p class="home-intro">Aquesta home obre el relat estratègic del projecte i condueix a les pàgines on es despleguen el detall operatiu, la lògica de mercat i la viabilitat defensable.</p>
-        <a class="annex-button" href="presentacio-general.html">Continuar cap a la visió general</a>
+      <section class="cover-final" id="tancament">
+        <p class="cover-section-kicker">Inici de la defensa</p>
+        <h2>Una portada per obrir el projecte amb força i ordre.</h2>
+        <p>
+          A partir d’aquí, la web desplega el contingut complet de MESCLARI: no com una acumulació de pàgines, sinó com una defensa professional amb una idea central clara, una estructura ordenada i una conclusió de viabilitat.
+        </p>
+        <div class="cover-actions">
+          <a class="cover-btn primary" href="presentacio-general.html">Continuar amb la visió general</a>
+          <a class="cover-btn secondary" href="sintesi-viabilitat.html">Anar al tancament de viabilitat</a>
+        </div>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>Projecte final de grau · Arquitectura multipàgina professional de MESCLARI</p>
+      <p>MESCLARI · Projecte final de grau · Portada executiva i recorregut de defensa</p>
     </footer>
 
     <script src="script.js"></script>
