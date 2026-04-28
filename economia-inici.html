@@ -934,6 +934,283 @@
         background: rgba(194, 94, 60, 0.25) !important;
       }
 
+      /* =========================================================
+         AJUST FINAL · BARRA I MENÚ DESPLEGABLE ECONÒMIC
+         Manté el format fosc premium, però amb més lectura, contrast
+         i coherència amb la paleta MESCLARI.
+      ========================================================= */
+
+      .reforma-page .nav {
+        position: sticky;
+        top: 0.75rem;
+        z-index: 100;
+        min-height: 72px;
+        padding: 0.62rem 0.72rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        border-radius: 999px;
+        background:
+          linear-gradient(135deg, rgba(244, 233, 220, 0.20), rgba(244, 233, 220, 0.08)),
+          linear-gradient(120deg, rgba(22, 38, 53, 0.92), rgba(33, 55, 73, 0.82) 58%, rgba(194, 94, 60, 0.22)) !important;
+        border: 1px solid rgba(244, 233, 220, 0.28) !important;
+        box-shadow:
+          0 22px 60px rgba(7, 16, 24, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.12),
+          inset 0 -1px 0 rgba(194, 94, 60, 0.10) !important;
+        backdrop-filter: blur(22px) saturate(1.12);
+        -webkit-backdrop-filter: blur(22px) saturate(1.12);
+      }
+
+      .reforma-page .nav::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 233, 220, 0.10);
+        pointer-events: none;
+      }
+
+      .reforma-page .brand-switch {
+        position: relative;
+        min-width: 220px;
+        height: 48px;
+        padding: 0;
+        border-radius: 999px;
+        overflow: hidden;
+        border: 1px solid rgba(194, 94, 60, 0.48) !important;
+        background:
+          linear-gradient(135deg, rgba(244, 233, 220, 0.96), rgba(216, 203, 178, 0.76)) !important;
+        box-shadow:
+          0 12px 26px rgba(7, 16, 24, 0.20),
+          inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      }
+
+      .reforma-page .brand-switch-track {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .reforma-page .brand-mini {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.78rem;
+        padding: 0.3rem 1rem 0.3rem 0.36rem;
+      }
+
+      .reforma-page .nav-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        object-fit: contain;
+        background: rgba(244, 233, 220, 0.92);
+        padding: 0.18rem;
+        box-shadow: 0 6px 14px rgba(30, 45, 59, 0.18);
+      }
+
+      .reforma-page .brand-name {
+        color: #9f472d !important;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.32rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        line-height: 1;
+      }
+
+      .reforma-page .menu-btn {
+        position: relative;
+        z-index: 104;
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        border-radius: 999px;
+        color: var(--eco-cream) !important;
+        border: 1px solid rgba(244, 233, 220, 0.34) !important;
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.34), rgba(194, 94, 60, 0.12)),
+          rgba(244, 233, 220, 0.08) !important;
+        box-shadow:
+          0 12px 24px rgba(7, 16, 24, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.13);
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+
+      .reforma-page .menu-btn:hover,
+      .reforma-page .menu-btn[aria-expanded="true"] {
+        transform: translateY(-1px);
+        border-color: rgba(194, 94, 60, 0.62) !important;
+        background:
+          linear-gradient(145deg, rgba(194, 94, 60, 0.46), rgba(194, 94, 60, 0.18)),
+          rgba(244, 233, 220, 0.12) !important;
+      }
+
+      .reforma-page .menu {
+        position: absolute;
+        top: calc(100% + 0.8rem);
+        right: 0;
+        z-index: 103;
+        width: min(460px, 92vw);
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+        padding: 0.82rem;
+        margin: 0;
+        list-style: none;
+        border-radius: 28px;
+        border: 1px solid rgba(244, 233, 220, 0.24);
+        background:
+          radial-gradient(circle at 15% 0%, rgba(194, 94, 60, 0.20), transparent 18rem),
+          linear-gradient(155deg, rgba(244, 233, 220, 0.14), rgba(244, 233, 220, 0.065)),
+          rgba(24, 41, 56, 0.96);
+        box-shadow:
+          0 28px 80px rgba(7, 16, 24, 0.48),
+          inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(24px) saturate(1.12);
+        -webkit-backdrop-filter: blur(24px) saturate(1.12);
+      }
+
+      .reforma-page .menu.open,
+      .reforma-page .menu.active,
+      .reforma-page .menu.show,
+      .reforma-page .menu.is-open,
+      .reforma-page #menuBtn[aria-expanded="true"] + .menu {
+        display: grid !important;
+        animation: ecoMenuIn 0.22s ease both;
+      }
+
+      @keyframes ecoMenuIn {
+        from {
+          opacity: 0;
+          transform: translateY(-8px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .reforma-page .menu li {
+        margin: 0;
+      }
+
+      .reforma-page .menu a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 54px;
+        padding: 0.95rem 1rem;
+        border-radius: 18px;
+        color: rgba(244, 233, 220, 0.84) !important;
+        text-decoration: none;
+        font-size: 0.93rem;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        border: 1px solid rgba(244, 233, 220, 0.09);
+        background: rgba(244, 233, 220, 0.045);
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .reforma-page .menu a::after {
+        content: "→";
+        color: rgba(194, 94, 60, 0.82);
+        font-weight: 900;
+        transform: translateX(-2px);
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .reforma-page .menu a:hover,
+      .reforma-page .menu a[aria-current="page"] {
+        color: #fffaf3 !important;
+        background:
+          linear-gradient(135deg, rgba(194, 94, 60, 0.30), rgba(194, 94, 60, 0.12)),
+          rgba(244, 233, 220, 0.07) !important;
+        border-color: rgba(194, 94, 60, 0.44) !important;
+        transform: translateX(2px);
+      }
+
+      .reforma-page .menu a:hover::after,
+      .reforma-page .menu a[aria-current="page"]::after {
+        transform: translateX(2px);
+        color: #f4e9dc;
+      }
+
+      .reforma-page .menu a[aria-current="page"] {
+        box-shadow:
+          inset 3px 0 0 var(--eco-terracotta),
+          0 10px 24px rgba(7, 16, 24, 0.14);
+      }
+
+      @media (min-width: 1080px) {
+        .reforma-page .nav {
+          min-height: 76px;
+          padding-left: 0.78rem;
+        }
+
+        .reforma-page .menu {
+          right: 0.1rem;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .reforma-page .nav {
+          width: min(94vw, 1240px);
+          top: 0.45rem;
+          min-height: 64px;
+          padding: 0.5rem;
+          border-radius: 26px;
+        }
+
+        .reforma-page .nav::before {
+          border-radius: 20px;
+        }
+
+        .reforma-page .brand-switch {
+          min-width: 0;
+          width: min(210px, calc(100vw - 7.2rem));
+          height: 44px;
+        }
+
+        .reforma-page .brand-name {
+          font-size: 1.08rem;
+          letter-spacing: 0.16em;
+        }
+
+        .reforma-page .nav-logo {
+          width: 32px;
+          height: 32px;
+        }
+
+        .reforma-page .menu-btn {
+          width: 44px;
+          height: 44px;
+        }
+
+        .reforma-page .menu {
+          left: 0;
+          right: 0;
+          width: 100%;
+          top: calc(100% + 0.55rem);
+          border-radius: 22px;
+          padding: 0.65rem;
+        }
+
+        .reforma-page .menu a {
+          min-height: 50px;
+          padding: 0.85rem 0.9rem;
+          font-size: 0.9rem;
+        }
+      }
+
     </style>
   </head>
 
