@@ -16,396 +16,747 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .oferta-page {
-        --of-line: rgba(30, 45, 59, 0.16);
-        --of-soft: rgba(30, 45, 59, 0.08);
+      :root {
+        --mesclari-blue: #1e2d3b;
+        --mesclari-ink: #233849;
+        --mesclari-ink-soft: #4a5f72;
+        --mesclari-terracotta: #c25e3c;
+        --mesclari-beige: #f4e9dc;
+        --mesclari-sand: #d8cbb2;
+        --mesclari-olive: #6e8b74;
+        --mesclari-line: rgba(30, 45, 59, 0.14);
+        --mesclari-line-soft: rgba(30, 45, 59, 0.08);
+        --mesclari-panel: rgba(255, 252, 246, 0.84);
+        --mesclari-shadow: 0 24px 70px rgba(30, 45, 59, 0.13);
+        --mesclari-shadow-soft: 0 14px 36px rgba(30, 45, 59, 0.08);
       }
 
-      .oferta-main {
-        width: min(1240px, 92vw);
-        margin: clamp(1.8rem, 3vw, 3rem) auto 4.5rem;
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body.oferta-page-pro {
+        color: var(--mesclari-ink);
+        background:
+          radial-gradient(circle at 12% 8%, rgba(194, 94, 60, 0.10), transparent 30rem),
+          radial-gradient(circle at 82% 18%, rgba(110, 139, 116, 0.12), transparent 34rem),
+          linear-gradient(180deg, #fbf7ef 0%, #f4e9dc 48%, #efe3d4 100%);
+      }
+
+      .oferta-main-pro {
+        width: min(1320px, 92vw);
+        margin: clamp(1rem, 2.4vw, 2rem) auto 4.5rem;
         display: grid;
-        gap: clamp(2.1rem, 3.8vw, 4rem);
-      }
-
-      .oferta-section {
-        border: 1px solid var(--of-line);
-        border-radius: 22px;
-        padding: clamp(1.25rem, 2.5vw, 2.3rem);
-        background: linear-gradient(160deg, rgba(244, 233, 220, 0.94), rgba(236, 221, 203, 0.9));
-        box-shadow: 0 12px 30px rgba(30, 45, 59, 0.09);
+        gap: clamp(1.4rem, 3vw, 2.5rem);
       }
 
       .oferta-kicker {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 0.38rem 0.82rem;
+        border: 1px solid rgba(194, 94, 60, 0.18);
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.08);
+        color: var(--mesclari-terracotta);
         font-size: 0.72rem;
-        text-transform: uppercase;
+        line-height: 1;
         letter-spacing: 0.17em;
-        font-weight: 600;
-        color: #ae4925;
-        margin-bottom: 0.7rem;
+        text-transform: uppercase;
+        font-weight: 800;
       }
-      .oferta-pass-overlay {
-      display: none !important;
-        }
 
       .oferta-title {
-        font-size: clamp(2.1rem, 4.2vw, 3.5rem);
-        color: var(--blue);
-        line-height: 1.05;
-        margin-bottom: 0.65rem;
+        margin: 0;
+        color: var(--mesclari-blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.35rem, 4.8vw, 4.75rem);
+        line-height: 0.93;
+        letter-spacing: -0.035em;
+        text-wrap: balance;
       }
 
       .oferta-subtitle {
-        font-size: clamp(1.02rem, 1.7vw, 1.22rem);
-        color: var(--ink-soft);
-        max-width: 64ch;
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.25vw, 1.17rem);
+        line-height: 1.72;
+        text-wrap: pretty;
       }
 
-      .oferta-hero {
+      .oferta-section {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--mesclari-line);
+        border-radius: 2.1rem;
+        background:
+          linear-gradient(180deg, rgba(255, 252, 246, 0.86), rgba(244, 233, 220, 0.72)),
+          radial-gradient(circle at 12% 0%, rgba(194, 94, 60, 0.06), transparent 32rem);
+        box-shadow: var(--mesclari-shadow-soft);
+      }
+
+      .oferta-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.50);
+      }
+
+      .oferta-section-head {
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: clamp(1.1rem, 2vw, 2rem);
+        justify-items: center;
+        text-align: center;
+        gap: 0.85rem;
+        padding: clamp(2rem, 4vw, 3.2rem) clamp(1.3rem, 3vw, 3rem) 0;
+      }
+
+      .oferta-section-head .oferta-title {
+        max-width: 820px;
+      }
+
+      .oferta-section-head .oferta-subtitle {
+        max-width: 860px;
+      }
+
+      /* HERO */
+      .oferta-hero {
+        padding: clamp(1rem, 2vw, 1.45rem);
+        border-radius: 2.25rem;
+        background:
+          linear-gradient(135deg, rgba(255, 252, 246, 0.92), rgba(244, 233, 220, 0.78)),
+          radial-gradient(circle at 80% 10%, rgba(194, 94, 60, 0.10), transparent 34rem);
+        box-shadow: var(--mesclari-shadow);
+      }
+
+      .oferta-hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        gap: clamp(1rem, 2vw, 1.45rem);
         align-items: stretch;
       }
 
-      .oferta-hero-copy p {
-        margin-top: 1rem;
-        color: var(--ink-soft);
-        max-width: 58ch;
-      }
-
-      .oferta-media,
-      .oferta-media-small,
-      .oferta-video,
-      .oferta-pass-media {
-        border-radius: 16px;
-        overflow: hidden;
-        border: 1px solid var(--of-line);
-        background: linear-gradient(155deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.18));
+      .oferta-hero-copy {
         position: relative;
+        min-height: clamp(520px, 58vw, 720px);
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        text-align: center;
+        gap: 1.1rem;
+        padding: clamp(2rem, 4vw, 4rem) clamp(1.4rem, 3vw, 3.2rem);
+        border-radius: 1.8rem;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.18), transparent 27rem),
+          linear-gradient(160deg, #1e2d3b 0%, #24384a 58%, #182635 100%);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
       }
 
-      .oferta-media img,
-      .oferta-media-small img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        opacity: 0.8;
+      .oferta-hero-copy::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 1.3rem;
+        width: min(160px, 32%);
+        height: 2px;
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(194, 94, 60, 0), rgba(194, 94, 60, 0.94), rgba(194, 94, 60, 0));
       }
 
-      .zoomable-media,
-      .oferta-pass-media.zoomable-pass {
+      .oferta-hero-copy::after {
+        content: "OFERTA";
+        position: absolute;
+        left: 50%;
+        bottom: -0.48rem;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.035);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 11vw, 8rem);
+        letter-spacing: 0.06em;
+        line-height: 1;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      .oferta-hero-copy .oferta-kicker {
+        position: relative;
+        z-index: 1;
+        border-color: rgba(244, 233, 220, 0.14);
+        background: rgba(244, 233, 220, 0.08);
+        color: #e8b091;
+      }
+
+      .oferta-hero-copy .oferta-title {
+        position: relative;
+        z-index: 1;
+        max-width: 11ch;
+        color: #fff8ef;
+        font-size: clamp(3rem, 6.2vw, 6.2rem);
+      }
+
+      .oferta-hero-copy .oferta-subtitle {
+        position: relative;
+        z-index: 1;
+        max-width: 42rem;
+        color: rgba(255, 248, 239, 0.78);
+      }
+
+      .oferta-hero-chips {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 42rem);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.65rem;
+        margin-top: 0.45rem;
+      }
+
+      .oferta-hero-chips span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 42px;
+        padding: 0.62rem 0.7rem;
+        border: 1px solid rgba(244, 233, 220, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+        color: rgba(255, 248, 239, 0.86);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .oferta-hero-media {
+        position: relative;
+        min-height: clamp(520px, 58vw, 720px);
+        border: 0;
+        padding: clamp(0.75rem, 1.4vw, 1rem);
+        border-radius: 1.8rem;
+        background:
+          linear-gradient(180deg, rgba(30, 45, 59, 0.06), rgba(194, 94, 60, 0.06)),
+          rgba(255, 252, 246, 0.72);
+        box-shadow: inset 0 0 0 1px rgba(30, 45, 59, 0.10);
         cursor: zoom-in;
       }
 
-      .zoomable-media::before,
-      .oferta-pass-media.zoomable-pass::before {
-        content: 'Ampliar';
+      .oferta-hero-media img {
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 1.3rem;
+        background: #f3eadc;
+        box-shadow: 0 18px 42px rgba(30, 45, 59, 0.14);
+      }
+
+      .oferta-image-hint {
         position: absolute;
-        top: 0.65rem;
-        right: 0.65rem;
-        z-index: 4;
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 0.22rem 0.46rem;
+        left: 1.6rem;
+        bottom: 1.6rem;
+        z-index: 3;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1rem;
         border-radius: 999px;
-        border: 1px solid rgba(246, 238, 228, 0.45);
-        color: #f6eee4;
-        background: rgba(30, 45, 59, 0.56);
+        background: rgba(255, 248, 239, 0.92);
+        color: var(--mesclari-blue);
+        font-weight: 800;
+        font-size: 0.86rem;
+        box-shadow: 0 12px 28px rgba(30, 45, 59, 0.15);
       }
 
-      .oferta-media figcaption,
-      .oferta-media-small figcaption,
-      .oferta-video figcaption,
-      .oferta-pass-media span {
+      .oferta-image-hint::before {
+        content: "+";
+        display: grid;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        background: var(--mesclari-terracotta);
+        color: #fff8ef;
+        font-weight: 900;
+      }
+
+      .oferta-hero-band {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .oferta-hero-band article {
+        position: relative;
+        overflow: hidden;
+        padding: 1.1rem 1.15rem;
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        border-radius: 1.15rem;
+        background: rgba(255, 252, 246, 0.74);
+      }
+
+      .oferta-hero-band article::before {
+        content: "";
         position: absolute;
-        left: 0.7rem;
-        right: 0.7rem;
-        bottom: 0.7rem;
-        border-radius: 10px;
-        padding: 0.44rem 0.62rem;
-        font-size: 0.74rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #f6eee4;
-        background: rgba(30, 45, 59, 0.58);
+        left: 1.15rem;
+        right: 1.15rem;
+        top: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--mesclari-terracotta), rgba(194, 94, 60, 0.16));
       }
 
-      .oferta-media {
-        min-height: 340px;
+      .oferta-hero-band h3,
+      .oferta-hero-band strong {
+        margin: 0 0 0.28rem;
+        color: var(--mesclari-blue);
+        font-size: 1.02rem;
       }
 
+      .oferta-hero-band p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        line-height: 1.55;
+        font-size: 0.92rem;
+      }
+
+      /* CARDS */
+      .oferta-format-grid,
+      .oferta-proof-grid,
+      .oferta-grid-2,
       .oferta-grid-3,
-      .oferta-grid-4,
-      .oferta-grid-2 {
-        display: grid;
-        gap: 0.9rem;
-        margin-top: 1.15rem;
-      }
-
-      .oferta-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .oferta-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .oferta-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-      .oferta-mini,
-      .oferta-callout,
-      .oferta-pass,
-      .oferta-item {
-        border: 1px solid var(--of-line);
-        border-radius: 14px;
-        padding: 0.95rem;
-        background: rgba(244, 233, 220, 0.7);
-      }
-
-      .oferta-mini h3,
-      .oferta-callout h3,
-      .oferta-item h4,
-      .oferta-pass h4 {
-        color: var(--terracotta);
-        margin-bottom: 0.25rem;
-      }
-
-      .oferta-mini p,
-      .oferta-callout p,
-      .oferta-item p,
-      .oferta-pass p,
-      .oferta-list li {
-        color: var(--ink-soft);
-        font-size: 0.95rem;
-      }
-
-      .oferta-pass .oferta-compose {
-        margin-top: 0.32rem;
-        font-size: 0.88rem;
-      }
-
-      .oferta-pass .oferta-note-inline {
-        margin-top: 0.32rem;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--terracotta);
-      }
-
-      .oferta-pass .oferta-wine {
-        margin-top: 0.4rem;
-        font-size: 0.84rem;
-        color: var(--blue);
-        font-weight: 600;
-      }
-
-      .oferta-pass.featured {
-        border-color: rgba(194, 94, 60, 0.45);
-        background: linear-gradient(145deg, rgba(244, 233, 220, 0.82), rgba(194, 94, 60, 0.12));
-      }
-
-      .oferta-commercial {
+      .oferta-grid-4 {
         display: grid;
         gap: 1rem;
+        padding: clamp(1.15rem, 2.6vw, 2.1rem);
+      }
+
+      .oferta-format-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin-top: 1.15rem;
       }
 
-      .oferta-commercial article {
-        border: 1px solid var(--of-line);
-        border-radius: 18px;
-        padding: 1.2rem;
-        background: linear-gradient(155deg, rgba(244, 233, 220, 0.88), rgba(236, 221, 203, 0.92));
-        box-shadow: inset 0 0 0 1px rgba(194, 94, 60, 0.11);
+      .oferta-proof-grid,
+      .oferta-grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .oferta-commercial h3 {
-        font-size: clamp(1.5rem, 2.5vw, 2rem);
-        color: var(--blue);
+      .oferta-grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .oferta-commercial h4 {
-        font-size: 0.98rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--terracotta);
-        margin: 0.3rem 0 0.45rem;
+      .oferta-grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
-      .oferta-list {
-        margin: 0.7rem 0 0;
-        padding-left: 1.05rem;
+      .oferta-card,
+      .oferta-format-card,
+      .oferta-note,
+      .oferta-callout,
+      .oferta-mini {
+        position: relative;
+        overflow: hidden;
         display: grid;
-        gap: 0.35rem;
+        gap: 0.55rem;
+        align-content: start;
+        padding: clamp(1.05rem, 1.8vw, 1.45rem);
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        border-radius: 1.35rem;
+        background: rgba(255, 252, 246, 0.74);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 12px 30px rgba(30, 45, 59, 0.055);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
       }
 
-      .oferta-four-four-four {
+      .oferta-card:hover,
+      .oferta-format-card:hover,
+      .oferta-callout:hover,
+      .oferta-mini:hover {
+        transform: translateY(-3px);
+        border-color: rgba(194, 94, 60, 0.20);
+        box-shadow: 0 22px 48px rgba(30, 45, 59, 0.10);
+      }
+
+      .oferta-format-card {
+        min-height: 250px;
+        padding: clamp(1.35rem, 2.4vw, 2rem);
+        align-content: space-between;
+      }
+
+      .oferta-format-card::before {
+        content: "";
+        width: 3.4rem;
+        height: 3px;
+        border-radius: 999px;
+        background: var(--mesclari-terracotta);
+      }
+
+      .oferta-format-card h3,
+      .oferta-card h3,
+      .oferta-card h4,
+      .oferta-callout h3,
+      .oferta-mini h3 {
+        margin: 0;
+        color: var(--mesclari-blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.65rem, 2vw, 2.35rem);
+        line-height: 1;
+      }
+
+      .oferta-format-card p,
+      .oferta-card p,
+      .oferta-card li,
+      .oferta-callout p,
+      .oferta-mini p,
+      .oferta-note p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        line-height: 1.64;
+      }
+
+      .oferta-format-card strong,
+      .oferta-price-pill {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        padding: 0.55rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.09);
+        border: 1px solid rgba(194, 94, 60, 0.15);
+        color: var(--mesclari-terracotta);
+        font-weight: 800;
+      }
+
+      /* MENU 4/4/4 */
+      .oferta-444-layout {
         display: grid;
         gap: 1rem;
-        grid-template-columns: 1fr;
-        margin-top: 1.2rem;
+        padding: clamp(1.15rem, 2.6vw, 2.1rem);
       }
 
-      .oferta-menu-layout {
+      .oferta-category-card {
         display: grid;
-        gap: 0.9rem;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr);
+        gap: clamp(1rem, 2vw, 1.6rem);
+        align-items: stretch;
+        padding: clamp(1.05rem, 1.8vw, 1.45rem);
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        border-radius: 1.45rem;
+        background: rgba(255, 252, 246, 0.78);
+        box-shadow: var(--mesclari-shadow-soft);
       }
 
-      .oferta-category h4 {
-        font-size: 1.4rem;
-      }
-
-      .oferta-category ul {
-        margin: 0.5rem 0 0;
-        padding-left: 1rem;
+      .oferta-category-content {
         display: grid;
-        gap: 0.45rem;
+        gap: 0.95rem;
       }
 
-      .oferta-category li p {
+      .oferta-category-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(30, 45, 59, 0.10);
+      }
+
+      .oferta-category-title h3 {
         margin: 0;
+        color: var(--mesclari-blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        line-height: 0.95;
+      }
+
+      .oferta-category-title span {
+        display: inline-flex;
+        justify-content: center;
+        min-width: 54px;
+        padding: 0.45rem 0.65rem;
+        border-radius: 999px;
+        background: var(--mesclari-blue);
+        color: #fff8ef;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .oferta-dish-list {
         display: grid;
-        gap: 0.14rem;
-      }
-
-      .oferta-category li strong {
-        color: var(--blue);
-        font-weight: 600;
-      }
-
-      .oferta-category li span {
-        color: var(--ink-soft);
-        font-size: 0.85rem;
-      }
-
-      .oferta-category-row {
-        margin-top: 0.5rem;
-        display: grid;
-        grid-template-columns: 1fr minmax(220px, 320px);
         gap: 0.75rem;
-        align-items: start;
-      }
-
-      .oferta-category-row ul {
-        margin-top: 0;
-      }
-
-      .oferta-dish-media {
+        list-style: none;
         margin: 0;
-        min-height: 122px;
-        max-height: 224px;
-        width: min(100%, 224px);
-        justify-self: center;
-        align-self: start;
+        padding: 0;
       }
 
-      .oferta-dish-media img {
+      .oferta-dish-list li {
+        display: grid;
+        gap: 0.2rem;
+        padding-left: 1.05rem;
+        border-left: 3px solid rgba(194, 94, 60, 0.22);
+      }
+
+      .oferta-dish-list strong {
+        color: var(--mesclari-blue);
+        font-weight: 800;
+        line-height: 1.34;
+      }
+
+      .oferta-dish-list span {
+        color: var(--mesclari-ink-soft);
+        line-height: 1.5;
+        font-size: 0.92rem;
+      }
+
+      .oferta-dish-media,
+      .oferta-liquid-media {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        min-height: 100%;
+        border: 0;
+        padding: 0;
+        border-radius: 1.2rem;
+        background: #efe5d8;
+        box-shadow: inset 0 0 0 1px rgba(30, 45, 59, 0.10), 0 12px 30px rgba(30, 45, 59, 0.10);
+        cursor: zoom-in;
+      }
+
+      .oferta-dish-media img,
+      .oferta-liquid-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        display: block;
         object-fit: cover;
         object-position: center;
+        transition: transform 0.30s ease;
+      }
+
+      .oferta-dish-media:hover img,
+      .oferta-liquid-media:hover img,
+      .oferta-pass-media:hover img,
+      .oferta-hero-media:hover img {
+        transform: scale(1.025);
+      }
+
+      .oferta-media-label {
+        position: absolute;
+        left: 0.9rem;
+        right: 0.9rem;
+        bottom: 0.9rem;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.65rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(30, 45, 59, 0.72);
+        color: #fff8ef;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        backdrop-filter: blur(8px);
       }
 
       .oferta-note {
-        border-radius: 14px;
-        border: 1px solid rgba(194, 94, 60, 0.26);
-        background: rgba(194, 94, 60, 0.08);
-        padding: 0.85rem 1rem;
+        display: block;
+        border-color: rgba(194, 94, 60, 0.22);
+        background:
+          linear-gradient(135deg, rgba(194, 94, 60, 0.11), rgba(255, 252, 246, 0.68));
       }
 
-      .oferta-degustacio {
+      .oferta-note strong {
+        display: block;
+        color: var(--mesclari-blue);
+        font-size: 1.05rem;
+        margin-bottom: 0.25rem;
+      }
+
+      /* DEGUSTACIO */
+      .oferta-degustacio-wrap {
+        padding: clamp(1.15rem, 2.6vw, 2.1rem);
         display: grid;
-        grid-template-columns: 1fr;
         gap: 1rem;
-        margin-top: 1.1rem;
       }
 
-      .oferta-passes {
+      .oferta-degustacio-intro {
         display: grid;
-        gap: 0.75rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
       }
 
       .oferta-pass {
         display: grid;
-        grid-template-columns: 1fr 0.35fr;
-        align-items: stretch;
-        gap: 0.7rem;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
+        gap: clamp(1rem, 2vw, 1.55rem);
+        padding: clamp(1.05rem, 1.9vw, 1.5rem);
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        border-radius: 1.55rem;
+        background:
+          linear-gradient(180deg, rgba(255, 252, 246, 0.86), rgba(248, 242, 232, 0.96));
+        box-shadow: var(--mesclari-shadow-soft);
       }
 
-      .oferta-pass-media {
-        min-height: 90px;
-        background: linear-gradient(145deg, rgba(110, 139, 116, 0.18), rgba(30, 45, 59, 0.2));
+      .oferta-pass.featured {
+        border-color: rgba(194, 94, 60, 0.28);
+        background:
+          linear-gradient(180deg, rgba(255, 252, 247, 0.94), rgba(247, 239, 228, 0.98)),
+          radial-gradient(circle at 10% 0%, rgba(194, 94, 60, 0.10), transparent 20rem);
+        box-shadow: 0 18px 42px rgba(30, 45, 59, 0.11);
       }
 
-      .oferta-pass-media {
-        appearance: none;
-        border-radius: 14px;
-        width: 100%;
-        padding: 0;
-      }
-
-      .oferta-pass-media:focus-visible,
-      .zoomable-media:focus-visible {
-        outline: 2px solid rgba(194, 94, 60, 0.75);
-        outline-offset: 3px;
-      }
-
-      .oferta-side-panel {
+      .oferta-pass-copy {
+        min-width: 0;
         display: grid;
-        gap: 0.7rem;
-        align-content: start;
+        align-content: center;
+        gap: 0.66rem;
       }
 
-      .oferta-technical {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: 1rem;
-      }
-
-      .oferta-strip {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 0.9rem;
-        margin-top: 1rem;
-      }
-
-      .oferta-media-small {
-        min-height: 210px;
-      }
-
-      .oferta-video {
-        min-height: 210px;
-        display: grid;
-        place-items: center;
-        color: #f6eee4;
-      }
-
-      .oferta-video .oferta-video-tag {
-        border: 1px solid rgba(246, 238, 228, 0.5);
+      .oferta-pass-number {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.42rem 0.68rem;
         border-radius: 999px;
-        padding: 0.32rem 0.72rem;
-        font-size: 0.78rem;
+        background: rgba(194, 94, 60, 0.09);
+        border: 1px solid rgba(194, 94, 60, 0.15);
+        color: var(--mesclari-terracotta);
+        font-weight: 900;
+        font-size: 0.82rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      .oferta-closing {
+      .oferta-pass-copy h3 {
+        margin: 0;
+        color: var(--mesclari-blue);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.65rem, 2.45vw, 2.55rem);
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+      }
+
+      .oferta-pass-copy p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        line-height: 1.62;
+      }
+
+      .oferta-compose {
+        color: #465a6d !important;
+        font-size: 0.96rem;
+      }
+
+      .oferta-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-top: 0.1rem;
+      }
+
+      .oferta-tags span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.48rem 0.66rem;
+        border-radius: 999px;
+        background: rgba(30, 45, 59, 0.06);
+        border: 1px solid rgba(30, 45, 59, 0.08);
+        color: var(--mesclari-blue);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .oferta-tags .terracotta {
+        background: rgba(194, 94, 60, 0.08);
+        border-color: rgba(194, 94, 60, 0.14);
+        color: var(--mesclari-terracotta);
+      }
+
+      .oferta-pass-media {
+        position: relative;
+        display: block;
+        width: 100%;
+        min-height: 310px;
+        border: 0;
+        padding: 0;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        cursor: zoom-in;
+        background: #eadfce;
+        box-shadow: 0 16px 34px rgba(30, 45, 59, 0.12);
+      }
+
+      .oferta-pass-media img {
+        width: 100%;
+        height: 100%;
+        min-height: 310px;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.30s ease;
+      }
+
+      /* VEGETARIANA & LIQUID */
+      .oferta-liquid-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(310px, 0.46fr);
+        gap: 1rem;
+        padding: clamp(1.15rem, 2.6vw, 2.1rem);
+        align-items: stretch;
+      }
+
+      .oferta-liquid-copy {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .oferta-liquid-media {
+        min-height: 280px;
+      }
+
+      .oferta-close {
+        padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.3rem, 3vw, 3rem);
         text-align: center;
-        padding: 1.25rem;
+        color: #fff8ef;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.22), transparent 32rem),
+          linear-gradient(155deg, #1e2d3b, #172534 72%);
       }
 
-      .oferta-closing p {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(1.5rem, 2.8vw, 2rem);
-        color: var(--blue);
+      .oferta-close p:first-child {
+        max-width: 930px;
+        margin: 0 auto;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.7rem, 3.3vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
       }
 
+      .oferta-close p:last-child {
+        max-width: 720px;
+        margin: 1rem auto 0;
+        color: #e8b091;
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      /* LIGHTBOX */
       .image-lightbox {
         position: fixed;
         inset: 0;
-        z-index: 999;
+        z-index: 9999;
         display: none;
         align-items: center;
         justify-content: center;
         padding: clamp(1rem, 3vw, 2rem);
-        background: rgba(12, 19, 26, 0.82);
-        backdrop-filter: blur(3px);
+        background: rgba(10, 17, 25, 0.86);
+        backdrop-filter: blur(6px);
       }
 
       .image-lightbox.open {
@@ -414,75 +765,142 @@
 
       .image-lightbox-dialog {
         position: relative;
-        width: min(1080px, 92vw);
+        width: min(1180px, 94vw);
         max-height: 90vh;
-        border-radius: 18px;
+        border-radius: 1.4rem;
         overflow: hidden;
-        border: 1px solid rgba(246, 238, 228, 0.3);
-        background: rgba(18, 30, 40, 0.94);
+        border: 1px solid rgba(244, 233, 220, 0.28);
+        background: rgba(18, 30, 40, 0.95);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
       }
 
       .image-lightbox img {
         width: 100%;
-        max-height: 78vh;
-        object-fit: contain;
+        max-height: 80vh;
         display: block;
-        background: rgba(18, 30, 40, 0.9);
+        object-fit: contain;
+        background: #f3eadc;
+      }
+
+      .image-lightbox-caption {
+        margin: 0;
+        padding: 0.8rem 1rem 1rem;
+        color: #fff8ef;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        letter-spacing: 0.03em;
       }
 
       .image-lightbox-close {
         position: absolute;
-        top: 0.6rem;
-        right: 0.6rem;
-        width: 36px;
-        height: 36px;
+        top: 0.7rem;
+        right: 0.7rem;
+        z-index: 3;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 248, 239, 0.28);
         border-radius: 999px;
-        border: 1px solid rgba(246, 238, 228, 0.45);
-        background: rgba(12, 19, 26, 0.74);
-        color: #f6eee4;
-        font-size: 1.2rem;
+        background: rgba(15, 24, 34, 0.74);
+        color: #fff8ef;
+        font-size: 1.55rem;
         line-height: 1;
         cursor: pointer;
+        backdrop-filter: blur(8px);
       }
 
-      .image-lightbox-caption {
-        padding: 0.7rem 0.95rem 0.9rem;
-        color: #f6eee4;
-        font-size: 0.88rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+      button.js-lightbox:focus-visible,
+      .image-lightbox-close:focus-visible {
+        outline: 2px solid rgba(194, 94, 60, 0.75);
+        outline-offset: 3px;
       }
 
-      @media (max-width: 1024px) {
-        .oferta-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .oferta-degustacio,
-        .oferta-hero,
-        .oferta-commercial { grid-template-columns: 1fr; }
-      }
-
-      @media (max-width: 800px) {
-        .oferta-grid-3,
-        .oferta-grid-2,
-        .oferta-strip,
-        .oferta-technical { grid-template-columns: 1fr; }
-
-        .oferta-category-row {
+      @media (max-width: 1180px) {
+        .oferta-hero-grid,
+        .oferta-category-card,
+        .oferta-liquid-layout {
           grid-template-columns: 1fr;
+        }
+
+        .oferta-hero-copy,
+        .oferta-hero-media {
+          min-height: auto;
+        }
+
+        .oferta-hero-media img {
+          min-height: 420px;
         }
 
         .oferta-pass {
           grid-template-columns: 1fr;
         }
+      }
 
-        .oferta-media,
-        .oferta-media-small,
-        .oferta-video {
-          min-height: 190px;
+      @media (max-width: 920px) {
+        .oferta-format-grid,
+        .oferta-proof-grid,
+        .oferta-grid-2,
+        .oferta-grid-3,
+        .oferta-grid-4,
+        .oferta-degustacio-intro,
+        .oferta-liquid-copy,
+        .oferta-hero-band {
+          grid-template-columns: 1fr;
+        }
+
+        .oferta-hero-chips {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .oferta-main-pro {
+          width: min(94vw, 100%);
+        }
+
+        .oferta-hero,
+        .oferta-section {
+          border-radius: 1.35rem;
+        }
+
+        .oferta-hero-copy,
+        .oferta-hero-media,
+        .oferta-category-card,
+        .oferta-pass {
+          border-radius: 1.1rem;
+        }
+
+        .oferta-hero-copy {
+          padding: 2rem 1rem;
+        }
+
+        .oferta-hero-copy .oferta-title {
+          font-size: clamp(2.7rem, 13vw, 4.6rem);
+        }
+
+        .oferta-section-head {
+          padding: 1.7rem 1rem 0;
+        }
+
+        .oferta-format-grid,
+        .oferta-proof-grid,
+        .oferta-grid-2,
+        .oferta-grid-3,
+        .oferta-grid-4,
+        .oferta-444-layout,
+        .oferta-degustacio-wrap,
+        .oferta-liquid-layout {
+          padding: 1rem;
+        }
+
+        .oferta-dish-media img,
+        .oferta-pass-media,
+        .oferta-pass-media img {
+          min-height: 230px;
         }
       }
     </style>
   </head>
-  <body class="oferta-page">
+  <body class="oferta-page-pro">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -503,1144 +921,292 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html" aria-current="page">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
-    <main class="oferta-main">
-      <section class="oferta-section oferta-hero" id="oferta-hero">
-        <div class="oferta-hero-copy">
-          <p class="oferta-kicker">Oferta gastronòmica</p>
-          <h1 class="oferta-title">Una proposta real, estructurada i coherent amb MESCLARI</h1>
-          <p class="oferta-subtitle">L’oferta gastronòmica de MESCLARI s’articula a través de formats diferenciats que responen a funcions concretes dins del model del restaurant. La proposta combina identitat culinària, lògica comercial i experiència de client sense perdre coherència global.</p>
-        </div>
-        <figure
-  class="identitat-media has-image"
-  aria-label="Visual principal de l’oferta gastronòmica de MESCLARI"
-  style="
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 18px;
-  "
->
-  <div
-    style="
-      width: 100%;
-      overflow: hidden;
-      border-radius: 24px;
-    "
-  >
-    <img
-      src="imaguenes i videos/UNA PROPOSTA.jpeg"
-      alt="Visual principal de l’oferta gastronòmica de MESCLARI"
-      loading="lazy"
-      style="
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 24px;
-      "
-    />
-  </div>
+    <main class="oferta-main-pro">
+      <header class="oferta-section oferta-hero" id="oferta-hero">
+        <div class="oferta-hero-grid">
+          <div class="oferta-hero-copy">
+            <p class="oferta-kicker">Oferta gastronòmica</p>
+            <h1 class="oferta-title">Una proposta real, estructurada i coherent</h1>
+            <p class="oferta-subtitle">
+              L’oferta gastronòmica de MESCLARI s’articula a través de formats diferenciats que responen a funcions concretes dins del model del restaurant. La proposta combina identitat culinària, lògica comercial i experiència de client sense perdre coherència global.
+            </p>
+            <div class="oferta-hero-chips" aria-label="Claus de l'oferta gastronòmica">
+              <span>Producte mediterrani</span>
+              <span>Servei amb relat</span>
+              <span>Formats rendibles</span>
+            </div>
+          </div>
 
-  <figcaption
-    class="media-placeholder"
-    style="
-      text-align: center;
-      margin: 0 auto;
-      max-width: 900px;
-    "
-  >
-   
-  </figcaption>
-</figure>
-      </section>
+          <button
+            type="button"
+            class="oferta-hero-media js-lightbox"
+            data-src="imaguenes i videos/UNA PROPOSTA.jpeg"
+            data-caption="Visual principal de l’oferta gastronòmica de MESCLARI"
+            aria-label="Veure imatge completa de l’oferta gastronòmica"
+          >
+            <img src="imaguenes i videos/UNA PROPOSTA.jpeg" alt="Visual principal de l’oferta gastronòmica de MESCLARI" loading="lazy" />
+            <span class="oferta-image-hint">Veure imatge completa</span>
+          </button>
+
+          <div class="oferta-hero-band" aria-label="Funcions principals de la proposta">
+            <article>
+              <h3>4/4/4</h3>
+              <p>Captació, recurrència i volum sense perdre lectura de gamma.</p>
+            </article>
+            <article>
+              <h3>Degustació</h3>
+              <p>Experiència, marge i posicionament gastronòmic més complet.</p>
+            </article>
+            <article>
+              <h3>Maridatge</h3>
+              <p>Sala activa, valor percebut i lectura líquida del recorregut.</p>
+            </article>
+          </div>
+        </div>
+      </header>
 
       <section class="oferta-section" id="estructura-comercial">
-        <p class="oferta-kicker">Doble lògica de la proposta</p>
-        <h2 class="oferta-title">Dos formats, dues funcions clares</h2>
-        <div class="oferta-commercial">
-          <article>
-            <h3>Menú 4/4/4</h3>
-            <p>Format de captació, recurrència i volum, pensat per oferir una proposta clara, atractiva i repetible sense renunciar a la identitat del restaurant.</p>
+        <header class="oferta-section-head">
+          <p class="oferta-kicker">Doble lògica de la proposta</p>
+          <h2 class="oferta-title">Dos formats, dues funcions clares</h2>
+          <p class="oferta-subtitle">
+            MESCLARI no organitza l’oferta per acumulació de plats, sinó per funció empresarial: un format pensat per entrar al mercat i generar recurrència, i un format pensat per expressar el valor complet del projecte.
+          </p>
+        </header>
+        <div class="oferta-format-grid">
+          <article class="oferta-format-card">
+            <div>
+              <h3>Menú 4/4/4</h3>
+              <p>Format de captació, recurrència i volum, pensat per oferir una proposta clara, atractiva i repetible sense renunciar a la identitat del restaurant.</p>
+            </div>
+            <strong>Porta d’entrada</strong>
           </article>
-          <article>
-            <h3>Menú degustació</h3>
-            <p>Format més experiencial i representatiu de MESCLARI, orientat a desplegar millor el relat gastronòmic, el ritme de servei i el valor percebut de la proposta.</p>
+          <article class="oferta-format-card">
+            <div>
+              <h3>Menú degustació</h3>
+              <p>Format més experiencial i representatiu de MESCLARI, orientat a desplegar millor el relat gastronòmic, el ritme de servei i el valor percebut de la proposta.</p>
+            </div>
+            <strong>Format de prestigi</strong>
           </article>
         </div>
       </section>
 
       <section class="oferta-section" id="menu-444">
-        <p class="oferta-kicker">Oferta real de temporada</p>
-        <h2 class="oferta-title">Menú 4/4/4 · Estiu</h2>
-        <p class="oferta-subtitle">Claredat d’elecció, coherència gastronòmica i capacitat de recurrència.</p>
-        <p class="oferta-subtitle" style="margin-top: 0.5rem;">El menú 4/4/4 d’estiu funciona com a porta d’entrada a la proposta de MESCLARI. Està pensat per captar client, afavorir la repetició de visita i sostenir volum amb una oferta clara, cuidada i fàcil de llegir.</p>
-        <div class="oferta-four-four-four">
-          <div class="oferta-menu-layout">
-            <article class="oferta-item oferta-category">
-              <h4>Primers</h4>
-              <div class="oferta-category-row">
-                <ul>
-                  <li><p><strong>Cabdells a la brasa, hummus de mongeta i carxofa</strong><span>Verd a la brasa, punt fresc i perfil vegetal mediterrani.</span></p></li>
-                  <li><p><strong>Tàrtar de gamba de Palamós, aigua de tomàquet i vinagreta mediterrània</strong><span>Lectura marina nítida amb textura lleugera i fresca.</span></p></li>
-                  <li><p><strong>Tomàquet cor de bou en òsmosi, gel d’alfàbrega i formatge fresc de cabra</strong><span>Plat estival net amb contrast làctic i aromàtic.</span></p></li>
-                  <li><p><strong>(Veg/V) Albergínia fumada, “tahini” d’ametlla, romesco aeri i herbes</strong><span>Opció vegetal amb profunditat i final herbaci.</span></p></li>
-                </ul>
-                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" data-modal-caption="Primers · Menú 4/4/4">
-                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" alt="Primers del menú 4/4/4" />
-                  <figcaption>Primers</figcaption>
-                </figure>
+        <header class="oferta-section-head">
+          <p class="oferta-kicker">Oferta real de temporada</p>
+          <h2 class="oferta-title">Menú 4/4/4 · Estiu</h2>
+          <p class="oferta-subtitle">
+            El menú 4/4/4 d’estiu funciona com a porta d’entrada a la proposta de MESCLARI. Està pensat per captar client, afavorir la repetició de visita i sostenir volum amb una oferta clara, cuidada i fàcil de llegir.
+          </p>
+        </header>
+
+        <div class="oferta-444-layout">
+          <article class="oferta-category-card">
+            <div class="oferta-category-content">
+              <div class="oferta-category-title">
+                <h3>Primers</h3>
+                <span>4 opcions</span>
               </div>
-            </article>
-            <article class="oferta-item oferta-category">
-              <h4>Principals</h4>
-              <div class="oferta-category-row">
-                <ul>
-                  <li><p><strong>Llobarro a la brasa, salsa verda d’herbes i llimona</strong><span>Peix de llotja amb lectura neta i elegant.</span></p></li>
-                  <li><p><strong>Arròs sec de gamba de la costa</strong><span>Fons marí intens i socarrat fi de temporada.</span></p></li>
-                  <li><p><strong>Pollastre camper a la brasa, samfaina suau i oli de farigola</strong><span>Principal saborós, clar i molt reconeixible.</span></p></li>
-                  <li><p><strong>(Veg) Caneló fred de verdures i formatge fresc</strong><span>Perfil fresc i complet per mantenir equilibri de carta.</span></p></li>
-                </ul>
-                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" data-modal-caption="Principals · Menú 4/4/4">
-                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" alt="Principals del menú 4/4/4" />
-                  <figcaption>Principals</figcaption>
-                </figure>
+              <ul class="oferta-dish-list">
+                <li><strong>Cabdells a la brasa, hummus de mongeta i carxofa</strong><span>Verd a la brasa, punt fresc i perfil vegetal mediterrani.</span></li>
+                <li><strong>Tàrtar de gamba de Palamós, aigua de tomàquet i vinagreta mediterrània</strong><span>Lectura marina nítida amb textura lleugera i fresca.</span></li>
+                <li><strong>Tomàquet cor de bou en òsmosi, gel d’alfàbrega i formatge fresc de cabra</strong><span>Plat estival net amb contrast làctic i aromàtic.</span></li>
+                <li><strong>(Veg/V) Albergínia fumada, “tahini” d’ametlla, romesco aeri i herbes</strong><span>Opció vegetal amb profunditat i final herbaci.</span></li>
+              </ul>
+            </div>
+            <button type="button" class="oferta-dish-media js-lightbox" data-src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" data-caption="Primers · Menú 4/4/4" aria-label="Ampliar imatge de primers del menú 4/4/4">
+              <img src="imaguenes i videos/oferta-gastronomica-4-4-4-primers.jpg" alt="Primers del menú 4/4/4" loading="lazy" />
+              <span class="oferta-media-label">Primers <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-category-card">
+            <div class="oferta-category-content">
+              <div class="oferta-category-title">
+                <h3>Principals</h3>
+                <span>4 opcions</span>
               </div>
-            </article>
-            <article class="oferta-item oferta-category">
-              <h4>Postres</h4>
-              <div class="oferta-category-row">
-                <ul>
-                  <li><p><strong>Pressé de fruita d’estiu i gelat de iogur</strong><span>Tancament fresc de fruita madura i punt cremós.</span></p></li>
-                  <li><p><strong>(Veg/V) Cítrics en textures</strong><span>Opció lleugera, neta i molt refrescant.</span></p></li>
-                  <li><p><strong>Coca fina de pinyons i crema</strong><span>Lectura clàssica amb acabat cruixent i suau.</span></p></li>
-                  <li><p><strong>Gelat d’oli d’oliva, sal i xocolata</strong><span>Perfil mediterrani amb contrast dolç-salat final.</span></p></li>
-                </ul>
-                <figure class="oferta-media-small oferta-dish-media zoomable-media" role="button" tabindex="0" data-modal-src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" data-modal-caption="Postres · Menú 4/4/4">
-                  <img src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" alt="Postres del menú 4/4/4" />
-                  <figcaption>Postres</figcaption>
-                </figure>
+              <ul class="oferta-dish-list">
+                <li><strong>Llobarro a la brasa, salsa verda d’herbes i llimona</strong><span>Peix de llotja amb lectura neta i elegant.</span></li>
+                <li><strong>Arròs sec de gamba de la costa</strong><span>Fons marí intens i socarrat fi de temporada.</span></li>
+                <li><strong>Pollastre camper a la brasa, samfaina suau i oli de farigola</strong><span>Principal saborós, clar i molt reconeixible.</span></li>
+                <li><strong>(Veg) Caneló fred de verdures i formatge fresc</strong><span>Perfil fresc i complet per mantenir equilibri de carta.</span></li>
+              </ul>
+            </div>
+            <button type="button" class="oferta-dish-media js-lightbox" data-src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" data-caption="Principals · Menú 4/4/4" aria-label="Ampliar imatge de principals del menú 4/4/4">
+              <img src="imaguenes i videos/oferta-gastronomica-4-4-4-principals.jpg" alt="Principals del menú 4/4/4" loading="lazy" />
+              <span class="oferta-media-label">Principals <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-category-card">
+            <div class="oferta-category-content">
+              <div class="oferta-category-title">
+                <h3>Postres</h3>
+                <span>4 opcions</span>
               </div>
-            </article>
-            <article class="oferta-note">
-              <strong>Preu públic: 34,90 €</strong>
-              <p>Una única opció premium incorpora un suplement de +4,50 €, aplicat només a la referència amb marge més feble.</p>
-            </article>
-          </div>
+              <ul class="oferta-dish-list">
+                <li><strong>Pressé de fruita d’estiu i gelat de iogur</strong><span>Tancament fresc de fruita madura i punt cremós.</span></li>
+                <li><strong>(Veg/V) Cítrics en textures</strong><span>Opció lleugera, neta i molt refrescant.</span></li>
+                <li><strong>Coca fina de pinyons i crema</strong><span>Lectura clàssica amb acabat cruixent i suau.</span></li>
+                <li><strong>Gelat d’oli d’oliva, sal i xocolata</strong><span>Perfil mediterrani amb contrast dolç-salat final.</span></li>
+              </ul>
+            </div>
+            <button type="button" class="oferta-dish-media js-lightbox" data-src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" data-caption="Postres · Menú 4/4/4" aria-label="Ampliar imatge de postres del menú 4/4/4">
+              <img src="imaguenes i videos/oferta-gastronomica-4-4-4-postres.jpg" alt="Postres del menú 4/4/4" loading="lazy" />
+              <span class="oferta-media-label">Postres <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-note">
+            <strong>Preu públic: 34,90 €</strong>
+            <p>Una única opció premium incorpora un suplement de +4,50 €, aplicat només a la referència amb marge més feble.</p>
+          </article>
+
+          <article class="oferta-callout">
+            <h3>Sentit del format</h3>
+            <p>Format de base comercial sòlida, pensat per captar, fidelitzar i mantenir una proposta recognoscible de qualitat.</p>
+          </article>
         </div>
-        <article class="oferta-callout" style="margin-top: 0.9rem;">
-          <h3>Sentit del format</h3>
-          <p>Format de base comercial sòlida, pensat per captar, fidelitzar i mantenir una proposta recognoscible de qualitat.</p>
-        </article>
       </section>
 
       <section class="oferta-section" id="menu-degustacio">
-        <p class="oferta-kicker">Format experiencial</p>
-        <h2 class="oferta-title">Menú degustació · Nit (estiu)</h2>
-        <p class="oferta-subtitle">La versió més experiencial i representativa de la proposta.</p>
-        <p class="oferta-subtitle" style="margin-top: 0.55rem;">El menú degustació d’estiu concentra la lectura més completa de MESCLARI. És el format que permet desplegar millor la sensibilitat culinària del projecte, el seu ritme de servei i la seva capacitat de construir una experiència més memorable.</p>
-        <p class="oferta-subtitle" style="margin-top: 0.55rem;"><strong>Preu públic: 72,00 €</strong></p>
-        <p class="oferta-subtitle" style="margin-top: 0.55rem;">Més que una successió de plats, es planteja com un recorregut amb sentit propi, on producte, tècnica, servei i atmosfera treballen en una mateixa direcció.</p>
-        <div class="oferta-degustacio">
-          <section class="oferta-degustacio">
-            <section class="oferta-degustacio">
-  <section class="oferta-degustacio">
-  <div class="oferta-passes">
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 1 · Coca d’oli, tomàquet de penjar i anxova</h4>
-        <p>Mos cruixent i directe que obre el recorregut amb un perfil mediterrani net, salí i molt reconeixible.</p>
-        <p class="oferta-compose">Coca fina d’oli cruixent, tomàquet de penjar ratllat, anxova de l’Escala, OOVE arbequina i orenga.</p>
-        <p class="oferta-note-inline">Base compartida amb la versió vegetariana.</p>
-        <p class="oferta-wine">Vi recomanat · Ancestral de Xarel·lo / Escumós Brut Nature</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/1 coca.jpeg"
-        data-modal-caption="Passa 1 · Coca d’oli, tomàquet de penjar i anxova"
-        aria-label="Ampliar Passa 1"
-      >
-        <img
-          src="imaguenes i videos/1 coca.jpeg"
-          alt="Passa 1 · Coca d’oli, tomàquet de penjar i anxova"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc</h4>
-        <p>Plat fred, suau i aromàtic que refresca el ritme del menú i introdueix una lectura més delicada.</p>
-        <p class="oferta-compose">Porro i all tendre confitats, patata, fons vegetal, ametlla mòlta, toc de nata, grans de raïm pelats i oli d’herbes.</p>
-        <p class="oferta-note-inline">Base compartida.</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 2 .jpeg"
-        data-modal-caption="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc"
-        aria-label="Ampliar Passa 2"
-      >
-        <img
-          src="imaguenes i videos/Passa 2 .jpeg"
-          alt="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass featured">
-      <div class="oferta-pass-copy">
-        <h4>Passa 3 · Ou poché sobre cremós de coliflor amb ceba i tòfona d’estiu</h4>
-        <p>Passa càlid i cremós que aporta profunditat i reforça la dimensió experiencial del recorregut.</p>
-        <p class="oferta-compose">Ou poché cremós, parmentier suau amb herbes fines, mantega noisette i tòfona d’estiu ratllada.</p>
-        <p class="oferta-note-inline">Elaboració en sala.</p>
-        <p class="oferta-compose">L’ou arriba sobre la parmentier i es completa al moment amb mantega noisette calenta i tòfona ratllada, reforçant aroma, ritual i valor percebut.</p>
-        <p class="oferta-note-inline">Base compartida.</p>
-        <p class="oferta-wine">Vi recomanat · Raimat Turons de la Pleta</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 3 .jpeg"
-        data-modal-caption="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu"
-        aria-label="Ampliar Passa 3"
-      >
-        <img
-          src="imaguenes i videos/Passa 3 .jpeg"
-          alt="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 4 · Corvina salvaje a la brasa, jugo de espinas tostadas y emulsión de hinojo</h4>
-        <p>De perfil fresc i definit, acompanya el recorregut amb lleugeresa i una elegància molt controlada.</p>
-        <p class="oferta-compose">Llobarro de llotja marcat a la brasa, salsa verda de julivert, cibulet, OOVE i llimona, amb pell de llimona i sal marina.</p>
-        <p class="oferta-note-inline">Base compartida de salsa.</p>
-        <p class="oferta-wine">Vi recomanat · Garnatxa Blanca DO Terra Alta</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 5.jpeg"
-        data-modal-caption="Passa 4 · Corvina de llotja a la brasa, amb crema lleugera, verdures de temporada i reducció, acabada amb oli d’herbes i cítric."
-        aria-label="Ampliar Passa 4"
-      >
-        <img
-          src="imaguenes i videos/Passa 5.jpeg"
-          alt="Passa 4 · Corvina de llotja a la brasa, amb crema lleugera, verdures de temporada i reducció, acabada amb oli d’herbes i cítric."
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 5 · Terrina de galtes al Pedro Ximénez amb parmentier i reducció</h4>
-        <p>Moment de més profunditat del menú, amb una lectura més intensa, càlida i gastronòmica.</p>
-        <p class="oferta-compose">Lingot de galta de porc confitada a baixa temperatura, acabat a la brasa, amb parmentier sedosa i reducció de Pedro Ximénez.</p>
-        <p class="oferta-wine">Vi recomanat · Carles Andreu Trepat 2024</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 4.jpeg"
-        data-modal-caption="Passa 5 · Lingot de galta de porc confitada a baixa temperatura, acabat a la brasa, amb parmentier sedosa i reducció de Pedro Ximénez."
-        aria-label="Ampliar Passa 5"
-      >
-        <img
-          src="imaguenes i videos/Passa 4.jpeg"
-          alt="Passa 5 · Xai lletó a baixa temperatura, samfaina fina i reducció de vi DO Empordà"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 6 · Prepostre · Granissat de llimona i farigola</h4>
-        <p>Punt de transició que refresca, neteja el paladar i prepara el tancament dolç del recorregut.</p>
-        <p class="oferta-compose">Granissat natural de llimona, sucre lleu i farigola.</p>
-        <p class="oferta-note-inline">Base compartida.</p>
-        <p class="oferta-wine">Vi recomanat · Kombutxa Cítrics ONFLOW</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 6.jpeg"
-        data-modal-caption="Passa 6 · Prepostre · Granissat de llimona i farigola"
-        aria-label="Ampliar Passa 6"
-      >
-        <img
-          src="imaguenes i videos/Passa 6.jpeg"
-          alt="Passa 6 · Prepostre · Granissat de llimona i farigola"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-    <article class="oferta-pass">
-      <div class="oferta-pass-copy">
-        <h4>Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel</h4>
-        <p>Tancament lleuger, aromàtic i estacional, coherent amb l’estiu i amb el to general del menú.</p>
-        <p class="oferta-compose">Préssec d’estiu rostit al forn, iogur cremós fred amb mel, farigola i pell de taronja ratllada.</p>
-        <p class="oferta-wine">Vi recomanat · Bochorris Brut Nature</p>
-      </div>
-      <button
-        type="button"
-        class="oferta-pass-media zoomable-pass"
-        data-modal-src="imaguenes i videos/Passa 7 .jpeg"
-        data-modal-caption="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel"
-        aria-label="Ampliar Passa 7"
-      >
-        <img
-          src="imaguenes i videos/Passa 7 .jpeg"
-          alt="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel"
-          loading="lazy"
-        />
-      </button>
-    </article>
-
-  </div>
-</section>
-
-<div class="image-modal" id="imageModal" hidden>
-  <button class="image-modal-close" type="button" aria-label="Tancar">×</button>
-  <div class="image-modal-backdrop"></div>
-  <figure class="image-modal-figure">
-    <img id="imageModalImg" src="" alt="" />
-    <figcaption id="imageModalCaption"></figcaption>
-  </figure>
-</div>
-
-<style>
-  .oferta-degustacio {
-    width: 100%;
-  }
-
-  .oferta-passes {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .oferta-pass {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-    gap: 28px;
-    padding: 28px;
-    border-radius: 28px;
-    border: 1px solid rgba(30, 45, 59, 0.10);
-    background: linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(248,242,232,0.92) 100%);
-    box-shadow: 0 10px 28px rgba(24, 39, 58, 0.05), inset 0 1px 0 rgba(255,255,255,0.55);
-    align-items: stretch;
-  }
-
-  .oferta-pass.featured {
-    border-color: rgba(194, 94, 60, 0.20);
-    background: linear-gradient(180deg, rgba(255,252,247,0.92) 0%, rgba(247,239,228,0.98) 100%);
-    box-shadow: 0 14px 34px rgba(24, 39, 58, 0.08), 0 0 0 1px rgba(194, 94, 60, 0.05) inset;
-  }
-
-  .oferta-pass-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  .oferta-pass-copy h4 {
-    margin: 0 0 14px;
-    font-size: clamp(1.2rem, 1.15rem + 0.4vw, 1.55rem);
-    line-height: 1.22;
-    letter-spacing: -0.01em;
-    color: #1e2d3b;
-  }
-
-  .oferta-pass-copy p {
-    margin: 0 0 12px;
-    line-height: 1.62;
-    color: #32485d;
-    font-size: 1rem;
-  }
-
-  .oferta-compose {
-    color: #465a6d;
-  }
-
-  .oferta-note-inline,
-  .oferta-wine {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: 2px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 0.92rem;
-    line-height: 1.2;
-    font-weight: 600;
-  }
-
-  .oferta-note-inline {
-    background: rgba(216, 203, 178, 0.30);
-    color: #6b543d;
-    border: 1px solid rgba(194, 94, 60, 0.12);
-  }
-
-  .oferta-wine {
-    background: rgba(30, 45, 59, 0.06);
-    color: #1e2d3b;
-    border: 1px solid rgba(30, 45, 59, 0.08);
-    margin-top: 4px;
-  }
-
-  .oferta-pass-media {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 100%;
-    min-height: 300px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: none;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 22px;
-    overflow: hidden;
-    cursor: pointer;
-    display: block;
-    align-self: stretch;
-  }
-
-  .oferta-pass-media::before,
-  .oferta-pass-media::after,
-  .zoomable-pass::before,
-  .zoomable-pass::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  .oferta-pass-media img {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    border: 0;
-    border-radius: 22px;
-    background: transparent;
-    box-shadow: 0 14px 30px rgba(24, 39, 58, 0.10);
-    transition: transform 0.28s ease;
-    filter: none !important;
-    opacity: 1 !important;
-  }
-
-  .oferta-pass-media:hover img {
-    transform: scale(1.02);
-  }
-
-  .oferta-pass-overlay {
-    display: none !important;
-  }
-
-  .image-modal[hidden] {
-    display: none;
-  }
-
-  .image-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: grid;
-    place-items: center;
-    padding: 22px;
-  }
-
-  .image-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(9, 15, 24, 0.86);
-  }
-
-  .image-modal-figure {
-    position: relative;
-    z-index: 2;
-    width: min(92vw, 1180px);
-    margin: 0;
-    text-align: center;
-  }
-
-  .image-modal-figure img {
-    width: 100%;
-    max-height: 82vh;
-    object-fit: contain;
-    border-radius: 22px;
-    display: block;
-    margin: 0 auto;
-    background: #f3ecdf;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.26);
-  }
-
-  .image-modal-figure figcaption {
-    margin-top: 14px;
-    color: #f7f3eb;
-    font-size: 0.96rem;
-    line-height: 1.45;
-  }
-
-  .image-modal-close {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 3;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-
-  @media (max-width: 1100px) {
-    .oferta-pass {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 320px;
-    }
-  }
-
-  @media (max-width: 720px) {
-    .oferta-pass {
-      padding: 18px;
-      border-radius: 22px;
-      gap: 16px;
-    }
-
-    .oferta-pass-copy h4 {
-      font-size: 1.08rem;
-    }
-
-    .oferta-pass-copy p {
-      font-size: 0.97rem;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 240px;
-      border-radius: 18px;
-    }
-  }
-</style>
-
-<script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-  const modalCaption = document.getElementById("imageModalCaption");
-  const closeBtn = document.querySelector(".image-modal-close");
-  const backdrop = document.querySelector(".image-modal-backdrop");
-
-  document.querySelectorAll(".zoomable-pass").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const src = btn.dataset.modalSrc;
-      const caption = btn.dataset.modalCaption || "";
-      const thumb = btn.querySelector("img");
-
-      modalImg.src = src;
-      modalImg.alt = caption || (thumb ? thumb.alt : "");
-      modalCaption.textContent = caption;
-      modal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  function closeModal() {
-    modal.hidden = true;
-    modalImg.src = "";
-    modalImg.alt = "";
-    modalCaption.textContent = "";
-    document.body.style.overflow = "";
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.hidden) {
-      closeModal();
-    }
-  });
-</script>
-</section>
-
-<div class="image-modal" id="imageModal" hidden>
-  <button class="image-modal-close" type="button" aria-label="Tancar">×</button>
-  <div class="image-modal-backdrop"></div>
-  <figure class="image-modal-figure">
-    <img id="imageModalImg" src="" alt="" />
-    <figcaption id="imageModalCaption"></figcaption>
-  </figure>
-</div>
-
-<style>
-  .oferta-degustacio {
-    width: 100%;
-  }
-
-  .oferta-passes {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .oferta-pass {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-    gap: 28px;
-    padding: 28px;
-    border-radius: 28px;
-    border: 1px solid rgba(30, 45, 59, 0.10);
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(248,242,232,0.92) 100%);
-    box-shadow:
-      0 10px 28px rgba(24, 39, 58, 0.05),
-      inset 0 1px 0 rgba(255,255,255,0.55);
-    align-items: stretch;
-  }
-
-  .oferta-pass.featured {
-    border-color: rgba(194, 94, 60, 0.20);
-    background:
-      linear-gradient(180deg, rgba(255,252,247,0.92) 0%, rgba(247,239,228,0.98) 100%);
-    box-shadow:
-      0 14px 34px rgba(24, 39, 58, 0.08),
-      0 0 0 1px rgba(194, 94, 60, 0.05) inset;
-  }
-
-  .oferta-pass-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  .oferta-pass-copy h4 {
-    margin: 0 0 14px;
-    font-size: clamp(1.2rem, 1.15rem + 0.4vw, 1.55rem);
-    line-height: 1.22;
-    letter-spacing: -0.01em;
-    color: #1e2d3b;
-  }
-
-  .oferta-pass-copy p {
-    margin: 0 0 12px;
-    line-height: 1.62;
-    color: #32485d;
-    font-size: 1rem;
-  }
-
-  .oferta-compose {
-    color: #465a6d;
-  }
-
-  .oferta-note-inline,
-  .oferta-wine {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: 2px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-size: 0.92rem;
-    line-height: 1.2;
-    font-weight: 600;
-  }
-
-  .oferta-note-inline {
-    background: rgba(216, 203, 178, 0.30);
-    color: #6b543d;
-    border: 1px solid rgba(194, 94, 60, 0.12);
-  }
-
-  .oferta-wine {
-    background: rgba(30, 45, 59, 0.06);
-    color: #1e2d3b;
-    border: 1px solid rgba(30, 45, 59, 0.08);
-    margin-top: 4px;
-  }
-
-  .oferta-pass-media {
-    position: relative;
-    width: 100%;
-    min-height: 300px;
-    border: 0;
-    padding: 0;
-    border-radius: 22px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #e9e1d4;
-    display: block;
-    align-self: stretch;
-    box-shadow: 0 14px 30px rgba(24, 39, 58, 0.10);
-  }
-
-  .oferta-pass-media img {
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.34s ease;
-  }
-
-  .oferta-pass-media:hover img {
-    transform: scale(1.035);
-  }
-
-  .oferta-pass-media::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to top, rgba(12, 21, 32, 0.26), rgba(12, 21, 32, 0.02) 38%);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .oferta-pass-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 22px;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .oferta-pass-overlay {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    z-index: 3;
-    padding: 9px 13px;
-    border-radius: 999px;
-    background: rgba(17, 29, 43, 0.74);
-    backdrop-filter: blur(6px);
-    color: #fff;
-    font-size: 0.84rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.16);
-  }
-
-  .image-modal[hidden] {
-    display: none;
-  }
-
-  .image-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: grid;
-    place-items: center;
-    padding: 22px;
-  }
-
-  .image-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(9, 15, 24, 0.86);
-  }
-
-  .image-modal-figure {
-    position: relative;
-    z-index: 2;
-    width: min(92vw, 1180px);
-    margin: 0;
-    text-align: center;
-  }
-
-  .image-modal-figure img {
-    width: 100%;
-    max-height: 82vh;
-    object-fit: contain;
-    border-radius: 22px;
-    display: block;
-    margin: 0 auto;
-    background: #f3ecdf;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.26);
-  }
-
-  .image-modal-figure figcaption {
-    margin-top: 14px;
-    color: #f7f3eb;
-    font-size: 0.96rem;
-    line-height: 1.45;
-  }
-
-  .image-modal-close {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 3;
-    width: 48px;
-    height: 48px;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.14);
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-
-  @media (max-width: 1100px) {
-    .oferta-pass {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 320px;
-    }
-  }
-
-  @media (max-width: 720px) {
-    .oferta-pass {
-      padding: 18px;
-      border-radius: 22px;
-      gap: 16px;
-    }
-
-    .oferta-pass-copy h4 {
-      font-size: 1.08rem;
-    }
-
-    .oferta-pass-copy p {
-      font-size: 0.97rem;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 240px;
-      border-radius: 18px;
-    }
-
-    .oferta-pass-overlay {
-      right: 10px;
-      bottom: 10px;
-      padding: 8px 11px;
-      font-size: 0.8rem;
-    }
-  }
-</style>
-
-<script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-  const modalCaption = document.getElementById("imageModalCaption");
-  const closeBtn = document.querySelector(".image-modal-close");
-  const backdrop = document.querySelector(".image-modal-backdrop");
-
-  document.querySelectorAll(".zoomable-pass").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const src = btn.dataset.modalSrc;
-      const caption = btn.dataset.modalCaption || "";
-      const thumb = btn.querySelector("img");
-
-      modalImg.src = src;
-      modalImg.alt = caption || (thumb ? thumb.alt : "");
-      modalCaption.textContent = caption;
-      modal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  function closeModal() {
-    modal.hidden = true;
-    modalImg.src = "";
-    modalImg.alt = "";
-    modalCaption.textContent = "";
-    document.body.style.overflow = "";
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.hidden) {
-      closeModal();
-    }
-  });
-</script>
-  
-</section>
-
-<div class="image-modal" id="imageModal" hidden>
-  <button class="image-modal-close" type="button" aria-label="Tancar">×</button>
-  <div class="image-modal-backdrop"></div>
-  <figure class="image-modal-figure">
-    <img id="imageModalImg" src="" alt="" />
-    <figcaption id="imageModalCaption"></figcaption>
-  </figure>
-</div>
-
-<style>
-  .oferta-degustacio {
-    width: 100%;
-  }
-
-  .oferta-passes {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .oferta-pass {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 22px;
-    padding: 22px;
-    border: 1px solid rgba(30, 45, 59, 0.12);
-    border-radius: 24px;
-    background: rgba(255, 252, 246, 0.72);
-    box-shadow: 0 10px 30px rgba(24, 39, 58, 0.05);
-  }
-
-  .oferta-pass.featured {
-    border-color: rgba(194, 94, 60, 0.28);
-    box-shadow: 0 14px 36px rgba(24, 39, 58, 0.08);
-  }
-
-  .oferta-pass-copy h4 {
-    margin: 0 0 12px;
-    font-size: 1.2rem;
-    line-height: 1.25;
-  }
-
-  .oferta-pass-copy p {
-    margin: 0 0 12px;
-    line-height: 1.55;
-  }
-
-  .oferta-compose {
-    opacity: 0.92;
-  }
-
-  .oferta-note-inline {
-    font-size: 0.95rem;
-    font-weight: 600;
-    opacity: 0.9;
-  }
-
-  .oferta-wine {
-    font-weight: 600;
-  }
-
-  .oferta-pass-media {
-    position: relative;
-    width: 100%;
-    min-height: 240px;
-    padding: 0;
-    border: 0;
-    border-radius: 20px;
-    overflow: hidden;
-    cursor: pointer;
-    background: #e9e1d4;
-    display: block;
-    align-self: stretch;
-  }
-
-  .oferta-pass-media img {
-    width: 100%;
-    height: 100%;
-    min-height: 240px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.28s ease;
-  }
-
-  .oferta-pass-media:hover img {
-    transform: scale(1.03);
-  }
-
-  .oferta-pass-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.02));
-    pointer-events: none;
-  }
-
-  .oferta-pass-overlay {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    z-index: 2;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: rgba(20, 31, 48, 0.78);
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .image-modal[hidden] {
-    display: none;
-  }
-
-  .image-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: grid;
-    place-items: center;
-  }
-
-  .image-modal-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(9, 15, 24, 0.84);
-  }
-
-  .image-modal-figure {
-    position: relative;
-    z-index: 2;
-    width: min(92vw, 1180px);
-    margin: 0;
-    text-align: center;
-  }
-
-  .image-modal-figure img {
-    width: 100%;
-    max-height: 82vh;
-    object-fit: contain;
-    border-radius: 18px;
-    display: block;
-    margin: 0 auto;
-    background: #f3ecdf;
-  }
-
-  .image-modal-figure figcaption {
-    margin-top: 14px;
-    color: #f7f3eb;
-    font-size: 0.95rem;
-    line-height: 1.45;
-  }
-
-  .image-modal-close {
-    position: absolute;
-    top: 22px;
-    right: 22px;
-    z-index: 3;
-    width: 46px;
-    height: 46px;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  @media (max-width: 980px) {
-    .oferta-pass {
-      grid-template-columns: 1fr;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 260px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .oferta-pass {
-      padding: 16px;
-      gap: 16px;
-    }
-
-    .oferta-pass-media,
-    .oferta-pass-media img {
-      min-height: 220px;
-    }
-
-    .oferta-pass-copy h4 {
-      font-size: 1.05rem;
-    }
-  }
-</style>
-
-<script>
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-  const modalCaption = document.getElementById("imageModalCaption");
-  const closeBtn = document.querySelector(".image-modal-close");
-  const backdrop = document.querySelector(".image-modal-backdrop");
-
-  document.querySelectorAll(".zoomable-pass").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const src = btn.dataset.modalSrc;
-      const caption = btn.dataset.modalCaption || "";
-      const thumb = btn.querySelector("img");
-
-      modalImg.src = src;
-      modalImg.alt = caption || (thumb ? thumb.alt : "");
-      modalCaption.textContent = caption;
-      modal.hidden = false;
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  function closeModal() {
-    modal.hidden = true;
-    modalImg.src = "";
-    modalImg.alt = "";
-    modalCaption.textContent = "";
-    document.body.style.overflow = "";
-  }
-
-  closeBtn.addEventListener("click", closeModal);
-  backdrop.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !modal.hidden) {
-      closeModal();
-    }
-  });
-</script>
-  
-
-
-
-
-
-</div>
+        <header class="oferta-section-head">
+          <p class="oferta-kicker">Format experiencial</p>
+          <h2 class="oferta-title">Menú degustació · Nit (estiu)</h2>
+          <p class="oferta-subtitle">
+            El menú degustació d’estiu concentra la lectura més completa de MESCLARI. És el format que permet desplegar millor la sensibilitat culinària del projecte, el seu ritme de servei i la seva capacitat de construir una experiència més memorable.
+          </p>
+        </header>
+
+        <div class="oferta-degustacio-wrap">
+          <div class="oferta-degustacio-intro">
+            <article class="oferta-card">
+              <h3>Preu públic</h3>
+              <p><span class="oferta-price-pill">72,00 €</span></p>
+            </article>
+            <article class="oferta-card">
+              <h3>7 passes</h3>
+              <p>Més que una successió de plats, es planteja com un recorregut amb sentit propi.</p>
+            </article>
+            <article class="oferta-card">
+              <h3>Relat complet</h3>
+              <p>Producte, tècnica, servei i atmosfera treballen en una mateixa direcció.</p>
+            </article>
+          </div>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 1</span>
+              <h3>Coca d’oli, tomàquet de penjar i anxova</h3>
+              <p>Mos cruixent i directe que obre el recorregut amb un perfil mediterrani net, salí i molt reconeixible.</p>
+              <p class="oferta-compose">Coca fina d’oli cruixent, tomàquet de penjar ratllat, anxova de l’Escala, OOVE arbequina i orenga.</p>
+              <div class="oferta-tags"><span class="terracotta">Base compartida amb la versió vegetariana</span><span>Vi · Ancestral de Xarel·lo / Escumós Brut Nature</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/1 coca.jpeg" data-caption="Passa 1 · Coca d’oli, tomàquet de penjar i anxova" aria-label="Ampliar Passa 1">
+              <img src="imaguenes i videos/1 coca.jpeg" alt="Passa 1 · Coca d’oli, tomàquet de penjar i anxova" loading="lazy" />
+              <span class="oferta-media-label">Passa 1 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 2</span>
+              <h3>Vichyssoise d’all tendre i ametlla, raïm blanc</h3>
+              <p>Plat fred, suau i aromàtic que refresca el ritme del menú i introdueix una lectura més delicada.</p>
+              <p class="oferta-compose">Porro i all tendre confitats, patata, fons vegetal, ametlla mòlta, toc de nata, grans de raïm pelats i oli d’herbes.</p>
+              <div class="oferta-tags"><span class="terracotta">Base compartida</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 2 .jpeg" data-caption="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc" aria-label="Ampliar Passa 2">
+              <img src="imaguenes i videos/Passa 2 .jpeg" alt="Passa 2 · Vichyssoise d’all tendre i ametlla, raïm blanc" loading="lazy" />
+              <span class="oferta-media-label">Passa 2 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass featured">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 3 · Elaboració en sala</span>
+              <h3>Ou poché sobre cremós de coliflor amb ceba i tòfona d’estiu</h3>
+              <p>Passa càlid i cremós que aporta profunditat i reforça la dimensió experiencial del recorregut.</p>
+              <p class="oferta-compose">Ou poché cremós, parmentier suau amb herbes fines, mantega noisette i tòfona d’estiu ratllada.</p>
+              <p class="oferta-compose">L’ou arriba sobre la parmentier i es completa al moment amb mantega noisette calenta i tòfona ratllada, reforçant aroma, ritual i valor percebut.</p>
+              <div class="oferta-tags"><span class="terracotta">Base compartida</span><span>Vi · Raimat Turons de la Pleta</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 3 .jpeg" data-caption="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu" aria-label="Ampliar Passa 3">
+              <img src="imaguenes i videos/Passa 3 .jpeg" alt="Passa 3 · Ou poché, parmentier d’herbes i tòfona d’estiu" loading="lazy" />
+              <span class="oferta-media-label">Passa 3 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 4</span>
+              <h3>Corvina salvatge a la brasa, suc d’espines torrades i emulsió de fonoll</h3>
+              <p>De perfil fresc i definit, acompanya el recorregut amb lleugeresa i una elegància molt controlada.</p>
+              <p class="oferta-compose">Llobarro de llotja marcat a la brasa, salsa verda de julivert, cibulet, OOVE i llimona, amb pell de llimona i sal marina.</p>
+              <div class="oferta-tags"><span class="terracotta">Base compartida de salsa</span><span>Vi · Garnatxa Blanca DO Terra Alta</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 5.jpeg" data-caption="Passa 4 · Corvina de llotja a la brasa, amb crema lleugera, verdures de temporada i reducció, acabada amb oli d’herbes i cítric." aria-label="Ampliar Passa 4">
+              <img src="imaguenes i videos/Passa 5.jpeg" alt="Passa 4 · Corvina de llotja a la brasa" loading="lazy" />
+              <span class="oferta-media-label">Passa 4 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 5</span>
+              <h3>Terrina de galtes al Pedro Ximénez amb parmentier i reducció</h3>
+              <p>Moment de més profunditat del menú, amb una lectura més intensa, càlida i gastronòmica.</p>
+              <p class="oferta-compose">Lingot de galta de porc confitada a baixa temperatura, acabat a la brasa, amb parmentier sedosa i reducció de Pedro Ximénez.</p>
+              <div class="oferta-tags"><span>Vi · Carles Andreu Trepat 2024</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 4.jpeg" data-caption="Passa 5 · Lingot de galta de porc confitada a baixa temperatura, acabat a la brasa, amb parmentier sedosa i reducció de Pedro Ximénez." aria-label="Ampliar Passa 5">
+              <img src="imaguenes i videos/Passa 4.jpeg" alt="Passa 5 · Lingot de galta de porc confitada" loading="lazy" />
+              <span class="oferta-media-label">Passa 5 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 6 · Prepostre</span>
+              <h3>Granissat de llimona i farigola</h3>
+              <p>Punt de transició que refresca, neteja el paladar i prepara el tancament dolç del recorregut.</p>
+              <p class="oferta-compose">Granissat natural de llimona, sucre lleu i farigola.</p>
+              <div class="oferta-tags"><span class="terracotta">Base compartida</span><span>Vi · Kombutxa Cítrics ONFLOW</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 6.jpeg" data-caption="Passa 6 · Prepostre · Granissat de llimona i farigola" aria-label="Ampliar Passa 6">
+              <img src="imaguenes i videos/Passa 6.jpeg" alt="Passa 6 · Prepostre · Granissat de llimona i farigola" loading="lazy" />
+              <span class="oferta-media-label">Passa 6 <em>Ampliar</em></span>
+            </button>
+          </article>
+
+          <article class="oferta-pass">
+            <div class="oferta-pass-copy">
+              <span class="oferta-pass-number">Passa 7</span>
+              <h3>Préssec de vinya rostit, crema freda de iogur i mel</h3>
+              <p>Tancament lleuger, aromàtic i estacional, coherent amb l’estiu i amb el to general del menú.</p>
+              <p class="oferta-compose">Préssec d’estiu rostit al forn, iogur cremós fred amb mel, farigola i pell de taronja ratllada.</p>
+              <div class="oferta-tags"><span>Vi · Bochorris Brut Nature</span></div>
+            </div>
+            <button type="button" class="oferta-pass-media js-lightbox" data-src="imaguenes i videos/Passa 7 .jpeg" data-caption="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel" aria-label="Ampliar Passa 7">
+              <img src="imaguenes i videos/Passa 7 .jpeg" alt="Passa 7 · Préssec de vinya rostit, crema freda de iogur i mel" loading="lazy" />
+              <span class="oferta-media-label">Passa 7 <em>Ampliar</em></span>
+            </button>
+          </article>
+        </div>
       </section>
 
       <section class="oferta-section" id="versio-vegetariana">
-        <p class="oferta-kicker">Adaptació real</p>
-        <h2 class="oferta-title">Versió vegetariana</h2>
-        <p class="oferta-subtitle">MESCLARI contempla també una versió vegetariana del menú degustació, plantejada no com una alternativa secundària, sinó com una adaptació coherent del recorregut principal.</p>
+        <header class="oferta-section-head">
+          <p class="oferta-kicker">Adaptació real</p>
+          <h2 class="oferta-title">Versió vegetariana</h2>
+          <p class="oferta-subtitle">
+            MESCLARI contempla també una versió vegetariana del menú degustació, plantejada no com una alternativa secundària, sinó com una adaptació coherent del recorregut principal.
+          </p>
+        </header>
         <div class="oferta-grid-2">
           <article class="oferta-callout">
             <h3>Preu públic: 58,00 €</h3>
@@ -1654,40 +1220,38 @@
       </section>
 
       <section class="oferta-section" id="begudes-maridatge">
-  <p class="oferta-kicker">Univers líquid</p>
-  <h2 class="oferta-title">Begudes i maridatge</h2>
-  <p class="oferta-subtitle">
-    La part líquida de la proposta reforça el valor global de l’experiència.
-    El vi, el maridatge i la intervenció de sala amplien la lectura gastronòmica
-    del restaurant i contribueixen a la seva diferenciació.
-  </p>
+        <header class="oferta-section-head">
+          <p class="oferta-kicker">Univers líquid</p>
+          <h2 class="oferta-title">Begudes i maridatge</h2>
+          <p class="oferta-subtitle">
+            La part líquida de la proposta reforça el valor global de l’experiència. El vi, el maridatge i la intervenció de sala amplien la lectura gastronòmica del restaurant i contribueixen a la seva diferenciació.
+          </p>
+        </header>
+        <div class="oferta-liquid-layout">
+          <div class="oferta-liquid-copy">
+            <article class="oferta-mini">
+              <h3>Carta de vins</h3>
+              <p>Selecció alineada amb l’oferta real i els ritmes del servei.</p>
+            </article>
+            <article class="oferta-mini">
+              <h3>Maridatge</h3>
+              <p>Complement narratiu que acompanya i ordena el recorregut gastronòmic.</p>
+            </article>
+            <article class="oferta-mini">
+              <h3>Valor de sala</h3>
+              <p>La sala converteix la proposta líquida en una part activa de l’experiència.</p>
+            </article>
+          </div>
+          <button type="button" class="oferta-liquid-media js-lightbox" data-src="imaguenes i videos/WhatsApp Image 2026-04-23 at 00.27.03.jpeg" data-caption="Presentació visual de maridatge" aria-label="Ampliar presentació visual de maridatge">
+            <img src="imaguenes i videos/WhatsApp Image 2026-04-23 at 00.27.03.jpeg" alt="Presentació de maridatge i begudes de MESCLARI" loading="lazy" />
+            <span class="oferta-media-label">Maridatge <em>Ampliar</em></span>
+          </button>
+        </div>
+      </section>
 
-  <div class="oferta-grid-3">
-    <article class="oferta-mini">
-      <h3>Carta de vins</h3>
-      <p>Selecció alineada amb l’oferta real i els ritmes del servei.</p>
-    </article>
-
-    <article class="oferta-mini">
-      <h3>Maridatge</h3>
-      <p>Complement narratiu que acompanya i ordena el recorregut gastronòmic.</p>
-    </article>
-
-    <article class="oferta-mini">
-      <h3>Valor de sala</h3>
-      <p>La sala converteix la proposta líquida en una part activa de l’experiència.</p>
-    </article>
-  </div>
-
-  <figure class="oferta-media-small" style="margin-top: 1rem;">
-    <img src="imaguenes i videos/WhatsApp Image 2026-04-23 at 00.27.03.jpeg" alt="Presentació de maridatge i begudes de MESCLARI" />
-    <figcaption>Presentació visual de maridatge</figcaption>
-  </figure>
-</section>
-
-      <section class="oferta-section oferta-closing" id="tancament-oferta">
-        <p>L’oferta gastronòmica de MESCLARI es construeix des de la coherència entre format, producte, servei i experiència. La seva força no depèn de l’excés, sinó de la claredat amb què cada proposta respon a una funció real dins del restaurant.</p>
-        <p style="margin-top: 0.75rem; font-size: 1.25rem; color: var(--terracotta); font-family: 'Inter', sans-serif; font-weight: 500;">Una proposta ben definida es llegeix millor, es defensa millor i es recorda més.</p>
+      <section class="oferta-section oferta-close" id="tancament-oferta">
+        <p>L’oferta gastronòmica de MESCLARI es construeix des de la coherència entre format, producte, servei i experiència.</p>
+        <p>La seva força no depèn de l’excés, sinó de la claredat amb què cada proposta respon a una funció real dins del restaurant. Una proposta ben definida es llegeix millor, es defensa millor i es recorda més.</p>
       </section>
     </main>
 
@@ -1710,25 +1274,30 @@
         const lightboxImg = document.getElementById('lightboxImage');
         const lightboxCaption = document.getElementById('lightboxCaption');
         const closeBtn = document.getElementById('lightboxClose');
-        const zoomables = document.querySelectorAll('.zoomable-media, .zoomable-pass');
+        const zoomables = document.querySelectorAll('.js-lightbox');
         if (!lightbox || !lightboxImg || !lightboxCaption || !closeBtn || !zoomables.length) return;
 
         const closeLightbox = () => {
           lightbox.classList.remove('open');
           lightbox.setAttribute('aria-hidden', 'true');
           lightboxImg.removeAttribute('src');
+          lightboxImg.alt = '';
+          lightboxCaption.textContent = '';
+          document.body.style.overflow = '';
         };
 
         const openLightbox = (src, caption) => {
+          if (!src) return;
           lightboxImg.src = src;
           lightboxImg.alt = caption || 'Imatge ampliada';
           lightboxCaption.textContent = caption || '';
           lightbox.classList.add('open');
           lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
         };
 
         zoomables.forEach((item) => {
-          const handler = () => openLightbox(item.dataset.modalSrc || '', item.dataset.modalCaption || '');
+          const handler = () => openLightbox(item.dataset.src || '', item.dataset.caption || '');
           item.addEventListener('click', handler);
           item.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
