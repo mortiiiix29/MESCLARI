@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · VISIÓ GENERAL</title>
-    <meta name="description" content="Visió general de MESCLARI: lectura estructurada del model, claus estratègiques i coherència global del projecte." />
+    <title>MESCLARI · Equip impulsor</title>
+    <meta name="description" content="Estructura institucional de l'equip impulsor de MESCLARI amb jerarquia clara, perfils i encaix funcional." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -12,742 +12,1054 @@
 
     <style>
       /* =========================================================
-         MESCLARI · VISIÓ GENERAL
-         Adaptació visual premium sense alterar el contingut base
+         MESCLARI · EQUIP IMPULSOR · ARXIU CORRECTE
+         Adaptació visual premium mantenint contingut i fotografies
       ========================================================= */
 
-      .visio-page-premium,
-      .visio-page-premium * {
+      :root {
+        --equip-terracotta: #c25e3c;
+        --equip-blue: #1e2d3b;
+        --equip-ink: #233849;
+        --equip-ink-soft: #4a5f72;
+        --equip-beige: #f4e9dc;
+        --equip-sand: #d8cbb2;
+        --equip-olive: #6e8b74;
+        --equip-line: rgba(30, 45, 59, 0.12);
+        --equip-line-strong: rgba(30, 45, 59, 0.18);
+        --equip-panel: rgba(255, 255, 255, 0.76);
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.12), transparent 30rem),
+          radial-gradient(circle at 92% 6%, rgba(30, 45, 59, 0.08), transparent 34rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.98));
+      }
+
+      .nav {
+        top: 0.8rem;
+      }
+
+      .equip-page,
+      .equip-page * {
         box-sizing: border-box;
       }
 
-      .visio-page-premium {
-        --mesclari-terracotta: #c25e3c;
-        --mesclari-blue: #1e2d3b;
-        --mesclari-ink: #233849;
-        --mesclari-ink-soft: #4a5f72;
-        --mesclari-beige: #f4e9dc;
-        --mesclari-sand: #d8cbb2;
-        --mesclari-olive: #6e8b74;
-        --mesclari-line: rgba(30, 45, 59, 0.12);
-        --mesclari-line-soft: rgba(30, 45, 59, 0.08);
-        --mesclari-panel: rgba(255, 255, 255, 0.76);
-        --mesclari-panel-strong: rgba(255, 255, 255, 0.92);
-        --mesclari-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
-
-        margin: 0;
-        font-family: "Inter", sans-serif;
-        color: var(--mesclari-blue);
-        background:
-          radial-gradient(circle at 8% 5%, rgba(194, 94, 60, 0.16), transparent 31rem),
-          radial-gradient(circle at 92% 8%, rgba(110, 139, 116, 0.12), transparent 28rem),
-          linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.98));
+      .equip-page {
+        width: min(1280px, calc(100% - 2rem));
+        margin: clamp(5.8rem, 7vw, 7rem) auto 0;
+        display: grid;
+        gap: clamp(1.1rem, 2vw, 1.7rem);
+        color: var(--equip-blue);
       }
 
-      /* Ajuste específico para que la navegación no quede visualmente separada */
-      .visio-page-premium .nav {
-        z-index: 1000;
-      }
-
-      .visio-page-premium .nav .brand-mini {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.72rem;
-      }
-
-      .visio-page-premium .nav .nav-logo {
-        width: 42px !important;
-        height: 42px !important;
-        object-fit: contain;
-        border-radius: 0.55rem;
-        background: rgba(244, 233, 220, 0.92);
-        box-shadow: 0 6px 18px rgba(30, 45, 59, 0.12);
-      }
-
-      .visio-page-premium .nav .brand-name {
-        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
-        letter-spacing: 0.13em;
-        line-height: 1;
-      }
-
-      .visio-page-premium .vg-main-premium {
-        width: 100%;
-        padding: clamp(4.35rem, 4.8vw, 5.15rem) 0 clamp(3rem, 6vw, 5rem);
-        overflow: hidden;
-      }
-
-      .visio-page-premium .vg-main-premium p {
-        line-height: 1.72;
-      }
-
-      .visio-page-premium .vg-main-premium h1,
-      .visio-page-premium .vg-main-premium h2,
-      .visio-page-premium .vg-main-premium h3,
-      .visio-page-premium .vg-main-premium h4 {
+      .equip-page h1,
+      .equip-page h2,
+      .equip-page h3 {
         font-family: "Cormorant Garamond", serif;
       }
 
-      .visio-page-premium .vg-shell {
-        width: min(1220px, calc(100% - 2rem));
-        margin: 0 auto;
+      .equip-page p {
+        line-height: 1.68;
       }
 
-      .visio-page-premium .vg-kicker,
-      .visio-page-premium .home-section-kicker {
-        margin: 0 0 0.85rem;
+      .equip-eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0 0 0.7rem;
+        color: var(--equip-terracotta);
         font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--mesclari-terracotta);
+        letter-spacing: 0.16em;
+        font-weight: 900;
+      }
+
+      .equip-lead {
+        max-width: 820px;
+        margin: 0.85rem 0 0;
+        color: var(--equip-ink-soft);
+        font-size: clamp(1rem, 1.25vw, 1.12rem);
+      }
+
+      .equip-section {
+        position: relative;
+        border: 1px solid var(--equip-line);
+        border-radius: 2rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.62));
+        padding: clamp(1.3rem, 2.6vw, 2.4rem);
+        box-shadow: 0 22px 65px rgba(30, 45, 59, 0.09);
+        overflow: hidden;
+      }
+
+      .equip-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.06), transparent 22rem),
+          radial-gradient(circle at 92% 100%, rgba(30, 45, 59, 0.045), transparent 24rem);
+        pointer-events: none;
+      }
+
+      .equip-section > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .equip-section h2 {
+        margin: 0;
+        color: var(--equip-blue);
+        font-size: clamp(2.45rem, 4.8vw, 4.6rem);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
       }
 
       /* HERO */
 
-      .visio-page-premium .vg-opening-premium {
-        position: relative;
-        width: min(1220px, calc(100% - 2rem));
-        margin: 0 auto clamp(2.2rem, 3.4vw, 3.2rem);
-        scroll-margin-top: 7rem;
-        padding: clamp(0.85rem, 1.6vw, 1.1rem);
+      .equip-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+        gap: clamp(1rem, 2vw, 1.4rem);
+        align-items: stretch;
+        padding: clamp(1rem, 1.8vw, 1.25rem);
         border-radius: 2.4rem;
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.72));
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: var(--mesclari-shadow);
-        overflow: hidden;
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 233, 220, 0.72));
       }
 
-      .visio-page-premium .vg-opening-premium::before {
-        content: "VISIÓ GENERAL";
+      .equip-hero::after {
+        content: "EQUIP";
         position: absolute;
-        right: -1.2rem;
-        top: 0.4rem;
-        z-index: 0;
+        right: 1rem;
+        top: -0.35rem;
         font-family: "Inter", sans-serif;
-        font-size: clamp(3.8rem, 8vw, 8.4rem);
+        font-size: clamp(5rem, 12vw, 12rem);
+        line-height: 1;
         font-weight: 900;
-        letter-spacing: -0.07em;
+        letter-spacing: -0.08em;
         color: rgba(30, 45, 59, 0.045);
         pointer-events: none;
       }
 
-      .visio-page-premium .vg-opening-grid {
-        position: relative;
-        z-index: 2;
-        display: grid;
-        grid-template-columns: minmax(0, 0.96fr) minmax(400px, 1.04fr);
-        gap: clamp(1rem, 2vw, 1.5rem);
-        align-items: stretch;
-      }
-
-      .visio-page-premium .vg-opening-copy {
+      .hero-copy {
+        min-height: 560px;
         display: flex;
-        min-height: clamp(410px, 38vw, 440px);
         flex-direction: column;
         justify-content: center;
-        padding: clamp(1.8rem, 3.2vw, 3.25rem);
+        padding: clamp(2rem, 4vw, 4rem);
         border-radius: 2rem;
-        color: var(--mesclari-beige);
         background:
-          linear-gradient(150deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
-          var(--mesclari-blue);
+          linear-gradient(145deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
+          var(--equip-blue);
+        color: var(--equip-beige);
         box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
-        overflow: hidden;
       }
 
-      .visio-page-premium .vg-opening-copy h1 {
-        max-width: 860px;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: clamp(0.45rem, 1vw, 0.8rem);
-        color: #fff;
-      }
-
-      .visio-page-premium .vg-brand-word {
-        display: block;
-        width: fit-content;
-        font-size: clamp(3.05rem, 6.5vw, 5.75rem);
-        line-height: 0.82;
-        letter-spacing: -0.065em;
-        color: #fff;
-      }
-
-      .visio-page-premium .vg-title-rest {
-        display: block;
-        max-width: 790px;
-        font-size: clamp(2rem, 3.45vw, 3.55rem);
-        line-height: 0.98;
-        letter-spacing: -0.045em;
-        color: rgba(255, 255, 255, 0.94);
-      }
-
-      .visio-page-premium .vg-opening-copy > p:not(.home-section-kicker) {
+      .hero-copy h1 {
         max-width: 780px;
-        margin: clamp(1.15rem, 1.8vw, 1.45rem) 0 0;
-        font-size: clamp(0.98rem, 1.1vw, 1.12rem);
-        color: rgba(244, 233, 220, 0.86);
-      }
-
-      .visio-page-premium .vg-opening-media {
-        position: relative;
-        min-height: clamp(410px, 38vw, 440px);
         margin: 0;
-        border-radius: 2rem;
-        overflow: hidden;
-        background: rgba(244, 233, 220, 0.8);
-        border: 1px solid rgba(30, 45, 59, 0.1);
+        color: #ffffff;
+        font-size: clamp(3.7rem, 7.2vw, 7rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
       }
 
-      .visio-page-premium .vg-opening-media img {
+      .hero-copy p {
+        max-width: 720px;
+        margin: 1.2rem 0 0;
+        color: rgba(244, 233, 220, 0.84);
+        font-size: clamp(1rem, 1.25vw, 1.14rem);
+      }
+
+      .hero-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: 1.6rem;
+      }
+
+      .hero-chip-row span {
+        display: inline-flex;
+        padding: 0.62rem 0.88rem;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 233, 220, 0.16);
+        background: rgba(244, 233, 220, 0.08);
+        color: #ffffff;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .hero-photo {
+        min-height: 560px;
+      }
+
+      /* La primera foto del equipo debe verse completa, sin recorte. */
+      .hero-photo-complete {
+        background:
+          radial-gradient(circle at 18% 18%, rgba(194, 94, 60, 0.16), transparent 34%),
+          linear-gradient(160deg, rgba(244, 233, 220, 0.94), rgba(216, 203, 178, 0.78));
+      }
+
+      .hero-photo-complete .image-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: inherit;
+        padding: clamp(0.8rem, 1.6vw, 1.25rem);
+      }
+
+      .hero-photo-complete img {
         width: 100%;
         height: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transform: none;
+        border-radius: 1.35rem;
+        box-shadow: 0 18px 40px rgba(30, 45, 59, 0.14);
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-photo-complete:hover img {
+        transform: none;
+        filter: none;
+      }
+
+      .image-button {
+        position: relative;
         display: block;
-        object-fit: cover;
-        object-position: center center;
-        filter: saturate(1.03) contrast(1.01);
-      }
-
-      .visio-page-premium .vg-opening-media::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(180deg, transparent 48%, rgba(30, 45, 59, 0.42)),
-          radial-gradient(circle at top left, rgba(244, 233, 220, 0.16), transparent 24rem);
-        pointer-events: none;
-      }
-
-      .visio-page-premium .vg-image-trigger {
-        appearance: none;
-        -webkit-appearance: none;
-        border: 1px solid rgba(30, 45, 59, 0.1);
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
         padding: 0;
+        margin: 0;
+        border: 0;
+        border-radius: inherit;
+        background: transparent;
         cursor: zoom-in;
-        text-align: left;
+        overflow: hidden;
+        color: inherit;
+        font: inherit;
       }
 
-      .visio-page-premium .vg-image-trigger:focus-visible {
-        outline: 3px solid rgba(194, 94, 60, 0.45);
-        outline-offset: 4px;
+      .photo-frame {
+        position: relative;
+        margin: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        background: var(--equip-sand);
+        border: 1px solid rgba(30, 45, 59, 0.12);
+        box-shadow: 0 22px 65px rgba(30, 45, 59, 0.16);
       }
 
-      .visio-page-premium .vg-image-hint {
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        min-height: inherit;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transform: scale(1.01);
+        transition: transform 0.35s ease, filter 0.35s ease;
+      }
+
+      .photo-frame:hover img {
+        transform: scale(1.045);
+        filter: saturate(1.04) contrast(1.02);
+      }
+
+      .photo-frame .photo-caption {
         position: absolute;
-        left: 1.15rem;
-        bottom: 1.15rem;
-        z-index: 3;
-        display: inline-flex;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
         align-items: center;
-        gap: 0.45rem;
-        padding: 0.72rem 0.95rem;
-        border-radius: 999px;
-        background: rgba(244, 233, 220, 0.9);
-        color: var(--mesclari-blue);
+        justify-content: space-between;
+        gap: 0.8rem;
+        padding: 0.9rem 1rem;
+        border-radius: 1.2rem;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(12px);
+        color: var(--equip-blue);
+        text-align: left;
+        box-shadow: 0 14px 30px rgba(30, 45, 59, 0.12);
+      }
+
+      .photo-caption strong {
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .photo-caption span {
+        display: inline-flex;
+        color: var(--equip-terracotta);
         font-size: 0.82rem;
         font-weight: 800;
-        letter-spacing: 0.04em;
-        box-shadow: 0 12px 34px rgba(30, 45, 59, 0.16);
-        backdrop-filter: blur(10px);
+        white-space: nowrap;
       }
 
-      .visio-page-premium .vg-image-hint::before {
-        content: "+";
-        display: inline-grid;
-        place-items: center;
-        width: 1.25rem;
-        height: 1.25rem;
-        border-radius: 999px;
-        background: var(--mesclari-terracotta);
-        color: #fff;
+      .equip-summary-band {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        grid-column: 1 / -1;
+      }
+
+      .equip-summary-band article {
+        padding: 1.2rem;
+        border-radius: 1.4rem;
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        background: rgba(255, 255, 255, 0.76);
+        box-shadow: 0 16px 38px rgba(30, 45, 59, 0.06);
+      }
+
+      .equip-summary-band span {
+        display: inline-flex;
+        margin-bottom: 0.55rem;
+        color: var(--equip-terracotta);
+        font-weight: 900;
+        font-size: 0.76rem;
+        letter-spacing: 0.14em;
+      }
+
+      .equip-summary-band h3 {
+        margin: 0 0 0.45rem;
+        font-size: clamp(1.45rem, 2.2vw, 2rem);
         line-height: 1;
       }
 
-      .mesclari-lightbox[hidden] {
-        display: none;
+      .equip-summary-band p {
+        margin: 0;
+        color: var(--equip-ink-soft);
       }
 
-      .mesclari-lightbox {
+      /* INTRO */
+
+      .intro-bridge {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        text-align: center;
+        padding: clamp(0.8rem, 2vw, 1.2rem);
+      }
+
+      .intro-bridge p {
+        margin: 0;
+        color: var(--equip-ink);
+        font-size: clamp(1.08rem, 1.8vw, 1.35rem);
+        line-height: 1.55;
+      }
+
+      /* PROFILES */
+
+      .profiles-head {
+        margin-bottom: clamp(1.3rem, 2.6vw, 2rem);
+      }
+
+      .profiles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+      }
+
+      .profile-card {
+        border: 1px solid rgba(30, 45, 59, 0.11);
+        border-radius: 1.8rem;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.76);
+        display: grid;
+        grid-template-rows: auto 1fr;
+        box-shadow: 0 18px 50px rgba(30, 45, 59, 0.08);
+      }
+
+      .profile-photo {
+        height: 420px;
+        border-radius: 0;
+        box-shadow: none;
+        border: 0;
+      }
+
+      .profile-photo img {
+        min-height: 0;
+        object-position: center top;
+      }
+
+      .profile-card:nth-child(2) .profile-photo img {
+        object-position: center;
+      }
+
+      .profile-card:nth-child(3) .profile-photo img {
+        object-position: center top;
+      }
+
+      .profile-content {
+        padding: clamp(1.2rem, 2vw, 1.55rem);
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .profile-name {
+        margin: 0;
+        color: var(--equip-blue);
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+      }
+
+      .profile-role {
+        margin: 0;
+        color: var(--equip-terracotta);
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+
+      .profile-sub {
+        margin: 0.35rem 0 0;
+        color: var(--equip-blue);
+        font-weight: 700;
+      }
+
+      .profile-mini {
+        margin: 0.2rem 0 0;
+        color: var(--equip-ink-soft);
+        font-size: 0.94rem;
+      }
+
+      .profile-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.45rem;
+      }
+
+      .profile-tags span {
+        display: inline-flex;
+        border: 1px solid rgba(194, 94, 60, 0.26);
+        border-radius: 999px;
+        padding: 0.32rem 0.7rem;
+        font-size: 0.76rem;
+        color: #734633;
+        background: rgba(194, 94, 60, 0.08);
+        font-weight: 700;
+      }
+
+      .profile-link {
+        justify-self: start;
+        margin-top: 0.45rem;
+        color: var(--equip-blue);
+        border-bottom: 1px solid rgba(30, 45, 59, 0.35);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      /* FUNCTIONS */
+
+      .fit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+        position: relative;
+      }
+
+      .fit-grid::after {
+        content: "";
+        position: absolute;
+        left: 9%;
+        right: 9%;
+        top: 50%;
+        border-top: 1px dashed rgba(30, 45, 59, 0.24);
+        z-index: 0;
+      }
+
+      .fit-card {
+        position: relative;
+        z-index: 1;
+        border: 1px solid rgba(30, 45, 59, 0.12);
+        border-radius: 1.5rem;
+        padding: clamp(1.2rem, 2vw, 1.55rem);
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 16px 40px rgba(30, 45, 59, 0.07);
+      }
+
+      .fit-card::before {
+        content: "";
+        display: block;
+        width: 2.4rem;
+        height: 0.2rem;
+        border-radius: 999px;
+        background: var(--equip-terracotta);
+        margin-bottom: 0.9rem;
+      }
+
+      .fit-card h3 {
+        margin: 0 0 0.55rem;
+        color: var(--equip-blue);
+        font-size: clamp(1.55rem, 2.4vw, 2.2rem);
+        line-height: 1;
+      }
+
+      .fit-card p {
+        margin: 0;
+        color: var(--equip-ink-soft);
+      }
+
+      /* CREDIBILITY */
+
+      .cred-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+        align-items: stretch;
+      }
+
+      .cred-points {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .cred-point {
+        border: 1px solid rgba(110, 139, 116, 0.26);
+        border-radius: 1.35rem;
+        padding: 1.1rem;
+        background:
+          linear-gradient(155deg, rgba(255, 255, 255, 0.88), rgba(244, 233, 220, 0.64));
+      }
+
+      .cred-point h3 {
+        margin: 0 0 0.45rem;
+        color: var(--equip-blue);
+        font-size: clamp(1.35rem, 2vw, 1.75rem);
+        line-height: 1;
+      }
+
+      .cred-point p {
+        margin: 0;
+        color: var(--equip-ink-soft);
+        font-size: 0.93rem;
+      }
+
+      .cred-photo {
+        height: 100%;
+        min-height: 420px;
+      }
+
+      .cred-photo img {
+        object-position: center;
+      }
+
+      /* CLOSING */
+
+      .closing {
+        text-align: center;
+        padding: clamp(2rem, 4vw, 3.5rem);
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92)),
+          var(--equip-blue);
+        color: var(--equip-beige);
+      }
+
+      .closing h2 {
+        color: #ffffff;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .closing p {
+        color: rgba(244, 233, 220, 0.84);
+        max-width: 760px;
+        margin: 1rem auto 0;
+      }
+
+      .closing a {
+        display: inline-flex;
+        margin-top: 1rem;
+        padding: 0.8rem 1.15rem;
+        border-radius: 999px;
+        background: var(--equip-terracotta);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      .home-footer {
+        margin-top: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      /* LIGHTBOX */
+
+      .equip-lightbox {
         position: fixed;
         inset: 0;
         z-index: 9999;
-        display: grid;
-        place-items: center;
-        padding: clamp(1rem, 3vw, 2.5rem);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem;
         background: rgba(30, 45, 59, 0.86);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(8px);
       }
 
-      .mesclari-lightbox__inner {
-        position: relative;
-        width: min(1180px, 96vw);
+      .equip-lightbox.is-open {
+        display: flex;
+      }
+
+      .equip-lightbox figure {
+        width: min(1100px, 96vw);
         max-height: 92vh;
-        padding: clamp(0.75rem, 1.5vw, 1.1rem);
-        border-radius: 1.65rem;
-        background: rgba(244, 233, 220, 0.96);
-        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
+        margin: 0;
+        display: grid;
+        gap: 0.75rem;
       }
 
-      .mesclari-lightbox__inner img {
-        display: block;
+      .equip-lightbox img {
         width: 100%;
-        max-height: 82vh;
+        max-height: 84vh;
         object-fit: contain;
-        border-radius: 1.15rem;
-        background: rgba(30, 45, 59, 0.08);
+        display: block;
+        border-radius: 1.2rem;
+        background: rgba(244, 233, 220, 0.16);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
       }
 
-      .mesclari-lightbox__close {
-        position: absolute;
-        top: -0.85rem;
-        right: -0.85rem;
-        width: 2.75rem;
-        height: 2.75rem;
+      .equip-lightbox figcaption {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .equip-lightbox-close {
         border: 0;
         border-radius: 999px;
-        background: var(--mesclari-terracotta);
+        padding: 0.7rem 1rem;
+        background: rgba(255, 255, 255, 0.14);
         color: #fff;
-        font-size: 1.4rem;
-        line-height: 1;
         cursor: pointer;
-        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+        font-weight: 800;
       }
 
-      .visio-page-premium .vg-executive-note {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: minmax(240px, 0.28fr) minmax(0, 0.72fr);
-        gap: clamp(1rem, 2vw, 1.5rem);
-        align-items: center;
-        padding: clamp(1.3rem, 2vw, 1.8rem);
-        border-radius: 1.55rem;
-        background: var(--mesclari-panel-strong);
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
-      }
+      /* RESPONSIVE */
 
-      .visio-page-premium .vg-executive-note h3 {
-        margin: 0;
-        font-size: clamp(1.75rem, 3vw, 2.5rem);
-        line-height: 1;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-executive-note p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-        font-size: clamp(1rem, 1.2vw, 1.12rem);
-      }
-
-      /* SECCIONES */
-
-      .visio-page-premium .home-block {
-        width: min(1220px, calc(100% - 2rem));
-        margin: 0 auto;
-        padding: clamp(3rem, 6vw, 5.6rem) 0;
-      }
-
-      .visio-page-premium .home-section-head {
-        max-width: 900px;
-        margin: 0 auto clamp(1.7rem, 3vw, 2.5rem);
-        text-align: center;
-      }
-
-      .visio-page-premium .home-section-head h2 {
-        margin: 0;
-        font-size: clamp(2.8rem, 5.7vw, 5.5rem);
-        line-height: 0.92;
-        letter-spacing: -0.055em;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-two-col {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(310px, 0.9fr);
-        gap: clamp(1.2rem, 2.5vw, 2rem);
-        align-items: stretch;
-      }
-
-      .visio-page-premium .vg-two-col.align-start {
-        align-items: start;
-      }
-
-      .visio-page-premium .vg-prose {
-        padding: clamp(1.5rem, 3vw, 2.4rem);
-        border-radius: 2rem;
-        background: var(--mesclari-panel);
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
-      }
-
-      .visio-page-premium .vg-prose p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-        font-size: clamp(1rem, 1.15vw, 1.1rem);
-      }
-
-      .visio-page-premium .vg-prose p + p {
-        margin-top: 1rem;
-      }
-
-      .visio-page-premium .vg-side-notes,
-      .visio-page-premium .vg-microblocks {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .visio-page-premium .vg-side-notes article,
-      .visio-page-premium .vg-microblocks article {
-        padding: clamp(1.2rem, 2vw, 1.65rem);
-        border-radius: 1.55rem;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.55));
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
-      }
-
-      .visio-page-premium .vg-side-notes h4,
-      .visio-page-premium .vg-microblocks h4 {
-        margin: 0 0 0.55rem;
-        font-size: clamp(1.45rem, 2.1vw, 1.95rem);
-        line-height: 1;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-side-notes p,
-      .visio-page-premium .vg-microblocks p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-      }
-
-      /* PER QUÈ TÉ SENTIT */
-
-      .visio-page-premium .vg-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: clamp(1rem, 2vw, 1.4rem);
-      }
-
-      .visio-page-premium .vg-editorial-card {
-        position: relative;
-        min-height: 330px;
-        padding: clamp(1.5rem, 2.4vw, 2.15rem);
-        border-radius: 1.85rem;
-        background: rgba(255, 255, 255, 0.78);
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
-        overflow: hidden;
-      }
-
-      .visio-page-premium .vg-editorial-card::before {
-        content: "";
-        position: absolute;
-        left: 1.45rem;
-        top: 1.45rem;
-        width: 2.7rem;
-        height: 0.18rem;
-        border-radius: 99px;
-        background: var(--mesclari-terracotta);
-      }
-
-      .visio-page-premium .vg-editorial-card h4 {
-        margin: 2rem 0 0.8rem;
-        font-size: clamp(1.75rem, 2.8vw, 2.55rem);
-        line-height: 0.98;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-editorial-card p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-      }
-
-      .visio-page-premium .vg-editorial-card p + p {
-        margin-top: 0.9rem;
-      }
-
-      /* PILARS */
-
-      .visio-page-premium .vg-pillars-intro {
-        max-width: 760px;
-        margin: -1rem auto 2rem;
-        color: var(--mesclari-ink-soft);
-        text-align: center;
-        font-size: clamp(1rem, 1.2vw, 1.12rem);
-      }
-
-      .visio-page-premium .vg-pillars-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-        grid-template-areas:
-          "main second"
-          "main third"
-          "main fourth";
-        gap: clamp(1rem, 1.7vw, 1.35rem);
-      }
-
-      .visio-page-premium .vg-pillar {
-        position: relative;
-        padding: clamp(1.35rem, 2.2vw, 1.9rem);
-        border-radius: 1.65rem;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.52));
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
-      }
-
-      .visio-page-premium .vg-pillar.main {
-        grid-area: main;
-        display: flex;
-        min-height: 520px;
-        flex-direction: column;
-        justify-content: flex-end;
-        color: var(--mesclari-beige);
-        background:
-          radial-gradient(circle at top right, rgba(194, 94, 60, 0.22), transparent 18rem),
-          linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
-      }
-
-      .visio-page-premium .vg-pillar:nth-child(2) { grid-area: second; }
-      .visio-page-premium .vg-pillar:nth-child(3) { grid-area: third; }
-      .visio-page-premium .vg-pillar:nth-child(4) { grid-area: fourth; }
-
-      .visio-page-premium .vg-pillar span {
-        display: inline-flex;
-        width: fit-content;
-        margin-bottom: 0.85rem;
-        color: var(--mesclari-terracotta);
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.16em;
-      }
-
-      .visio-page-premium .vg-pillar.main span {
-        color: var(--mesclari-sand);
-      }
-
-      .visio-page-premium .vg-pillar h4 {
-        margin: 0 0 0.7rem;
-        font-size: clamp(1.65rem, 3vw, 2.65rem);
-        line-height: 0.96;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-pillar.main h4 {
-        max-width: 620px;
-        font-size: clamp(2.4rem, 5vw, 5.1rem);
-        color: #fff;
-      }
-
-      .visio-page-premium .vg-pillar p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-      }
-
-      .visio-page-premium .vg-pillar.main p {
-        max-width: 640px;
-        color: rgba(244, 233, 220, 0.86);
-      }
-
-      /* TANCAMENT */
-
-      .visio-page-premium .vg-page-close {
-        width: min(1220px, calc(100% - 2rem));
-        margin: clamp(0.5rem, 2vw, 1.5rem) auto 0;
-        padding: clamp(2rem, 4vw, 3.4rem);
-        border-radius: 2rem;
-        background:
-          linear-gradient(135deg, rgba(194, 94, 60, 0.12), rgba(30, 45, 59, 0.07)),
-          rgba(255, 255, 255, 0.76);
-        border: 1px solid var(--mesclari-line-soft);
-        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
-        text-align: center;
-      }
-
-      .visio-page-premium .vg-page-close p {
-        max-width: 880px;
-        margin: 0 auto;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(2rem, 4vw, 4rem);
-        line-height: 1.02;
-        letter-spacing: -0.04em;
-        color: var(--mesclari-blue);
-      }
-
-      /* Responsive */
-
-      @media (max-width: 1080px) {
-        .visio-page-premium .vg-opening-grid,
-        .visio-page-premium .vg-two-col,
-        .visio-page-premium .vg-pillars-layout {
-          grid-template-columns: 1fr;
-          grid-template-areas: none;
-        }
-
-        .visio-page-premium .vg-pillar.main,
-        .visio-page-premium .vg-pillar:nth-child(2),
-        .visio-page-premium .vg-pillar:nth-child(3),
-        .visio-page-premium .vg-pillar:nth-child(4) {
-          grid-area: auto;
-        }
-
-        .visio-page-premium .vg-opening-copy,
-        .visio-page-premium .vg-opening-media,
-        .visio-page-premium .vg-pillar.main {
-          min-height: auto;
-        }
-
-        .visio-page-premium .vg-opening-media {
-          min-height: 380px;
-        }
-      }
-
-      @media (max-width: 780px) {
-        .visio-page-premium .vg-main-premium {
-          padding-top: 4.8rem;
-        }
-
-        .visio-page-premium .vg-opening-premium,
-        .visio-page-premium .home-block,
-        .visio-page-premium .vg-page-close {
-          width: min(100% - 1rem, 1220px);
-        }
-
-        .visio-page-premium .vg-opening-copy,
-        .visio-page-premium .vg-prose,
-        .visio-page-premium .vg-section-contrast,
-        .visio-page-premium .vg-page-close {
-          padding: 1.35rem;
-          border-radius: 1.45rem;
-        }
-
-        .visio-page-premium .vg-brand-word {
-          font-size: clamp(3rem, 16vw, 4.6rem);
-        }
-
-        .visio-page-premium .vg-title-rest {
-          font-size: clamp(2rem, 10vw, 3.2rem);
-        }
-
-        .visio-page-premium .vg-cards-grid {
+      @media (max-width: 1120px) {
+        .equip-hero,
+        .cred-layout {
           grid-template-columns: 1fr;
         }
 
-        .visio-page-premium .vg-executive-note {
+        .hero-copy,
+        .hero-photo {
+          min-height: 430px;
+        }
+
+        .hero-photo-complete .image-button {
+          padding: 0.8rem;
+        }
+
+        .profiles-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .profile-card:nth-child(3) {
+          grid-column: 1 / -1;
+          max-width: 520px;
+          margin: 0 auto;
+        }
+
+        .equip-summary-band,
+        .fit-grid {
           grid-template-columns: 1fr;
         }
 
-        .visio-page-premium .home-section-head h2 {
-          font-size: clamp(2.35rem, 12vw, 4rem);
+        .fit-grid::after {
+          display: none;
         }
       }
+
+      @media (max-width: 820px) {
+        .equip-page {
+          width: min(100% - 1rem, 1280px);
+          margin-top: 5.7rem;
+        }
+
+        .equip-section,
+        .equip-hero {
+          border-radius: 1.55rem;
+        }
+
+        .hero-copy {
+          padding: 1.45rem;
+          border-radius: 1.35rem;
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(3rem, 16vw, 4.8rem);
+        }
+
+        .profiles-grid,
+        .cred-points {
+          grid-template-columns: 1fr;
+        }
+
+        .profile-card:nth-child(3) {
+          max-width: none;
+        }
+
+        .profile-photo {
+          height: 360px;
+        }
+
+        .photo-frame .photo-caption {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
 
       /* =========================================================
-         AJUST HERO INICIAL · FORMAT COHERENT AMB LA RESTA
-         Mantenim la foto tal com està, però refinem el panell de text
+         AJUST HERO EQUIP · DISTRIBUCIÓ COM PORTADA PRINCIPAL
+         Text a l'esquerra clar i foto sencera a la dreta
       ========================================================= */
 
-      .visio-page-premium .vg-opening-copy {
-        position: relative;
+      .equip-page {
+        margin-top: clamp(5.2rem, 6vw, 6.2rem);
+      }
+
+      .equip-hero {
+        grid-template-columns: minmax(360px, 0.98fr) minmax(420px, 1.02fr);
+        gap: clamp(1rem, 1.6vw, 1.25rem);
+        padding: clamp(1.2rem, 2vw, 1.55rem);
+        align-items: stretch;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 233, 220, 0.78));
+        border: 1px solid rgba(30, 45, 59, 0.12);
+        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+      }
+
+      .equip-hero::after {
+        content: "";
+      }
+
+      .hero-copy {
+        min-height: 500px;
         justify-content: flex-start;
         align-items: center;
         text-align: center;
-        padding: clamp(2rem, 3.4vw, 3.25rem) clamp(1.5rem, 2.6vw, 2.8rem);
-        color: var(--mesclari-blue);
+        padding: clamp(2rem, 4vw, 3.5rem) clamp(1.6rem, 3vw, 3rem);
+        border-radius: 1.8rem;
         background:
-          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.08), transparent 22rem),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.78));
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.08), transparent 23rem),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.74));
+        color: var(--equip-blue);
+        border: 1px solid rgba(194, 94, 60, 0.16);
         box-shadow:
-          inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.5),
           0 16px 38px rgba(30, 45, 59, 0.06);
-        border: 1px solid rgba(194, 94, 60, 0.14);
       }
 
-      .visio-page-premium .vg-opening-copy::before {
+      .hero-copy .equip-eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--equip-blue);
+      }
+
+      .hero-copy h1 {
+        max-width: 760px;
+        color: var(--equip-terracotta);
+        font-size: clamp(3.2rem, 5.7vw, 5.75rem);
+        line-height: 0.92;
+        letter-spacing: 0.02em;
+      }
+
+      .hero-copy p {
+        max-width: 690px;
+        margin: 1.15rem auto 0;
+        color: var(--equip-blue);
+        font-size: clamp(1rem, 1.25vw, 1.16rem);
+        line-height: 1.62;
+      }
+
+      .hero-chip-row {
+        justify-content: center;
+      }
+
+      .hero-chip-row span {
+        background: rgba(194, 94, 60, 0.1);
+        border-color: rgba(194, 94, 60, 0.24);
+        color: #734633;
+      }
+
+      .hero-photo {
+        min-height: 500px;
+      }
+
+      .hero-photo-complete {
+        padding: clamp(0.7rem, 1.2vw, 1rem);
+        border-radius: 1.8rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(244, 233, 220, 0.82));
+        border: 1px solid rgba(30, 45, 59, 0.15);
+        box-shadow: 0 16px 38px rgba(30, 45, 59, 0.08);
+      }
+
+      .hero-photo-complete .image-button {
+        min-height: 100%;
+        padding: 0;
+        background: rgba(244, 233, 220, 0.52);
+        border-radius: 1.35rem;
+      }
+
+      .hero-photo-complete img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 1.1rem;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .hero-photo-complete .photo-caption {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @media (max-width: 1120px) {
+        .equip-hero {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .hero-photo {
+          min-height: auto;
+        }
+
+        .hero-photo {
+          height: min(68vw, 520px);
+        }
+      }
+
+      @media (max-width: 760px) {
+        .equip-page {
+          margin-top: 5.25rem;
+        }
+
+        .hero-copy {
+          padding: 1.5rem 1.2rem;
+        }
+
+        .hero-copy h1 {
+          font-size: clamp(2.7rem, 13vw, 4.1rem);
+        }
+
+        .hero-photo {
+          height: min(82vw, 420px);
+        }
+      }
+
+
+
+      /* =========================================================
+         POLIT FINAL · TOC PRO
+      ========================================================= */
+
+      .equip-section {
+        backdrop-filter: blur(8px);
+      }
+
+      .equip-section h2 {
+        max-width: 12ch;
+      }
+
+      .hero-copy {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-copy::before {
         content: "";
         position: absolute;
         left: 50%;
-        top: 1.2rem;
+        top: 1.15rem;
         transform: translateX(-50%);
-        width: min(140px, 30%);
+        width: min(140px, 28%);
         height: 2px;
         border-radius: 999px;
         background: linear-gradient(90deg, rgba(194, 94, 60, 0), rgba(194, 94, 60, 0.9), rgba(194, 94, 60, 0));
       }
 
-      .visio-page-premium .vg-opening-copy::after {
+      .hero-copy::after {
         content: "MESCLARI";
         position: absolute;
         left: 50%;
-        bottom: -0.3rem;
+        bottom: -0.45rem;
         transform: translateX(-50%);
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3rem, 7vw, 5.8rem);
+        font-size: clamp(3.4rem, 8vw, 6.3rem);
         line-height: 1;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.06em;
         color: rgba(30, 45, 59, 0.035);
         pointer-events: none;
         white-space: nowrap;
       }
 
-      .visio-page-premium .vg-opening-copy .home-section-kicker {
-        margin: 0 auto 1rem;
-        padding: 0.42rem 0.86rem;
+      .hero-copy .equip-eyebrow {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 0.38rem 0.8rem;
         border-radius: 999px;
         background: rgba(194, 94, 60, 0.08);
-        border: 1px solid rgba(194, 94, 60, 0.18);
-        color: var(--mesclari-terracotta);
+        border: 1px solid rgba(194, 94, 60, 0.16);
+        color: var(--equip-terracotta);
       }
 
-      .visio-page-premium .vg-opening-copy h1 {
+      .hero-copy h1 {
         max-width: 10.5ch;
-        align-items: center;
         margin-inline: auto;
         text-wrap: balance;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.35);
       }
 
-      .visio-page-premium .vg-brand-word {
-        width: auto;
-        font-size: clamp(3rem, 5.8vw, 5.35rem);
-        line-height: 0.84;
-        letter-spacing: 0.015em;
-        color: var(--mesclari-terracotta);
-      }
-
-      .visio-page-premium .vg-title-rest {
-        max-width: 11.2ch;
-        font-size: clamp(2rem, 3.25vw, 3.3rem);
-        line-height: 0.96;
-        color: var(--mesclari-blue);
-      }
-
-      .visio-page-premium .vg-opening-copy > p:not(.home-section-kicker) {
+      .hero-copy p {
         max-width: 38rem;
-        margin: 1.2rem auto 0;
-        color: var(--mesclari-blue);
-        font-size: clamp(0.98rem, 1.05vw, 1.1rem);
       }
 
-      .visio-page-premium .vg-opening-copy > p:not(.home-section-kicker):last-of-type {
-        margin-bottom: 0.3rem;
+      .hero-copy p + p {
+        margin-top: 0.8rem;
       }
 
-      @media (max-width: 820px) {
-        .visio-page-premium .vg-opening-copy::after {
-          font-size: 3.3rem;
-          bottom: 0.15rem;
+      .hero-chip-row {
+        max-width: 40rem;
+        margin-inline: auto;
+        margin-top: 1.75rem;
+      }
+
+      .hero-chip-row span {
+        background: rgba(194, 94, 60, 0.09);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+      }
+
+      .hero-photo-complete {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-photo-complete::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 1.8rem;
+        background: radial-gradient(circle at 80% 10%, rgba(194, 94, 60, 0.08), transparent 32%);
+        pointer-events: none;
+      }
+
+      .hero-photo-complete .image-button {
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.45);
+      }
+
+      .equip-summary-band article,
+      .fit-card,
+      .cred-point,
+      .profile-card {
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      }
+
+      .equip-summary-band article:hover,
+      .fit-card:hover,
+      .cred-point:hover,
+      .profile-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 46px rgba(30, 45, 59, 0.10);
+        border-color: rgba(194, 94, 60, 0.2);
+      }
+
+      .equip-summary-band article {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .equip-summary-band article::before {
+        content: "";
+        position: absolute;
+        left: 1.2rem;
+        right: 1.2rem;
+        top: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--equip-terracotta), rgba(194, 94, 60, 0.18));
+      }
+
+      .intro-bridge {
+        width: min(1020px, 100%);
+        padding: 1.1rem 1.4rem;
+        border-radius: 1.5rem;
+        background: rgba(255,255,255,0.52);
+        border: 1px solid rgba(30,45,59,0.08);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+      }
+
+      .profiles-head,
+      .closing {
+        position: relative;
+      }
+
+      .profiles-head .equip-eyebrow,
+      .closing .equip-eyebrow {
+        background: rgba(194, 94, 60, 0.08);
+        border: 1px solid rgba(194, 94, 60, 0.15);
+        padding: 0.38rem 0.75rem;
+        border-radius: 999px;
+      }
+
+      .profile-content {
+        gap: 0.62rem;
+      }
+
+      .profile-link {
+        text-decoration: none;
+      }
+
+      .profile-link:hover {
+        color: var(--equip-terracotta);
+        border-color: rgba(194, 94, 60, 0.45);
+      }
+
+      .fit-card::before {
+        width: 2.9rem;
+      }
+
+      .closing {
+        box-shadow: 0 26px 70px rgba(30, 45, 59, 0.16);
+      }
+
+      .closing a {
+        box-shadow: 0 14px 30px rgba(194, 94, 60, 0.24);
+      }
+
+      .closing a:hover {
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 760px) {
+        .hero-copy::after {
+          bottom: 0.1rem;
+          font-size: 3.2rem;
         }
 
-        .visio-page-premium .vg-opening-copy h1 {
-          max-width: 100%;
+        .hero-copy .equip-eyebrow {
+          margin-top: 0.2rem;
         }
       }
 
     </style>
   </head>
 
-  <body class="visio-page visio-page-premium">
+  <body>
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -760,9 +1072,9 @@
       <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
       <ul id="menu" class="menu">
         <li><a href="index.html">Inici</a></li>
-        <li><a href="presentacio-general.html" aria-current="page">Visió general</a></li>
+        <li><a href="presentacio-general.html">Visió general</a></li>
         <li><a href="identitat-projecte.html">Identitat</a></li>
-        <li><a href="equip-impulsor.html">Equip</a></li>
+        <li><a href="equip-impulsor.html" aria-current="page">Equip</a></li>
         <li><a href="gestio-organitzacio.html">Gestió i organització</a></li>
         <li><a href="encaix-mercat.html">Encaix de mercat</a></li>
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
@@ -771,196 +1083,275 @@
       </ul>
     </nav>
 
-    <main class="home-main vg-main vg-main-premium">
-      <header class="home-block vg-opening vg-opening-premium" id="visio-obertura">
-        <div class="vg-opening-grid">
-          <div class="vg-opening-copy">
-            <p class="home-section-kicker">Concepte i posicionament</p>
-            <h1><span class="vg-brand-word">MESCLARI</span><span class="vg-title-rest">Una proposta gastronòmica pensada per existir amb sentit, coherència i criteri</span></h1>
-            <p>MESCLARI neix com un restaurant gastronòmic contemporani de gamma alta, concebut per unir producte, sala, maridatge i identitat en una mateixa direcció. Es planteja com un model complet, amb encaix real al territori i base operativa sòlida.</p>
+    <main class="equip-page">
+      <section class="equip-section equip-hero" aria-labelledby="equip-hero-title">
+        <div class="hero-copy">
+          <p class="equip-eyebrow">Equip impulsor</p>
+          <h1 id="equip-hero-title">Les persones que donen forma a MESCLARI</h1>
+          <p>MESCLARI neix d’un impuls compartit: la voluntat de construir una proposta gastronòmica sòlida, amb identitat pròpia i amb capacitat real de convertir-se en un projecte coherent, viable i defensable.</p>
+          <p>L’equip impulsor combina sensibilitats complementàries en cuina, sala i estructura operativa, fent possible una lectura global del projecte i una direcció compartida amb criteri.</p>
+
+          <div class="hero-chip-row" aria-label="Funcions clau de l'equip">
+            <span>Direcció de cuina</span>
+            <span>Direcció de sala</span>
+            <span>Coherència operativa</span>
           </div>
-          <button type="button" class="vg-opening-media vg-image-trigger" data-lightbox-src="imaguenes i videos/home-mercat-entorn.jpg" data-lightbox-alt="Entorn mediterrani associat al model MESCLARI" aria-label="Ampliar imatge de l’entorn de MESCLARI">
-            <img src="imaguenes i videos/home-mercat-entorn.jpg" alt="Entorn mediterrani associat al model MESCLARI" />
-            <span class="vg-image-hint">Veure imatge completa</span>
+        </div>
+
+        <figure class="photo-frame hero-photo hero-photo-complete">
+          <button class="image-button" type="button" data-full="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" data-caption="Equip impulsor de MESCLARI">
+            <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip impulsor de MESCLARI" loading="lazy" />
+            <span class="photo-caption">
+              <strong>Equip impulsor de MESCLARI</strong>
+              <span>Veure imatge completa</span>
+            </span>
           </button>
-          <article class="vg-executive-note">
-            <h3>Síntesi executiva</h3>
-            <p>La força de MESCLARI no depèn d’un únic element, sinó de la coherència entre capes: concepte gastronòmic, mercat, sala, espai i viabilitat.</p>
-          </article>
-        </div>
-      </header>
+        </figure>
 
-      <section class="home-block" id="que-es-mesclari">
-        <div class="home-section-head">
-          <p class="vg-kicker">Lectura inicial</p>
-          <h2>Què és MESCLARI?</h2>
-        </div>
-        <div class="vg-two-col">
-          <div class="vg-prose">
-            <p>MESCLARI és una proposta de restauració gastronòmica contemporània de gamma alta, pensada per oferir una experiència completa, cuidada i coherent de principi a fi. No es limita a presentar una oferta culinària determinada, sinó que construeix una manera concreta d’entendre l’hospitalitat, on la qualitat del producte, el ritme del servei, el maridatge i la identitat visual i sensorial del restaurant treballen de forma integrada.</p>
-            <p>El projecte parteix d’una voluntat clara: oferir una experiència amb personalitat pròpia, capaç de generar valor percebut real sense perdre criteri operatiu. Per això, cuina i sala tenen el mateix pes estratègic i cada decisió respon a una lògica de posicionament, públic objectiu i viabilitat.</p>
-            <p>MESCLARI no es construeix només des de la creativitat, sinó des d’una idea de negoci coherent amb l’entorn, la gamma i l’experiència que vol oferir.</p>
-          </div>
-          <aside class="vg-side-notes" aria-label="Claus de lectura de MESCLARI">
-            <article>
-              <h4>Gamma alta amb criteri</h4>
-              <p>Posicionament definit amb enfocament realista de públic i context.</p>
-            </article>
-            <article>
-              <h4>Hospitalitat integrada</h4>
-              <p>Cuina, sala, maridatge i identitat com a parts d’un mateix sistema.</p>
-            </article>
-            <article>
-              <h4>Experiència amb coherència global</h4>
-              <p>El valor percebut neix de la suma ordenada de totes les capes del model.</p>
-            </article>
-          </aside>
-        </div>
-      </section>
-
-      <section class="home-block" id="posicionament-estrategic">
-        <div class="home-section-head">
-          <p class="vg-kicker">Direcció estratègica</p>
-          <h2>Posicionament estratègic</h2>
-        </div>
-        <div class="vg-two-col align-start">
-          <div class="vg-prose vg-prose-narrow">
-            <p>MESCLARI es posiciona dins del segment premium com una proposta de gamma alta que combina valor experiencial, identitat pròpia i lectura realista del negoci. L’ambició no és competir per volum, sinó per qualitat percebuda, coherència i memorabilitat.</p>
-            <p>La proposta es basa en una doble lectura: experiència gastronòmica singular —amb cuina contemporània, sala amb protagonisme i atmosfera coherent— i model operatiu-econòmic sòlid per sostenir el posicionament en context real.</p>
-            <p>Així, MESCLARI se situa en un espai propi: exigent i diferencial, però no teòric. El projecte transmet qualitat, criteri i consistència en la forma i en el fons.</p>
-          </div>
-          <div class="vg-microblocks">
-            <article>
-              <h4>Gamma alta amb coherència</h4>
-              <p>El nivell de la proposta respon a l’experiència plantejada i al perfil de client que es vol atraure.</p>
-            </article>
-            <article>
-              <h4>Valor percebut real</h4>
-              <p>La qualitat no es comunica només des del discurs, sinó des del producte, el servei, el maridatge i l’espai.</p>
-            </article>
-            <article>
-              <h4>Equilibri entre idea i model</h4>
-              <p>MESCLARI combina ambició gastronòmica amb lectura professional de l’operativa i la sostenibilitat.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-block" id="per-que-te-sentit">
-        <div class="home-section-head">
-          <p class="vg-kicker">Justificació del model</p>
-          <h2>Per què té sentit?</h2>
-        </div>
-        <div class="vg-cards-grid">
-          <article class="vg-editorial-card">
-            <h4>Encaix territorial</h4>
-            <p>MESCLARI s’insereix en un context favorable. Platja d’Aro combina afluència turística, activitat comercial, públic de cap de setmana i capacitat d’atreure un client que valora experiència, ubicació i qualitat percebuda.</p>
-            <p>El projecte no depèn només del visitant: també busca vincle amb client local i públic recurrent. Aquesta doble lectura reforça la solidesa del model i redueix dependències circumstancials.</p>
-          </article>
-          <article class="vg-editorial-card">
-            <h4>Oportunitat de mercat</h4>
-            <p>MESCLARI respon a una oportunitat concreta: articular una proposta diferencial, amb personalitat i nivell, en un entorn amb marge per a experiències més completes.</p>
-            <p>No busca qualsevol espai de mercat, sinó un lloc definit: el d’un restaurant capaç de combinar identitat, excel·lència de servei i lectura contemporània de la restauració premium.</p>
-          </article>
-          <article class="vg-editorial-card">
-            <h4>Valor diferencial</h4>
-            <p>El valor diferencial de MESCLARI no es concentra en un únic element, sinó en la suma coherent de factors: proposta gastronòmica, sala, maridatge, ritme de servei i atmosfera pròpia.</p>
-            <p>Això evita dependre d’un reclam puntual i reforça una estructura de valor més sòlida i més difícil de replicar.</p>
-          </article>
-          <article class="vg-editorial-card">
-            <h4>Coherència transversal</h4>
-            <p>Un dels motius principals pels quals MESCLARI té sentit és la coherència entre les seves parts: posicionament, gamma, públic objectiu, experiència, espai, sala i estructura de negoci.</p>
-            <p>Aquesta coherència transversal converteix MESCLARI en una proposta defensable, perquè està pensada amb lògica, continuïtat i criteri professional.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="home-block" id="pilars-model">
-        <div class="home-section-head">
-          <p class="vg-kicker">Estructura del model</p>
-          <h2>Els pilars del model</h2>
-        </div>
-        <p class="vg-pillars-intro">Quatre pilars que sostenen el model i connecten visió, experiència i execució.</p>
-        <div class="vg-pillars-layout">
-          <article class="vg-pillar main">
+        <div class="equip-summary-band" aria-label="Síntesi de l'equip impulsor">
+          <article>
             <span>01</span>
-            <h4>Concepte i identitat</h4>
-            <p>MESCLARI es construeix a partir d’una identitat clara i recognoscible. No és una proposta indefinida ni adaptable a qualsevol context, sinó un projecte amb direcció pròpia i criteri coherent.</p>
+            <h3>Mirada gastronòmica</h3>
+            <p>Definició de la proposta culinària, criteri de producte i coherència amb la identitat del restaurant.</p>
           </article>
-          <article class="vg-pillar">
+          <article>
             <span>02</span>
-            <h4>Oferta i experiència</h4>
-            <p>L’oferta no és només una selecció de plats: és l’eix d’una experiència global on cuina, sala, maridatge i atmosfera treballen coordinadament.</p>
+            <h3>Experiència de sala</h3>
+            <p>Acollida, ritme de servei, atenció al detall i traducció de la proposta en valor percebut pel client.</p>
           </article>
-          <article class="vg-pillar">
+          <article>
             <span>03</span>
-            <h4>Sala i ritme de servei</h4>
-            <p>A MESCLARI, la sala no és secundària. El servei forma part activa del valor percebut i dona ritme, ordre i profunditat a l’experiència del client.</p>
-          </article>
-          <article class="vg-pillar">
-            <span>04</span>
-            <h4>Viabilitat i criteri operatiu</h4>
-            <p>MESCLARI no es defineix només per allò que vol ser, sinó per com es sosté: lectura operativa realista, estructura funcional coherent i base econòmica viable sense trencar identitat.</p>
+            <h3>Estructura global</h3>
+            <p>Connexió entre idea, execució i funcionament intern perquè MESCLARI sigui defensable i aplicable.</p>
           </article>
         </div>
       </section>
 
-      <section class="vg-page-close" aria-label="Tancament de visió general">
-        <p>Una visió general clara: MESCLARI té sentit perquè totes les seves capes treballen en una mateixa direcció.</p>
+      <section class="equip-section">
+        <div class="intro-bridge">
+          <p>L’equip impulsor no es presenta només com un grup de persones, sinó com una estructura de treball amb funcions diferenciades. Aquesta complementarietat permet que MESCLARI tingui una base humana coherent amb el seu nivell de proposta, la seva exigència operativa i la seva defensa professional.</p>
+        </div>
+      </section>
+
+      <section class="equip-section" aria-labelledby="perfils-title">
+        <header class="profiles-head">
+          <p class="equip-eyebrow">Perfils principals</p>
+          <h2 id="perfils-title">Tres perfils centrals, una mateixa direcció</h2>
+          <p class="equip-lead">Estructura de tres perfils amb retrat, rol i mini-pilars funcionals. Cada membre reforça una part essencial del projecte.</p>
+        </header>
+
+        <div class="profiles-grid">
+          <article class="profile-card">
+            <figure class="photo-frame profile-photo">
+              <button class="image-button" type="button" data-full="imaguenes i videos/morte.jpeg" data-caption="Alex · Direcció de cuina">
+                <img src="imaguenes i videos/morte.jpeg" alt="Retrat individual d'Alex" loading="lazy" />
+                <span class="photo-caption">
+                  <strong>Alex</strong>
+                  <span>Veure imatge completa</span>
+                </span>
+              </button>
+            </figure>
+
+            <div class="profile-content">
+              <h3 class="profile-name">Alex</h3>
+              <p class="profile-role">Direcció de cuina</p>
+              <p class="profile-sub">Visió gastronòmica i criteri de proposta</p>
+              <p class="profile-mini">Alex assumeix la direcció de cuina dins de MESCLARI i dona forma a la base gastronòmica del projecte. La seva aportació se centra en la definició de la proposta culinària, la lògica del producte i la coherència entre identitat, nivell tècnic i experiència final.</p>
+              <div class="profile-tags">
+                <span>Proposta gastronòmica</span>
+                <span>Criteri de producte</span>
+                <span>Direcció culinària</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil d'Alex">Fitxa ampliada (opcional)</span>
+            </div>
+          </article>
+
+          <article class="profile-card">
+            <figure class="photo-frame profile-photo">
+              <button class="image-button" type="button" data-full="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.01.54.jpeg" data-caption="Raúl · Direcció de sala">
+                <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.01.54.jpeg" alt="Retrat individual de Raúl" loading="lazy" />
+                <span class="photo-caption">
+                  <strong>Raúl</strong>
+                  <span>Veure imatge completa</span>
+                </span>
+              </button>
+            </figure>
+
+            <div class="profile-content">
+              <h3 class="profile-name">Raúl</h3>
+              <p class="profile-role">Direcció de sala</p>
+              <p class="profile-sub">Experiència de client i lectura del servei</p>
+              <p class="profile-mini">Raúl aporta la mirada de sala i la construcció de l’experiència des del servei. El seu paper és clau en la manera com MESCLARI s’acull, s’explica i es viu, reforçant la importància del ritme, l’atenció al detall i el valor percebut pel client.</p>
+              <div class="profile-tags">
+                <span>Experiència de sala</span>
+                <span>Ritme de servei</span>
+                <span>Valor percebut</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil de Raúl">Fitxa ampliada (opcional)</span>
+            </div>
+          </article>
+
+          <article class="profile-card">
+            <figure class="photo-frame profile-photo">
+              <button class="image-button" type="button" data-full="imaguenes i videos/yarentes.jpeg" data-caption="Jaren · Coordinació operativa i coherència de conjunt">
+                <img src="imaguenes i videos/yarentes.jpeg" alt="Retrat individual de Jaren" loading="lazy" />
+                <span class="photo-caption">
+                  <strong>Jaren</strong>
+                  <span>Veure imatge completa</span>
+                </span>
+              </button>
+            </figure>
+
+            <div class="profile-content">
+              <h3 class="profile-name">Jaren</h3>
+              <p class="profile-role">Coordinació operativa i coherència de conjunt</p>
+              <p class="profile-sub">Estructura, suport i lectura global del projecte</p>
+              <p class="profile-mini">Jaren contribueix a l’articulació general del projecte, connectant les diferents capes de MESCLARI perquè funcionin com un conjunt coherent. La seva aportació ajuda a ordenar processos, reforçar la lògica operativa i donar estabilitat a la proposta des d’una mirada transversal.</p>
+              <div class="profile-tags">
+                <span>Coherència global</span>
+                <span>Estructura operativa</span>
+                <span>Coordinació del projecte</span>
+              </div>
+              <span class="profile-link" aria-label="Espai reservat per ampliar el perfil de Jaren">Fitxa ampliada (opcional)</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="equip-section" aria-labelledby="encaix-title">
+        <header class="profiles-head">
+          <p class="equip-eyebrow">Complementarietat</p>
+          <h2 id="encaix-title">Repartiment de funcions</h2>
+          <p class="equip-lead">La solidesa de MESCLARI no depèn només de la qualitat individual de cada perfil, sinó de la manera com aquestes aportacions s’ordenen i es reforcen mútuament dins del projecte.</p>
+        </header>
+
+        <div class="fit-grid">
+          <article class="fit-card">
+            <h3>Concepte gastronòmic</h3>
+            <p>La direcció de cuina defineix la base culinària de la proposta i assegura que l’oferta respongui a la identitat i al nivell del restaurant.</p>
+          </article>
+
+          <article class="fit-card">
+            <h3>Experiència de sala</h3>
+            <p>La direcció de sala converteix la proposta en una experiència viscuda, ordenant el servei, l’atenció i la relació amb el client.</p>
+          </article>
+
+          <article class="fit-card">
+            <h3>Coherència operativa</h3>
+            <p>La coordinació global permet connectar idea, execució i estructura, evitant lectures fragmentades i reforçant la credibilitat del conjunt.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="equip-section" aria-labelledby="cred-title">
+        <header class="profiles-head">
+          <p class="equip-eyebrow">Credibilitat operativa</p>
+          <h2 id="cred-title">Una estructura humana preparada per sostenir el projecte</h2>
+          <p class="equip-lead">MESCLARI es planteja des d’una lògica de treball compartit, amb responsabilitats diferenciades i una lectura realista de com s’ha de sostenir el projecte en la pràctica.</p>
+        </header>
+
+        <div class="cred-layout">
+          <div class="cred-points">
+            <article class="cred-point">
+              <h3>Responsabilitats definides</h3>
+              <p>Cada membre assumeix una àrea clau del projecte i reforça una lectura clara del seu paper dins del conjunt.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Visió compartida</h3>
+              <p>Les decisions principals responen a una mateixa direcció, evitant contradiccions entre identitat, proposta i funcionament.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Treball coordinat</h3>
+              <p>La complementarietat entre cuina, sala i estructura permet desenvolupar MESCLARI amb més solidesa i més capacitat d’execució.</p>
+            </article>
+            <article class="cred-point">
+              <h3>Projecte defensable</h3>
+              <p>L’equip impulsa una proposta que no es queda en la idea, sinó que es presenta amb criteri, coherència i aplicació real.</p>
+            </article>
+          </div>
+
+          <figure class="photo-frame cred-photo">
+            <button class="image-button" type="button" data-full="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.38.40.jpeg" data-caption="Base humana i credibilitat operativa">
+              <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.38.40.jpeg" alt="Imatge de suport de l'equip impulsor" loading="lazy" />
+              <span class="photo-caption">
+                <strong>Base humana del projecte</strong>
+                <span>Veure imatge completa</span>
+              </span>
+            </button>
+          </figure>
+        </div>
+      </section>
+
+      <section class="equip-section closing" aria-labelledby="tancament-title">
+        <h2 id="tancament-title">Una base humana coherent amb el projecte</h2>
+        <p>MESCLARI pren forma a partir d’un equip que comparteix una mateixa direcció, però que aporta mirades complementàries per construir una proposta més completa, més sòlida i més creïble.</p>
+        <p>Un projecte amb identitat pròpia, sostingut per una estructura humana coherent.</p>
+        <p><a href="encaix-mercat.html">Continuar amb l'encaix de mercat</a></p>
       </section>
     </main>
 
     <footer class="home-footer">
-      <p>MESCLARI · Dossier digital de defensa professional amb orientació executiva.</p>
+      <p>MESCLARI · Estructura multipàgina amb continuïtat visual premium.</p>
     </footer>
 
-    <div class="mesclari-lightbox" id="mesclariImageLightbox" hidden aria-hidden="true" role="dialog" aria-label="Imatge ampliada">
-      <div class="mesclari-lightbox__inner">
-        <button type="button" class="mesclari-lightbox__close" aria-label="Tancar imatge">×</button>
-        <img src="" alt="" id="mesclariLightboxImg" />
-      </div>
+    <div class="equip-lightbox" id="equipLightbox" aria-hidden="true" role="dialog" aria-label="Visualització completa de la imatge">
+      <figure>
+        <img src="" alt="" id="equipLightboxImg" />
+        <figcaption>
+          <span id="equipLightboxCaption">Imatge completa</span>
+          <button class="equip-lightbox-close" type="button" id="equipLightboxClose">Tancar</button>
+        </figcaption>
+      </figure>
     </div>
 
+    <script src="script.js"></script>
     <script>
       (() => {
-        const lightbox = document.getElementById('mesclariImageLightbox');
-        const lightboxImg = document.getElementById('mesclariLightboxImg');
-        const closeBtn = lightbox?.querySelector('.mesclari-lightbox__close');
-        const triggers = document.querySelectorAll('[data-lightbox-src]');
+        const lightbox = document.getElementById("equipLightbox");
+        const lightboxImg = document.getElementById("equipLightboxImg");
+        const lightboxCaption = document.getElementById("equipLightboxCaption");
+        const closeButton = document.getElementById("equipLightboxClose");
 
-        if (!lightbox || !lightboxImg || !closeBtn || !triggers.length) return;
+        if (!lightbox || !lightboxImg || !lightboxCaption || !closeButton) return;
 
-        const openLightbox = (trigger) => {
-          lightboxImg.src = trigger.dataset.lightboxSrc;
-          lightboxImg.alt = trigger.dataset.lightboxAlt || '';
-          lightbox.hidden = false;
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-          closeBtn.focus();
+        const openLightbox = (src, caption) => {
+          lightboxImg.src = src;
+          lightboxImg.alt = caption || "Imatge completa";
+          lightboxCaption.textContent = caption || "Imatge completa";
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
         };
 
         const closeLightbox = () => {
-          lightbox.hidden = true;
-          lightbox.setAttribute('aria-hidden', 'true');
-          lightboxImg.src = '';
-          document.body.style.overflow = '';
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          setTimeout(() => {
+            if (!lightbox.classList.contains("is-open")) {
+              lightboxImg.src = "";
+            }
+          }, 180);
         };
 
-        triggers.forEach((trigger) => {
-          trigger.addEventListener('click', () => openLightbox(trigger));
+        document.querySelectorAll(".image-button[data-full]").forEach((button) => {
+          button.addEventListener("click", () => {
+            openLightbox(button.dataset.full, button.dataset.caption);
+          });
         });
 
-        closeBtn.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', (event) => {
+        closeButton.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
           if (event.target === lightbox) closeLightbox();
         });
 
-        document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+            closeLightbox();
+          }
         });
       })();
     </script>
-
-    <script src="script.js"></script>
   </body>
 </html>
