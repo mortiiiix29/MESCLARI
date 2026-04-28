@@ -34,7 +34,588 @@
               </ul>
     </nav>
 
-  <main class="sintesi-main sintesi-final-page">
+  <style>
+  /* =========================================================
+     MESCLARI · SÍNTESI FINAL I VIABILITAT
+     Bloque cerrado: CSS + HTML para esta página
+  ========================================================= */
+
+  .sintesi-final-page,
+  .sintesi-final-page * {
+    box-sizing: border-box;
+  }
+
+  .sintesi-final-page {
+    --mesclari-terracotta: #c25e3c;
+    --mesclari-blue: #1e2d3b;
+    --mesclari-ink: #233849;
+    --mesclari-ink-soft: #4a5f72;
+    --mesclari-beige: #f4e9dc;
+    --mesclari-sand: #d8cbb2;
+    --mesclari-line: rgba(30, 45, 59, 0.13);
+    --mesclari-panel: rgba(255, 255, 255, 0.74);
+
+    width: 100%;
+    padding-top: clamp(6.5rem, 8vw, 8rem);
+    background:
+      radial-gradient(circle at 8% 4%, rgba(194, 94, 60, 0.16), transparent 30rem),
+      radial-gradient(circle at 88% 8%, rgba(30, 45, 59, 0.08), transparent 32rem),
+      linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.97));
+    color: var(--mesclari-blue);
+    overflow: hidden;
+  }
+
+  .sintesi-final-page p {
+    line-height: 1.68;
+  }
+
+  .sintesi-final-page .sintesi-eyebrow,
+  .sintesi-final-page .sintesi-kicker {
+    margin: 0 0 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mesclari-terracotta);
+  }
+
+  .sintesi-final-page h1,
+  .sintesi-final-page h2,
+  .sintesi-final-page h3 {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  /* HERO FINAL */
+
+  .sintesi-final-page .sintesi-hero-final {
+    position: relative;
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+    gap: clamp(1.1rem, 2.4vw, 2rem);
+    align-items: stretch;
+    padding: clamp(1rem, 2vw, 1.4rem);
+    border-radius: 2.4rem;
+    background: rgba(255, 255, 255, 0.46);
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 28px 80px rgba(30, 45, 59, 0.12);
+    overflow: hidden;
+  }
+
+  .sintesi-final-page .sintesi-hero-final::before {
+    content: "VIABILITAT";
+    position: absolute;
+    right: -1rem;
+    top: 1rem;
+    z-index: 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(4.6rem, 10vw, 10rem);
+    font-weight: 900;
+    letter-spacing: -0.07em;
+    color: rgba(30, 45, 59, 0.05);
+    pointer-events: none;
+  }
+
+  .sintesi-final-page .sintesi-hero-copy {
+    position: relative;
+    z-index: 2;
+    padding: clamp(2rem, 4vw, 4rem);
+    border-radius: 2rem;
+    background:
+      linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93)),
+      var(--mesclari-blue);
+    color: var(--mesclari-beige);
+    box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+  }
+
+  .sintesi-final-page .sintesi-hero-copy h1 {
+    max-width: 760px;
+    margin: 0;
+    font-size: clamp(4rem, 8.4vw, 7.8rem);
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+    color: #fff;
+  }
+
+  .sintesi-final-page .sintesi-intro {
+    max-width: 760px;
+    margin: clamp(1.2rem, 2vw, 1.6rem) 0 0;
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    color: rgba(244, 233, 220, 0.86);
+  }
+
+  .sintesi-final-page .sintesi-verdict-panel {
+    margin-top: clamp(1.4rem, 2.2vw, 2rem);
+    padding: clamp(1.15rem, 2vw, 1.6rem);
+    border-radius: 1.5rem;
+    background: rgba(244, 233, 220, 0.1);
+    border: 1px solid rgba(244, 233, 220, 0.16);
+  }
+
+  .sintesi-final-page .verdict-label {
+    display: inline-flex;
+    margin-bottom: 0.7rem;
+    padding: 0.35rem 0.78rem;
+    border-radius: 999px;
+    background: rgba(194, 94, 60, 0.24);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .sintesi-final-page .sintesi-verdict-panel strong {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    line-height: 1;
+    color: #fff;
+  }
+
+  .sintesi-final-page .sintesi-verdict-panel p {
+    margin: 0.85rem 0 0;
+    color: rgba(244, 233, 220, 0.82);
+  }
+
+  .sintesi-final-page .sintesi-final-visual {
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    border-radius: 2rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem;
+    background:
+      linear-gradient(135deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.12)),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(244, 233, 220, 0.86));
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 22px 60px rgba(30, 45, 59, 0.12);
+    overflow: hidden;
+  }
+
+  .sintesi-final-page .sintesi-final-visual::before {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border-radius: 1.45rem;
+    border: 1px dashed rgba(30, 45, 59, 0.22);
+  }
+
+  .sintesi-final-page .sintesi-final-visual figcaption {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 1.1rem;
+    background: rgba(255, 255, 255, 0.68);
+    color: var(--mesclari-blue);
+    font-size: 0.92rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .sintesi-final-page .sintesi-final-visual span {
+    color: var(--mesclari-terracotta);
+    font-weight: 700;
+  }
+
+  .sintesi-final-page .sintesi-final-band {
+    position: relative;
+    z-index: 2;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .sintesi-final-page .sintesi-final-band article {
+    padding: clamp(1.15rem, 2vw, 1.5rem);
+    border-radius: 1.45rem;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 16px 38px rgba(30, 45, 59, 0.07);
+  }
+
+  .sintesi-final-page .sintesi-final-band span {
+    display: inline-flex;
+    margin-bottom: 0.7rem;
+    color: var(--mesclari-terracotta);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+  }
+
+  .sintesi-final-page .sintesi-final-band h3 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+    line-height: 1;
+    color: var(--mesclari-blue);
+  }
+
+  .sintesi-final-page .sintesi-final-band p {
+    margin: 0;
+    color: var(--mesclari-ink-soft);
+  }
+
+  /* SECCIONES GENERALES */
+
+  .sintesi-final-page .sintesi-section {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: clamp(3.2rem, 6vw, 5.8rem) 0;
+  }
+
+  .sintesi-final-page .sintesi-section-head {
+    max-width: 900px;
+    margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+  }
+
+  .sintesi-final-page .sintesi-section-head h2 {
+    margin: 0;
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--mesclari-blue);
+  }
+
+  .sintesi-final-page .sintesi-section-head p:not(.sintesi-kicker) {
+    margin: 1rem 0 0;
+    max-width: 860px;
+    color: var(--mesclari-ink-soft);
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+  }
+
+  /* CARDS DE ARGUMENTOS */
+
+  .sintesi-final-page .sintesi-proof-grid,
+  .sintesi-final-page .sintesi-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+  }
+
+  .sintesi-final-page .sintesi-proof-grid article,
+  .sintesi-final-page .sintesi-dashboard-grid article {
+    min-height: 220px;
+    padding: clamp(1.25rem, 2vw, 1.7rem);
+    border-radius: 1.6rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.5));
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
+  }
+
+  .sintesi-final-page .sintesi-proof-grid span,
+  .sintesi-final-page .sintesi-dashboard-grid small {
+    display: inline-flex;
+    margin-bottom: 0.85rem;
+    color: var(--mesclari-terracotta);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .sintesi-final-page .sintesi-proof-grid h3,
+  .sintesi-final-page .sintesi-dashboard-grid strong {
+    display: block;
+    margin: 0 0 0.75rem;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+    line-height: 1;
+    color: var(--mesclari-blue);
+  }
+
+  .sintesi-final-page .sintesi-proof-grid p,
+  .sintesi-final-page .sintesi-dashboard-grid p {
+    margin: 0;
+    color: var(--mesclari-ink-soft);
+  }
+
+  /* BLOQUE CONTRASTE */
+
+  .sintesi-final-page .sintesi-section-contrast {
+    width: min(1180px, calc(100% - 2rem));
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 2.2rem;
+    background:
+      linear-gradient(135deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.7));
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 20px 60px rgba(30, 45, 59, 0.08);
+  }
+
+  .sintesi-final-page .sintesi-inline-visual {
+    position: relative;
+    min-height: 260px;
+    margin: clamp(1.4rem, 2.6vw, 2rem) 0 0;
+    padding: 1rem;
+    border-radius: 1.7rem;
+    display: flex;
+    align-items: flex-end;
+    background:
+      linear-gradient(135deg, rgba(194, 94, 60, 0.14), rgba(30, 45, 59, 0.08)),
+      rgba(255, 255, 255, 0.64);
+    border: 1px dashed rgba(30, 45, 59, 0.18);
+  }
+
+  .sintesi-final-page .sintesi-inline-visual figcaption {
+    margin: 0;
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.76);
+    color: var(--mesclari-blue);
+  }
+
+  .sintesi-final-page .sintesi-inline-visual span {
+    color: var(--mesclari-terracotta);
+    font-weight: 700;
+  }
+
+  /* RIESGOS */
+
+  .sintesi-final-page .sintesi-risk-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+  }
+
+  .sintesi-final-page .risk-card {
+    min-height: 260px;
+    padding: clamp(1.25rem, 2vw, 1.7rem);
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(30, 45, 59, 0.1);
+    box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
+  }
+
+  .sintesi-final-page .risk-card.response {
+    background:
+      linear-gradient(180deg, rgba(30, 45, 59, 0.96), rgba(35, 56, 73, 0.92));
+    color: var(--mesclari-beige);
+  }
+
+  .sintesi-final-page .risk-card h3 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(1.5rem, 2.1vw, 2rem);
+    line-height: 1;
+    color: inherit;
+  }
+
+  .sintesi-final-page .risk-card p {
+    margin: 0.65rem 0 0;
+    color: var(--mesclari-ink-soft);
+  }
+
+  .sintesi-final-page .risk-card.response p {
+    color: rgba(244, 233, 220, 0.84);
+  }
+
+  .sintesi-final-page .risk-card strong {
+    color: var(--mesclari-terracotta);
+  }
+
+  .sintesi-final-page .risk-card.response strong {
+    color: #f4e9dc;
+  }
+
+  /* CONCLUSIÓN */
+
+  .sintesi-final-page .sintesi-final-answer {
+    width: min(1180px, calc(100% - 2rem));
+    padding-top: clamp(3rem, 6vw, 5.5rem);
+  }
+
+  .sintesi-final-page .sintesi-final-answer-box {
+    position: relative;
+    padding: clamp(2rem, 4.5vw, 4.4rem);
+    border-radius: 2.4rem;
+    background:
+      linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(30, 45, 59, 0.9)),
+      var(--mesclari-blue);
+    color: var(--mesclari-beige);
+    box-shadow: 0 30px 90px rgba(30, 45, 59, 0.25);
+    overflow: hidden;
+  }
+
+  .sintesi-final-page .sintesi-final-answer-box::after {
+    content: "SÍ";
+    position: absolute;
+    right: 1.4rem;
+    bottom: -1.8rem;
+    font-size: clamp(7rem, 17vw, 15rem);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    color: rgba(244, 233, 220, 0.055);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .sintesi-final-page .sintesi-final-answer-box .sintesi-kicker {
+    color: var(--mesclari-sand);
+  }
+
+  .sintesi-final-page .sintesi-final-answer-box h2 {
+    position: relative;
+    z-index: 2;
+    margin: 0 0 1.1rem;
+    font-size: clamp(3rem, 7vw, 6.4rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    color: #fff;
+  }
+
+  .sintesi-final-page .sintesi-final-answer-box p {
+    position: relative;
+    z-index: 2;
+    max-width: 840px;
+    margin: 1rem 0 0;
+    color: rgba(244, 233, 220, 0.86);
+  }
+
+  .sintesi-final-page .sintesi-close-highlights {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.8rem;
+  }
+
+  .sintesi-final-page .sintesi-close-highlights span {
+    display: inline-flex;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    background: rgba(244, 233, 220, 0.1);
+    border: 1px solid rgba(244, 233, 220, 0.18);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  /* FRANJA VISUAL FINAL */
+
+  .sintesi-final-page .sintesi-final-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 1.6vw, 1.35rem);
+  }
+
+  .sintesi-final-page .sintesi-final-media-grid figure {
+    min-height: 280px;
+    margin: 0;
+    padding: 1.1rem;
+    border-radius: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+      linear-gradient(135deg, rgba(194, 94, 60, 0.12), rgba(30, 45, 59, 0.08)),
+      rgba(255, 255, 255, 0.72);
+    border: 1px dashed rgba(30, 45, 59, 0.18);
+  }
+
+  .sintesi-final-page .sintesi-final-media-grid figcaption {
+    margin: 0 0 0.55rem;
+    color: var(--mesclari-blue);
+    font-weight: 700;
+  }
+
+  .sintesi-final-page .sintesi-final-media-grid figcaption span {
+    color: var(--mesclari-terracotta);
+  }
+
+  .sintesi-final-page .sintesi-final-media-grid p {
+    margin: 0;
+    color: var(--mesclari-ink-soft);
+  }
+
+  /* REMATE */
+
+  .sintesi-final-page .sintesi-remat-final {
+    width: 100%;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding: clamp(3.5rem, 7vw, 6rem) 1rem;
+    background:
+      linear-gradient(90deg, var(--mesclari-blue), var(--mesclari-ink));
+    color: var(--mesclari-beige);
+  }
+
+  .sintesi-final-page .sintesi-remat-final p {
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.2rem, 4.8vw, 5rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 1050px) {
+    .sintesi-final-page .sintesi-hero-final {
+      grid-template-columns: 1fr;
+    }
+
+    .sintesi-final-page .sintesi-final-visual {
+      min-height: 360px;
+    }
+
+    .sintesi-final-page .sintesi-proof-grid,
+    .sintesi-final-page .sintesi-dashboard-grid,
+    .sintesi-final-page .sintesi-risk-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .sintesi-final-page {
+      padding-top: 5.8rem;
+    }
+
+    .sintesi-final-page .sintesi-hero-final,
+    .sintesi-final-page .sintesi-section,
+    .sintesi-final-page .sintesi-section-contrast,
+    .sintesi-final-page .sintesi-final-answer {
+      width: min(100% - 1rem, 1180px);
+    }
+
+    .sintesi-final-page .sintesi-hero-copy {
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+    }
+
+    .sintesi-final-page .sintesi-hero-copy h1 {
+      font-size: clamp(3.2rem, 17vw, 5.1rem);
+    }
+
+    .sintesi-final-page .sintesi-final-band,
+    .sintesi-final-page .sintesi-proof-grid,
+    .sintesi-final-page .sintesi-dashboard-grid,
+    .sintesi-final-page .sintesi-risk-grid,
+    .sintesi-final-page .sintesi-final-media-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sintesi-final-page .sintesi-final-answer-box {
+      padding: 1.6rem;
+      border-radius: 1.6rem;
+    }
+
+    .sintesi-final-page .sintesi-final-answer-box h2 {
+      font-size: clamp(2.7rem, 15vw, 4.2rem);
+    }
+
+    .sintesi-final-page .sintesi-remat-final p {
+      font-size: clamp(2rem, 12vw, 3.5rem);
+    }
+  }
+</style>
+
+<main class="sintesi-main sintesi-final-page">
   <section class="sintesi-hero sintesi-hero-final" id="sintesi-hero">
     <div class="sintesi-hero-copy">
       <p class="sintesi-eyebrow">Síntesi final · Viabilitat</p>
@@ -241,7 +822,6 @@
   <section class="sintesi-remat sintesi-remat-final" id="sintesi-remat">
     <p>MESCLARI no només és una idea atractiva: és un projecte viable, coherent i preparat per ser defensat.</p>
   </section>
-    
 </main>
 
     <footer class="home-footer">
