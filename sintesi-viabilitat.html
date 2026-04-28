@@ -31,817 +31,481 @@
         <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
         <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
         <li><a href="sintesi-viabilitat.html" aria-current="page">Síntesi de viabilitat</a></li>
-              </ul>
+      </ul>
     </nav>
 
-  <style>
-  /* =========================================================
-     MESCLARI · SÍNTESI FINAL I VIABILITAT
-     Bloque cerrado: CSS + HTML para esta página
-  ========================================================= */
-
-  .sintesi-final-page,
-  .sintesi-final-page * {
-    box-sizing: border-box;
-  }
-
-  .sintesi-final-page {
-    --mesclari-terracotta: #c25e3c;
-    --mesclari-blue: #1e2d3b;
-    --mesclari-ink: #233849;
-    --mesclari-ink-soft: #4a5f72;
-    --mesclari-beige: #f4e9dc;
-    --mesclari-sand: #d8cbb2;
-    --mesclari-line: rgba(30, 45, 59, 0.13);
-    --mesclari-panel: rgba(255, 255, 255, 0.74);
-
-    width: 100%;
-    padding-top: clamp(6.5rem, 8vw, 8rem);
-    background:
-      radial-gradient(circle at 8% 4%, rgba(194, 94, 60, 0.16), transparent 30rem),
-      radial-gradient(circle at 88% 8%, rgba(30, 45, 59, 0.08), transparent 32rem),
-      linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.97));
-    color: var(--mesclari-blue);
-    overflow: hidden;
-  }
-
-  .sintesi-final-page p {
-    line-height: 1.68;
-  }
-
-  .sintesi-final-page .sintesi-eyebrow,
-  .sintesi-final-page .sintesi-kicker {
-    margin: 0 0 0.75rem;
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--mesclari-terracotta);
-  }
-
-  .sintesi-final-page h1,
-  .sintesi-final-page h2,
-  .sintesi-final-page h3 {
-    font-family: "Cormorant Garamond", serif;
-  }
-
-  /* HERO FINAL */
-
-  .sintesi-final-page .sintesi-hero-final {
-    position: relative;
-    width: min(1180px, calc(100% - 2rem));
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(1.1rem, 2.4vw, 2rem);
-    align-items: stretch;
-    padding: clamp(1rem, 2vw, 1.4rem);
-    border-radius: 2.4rem;
-    background: rgba(255, 255, 255, 0.46);
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 28px 80px rgba(30, 45, 59, 0.12);
-    overflow: hidden;
-  }
-
-  .sintesi-final-page .sintesi-hero-final::before {
-    content: "VIABILITAT";
-    position: absolute;
-    right: -1rem;
-    top: 1rem;
-    z-index: 0;
-    font-family: "Inter", sans-serif;
-    font-size: clamp(4.6rem, 10vw, 10rem);
-    font-weight: 900;
-    letter-spacing: -0.07em;
-    color: rgba(30, 45, 59, 0.05);
-    pointer-events: none;
-  }
-
-  .sintesi-final-page .sintesi-hero-copy {
-    position: relative;
-    z-index: 2;
-    padding: clamp(2rem, 4vw, 4rem);
-    border-radius: 2rem;
-    background:
-      linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93)),
-      var(--mesclari-blue);
-    color: var(--mesclari-beige);
-    box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
-  }
-
-  .sintesi-final-page .sintesi-hero-copy h1 {
-    max-width: 760px;
-    margin: 0;
-    font-size: clamp(4rem, 8.4vw, 7.8rem);
-    line-height: 0.88;
-    letter-spacing: -0.065em;
-    color: #fff;
-  }
-
-  .sintesi-final-page .sintesi-intro {
-    max-width: 760px;
-    margin: clamp(1.2rem, 2vw, 1.6rem) 0 0;
-    font-size: clamp(1rem, 1.35vw, 1.2rem);
-    color: rgba(244, 233, 220, 0.86);
-  }
-
-  .sintesi-final-page .sintesi-verdict-panel {
-    margin-top: clamp(1.4rem, 2.2vw, 2rem);
-    padding: clamp(1.15rem, 2vw, 1.6rem);
-    border-radius: 1.5rem;
-    background: rgba(244, 233, 220, 0.1);
-    border: 1px solid rgba(244, 233, 220, 0.16);
-  }
-
-  .sintesi-final-page .verdict-label {
-    display: inline-flex;
-    margin-bottom: 0.7rem;
-    padding: 0.35rem 0.78rem;
-    border-radius: 999px;
-    background: rgba(194, 94, 60, 0.24);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-  }
-
-  .sintesi-final-page .sintesi-verdict-panel strong {
-    display: block;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.7rem, 3vw, 2.8rem);
-    line-height: 1;
-    color: #fff;
-  }
-
-  .sintesi-final-page .sintesi-verdict-panel p {
-    margin: 0.85rem 0 0;
-    color: rgba(244, 233, 220, 0.82);
-  }
-
-  .sintesi-final-page .sintesi-final-visual {
-    position: relative;
-    z-index: 2;
-    min-height: 100%;
-    border-radius: 2rem;
-    display: flex;
-    align-items: flex-end;
-    padding: 1.2rem;
-    background:
-      linear-gradient(135deg, rgba(194, 94, 60, 0.2), rgba(30, 45, 59, 0.12)),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(244, 233, 220, 0.86));
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 22px 60px rgba(30, 45, 59, 0.12);
-    overflow: hidden;
-  }
-
-  .sintesi-final-page .sintesi-final-visual::before {
-    content: "";
-    position: absolute;
-    inset: 1rem;
-    border-radius: 1.45rem;
-    border: 1px dashed rgba(30, 45, 59, 0.22);
-  }
-
-  .sintesi-final-page .sintesi-final-visual figcaption {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    margin: 0;
-    padding: 1rem;
-    border-radius: 1.1rem;
-    background: rgba(255, 255, 255, 0.68);
-    color: var(--mesclari-blue);
-    font-size: 0.92rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .sintesi-final-page .sintesi-final-visual span {
-    color: var(--mesclari-terracotta);
-    font-weight: 700;
-  }
-
-  .sintesi-final-page .sintesi-final-band {
-    position: relative;
-    z-index: 2;
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .sintesi-final-page .sintesi-final-band article {
-    padding: clamp(1.15rem, 2vw, 1.5rem);
-    border-radius: 1.45rem;
-    background: rgba(255, 255, 255, 0.76);
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 16px 38px rgba(30, 45, 59, 0.07);
-  }
-
-  .sintesi-final-page .sintesi-final-band span {
-    display: inline-flex;
-    margin-bottom: 0.7rem;
-    color: var(--mesclari-terracotta);
-    font-size: 0.76rem;
-    font-weight: 900;
-    letter-spacing: 0.15em;
-  }
-
-  .sintesi-final-page .sintesi-final-band h3 {
-    margin: 0 0 0.45rem;
-    font-size: clamp(1.45rem, 2.2vw, 2rem);
-    line-height: 1;
-    color: var(--mesclari-blue);
-  }
-
-  .sintesi-final-page .sintesi-final-band p {
-    margin: 0;
-    color: var(--mesclari-ink-soft);
-  }
-
-  /* SECCIONES GENERALES */
-
-  .sintesi-final-page .sintesi-section {
-    width: min(1180px, calc(100% - 2rem));
-    margin: 0 auto;
-    padding: clamp(3.2rem, 6vw, 5.8rem) 0;
-  }
-
-  .sintesi-final-page .sintesi-section-head {
-    max-width: 900px;
-    margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
-  }
-
-  .sintesi-final-page .sintesi-section-head h2 {
-    margin: 0;
-    font-size: clamp(2.4rem, 5vw, 4.8rem);
-    line-height: 0.96;
-    letter-spacing: -0.045em;
-    color: var(--mesclari-blue);
-  }
-
-  .sintesi-final-page .sintesi-section-head p:not(.sintesi-kicker) {
-    margin: 1rem 0 0;
-    max-width: 860px;
-    color: var(--mesclari-ink-soft);
-    font-size: clamp(1rem, 1.2vw, 1.12rem);
-  }
-
-  /* CARDS DE ARGUMENTOS */
-
-  .sintesi-final-page .sintesi-proof-grid,
-  .sintesi-final-page .sintesi-dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, 1.6vw, 1.35rem);
-  }
-
-  .sintesi-final-page .sintesi-proof-grid article,
-  .sintesi-final-page .sintesi-dashboard-grid article {
-    min-height: 220px;
-    padding: clamp(1.25rem, 2vw, 1.7rem);
-    border-radius: 1.6rem;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.5));
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
-  }
-
-  .sintesi-final-page .sintesi-proof-grid span,
-  .sintesi-final-page .sintesi-dashboard-grid small {
-    display: inline-flex;
-    margin-bottom: 0.85rem;
-    color: var(--mesclari-terracotta);
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-  }
-
-  .sintesi-final-page .sintesi-proof-grid h3,
-  .sintesi-final-page .sintesi-dashboard-grid strong {
-    display: block;
-    margin: 0 0 0.75rem;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(1.55rem, 2.2vw, 2.1rem);
-    line-height: 1;
-    color: var(--mesclari-blue);
-  }
-
-  .sintesi-final-page .sintesi-proof-grid p,
-  .sintesi-final-page .sintesi-dashboard-grid p {
-    margin: 0;
-    color: var(--mesclari-ink-soft);
-  }
-
-  /* BLOQUE CONTRASTE */
-
-  .sintesi-final-page .sintesi-section-contrast {
-    width: min(1180px, calc(100% - 2rem));
-    padding: clamp(2rem, 4vw, 3rem);
-    border-radius: 2.2rem;
-    background:
-      linear-gradient(135deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.7));
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 20px 60px rgba(30, 45, 59, 0.08);
-  }
-
-  .sintesi-final-page .sintesi-inline-visual {
-    position: relative;
-    min-height: 260px;
-    margin: clamp(1.4rem, 2.6vw, 2rem) 0 0;
-    padding: 1rem;
-    border-radius: 1.7rem;
-    display: flex;
-    align-items: flex-end;
-    background:
-      linear-gradient(135deg, rgba(194, 94, 60, 0.14), rgba(30, 45, 59, 0.08)),
-      rgba(255, 255, 255, 0.64);
-    border: 1px dashed rgba(30, 45, 59, 0.18);
-  }
-
-  .sintesi-final-page .sintesi-inline-visual figcaption {
-    margin: 0;
-    width: 100%;
-    padding: 0.95rem 1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.76);
-    color: var(--mesclari-blue);
-  }
-
-  .sintesi-final-page .sintesi-inline-visual span {
-    color: var(--mesclari-terracotta);
-    font-weight: 700;
-  }
-
-  /* RIESGOS */
-
-  .sintesi-final-page .sintesi-risk-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: clamp(1rem, 1.6vw, 1.35rem);
-  }
-
-  .sintesi-final-page .risk-card {
-    min-height: 260px;
-    padding: clamp(1.25rem, 2vw, 1.7rem);
-    border-radius: 1.6rem;
-    background: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(30, 45, 59, 0.1);
-    box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
-  }
-
-  .sintesi-final-page .risk-card.response {
-    background:
-      linear-gradient(180deg, rgba(30, 45, 59, 0.96), rgba(35, 56, 73, 0.92));
-    color: var(--mesclari-beige);
-  }
-
-  .sintesi-final-page .risk-card h3 {
-    margin: 0 0 0.8rem;
-    font-size: clamp(1.5rem, 2.1vw, 2rem);
-    line-height: 1;
-    color: inherit;
-  }
-
-  .sintesi-final-page .risk-card p {
-    margin: 0.65rem 0 0;
-    color: var(--mesclari-ink-soft);
-  }
-
-  .sintesi-final-page .risk-card.response p {
-    color: rgba(244, 233, 220, 0.84);
-  }
-
-  .sintesi-final-page .risk-card strong {
-    color: var(--mesclari-terracotta);
-  }
-
-  .sintesi-final-page .risk-card.response strong {
-    color: #f4e9dc;
-  }
-
-  /* CONCLUSIÓN */
-
-  .sintesi-final-page .sintesi-final-answer {
-    width: min(1180px, calc(100% - 2rem));
-    padding-top: clamp(3rem, 6vw, 5.5rem);
-  }
-
-  .sintesi-final-page .sintesi-final-answer-box {
-    position: relative;
-    padding: clamp(2rem, 4.5vw, 4.4rem);
-    border-radius: 2.4rem;
-    background:
-      linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(30, 45, 59, 0.9)),
-      var(--mesclari-blue);
-    color: var(--mesclari-beige);
-    box-shadow: 0 30px 90px rgba(30, 45, 59, 0.25);
-    overflow: hidden;
-  }
-
-  .sintesi-final-page .sintesi-final-answer-box::after {
-    content: "SÍ";
-    position: absolute;
-    right: 1.4rem;
-    bottom: -1.8rem;
-    font-size: clamp(7rem, 17vw, 15rem);
-    font-weight: 900;
-    letter-spacing: -0.08em;
-    color: rgba(244, 233, 220, 0.055);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .sintesi-final-page .sintesi-final-answer-box .sintesi-kicker {
-    color: var(--mesclari-sand);
-  }
-
-  .sintesi-final-page .sintesi-final-answer-box h2 {
-    position: relative;
-    z-index: 2;
-    margin: 0 0 1.1rem;
-    font-size: clamp(3rem, 7vw, 6.4rem);
-    line-height: 0.9;
-    letter-spacing: -0.06em;
-    color: #fff;
-  }
-
-  .sintesi-final-page .sintesi-final-answer-box p {
-    position: relative;
-    z-index: 2;
-    max-width: 840px;
-    margin: 1rem 0 0;
-    color: rgba(244, 233, 220, 0.86);
-  }
-
-  .sintesi-final-page .sintesi-close-highlights {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.8rem;
-  }
-
-  .sintesi-final-page .sintesi-close-highlights span {
-    display: inline-flex;
-    padding: 0.7rem 1rem;
-    border-radius: 999px;
-    background: rgba(244, 233, 220, 0.1);
-    border: 1px solid rgba(244, 233, 220, 0.18);
-    color: #fff;
-    font-size: 0.88rem;
-    font-weight: 700;
-  }
-
-  /* FRANJA VISUAL FINAL */
-
-  .sintesi-final-page .sintesi-final-media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(1rem, 1.6vw, 1.35rem);
-  }
-
-  .sintesi-final-page .sintesi-final-media-grid figure {
-    min-height: 280px;
-    margin: 0;
-    padding: 1.1rem;
-    border-radius: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background:
-      linear-gradient(135deg, rgba(194, 94, 60, 0.12), rgba(30, 45, 59, 0.08)),
-      rgba(255, 255, 255, 0.72);
-    border: 1px dashed rgba(30, 45, 59, 0.18);
-  }
-
-  .sintesi-final-page .sintesi-final-media-grid figcaption {
-    margin: 0 0 0.55rem;
-    color: var(--mesclari-blue);
-    font-weight: 700;
-  }
-
-  .sintesi-final-page .sintesi-final-media-grid figcaption span {
-    color: var(--mesclari-terracotta);
-  }
-
-  .sintesi-final-page .sintesi-final-media-grid p {
-    margin: 0;
-    color: var(--mesclari-ink-soft);
-  }
-
-  /* REMATE */
-
-  .sintesi-final-page .sintesi-remat-final {
-    width: 100%;
-    margin-top: clamp(2rem, 5vw, 4rem);
-    padding: clamp(3.5rem, 7vw, 6rem) 1rem;
-    background:
-      linear-gradient(90deg, var(--mesclari-blue), var(--mesclari-ink));
-    color: var(--mesclari-beige);
-  }
-
-  .sintesi-final-page .sintesi-remat-final p {
-    max-width: 980px;
-    margin: 0 auto;
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(2.2rem, 4.8vw, 5rem);
-    line-height: 1.02;
-    letter-spacing: -0.04em;
-    text-align: center;
-  }
-
-  /* RESPONSIVE */
-
-  @media (max-width: 1050px) {
-    .sintesi-final-page .sintesi-hero-final {
-      grid-template-columns: 1fr;
-    }
-
-    .sintesi-final-page .sintesi-final-visual {
-      min-height: 360px;
-    }
-
-    .sintesi-final-page .sintesi-proof-grid,
-    .sintesi-final-page .sintesi-dashboard-grid,
-    .sintesi-final-page .sintesi-risk-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 760px) {
-    .sintesi-final-page {
-      padding-top: 5.8rem;
-    }
-
-    .sintesi-final-page .sintesi-hero-final,
-    .sintesi-final-page .sintesi-section,
-    .sintesi-final-page .sintesi-section-contrast,
-    .sintesi-final-page .sintesi-final-answer {
-      width: min(100% - 1rem, 1180px);
-    }
-
-    .sintesi-final-page .sintesi-hero-copy {
-      padding: 1.5rem;
-      border-radius: 1.5rem;
-    }
-
-    .sintesi-final-page .sintesi-hero-copy h1 {
-      font-size: clamp(3.2rem, 17vw, 5.1rem);
-    }
-
-    .sintesi-final-page .sintesi-final-band,
-    .sintesi-final-page .sintesi-proof-grid,
-    .sintesi-final-page .sintesi-dashboard-grid,
-    .sintesi-final-page .sintesi-risk-grid,
-    .sintesi-final-page .sintesi-final-media-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .sintesi-final-page .sintesi-final-answer-box {
-      padding: 1.6rem;
-      border-radius: 1.6rem;
-    }
-
-    .sintesi-final-page .sintesi-final-answer-box h2 {
-      font-size: clamp(2.7rem, 15vw, 4.2rem);
-    }
-
-    .sintesi-final-page .sintesi-remat-final p {
-      font-size: clamp(2rem, 12vw, 3.5rem);
-    }
-  }
-
-  /* AJUST FINAL: hero sin imagen inicial y contenido a ancho completo */
-  .sintesi-final-page .sintesi-hero-final {
-    grid-template-columns: 1fr;
-  }
-
-  .sintesi-final-page .sintesi-hero-copy {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
-  .sintesi-final-page .sintesi-hero-copy h1,
-  .sintesi-final-page .sintesi-intro,
-  .sintesi-final-page .sintesi-verdict-panel p {
-    max-width: none;
-  }
-
-  .sintesi-final-page .sintesi-verdict-panel {
-    width: 100%;
-  }
-
-</style>
-
-<main class="sintesi-main sintesi-final-page">
-  <section class="sintesi-hero sintesi-hero-final" id="sintesi-hero">
-    <div class="sintesi-hero-copy">
-      <p class="sintesi-eyebrow">Síntesi final · Viabilitat</p>
-      <h1>MESCLARI és viable.</h1>
-
-      <p class="sintesi-intro">
-        La conclusió final del projecte és clara: MESCLARI és una proposta viable, coherent i defensable perquè connecta concepte, mercat, oferta gastronòmica, espai, servei, organització i lectura econòmica dins d’un mateix model de restaurant.
-      </p>
-
-      <div class="sintesi-verdict-panel">
-        <span class="verdict-label">Veredicte professional</span>
-        <strong>VIABLE AMB CRITERI</strong>
-        <p>
-          El projecte no es defensa només per la seva idea, sinó perquè transforma aquesta idea en decisions concretes: local real, oferta definida, estructura operativa, control econòmic i capacitat d’adaptació estacional.
-        </p>
-      </div>
-    </div>
-
-    
-
-    <div class="sintesi-hero-band sintesi-final-band">
-      <article>
-        <span>01</span>
-        <h3>Coherent</h3>
-        <p>La idea, la gamma, el públic i l’experiència segueixen una mateixa direcció.</p>
-      </article>
-
-      <article>
-        <span>02</span>
-        <h3>Aplicable</h3>
-        <p>El projecte baixa a decisions reals de servei, espai, personal, compres i gestió.</p>
-      </article>
-
-      <article>
-        <span>03</span>
-        <h3>Defensable</h3>
-        <p>La proposta es pot argumentar amb criteri professional, dades i sentit empresarial.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="sintesi-section sintesi-verdict-section">
-    <header class="sintesi-section-head">
-      <p class="sintesi-kicker">1 · Resposta final</p>
-      <h2>Per què podem afirmar que MESCLARI és viable?</h2>
-      <p>
-        MESCLARI és viable perquè no funciona com una suma d’idees separades, sinó com un sistema complet. Cada decisió reforça la resta: el concepte defineix la gamma, la gamma condiciona l’oferta, l’oferta marca el servei, el servei dona valor al preu i la gestió permet sostenir el model.
-      </p>
-    </header>
-
-    <div class="sintesi-proof-grid">
-      <article>
-        <span>Concepte</span>
-        <h3>Identitat clara</h3>
-        <p>Una proposta mediterrània premium, amb atmosfera cuidada, servei professional i personalitat pròpia.</p>
-      </article>
-
-      <article>
-        <span>Mercat</span>
-        <h3>Encaix territorial</h3>
-        <p>Platja d’Aro permet treballar amb client local, visitant, turístic i de cap de setmana.</p>
-      </article>
-
-      <article>
-        <span>Oferta</span>
-        <h3>Formats amb funció</h3>
-        <p>El 4/4/4 aporta captació i recurrència; el degustació reforça marge, experiència i posicionament.</p>
-      </article>
-
-      <article>
-        <span>Gestió</span>
-        <h3>Control i adaptació</h3>
-        <p>L’estructura estacional permet ajustar personal, costos i ritme de treball segons la demanda real.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="sintesi-section sintesi-section-contrast sintesi-dashboard">
-    <header class="sintesi-section-head">
-      <p class="sintesi-kicker">2 · Evidències de solidesa</p>
-      <h2>Un projecte construït amb base real</h2>
-      <p>
-        La viabilitat de MESCLARI no es presenta com una afirmació buida. Es recolza en elements concrets que permeten defensar el projecte davant professorat, socis o possibles inversors.
-      </p>
-    </header>
-
-    <div class="sintesi-dashboard-grid">
-      <article>
-        <small>Localització</small>
-        <strong>Local real</strong>
-        <p>Espai estudiat i adaptat a una proposta de restauració premium.</p>
-      </article>
-
-      <article>
-        <small>Oferta</small>
-        <strong>2 formats</strong>
-        <p>Menú 4/4/4 i menú degustació amb funcions empresarials diferents.</p>
-      </article>
-
-      <article>
-        <small>Servei</small>
-        <strong>Sala activa</strong>
-        <p>Maridatge, explicació, ritme i valor percebut com a part de l’experiència.</p>
-      </article>
-
-      <article>
-        <small>Economia</small>
-        <strong>Control</strong>
-        <p>Escandalls, marges, punt mort, costos fixos i previsió de tresoreria.</p>
-      </article>
-    </div>
-
-    <figure class="sintesi-inline-visual media-placeholder">
-      <figcaption>Esquema executiu de viabilitat · <span>sintesi-viabilitat-esquema.jpg</span></figcaption>
-    </figure>
-  </section>
-
-  <section class="sintesi-section sintesi-risk sintesi-risk-final">
-    <header class="sintesi-section-head">
-      <p class="sintesi-kicker">3 · Riscos i resposta del model</p>
-      <h2>Viable no vol dir sense risc: vol dir preparat per gestionar-lo</h2>
-      <p>
-        El projecte reconeix els punts crítics principals i planteja respostes realistes. Aquesta mirada reforça la credibilitat de MESCLARI perquè demostra capacitat de gestió, no només ambició.
-      </p>
-    </header>
-
-    <div class="sintesi-risk-grid">
-      <article class="risk-card">
-        <h3>Estacionalitat</h3>
-        <p>La demanda pot variar molt entre temporada baixa i temporada alta.</p>
-        <p><strong>Resposta:</strong> estructura flexible, reforç estacional i ajust de compres, personal i horaris.</p>
-      </article>
-
-      <article class="risk-card response">
-        <h3>Inversió inicial</h3>
-        <p>Una proposta premium exigeix reforma, equipament i imatge cuidada.</p>
-        <p><strong>Resposta:</strong> pressupost controlat, priorització de partides i marge de seguretat financer.</p>
-      </article>
-
-      <article class="risk-card">
-        <h3>Exigència del client</h3>
-        <p>El client de gamma alta espera regularitat, qualitat i experiència completa.</p>
-        <p><strong>Resposta:</strong> protocols de servei, coordinació cuina-sala i formació constant de l’equip.</p>
-      </article>
-
-      <article class="risk-card response">
-        <h3>Pressió de costos</h3>
-        <p>El producte de qualitat pot tensionar marges si no es controla bé.</p>
-        <p><strong>Resposta:</strong> escandalls actualitzats, rotació estacional, control de mermes i lectura de rendibilitat per format.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="sintesi-section sintesi-closing sintesi-final-answer">
-    <div class="sintesi-final-answer-box">
-      <p class="sintesi-kicker">4 · Conclusió definitiva</p>
-      <h2>Sí, MESCLARI és viable.</h2>
-
-      <p>
-        MESCLARI és viable perquè presenta una proposta amb identitat pròpia, encaix de mercat, oferta gastronòmica coherent, espai aplicable, servei amb valor diferencial i una estructura econòmica pensada per ser controlada.
-      </p>
-
-      <p>
-        La seva viabilitat no es basa en imaginar un escenari perfecte, sinó en haver previst com funcionarà el restaurant, quins riscos tindrà i com es podran gestionar. Per això, MESCLARI no només es pot presentar com una idea atractiva, sinó com un projecte professional, realista i defensable.
-      </p>
-
-      <div class="sintesi-close-highlights">
-        <span>Sí és viable</span>
-        <span>Coherent amb la gamma</span>
-        <span>Preparat per defensar-se</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="sintesi-section sintesi-final-strip">
-    <header class="sintesi-section-head">
-      <p class="sintesi-kicker">5 · Suport visual final</p>
-      <h2>Última imatge de defensa</h2>
-      <p>
-        Aquesta franja final ha de reforçar visualment la conclusió: MESCLARI és un projecte pensat, estructurat i preparat per ser explicat amb seguretat.
-      </p>
-    </header>
-
-    <div class="sintesi-final-media-grid">
-      <figure class="media-placeholder">
-        <figcaption>Síntesi visual · <span>sintesi-viabilitat-final.jpg</span></figcaption>
-        <p>Imatge premium del restaurant o composició visual amb concepte, sala i gastronomia.</p>
-      </figure>
-
-      <figure class="media-placeholder">
-        <figcaption>Mapa de viabilitat · <span>sintesi-viabilitat-validacio.jpg</span></figcaption>
-        <p>Esquema amb concepte, mercat, oferta, operativa i economia.</p>
-      </figure>
-
-      <figure class="media-placeholder">
-        <figcaption>Tancament audiovisual · <span>sintesi-viabilitat-video.mp4</span></figcaption>
-        <p>Vídeo curt de tancament per reforçar la defensa oral.</p>
-      </figure>
-    </div>
-  </section>
-
-  <section class="sintesi-remat sintesi-remat-final" id="sintesi-remat">
-    <p>MESCLARI no només és una idea atractiva: és un projecte viable, coherent i preparat per ser defensat.</p>
-  </section>
-</main>
+    <style>
+      /* =========================================================
+         MESCLARI · SÍNTESI FINAL I VIABILITAT · SENSE FOTOS
+      ========================================================= */
+
+      .sintesi-final-page,
+      .sintesi-final-page * { box-sizing: border-box; }
+
+      .sintesi-final-page {
+        --mesclari-terracotta: #c25e3c;
+        --mesclari-blue: #1e2d3b;
+        --mesclari-ink: #233849;
+        --mesclari-ink-soft: #4a5f72;
+        --mesclari-beige: #f4e9dc;
+        --mesclari-sand: #d8cbb2;
+        width: 100%;
+        padding-top: clamp(6.5rem, 8vw, 8rem);
+        background:
+          radial-gradient(circle at 8% 4%, rgba(194, 94, 60, 0.16), transparent 30rem),
+          radial-gradient(circle at 88% 8%, rgba(30, 45, 59, 0.08), transparent 32rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.97));
+        color: var(--mesclari-blue);
+        overflow: hidden;
+      }
+
+      .sintesi-final-page p { line-height: 1.68; }
+
+      .sintesi-final-page .sintesi-eyebrow,
+      .sintesi-final-page .sintesi-kicker {
+        margin: 0 0 0.75rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mesclari-terracotta);
+      }
+
+      .sintesi-final-page h1,
+      .sintesi-final-page h2,
+      .sintesi-final-page h3 { font-family: "Cormorant Garamond", serif; }
+
+      .sintesi-final-page .sintesi-hero-final {
+        position: relative;
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: clamp(1rem, 2vw, 1.4rem);
+        border-radius: 2.4rem;
+        background: rgba(255, 255, 255, 0.46);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 28px 80px rgba(30, 45, 59, 0.12);
+        overflow: hidden;
+      }
+
+      .sintesi-final-page .sintesi-hero-final::before {
+        content: "VIABILITAT";
+        position: absolute;
+        right: -1rem;
+        top: 1rem;
+        z-index: 0;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4.6rem, 10vw, 10rem);
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        color: rgba(30, 45, 59, 0.05);
+        pointer-events: none;
+      }
+
+      .sintesi-final-page .sintesi-hero-copy {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: clamp(2rem, 4vw, 4rem);
+        border-radius: 2rem;
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93)),
+          var(--mesclari-blue);
+        color: var(--mesclari-beige);
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+      }
+
+      .sintesi-final-page .sintesi-hero-copy h1 {
+        max-width: 1000px;
+        margin: 0;
+        font-size: clamp(4rem, 8.4vw, 7.8rem);
+        line-height: 0.88;
+        letter-spacing: -0.065em;
+        color: #fff;
+      }
+
+      .sintesi-final-page .sintesi-intro {
+        max-width: 980px;
+        margin: clamp(1.2rem, 2vw, 1.6rem) 0 0;
+        font-size: clamp(1rem, 1.35vw, 1.2rem);
+        color: rgba(244, 233, 220, 0.86);
+      }
+
+      .sintesi-final-page .sintesi-verdict-panel {
+        margin-top: clamp(1.4rem, 2.2vw, 2rem);
+        max-width: 980px;
+        padding: clamp(1.15rem, 2vw, 1.6rem);
+        border-radius: 1.5rem;
+        background: rgba(244, 233, 220, 0.1);
+        border: 1px solid rgba(244, 233, 220, 0.16);
+      }
+
+      .sintesi-final-page .verdict-label {
+        display: inline-flex;
+        margin-bottom: 0.7rem;
+        padding: 0.35rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.24);
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .sintesi-final-page .sintesi-verdict-panel strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.7rem, 3vw, 2.8rem);
+        line-height: 1;
+        color: #fff;
+      }
+
+      .sintesi-final-page .sintesi-verdict-panel p {
+        margin: 0.85rem 0 0;
+        color: rgba(244, 233, 220, 0.82);
+      }
+
+      .sintesi-final-page .sintesi-final-band,
+      .sintesi-final-page .sintesi-proof-grid,
+      .sintesi-final-page .sintesi-dashboard-grid,
+      .sintesi-final-page .sintesi-risk-grid {
+        display: grid;
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+      }
+
+      .sintesi-final-page .sintesi-final-band { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .sintesi-final-page .sintesi-proof-grid,
+      .sintesi-final-page .sintesi-dashboard-grid,
+      .sintesi-final-page .sintesi-risk-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+      .sintesi-final-page .sintesi-final-band article,
+      .sintesi-final-page .sintesi-proof-grid article,
+      .sintesi-final-page .sintesi-dashboard-grid article,
+      .sintesi-final-page .risk-card {
+        min-height: 220px;
+        padding: clamp(1.25rem, 2vw, 1.7rem);
+        border-radius: 1.6rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.5));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
+      }
+
+      .sintesi-final-page .sintesi-final-band article { min-height: auto; }
+
+      .sintesi-final-page .sintesi-final-band span,
+      .sintesi-final-page .sintesi-proof-grid span,
+      .sintesi-final-page .sintesi-dashboard-grid small {
+        display: inline-flex;
+        margin-bottom: 0.85rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .sintesi-final-page .sintesi-final-band h3,
+      .sintesi-final-page .sintesi-proof-grid h3,
+      .sintesi-final-page .sintesi-dashboard-grid strong,
+      .sintesi-final-page .risk-card h3 {
+        display: block;
+        margin: 0 0 0.75rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+        line-height: 1;
+        color: var(--mesclari-blue);
+      }
+
+      .sintesi-final-page .sintesi-final-band p,
+      .sintesi-final-page .sintesi-proof-grid p,
+      .sintesi-final-page .sintesi-dashboard-grid p,
+      .sintesi-final-page .risk-card p {
+        margin: 0.65rem 0 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .sintesi-final-page .sintesi-section {
+        width: min(1180px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: clamp(3.2rem, 6vw, 5.8rem) 0;
+      }
+
+      .sintesi-final-page .sintesi-section-head {
+        max-width: 900px;
+        margin-bottom: clamp(1.6rem, 3vw, 2.4rem);
+      }
+
+      .sintesi-final-page .sintesi-section-head h2 {
+        margin: 0;
+        font-size: clamp(2.4rem, 5vw, 4.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
+        color: var(--mesclari-blue);
+      }
+
+      .sintesi-final-page .sintesi-section-head p:not(.sintesi-kicker) {
+        margin: 1rem 0 0;
+        max-width: 860px;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
+      }
+
+      .sintesi-final-page .sintesi-section-contrast {
+        width: min(1180px, calc(100% - 2rem));
+        padding: clamp(2rem, 4vw, 3rem);
+        border-radius: 2.2rem;
+        background: linear-gradient(135deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.7));
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 20px 60px rgba(30, 45, 59, 0.08);
+      }
+
+      .sintesi-final-page .risk-card { min-height: 260px; }
+
+      .sintesi-final-page .risk-card.response {
+        background: linear-gradient(180deg, rgba(30, 45, 59, 0.96), rgba(35, 56, 73, 0.92));
+        color: var(--mesclari-beige);
+      }
+
+      .sintesi-final-page .risk-card.response h3 { color: var(--mesclari-beige); }
+      .sintesi-final-page .risk-card.response p { color: rgba(244, 233, 220, 0.84); }
+      .sintesi-final-page .risk-card strong { color: var(--mesclari-terracotta); }
+      .sintesi-final-page .risk-card.response strong { color: #f4e9dc; }
+
+      .sintesi-final-page .sintesi-final-answer {
+        width: min(1180px, calc(100% - 2rem));
+        padding-top: clamp(3rem, 6vw, 5.5rem);
+      }
+
+      .sintesi-final-page .sintesi-final-answer-box {
+        position: relative;
+        padding: clamp(2rem, 4.5vw, 4.4rem);
+        border-radius: 2.4rem;
+        background: linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(30, 45, 59, 0.9)), var(--mesclari-blue);
+        color: var(--mesclari-beige);
+        box-shadow: 0 30px 90px rgba(30, 45, 59, 0.25);
+        overflow: hidden;
+      }
+
+      .sintesi-final-page .sintesi-final-answer-box::after {
+        content: "SÍ";
+        position: absolute;
+        right: 1.4rem;
+        bottom: -1.8rem;
+        font-size: clamp(7rem, 17vw, 15rem);
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(244, 233, 220, 0.055);
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      .sintesi-final-page .sintesi-final-answer-box .sintesi-kicker { color: var(--mesclari-sand); }
+
+      .sintesi-final-page .sintesi-final-answer-box h2 {
+        position: relative;
+        z-index: 2;
+        margin: 0 0 1.1rem;
+        font-size: clamp(3rem, 7vw, 6.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        color: #fff;
+      }
+
+      .sintesi-final-page .sintesi-final-answer-box p {
+        position: relative;
+        z-index: 2;
+        max-width: 840px;
+        margin: 1rem 0 0;
+        color: rgba(244, 233, 220, 0.86);
+      }
+
+      .sintesi-final-page .sintesi-close-highlights {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.8rem;
+      }
+
+      .sintesi-final-page .sintesi-close-highlights span {
+        display: inline-flex;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.1);
+        border: 1px solid rgba(244, 233, 220, 0.18);
+        color: #fff;
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+
+      .sintesi-final-page .sintesi-remat-final {
+        width: 100%;
+        margin-top: clamp(2rem, 5vw, 4rem);
+        padding: clamp(3.5rem, 7vw, 6rem) 1rem;
+        background: linear-gradient(90deg, var(--mesclari-blue), var(--mesclari-ink));
+        color: var(--mesclari-beige);
+      }
+
+      .sintesi-final-page .sintesi-remat-final p {
+        max-width: 980px;
+        margin: 0 auto;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.2rem, 4.8vw, 5rem);
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        text-align: center;
+      }
+
+      @media (max-width: 1050px) {
+        .sintesi-final-page .sintesi-proof-grid,
+        .sintesi-final-page .sintesi-dashboard-grid,
+        .sintesi-final-page .sintesi-risk-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .sintesi-final-page { padding-top: 5.8rem; }
+
+        .sintesi-final-page .sintesi-hero-final,
+        .sintesi-final-page .sintesi-section,
+        .sintesi-final-page .sintesi-section-contrast,
+        .sintesi-final-page .sintesi-final-answer {
+          width: min(100% - 1rem, 1180px);
+        }
+
+        .sintesi-final-page .sintesi-hero-copy {
+          padding: 1.5rem;
+          border-radius: 1.5rem;
+        }
+
+        .sintesi-final-page .sintesi-hero-copy h1 {
+          font-size: clamp(3.2rem, 17vw, 5.1rem);
+        }
+
+        .sintesi-final-page .sintesi-final-band,
+        .sintesi-final-page .sintesi-proof-grid,
+        .sintesi-final-page .sintesi-dashboard-grid,
+        .sintesi-final-page .sintesi-risk-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .sintesi-final-page .sintesi-final-answer-box {
+          padding: 1.6rem;
+          border-radius: 1.6rem;
+        }
+
+        .sintesi-final-page .sintesi-final-answer-box h2 {
+          font-size: clamp(2.7rem, 15vw, 4.2rem);
+        }
+
+        .sintesi-final-page .sintesi-remat-final p {
+          font-size: clamp(2rem, 12vw, 3.5rem);
+        }
+      }
+    </style>
+
+    <main class="sintesi-main sintesi-final-page">
+      <section class="sintesi-hero sintesi-hero-final" id="sintesi-hero">
+        <div class="sintesi-hero-copy">
+          <p class="sintesi-eyebrow">Síntesi final · Viabilitat</p>
+          <h1>MESCLARI és viable.</h1>
+
+          <p class="sintesi-intro">
+            La conclusió final del projecte és clara: MESCLARI és una proposta viable, coherent i defensable perquè connecta concepte, mercat, oferta gastronòmica, espai, servei, organització i lectura econòmica dins d’un mateix model de restaurant.
+          </p>
+
+          <div class="sintesi-verdict-panel">
+            <span class="verdict-label">Veredicte professional</span>
+            <strong>VIABLE AMB CRITERI</strong>
+            <p>
+              El projecte no es defensa només per la seva idea, sinó perquè transforma aquesta idea en decisions concretes: local real, oferta definida, estructura operativa, control econòmic i capacitat d’adaptació estacional.
+            </p>
+          </div>
+        </div>
+
+        <div class="sintesi-hero-band sintesi-final-band">
+          <article>
+            <span>01</span>
+            <h3>Coherent</h3>
+            <p>La idea, la gamma, el públic i l’experiència segueixen una mateixa direcció.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Aplicable</h3>
+            <p>El projecte baixa a decisions reals de servei, espai, personal, compres i gestió.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Defensable</h3>
+            <p>La proposta es pot argumentar amb criteri professional, dades i sentit empresarial.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="sintesi-section sintesi-verdict-section">
+        <header class="sintesi-section-head">
+          <p class="sintesi-kicker">1 · Resposta final</p>
+          <h2>Per què podem afirmar que MESCLARI és viable?</h2>
+          <p>MESCLARI és viable perquè no funciona com una suma d’idees separades, sinó com un sistema complet. Cada decisió reforça la resta: el concepte defineix la gamma, la gamma condiciona l’oferta, l’oferta marca el servei, el servei dona valor al preu i la gestió permet sostenir el model.</p>
+        </header>
+
+        <div class="sintesi-proof-grid">
+          <article><span>Concepte</span><h3>Identitat clara</h3><p>Una proposta mediterrània premium, amb atmosfera cuidada, servei professional i personalitat pròpia.</p></article>
+          <article><span>Mercat</span><h3>Encaix territorial</h3><p>Platja d’Aro permet treballar amb client local, visitant, turístic i de cap de setmana.</p></article>
+          <article><span>Oferta</span><h3>Formats amb funció</h3><p>El 4/4/4 aporta captació i recurrència; el degustació reforça marge, experiència i posicionament.</p></article>
+          <article><span>Gestió</span><h3>Control i adaptació</h3><p>L’estructura estacional permet ajustar personal, costos i ritme de treball segons la demanda real.</p></article>
+        </div>
+      </section>
+
+      <section class="sintesi-section sintesi-section-contrast sintesi-dashboard">
+        <header class="sintesi-section-head">
+          <p class="sintesi-kicker">2 · Evidències de solidesa</p>
+          <h2>Un projecte construït amb base real</h2>
+          <p>La viabilitat de MESCLARI no es presenta com una afirmació buida. Es recolza en elements concrets que permeten defensar el projecte davant professorat, socis o possibles inversors.</p>
+        </header>
+
+        <div class="sintesi-dashboard-grid">
+          <article><small>Localització</small><strong>Local real</strong><p>Espai estudiat i adaptat a una proposta de restauració premium.</p></article>
+          <article><small>Oferta</small><strong>2 formats</strong><p>Menú 4/4/4 i menú degustació amb funcions empresarials diferents.</p></article>
+          <article><small>Servei</small><strong>Sala activa</strong><p>Maridatge, explicació, ritme i valor percebut com a part de l’experiència.</p></article>
+          <article><small>Economia</small><strong>Control</strong><p>Escandalls, marges, punt mort, costos fixos i previsió de tresoreria.</p></article>
+        </div>
+      </section>
+
+      <section class="sintesi-section sintesi-risk sintesi-risk-final">
+        <header class="sintesi-section-head">
+          <p class="sintesi-kicker">3 · Riscos i resposta del model</p>
+          <h2>Viable no vol dir sense risc: vol dir preparat per gestionar-lo</h2>
+          <p>El projecte reconeix els punts crítics principals i planteja respostes realistes. Aquesta mirada reforça la credibilitat de MESCLARI perquè demostra capacitat de gestió, no només ambició.</p>
+        </header>
+
+        <div class="sintesi-risk-grid">
+          <article class="risk-card"><h3>Estacionalitat</h3><p>La demanda pot variar molt entre temporada baixa i temporada alta.</p><p><strong>Resposta:</strong> estructura flexible, reforç estacional i ajust de compres, personal i horaris.</p></article>
+          <article class="risk-card response"><h3>Inversió inicial</h3><p>Una proposta premium exigeix reforma, equipament i imatge cuidada.</p><p><strong>Resposta:</strong> pressupost controlat, priorització de partides i marge de seguretat financer.</p></article>
+          <article class="risk-card"><h3>Exigència del client</h3><p>El client de gamma alta espera regularitat, qualitat i experiència completa.</p><p><strong>Resposta:</strong> protocols de servei, coordinació cuina-sala i formació constant de l’equip.</p></article>
+          <article class="risk-card response"><h3>Pressió de costos</h3><p>El producte de qualitat pot tensionar marges si no es controla bé.</p><p><strong>Resposta:</strong> escandalls actualitzats, rotació estacional, control de mermes i lectura de rendibilitat per format.</p></article>
+        </div>
+      </section>
+
+      <section class="sintesi-section sintesi-closing sintesi-final-answer">
+        <div class="sintesi-final-answer-box">
+          <p class="sintesi-kicker">4 · Conclusió definitiva</p>
+          <h2>Sí, MESCLARI és viable.</h2>
+          <p>MESCLARI és viable perquè presenta una proposta amb identitat pròpia, encaix de mercat, oferta gastronòmica coherent, espai aplicable, servei amb valor diferencial i una estructura econòmica pensada per ser controlada.</p>
+          <p>La seva viabilitat no es basa en imaginar un escenari perfecte, sinó en haver previst com funcionarà el restaurant, quins riscos tindrà i com es podran gestionar. Per això, MESCLARI no només es pot presentar com una idea atractiva, sinó com un projecte professional, realista i defensable.</p>
+          <div class="sintesi-close-highlights"><span>Sí és viable</span><span>Coherent amb la gamma</span><span>Preparat per defensar-se</span></div>
+        </div>
+      </section>
+
+      <section class="sintesi-remat sintesi-remat-final" id="sintesi-remat">
+        <p>MESCLARI no només és una idea atractiva: és un projecte viable, coherent i preparat per ser defensat.</p>
+      </section>
+    </main>
 
     <footer class="home-footer">
       <p>MESCLARI · Síntesi executiva preparada per defensa final i desenvolupament complet.</p>
@@ -849,6 +513,4 @@
 
     <script src="script.js"></script>
   </body>
-  
 </html>
-
