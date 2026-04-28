@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MESCLARI · Visió general</title>
-    <meta name="description" content="Visió general de MESCLARI: lectura executiva del model, posicionament, coherència i arquitectura completa del projecte." />
+    <title>MESCLARI · VISIÓ GENERAL</title>
+    <meta name="description" content="Visió general de MESCLARI: lectura estructurada del model, claus estratègiques i coherència global del projecte." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -12,11 +12,16 @@
 
     <style>
       /* =========================================================
-         MESCLARI · VISIÓ GENERAL · VERSIÓ PREMIUM
-         CSS integrat per mantenir el mateix nivell visual que la home
+         MESCLARI · VISIÓ GENERAL
+         Adaptació visual premium sense alterar el contingut base
       ========================================================= */
 
-      .visio-page {
+      .visio-page-premium,
+      .visio-page-premium * {
+        box-sizing: border-box;
+      }
+
+      .visio-page-premium {
         --mesclari-terracotta: #c25e3c;
         --mesclari-blue: #1e2d3b;
         --mesclari-ink: #233849;
@@ -25,48 +30,45 @@
         --mesclari-sand: #d8cbb2;
         --mesclari-olive: #6e8b74;
         --mesclari-line: rgba(30, 45, 59, 0.12);
-        --mesclari-card: rgba(255, 255, 255, 0.74);
+        --mesclari-line-soft: rgba(30, 45, 59, 0.08);
+        --mesclari-panel: rgba(255, 255, 255, 0.76);
+        --mesclari-panel-strong: rgba(255, 255, 255, 0.92);
+        --mesclari-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+
         margin: 0;
-        background:
-          radial-gradient(circle at 10% 0%, rgba(194, 94, 60, 0.12), transparent 32rem),
-          radial-gradient(circle at 92% 7%, rgba(110, 139, 116, 0.12), transparent 30rem),
-          linear-gradient(180deg, rgba(244, 233, 220, 0.8), rgba(255, 255, 255, 0.98));
+        font-family: "Inter", sans-serif;
         color: var(--mesclari-blue);
+        background:
+          radial-gradient(circle at 8% 5%, rgba(194, 94, 60, 0.16), transparent 31rem),
+          radial-gradient(circle at 92% 8%, rgba(110, 139, 116, 0.12), transparent 28rem),
+          linear-gradient(180deg, rgba(244, 233, 220, 0.82), rgba(255, 255, 255, 0.98));
       }
 
-      .vg-main-premium,
-      .vg-main-premium * {
-        box-sizing: border-box;
-      }
-
-      .vg-main-premium {
+      .visio-page-premium .vg-main-premium {
         width: 100%;
-        padding: clamp(6rem, 8vw, 7.5rem) 0 0;
-        overflow-x: hidden;
+        padding: clamp(6.7rem, 8vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+        overflow: hidden;
       }
 
-      .vg-main-premium p {
+      .visio-page-premium .vg-main-premium p {
         line-height: 1.72;
       }
 
-      .vg-main-premium h1,
-      .vg-main-premium h2,
-      .vg-main-premium h3,
-      .vg-main-premium h4 {
+      .visio-page-premium .vg-main-premium h1,
+      .visio-page-premium .vg-main-premium h2,
+      .visio-page-premium .vg-main-premium h3,
+      .visio-page-premium .vg-main-premium h4 {
         font-family: "Cormorant Garamond", serif;
       }
 
-      .vg-shell,
-      .vg-section,
-      .vg-hero-premium {
-        width: min(1280px, calc(100% - 2rem));
-        margin-inline: auto;
+      .visio-page-premium .vg-shell {
+        width: min(1220px, calc(100% - 2rem));
+        margin: 0 auto;
       }
 
-      .vg-kicker,
-      .vg-section-kicker,
-      .vg-hero-kicker {
-        margin: 0 0 0.8rem;
+      .visio-page-premium .vg-kicker,
+      .visio-page-premium .home-section-kicker {
+        margin: 0 0 0.85rem;
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.16em;
@@ -74,667 +76,435 @@
         color: var(--mesclari-terracotta);
       }
 
-      /* NAV · coherència amb la home */
-      .nav .brand-mini {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.72rem;
-      }
-
-      .nav .nav-logo {
-        width: 42px !important;
-        height: 42px !important;
-        object-fit: contain;
-        border-radius: 0.55rem;
-        background: rgba(244, 233, 220, 0.92);
-        box-shadow: 0 6px 18px rgba(30, 45, 59, 0.12);
-      }
-
-      .nav .brand-name {
-        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
-        letter-spacing: 0.13em;
-        line-height: 1;
-      }
-
       /* HERO */
-      .vg-hero-premium {
-        padding-bottom: clamp(3rem, 6vw, 5rem);
-      }
 
-      .vg-hero-kicker {
-        text-align: center;
-      }
-
-      .vg-hero-shell {
-        display: grid;
-        grid-template-columns: minmax(370px, 0.92fr) minmax(0, 1.08fr);
-        gap: clamp(1rem, 2vw, 1.5rem);
-        padding: clamp(0.8rem, 1.6vw, 1.15rem);
-        border-radius: 2.3rem;
-        background: rgba(255, 255, 255, 0.62);
-        border: 1px solid rgba(30, 45, 59, 0.09);
-        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
-      }
-
-      .vg-brand-panel {
+      .visio-page-premium .vg-opening-premium {
         position: relative;
-        min-height: 560px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: clamp(1.4rem, 3vw, 2.3rem);
-        padding: clamp(1.7rem, 2.8vw, 2.7rem);
-        border-radius: 1.9rem;
+        width: min(1220px, calc(100% - 2rem));
+        margin: 0 auto clamp(2.4rem, 4vw, 3.8rem);
+        padding: clamp(0.85rem, 1.6vw, 1.1rem);
+        border-radius: 2.4rem;
         background:
-          radial-gradient(circle at 50% 22%, rgba(244, 233, 220, 0.11), transparent 19rem),
-          linear-gradient(160deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
-          var(--mesclari-blue);
-        color: var(--mesclari-beige);
-        overflow: hidden;
-        text-align: center;
-      }
-
-      .vg-brand-panel::before {
-        content: "";
-        position: absolute;
-        inset: 1.2rem;
-        border: 1px solid rgba(244, 233, 220, 0.1);
-        border-radius: 1.45rem;
-        pointer-events: none;
-      }
-
-      .vg-brand-panel::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 47%;
-        width: clamp(18rem, 31vw, 28rem);
-        height: clamp(18rem, 31vw, 28rem);
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background: rgba(244, 233, 220, 0.045);
-        border: 1px solid rgba(244, 233, 220, 0.07);
-        pointer-events: none;
-      }
-
-      .vg-brand-mark {
-        position: relative;
-        z-index: 2;
-        width: clamp(245px, 21vw, 330px);
-        aspect-ratio: 1 / 1;
-        display: grid;
-        place-items: center;
-        padding: clamp(1.2rem, 2.2vw, 2rem);
-        border-radius: 50%;
-        background:
-          radial-gradient(circle, rgba(244, 233, 220, 0.12), rgba(244, 233, 220, 0.035) 64%, transparent 65%),
-          rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        box-shadow:
-          0 24px 70px rgba(0, 0, 0, 0.18),
-          inset 0 0 0 1px rgba(244, 233, 220, 0.06);
-      }
-
-      .vg-brand-mark::before {
-        content: "";
-        position: absolute;
-        inset: 1.1rem;
-        border-radius: 50%;
-        border: 1px solid rgba(244, 233, 220, 0.16);
-      }
-
-      .vg-brand-logo {
-        position: relative;
-        z-index: 2;
-        display: block;
-        width: clamp(185px, 16.5vw, 255px);
-        height: auto;
-        filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
-      }
-
-      .vg-brand-title {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .vg-brand-title span {
-        display: inline-flex;
-        margin-bottom: 0.9rem;
-        color: var(--mesclari-sand);
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .vg-brand-title strong {
-        display: block;
-        width: 100%;
-        margin: 0;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3.05rem, 4.7vw, 5rem);
-        line-height: 0.94;
-        letter-spacing: -0.045em;
-        color: #fff;
-        text-align: center;
-        white-space: nowrap;
-      }
-
-      .vg-brand-title p {
-        max-width: 34rem;
-        margin: 1rem 0 0;
-        color: rgba(244, 233, 220, 0.88);
-        font-size: clamp(1.02rem, 1.35vw, 1.18rem);
-      }
-
-      .vg-brand-meta {
-        position: relative;
-        z-index: 2;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
-        width: min(100%, 390px);
-      }
-
-      .vg-brand-meta span {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        min-height: 42px;
-        padding: 0.65rem 0.8rem;
-        border-radius: 999px;
-        background: rgba(244, 233, 220, 0.08);
-        border: 1px solid rgba(244, 233, 220, 0.11);
-        color: rgba(244, 233, 220, 0.9);
-        font-size: 0.84rem;
-        font-weight: 700;
-      }
-
-      .vg-editorial-panel {
-        position: relative;
-        min-height: 560px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: clamp(2rem, 4vw, 4.4rem);
-        border-radius: 1.9rem;
-        background: rgba(255, 255, 255, 0.62);
-        border: 1px solid rgba(30, 45, 59, 0.07);
+          linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 233, 220, 0.72));
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: var(--mesclari-shadow);
         overflow: hidden;
       }
 
-      .vg-editorial-panel::before {
-        content: "VISIÓ";
+      .visio-page-premium .vg-opening-premium::before {
+        content: "VISIÓ GENERAL";
         position: absolute;
-        right: -0.4rem;
-        top: 1.1rem;
+        right: -1.2rem;
+        top: 0.4rem;
+        z-index: 0;
         font-family: "Inter", sans-serif;
-        font-size: clamp(5rem, 11vw, 10rem);
+        font-size: clamp(3.8rem, 8vw, 8.4rem);
         font-weight: 900;
-        line-height: 0.8;
-        letter-spacing: -0.08em;
-        color: rgba(30, 45, 59, 0.04);
+        letter-spacing: -0.07em;
+        color: rgba(30, 45, 59, 0.045);
         pointer-events: none;
       }
 
-      .vg-editorial-panel > * {
+      .visio-page-premium .vg-opening-grid {
         position: relative;
         z-index: 2;
-      }
-
-      .vg-editorial-panel h1 {
-        max-width: 880px;
-        margin: 0;
-        font-size: clamp(2.8rem, 5vw, 5.4rem);
-        line-height: 0.93;
-        letter-spacing: -0.055em;
-        color: var(--mesclari-blue);
-      }
-
-      .vg-editorial-panel .lead {
-        max-width: 760px;
-        margin: 1.25rem 0 0;
-        color: var(--mesclari-ink-soft);
-        font-size: clamp(1.03rem, 1.35vw, 1.18rem);
-      }
-
-      .vg-cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
-        margin-top: 1.7rem;
-      }
-
-      .vg-cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 48px;
-        padding: 0.85rem 1.25rem;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 800;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .vg-cta:hover {
-        transform: translateY(-2px);
-      }
-
-      .vg-cta.primary {
-        background: var(--mesclari-terracotta);
-        color: #fff;
-        box-shadow: 0 12px 28px rgba(194, 94, 60, 0.22);
-      }
-
-      .vg-cta.secondary {
-        background: rgba(30, 45, 59, 0.06);
-        color: var(--mesclari-blue);
-        border: 1px solid rgba(30, 45, 59, 0.12);
-      }
-
-      .vg-hero-summary {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.8rem;
-        margin-top: 1.75rem;
-      }
-
-      .vg-hero-summary article {
-        padding: 1rem;
-        border-radius: 1.1rem;
-        background: rgba(30, 45, 59, 0.045);
-        border: 1px solid rgba(30, 45, 59, 0.08);
-      }
-
-      .vg-hero-summary span {
-        display: inline-flex;
-        margin-bottom: 0.45rem;
-        color: var(--mesclari-terracotta);
-        font-size: 0.72rem;
-        font-weight: 900;
-        letter-spacing: 0.12em;
-      }
-
-      .vg-hero-summary p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-        font-size: 0.94rem;
-      }
-
-      /* SECCIONES */
-      .vg-section {
-        padding: clamp(3rem, 6vw, 5.8rem) 0;
-      }
-
-      .vg-section-head {
-        max-width: 940px;
-        margin: 0 auto clamp(1.8rem, 3vw, 2.5rem);
-        text-align: center;
-      }
-
-      .vg-section-head h2 {
-        margin: 0;
-        font-size: clamp(2.5rem, 5vw, 4.8rem);
-        line-height: 0.96;
-        letter-spacing: -0.045em;
-        color: var(--mesclari-blue);
-      }
-
-      .vg-section-head p:not(.vg-section-kicker) {
-        max-width: 780px;
-        margin: 1rem auto 0;
-        color: var(--mesclari-ink-soft);
-        font-size: clamp(1rem, 1.2vw, 1.12rem);
-      }
-
-      .vg-two-columns {
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         align-items: stretch;
       }
 
-      .vg-prose-card,
-      .vg-side-card,
-      .vg-editorial-card,
-      .vg-pillar,
-      .vg-route-card,
-      .vg-close-card {
+      .visio-page-premium .vg-opening-copy {
+        display: flex;
+        min-height: 560px;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(2rem, 4vw, 4.2rem);
+        border-radius: 2rem;
+        color: var(--mesclari-beige);
+        background:
+          linear-gradient(150deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
+          var(--mesclari-blue);
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+        overflow: hidden;
+      }
+
+      .visio-page-premium .vg-opening-copy h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(3.35rem, 6.6vw, 6.7rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        color: #fff;
+      }
+
+      .visio-page-premium .vg-brand-word {
+        color: #fff;
+      }
+
+      .visio-page-premium .vg-opening-copy > p:not(.home-section-kicker) {
+        max-width: 760px;
+        margin: clamp(1.2rem, 2vw, 1.65rem) 0 0;
+        font-size: clamp(1rem, 1.2vw, 1.16rem);
+        color: rgba(244, 233, 220, 0.86);
+      }
+
+      .visio-page-premium .vg-opening-media {
+        position: relative;
+        min-height: 560px;
+        margin: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        background: rgba(244, 233, 220, 0.8);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+      }
+
+      .visio-page-premium .vg-opening-media img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        filter: saturate(1.04) contrast(1.02);
+      }
+
+      .visio-page-premium .vg-opening-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, transparent 48%, rgba(30, 45, 59, 0.42)),
+          radial-gradient(circle at top left, rgba(244, 233, 220, 0.16), transparent 24rem);
+        pointer-events: none;
+      }
+
+      .visio-page-premium .vg-executive-note {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: center;
+        padding: clamp(1.3rem, 2vw, 1.8rem);
         border-radius: 1.55rem;
-        background: rgba(255, 255, 255, 0.74);
-        border: 1px solid rgba(30, 45, 59, 0.09);
-        box-shadow: 0 18px 45px rgba(30, 45, 59, 0.07);
+        background: var(--mesclari-panel-strong);
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
       }
 
-      .vg-prose-card {
-        padding: clamp(1.6rem, 3vw, 2.6rem);
+      .visio-page-premium .vg-executive-note h3 {
+        margin: 0;
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        line-height: 1;
+        color: var(--mesclari-blue);
       }
 
-      .vg-prose-card p {
+      .visio-page-premium .vg-executive-note p {
         margin: 0;
         color: var(--mesclari-ink-soft);
-        font-size: clamp(1rem, 1.2vw, 1.08rem);
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
       }
 
-      .vg-prose-card p + p {
+      /* SECCIONES */
+
+      .visio-page-premium .home-block {
+        width: min(1220px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: clamp(3rem, 6vw, 5.6rem) 0;
+      }
+
+      .visio-page-premium .home-section-head {
+        max-width: 900px;
+        margin: 0 auto clamp(1.7rem, 3vw, 2.5rem);
+        text-align: center;
+      }
+
+      .visio-page-premium .home-section-head h2 {
+        margin: 0;
+        font-size: clamp(2.8rem, 5.7vw, 5.5rem);
+        line-height: 0.92;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+      }
+
+      .visio-page-premium .vg-two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(310px, 0.9fr);
+        gap: clamp(1.2rem, 2.5vw, 2rem);
+        align-items: stretch;
+      }
+
+      .visio-page-premium .vg-two-col.align-start {
+        align-items: start;
+      }
+
+      .visio-page-premium .vg-prose {
+        padding: clamp(1.5rem, 3vw, 2.4rem);
+        border-radius: 2rem;
+        background: var(--mesclari-panel);
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+      }
+
+      .visio-page-premium .vg-prose p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.15vw, 1.1rem);
+      }
+
+      .visio-page-premium .vg-prose p + p {
         margin-top: 1rem;
       }
 
-      .vg-side-stack {
+      .visio-page-premium .vg-side-notes,
+      .visio-page-premium .vg-microblocks {
         display: grid;
         gap: 1rem;
       }
 
-      .vg-side-card {
-        padding: clamp(1.2rem, 2vw, 1.55rem);
+      .visio-page-premium .vg-side-notes article,
+      .visio-page-premium .vg-microblocks article {
+        padding: clamp(1.2rem, 2vw, 1.65rem);
+        border-radius: 1.55rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.55));
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.06);
       }
 
-      .vg-side-card h3,
-      .vg-side-card h4,
-      .vg-editorial-card h3,
-      .vg-editorial-card h4,
-      .vg-pillar h3,
-      .vg-pillar h4,
-      .vg-route-card h3,
-      .vg-close-card h3 {
-        margin: 0 0 0.6rem;
-        font-size: clamp(1.45rem, 2.2vw, 2rem);
-        line-height: 1.02;
+      .visio-page-premium .vg-side-notes h4,
+      .visio-page-premium .vg-microblocks h4 {
+        margin: 0 0 0.55rem;
+        font-size: clamp(1.45rem, 2.1vw, 1.95rem);
+        line-height: 1;
         color: var(--mesclari-blue);
       }
 
-      .vg-side-card p,
-      .vg-editorial-card p,
-      .vg-pillar p,
-      .vg-route-card p,
-      .vg-close-card p {
+      .visio-page-premium .vg-side-notes p,
+      .visio-page-premium .vg-microblocks p {
         margin: 0;
         color: var(--mesclari-ink-soft);
       }
 
-      .vg-side-card strong {
-        display: inline-flex;
-        margin-bottom: 0.55rem;
-        color: var(--mesclari-terracotta);
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
+      /* PER QUÈ TÉ SENTIT */
+
+      .visio-page-premium .vg-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(1rem, 2vw, 1.4rem);
       }
 
-      .vg-section-contrast {
-        width: min(1280px, calc(100% - 2rem));
-        padding: clamp(2rem, 4vw, 3.2rem);
-        border-radius: 2.2rem;
+      .visio-page-premium .vg-editorial-card {
+        position: relative;
+        min-height: 330px;
+        padding: clamp(1.5rem, 2.4vw, 2.15rem);
+        border-radius: 1.85rem;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+        overflow: hidden;
+      }
+
+      .visio-page-premium .vg-editorial-card::before {
+        content: "";
+        position: absolute;
+        left: 1.45rem;
+        top: 1.45rem;
+        width: 2.7rem;
+        height: 0.18rem;
+        border-radius: 99px;
+        background: var(--mesclari-terracotta);
+      }
+
+      .visio-page-premium .vg-editorial-card h4 {
+        margin: 2rem 0 0.8rem;
+        font-size: clamp(1.75rem, 2.8vw, 2.55rem);
+        line-height: 0.98;
+        color: var(--mesclari-blue);
+      }
+
+      .visio-page-premium .vg-editorial-card p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .visio-page-premium .vg-editorial-card p + p {
+        margin-top: 0.9rem;
+      }
+
+      /* PILARS */
+
+      .visio-page-premium .vg-pillars-intro {
+        max-width: 760px;
+        margin: -1rem auto 2rem;
+        color: var(--mesclari-ink-soft);
+        text-align: center;
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
+      }
+
+      .visio-page-premium .vg-pillars-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        grid-template-areas:
+          "main second"
+          "main third"
+          "main fourth";
+        gap: clamp(1rem, 1.7vw, 1.35rem);
+      }
+
+      .visio-page-premium .vg-pillar {
+        position: relative;
+        padding: clamp(1.35rem, 2.2vw, 1.9rem);
+        border-radius: 1.65rem;
         background:
-          linear-gradient(135deg, rgba(244, 233, 220, 0.86), rgba(255, 255, 255, 0.7));
-        border: 1px solid rgba(30, 45, 59, 0.1);
-        box-shadow: 0 20px 60px rgba(30, 45, 59, 0.08);
+          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.52));
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
       }
 
-      .vg-grid-4 {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: clamp(1rem, 1.6vw, 1.35rem);
-      }
-
-      .vg-grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(1rem, 1.6vw, 1.35rem);
-      }
-
-      .vg-editorial-card {
-        min-height: 260px;
-        padding: clamp(1.25rem, 2vw, 1.7rem);
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 233, 220, 0.5));
-      }
-
-      .vg-editorial-card span,
-      .vg-pillar span,
-      .vg-route-card span {
-        display: inline-flex;
-        margin-bottom: 0.8rem;
-        color: var(--mesclari-terracotta);
-        font-size: 0.75rem;
-        font-weight: 900;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      .vg-editorial-card p + p {
-        margin-top: 0.75rem;
-      }
-
-      .vg-pillar-layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-        grid-template-rows: repeat(2, minmax(220px, auto));
-        gap: clamp(1rem, 1.6vw, 1.35rem);
-      }
-
-      .vg-pillar {
-        padding: clamp(1.3rem, 2.2vw, 1.85rem);
-      }
-
-      .vg-pillar.main {
-        grid-row: 1 / span 2;
+      .visio-page-premium .vg-pillar.main {
+        grid-area: main;
         display: flex;
+        min-height: 520px;
         flex-direction: column;
         justify-content: flex-end;
-        padding: clamp(1.8rem, 3.5vw, 3.2rem);
-        background:
-          linear-gradient(160deg, rgba(30, 45, 59, 0.97), rgba(35, 56, 73, 0.92));
         color: var(--mesclari-beige);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .vg-pillar.main::after {
-        content: "01";
-        position: absolute;
-        right: 1rem;
-        top: 0.5rem;
-        font-size: clamp(7rem, 14vw, 12rem);
-        font-weight: 900;
-        letter-spacing: -0.08em;
-        color: rgba(244, 233, 220, 0.055);
-        line-height: 1;
-      }
-
-      .vg-pillar.main h3,
-      .vg-pillar.main h4 {
-        color: #fff;
-        position: relative;
-        z-index: 2;
-        font-size: clamp(2.2rem, 4vw, 4rem);
-        letter-spacing: -0.045em;
-      }
-
-      .vg-pillar.main span,
-      .vg-pillar.main p {
-        position: relative;
-        z-index: 2;
-      }
-
-      .vg-pillar.main p {
-        color: rgba(244, 233, 220, 0.86);
-        max-width: 680px;
-      }
-
-      .vg-route-section {
-        padding-top: clamp(2.5rem, 5vw, 4.8rem);
-      }
-
-      .vg-route-card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-height: 230px;
-        padding: clamp(1.25rem, 2vw, 1.7rem);
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      }
-
-      .vg-route-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 22px 56px rgba(30, 45, 59, 0.12);
-        border-color: rgba(194, 94, 60, 0.26);
-      }
-
-      .vg-route-card small {
-        margin-top: auto;
-        padding-top: 1rem;
-        color: var(--mesclari-terracotta);
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .vg-close-card {
-        position: relative;
-        padding: clamp(2rem, 4vw, 4rem);
-        overflow: hidden;
         background:
-          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92)),
-          var(--mesclari-blue);
-        color: var(--mesclari-beige);
+          radial-gradient(circle at top right, rgba(194, 94, 60, 0.22), transparent 18rem),
+          linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
       }
 
-      .vg-close-card::after {
-        content: "MESCLARI";
-        position: absolute;
-        right: -0.8rem;
-        bottom: -1.8rem;
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(5rem, 12vw, 11rem);
-        line-height: 1;
-        letter-spacing: -0.06em;
-        color: rgba(244, 233, 220, 0.045);
-        pointer-events: none;
-      }
+      .visio-page-premium .vg-pillar:nth-child(2) { grid-area: second; }
+      .visio-page-premium .vg-pillar:nth-child(3) { grid-area: third; }
+      .visio-page-premium .vg-pillar:nth-child(4) { grid-area: fourth; }
 
-      .vg-close-card h2 {
-        position: relative;
-        z-index: 2;
-        max-width: 900px;
-        margin: 0;
-        color: #fff;
-        font-size: clamp(2.7rem, 6vw, 5.8rem);
-        line-height: 0.92;
-        letter-spacing: -0.055em;
-      }
-
-      .vg-close-card p {
-        position: relative;
-        z-index: 2;
-        max-width: 780px;
-        margin: 1.2rem 0 0;
-        color: rgba(244, 233, 220, 0.86);
-        font-size: clamp(1rem, 1.25vw, 1.12rem);
-      }
-
-      .vg-close-tags {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-top: 1.6rem;
-      }
-
-      .vg-close-tags span {
+      .visio-page-premium .vg-pillar span {
         display: inline-flex;
-        padding: 0.7rem 1rem;
-        border-radius: 999px;
-        background: rgba(244, 233, 220, 0.1);
-        border: 1px solid rgba(244, 233, 220, 0.17);
+        width: fit-content;
+        margin-bottom: 0.85rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+      }
+
+      .visio-page-premium .vg-pillar.main span {
+        color: var(--mesclari-sand);
+      }
+
+      .visio-page-premium .vg-pillar h4 {
+        margin: 0 0 0.7rem;
+        font-size: clamp(1.65rem, 3vw, 2.65rem);
+        line-height: 0.96;
+        color: var(--mesclari-blue);
+      }
+
+      .visio-page-premium .vg-pillar.main h4 {
+        max-width: 620px;
+        font-size: clamp(2.4rem, 5vw, 5.1rem);
         color: #fff;
-        font-size: 0.88rem;
-        font-weight: 800;
       }
 
-      /* FOOTER */
-      .visio-page .home-footer {
-        margin-top: clamp(2.5rem, 5vw, 4rem);
+      .visio-page-premium .vg-pillar p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
       }
 
-      /* RESPONSIVE */
-      @media (max-width: 1100px) {
-        .vg-hero-shell,
-        .vg-two-columns,
-        .vg-pillar-layout {
+      .visio-page-premium .vg-pillar.main p {
+        max-width: 640px;
+        color: rgba(244, 233, 220, 0.86);
+      }
+
+      /* TANCAMENT */
+
+      .visio-page-premium .vg-page-close {
+        width: min(1220px, calc(100% - 2rem));
+        margin: clamp(0.5rem, 2vw, 1.5rem) auto 0;
+        padding: clamp(2rem, 4vw, 3.4rem);
+        border-radius: 2rem;
+        background:
+          linear-gradient(135deg, rgba(194, 94, 60, 0.12), rgba(30, 45, 59, 0.07)),
+          rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--mesclari-line-soft);
+        box-shadow: 0 18px 48px rgba(30, 45, 59, 0.07);
+        text-align: center;
+      }
+
+      .visio-page-premium .vg-page-close p {
+        max-width: 880px;
+        margin: 0 auto;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        color: var(--mesclari-blue);
+      }
+
+      /* Responsive */
+
+      @media (max-width: 1080px) {
+        .visio-page-premium .vg-opening-grid,
+        .visio-page-premium .vg-two-col,
+        .visio-page-premium .vg-pillars-layout {
           grid-template-columns: 1fr;
+          grid-template-areas: none;
         }
 
-        .vg-brand-panel,
-        .vg-editorial-panel {
+        .visio-page-premium .vg-pillar.main,
+        .visio-page-premium .vg-pillar:nth-child(2),
+        .visio-page-premium .vg-pillar:nth-child(3),
+        .visio-page-premium .vg-pillar:nth-child(4) {
+          grid-area: auto;
+        }
+
+        .visio-page-premium .vg-opening-copy,
+        .visio-page-premium .vg-opening-media,
+        .visio-page-premium .vg-pillar.main {
           min-height: auto;
         }
 
-        .vg-grid-4,
-        .vg-grid-3,
-        .vg-hero-summary {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .vg-pillar.main {
-          grid-row: auto;
-          min-height: 360px;
+        .visio-page-premium .vg-opening-media {
+          min-height: 380px;
         }
       }
 
-      @media (max-width: 740px) {
-        .vg-shell,
-        .vg-section,
-        .vg-section-contrast,
-        .vg-hero-premium {
-          width: min(100% - 1rem, 1280px);
+      @media (max-width: 780px) {
+        .visio-page-premium .vg-main-premium {
+          padding-top: 5.8rem;
         }
 
-        .vg-main-premium {
-          padding-top: 5.7rem;
+        .visio-page-premium .vg-opening-premium,
+        .visio-page-premium .home-block,
+        .visio-page-premium .vg-page-close {
+          width: min(100% - 1rem, 1220px);
         }
 
-        .vg-hero-shell {
-          padding: 0.75rem;
-          border-radius: 1.55rem;
-        }
-
-        .vg-brand-panel,
-        .vg-editorial-panel,
-        .vg-close-card {
+        .visio-page-premium .vg-opening-copy,
+        .visio-page-premium .vg-prose,
+        .visio-page-premium .vg-section-contrast,
+        .visio-page-premium .vg-page-close {
           padding: 1.35rem;
-          border-radius: 1.35rem;
+          border-radius: 1.45rem;
         }
 
-        .vg-brand-title strong {
-          font-size: clamp(2.8rem, 15vw, 4.2rem);
+        .visio-page-premium .vg-opening-copy h1 {
+          font-size: clamp(2.9rem, 14vw, 4.8rem);
         }
 
-        .vg-editorial-panel h1 {
-          font-size: clamp(2.3rem, 12vw, 3.6rem);
-        }
-
-        .vg-grid-4,
-        .vg-grid-3,
-        .vg-hero-summary,
-        .vg-brand-meta {
+        .visio-page-premium .vg-cards-grid {
           grid-template-columns: 1fr;
+        }
+
+        .visio-page-premium .vg-executive-note {
+          grid-template-columns: 1fr;
+        }
+
+        .visio-page-premium .home-section-head h2 {
+          font-size: clamp(2.35rem, 12vw, 4rem);
         }
       }
     </style>
   </head>
 
-  <body class="visio-page">
+  <body class="visio-page visio-page-premium">
     <nav class="nav">
       <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
         <span class="brand-switch-track">
@@ -758,242 +528,141 @@
       </ul>
     </nav>
 
-    <main class="vg-main-premium">
-      <header class="vg-hero-premium" id="visio-obertura">
-        <p class="vg-hero-kicker">Visió general · Lectura executiva del projecte</p>
-
-        <div class="vg-hero-shell">
-          <aside class="vg-brand-panel" aria-label="Marca MESCLARI">
-            <div class="vg-brand-mark">
-              <img src="imaguenes i videos/logo.png" alt="Logo MESCLARI" class="vg-brand-logo" />
-            </div>
-
-            <div class="vg-brand-title">
-              <span>Restaurant gastronòmic contemporani</span>
-              <strong>MESCLARI</strong>
-              <p>Una proposta mediterrània premium amb identitat pròpia, servei cuidat i viabilitat defensable.</p>
-            </div>
-
-            <div class="vg-brand-meta" aria-label="Claus del projecte">
-              <span>Gamma alta</span>
-              <span>Platja d’Aro</span>
-              <span>Sala activa</span>
-              <span>Model viable</span>
-            </div>
+    <main class="home-main vg-main vg-main-premium">
+      <header class="home-block vg-opening vg-opening-premium" id="visio-obertura">
+        <div class="vg-opening-grid">
+          <div class="vg-opening-copy">
+            <p class="home-section-kicker">Concepte i posicionament</p>
+            <h1><span class="vg-brand-word">MESCLARI</span>: una proposta gastronòmica pensada per existir amb sentit, coherència i criteri</h1>
+            <p>MESCLARI neix com un restaurant gastronòmic contemporani de gamma alta, concebut per unir producte, sala, maridatge i identitat en una mateixa direcció. Es planteja com un model complet, amb encaix real al territori i base operativa sòlida.</p>
+          </div>
+          <aside class="vg-opening-media" aria-label="Entorn i marc visual de MESCLARI">
+            <img src="imaguenes i videos/home-mercat-entorn.jpg" alt="Entorn mediterrani associat al model MESCLARI" />
           </aside>
-
-          <section class="vg-editorial-panel" aria-label="Introducció de visió general">
-            <p class="vg-kicker">Concepte i posicionament</p>
-            <h1>Una proposta gastronòmica pensada per existir amb sentit, coherència i criteri.</h1>
-            <p class="lead">MESCLARI neix com un restaurant gastronòmic contemporani de gamma alta, concebut per unir producte, sala, maridatge i identitat en una mateixa direcció. La visió general ordena el projecte i mostra com cada part ajuda a sostenir una proposta realista, diferenciada i preparada per defensar-se.</p>
-
-            <div class="vg-cta-row">
-              <a class="vg-cta primary" href="#que-es-mesclari">Llegir la visió general</a>
-              <a class="vg-cta secondary" href="sintesi-viabilitat.html">Anar a la viabilitat</a>
-            </div>
-
-            <div class="vg-hero-summary" aria-label="Resum executiu de MESCLARI">
-              <article><span>01</span><p>Concepte gastronòmic amb identitat i direcció pròpia.</p></article>
-              <article><span>02</span><p>Experiència completa: cuina, sala, maridatge i atmosfera.</p></article>
-              <article><span>03</span><p>Model ordenat amb lectura realista de mercat i gestió.</p></article>
-            </div>
-          </section>
+          <article class="vg-executive-note">
+            <h3>Síntesi executiva</h3>
+            <p>La força de MESCLARI no depèn d’un únic element, sinó de la coherència entre capes: concepte gastronòmic, mercat, sala, espai i viabilitat.</p>
+          </article>
         </div>
       </header>
 
-      <section class="vg-section" id="que-es-mesclari">
-        <header class="vg-section-head">
-          <p class="vg-section-kicker">1 · Definició del projecte</p>
+      <section class="home-block" id="que-es-mesclari">
+        <div class="home-section-head">
+          <p class="vg-kicker">Lectura inicial</p>
           <h2>Què és MESCLARI?</h2>
-          <p>MESCLARI és una proposta de restauració gastronòmica contemporània de gamma alta, pensada per oferir una experiència completa, cuidada i coherent de principi a fi.</p>
-        </header>
-
-        <div class="vg-two-columns">
-          <article class="vg-prose-card">
-            <p>No es limita a presentar una oferta culinària determinada, sinó que construeix una manera concreta d’entendre l’hospitalitat. La qualitat del producte, el ritme del servei, el maridatge i la identitat visual i sensorial del restaurant treballen de forma integrada.</p>
+        </div>
+        <div class="vg-two-col">
+          <div class="vg-prose">
+            <p>MESCLARI és una proposta de restauració gastronòmica contemporània de gamma alta, pensada per oferir una experiència completa, cuidada i coherent de principi a fi. No es limita a presentar una oferta culinària determinada, sinó que construeix una manera concreta d’entendre l’hospitalitat, on la qualitat del producte, el ritme del servei, el maridatge i la identitat visual i sensorial del restaurant treballen de forma integrada.</p>
             <p>El projecte parteix d’una voluntat clara: oferir una experiència amb personalitat pròpia, capaç de generar valor percebut real sense perdre criteri operatiu. Per això, cuina i sala tenen el mateix pes estratègic i cada decisió respon a una lògica de posicionament, públic objectiu i viabilitat.</p>
             <p>MESCLARI no es construeix només des de la creativitat, sinó des d’una idea de negoci coherent amb l’entorn, la gamma i l’experiència que vol oferir.</p>
-          </article>
-
-          <aside class="vg-side-stack" aria-label="Claus de lectura de MESCLARI">
-            <article class="vg-side-card">
-              <strong>Gamma</strong>
-              <h3>Alta amb criteri</h3>
-              <p>Posicionament definit amb enfocament realista de públic, context i valor percebut.</p>
+          </div>
+          <aside class="vg-side-notes" aria-label="Claus de lectura de MESCLARI">
+            <article>
+              <h4>Gamma alta amb criteri</h4>
+              <p>Posicionament definit amb enfocament realista de públic i context.</p>
             </article>
-            <article class="vg-side-card">
-              <strong>Experiència</strong>
-              <h3>Hospitalitat integrada</h3>
-              <p>Cuina, sala, maridatge i identitat funcionen com a parts d’un mateix sistema.</p>
+            <article>
+              <h4>Hospitalitat integrada</h4>
+              <p>Cuina, sala, maridatge i identitat com a parts d’un mateix sistema.</p>
             </article>
-            <article class="vg-side-card">
-              <strong>Coherència</strong>
-              <h3>Lectura global</h3>
-              <p>El valor de MESCLARI neix de la suma ordenada de totes les capes del model.</p>
+            <article>
+              <h4>Experiència amb coherència global</h4>
+              <p>El valor percebut neix de la suma ordenada de totes les capes del model.</p>
             </article>
           </aside>
         </div>
       </section>
 
-      <section class="vg-section vg-section-contrast" id="posicionament-estrategic">
-        <header class="vg-section-head">
-          <p class="vg-section-kicker">2 · Posicionament estratègic</p>
-          <h2>Una gamma alta defensada des del valor real</h2>
-          <p>MESCLARI no busca competir per volum, sinó per qualitat percebuda, coherència i memorabilitat.</p>
-        </header>
-
-        <div class="vg-grid-3">
-          <article class="vg-editorial-card">
-            <span>Posicionament</span>
-            <h3>Gamma alta amb coherència</h3>
-            <p>El nivell de la proposta respon a l’experiència plantejada i al perfil de client que es vol atraure. La gamma no és decorativa: condiciona servei, producte, espai i comunicació.</p>
-          </article>
-          <article class="vg-editorial-card">
-            <span>Percepció</span>
-            <h3>Valor visible</h3>
-            <p>La qualitat no es comunica només des del discurs, sinó des del producte, el servei, el maridatge, l’espai i la manera d’acompanyar el client durant tota l’experiència.</p>
-          </article>
-          <article class="vg-editorial-card">
-            <span>Model</span>
-            <h3>Equilibri entre idea i gestió</h3>
-            <p>El projecte combina ambició gastronòmica amb lectura professional de l’operativa, la sostenibilitat i la capacitat real d’execució.</p>
-          </article>
+      <section class="home-block" id="posicionament-estrategic">
+        <div class="home-section-head">
+          <p class="vg-kicker">Direcció estratègica</p>
+          <h2>Posicionament estratègic</h2>
+        </div>
+        <div class="vg-two-col align-start">
+          <div class="vg-prose vg-prose-narrow">
+            <p>MESCLARI es posiciona dins del segment premium com una proposta de gamma alta que combina valor experiencial, identitat pròpia i lectura realista del negoci. L’ambició no és competir per volum, sinó per qualitat percebuda, coherència i memorabilitat.</p>
+            <p>La proposta es basa en una doble lectura: experiència gastronòmica singular —amb cuina contemporània, sala amb protagonisme i atmosfera coherent— i model operatiu-econòmic sòlid per sostenir el posicionament en context real.</p>
+            <p>Així, MESCLARI se situa en un espai propi: exigent i diferencial, però no teòric. El projecte transmet qualitat, criteri i consistència en la forma i en el fons.</p>
+          </div>
+          <div class="vg-microblocks">
+            <article>
+              <h4>Gamma alta amb coherència</h4>
+              <p>El nivell de la proposta respon a l’experiència plantejada i al perfil de client que es vol atraure.</p>
+            </article>
+            <article>
+              <h4>Valor percebut real</h4>
+              <p>La qualitat no es comunica només des del discurs, sinó des del producte, el servei, el maridatge i l’espai.</p>
+            </article>
+            <article>
+              <h4>Equilibri entre idea i model</h4>
+              <p>MESCLARI combina ambició gastronòmica amb lectura professional de l’operativa i la sostenibilitat.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="vg-section" id="per-que-te-sentit">
-        <header class="vg-section-head">
-          <p class="vg-section-kicker">3 · Sentit del projecte</p>
+      <section class="home-block" id="per-que-te-sentit">
+        <div class="home-section-head">
+          <p class="vg-kicker">Justificació del model</p>
           <h2>Per què té sentit?</h2>
-          <p>El projecte és defensable perquè connecta oportunitat de mercat, identitat, experiència i estructura de negoci sense perdre coherència.</p>
-        </header>
-
-        <div class="vg-grid-4">
+        </div>
+        <div class="vg-cards-grid">
           <article class="vg-editorial-card">
-            <span>Territori</span>
-            <h3>Encaix territorial</h3>
-            <p>Platja d’Aro combina afluència turística, activitat comercial, client de cap de setmana i capacitat d’atreure un públic que valora experiència, ubicació i qualitat percebuda.</p>
+            <h4>Encaix territorial</h4>
+            <p>MESCLARI s’insereix en un context favorable. Platja d’Aro combina afluència turística, activitat comercial, públic de cap de setmana i capacitat d’atreure un client que valora experiència, ubicació i qualitat percebuda.</p>
+            <p>El projecte no depèn només del visitant: també busca vincle amb client local i públic recurrent. Aquesta doble lectura reforça la solidesa del model i redueix dependències circumstancials.</p>
           </article>
           <article class="vg-editorial-card">
-            <span>Mercat</span>
-            <h3>Oportunitat concreta</h3>
-            <p>MESCLARI respon a l’oportunitat d’articular una proposta diferencial, amb personalitat i nivell, en un entorn amb marge per a experiències més completes.</p>
+            <h4>Oportunitat de mercat</h4>
+            <p>MESCLARI respon a una oportunitat concreta: articular una proposta diferencial, amb personalitat i nivell, en un entorn amb marge per a experiències més completes.</p>
+            <p>No busca qualsevol espai de mercat, sinó un lloc definit: el d’un restaurant capaç de combinar identitat, excel·lència de servei i lectura contemporània de la restauració premium.</p>
           </article>
           <article class="vg-editorial-card">
-            <span>Diferenciació</span>
-            <h3>Valor acumulat</h3>
-            <p>El valor diferencial no depèn d’un reclam puntual, sinó de la suma coherent de gastronomia, sala, maridatge, ritme de servei i atmosfera pròpia.</p>
+            <h4>Valor diferencial</h4>
+            <p>El valor diferencial de MESCLARI no es concentra en un únic element, sinó en la suma coherent de factors: proposta gastronòmica, sala, maridatge, ritme de servei i atmosfera pròpia.</p>
+            <p>Això evita dependre d’un reclam puntual i reforça una estructura de valor més sòlida i més difícil de replicar.</p>
           </article>
           <article class="vg-editorial-card">
-            <span>Solidesa</span>
-            <h3>Coherència transversal</h3>
-            <p>La relació entre posicionament, gamma, públic objectiu, experiència, espai, sala i estructura econòmica converteix MESCLARI en una proposta defensable.</p>
+            <h4>Coherència transversal</h4>
+            <p>Un dels motius principals pels quals MESCLARI té sentit és la coherència entre les seves parts: posicionament, gamma, públic objectiu, experiència, espai, sala i estructura de negoci.</p>
+            <p>Aquesta coherència transversal converteix MESCLARI en una proposta defensable, perquè està pensada amb lògica, continuïtat i criteri professional.</p>
           </article>
         </div>
       </section>
 
-      <section class="vg-section vg-section-contrast" id="pilars-model">
-        <header class="vg-section-head">
-          <p class="vg-section-kicker">4 · Pilars del model</p>
-          <h2>Els quatre pilars que sostenen MESCLARI</h2>
-          <p>Aquests pilars connecten visió, experiència i execució. Són la base que permet llegir el projecte com un model complet.</p>
-        </header>
-
-        <div class="vg-pillar-layout">
+      <section class="home-block" id="pilars-model">
+        <div class="home-section-head">
+          <p class="vg-kicker">Estructura del model</p>
+          <h2>Els pilars del model</h2>
+        </div>
+        <p class="vg-pillars-intro">Quatre pilars que sostenen el model i connecten visió, experiència i execució.</p>
+        <div class="vg-pillars-layout">
           <article class="vg-pillar main">
             <span>01</span>
-            <h3>Concepte i identitat</h3>
+            <h4>Concepte i identitat</h4>
             <p>MESCLARI es construeix a partir d’una identitat clara i recognoscible. No és una proposta indefinida ni adaptable a qualsevol context, sinó un projecte amb direcció pròpia i criteri coherent.</p>
           </article>
           <article class="vg-pillar">
             <span>02</span>
-            <h3>Oferta i experiència</h3>
+            <h4>Oferta i experiència</h4>
             <p>L’oferta no és només una selecció de plats: és l’eix d’una experiència global on cuina, sala, maridatge i atmosfera treballen coordinadament.</p>
           </article>
           <article class="vg-pillar">
             <span>03</span>
-            <h3>Sala i ritme de servei</h3>
-            <p>La sala forma part activa del valor percebut i dona ritme, ordre i profunditat a l’experiència del client.</p>
+            <h4>Sala i ritme de servei</h4>
+            <p>A MESCLARI, la sala no és secundària. El servei forma part activa del valor percebut i dona ritme, ordre i profunditat a l’experiència del client.</p>
           </article>
           <article class="vg-pillar">
             <span>04</span>
-            <h3>Viabilitat i criteri operatiu</h3>
-            <p>MESCLARI no es defineix només per allò que vol ser, sinó per com es sosté: lectura operativa realista, estructura funcional i base econòmica viable.</p>
+            <h4>Viabilitat i criteri operatiu</h4>
+            <p>MESCLARI no es defineix només per allò que vol ser, sinó per com es sosté: lectura operativa realista, estructura funcional coherent i base econòmica viable sense trencar identitat.</p>
           </article>
         </div>
       </section>
 
-      <section class="vg-section vg-route-section" id="arquitectura-del-projecte">
-        <header class="vg-section-head">
-          <p class="vg-section-kicker">5 · Arquitectura de la web</p>
-          <h2>Recorregut del projecte</h2>
-          <p>La web ordena el dossier digital en peces claras para que la defensa sea fluida: primero se entiende la idea, después el equipo, el mercado, el espacio, la oferta y finalmente la viabilidad.</p>
-        </header>
-
-        <div class="vg-grid-4">
-          <a class="vg-route-card" href="identitat-projecte.html">
-            <span>01</span>
-            <h3>Identitat</h3>
-            <p>Explica la personalitat del projecte, el relat de marca i el llenguatge visual que dona forma a MESCLARI.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="equip-impulsor.html">
-            <span>02</span>
-            <h3>Equip</h3>
-            <p>Presenta l’equip impulsor, els rols principals i la manera com es reparteix la responsabilitat del projecte.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="gestio-organitzacio.html">
-            <span>03</span>
-            <h3>Gestió</h3>
-            <p>Mostra l’organització, l’estructura operativa i les decisions que permeten passar de la idea al funcionament real.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="encaix-mercat.html">
-            <span>04</span>
-            <h3>Mercat</h3>
-            <p>Justifica l’encaix territorial, el públic objectiu i l’oportunitat de diferenciació dins de Platja d’Aro.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="espai-atmosfera.html">
-            <span>05</span>
-            <h3>Espai</h3>
-            <p>Defineix l’atmosfera, els materials, la lectura sensorial i la relació entre local, sala i experiència.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="oferta-gastronomica.html">
-            <span>06</span>
-            <h3>Oferta gastronòmica</h3>
-            <p>Ordena els formats de menú, la proposta culinària, el maridatge i la funció de cada línia dins del model.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <a class="vg-route-card" href="sintesi-viabilitat.html">
-            <span>07</span>
-            <h3>Síntesi de viabilitat</h3>
-            <p>Tanca la defensa amb una lectura clara: per què MESCLARI és coherent, aplicable i viable.</p>
-            <small>Obrir pàgina</small>
-          </a>
-          <article class="vg-route-card" aria-label="Fil conductor del projecte">
-            <span>08</span>
-            <h3>Fil conductor</h3>
-            <p>El recorregut complet segueix una idea simple: concepte clar, aplicació real, experiència diferenciada i viabilitat defensable.</p>
-            <small>Lectura global</small>
-          </article>
-        </div>
-      </section>
-
-      <section class="vg-section" id="tancament-visio">
-        <article class="vg-close-card">
-          <p class="vg-section-kicker">6 · Tancament de la visió general</p>
-          <h2>MESCLARI es presenta com un projecte complet, coherent i preparat per defensar-se.</h2>
-          <p>Aquesta visió general serveix com a mapa de lectura del projecte: resumeix què és MESCLARI, per què té sentit, sobre quins pilars se sosté i com s’organitza la resta de la presentació digital.</p>
-          <div class="vg-close-tags">
-            <span>Concepte clar</span>
-            <span>Model aplicable</span>
-            <span>Experiència premium</span>
-            <span>Viabilitat amb criteri</span>
-          </div>
-        </article>
+      <section class="vg-page-close" aria-label="Tancament de visió general">
+        <p>Una visió general clara: MESCLARI té sentit perquè totes les seves capes treballen en una mateixa direcció.</p>
       </section>
     </main>
 
