@@ -2348,7 +2348,7 @@
         position: relative;
         z-index: 2;
         display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         margin-top: 1rem;
         align-items: stretch;
@@ -2575,6 +2575,8 @@
         grid-template-rows: minmax(0, 1fr) auto !important;
         gap: 0.75rem !important;
         padding: 0.85rem !important;
+        min-width: 0;
+        min-height: clamp(520px, 58vh, 680px);
         background:
           radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.10), transparent 18rem),
           linear-gradient(180deg, rgba(30, 45, 59, 0.96), rgba(35, 56, 73, 0.92)) !important;
@@ -2594,6 +2596,12 @@
         border-radius: 1.2rem !important;
         background: rgba(244, 233, 220, 0.07) !important;
         box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
+      }
+
+      @media (min-width: 1180px) {
+        .mesclari-news-photo img {
+          object-fit: cover !important;
+        }
       }
 
       .mesclari-news-photo figcaption {
