@@ -12,9 +12,11 @@
 
     <style>
       /* =========================================================
-         HOME · MESCLARI · VARIABLES Y BASE
+         HOME · MESCLARI · PORTADA FINAL
+         CSS integrado para que puedas copiar este index.html entero
       ========================================================= */
-      :root {
+
+      .home {
         --mesclari-terracotta: #c25e3c;
         --mesclari-blue: #1e2d3b;
         --mesclari-ink: #233849;
@@ -22,16 +24,12 @@
         --mesclari-beige: #f4e9dc;
         --mesclari-sand: #d8cbb2;
         --mesclari-olive: #6e8b74;
-      }
-
-      body.home {
+        --mesclari-line: rgba(30, 45, 59, 0.12);
+        --mesclari-card: rgba(255, 255, 255, 0.72);
         background:
           radial-gradient(circle at 8% 0%, rgba(194, 94, 60, 0.13), transparent 32rem),
           radial-gradient(circle at 92% 4%, rgba(110, 139, 116, 0.13), transparent 30rem),
           linear-gradient(180deg, rgba(244, 233, 220, 0.78), rgba(255, 255, 255, 0.98));
-        font-family: "Inter", sans-serif;
-        margin: 0;
-        padding: 0;
       }
 
       .home-main,
@@ -44,21 +42,35 @@
         padding: clamp(6rem, 8vw, 7.5rem) 0 0;
         color: var(--mesclari-blue);
         overflow-x: hidden;
+        overflow-y: visible;
       }
 
-      .home-main p { line-height: 1.72; }
-      .home-main a { color: inherit; text-decoration: none; }
+      .home-main p {
+        line-height: 1.72;
+      }
 
-      h1, h2, h3, h4, blockquote {
+      .home-main a {
+        color: inherit;
+      }
+
+      .home-main h1,
+      .home-main h2,
+      .home-main h3,
+      .home-main h4 {
         font-family: "Cormorant Garamond", serif;
       }
 
-      .home-block, .home-hero-premium {
+      .home-shell,
+      .home-block,
+      .home-hero-premium {
         width: min(1280px, calc(100% - 2rem));
         margin-inline: auto;
       }
 
-      .home-section-kicker, .hero-kicker {
+      .home-section-kicker,
+      .hero-kicker,
+      .hero-editorial-kicker,
+      .home-mini-kicker {
         margin: 0 0 0.8rem;
         font-size: 0.78rem;
         font-weight: 800;
@@ -67,23 +79,7 @@
         color: var(--mesclari-terracotta);
       }
 
-      /* =========================================================
-         NAVEGACIÓN SUPERIOR
-      ========================================================= */
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(255,255,255,0.9);
-        backdrop-filter: blur(10px);
-        z-index: 100;
-        border-bottom: 1px solid rgba(30, 45, 59, 0.05);
-      }
-
+      /* NAV · Logo más visible y equilibrado */
       .nav .brand-mini {
         display: inline-flex;
         align-items: center;
@@ -91,8 +87,8 @@
       }
 
       .nav .nav-logo {
-        width: 50px;
-        height: 50px;
+        width: 42px !important;
+        height: 42px !important;
         object-fit: contain;
         border-radius: 0.55rem;
         background: rgba(244, 233, 220, 0.92);
@@ -100,44 +96,2160 @@
       }
 
       .nav .brand-name {
-        font-size: clamp(1.2rem, 1.65vw, 1.7rem);
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 700;
-        letter-spacing: 0.05em;
+        font-size: clamp(1.05rem, 1.4vw, 1.45rem);
+        letter-spacing: 0.13em;
         line-height: 1;
+      }
+
+      /* HERO */
+
+      .home-hero-premium {
+        padding-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .home-hero-premium .hero-kicker {
+        text-align: center;
+      }
+
+      .hero-shell {
+        display: grid;
+        grid-template-columns: minmax(380px, 0.92fr) minmax(0, 1.08fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        padding: clamp(0.8rem, 1.6vw, 1.15rem);
+        border-radius: 2.3rem;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(30, 45, 59, 0.09);
+        box-shadow: 0 24px 70px rgba(30, 45, 59, 0.11);
+      }
+
+      .hero-brand-panel {
+        position: relative;
+        min-height: 560px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(1.5rem, 3vw, 2.4rem);
+        padding: clamp(1.7rem, 2.8vw, 2.7rem);
+        border-radius: 1.9rem;
+        background:
+          radial-gradient(circle at 50% 22%, rgba(244, 233, 220, 0.11), transparent 19rem),
+          linear-gradient(160deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.94)),
+          var(--mesclari-blue);
+        color: var(--mesclari-beige);
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .hero-brand-panel::before {
+        content: "";
+        position: absolute;
+        inset: 1.2rem;
+        border: 1px solid rgba(244, 233, 220, 0.1);
+        border-radius: 1.45rem;
+        pointer-events: none;
+      }
+
+      .hero-brand-panel::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 47%;
+        width: clamp(18rem, 31vw, 28rem);
+        height: clamp(18rem, 31vw, 28rem);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: rgba(244, 233, 220, 0.045);
+        border: 1px solid rgba(244, 233, 220, 0.07);
+        pointer-events: none;
+      }
+
+      .hero-brand-mark {
+        position: relative;
+        z-index: 2;
+        width: clamp(250px, 22vw, 340px);
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+        padding: clamp(1.2rem, 2.2vw, 2rem);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle, rgba(244, 233, 220, 0.12), rgba(244, 233, 220, 0.035) 64%, transparent 65%),
+          rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow:
+          0 24px 70px rgba(0, 0, 0, 0.18),
+          inset 0 0 0 1px rgba(244, 233, 220, 0.06);
+      }
+
+      .hero-brand-mark::before {
+        content: "";
+        position: absolute;
+        inset: 1.1rem;
+        border-radius: 50%;
+        border: 1px solid rgba(244, 233, 220, 0.16);
+      }
+
+      .hero-brand-logo {
+        position: relative;
+        z-index: 2;
+        display: block;
+        width: clamp(190px, 17vw, 265px);
+        height: auto;
+        filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.2));
+      }
+
+      .hero-brand-copy {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-brand-tag {
+        display: inline-flex;
+        margin-bottom: 0.9rem;
+        color: var(--mesclari-sand);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .hero-brand-copy h1 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        font-size: clamp(3.15rem, 4.9vw, 5.15rem);
+        line-height: 0.94;
+        letter-spacing: -0.045em;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        overflow: visible;
+      }
+
+      .hero-brand-subtitle {
+        max-width: 34rem;
+        margin: 1rem 0 0;
+        color: rgba(244, 233, 220, 0.88);
+        font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+      }
+
+      .hero-brand-meta {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        width: min(100%, 380px);
+        margin-top: 1.5rem;
+      }
+
+      .hero-brand-meta span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 42px;
+        padding: 0.65rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(244, 233, 220, 0.08);
+        border: 1px solid rgba(244, 233, 220, 0.11);
+        color: rgba(244, 233, 220, 0.9);
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .hero-editorial-panel {
+        position: relative;
+        min-height: 560px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: clamp(1.7rem, 3.3vw, 3.8rem);
+        border-radius: 1.9rem;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(244, 233, 220, 0.4));
+        border: 1px solid rgba(30, 45, 59, 0.07);
+        overflow: hidden;
+      }
+
+      .hero-editorial-panel::before {
+        content: "MESCLARI";
+        position: absolute;
+        right: -1.8rem;
+        top: 0.8rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4.5rem, 10vw, 9rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+        color: rgba(30, 45, 59, 0.04);
+        pointer-events: none;
+      }
+
+      .hero-editorial-panel h2 {
+        position: relative;
+        z-index: 2;
+        max-width: 830px;
+        margin: 0;
+        font-size: clamp(2.6rem, 5vw, 4.75rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
         color: var(--mesclari-blue);
       }
 
-      .menu {
-        display: flex;
-        gap: 1.5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
+      .hero-editorial-body {
+        position: relative;
+        z-index: 2;
+        max-width: 780px;
+        margin: 1.2rem 0 0;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.18vw, 1.1rem);
       }
 
-      .menu a {
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        color: var(--mesclari-ink-soft);
-        transition: color 0.2s ease;
+      .hero-cta-row {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.65rem;
       }
-      
-      .menu a:hover { color: var(--mesclari-terracotta); }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.85rem 1.25rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 800;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-cta-primary {
+        background: var(--mesclari-terracotta);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(194, 94, 60, 0.22);
+      }
+
+      .hero-cta-secondary {
+        background: rgba(30, 45, 59, 0.055);
+        color: var(--mesclari-blue);
+        border: 1px solid rgba(30, 45, 59, 0.12);
+      }
+
+      .hero-topics {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: 1.65rem;
+      }
+
+      .hero-topic {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 0.62rem 0.9rem;
+        border-radius: 999px;
+        background: rgba(30, 45, 59, 0.055);
+        border: 1px solid rgba(30, 45, 59, 0.08);
+        color: var(--mesclari-ink);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .hero-proof-strip {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.8rem;
+        margin-top: clamp(1.4rem, 2.2vw, 2rem);
+      }
+
+      .hero-proof-strip article {
+        padding: 1rem;
+        border-radius: 1.15rem;
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(30, 45, 59, 0.08);
+      }
+
+      .hero-proof-strip strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.45rem;
+        color: var(--mesclari-blue);
+      }
+
+      .hero-proof-strip p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.93rem;
+      }
+
+      .home-highlights-premium {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .highlight-card {
+        padding: 1.35rem;
+        border-radius: 1.45rem;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(30, 45, 59, 0.08);
+        box-shadow: 0 14px 34px rgba(30, 45, 59, 0.06);
+      }
+
+      .highlight-number {
+        display: inline-flex;
+        margin-bottom: 0.75rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+      }
+
+      .highlight-card h3 {
+        margin: 0 0 0.45rem;
+        font-size: clamp(1.45rem, 2vw, 1.75rem);
+        line-height: 1.05;
+        color: var(--mesclari-blue);
+      }
+
+      .highlight-card p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      /* SECCIONES */
+
+      .home-block {
+        padding: clamp(3rem, 6vw, 5.5rem) 0;
+      }
+
+      .home-section-head {
+        max-width: 920px;
+        margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+      }
+
+      .home-section-head.center {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .home-section-head h2,
+      .home-closure h2 {
+        margin: 0;
+        font-size: clamp(2.5rem, 5vw, 4.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
+        color: var(--mesclari-blue);
+      }
+
+      .home-section-head.center h2,
+      .project-map .home-section-head h2,
+      #eixos-defensa .home-section-head h2 {
+        margin-inline: auto;
+        max-width: 900px;
+      }
+
+      .home-intro {
+        max-width: 860px;
+        margin: 1rem 0 0;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(1rem, 1.2vw, 1.12rem);
+      }
+
+      .center .home-intro {
+        margin-inline: auto;
+      }
+
+      .home-grid {
+        display: grid;
+        gap: clamp(1rem, 1.6vw, 1.3rem);
+      }
+
+      .home-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .home-grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .home-grid.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .home-card,
+      .nav-home-card,
+      .defense-card,
+      .criteria-card {
+        padding: clamp(1.25rem, 2vw, 1.75rem);
+        border-radius: 1.55rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(244, 233, 220, 0.45));
+        border: 1px solid rgba(30, 45, 59, 0.09);
+        box-shadow: 0 18px 44px rgba(30, 45, 59, 0.065);
+      }
+
+      .home-card h3,
+      .home-card h4,
+      .nav-home-card h4,
+      .defense-card h3,
+      .criteria-card h3 {
+        margin: 0 0 0.6rem;
+        font-size: clamp(1.45rem, 2.1vw, 2rem);
+        line-height: 1.02;
+        color: var(--mesclari-blue);
+      }
+
+      .home-card p,
+      .nav-home-card p,
+      .defense-card p,
+      .criteria-card p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .home-card.dark,
+      .defense-card.dark {
+        background:
+          linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
+        color: var(--mesclari-beige);
+      }
+
+      .home-card.dark h3,
+      .home-card.dark h4,
+      .defense-card.dark h3 {
+        color: #fff;
+      }
+
+      .home-card.dark p,
+      .defense-card.dark p {
+        color: rgba(244, 233, 220, 0.84);
+      }
+
+      /* MAPA DE NAVEGACIÓN */
+
+      .project-map {
+        padding: clamp(2rem, 4vw, 3rem);
+        border-radius: 2.2rem;
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92));
+        color: var(--mesclari-beige);
+        box-shadow: 0 26px 78px rgba(30, 45, 59, 0.18);
+      }
+
+      .project-map .home-section-kicker,
+      .project-map .home-section-head h2 {
+        color: #fff;
+      }
+
+      .project-map .home-intro {
+        color: rgba(244, 233, 220, 0.82);
+      }
+
+      .project-map .home-section-head,
+      #eixos-defensa .home-section-head {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .project-map .home-intro,
+      #eixos-defensa .home-intro {
+        margin-inline: auto;
+      }
+
+
+      .nav-home-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 230px;
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .project-map .nav-home-card {
+        background: rgba(244, 233, 220, 0.075);
+        border-color: rgba(244, 233, 220, 0.13);
+        box-shadow: none;
+      }
+
+      .nav-home-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(194, 94, 60, 0.45);
+      }
+
+      .nav-card-number {
+        display: inline-flex;
+        margin-bottom: 1rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+      }
+
+      .project-map .nav-home-card h4 {
+        color: #fff;
+      }
+
+      .project-map .nav-home-card p {
+        color: rgba(244, 233, 220, 0.8);
+      }
+
+      .nav-card-link {
+        margin-top: auto;
+        padding-top: 1rem;
+        color: var(--mesclari-sand);
+        font-size: 0.88rem;
+        font-weight: 800;
+      }
+
+      /* DEFENSA */
+
+      .defense-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: clamp(1rem, 2vw, 1.5rem);
+        align-items: stretch;
+      }
+
+      .defense-statement {
+        padding: clamp(1.7rem, 3.2vw, 3rem);
+        border-radius: 2rem;
+        background:
+          linear-gradient(135deg, rgba(194, 94, 60, 0.92), rgba(194, 94, 60, 0.72));
+        color: #fff;
+        box-shadow: 0 20px 60px rgba(194, 94, 60, 0.18);
+      }
+
+      .defense-statement h2 {
+        margin: 0;
+        font-size: clamp(2.6rem, 5vw, 4.9rem);
+        line-height: 0.94;
+        letter-spacing: -0.045em;
+      }
+
+      .defense-statement p {
+        margin: 1rem 0 0;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .defense-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .defense-card .mini-label,
+      .criteria-card .mini-label {
+        display: inline-flex;
+        margin-bottom: 0.8rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      /* CRITERIS */
+
+      .criteria-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .criteria-card {
+        min-height: 210px;
+      }
+
+      /* TANCAMENT */
+
+      .home-closure {
+        width: min(1280px, calc(100% - 2rem));
+        margin: 0 auto clamp(3rem, 6vw, 5rem);
+        padding: clamp(2rem, 4vw, 4rem);
+        border-radius: 2.2rem;
+        background:
+          linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
+        color: var(--mesclari-beige);
+        box-shadow: 0 28px 85px rgba(30, 45, 59, 0.18);
+        text-align: center;
+      }
+
+      .home-closure .home-section-kicker {
+        color: var(--mesclari-sand);
+      }
+
+      .home-closure h2 {
+        color: #fff;
+      }
+
+      .home-closure .home-intro {
+        margin-inline: auto;
+        color: rgba(244, 233, 220, 0.84);
+      }
+
+      .home-closure-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.85rem;
+        margin-top: 1.6rem;
+      }
+
+      .home-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.85rem 1.25rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      .home-button.primary {
+        background: var(--mesclari-terracotta);
+        color: #fff;
+      }
+
+      .home-button.secondary {
+        background: rgba(244, 233, 220, 0.1);
+        color: #fff;
+        border: 1px solid rgba(244, 233, 220, 0.16);
+      }
+
+
+      /* ===== Ajust portada notícia real ===== */
+      .hero-brand-mark {
+        padding: 1.25rem;
+        border-radius: 1.65rem;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+      }
+
+      .hero-brand-logo {
+        width: clamp(140px, 16vw, 190px);
+      }
+
+      .newsroom-story .hero-editorial-kicker {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-bottom: 0.95rem;
+        padding: 0.38rem 0.74rem;
+        border-radius: 999px;
+        background: rgba(194, 94, 60, 0.09);
+        border: 1px solid rgba(194, 94, 60, 0.16);
+      }
+
+      .newsroom-byline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem 1rem;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(30, 45, 59, 0.55);
+      }
+
+      .newsroom-byline span + span::before {
+        content: "·";
+        margin-right: 1rem;
+        color: rgba(30, 45, 59, 0.35);
+      }
+
+      .newsroom-reality-strip {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 0.95fr;
+        gap: 0.9rem;
+        width: 100%;
+        margin-top: 0.15rem;
+      }
+
+      .newsroom-note,
+      .newsroom-quote {
+        min-height: 100%;
+        padding: 1rem 1.05rem;
+        border-radius: 1.1rem;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid rgba(30, 45, 59, 0.08);
+        box-shadow: 0 12px 28px rgba(30,45,59,0.05);
+      }
+
+      .newsroom-note-label {
+        display: inline-flex;
+        margin-bottom: 0.55rem;
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--mesclari-terracotta);
+      }
+
+      .newsroom-note h3 {
+        margin: 0 0 0.45rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.35rem, 2vw, 1.8rem);
+        line-height: 1.02;
+        color: var(--mesclari-blue);
+      }
+
+      .newsroom-note p,
+      .newsroom-quote p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.94rem;
+        line-height: 1.56;
+      }
+
+      .newsroom-quote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: linear-gradient(180deg, rgba(30,45,59,0.96), rgba(35,56,73,0.94));
+        border-color: rgba(255,255,255,0.06);
+      }
+
+      .newsroom-quote .newsroom-note-label {
+        color: rgba(244,233,220,0.75);
+      }
+
+      .newsroom-quote blockquote {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.55rem, 2.15vw, 2.2rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: #fff;
+      }
+
+      .newsroom-quote p {
+        margin-top: 0.65rem;
+        color: rgba(244,233,220,0.82);
+      }
+
+      @media (max-width: 1100px) {
+        .newsroom-reality-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      @media (max-width: 1100px) {
+        .hero-shell,
+        .defense-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-brand-panel,
+        .hero-editorial-panel {
+          min-height: auto;
+        }
+
+        .home-highlights-premium,
+        .home-grid.four,
+        .criteria-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .home-grid.three {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .home-main {
+          padding-top: 5.6rem;
+        }
+
+        .home-shell,
+        .home-block,
+        .home-hero-premium,
+        .home-closure {
+          width: min(100% - 1rem, 1280px);
+        }
+
+        .hero-shell {
+          padding: 0.75rem;
+          border-radius: 1.5rem;
+        }
+
+        .hero-brand-panel,
+        .hero-editorial-panel,
+        .project-map,
+        .home-closure {
+          border-radius: 1.4rem;
+          padding: 1.35rem;
+        }
+
+        .hero-brand-copy h1 {
+          font-size: clamp(2.95rem, 13vw, 4.3rem);
+          white-space: nowrap;
+        }
+
+        .hero-brand-mark {
+          width: clamp(210px, 56vw, 290px);
+        }
+
+        .hero-brand-logo {
+          width: clamp(160px, 44vw, 225px);
+        }
+
+        .hero-editorial-panel h2,
+        .home-section-head h2,
+        .home-closure h2,
+        .defense-statement h2 {
+          font-size: clamp(2rem, 10vw, 3.25rem);
+        }
+
+        .hero-brand-meta,
+        .hero-proof-strip,
+        .home-highlights-premium,
+        .home-grid.two,
+        .home-grid.three,
+        .home-grid.four,
+        .defense-list,
+        .criteria-strip {
+          grid-template-columns: 1fr;
+        }
+      }
 
       /* =========================================================
-         PORTADA NOTICIA (HERO) · MAQUETACIÓN LIMPIA
+         PORTADA EDITORIAL · TITULAR GASTRONÒMIC
+         Inspiració de revista/diari gastronòmic, sense repetir pàgines interiors
       ========================================================= */
-      .mesclari-news-cover-final {
-        max-width: min(1380px, calc(100% - 3rem));
-        padding-top: 0;
-        margin-bottom: clamp(3rem, 6vw, 5rem);
+
+      .nav .nav-logo {
+        width: 50px !important;
+        height: 50px !important;
       }
 
-      .mesclari-news-cover-final .hero-kicker {
+      .nav .brand-name {
+        font-size: clamp(1.2rem, 1.65vw, 1.7rem);
+      }
+
+      .hero-brand-mark {
+        width: clamp(280px, 24vw, 380px);
+      }
+
+      .hero-brand-logo {
+        width: clamp(215px, 18vw, 305px);
+      }
+
+      .hero-editorial-panel.newsroom-cover {
+        justify-content: flex-start;
+        gap: 1.15rem;
+        padding: clamp(1.2rem, 2.2vw, 2rem);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,233,220,0.62)),
+          radial-gradient(circle at 100% 0%, rgba(194, 94, 60, 0.13), transparent 24rem);
+      }
+
+      .hero-editorial-panel.newsroom-cover::before {
+        content: "MESCLARI GASTRO";
+        right: -0.7rem;
+        top: 0.1rem;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(3rem, 7vw, 6.7rem);
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        color: rgba(30, 45, 59, 0.035);
+      }
+
+      .newsroom-masthead {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid rgba(30, 45, 59, 0.12);
+        color: var(--mesclari-blue);
+      }
+
+      .newsroom-edition,
+      .newsroom-date {
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .newsroom-edition {
+        color: var(--mesclari-terracotta);
+      }
+
+      .newsroom-date {
+        color: rgba(30, 45, 59, 0.55);
+        text-align: right;
+      }
+
+      .newsroom-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 1.04fr) minmax(290px, 0.96fr);
+        gap: clamp(1rem, 1.8vw, 1.4rem);
+        width: 100%;
+        align-items: stretch;
+      }
+
+      .newsroom-story {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 360px;
+        padding: clamp(1rem, 2vw, 1.6rem);
+        border-radius: 1.5rem;
+        background: rgba(255, 255, 255, 0.52);
+        border: 1px solid rgba(30, 45, 59, 0.07);
+      }
+
+      .newsroom-story h2 {
+        margin: 0;
+        max-width: 720px;
+        font-size: clamp(2.6rem, 5.1vw, 5rem);
+        line-height: 0.86;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+      }
+
+      .newsroom-lead {
+        margin: 1rem 0 0;
+        max-width: 620px;
+        font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+        font-weight: 650;
+        color: var(--mesclari-ink);
+        line-height: 1.55;
+      }
+
+      .newsroom-body {
+        margin: 0.8rem 0 0;
+        max-width: 620px;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(0.95rem, 1.05vw, 1.04rem);
+        line-height: 1.68;
+      }
+
+      .newsroom-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.35rem;
+      }
+
+      .newsroom-photo-card {
+        position: relative;
+        min-height: 360px;
+        margin: 0;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        background: rgba(30, 45, 59, 0.12);
+        border: 1px solid rgba(30, 45, 59, 0.1);
+        box-shadow: 0 16px 42px rgba(30, 45, 59, 0.11);
+      }
+
+      .newsroom-photo-card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.02) contrast(1.01);
+      }
+
+      .newsroom-photo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 52%, rgba(30, 45, 59, 0.58));
+        pointer-events: none;
+      }
+
+      .newsroom-photo-card figcaption {
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.85rem 1rem;
+        border-radius: 1rem;
+        background: rgba(244, 233, 220, 0.86);
+        backdrop-filter: blur(10px);
+        color: var(--mesclari-blue);
+      }
+
+      .newsroom-photo-card figcaption strong {
+        font-size: 0.95rem;
+        font-weight: 900;
+      }
+
+      .newsroom-photo-card figcaption span {
+        color: var(--mesclari-ink-soft);
+        font-size: 0.84rem;
+        line-height: 1.35;
+      }
+
+      .newsroom-topic-strip {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        width: 100%;
+      }
+
+      .newsroom-topic-strip span {
+        display: inline-flex;
+        padding: 0.55rem 0.78rem;
+        border-radius: 999px;
+        background: rgba(30, 45, 59, 0.055);
+        border: 1px solid rgba(30, 45, 59, 0.075);
+        color: var(--mesclari-ink);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .newsroom-proof {
+        width: 100%;
+        margin-top: 0.1rem;
+      }
+
+      .newsroom-proof article {
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      @media (max-width: 1100px) {
+        .newsroom-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .newsroom-story,
+        .newsroom-photo-card {
+          min-height: auto;
+        }
+
+        .newsroom-photo-card {
+          height: min(62vw, 430px);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .newsroom-masthead {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .newsroom-date {
+          text-align: left;
+        }
+
+        .newsroom-proof {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      /* =========================================================
+         PORTADA NOTÍCIA · MAQUETA EDITORIAL REALISTA
+         Substitueix els blocs d'etiquetes per una peça tipus article.
+      ========================================================= */
+
+      .hero-brand-mark {
+        width: clamp(280px, 24vw, 370px);
+      }
+
+      .hero-brand-logo {
+        width: clamp(215px, 18.5vw, 295px);
+      }
+
+      .hero-editorial-panel.realistic-news-cover {
+        justify-content: stretch;
+        align-items: stretch;
+        padding: clamp(1rem, 1.8vw, 1.35rem);
+        background:
+          radial-gradient(circle at 90% 0%, rgba(194, 94, 60, 0.12), transparent 18rem),
+          linear-gradient(180deg, rgba(255,255,255,0.86), rgba(244,233,220,0.58));
+      }
+
+      .hero-editorial-panel.realistic-news-cover::before {
+        content: "GASTRO";
+        right: -0.4rem;
+        top: 0.2rem;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4rem, 9vw, 8rem);
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(30,45,59,0.04);
+      }
+
+      .news-screenshot-card {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1rem, 1.6vw, 1.25rem);
+        width: 100%;
+        min-height: 100%;
+        padding: clamp(1.1rem, 2vw, 1.55rem);
+        border-radius: 1.55rem;
+        background: #fffaf3;
+        border: 1px solid rgba(30,45,59,0.12);
+        box-shadow:
+          0 24px 62px rgba(30,45,59,0.10),
+          inset 0 1px 0 rgba(255,255,255,0.85);
+        color: var(--mesclari-blue);
+      }
+
+      .news-screenshot-card::before {
+        content: "";
+        position: absolute;
+        left: 1.1rem;
+        right: 1.1rem;
+        top: 4.45rem;
+        border-top: 1px solid rgba(30,45,59,0.10);
+        pointer-events: none;
+      }
+
+      .news-topbar {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem;
+        padding-bottom: 0.85rem;
+        border-bottom: 3px solid var(--mesclari-blue);
+      }
+
+      .news-brandline,
+      .news-dateline {
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+      }
+
+      .news-site {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.75rem, 2.8vw, 2.75rem);
+        line-height: 0.9;
+        font-weight: 700;
+        color: var(--mesclari-blue);
+        letter-spacing: -0.035em;
+      }
+
+      .news-section,
+      .news-dateline span {
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(30,45,59,0.58);
+      }
+
+      .news-dateline {
+        text-align: right;
+      }
+
+      .news-dateline span:first-child {
+        color: var(--mesclari-terracotta);
+      }
+
+      .news-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+        gap: clamp(1rem, 1.8vw, 1.4rem);
+        align-items: stretch;
+      }
+
+      .news-article-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(0.6rem, 1.4vw, 1rem) 0;
+      }
+
+      .news-category {
+        margin: 0 0 0.75rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .news-article-copy h2 {
+        margin: 0;
+        max-width: 820px;
+        font-size: clamp(2.65rem, 5.25vw, 5.25rem);
+        line-height: 0.86;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+      }
+
+      .news-lead {
+        margin: 1rem 0 0;
+        max-width: 700px;
+        font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+        line-height: 1.55;
+        font-weight: 650;
+        color: var(--mesclari-ink);
+      }
+
+      .news-body {
+        margin: 0.8rem 0 0;
+        max-width: 700px;
+        font-size: clamp(0.95rem, 1.05vw, 1.04rem);
+        line-height: 1.68;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .news-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(30,45,59,0.10);
+      }
+
+      .news-meta-row span {
+        display: inline-flex;
+        padding: 0.35rem 0.62rem;
+        border-radius: 999px;
+        background: rgba(30,45,59,0.055);
+        color: rgba(30,45,59,0.68);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .news-team-photo {
+        position: relative;
+        min-height: 410px;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 1.25rem;
+        border: 1px solid rgba(30,45,59,0.12);
+        background: rgba(30,45,59,0.10);
+        box-shadow: 0 18px 44px rgba(30,45,59,0.12);
+      }
+
+      .news-team-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.03) contrast(1.01);
+      }
+
+      .news-team-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 48%, rgba(30,45,59,0.68));
+        pointer-events: none;
+      }
+
+      .news-team-photo figcaption {
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 0.85rem;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        padding: 0.78rem 0.9rem;
+        border-radius: 0.9rem;
+        background: rgba(255,250,243,0.90);
+        color: var(--mesclari-blue);
+        backdrop-filter: blur(10px);
+      }
+
+      .news-team-photo figcaption strong {
+        font-size: 0.93rem;
+        font-weight: 900;
+      }
+
+      .news-team-photo figcaption span {
+        color: var(--mesclari-ink-soft);
+        font-size: 0.82rem;
+        line-height: 1.32;
+      }
+
+      .news-bottom-panel {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 1rem;
+        align-items: stretch;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(30,45,59,0.12);
+      }
+
+      .news-bottom-text,
+      .news-bottom-panel blockquote {
+        margin: 0;
+        padding: 1rem 1.05rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(30,45,59,0.08);
+      }
+
+      .news-bottom-text {
+        background: rgba(30,45,59,0.045);
+      }
+
+      .news-bottom-text span {
+        display: inline-flex;
+        margin-bottom: 0.5rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .news-bottom-text p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.93rem;
+        line-height: 1.58;
+      }
+
+      .news-bottom-panel blockquote {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(30,45,59,0.98), rgba(35,56,73,0.95));
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.35rem, 2vw, 1.9rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 1100px) {
+        .news-main-grid,
+        .news-bottom-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .news-team-photo {
+          min-height: min(62vw, 460px);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .news-topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .news-dateline {
+          text-align: left;
+        }
+
+        .news-article-copy h2 {
+          font-size: clamp(2.25rem, 12vw, 3.6rem);
+        }
+      }
+
+
+      /* =========================================================
+         PORTADA REHECHA · NOTICIA INTEGRADA Y REALISTA
+         Corrige proporciones, evita texto pisado y da aspecto de maqueta editorial.
+      ========================================================= */
+      .home-hero-premium {
+        max-width: min(1760px, calc(100% - 5.5vw));
+        padding-top: clamp(1.2rem, 2.4vw, 2rem);
+      }
+
+      .hero-news-redesign {
+        display: grid !important;
+        grid-template-columns: minmax(300px, 0.76fr) minmax(620px, 1.24fr) !important;
+        gap: clamp(1.35rem, 2.2vw, 2.25rem) !important;
+        align-items: stretch !important;
+      }
+
+      .hero-brand-panel-redesign,
+      .hero-editorial-news-redesign {
+        min-height: clamp(640px, 72vh, 820px);
+      }
+
+      .hero-brand-panel-redesign {
+        padding: clamp(1.2rem, 2vw, 1.6rem) !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+      }
+
+      .brand-editorial-card {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: 1fr auto auto;
+        gap: clamp(1.15rem, 2vw, 1.55rem);
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: clamp(1.35rem, 2.2vw, 2.1rem);
+        border-radius: 1.55rem;
+        border: 1px solid rgba(255,255,255,0.10);
+        background:
+          radial-gradient(circle at 50% 31%, rgba(244,233,220,0.12), transparent 18rem),
+          linear-gradient(180deg, rgba(35,56,73,0.98), rgba(30,45,59,0.98));
+        overflow: hidden;
+      }
+
+      .brand-editorial-card::before {
+        content: "";
+        position: absolute;
+        width: 28rem;
+        height: 28rem;
+        left: 50%;
+        top: 34%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 1px solid rgba(244,233,220,0.13);
+        box-shadow: 0 0 0 4.5rem rgba(244,233,220,0.025);
+        pointer-events: none;
+      }
+
+      .brand-editorial-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 270px;
+      }
+
+      .brand-editorial-logo {
+        position: relative;
+        z-index: 2;
+        width: clamp(250px, 24vw, 360px);
+        max-width: 86%;
+        padding: clamp(1.15rem, 2vw, 1.6rem);
+        border-radius: 1.15rem;
+        background: rgba(244,233,220,0.92);
+        border: 1px solid rgba(244,233,220,0.35);
+        box-shadow: 0 24px 54px rgba(0,0,0,0.22);
+      }
+
+      .brand-editorial-copy {
+        position: relative;
+        z-index: 2;
         text-align: center;
+        color: #fff;
+      }
+
+      .brand-editorial-kicker {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: rgba(244,233,220,0.82);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .brand-editorial-copy h1 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.8rem, 6vw, 6.7rem);
+        line-height: 0.86;
+        letter-spacing: -0.045em;
+        color: #fff;
+      }
+
+      .brand-editorial-copy p {
+        width: min(440px, 100%);
+        margin: 1rem auto 0;
+        color: rgba(244,233,220,0.86);
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        line-height: 1.55;
+      }
+
+      .brand-editorial-tags {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+      }
+
+      .brand-editorial-tags span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0.62rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(244,233,220,0.08);
+        border: 1px solid rgba(244,233,220,0.13);
+        color: rgba(244,233,220,0.88);
+        font-size: 0.82rem;
+        font-weight: 850;
+        text-align: center;
+      }
+
+      .hero-editorial-news-redesign {
+        padding: clamp(1rem, 1.7vw, 1.45rem) !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+        background:
+          radial-gradient(circle at 98% 0%, rgba(194,94,60,0.13), transparent 22rem),
+          linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,233,220,0.66)) !important;
+      }
+
+      .hero-editorial-news-redesign::before {
+        content: "GASTRO" !important;
+        right: 1rem !important;
+        top: -0.8rem !important;
+        font-size: clamp(4.2rem, 8vw, 8.6rem) !important;
+        opacity: 1;
+        color: rgba(30,45,59,0.032) !important;
+      }
+
+      .newspaper-real-card {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: clamp(1.1rem, 1.8vw, 1.65rem);
+        border-radius: 1.35rem;
+        background:
+          linear-gradient(90deg, rgba(30,45,59,0.035) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(30,45,59,0.03) 1px, transparent 1px),
+          #fffaf3;
+        background-size: 28px 28px;
+        border: 1px solid rgba(30,45,59,0.12);
+        box-shadow: 0 24px 60px rgba(30,45,59,0.11);
+        color: var(--mesclari-blue);
+        overflow: hidden;
+      }
+
+      .newspaper-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.2rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 3px solid var(--mesclari-blue);
+      }
+
+      .newspaper-head strong {
+        display: block;
+        margin-top: 0.1rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.2vw, 3.05rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+      }
+
+      .newspaper-small,
+      .newspaper-location span {
+        margin: 0;
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-small { color: var(--mesclari-terracotta); }
+
+      .newspaper-location {
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        text-align: right;
+        color: rgba(30,45,59,0.58);
+      }
+
+      .newspaper-location span:first-child { color: var(--mesclari-terracotta); }
+
+      .newspaper-content-grid {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.92fr) minmax(340px, 1.08fr);
+        gap: clamp(1rem, 1.8vw, 1.5rem);
+        align-items: stretch;
+        min-height: 0;
+      }
+
+      .newspaper-main-photo {
+        position: relative;
+        min-height: 430px;
+        margin: 0;
+        border-radius: 1.05rem;
+        overflow: hidden;
+        background: rgba(30,45,59,0.10);
+        border: 1px solid rgba(30,45,59,0.12);
+        box-shadow: 0 18px 42px rgba(30,45,59,0.13);
+      }
+
+      .newspaper-main-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.03) contrast(1.02);
+      }
+
+      .newspaper-main-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 55%, rgba(30,45,59,0.70));
+        pointer-events: none;
+      }
+
+      .newspaper-main-photo figcaption {
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 0.85rem;
+        z-index: 2;
+        padding: 0.82rem 0.95rem;
+        border-radius: 0.85rem;
+        background: rgba(255,250,243,0.91);
+        backdrop-filter: blur(10px);
+      }
+
+      .newspaper-main-photo figcaption strong {
+        display: block;
+        color: var(--mesclari-blue);
+        font-size: 0.95rem;
+        font-weight: 900;
+      }
+
+      .newspaper-main-photo figcaption span {
+        display: block;
+        margin-top: 0.18rem;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.82rem;
+        line-height: 1.32;
+      }
+
+      .newspaper-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(0.4rem, 1.1vw, 0.9rem) 0;
+        min-width: 0;
+      }
+
+      .newspaper-category {
+        margin: 0 0 0.8rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-article h2 {
+        margin: 0;
+        max-width: 720px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3rem, 4.8vw, 5.2rem);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+      }
+
+      .newspaper-lead {
+        margin: 1rem 0 0;
+        max-width: 680px;
+        font-size: clamp(1.03rem, 1.28vw, 1.24rem);
+        line-height: 1.52;
+        font-weight: 720;
+        color: var(--mesclari-ink);
+      }
+
+      .newspaper-body {
+        margin: 0.72rem 0 0;
+        max-width: 680px;
+        font-size: clamp(0.94rem, 1.02vw, 1.02rem);
+        line-height: 1.62;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .newspaper-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(30,45,59,0.11);
+      }
+
+      .newspaper-meta span {
+        display: inline-flex;
+        padding: 0.35rem 0.58rem;
+        border-radius: 999px;
+        background: rgba(30,45,59,0.055);
+        color: rgba(30,45,59,0.68);
+        font-size: 0.74rem;
+        font-weight: 850;
+      }
+
+      .newspaper-lower-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(30,45,59,0.12);
+      }
+
+      .newspaper-lower-grid aside,
+      .newspaper-lower-grid blockquote {
+        margin: 0;
+        padding: 1rem 1.05rem;
+        border-radius: 0.95rem;
+        border: 1px solid rgba(30,45,59,0.08);
+      }
+
+      .newspaper-lower-grid aside {
+        background: rgba(30,45,59,0.045);
+      }
+
+      .newspaper-lower-grid aside span {
+        display: inline-flex;
+        margin-bottom: 0.45rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-lower-grid aside p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .newspaper-lower-grid blockquote {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(30,45,59,0.98), rgba(35,56,73,0.95));
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.28rem, 1.75vw, 1.75rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 1200px) {
+        .hero-news-redesign {
+          grid-template-columns: 1fr !important;
+        }
+
+        .hero-brand-panel-redesign,
+        .hero-editorial-news-redesign {
+          min-height: auto;
+        }
+
+        .brand-editorial-card {
+          grid-template-rows: auto auto auto;
+        }
+
+        .brand-editorial-top {
+          min-height: 220px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .newspaper-content-grid,
+        .newspaper-lower-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .newspaper-main-photo {
+          min-height: min(74vw, 470px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .home-hero-premium {
+          max-width: calc(100% - 1rem);
+        }
+
+        .newspaper-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .newspaper-location {
+          text-align: left;
+        }
+
+        .brand-editorial-tags {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      /* =========================================================
+         PORTADA EDITORIAL FINAL · NOTÍCIA INTEGRADA
+      ========================================================= */
+
+      .mesclari-editorial-hero {
+        padding-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .editorial-frontpage {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(1rem, 1.8vw, 1.45rem);
+        border-radius: 2.35rem;
+        border: 1px solid rgba(30, 45, 59, 0.10);
+        background:
+          linear-gradient(rgba(30, 45, 59, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(30, 45, 59, 0.028) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(255,255,255,0.95), rgba(244,233,220,0.72));
+        background-size: 28px 28px, 28px 28px, auto;
+        box-shadow: 0 28px 76px rgba(30,45,59,0.12);
+      }
+
+      .editorial-frontpage::before {
+        content: "OBERTURA · MESCLARI";
+        position: absolute;
+        right: -0.08em;
+        top: 0.15rem;
+        font-family: "Inter", sans-serif;
+        font-size: clamp(4rem, 10vw, 9rem);
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        color: rgba(30,45,59,0.035);
+        pointer-events: none;
+      }
+
+      .frontpage-masthead {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: clamp(1rem, 1.5vw, 1.35rem) clamp(1rem, 1.8vw, 1.45rem);
+        border-radius: 1.55rem;
+        background: rgba(255,255,255,0.58);
+        border: 1px solid rgba(30,45,59,0.08);
+      }
+
+      .frontpage-brand-lockup {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        min-width: 0;
+      }
+
+      .frontpage-logo {
+        width: clamp(66px, 7vw, 92px);
+        height: clamp(66px, 7vw, 92px);
+        object-fit: contain;
+        border-radius: 1rem;
+        background: var(--mesclari-beige);
+        padding: 0.4rem;
+        box-shadow: 0 12px 28px rgba(30,45,59,0.12);
+      }
+
+      .frontpage-label,
+      .frontpage-meta span {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .frontpage-label {
+        color: var(--mesclari-terracotta);
+        margin-bottom: 0.2rem;
+      }
+
+      .frontpage-brand-lockup strong {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.25rem, 4vw, 3.75rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        color: var(--mesclari-blue);
+      }
+
+      .frontpage-meta {
+        text-align: right;
+        color: rgba(30,45,59,0.58);
+      }
+
+      .frontpage-layout {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: minmax(0, 0.98fr) minmax(380px, 1.02fr);
+        gap: clamp(1rem, 2vw, 1.45rem);
+        margin-top: 1rem;
+        align-items: stretch;
+      }
+
+      .frontpage-story {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 580px;
+        padding: clamp(1.55rem, 3vw, 3rem);
+        border-radius: 1.65rem;
+        background: rgba(255,255,255,0.72);
+        border: 1px solid rgba(30,45,59,0.08);
+      }
+
+      .frontpage-kicker {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0 0 1rem;
+        padding: 0.42rem 0.8rem;
+        border-radius: 999px;
+        border: 1px solid rgba(194,94,60,0.18);
+        background: rgba(194,94,60,0.08);
+        color: var(--mesclari-terracotta);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .frontpage-story h1 {
+        margin: 0;
+        max-width: 11ch;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 8vw, 7.65rem);
+        line-height: 0.82;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+        text-wrap: balance;
+      }
+
+      .frontpage-lead {
+        margin: 1.15rem 0 0;
+        max-width: 700px;
+        color: var(--mesclari-ink);
+        font-size: clamp(1.15rem, 1.65vw, 1.45rem);
+        font-weight: 750;
+        line-height: 1.45;
+      }
+
+      .frontpage-body {
+        margin: 0.85rem 0 0;
+        max-width: 690px;
+        color: var(--mesclari-ink-soft);
+        font-size: clamp(0.98rem, 1.08vw, 1.08rem);
+        line-height: 1.68;
+      }
+
+      .frontpage-facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1.25rem;
+      }
+
+      .frontpage-facts span {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.56rem 0.78rem;
+        border-radius: 999px;
+        border: 1px solid rgba(30,45,59,0.10);
+        background: rgba(30,45,59,0.055);
+        color: var(--mesclari-blue);
+        font-size: 0.83rem;
+        font-weight: 800;
+      }
+
+      .frontpage-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.55rem;
+      }
+
+      .frontpage-visual-column {
+        display: grid;
+        grid-template-rows: minmax(420px, 1fr) auto;
+        gap: 1rem;
+        min-height: 580px;
+      }
+
+      .frontpage-team-photo {
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        min-height: 420px;
+        border-radius: 1.65rem;
+        border: 1px solid rgba(30,45,59,0.10);
+        background: rgba(30,45,59,0.12);
+        box-shadow: 0 18px 48px rgba(30,45,59,0.12);
+      }
+
+      .frontpage-team-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.03) contrast(1.02);
+      }
+
+      .frontpage-team-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 54%, rgba(30,45,59,0.62));
+        pointer-events: none;
+      }
+
+      .frontpage-team-photo figcaption {
+        position: absolute;
+        z-index: 2;
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.18rem;
+        padding: 0.95rem 1rem;
+        border-radius: 1.05rem;
+        background: rgba(244,233,220,0.90);
+        color: var(--mesclari-blue);
+        backdrop-filter: blur(12px);
+      }
+
+      .frontpage-team-photo figcaption strong {
+        font-size: 0.98rem;
+        font-weight: 900;
+      }
+
+      .frontpage-team-photo figcaption span {
+        color: var(--mesclari-ink-soft);
+        font-size: 0.84rem;
+        line-height: 1.35;
+      }
+
+      .frontpage-sidecards {
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+        gap: 1rem;
+      }
+
+      .frontpage-sidecards article {
+        padding: 1.05rem;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(30,45,59,0.08);
+        background: rgba(255,255,255,0.66);
+        color: var(--mesclari-ink-soft);
+      }
+
+      .frontpage-sidecards span {
+        display: inline-flex;
+        margin-bottom: 0.48rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .frontpage-sidecards p {
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+
+      .frontpage-quote {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(145deg, var(--mesclari-blue), var(--mesclari-ink)) !important;
+      }
+
+      .frontpage-quote p {
+        font-family: "Cormorant Garamond", serif;
+        color: #fff !important;
+        font-size: clamp(1.3rem, 2vw, 1.8rem) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 1120px) {
+        .frontpage-layout {
+          grid-template-columns: 1fr;
+        }
+        .frontpage-story,
+        .frontpage-visual-column {
+          min-height: auto;
+        }
+        .frontpage-team-photo {
+          height: min(62vw, 520px);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .frontpage-masthead,
+        .frontpage-brand-lockup {
+          align-items: flex-start;
+        }
+        .frontpage-masthead {
+          flex-direction: column;
+        }
+        .frontpage-meta {
+          text-align: left;
+        }
+        .frontpage-story h1 {
+          max-width: 100%;
+          font-size: clamp(3rem, 15vw, 4.8rem);
+        }
+        .frontpage-sidecards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+      /* =========================================================
+         PORTADA NOTÍCIA FINAL · INTEGRADA I REALISTA
+      ========================================================= */
+      .mesclari-news-cover-final {
+        width: min(1380px, calc(100% - 3rem));
+        padding-top: 0;
       }
 
       .mesclari-news-paper {
@@ -157,8 +2269,9 @@
       .mesclari-news-paper::before {
         content: "OBERTURA";
         position: absolute;
-        right: -0.05em;
+        right: -0.08em;
         top: 0.15rem;
+        font-family: "Inter", sans-serif;
         font-size: clamp(4rem, 11vw, 10rem);
         font-weight: 900;
         letter-spacing: -0.08em;
@@ -177,25 +2290,32 @@
         border-radius: 1.5rem;
         border: 1px solid rgba(30,45,59,0.09);
         background: rgba(255,255,255,0.62);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
       }
 
       .mesclari-news-logo-lockup {
         display: flex;
         align-items: center;
         gap: 1rem;
+        min-width: 0;
       }
 
       .mesclari-news-logo {
         width: clamp(74px, 8vw, 108px);
         height: clamp(74px, 8vw, 108px);
         object-fit: contain;
+        flex: 0 0 auto;
         border-radius: 1rem;
         padding: 0.42rem;
         background: var(--mesclari-beige);
+        box-shadow: 0 12px 30px rgba(30,45,59,0.12);
       }
 
       .mesclari-news-logo-lockup span,
-      .mesclari-news-meta span {
+      .mesclari-news-meta span,
+      .mesclari-news-section,
+      .mesclari-news-byline span,
+      .mesclari-news-footer article span {
         display: block;
         font-size: 0.74rem;
         font-weight: 900;
@@ -203,8 +2323,11 @@
         text-transform: uppercase;
       }
 
-      .mesclari-news-logo-lockup span { color: var(--mesclari-terracotta); }
-      .mesclari-news-meta { text-align: right; color: rgba(30,45,59,0.55); }
+      .mesclari-news-logo-lockup span,
+      .mesclari-news-section,
+      .mesclari-news-footer article span {
+        color: var(--mesclari-terracotta);
+      }
 
       .mesclari-news-logo-lockup strong {
         display: block;
@@ -216,19 +2339,24 @@
         color: var(--mesclari-terracotta);
       }
 
-      /* COMPOSICIÓN LIMPIA: TEXTO Y FOTO A LA MISMA ALTURA */
+      .mesclari-news-meta {
+        text-align: right;
+        color: rgba(30,45,59,0.55);
+      }
+
       .mesclari-news-content {
         position: relative;
         z-index: 2;
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
         gap: clamp(1rem, 2vw, 1.5rem);
         margin-top: 1rem;
-        align-items: stretch; /* Obliga a la foto y al texto a medir lo mismo */
+        align-items: stretch;
       }
 
       .mesclari-news-article {
         display: flex;
+        min-height: clamp(520px, 58vh, 680px);
         flex-direction: column;
         justify-content: center;
         padding: clamp(1.6rem, 3.2vw, 3rem);
@@ -244,33 +2372,33 @@
         border-radius: 999px;
         border: 1px solid rgba(194,94,60,0.18);
         background: rgba(194,94,60,0.08);
-        font-size: 0.74rem;
-        font-weight: 900;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--mesclari-terracotta);
       }
 
       .mesclari-news-article h1 {
+        max-width: 12ch;
         margin: 0;
-        font-size: clamp(3.2rem, 5.5vw, 4.5rem);
-        line-height: 0.88;
-        letter-spacing: -0.04em;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(4rem, 7.8vw, 7.4rem);
+        line-height: 0.82;
+        letter-spacing: -0.06em;
         color: var(--mesclari-blue);
+        text-wrap: balance;
       }
 
       .mesclari-news-lead {
+        max-width: 760px;
         margin: 1.15rem 0 0;
         color: var(--mesclari-ink);
-        font-size: clamp(1.08rem, 1.5vw, 1.25rem);
-        font-weight: 700;
-        line-height: 1.5;
+        font-size: clamp(1.08rem, 1.5vw, 1.35rem);
+        font-weight: 760;
+        line-height: 1.47;
       }
 
       .mesclari-news-body {
+        max-width: 760px;
         margin: 0.85rem 0 0;
         color: var(--mesclari-ink-soft);
-        font-size: 0.98rem;
+        font-size: clamp(0.98rem, 1.08vw, 1.08rem);
         line-height: 1.68;
       }
 
@@ -288,38 +2416,45 @@
         border-radius: 999px;
         background: rgba(30,45,59,0.055);
         color: rgba(30,45,59,0.66);
-        font-size: 0.74rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
       }
 
       .mesclari-news-photo {
         position: relative;
+        min-height: clamp(520px, 58vh, 680px);
         margin: 0;
+        overflow: hidden;
         border-radius: 1.65rem;
         border: 1px solid rgba(30,45,59,0.12);
-        background: rgba(30,45,59,0.05);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        background: rgba(30,45,59,0.12);
+        box-shadow: 0 18px 48px rgba(30,45,59,0.12);
       }
 
       .mesclari-news-photo img {
+        display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top;
+        object-position: center;
+        filter: saturate(1.03) contrast(1.02);
+      }
+
+      .mesclari-news-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 58%, rgba(30,45,59,0.64));
+        pointer-events: none;
       }
 
       .mesclari-news-photo figcaption {
         position: absolute;
-        bottom: 1rem;
+        z-index: 2;
         left: 1rem;
         right: 1rem;
+        bottom: 1rem;
         padding: 0.95rem 1rem;
         border-radius: 1rem;
-        background: rgba(244,233,220,0.95);
+        background: rgba(244,233,220,0.91);
         backdrop-filter: blur(12px);
         color: var(--mesclari-blue);
       }
@@ -327,7 +2462,6 @@
       .mesclari-news-photo figcaption strong {
         display: block;
         font-weight: 900;
-        font-size: 0.95rem;
       }
 
       .mesclari-news-photo figcaption span {
@@ -352,22 +2486,13 @@
       .mesclari-news-footer article,
       .mesclari-news-footer blockquote {
         margin: 0;
-        padding: 1.2rem 1.4rem;
+        padding: 1rem 1.05rem;
         border-radius: 1rem;
         border: 1px solid rgba(30,45,59,0.08);
       }
 
       .mesclari-news-footer article {
         background: rgba(30,45,59,0.045);
-      }
-
-      .mesclari-news-footer article span {
-        display: block;
-        font-size: 0.74rem;
-        font-weight: 900;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--mesclari-terracotta);
       }
 
       .mesclari-news-footer article p {
@@ -381,183 +2506,155 @@
         align-items: center;
         background: linear-gradient(180deg, rgba(30,45,59,0.98), rgba(35,56,73,0.95));
         color: #fff;
+        font-family: "Cormorant Garamond", serif;
         font-size: clamp(1.35rem, 1.9vw, 2rem);
-        line-height: 1.2;
-        letter-spacing: -0.01em;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
       }
 
-      /* HIGHLIGHTS DE ABAJO */
-      .home-highlights-premium {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 1rem;
-        margin-top: 1.25rem;
+      @media (max-width: 1050px) {
+        .mesclari-news-content,
+        .mesclari-news-footer {
+          grid-template-columns: 1fr;
+        }
+
+        .mesclari-news-article,
+        .mesclari-news-photo {
+          min-height: auto;
+        }
+
+        .mesclari-news-photo {
+          height: min(72vw, 540px);
+        }
       }
 
-      .highlight-card {
-        padding: 1.35rem;
-        border-radius: 1.45rem;
-        background: rgba(255, 255, 255, 0.78);
-        border: 1px solid rgba(30, 45, 59, 0.08);
+      @media (max-width: 680px) {
+        .mesclari-news-cover-final {
+          width: min(100% - 1rem, 1380px);
+        }
+
+        .mesclari-news-paper,
+        .mesclari-news-article,
+        .mesclari-news-photo {
+          border-radius: 1.35rem;
+        }
+
+        .mesclari-news-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .mesclari-news-meta {
+          text-align: left;
+        }
+
+        .mesclari-news-logo {
+          width: 72px;
+          height: 72px;
+        }
+
+        .mesclari-news-article {
+          padding: 1.35rem;
+        }
+
+        .mesclari-news-article h1 {
+          max-width: 100%;
+          font-size: clamp(3.1rem, 16vw, 4.7rem);
+        }
       }
 
-      .highlight-number {
-        display: inline-flex;
-        margin-bottom: 0.75rem;
-        color: var(--mesclari-terracotta);
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.14em;
-      }
-
-      .highlight-card h3 {
-        margin: 0 0 0.45rem;
-        font-size: 1.4rem;
-        line-height: 1.05;
-      }
-
-      .highlight-card p {
-        margin: 0;
-        color: var(--mesclari-ink-soft);
-        font-size: 0.9rem;
-      }
 
       /* =========================================================
-         SECCIONES DE ABAJO (ESTILOS ORIGINALES CONSOLIDADOS)
+         FIX FINAL · FOTO EQUIP COMPLETA
+         La imatge del fundador/equip ja no es retalla: es mostra sencera,
+         integrada dins del bloc editorial sense perdre el disseny premium.
       ========================================================= */
-      .home-block { padding: clamp(3rem, 6vw, 5.5rem) 0; }
-      .home-section-head { max-width: 920px; margin-bottom: 2rem; }
-      .home-section-head.center { margin-inline: auto; text-align: center; }
-      .home-section-head h2 { font-size: clamp(2.5rem, 5vw, 4.2rem); margin: 0; line-height: 1; color: var(--mesclari-blue); }
-      .home-intro { color: var(--mesclari-ink-soft); margin-top: 1rem; font-size: 1.1rem; }
-      
-      .home-grid { display: grid; gap: 1.2rem; }
-      .home-grid.three { grid-template-columns: repeat(3, 1fr); }
-      .home-grid.four { grid-template-columns: repeat(4, 1fr); }
 
-      .home-card, .nav-home-card, .defense-card, .criteria-card {
-        padding: 1.5rem;
-        border-radius: 1.5rem;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(244, 233, 220, 0.45));
-        border: 1px solid rgba(30, 45, 59, 0.09);
+      .mesclari-news-photo {
+        display: grid !important;
+        grid-template-rows: minmax(0, 1fr) auto !important;
+        gap: 0.75rem !important;
+        padding: 0.85rem !important;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(194, 94, 60, 0.10), transparent 18rem),
+          linear-gradient(180deg, rgba(30, 45, 59, 0.96), rgba(35, 56, 73, 0.92)) !important;
       }
-      .home-card.dark, .defense-card.dark {
-        background: linear-gradient(155deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
-        color: var(--mesclari-beige);
-      }
-      .home-card.dark h3 { color: #fff; }
 
-      .project-map {
-        padding: 3rem;
-        border-radius: 2.2rem;
-        background: linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.92));
-        color: var(--mesclari-beige);
+      .mesclari-news-photo::after {
+        content: none !important;
+        display: none !important;
       }
-      .project-map h2, .project-map .home-section-kicker { color: #fff; }
-      
-      .nav-home-card {
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        transition: transform 0.2s ease;
-      }
-      .project-map .nav-home-card {
-        background: rgba(244, 233, 220, 0.075);
-        border-color: rgba(244, 233, 220, 0.13);
-      }
-      .nav-home-card:hover { transform: translateY(-4px); }
-      .nav-card-number { color: var(--mesclari-terracotta); font-weight: 900; margin-bottom: 1rem; }
-      .project-map .nav-home-card h4 { color: #fff; margin:0 0 0.5rem; font-size: 1.4rem; }
-      .nav-card-link { margin-top: auto; padding-top: 1rem; color: var(--mesclari-sand); font-size: 0.85rem; font-weight: 800; }
 
-      .defense-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1.5rem; }
-      .defense-statement {
-        padding: 2.5rem;
-        border-radius: 2rem;
-        background: linear-gradient(135deg, rgba(194, 94, 60, 0.92), rgba(194, 94, 60, 0.72));
-        color: #fff;
+      .mesclari-news-photo img {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 1.2rem !important;
+        background: rgba(244, 233, 220, 0.07) !important;
+        box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
       }
-      .defense-statement h2 { font-size: 3.5rem; margin:0; color:#fff;}
-      .defense-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .mini-label { color: var(--mesclari-terracotta); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
-      .defense-card h3 { margin: 0 0 0.5rem; font-size: 1.5rem; color: var(--mesclari-blue); }
 
-      .criteria-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-      .criteria-card h3 { margin: 0 0 0.5rem; font-size: 1.4rem; color: var(--mesclari-blue); }
+      .mesclari-news-photo figcaption {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        z-index: 2;
+        margin: 0 !important;
+        padding: 0.85rem 1rem !important;
+        border-radius: 1rem !important;
+        background: rgba(244, 233, 220, 0.92) !important;
+        color: var(--mesclari-blue) !important;
+        backdrop-filter: blur(12px);
+      }
 
-      .home-closure {
-        padding: 4rem;
-        border-radius: 2.2rem;
-        background: linear-gradient(135deg, rgba(30, 45, 59, 0.98), rgba(35, 56, 73, 0.93));
-        color: var(--mesclari-beige);
-        text-align: center;
-        margin-bottom: 4rem;
-      }
-      .home-closure h2 { color: #fff; font-size: 3rem; margin: 0.5rem 0; }
-      .home-closure-actions { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
-      .home-button { padding: 1rem 1.5rem; border-radius: 999px; font-weight: 800; }
-      .home-button.primary { background: var(--mesclari-terracotta); color: #fff; }
-      .home-button.secondary { background: rgba(244, 233, 220, 0.1); color: #fff; border: 1px solid rgba(244, 233, 220, 0.16); }
+      @media (max-width: 1100px) {
+        .mesclari-news-photo {
+          min-height: auto !important;
+        }
 
-      /* RESPONSIVE */
-      @media (max-width: 1050px) {
-        .mesclari-news-content, .mesclari-news-footer, .defense-grid { grid-template-columns: 1fr; }
-        .mesclari-news-photo { min-height: 400px; }
-        .home-grid.three, .home-grid.four, .home-highlights-premium, .criteria-strip { grid-template-columns: repeat(2, 1fr); }
+        .mesclari-news-photo img {
+          height: auto !important;
+          max-height: 540px !important;
+        }
       }
-      @media (max-width: 720px) {
-        .mesclari-news-head { flex-direction: column; align-items: flex-start; }
-        .mesclari-news-meta { text-align: left; }
-        .mesclari-news-article { padding: 1.5rem; }
-        .mesclari-news-article h1 { font-size: 2.5rem; }
-        .home-grid.three, .home-grid.four, .home-highlights-premium, .defense-list, .criteria-strip { grid-template-columns: 1fr; }
-        .nav { display: none; /* Simplificado para el demo, aquí iría tu script de hamburguesa */ }
-      }
+
     </style>
   </head>
 
   <body class="home">
     <nav class="nav">
-      <div class="brand-mini">
-        <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
-        <span class="brand-name">MESCLARI</span>
-      </div>
-      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú" style="display:none;">☰</button>
+      <button type="button" class="brand-switch" id="brandSwitch" role="switch" aria-checked="false" aria-label="Activar mode reforma i números">
+        <span class="brand-switch-track">
+          <span class="brand-mini" aria-hidden="true">
+            <img src="imaguenes i videos/logo.png" alt="" class="nav-logo" />
+            <span class="brand-name">MESCLARI</span>
+          </span>
+        </span>
+      </button>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-label="Obrir menú">☰</button>
       <ul id="menu" class="menu">
         <li><a href="index.html" aria-current="page">Inici</a></li>
-        <li><a href="presentacio-general.html">Visió</a></li>
+        <li><a href="presentacio-general.html">Visió general</a></li>
         <li><a href="identitat-projecte.html">Identitat</a></li>
         <li><a href="equip-impulsor.html">Equip</a></li>
-        <li><a href="gestio-organitzacio.html">Gestió</a></li>
-        <li><a href="encaix-mercat.html">Mercat</a></li>
-        <li><a href="espai-atmosfera.html">Espai</a></li>
-        <li><a href="oferta-gastronomica.html">Oferta</a></li>
-        <li><a href="sintesi-viabilitat.html">Viabilitat</a></li>
+        <li><a href="gestio-organitzacio.html">Gestió i organització</a></li>
+        <li><a href="encaix-mercat.html">Encaix de mercat</a></li>
+        <li><a href="espai-atmosfera.html">Espai i atmosfera</a></li>
+        <li><a href="oferta-gastronomica.html">Oferta gastronòmica</a></li>
+        <li><a href="sintesi-viabilitat.html">Síntesi de viabilitat</a></li>
       </ul>
     </nav>
 
     <main class="home-main">
       
-      <header class="home-hero-premium mesclari-news-cover-final" id="inici">
-        <p class="hero-kicker">Projecte Final de Grau · Direcció de Cuina · Serveis de Sala</p>
 
-<section class="mesclari-news-paper" aria-label="Portada editorial de MESCLARI">
-  <header class="mesclari-news-head">
-    <div class="mesclari-news-logo-lockup">
-      <img src="imaguenes i videos/logo.png" alt="Logo MESCLARI" class="mesclari-news-logo" />
-      <div>
-        <span>Alta Gastronomia · Obertures Costa Brava</span>
-        <strong>MESCLARI</strong>
-      </div>
-    </div>
-    <div class="mesclari-news-meta">
-      <span>Reportatge a fons</span>
-      <span>Maig 2026</span>
-    </div>
-  </header>
+<header class="home-hero-premium mesclari-editorial-hero mesclari-news-cover-final" id="inici">
+  <p class="hero-kicker">Projecte Final de Grau · Direcció de Cuina · Direcció de Serveis de Sala</p>
 
-  <div class="mesclari-news-content">
-    <article class="mesclari-news-article">
+<article class="mesclari-news-article">
       <p class="mesclari-news-section">Avançament Exclusiu</p>
       <h1>MESCLARI irromp a Platja d’Aro: l'esperada obertura que redefineix el luxe mediterrani a través de la simbiosi perfecta entre cuina i sala</h1>
       <p class="mesclari-news-lead">
@@ -573,49 +2670,29 @@
       </div>
     </article>
 
-    <figure class="mesclari-news-photo">
-      <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy" />
-      <figcaption>
-        <strong>L’ànima de MESCLARI</strong>
-        <span>L'equip directiu als fogons i a la sala, perfilant els últims detalls estructurals i d'escandalls abans de l'inici de la temporada.</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <footer class="mesclari-news-footer">
-    <article>
-      <span>L'anatomia d'un projecte sòlid</span>
-      <p>A través del menú de navegació, aquest dossier desengrana l'arquitectura del restaurant: des de la identitat de marca i l'oferta gastronòmica, fins a l'estudi d'encaix de mercat i l'exhaustiva anàlisi de viabilitat financera.</p>
+  <div class="home-highlights-premium" aria-label="Eixos de la portada de MESCLARI">
+    <article class="highlight-card">
+      <span class="highlight-number">01</span>
+      <h3>Concepte amb direcció</h3>
+      <p>Una proposta definida des de la coherència entre posicionament, relat i experiència gastronòmica.</p>
     </article>
-    <blockquote>
-      “Feia temporades que la Costa Brava no presenciava una obertura amb una visió empresarial i gastronòmica tan madura. Una lliçó de viabilitat abans fins i tot d'encendre els fogons.”
-    </blockquote>
-  </footer>
-</section>
-
-        <div class="home-highlights-premium" aria-label="Eixos de la portada de MESCLARI">
-          <article class="highlight-card">
-            <span class="highlight-number">01</span>
-            <h3>Concepte amb direcció</h3>
-            <p>Una proposta definida des de la coherència entre posicionament, relat i experiència gastronòmica.</p>
-          </article>
-          <article class="highlight-card">
-            <span class="highlight-number">02</span>
-            <h3>Model aplicable</h3>
-            <p>El projecte baixa a decisions reals d’organització, servei, espai, equip i funcionament intern.</p>
-          </article>
-          <article class="highlight-card">
-            <span class="highlight-number">03</span>
-            <h3>Lectura de mercat</h3>
-            <p>MESCLARI es construeix amb encaix territorial, oportunitat real i capacitat de diferenciació.</p>
-          </article>
-          <article class="highlight-card">
-            <span class="highlight-number">04</span>
-            <h3>Viabilitat defensable</h3>
-            <p>La proposta es tanca amb una lectura de solidesa global, criteri econòmic i coherència transversal.</p>
-          </article>
-        </div>
-      </header>
+    <article class="highlight-card">
+      <span class="highlight-number">02</span>
+      <h3>Model aplicable</h3>
+      <p>El projecte baixa a decisions reals d’organització, servei, espai, equip i funcionament intern.</p>
+    </article>
+    <article class="highlight-card">
+      <span class="highlight-number">03</span>
+      <h3>Lectura de mercat</h3>
+      <p>MESCLARI es construeix amb encaix territorial, oportunitat real i capacitat de diferenciació.</p>
+    </article>
+    <article class="highlight-card">
+      <span class="highlight-number">04</span>
+      <h3>Viabilitat defensable</h3>
+      <p>La proposta es tanca amb una lectura de solidesa global, criteri econòmic i coherència transversal.</p>
+    </article>
+  </div>
+</header>
 
       <section class="home-block" id="sentit-projecte">
         <div class="home-section-head center">
@@ -637,7 +2714,7 @@
           </article>
           <article class="home-card">
             <h3>Quin és el resultat?</h3>
-            <p>Un projecte que no es queda en la idea, sinó que es presenta com una proposta aplicable, ordenada i defensable davant professorat o inversors.</p>
+            <p>Un projecte que no es queda en la idea, sinó que se presenta como una propuesta aplicable, ordenada y defendible ante profesorado, socios o inversores.</p>
           </article>
         </div>
       </section>
@@ -645,7 +2722,7 @@
       <section class="home-block project-map" id="arquitectura-projecte">
         <div class="home-section-head">
           <p class="home-section-kicker">Recorregut de navegació</p>
-          <h2>Temes a tractar al menú</h2>
+          <h2>Temes a tractar</h2>
           <p class="home-intro">
             El projecte s’ha ordenat en pàgines breus i diferenciades perquè cada part compleixi una funció dins de la defensa: presentar, justificar, demostrar i concloure.
           </p>
@@ -675,7 +2752,7 @@
 
           <a class="nav-home-card" href="gestio-organitzacio.html">
             <span class="nav-card-number">04</span>
-            <h4>Gestió i org.</h4>
+            <h4>Gestió i organització</h4>
             <p>Estructura interna, personal, horaris, criteris de funcionament i control.</p>
             <span class="nav-card-link">Obrir pàgina →</span>
           </a>
@@ -683,28 +2760,28 @@
           <a class="nav-home-card" href="encaix-mercat.html">
             <span class="nav-card-number">05</span>
             <h4>Encaix de mercat</h4>
-            <p>Territori, públic objectiu, oportunitat, competència i justificació.</p>
+            <p>Territori, públic objectiu, oportunitat, competència i justificació comercial.</p>
             <span class="nav-card-link">Obrir pàgina →</span>
           </a>
 
           <a class="nav-home-card" href="espai-atmosfera.html">
             <span class="nav-card-number">06</span>
             <h4>Espai i atmosfera</h4>
-            <p>Ambient, materials, experiència espacial i coherència amb la gamma.</p>
+            <p>Ambient, materials, experiència espacial i coherència amb la gamma premium.</p>
             <span class="nav-card-link">Obrir pàgina →</span>
           </a>
 
           <a class="nav-home-card" href="oferta-gastronomica.html">
             <span class="nav-card-number">07</span>
             <h4>Oferta gastronòmica</h4>
-            <p>Formats, producte, menú 4/4/4, degustació, begudes i valor de sala.</p>
+            <p>Formats, producte, menú 4/4/4, menú degustació, begudes i valor de sala.</p>
             <span class="nav-card-link">Obrir pàgina →</span>
           </a>
 
           <a class="nav-home-card" href="sintesi-viabilitat.html">
             <span class="nav-card-number">08</span>
             <h4>Síntesi de viabilitat</h4>
-            <p>Conclusió final: aplicació real, riscos i lectura econòmica defensable.</p>
+            <p>Conclusió final: coherència, aplicació real, riscos i lectura econòmica defensable.</p>
             <span class="nav-card-link">Obrir pàgina →</span>
           </a>
         </div>
@@ -746,7 +2823,7 @@
             <article class="defense-card dark">
               <span class="mini-label">Eix 4</span>
               <h3>Gestió i viabilitat</h3>
-              <p>Demostra que la proposta pot funcionar amb estructura, control i criteri econòmic.</p>
+              <p>Demostra que la proposta pot funcionar amb estructura, control, adaptació estacional i criteri econòmic.</p>
             </article>
           </div>
         </div>
@@ -764,23 +2841,23 @@
         <div class="criteria-strip">
           <article class="criteria-card">
             <span class="mini-label">Coherència</span>
-            <h3>Gamma i proposta</h3>
-            <p>La portada dirigeix la lectura cap a la coherència entre restaurant, espai i nivell de servei.</p>
+            <h3>Gamma, públic i proposta</h3>
+            <p>La portada dirigeix la lectura cap a la coherència entre restaurant, client, espai, carta i nivell de servei.</p>
           </article>
           <article class="criteria-card">
             <span class="mini-label">Realitat</span>
             <h3>Aplicació pràctica</h3>
-            <p>El projecte es presenta com una realitat executable, no com una simple idea teòrica.</p>
+            <p>El projecte se presenta como algo que podría ejecutarse, no como una idea decorativa o solo teórica.</p>
           </article>
           <article class="criteria-card">
             <span class="mini-label">Gestió</span>
-            <h3>Control del model</h3>
-            <p>L'estructura incorpora organització, previsió, costos, oferta i viabilitat final.</p>
+            <h3>Control del modelo</h3>
+            <p>La estructura incorpora organización, previsión, costes, oferta y lectura final de viabilidad.</p>
           </article>
           <article class="criteria-card">
             <span class="mini-label">Defensa</span>
-            <h3>Lectura professional</h3>
-            <p>La navegació ajuda a presentar amb ordre, vocabulari tècnic i arguments sòlids.</p>
+            <h3>Lectura profesional</h3>
+            <p>La navegación ayuda a presentar con orden, vocabulario técnico y argumentos sólidos.</p>
           </article>
         </div>
       </section>
@@ -789,7 +2866,7 @@
         <p class="home-section-kicker">Tancament de portada</p>
         <h2>MESCLARI: una proposta completa, coherent i preparada per defensar-se.</h2>
         <p class="home-intro">
-          Aquesta pantalla obre el relat del projecte i condueix cap a les pàgines on es despleguen la identitat, el mercat, l’oferta, l’organització i la síntesi final.
+          Aquesta pantalla principal obre el relat del projecte i condueix cap a les pàgines on es despleguen la identitat, el mercat, l’oferta, l’organització i la síntesi final de viabilitat.
         </p>
         <div class="home-closure-actions">
           <a class="home-button primary" href="presentacio-general.html">Entrar al projecte</a>
@@ -798,7 +2875,7 @@
       </section>
     </main>
 
-    <footer style="text-align: center; padding: 2rem; color: var(--mesclari-ink-soft); font-size: 0.85rem;">
+    <footer class="home-footer">
       <p>Projecte final de grau · Arquitectura multipàgina professional de MESCLARI</p>
     </footer>
 
