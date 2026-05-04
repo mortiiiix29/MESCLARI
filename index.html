@@ -1482,6 +1482,444 @@
         }
       }
 
+
+      /* =========================================================
+         PORTADA REHECHA · NOTICIA INTEGRADA Y REALISTA
+         Corrige proporciones, evita texto pisado y da aspecto de maqueta editorial.
+      ========================================================= */
+      .home-hero-premium {
+        max-width: min(1760px, calc(100% - 5.5vw));
+        padding-top: clamp(1.2rem, 2.4vw, 2rem);
+      }
+
+      .hero-news-redesign {
+        display: grid !important;
+        grid-template-columns: minmax(300px, 0.76fr) minmax(620px, 1.24fr) !important;
+        gap: clamp(1.35rem, 2.2vw, 2.25rem) !important;
+        align-items: stretch !important;
+      }
+
+      .hero-brand-panel-redesign,
+      .hero-editorial-news-redesign {
+        min-height: clamp(640px, 72vh, 820px);
+      }
+
+      .hero-brand-panel-redesign {
+        padding: clamp(1.2rem, 2vw, 1.6rem) !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+      }
+
+      .brand-editorial-card {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: 1fr auto auto;
+        gap: clamp(1.15rem, 2vw, 1.55rem);
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: clamp(1.35rem, 2.2vw, 2.1rem);
+        border-radius: 1.55rem;
+        border: 1px solid rgba(255,255,255,0.10);
+        background:
+          radial-gradient(circle at 50% 31%, rgba(244,233,220,0.12), transparent 18rem),
+          linear-gradient(180deg, rgba(35,56,73,0.98), rgba(30,45,59,0.98));
+        overflow: hidden;
+      }
+
+      .brand-editorial-card::before {
+        content: "";
+        position: absolute;
+        width: 28rem;
+        height: 28rem;
+        left: 50%;
+        top: 34%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 1px solid rgba(244,233,220,0.13);
+        box-shadow: 0 0 0 4.5rem rgba(244,233,220,0.025);
+        pointer-events: none;
+      }
+
+      .brand-editorial-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 270px;
+      }
+
+      .brand-editorial-logo {
+        position: relative;
+        z-index: 2;
+        width: clamp(250px, 24vw, 360px);
+        max-width: 86%;
+        padding: clamp(1.15rem, 2vw, 1.6rem);
+        border-radius: 1.15rem;
+        background: rgba(244,233,220,0.92);
+        border: 1px solid rgba(244,233,220,0.35);
+        box-shadow: 0 24px 54px rgba(0,0,0,0.22);
+      }
+
+      .brand-editorial-copy {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #fff;
+      }
+
+      .brand-editorial-kicker {
+        display: block;
+        margin-bottom: 0.75rem;
+        color: rgba(244,233,220,0.82);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .brand-editorial-copy h1 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3.8rem, 6vw, 6.7rem);
+        line-height: 0.86;
+        letter-spacing: -0.045em;
+        color: #fff;
+      }
+
+      .brand-editorial-copy p {
+        width: min(440px, 100%);
+        margin: 1rem auto 0;
+        color: rgba(244,233,220,0.86);
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        line-height: 1.55;
+      }
+
+      .brand-editorial-tags {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+      }
+
+      .brand-editorial-tags span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0.62rem 0.85rem;
+        border-radius: 999px;
+        background: rgba(244,233,220,0.08);
+        border: 1px solid rgba(244,233,220,0.13);
+        color: rgba(244,233,220,0.88);
+        font-size: 0.82rem;
+        font-weight: 850;
+        text-align: center;
+      }
+
+      .hero-editorial-news-redesign {
+        padding: clamp(1rem, 1.7vw, 1.45rem) !important;
+        justify-content: stretch !important;
+        align-items: stretch !important;
+        background:
+          radial-gradient(circle at 98% 0%, rgba(194,94,60,0.13), transparent 22rem),
+          linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,233,220,0.66)) !important;
+      }
+
+      .hero-editorial-news-redesign::before {
+        content: "GASTRO" !important;
+        right: 1rem !important;
+        top: -0.8rem !important;
+        font-size: clamp(4.2rem, 8vw, 8.6rem) !important;
+        opacity: 1;
+        color: rgba(30,45,59,0.032) !important;
+      }
+
+      .newspaper-real-card {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: clamp(1rem, 1.6vw, 1.35rem);
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        padding: clamp(1.1rem, 1.8vw, 1.65rem);
+        border-radius: 1.35rem;
+        background:
+          linear-gradient(90deg, rgba(30,45,59,0.035) 1px, transparent 1px),
+          linear-gradient(180deg, rgba(30,45,59,0.03) 1px, transparent 1px),
+          #fffaf3;
+        background-size: 28px 28px;
+        border: 1px solid rgba(30,45,59,0.12);
+        box-shadow: 0 24px 60px rgba(30,45,59,0.11);
+        color: var(--mesclari-blue);
+        overflow: hidden;
+      }
+
+      .newspaper-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.2rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 3px solid var(--mesclari-blue);
+      }
+
+      .newspaper-head strong {
+        display: block;
+        margin-top: 0.1rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2rem, 3.2vw, 3.05rem);
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+      }
+
+      .newspaper-small,
+      .newspaper-location span {
+        margin: 0;
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-small { color: var(--mesclari-terracotta); }
+
+      .newspaper-location {
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        text-align: right;
+        color: rgba(30,45,59,0.58);
+      }
+
+      .newspaper-location span:first-child { color: var(--mesclari-terracotta); }
+
+      .newspaper-content-grid {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.92fr) minmax(340px, 1.08fr);
+        gap: clamp(1rem, 1.8vw, 1.5rem);
+        align-items: stretch;
+        min-height: 0;
+      }
+
+      .newspaper-main-photo {
+        position: relative;
+        min-height: 430px;
+        margin: 0;
+        border-radius: 1.05rem;
+        overflow: hidden;
+        background: rgba(30,45,59,0.10);
+        border: 1px solid rgba(30,45,59,0.12);
+        box-shadow: 0 18px 42px rgba(30,45,59,0.13);
+      }
+
+      .newspaper-main-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: saturate(1.03) contrast(1.02);
+      }
+
+      .newspaper-main-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 55%, rgba(30,45,59,0.70));
+        pointer-events: none;
+      }
+
+      .newspaper-main-photo figcaption {
+        position: absolute;
+        left: 0.85rem;
+        right: 0.85rem;
+        bottom: 0.85rem;
+        z-index: 2;
+        padding: 0.82rem 0.95rem;
+        border-radius: 0.85rem;
+        background: rgba(255,250,243,0.91);
+        backdrop-filter: blur(10px);
+      }
+
+      .newspaper-main-photo figcaption strong {
+        display: block;
+        color: var(--mesclari-blue);
+        font-size: 0.95rem;
+        font-weight: 900;
+      }
+
+      .newspaper-main-photo figcaption span {
+        display: block;
+        margin-top: 0.18rem;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.82rem;
+        line-height: 1.32;
+      }
+
+      .newspaper-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(0.4rem, 1.1vw, 0.9rem) 0;
+        min-width: 0;
+      }
+
+      .newspaper-category {
+        margin: 0 0 0.8rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-article h2 {
+        margin: 0;
+        max-width: 720px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(3rem, 4.8vw, 5.2rem);
+        line-height: 0.9;
+        letter-spacing: -0.055em;
+        color: var(--mesclari-blue);
+      }
+
+      .newspaper-lead {
+        margin: 1rem 0 0;
+        max-width: 680px;
+        font-size: clamp(1.03rem, 1.28vw, 1.24rem);
+        line-height: 1.52;
+        font-weight: 720;
+        color: var(--mesclari-ink);
+      }
+
+      .newspaper-body {
+        margin: 0.72rem 0 0;
+        max-width: 680px;
+        font-size: clamp(0.94rem, 1.02vw, 1.02rem);
+        line-height: 1.62;
+        color: var(--mesclari-ink-soft);
+      }
+
+      .newspaper-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(30,45,59,0.11);
+      }
+
+      .newspaper-meta span {
+        display: inline-flex;
+        padding: 0.35rem 0.58rem;
+        border-radius: 999px;
+        background: rgba(30,45,59,0.055);
+        color: rgba(30,45,59,0.68);
+        font-size: 0.74rem;
+        font-weight: 850;
+      }
+
+      .newspaper-lower-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(30,45,59,0.12);
+      }
+
+      .newspaper-lower-grid aside,
+      .newspaper-lower-grid blockquote {
+        margin: 0;
+        padding: 1rem 1.05rem;
+        border-radius: 0.95rem;
+        border: 1px solid rgba(30,45,59,0.08);
+      }
+
+      .newspaper-lower-grid aside {
+        background: rgba(30,45,59,0.045);
+      }
+
+      .newspaper-lower-grid aside span {
+        display: inline-flex;
+        margin-bottom: 0.45rem;
+        color: var(--mesclari-terracotta);
+        font-size: 0.74rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .newspaper-lower-grid aside p {
+        margin: 0;
+        color: var(--mesclari-ink-soft);
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .newspaper-lower-grid blockquote {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(30,45,59,0.98), rgba(35,56,73,0.95));
+        color: #fff;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.28rem, 1.75vw, 1.75rem);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 1200px) {
+        .hero-news-redesign {
+          grid-template-columns: 1fr !important;
+        }
+
+        .hero-brand-panel-redesign,
+        .hero-editorial-news-redesign {
+          min-height: auto;
+        }
+
+        .brand-editorial-card {
+          grid-template-rows: auto auto auto;
+        }
+
+        .brand-editorial-top {
+          min-height: 220px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .newspaper-content-grid,
+        .newspaper-lower-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .newspaper-main-photo {
+          min-height: min(74vw, 470px);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .home-hero-premium {
+          max-width: calc(100% - 1rem);
+        }
+
+        .newspaper-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .newspaper-location {
+          text-align: left;
+        }
+
+        .brand-editorial-tags {
+          grid-template-columns: 1fr;
+        }
+      }
+
     </style>
   </head>
 
@@ -1513,78 +1951,81 @@
       <header class="home-hero-premium" id="inici">
         <p class="hero-kicker">Projecte Final de Grau · Direcció de Cuina · Direcció de Serveis de Sala</p>
 
-        <div class="hero-shell">
-          <section class="hero-brand-panel" aria-label="Identitat principal de MESCLARI">
-            <div class="hero-brand-mark">
-              <img src="imaguenes i videos/logo.png" alt="Logo MESCLARI" class="hero-brand-logo" />
-            </div>
+        <div class="hero-shell hero-news-redesign">
+          <section class="hero-brand-panel hero-brand-panel-redesign" aria-label="Identitat principal de MESCLARI">
+            <div class="brand-editorial-card">
+              <div class="brand-editorial-top">
+                <img src="imaguenes i videos/logo.png" alt="Logo MESCLARI" class="brand-editorial-logo" />
+              </div>
 
-            <div class="hero-brand-copy">
-              <span class="hero-brand-tag">Restaurant gastronòmic contemporani</span>
-              <h1>MESCLARI</h1>
-              <p class="hero-brand-subtitle">
-                Una proposta mediterrània premium amb identitat pròpia, servei cuidat i viabilitat defensable.
-              </p>
+              <div class="brand-editorial-copy">
+                <span class="brand-editorial-kicker">Restaurant gastronòmic contemporani</span>
+                <h1>MESCLARI</h1>
+                <p>
+                  Una proposta mediterrània premium amb identitat pròpia, servei cuidat i viabilitat defensable.
+                </p>
+              </div>
 
-              <div class="hero-brand-meta" aria-label="Dades clau de la portada">
+              <div class="brand-editorial-tags" aria-label="Dades clau de MESCLARI">
                 <span>Platja d’Aro</span>
                 <span>Gamma alta</span>
-                <span>Experiència de sala</span>
+                <span>Sala activa</span>
                 <span>Model viable</span>
               </div>
             </div>
           </section>
 
-          <section class="hero-editorial-panel newsroom-cover realistic-news-cover" aria-label="Portada editorial simulada del projecte MESCLARI">
-            <article class="news-screenshot-card" aria-label="Maqueta de notícia gastronòmica de MESCLARI">
-              <header class="news-topbar">
-                <div class="news-brandline">
-                  <span class="news-site">Gastro Costa Brava</span>
-                  <span class="news-section">Obertures</span>
+          <section class="hero-editorial-panel hero-editorial-news-redesign" aria-label="Portada editorial simulada del projecte MESCLARI">
+            <article class="newspaper-real-card" aria-label="Maqueta de notícia gastronòmica de MESCLARI">
+              <header class="newspaper-head">
+                <div>
+                  <p class="newspaper-small">Especial obertures · Projecte final</p>
+                  <strong>Gastro Costa Brava</strong>
                 </div>
-                <div class="news-dateline">
+                <div class="newspaper-location">
                   <span>Platja d’Aro</span>
-                  <span>Especial restauració</span>
+                  <span>Restauració · 2026</span>
                 </div>
               </header>
 
-              <div class="news-main-grid">
-                <div class="news-article-copy">
-                  <p class="news-category">Exclusiva de projecte · MESCLARI</p>
-                  <h2>La nova obertura gastronòmica que vol posar Platja d’Aro a taula</h2>
-                  <p class="news-lead">
-                    Tres joves impulsen MESCLARI, un restaurant mediterrani premium que vol unir cuina, sala, atmosfera i números sense vendre fum: abans d’obrir, el projecte ja té local, equip, oferta i una defensa econòmica al darrere.
-                  </p>
-                  <p class="news-body">
-                    La proposta es presenta com una obertura amb ambició, però també amb una lectura realista del negoci. El repte és clar: convertir una idea gastronòmica en un restaurant viable, coherent i capaç de funcionar quan s’apaguen els focus de la inauguració.
-                  </p>
-                  <div class="news-meta-row">
-                    <span>Redacció MESCLARI</span>
-                    <span>Projecte final de grau</span>
-                    <span>Lectura 2026</span>
-                  </div>
-                </div>
-
-                <figure class="news-team-photo">
+              <div class="newspaper-content-grid">
+                <figure class="newspaper-main-photo">
                   <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy" />
                   <figcaption>
                     <strong>L’equip fundador de MESCLARI</strong>
-                    <span>Cuina, sala i gestió: tres perfils per defensar una obertura amb criteri.</span>
+                    <span>Cuina, sala i gestió comparteixen una mateixa direcció de projecte.</span>
                   </figcaption>
                 </figure>
+
+                <div class="newspaper-article">
+                  <p class="newspaper-category">Exclusiva de projecte · MESCLARI</p>
+                  <h2>La nova obertura gastronòmica que vol fer parlar Platja d’Aro</h2>
+                  <p class="newspaper-lead">
+                    Tres joves impulsen MESCLARI, un restaurant mediterrani premium que vol unir cuina, sala, atmosfera i números abans d’aixecar la persiana.
+                  </p>
+                  <p class="newspaper-body">
+                    El projecte no es presenta només com una idea atractiva: parteix d’un local real, una oferta definida, una estructura d’equip, una inversió estudiada i una lectura econòmica pensada per respondre la pregunta important: pot funcionar de veritat?
+                  </p>
+
+                  <div class="newspaper-meta">
+                    <span>Redacció MESCLARI</span>
+                    <span>Defensa professional</span>
+                    <span>Lectura realista</span>
+                  </div>
+                </div>
               </div>
 
-              <aside class="news-bottom-panel" aria-label="Resum editorial de la notícia">
-                <div class="news-bottom-text">
-                  <span>Per què podria interessar?</span>
+              <div class="newspaper-lower-grid" aria-label="Peus de notícia de portada">
+                <aside>
+                  <span>Per què interessa?</span>
                   <p>
-                    Perquè no és només una idea bonica: MESCLARI intenta demostrar que una proposta de gamma alta també pot explicar-se amb local real, estructura humana, pressupost, oferta gastronòmica i una resposta clara a la pregunta clau: és viable?
+                    Perquè no ven només una inauguració bonica: defensa una proposta amb producte, sala, pressupost, costos, equip i criteri de mercat.
                   </p>
-                </div>
+                </aside>
                 <blockquote>
                   “Una obertura esperada no es defensa només amb un bon logo: també amb escandalls, personal, costos i una sala que funcioni.”
                 </blockquote>
-              </aside>
+              </div>
             </article>
           </section>
         </div>
