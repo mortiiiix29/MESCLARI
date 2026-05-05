@@ -765,6 +765,44 @@
       color: rgba(244,233,220,0.84);
     }
 
+    .closure-pillars {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1.6rem;
+      text-align: left;
+    }
+
+    .closure-pillars article {
+      padding: 1rem;
+      border: 1px solid rgba(244,233,220,0.14);
+      border-radius: 1rem;
+      background: rgba(244,233,220,0.075);
+    }
+
+    .closure-pillars span {
+      display: inline-flex;
+      margin-bottom: 0.55rem;
+      color: var(--mesclari-sand);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+    }
+
+    .closure-pillars h3 {
+      margin: 0 0 0.45rem;
+      color: #fff;
+      font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+      line-height: 1.05;
+    }
+
+    .closure-pillars p {
+      margin: 0;
+      color: rgba(244,233,220,0.78);
+      font-size: 0.94rem;
+      line-height: 1.55;
+    }
+
     .home-closure-actions {
       display: flex;
       flex-wrap: wrap;
@@ -866,7 +904,8 @@
       .home-highlights-premium,
       .home-grid.four,
       .criteria-strip,
-      .home-grid.three {
+      .home-grid.three,
+      .closure-pillars {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -955,7 +994,8 @@
       .home-grid.three,
       .home-grid.four,
       .defense-list,
-      .criteria-strip {
+      .criteria-strip,
+      .closure-pillars {
         grid-template-columns: 1fr;
       }
     }
@@ -1068,30 +1108,7 @@
           </blockquote>
         </footer>
       </section>
-
-      <div class="home-highlights-premium" aria-label="Eixos de la portada de MESCLARI">
-        <article class="highlight-card">
-          <span class="highlight-number">01</span>
-          <h3>Concepte amb direcció</h3>
-          <p>Una proposta definida des de la coherència entre posicionament, relat i experiència gastronòmica.</p>
-        </article>
-        <article class="highlight-card">
-          <span class="highlight-number">02</span>
-          <h3>Model aplicable</h3>
-          <p>El projecte baixa a decisions reals d’organització, servei, espai, equip i funcionament intern.</p>
-        </article>
-        <article class="highlight-card">
-          <span class="highlight-number">03</span>
-          <h3>Lectura de mercat</h3>
-          <p>MESCLARI es construeix amb encaix territorial, oportunitat real i capacitat de diferenciació.</p>
-        </article>
-        <article class="highlight-card">
-          <span class="highlight-number">04</span>
-          <h3>Viabilitat defensable</h3>
-          <p>La proposta es tanca amb una lectura de solidesa global, criteri econòmic i coherència transversal.</p>
-        </article>
-      </div>
-    </header>
+</header>
 <section class="home-block project-map" id="arquitectura-projecte">
       <div class="home-section-head">
         <p class="home-section-kicker">Recorregut de navegació</p>
@@ -1160,14 +1177,39 @@
       </div>
     </section>
 <section class="home-closure" id="tancament">
-      <p class="home-section-kicker">Lectura final</p>
-      <h2>De la idea gastronòmica a una proposta amb estructura real.</h2>
+      <p class="home-section-kicker">Lectura del projecte</p>
+      <h2>Una idea gastronòmica que baixa a decisions reals.</h2>
       <p class="home-intro">
-        MESCLARI no es presenta només com una marca atractiva o una obertura amb bona imatge. La web ordena el projecte perquè es pugui entendre com una proposta completa: concepte, identitat, equip, mercat, espai, oferta gastronòmica, gestió i viabilitat treballen dins d’un mateix relat.
+        MESCLARI no es presenta com una simple proposta bonica per ensenyar en una web. El projecte funciona perquè connecta una identitat clara amb decisions concretes: quin restaurant vol ser, quin client busca, com es viu l’experiència a sala, quin paper té el producte i com es pot sostenir el model a nivell organitzatiu i econòmic.
       </p>
+
+      <div class="closure-pillars">
+        <article>
+          <span>01</span>
+          <h3>Identitat i concepte</h3>
+          <p>Defineix una proposta mediterrània premium amb personalitat pròpia, sense quedar-se només en l’estètica.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Mercat i experiència</h3>
+          <p>Llegeix Platja d’Aro, el client local i el visitant per construir una oferta amb encaix real.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Cuina, sala i atmosfera</h3>
+          <p>Uneix producte, servei, maridatge i ambient perquè el restaurant funcioni como una experiencia completa.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Gestió i viabilitat</h3>
+          <p>Ordena personal, ritmes, costos, estructura y decisiones internas para defender que la idea puede funcionar.</p>
+        </article>
+      </div>
+
       <p class="home-intro">
-        El valor del projecte està en aquesta suma: una cuina mediterrània amb mirada pròpia, una sala amb protagonisme, una ubicació amb sentit comercial i una estructura pensada perquè el restaurant pugui defensar-se més enllà de la idea inicial.
+        Por eso la navegación no intenta repetir todo el dossier: guía la lectura hacia las partes que realmente sostienen MESCLARI como proyecto profesional.
       </p>
+
       <div class="home-closure-actions">
         <a class="home-button primary" href="presentacio-general.html">Entrar al projecte</a>
         <a class="home-button secondary" href="sintesi-viabilitat.html">Anar a la conclusió</a>
