@@ -155,6 +155,45 @@
       color: var(--mesclari-terracotta);
     }
 
+    /* Menú superior desplegable siempre activo */
+    .menu-btn {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .menu {
+      position: absolute;
+      top: calc(100% + 0.65rem);
+      right: 0;
+      display: none;
+      width: min(390px, calc(100vw - 2rem));
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem;
+      padding: 0.7rem;
+      border: 1px solid rgba(30,45,59,0.10);
+      border-radius: 1.25rem;
+      background: rgba(255,250,243,0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 22px 58px rgba(30,45,59,0.14);
+    }
+
+    .menu.is-open,
+    .menu.open,
+    .nav.menu-open .menu {
+      display: flex;
+    }
+
+    .menu li {
+      width: 100%;
+    }
+
+    .menu a {
+      justify-content: flex-start;
+      width: 100%;
+    }
+
     /* =========================================================
        LAYOUT GENERAL
     ========================================================= */
@@ -1019,38 +1058,41 @@
           </div>
         </div>
 
-      
+        <footer class="mesclari-news-footer">
+          <article>
+            <span>Per què interessa?</span>
+            <p>Perquè no es queda en una inauguració bonica: ordena local, proposta, equip, mercat i pressupost en una mateixa lectura.</p>
+          </article>
+          <blockquote>
+            “Una obertura esperada no es defensa només amb un bon logo: també amb escandalls, personal, costos i una sala que funcioni.”
+          </blockquote>
+        </footer>
       </section>
 
-
+      <div class="home-highlights-premium" aria-label="Eixos de la portada de MESCLARI">
+        <article class="highlight-card">
+          <span class="highlight-number">01</span>
+          <h3>Concepte amb direcció</h3>
+          <p>Una proposta definida des de la coherència entre posicionament, relat i experiència gastronòmica.</p>
+        </article>
+        <article class="highlight-card">
+          <span class="highlight-number">02</span>
+          <h3>Model aplicable</h3>
+          <p>El projecte baixa a decisions reals d’organització, servei, espai, equip i funcionament intern.</p>
+        </article>
+        <article class="highlight-card">
+          <span class="highlight-number">03</span>
+          <h3>Lectura de mercat</h3>
+          <p>MESCLARI es construeix amb encaix territorial, oportunitat real i capacitat de diferenciació.</p>
+        </article>
+        <article class="highlight-card">
+          <span class="highlight-number">04</span>
+          <h3>Viabilitat defensable</h3>
+          <p>La proposta es tanca amb una lectura de solidesa global, criteri econòmic i coherència transversal.</p>
+        </article>
+      </div>
     </header>
-
-    <section class="home-block" id="sentit-projecte">
-      <div class="home-section-head center">
-        <p class="home-section-kicker">Sentit global</p>
-        <h2>Una portada per entendre el projecte sense repetir-lo</h2>
-        <p class="home-intro">
-          Aquesta pantalla funciona com a entrada executiva. No substitueix les pàgines interiors: les ordena, les connecta i prepara la lectura del projecte com una defensa professional.
-        </p>
-      </div>
-
-      <div class="home-grid three">
-        <article class="home-card dark">
-          <h3>Què es defensa?</h3>
-          <p>Un restaurant mediterrani premium amb identitat pròpia, servei de sala treballat i proposta gastronòmica coherent amb el públic objectiu.</p>
-        </article>
-        <article class="home-card">
-          <h3>Com es demostra?</h3>
-          <p>Amb local real, oferta definida, lectura de mercat, estructura de gestió, organització interna, control de costos i síntesi final de viabilitat.</p>
-        </article>
-        <article class="home-card">
-          <h3>Quin és el resultat?</h3>
-          <p>Un projecte que no es queda en la idea, sinó que es presenta com una proposta aplicable, ordenada i defensable davant professorat, socis o inversors.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="home-block project-map" id="arquitectura-projecte">
+<section class="home-block project-map" id="arquitectura-projecte">
       <div class="home-section-head">
         <p class="home-section-kicker">Recorregut de navegació</p>
         <h2>Temes a tractar</h2>
@@ -1117,87 +1159,14 @@
         </a>
       </div>
     </section>
-
-    <section class="home-block" id="eixos-defensa">
-      <div class="home-section-head">
-        <p class="home-section-kicker">Fil conductor</p>
-        <h2>La defensa s’ordena en quatre eixos</h2>
-        <p class="home-intro">
-          La portada no intenta explicar-ho tot: marca el recorregut perquè el projecte es pugui llegir amb claredat, sense dispersió i amb un criteri professional.
-        </p>
-      </div>
-
-      <div class="defense-grid">
-        <aside class="defense-statement">
-          <h2>De la idea al projecte viable.</h2>
-          <p>
-            MESCLARI es presenta com una proposta completa: parteix d’un concepte gastronòmic clar, s’adapta a un context real, defineix una experiència concreta i acaba demostrant la seva coherència operativa i econòmica.
-          </p>
-        </aside>
-
-        <div class="defense-list">
-          <article class="defense-card">
-            <span class="mini-label">Eix 1</span>
-            <h3>Concepte i identitat</h3>
-            <p>Defineix què és MESCLARI, quin lloc vol ocupar i per què té una personalitat diferenciada.</p>
-          </article>
-          <article class="defense-card">
-            <span class="mini-label">Eix 2</span>
-            <h3>Mercat i client</h3>
-            <p>Justifica l’encaix territorial, el públic objectiu i l’oportunitat real del projecte.</p>
-          </article>
-          <article class="defense-card">
-            <span class="mini-label">Eix 3</span>
-            <h3>Oferta i experiència</h3>
-            <p>Connecta cuina, sala, maridatge, atmosfera i valor percebut dins d’un mateix relat.</p>
-          </article>
-          <article class="defense-card dark">
-            <span class="mini-label">Eix 4</span>
-            <h3>Gestió i viabilitat</h3>
-            <p>Demostra que la proposta pot funcionar amb estructura, control, adaptació estacional i criteri econòmic.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-block" id="criteris-avaluacio">
-      <div class="home-section-head center">
-        <p class="home-section-kicker">Preparació per a l’avaluació</p>
-        <h2>Una presentació pensada per demostrar, no només explicar</h2>
-        <p class="home-intro">
-          La web s’ha plantejat perquè cada pàgina aporti evidència: decisions concretes, dades, criteri professional, coherència global i capacitat de defensa oral.
-        </p>
-      </div>
-
-      <div class="criteria-strip">
-        <article class="criteria-card">
-          <span class="mini-label">Coherència</span>
-          <h3>Gamma, públic i proposta</h3>
-          <p>La portada dirigeix la lectura cap a la coherència entre restaurant, client, espai, carta i nivell de servei.</p>
-        </article>
-        <article class="criteria-card">
-          <span class="mini-label">Realitat</span>
-          <h3>Aplicació pràctica</h3>
-          <p>El projecte es presenta com una proposta que podria executar-se, no com una idea decorativa o només teòrica.</p>
-        </article>
-        <article class="criteria-card">
-          <span class="mini-label">Gestió</span>
-          <h3>Control del model</h3>
-          <p>L’estructura incorpora organització, previsió, costos, oferta i lectura final de viabilitat.</p>
-        </article>
-        <article class="criteria-card">
-          <span class="mini-label">Defensa</span>
-          <h3>Lectura professional</h3>
-          <p>La navegació ajuda a presentar amb ordre, vocabulari tècnic i arguments sòlids.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="home-closure" id="tancament">
-      <p class="home-section-kicker">Tancament de portada</p>
-      <h2>MESCLARI: una proposta completa, coherent i preparada per defensar-se.</h2>
+<section class="home-closure" id="tancament">
+      <p class="home-section-kicker">Lectura final</p>
+      <h2>De la idea gastronòmica a una proposta amb estructura real.</h2>
       <p class="home-intro">
-        Aquesta pantalla principal obre el relat del projecte i condueix cap a les pàgines on es despleguen la identitat, el mercat, l’oferta, l’organització i la síntesi final de viabilitat.
+        MESCLARI no es presenta només com una marca atractiva o una obertura amb bona imatge. La web ordena el projecte perquè es pugui entendre com una proposta completa: concepte, identitat, equip, mercat, espai, oferta gastronòmica, gestió i viabilitat treballen dins d’un mateix relat.
+      </p>
+      <p class="home-intro">
+        El valor del projecte està en aquesta suma: una cuina mediterrània amb mirada pròpia, una sala amb protagonisme, una ubicació amb sentit comercial i una estructura pensada perquè el restaurant pugui defensar-se més enllà de la idea inicial.
       </p>
       <div class="home-closure-actions">
         <a class="home-button primary" href="presentacio-general.html">Entrar al projecte</a>
