@@ -837,10 +837,54 @@
     .home-footer {
       width: min(1320px, calc(100% - 2rem));
       margin: 0 auto 2rem;
-      padding: 1rem;
-      color: rgba(30,45,59,0.55);
+      padding: 1.2rem;
+      color: rgba(30,45,59,0.58);
       text-align: center;
       font-size: 0.9rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-socials span {
+      color: var(--mesclari-terracotta);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .footer-socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid rgba(30,45,59,0.10);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.64);
+      color: var(--mesclari-blue);
+      text-decoration: none;
+      font-weight: 850;
+      box-shadow: 0 10px 24px rgba(30,45,59,0.055);
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .footer-socials a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(194,94,60,0.35);
+      background: rgba(194,94,60,0.08);
+      color: var(--mesclari-terracotta);
+    }
+
+    .home-footer p {
+      margin: 0;
     }
 
     /* =========================================================
@@ -1218,6 +1262,11 @@
   </main>
 
   <footer class="home-footer">
+    <div class="footer-socials" aria-label="Xarxes socials de MESCLARI">
+      <span>Xarxes socials</span>
+      <a href="https://www.instagram.com/mesclariempresa/" target="_blank" rel="noopener noreferrer">Instagram · @mesclariempresa</a>
+      <a href="https://www.tiktok.com/@mesclariempresa" target="_blank" rel="noopener noreferrer">TikTok · @mesclariempresa</a>
+    </div>
     <p>Projecte final de grau · Arquitectura multipàgina professional de MESCLARI</p>
   </footer>
 
