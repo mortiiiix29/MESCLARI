@@ -554,6 +554,25 @@
       letter-spacing: -0.02em;
     }
 
+    .mesclari-video-button {
+      appearance: none;
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .mesclari-video-button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(194, 94, 60, 0.42);
+      background: rgba(194, 94, 60, 0.14);
+      color: var(--mesclari-terracotta);
+    }
+
+    .mesclari-video-button:focus-visible {
+      outline: 3px solid rgba(194, 94, 60, 0.42);
+      outline-offset: 4px;
+    }
+
 
     .mesclari-video-trigger {
       cursor: pointer;
@@ -1188,7 +1207,9 @@
         <div class="mesclari-news-content">
           <div class="mesclari-news-top">
             <article class="mesclari-news-article">
-              <p class="mesclari-news-section">Exclusiva de projecte</p>
+              <button type="button" class="mesclari-news-section mesclari-video-button" id="mesclariVideoTrigger" aria-label="Obrir vídeo de presentació de MESCLARI">
+                Exclusiva de projecte
+              </button>
 
               <h1>MESCLARI irromp a Platja d’Aro amb una obertura gastronòmica ambiciosa i amb mirada pròpia</h1>
 
@@ -1197,11 +1218,11 @@
               </p>
             </article>
 
-            <figure class="mesclari-news-photo mesclari-video-trigger" id="mesclariVideoTrigger" role="button" tabindex="0" aria-label="Obrir vídeo de presentació de MESCLARI">
-              <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy" title="Fes clic per obrir el vídeo">
+            <figure class="mesclari-news-photo">
+              <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy">
               <figcaption>
                 <strong>L’equip fundador</strong>
-                <span>Fes clic a la imatge per obrir el reportatge audiovisual de MESCLARI.</span>
+                <span>Cuina, sala i gestió comparteixen la direcció inicial del projecte.</span>
               </figcaption>
             </figure>
           </div>
