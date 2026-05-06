@@ -554,6 +554,121 @@
       letter-spacing: -0.02em;
     }
 
+
+    .mesclari-video-trigger {
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .mesclari-video-trigger:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244, 233, 220, 0.28);
+      box-shadow: 0 24px 62px rgba(30,45,59,0.18);
+    }
+
+    .mesclari-video-trigger:focus-visible {
+      outline: 3px solid rgba(194, 94, 60, 0.55);
+      outline-offset: 4px;
+    }
+
+    .mesclari-play-badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      display: inline-grid;
+      place-items: center;
+      width: clamp(62px, 7vw, 86px);
+      height: clamp(62px, 7vw, 86px);
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(244, 233, 220, 0.34);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(30, 45, 59, 0.66);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 42px rgba(30,45,59,0.28);
+      font-size: clamp(1.35rem, 2.4vw, 2.05rem);
+      line-height: 1;
+      padding-left: 0.18rem;
+      pointer-events: none;
+    }
+
+    .mesclari-video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .mesclari-video-modal.is-open {
+      display: flex;
+    }
+
+    .mesclari-video-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 20, 28, 0.76);
+      backdrop-filter: blur(12px);
+    }
+
+    .mesclari-video-dialog {
+      position: relative;
+      z-index: 2;
+      width: min(1040px, 100%);
+      border: 1px solid rgba(244, 233, 220, 0.16);
+      border-radius: clamp(1rem, 2vw, 1.45rem);
+      background: linear-gradient(180deg, rgba(30,45,59,0.98), rgba(35,56,73,0.96));
+      box-shadow: 0 34px 110px rgba(0, 0, 0, 0.38);
+      overflow: hidden;
+    }
+
+    .mesclari-video-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 4;
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(244, 233, 220, 0.22);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(30, 45, 59, 0.78);
+      font-size: 1.55rem;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .mesclari-video-close:hover {
+      transform: scale(1.04);
+      background: rgba(194, 94, 60, 0.92);
+    }
+
+    .mesclari-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .mesclari-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    body.video-modal-open {
+      overflow: hidden;
+    }
+
     /* =========================================================
        HIGHLIGHTS
     ========================================================= */
@@ -1104,11 +1219,12 @@
               </p>
             </article>
 
-            <figure class="mesclari-news-photo">
+            <figure class="mesclari-news-photo mesclari-video-trigger" id="mesclariVideoTrigger" role="button" tabindex="0" aria-label="Obrir vídeo de presentació de MESCLARI">
               <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy">
+              <span class="mesclari-play-badge" aria-hidden="true">▶</span>
               <figcaption>
                 <strong>L’equip fundador</strong>
-                <span>Cuina, sala i gestió comparteixen la direcció inicial del projecte.</span>
+                <span>Fes clic a la imatge per obrir el reportatge audiovisual de MESCLARI.</span>
               </figcaption>
             </figure>
           </div>
@@ -1270,6 +1386,25 @@
     <p>Projecte final de grau · Arquitectura multipàgina professional de MESCLARI</p>
   </footer>
 
+
+
+  <div class="mesclari-video-modal" id="mesclariVideoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Reportatge audiovisual de MESCLARI">
+    <div class="mesclari-video-backdrop" data-close-video></div>
+    <div class="mesclari-video-dialog">
+      <button type="button" class="mesclari-video-close" id="mesclariVideoClose" aria-label="Tancar vídeo">×</button>
+      <div class="mesclari-video-frame">
+        <iframe
+          id="mesclariYoutubeFrame"
+          title="Reportatge audiovisual de MESCLARI"
+          src=""
+          data-src="https://www.youtube.com/embed/s9idVqdJMxc?autoplay=1&rel=0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
   <script>
     const menuBtn = document.getElementById("menuBtn");
@@ -1281,6 +1416,54 @@
         menuBtn.setAttribute("aria-expanded", String(isOpen));
       });
     }
+
+    const videoTrigger = document.getElementById("mesclariVideoTrigger");
+    const videoModal = document.getElementById("mesclariVideoModal");
+    const videoClose = document.getElementById("mesclariVideoClose");
+    const youtubeFrame = document.getElementById("mesclariYoutubeFrame");
+
+    const openMesclariVideo = () => {
+      if (!videoModal || !youtubeFrame) return;
+      youtubeFrame.src = youtubeFrame.dataset.src;
+      videoModal.classList.add("is-open");
+      videoModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("video-modal-open");
+      videoClose?.focus();
+    };
+
+    const closeMesclariVideo = () => {
+      if (!videoModal || !youtubeFrame) return;
+      videoModal.classList.remove("is-open");
+      videoModal.setAttribute("aria-hidden", "true");
+      youtubeFrame.src = "";
+      document.body.classList.remove("video-modal-open");
+      videoTrigger?.focus();
+    };
+
+    if (videoTrigger) {
+      videoTrigger.addEventListener("click", openMesclariVideo);
+      videoTrigger.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openMesclariVideo();
+        }
+      });
+    }
+
+    if (videoClose) {
+      videoClose.addEventListener("click", closeMesclariVideo);
+    }
+
+    document.querySelectorAll("[data-close-video]").forEach((element) => {
+      element.addEventListener("click", closeMesclariVideo);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && videoModal?.classList.contains("is-open")) {
+        closeMesclariVideo();
+      }
+    });
+
   </script>
 </body>
 </html>
