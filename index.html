@@ -403,6 +403,31 @@
       letter-spacing: 0.14em;
     }
 
+    .mesclari-video-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+    }
+
+    .mesclari-video-link:hover,
+    .mesclari-video-link:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(194,94,60,0.42);
+      background: rgba(194,94,60,0.14);
+      color: var(--mesclari-terracotta);
+      outline: none;
+    }
+
+    .mesclari-video-link::after {
+      content: "↗";
+      margin-left: 0.4rem;
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
     .mesclari-news-article h1 {
       max-width: 15ch;
       margin: 0;
@@ -552,62 +577,6 @@
       font-size: clamp(1.15rem, 1.55vw, 1.6rem);
       line-height: 1.1;
       letter-spacing: -0.02em;
-    }
-
-    .mesclari-video-button {
-      appearance: none;
-      cursor: pointer;
-      font-family: "Inter", sans-serif;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-    }
-
-    .mesclari-video-button:hover {
-      transform: translateY(-2px);
-      border-color: rgba(194, 94, 60, 0.42);
-      background: rgba(194, 94, 60, 0.14);
-      color: var(--mesclari-terracotta);
-    }
-
-    .mesclari-video-button:focus-visible {
-      outline: 3px solid rgba(194, 94, 60, 0.42);
-      outline-offset: 4px;
-    }
-
-
-    .mesclari-news-photo-image {
-      display: block;
-    }
-
-    .mesclari-news-video {
-      display: none;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: clamp(300px, 29vw, 420px);
-      overflow: hidden;
-      border-radius: 1rem;
-      background: #000;
-      box-shadow: inset 0 0 0 1px rgba(244, 233, 220, 0.08);
-    }
-
-    .mesclari-news-video iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .mesclari-news-photo.is-video-open .mesclari-news-photo-image {
-      display: none;
-    }
-
-    .mesclari-news-photo.is-video-open .mesclari-news-video {
-      display: block;
-    }
-
-    .mesclari-video-button.is-active {
-      border-color: rgba(244, 233, 220, 0.28);
-      background: rgba(30, 45, 59, 0.92);
-      color: #fff;
     }
 
     /* =========================================================
@@ -1151,9 +1120,7 @@
         <div class="mesclari-news-content">
           <div class="mesclari-news-top">
             <article class="mesclari-news-article">
-              <button type="button" class="mesclari-news-section mesclari-video-button" id="mesclariVideoTrigger" aria-label="Obrir vídeo de presentació de MESCLARI">
-                Exclusiva de projecte
-              </button>
+              <a class="mesclari-news-section mesclari-video-link" href="https://youtu.be/s9idVqdJMxc" target="_blank" rel="noopener noreferrer" aria-label="Obrir vídeo de MESCLARI a YouTube">Exclusiva de projecte</a>
 
               <h1>MESCLARI irromp a Platja d’Aro amb una obertura gastronòmica ambiciosa i amb mirada pròpia</h1>
 
@@ -1162,25 +1129,11 @@
               </p>
             </article>
 
-            <figure class="mesclari-news-photo" id="mesclariFeaturedMedia">
-              <div class="mesclari-news-photo-image" id="mesclariPhotoImage">
-                <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy">
-              </div>
-
-              <div class="mesclari-news-video" id="mesclariInlineVideo" hidden>
-                <iframe
-                  id="mesclariInlineYoutubeFrame"
-                  title="Reportatge audiovisual de MESCLARI"
-                  src=""
-                  data-src="https://www.youtube.com/embed/s9idVqdJMxc?autoplay=1&rel=0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
-              </div>
-
+            <figure class="mesclari-news-photo">
+              <img src="imaguenes i videos/WhatsApp Image 2026-04-22 at 00.23.10.jpeg" alt="Equip fundador de MESCLARI" loading="lazy">
               <figcaption>
-                <strong id="mesclariMediaTitle">L’equip fundador</strong>
-                <span id="mesclariMediaText">Cuina, sala i gestió comparteixen la direcció inicial del projecte.</span>
+                <strong>L’equip fundador</strong>
+                <span>Cuina, sala i gestió comparteixen la direcció inicial del projecte.</span>
               </figcaption>
             </figure>
           </div>
@@ -1342,7 +1295,6 @@
     <p>Projecte final de grau · Arquitectura multipàgina professional de MESCLARI</p>
   </footer>
 
-
   <script src="script.js"></script>
   <script>
     const menuBtn = document.getElementById("menuBtn");
@@ -1354,47 +1306,6 @@
         menuBtn.setAttribute("aria-expanded", String(isOpen));
       });
     }
-
-    const videoTrigger = document.getElementById("mesclariVideoTrigger");
-    const featuredMedia = document.getElementById("mesclariFeaturedMedia");
-    const inlineVideo = document.getElementById("mesclariInlineVideo");
-    const inlineFrame = document.getElementById("mesclariInlineYoutubeFrame");
-    const mediaTitle = document.getElementById("mesclariMediaTitle");
-    const mediaText = document.getElementById("mesclariMediaText");
-
-    const showMesclariVideo = () => {
-      if (!featuredMedia || !inlineVideo || !inlineFrame || !videoTrigger) return;
-
-      const isOpen = featuredMedia.classList.contains("is-video-open");
-
-      if (isOpen) {
-        featuredMedia.classList.remove("is-video-open");
-        inlineVideo.hidden = true;
-        inlineFrame.src = "";
-        videoTrigger.classList.remove("is-active");
-        videoTrigger.textContent = "Exclusiva de projecte";
-        videoTrigger.setAttribute("aria-label", "Veure vídeo de presentació de MESCLARI");
-        if (mediaTitle) mediaTitle.textContent = "L’equip fundador";
-        if (mediaText) mediaText.textContent = "Cuina, sala i gestió comparteixen la direcció inicial del projecte.";
-        return;
-      }
-
-      featuredMedia.classList.add("is-video-open");
-      inlineVideo.hidden = false;
-      inlineFrame.src = inlineFrame.dataset.src;
-      videoTrigger.classList.add("is-active");
-      videoTrigger.textContent = "Tornar a la imatge";
-      videoTrigger.setAttribute("aria-label", "Tornar a veure la imatge de l’equip fundador");
-      if (mediaTitle) mediaTitle.textContent = "Reportatge audiovisual";
-      if (mediaText) mediaText.textContent = "Vídeo de presentació de MESCLARI integrat dins la portada editorial.";
-
-      featuredMedia.scrollIntoView({ behavior: "smooth", block: "center" });
-    };
-
-    if (videoTrigger) {
-      videoTrigger.addEventListener("click", showMesclariVideo);
-    }
-
   </script>
 </body>
 </html>
